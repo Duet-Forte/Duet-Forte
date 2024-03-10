@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}" SchemaVersion="110">
+	<Busses>
+		<WorkUnit Name="Default Work Unit" ID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{EAE8C0E1-9FEA-4AAC-B787-FF6FA4259DDD}" WorkUnitID="{12E7655E-839A-48A1-8EFB-0A86180C12B5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Player_SFX" ID="{9854CAB5-4487-4908-9DBC-710416C0C96B}">
+							<PropertyList>
+								<Property Name="RecoveryTime" Type="Real64" Value="0.1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Effect0">
+									<Custom>
+										<Effect Name="Meter (Custom)" ID="{54D332FE-DD61-4229-8D2F-6CAD865945F2}" ShortID="130867727" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+											<PropertyList>
+												<Property Name="ReleaseTime" Type="Real32" Value="0.3"/>
+											</PropertyList>
+											<PluginData>
+	<GameParameter Name="SFX_SideChain" ID="{9DBA2321-9B93-46FB-B2D6-705DA328989E}"/>
+</PluginData>
+										</Effect>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+						</Bus>
+						<Bus Name="Combat_BGM" ID="{2FB2F25A-A16D-4778-A33F-3C805C3AD93B}">
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{04ACB190-CF36-4F67-BBF0-8F5B2B40EFB6}" ShortID="295683364">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Volume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="SFX_SideChain" ID="{9DBA2321-9B93-46FB-B2D6-705DA328989E}" WorkUnitID="{6FAF19EC-4221-40B0-97DE-370E4E7F756E}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{7EF2AB9C-CAEB-4F3D-AB4C-B78C9912989F}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>-48</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>-27.91295</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																		<SegmentShape>Exp3</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>-14.68672</XPos>
+																		<YPos>-6.76199</YPos>
+																		<Flags>0</Flags>
+																		<SegmentShape>Log3</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-13.52585</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</Bus>
+						<Bus Name="MainMenu_SFX" ID="{321F4340-AB7D-4B19-BD96-07124C1C921C}"/>
+					</ChildrenList>
+				</Bus>
+			</ChildrenList>
+		</WorkUnit>
+	</Busses>
+</WwiseDocument>

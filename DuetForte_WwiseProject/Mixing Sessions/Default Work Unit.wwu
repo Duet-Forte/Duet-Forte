@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E460AE88-BEEC-46BC-911D-D716C50E8411}" SchemaVersion="110">
+	<MixingSessions>
+		<WorkUnit Name="Default Work Unit" ID="{E460AE88-BEEC-46BC-911D-D716C50E8411}" PersistMode="Standalone">
+			<ChildrenList>
+				<MixingSession Name="New Mixing Session" ID="{28E988EA-62B3-4F03-A365-8FC54D303E8B}">
+					<ObjectList>
+						<ObjectRef Name="Attack" ID="{68899707-EC78-4E11-91E6-20D82A95EFE4}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+						<ObjectRef Name="Combat_BGM" ID="{A8E691CE-10BE-4165-9507-8854E7DE2EB3}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
+						<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+					</ObjectList>
+				</MixingSession>
+			</ChildrenList>
+		</WorkUnit>
+	</MixingSessions>
+</WwiseDocument>

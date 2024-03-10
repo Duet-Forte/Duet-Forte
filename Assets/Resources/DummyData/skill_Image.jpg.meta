@@ -1,0 +1,2587 @@
+fileFormatVersion: 2
+guid: 901c6b0eb98292246ae96544fbdd4bb4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: skill_Image_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 915
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fcdf3204b9fb6a4a93418737d5b77bf
+      internalID: 780647470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 915
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a239b91e483a2b54e88c785d1a75ef6c
+      internalID: -2040220479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 915
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e33fc72e78fba4428406e0df0ac2c09
+      internalID: 419061819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 915
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab92d33e494727b4fa28bde7ce19512c
+      internalID: -1898280607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 915
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae626cc5f2f60b4b853d958c93aa702
+      internalID: -66545135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_5
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 915
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71be74c5747ad6d4ba5b233296d0abec
+      internalID: 597964930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_6
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 915
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81665992857dabb4cb8427385069d807
+      internalID: -1750001495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_7
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 915
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f232dd7b98f438747b676cf7d58a5203
+      internalID: -1713857524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 845
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2860560165e0a24da517435241c990f
+      internalID: 1249640227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_9
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 845
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b59b5da4697cd149aa623236b6f895e
+      internalID: 222258815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_10
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 845
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb693b42167fe54baecdd37b2691789
+      internalID: -1066086035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_11
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 845
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aafab9ca47fd0a04c9b33776d6a76ea8
+      internalID: -474055881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_12
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 845
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504a3a48a228ee44aa93c0b071c2280b
+      internalID: -1991150186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_13
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 845
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067149c099b3d94439b4d82f0a955e79
+      internalID: -644481506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_14
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 845
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db5b8d31cddbc94d94c2d5876a8f6ea
+      internalID: -1575217409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_15
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 845
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b983ea0ffc0433946a1a22613e728d4e
+      internalID: -1618572131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 775
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45968dfdb4efb634ab1fb49315c17f57
+      internalID: 398862196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_17
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 775
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3868ae8fdf29f84c9c6dd09044bf83a
+      internalID: 19127919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_18
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 775
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383de177869eaa5439d4c59073618523
+      internalID: -1770882329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_19
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 775
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985d455b94fb47f41bf4cb3b70f025e7
+      internalID: 525470238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_20
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 775
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c6c802f92ac4646a4f8971ff1c5eca
+      internalID: -1500834261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_21
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 775
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5510df92f102c9f4cb453c0c23ab5519
+      internalID: -776813968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_22
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 775
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc342208be9b03848b63ac2dc226fb87
+      internalID: -1122560612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_23
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 775
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b363521b7bdbcdb4b9c92fb16312e405
+      internalID: 643764897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 705
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf876156ff79954d8a9a5f8568e5985
+      internalID: 1375382516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_25
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 705
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e1913d7ed49b54bbdaaa846fe0df0f
+      internalID: 773776338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_26
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 705
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deeeb35f7de6dc94183e361381e44197
+      internalID: -1985594621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_27
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 705
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449b04b85295f194cbae87918fad317d
+      internalID: 1602934741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_28
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 705
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e06bf0d41655d488190db089d67f82
+      internalID: -420471769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_29
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 705
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7e8deca5eb30f4ea1e7acfa6747af6
+      internalID: 1692828286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_30
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 705
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93da0c5706f10545ac4d9bfa4c37de2
+      internalID: -657937086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_31
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 705
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2283a9d43ac5c8b4b8930ce9e914857d
+      internalID: -1614218648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 635
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5f0065b5827c740baec274469ed8ed
+      internalID: -780360672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_33
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 635
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158c9ab81ab8b7d4d8a52afd99fbfd58
+      internalID: 1512350356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_34
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 635
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65030b20e1b4ef44db9543847c79df7d
+      internalID: 1654460318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_35
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 635
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9991c89d69189c44db446a70341224f3
+      internalID: 1657735489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_36
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 635
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cab857ec6cc93d4e8bd6b2e8ffca1f5
+      internalID: 769255925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_37
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 635
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8120170559ff3a4ca0db77b7459cc69
+      internalID: -367008307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_38
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 635
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13e190a853d19e41a138965f89bac06
+      internalID: 384659353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_39
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 635
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f4774b600c2b7498fb449ac52bd6b7
+      internalID: 1295930461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 565
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27df86a684df0834a87fd33594a3e9e9
+      internalID: 1898778777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_41
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 565
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bba175f2a733e347bed3395fef9247e
+      internalID: 183123759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_42
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 565
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc8f3c8ee05ecd4183de64ca19881cb
+      internalID: -2035555469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_43
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 565
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4023a26a7e9a2464489ec9b25da74f3f
+      internalID: -454661054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_44
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 565
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823b16bc9f894034c8e39898d919bec4
+      internalID: -692766112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_45
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 565
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497ce0b1a5c636d4f843debeff158794
+      internalID: -177191350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_46
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 565
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b0e9276d5297c42b1b9824dc8ac854
+      internalID: -1335842339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_47
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 565
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b269787b49eaeb841baf45e6d5878eec
+      internalID: 1429214763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 495
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06790b39cb0ea34e9cb52e88ba8d6cb
+      internalID: -1451286363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_49
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 495
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74604143d40e83d46b9e3a5c54cfc3e4
+      internalID: 1307288461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_50
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 495
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa89296b83fa7a459472fe01ee77222
+      internalID: 709533655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_51
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 495
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75e023ef9ced7b49b3d1623ec04ae1d
+      internalID: 2007569954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_52
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 495
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a2fb6c4822a4454bb9deb972b9daf42
+      internalID: 246389039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_53
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 495
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f7eb69c3ab5f44486160a4967f372a
+      internalID: 425308977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_54
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 495
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7262774c19b9f84c9788b899cc38104
+      internalID: 573772245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_55
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 495
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5074e1ac6b2aa648b10443099b6827d
+      internalID: -1679428970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 425
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c086a156784d74541afe12b09f99c99b
+      internalID: 1587686047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_57
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 425
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e96eaf04b3167246810159304139f85
+      internalID: -446627666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_58
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 425
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b0de13204fc2d946a7fdd5f561f274f
+      internalID: -429048706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_59
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 425
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d27b7aa3b42ebb549a48cc3a501d82af
+      internalID: 2074782482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_60
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 425
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba2ddde0ccc23c469173471ca889c4d
+      internalID: -682758924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_61
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 425
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e376719e3a373bd4a9c2411374d22bcf
+      internalID: -1224513320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_62
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 425
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c4ae9ab032e3042a335899ce214120
+      internalID: 558134225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_63
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 425
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a617981b1f7e5dc4faf1ffac70f84a2f
+      internalID: -1497673345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 355
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 981891f5a1eaf7449bd6d2f5cb3a4ac5
+      internalID: 512486254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_65
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 355
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a5e880825568146b92877497ace964
+      internalID: 1334467371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_66
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 355
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c2f16753be904439625423f2fff6a8
+      internalID: -1827271761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_67
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 355
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91dba3aa31413b34cb974f116e6c373c
+      internalID: -2011072484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_68
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 355
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02f5aa457fc20c4592b9c2959875a71
+      internalID: -848845328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_69
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 355
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1e771428775cb4785169522b3b1973
+      internalID: -1959737022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_70
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 355
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb7e1f02634e2de4d9723b74080cc5da
+      internalID: -697610452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_71
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 355
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b216bdc719f0365418351fdff735456e
+      internalID: 1880582788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 285
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db7e90256814214e82afcfc491ae942
+      internalID: 849880502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_73
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 285
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334ae29a96b6ee344b76ce084b4f3ff0
+      internalID: -356674274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_74
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 285
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c05278cae38c8f4d863873c5e953335
+      internalID: -717355755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_75
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 285
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac0d5fb31c59e4438fd944cb8d99a94
+      internalID: 56815631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_76
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 285
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e378c537ad6c8f2429b3c5a85be2ac84
+      internalID: -690386061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_77
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 285
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48fdd1ba36b1e8d4d82c74f0c39d62bc
+      internalID: -104263022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_78
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 285
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763b39c26c680874991a279f4a37e030
+      internalID: 1699692772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_79
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 285
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d251dccd822dd45b87bc33181a64e3
+      internalID: 2027123824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 215
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd1934739955a34293ef21383d62fe1
+      internalID: -1753343951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_81
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 215
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f13fb6682291f645a10939b65b21361
+      internalID: 1270648434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_82
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 215
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380a89448503fd14c95a3d83952bdbb1
+      internalID: 1647970426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_83
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 215
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6144cc69b57ca44aa8c71417ee08b60
+      internalID: 728111871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_84
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 215
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5345e59729e91dc4481e48274564f584
+      internalID: -621547853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_85
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 215
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5c108691e7140b40bd6e8dd787c9b38
+      internalID: 1789999151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_86
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 215
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 291fe66e19d5a6c4c8b29fba9935b49e
+      internalID: -136402418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_87
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 215
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2efa35fa4e7f348a12c35d6154f7f3
+      internalID: -25295609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 145
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a79042e9ea1dfe4a89a42c6e5d33ddd
+      internalID: -1837317787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_89
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 145
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3c0e95b3a901c4aa1af3c35c6afacb
+      internalID: 450692198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_90
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 145
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bdf6738e3526a248b7607b33e394dbf
+      internalID: -1545137733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_91
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 145
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1d0902c4c3e1d4dbc8c1ae5225c26b
+      internalID: 1742958073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_92
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 145
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ab0a02e50699c04d9370085d3f06816
+      internalID: -1399635162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_93
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 145
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8784dc2e6ec51284e9b4f15ce8d9f2b9
+      internalID: 432001942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_94
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 145
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f00a92c4c26e14a86183bdc68623d1
+      internalID: 1283256111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_95
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 145
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3e2bf31b7380d4d8cc04d321f7d0b4
+      internalID: 397295757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 75
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cfb112d590657f42a29fd9026078111
+      internalID: 1320383914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_97
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 75
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247e5893cb50cab458e303d67d3d24d5
+      internalID: -172702856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_98
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 75
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7899297ddbf5846a5d147366767524
+      internalID: 505860252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_99
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 75
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96350f14f048b1f4983328fa06a5b08d
+      internalID: -815492545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_100
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 75
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d3e81e9b61cdf49afc5d688518ff17
+      internalID: -1880057220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_101
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 75
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e8eef3b0012b141b5efe6faca8da97
+      internalID: -1702902685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_102
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 75
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb731aceb4b64a4e92b7cbc98596865
+      internalID: -25786926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_103
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 75
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0002df6eceb0f6244a97e5d9765858e2
+      internalID: 693185567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a70a1a83e99584aa1b2405e82be5a0
+      internalID: 823766566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_105
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 5
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a93481b62e027449af2c0fac77545b4
+      internalID: -1053598137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_106
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 5
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64715c677b6249c41a7f1bf9998e9433
+      internalID: 1860010349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_107
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 5
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ff18a08b69bac45a68d5ad6b593569
+      internalID: 1357533045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_108
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 5
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4756d89870946ba40ab765dc570d7ba3
+      internalID: 556428430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_109
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 5
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71863a310f076b4b92e692e895cebbd
+      internalID: -1361693951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_110
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 5
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d4fa20eb4346b47b2680510fef9c70
+      internalID: 1995794802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill_Image_111
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 5
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9ba8994089d1b498e8974a0574b89b
+      internalID: -2022775160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      skill_Image_0: 780647470
+      skill_Image_1: -2040220479
+      skill_Image_10: -1066086035
+      skill_Image_100: -1880057220
+      skill_Image_101: -1702902685
+      skill_Image_102: -25786926
+      skill_Image_103: 693185567
+      skill_Image_104: 823766566
+      skill_Image_105: -1053598137
+      skill_Image_106: 1860010349
+      skill_Image_107: 1357533045
+      skill_Image_108: 556428430
+      skill_Image_109: -1361693951
+      skill_Image_11: -474055881
+      skill_Image_110: 1995794802
+      skill_Image_111: -2022775160
+      skill_Image_12: -1991150186
+      skill_Image_13: -644481506
+      skill_Image_14: -1575217409
+      skill_Image_15: -1618572131
+      skill_Image_16: 398862196
+      skill_Image_17: 19127919
+      skill_Image_18: -1770882329
+      skill_Image_19: 525470238
+      skill_Image_2: 419061819
+      skill_Image_20: -1500834261
+      skill_Image_21: -776813968
+      skill_Image_22: -1122560612
+      skill_Image_23: 643764897
+      skill_Image_24: 1375382516
+      skill_Image_25: 773776338
+      skill_Image_26: -1985594621
+      skill_Image_27: 1602934741
+      skill_Image_28: -420471769
+      skill_Image_29: 1692828286
+      skill_Image_3: -1898280607
+      skill_Image_30: -657937086
+      skill_Image_31: -1614218648
+      skill_Image_32: -780360672
+      skill_Image_33: 1512350356
+      skill_Image_34: 1654460318
+      skill_Image_35: 1657735489
+      skill_Image_36: 769255925
+      skill_Image_37: -367008307
+      skill_Image_38: 384659353
+      skill_Image_39: 1295930461
+      skill_Image_4: -66545135
+      skill_Image_40: 1898778777
+      skill_Image_41: 183123759
+      skill_Image_42: -2035555469
+      skill_Image_43: -454661054
+      skill_Image_44: -692766112
+      skill_Image_45: -177191350
+      skill_Image_46: -1335842339
+      skill_Image_47: 1429214763
+      skill_Image_48: -1451286363
+      skill_Image_49: 1307288461
+      skill_Image_5: 597964930
+      skill_Image_50: 709533655
+      skill_Image_51: 2007569954
+      skill_Image_52: 246389039
+      skill_Image_53: 425308977
+      skill_Image_54: 573772245
+      skill_Image_55: -1679428970
+      skill_Image_56: 1587686047
+      skill_Image_57: -446627666
+      skill_Image_58: -429048706
+      skill_Image_59: 2074782482
+      skill_Image_6: -1750001495
+      skill_Image_60: -682758924
+      skill_Image_61: -1224513320
+      skill_Image_62: 558134225
+      skill_Image_63: -1497673345
+      skill_Image_64: 512486254
+      skill_Image_65: 1334467371
+      skill_Image_66: -1827271761
+      skill_Image_67: -2011072484
+      skill_Image_68: -848845328
+      skill_Image_69: -1959737022
+      skill_Image_7: -1713857524
+      skill_Image_70: -697610452
+      skill_Image_71: 1880582788
+      skill_Image_72: 849880502
+      skill_Image_73: -356674274
+      skill_Image_74: -717355755
+      skill_Image_75: 56815631
+      skill_Image_76: -690386061
+      skill_Image_77: -104263022
+      skill_Image_78: 1699692772
+      skill_Image_79: 2027123824
+      skill_Image_8: 1249640227
+      skill_Image_80: -1753343951
+      skill_Image_81: 1270648434
+      skill_Image_82: 1647970426
+      skill_Image_83: 728111871
+      skill_Image_84: -621547853
+      skill_Image_85: 1789999151
+      skill_Image_86: -136402418
+      skill_Image_87: -25295609
+      skill_Image_88: -1837317787
+      skill_Image_89: 450692198
+      skill_Image_9: 222258815
+      skill_Image_90: -1545137733
+      skill_Image_91: 1742958073
+      skill_Image_92: -1399635162
+      skill_Image_93: 432001942
+      skill_Image_94: 1283256111
+      skill_Image_95: 397295757
+      skill_Image_96: 1320383914
+      skill_Image_97: -172702856
+      skill_Image_98: 505860252
+      skill_Image_99: -815492545
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

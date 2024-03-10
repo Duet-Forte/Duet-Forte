@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{6FAF19EC-4221-40B0-97DE-370E4E7F756E}" SchemaVersion="110">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{6FAF19EC-4221-40B0-97DE-370E4E7F756E}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="SFX_SideChain" ID="{9DBA2321-9B93-46FB-B2D6-705DA328989E}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="-48"/>
+						<Property Name="Max" Type="Real64" Value="0"/>
+						<Property Name="Min" Type="Real64" Value="-48"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

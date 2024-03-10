@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1154772126	MainMenu_Click_SFX			\Default Work Unit\MainMenu\MainMenu_Click_SFX	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	977216514	!!Test UI Click	C:\Users\xcwhy\Documents\DuetForteProject\DuetForte\DuetForte_WwiseProject\.cache\Mac\SFX\Games, Video, Menu UI, Select, Notification 18 SND83166 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\메인메뉴 UI\!!Test UI Click		39916
+

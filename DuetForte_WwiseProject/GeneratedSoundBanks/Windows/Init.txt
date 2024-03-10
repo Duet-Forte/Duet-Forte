@@ -1,0 +1,16 @@
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2862064063	SFX_SideChain			\Default Work Unit\SFX_SideChain	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	193649807	MainMenu_SFX			\Default Work Unit\Master Audio Bus\MainMenu_SFX	
+	817096458	Player_SFX			\Default Work Unit\Master Audio Bus\Player_SFX	
+	3004711510	Combat_BGM			\Default Work Unit\Master Audio Bus\Combat_BGM	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Effect plug-ins	ID	Name	Type				Notes
+	130867727	Meter (Custom)	Wwise Meter			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

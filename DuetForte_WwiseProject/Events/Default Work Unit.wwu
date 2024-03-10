@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Player" ID="{62113D62-F62D-43FE-A85A-1FAE6D51B9EB}" ShortID="363070828">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="4"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Folder Name="Combat" ID="{9F2E2779-168C-4609-963E-184065475817}" ShortID="761555210">
+							<ChildrenList>
+								<Event Name="Player_Attack_A_SFX" ID="{FAAB1A55-AB92-4B88-B7FB-A86190CBF2FC}">
+									<ChildrenList>
+										<Action Name="" ID="{28FED9E9-82F7-42BA-AC73-0E0C6EB1C46D}" ShortID="969658606">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="세로베기" ID="{E2307D4C-0048-4F23-AFC7-74A8C6732801}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_Attack_B_SFX" ID="{0AD51A88-F515-45F2-B618-6EF9E426611A}">
+									<ChildrenList>
+										<Action Name="" ID="{A9871F5D-03DB-4627-8AFB-4F093A85E360}" ShortID="75186915">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="찌르기" ID="{33C1E332-B061-4206-B899-5D48884BF647}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_Attack_StrongSignal_SFX" ID="{CEBB90E6-DF06-40C5-B9D3-CFA7BB20AD42}">
+									<ChildrenList>
+										<Action Name="" ID="{7B6AB91D-F160-4D29-81DC-654B544B2382}" ShortID="286631974">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_공격신호_01" ID="{D5D65ADB-4E38-4859-8F4C-8C16389E2704}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_Attack_WeakSignal_SFX" ID="{E1E65314-CE0A-4A59-8CAE-68303D53B1EB}">
+									<ChildrenList>
+										<Action Name="" ID="{04725304-1A93-46C4-B433-C6FFA1906B9C}" ShortID="743810092">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_공격신호_02" ID="{F6D7310A-828B-4B7C-B572-D5702798ABCC}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_Parry_SFX" ID="{A5DD6FC1-5DA3-42BD-905F-F1A31806B37C}">
+									<ChildrenList>
+										<Action Name="" ID="{DC5F011D-48EA-4093-A9F2-BCC8D27306FF}" ShortID="25023264">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="패링-03" ID="{970B953D-489F-42AE-82B4-3B52A3811A89}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="NonCombat" ID="{54CFB25B-72DE-4551-8CF8-ECF08073C2D1}" ShortID="313020846">
+							<ChildrenList>
+								<Event Name="Player_Step" ID="{2175E7C5-DBE4-4C7E-8B5F-D1285725AA69}">
+									<ChildrenList>
+										<Action Name="" ID="{964ACE89-2CF5-4E49-BD95-4FE8BC5470C2}" ShortID="1012276160">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerFootStep_Wood" ID="{E9A9C2C7-4DDE-4FFA-A978-8D83D66D164F}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Gio" ID="{CA4BCAB6-D3C9-43A5-AAC9-1BECBB8FA693}">
+									<ChildrenList>
+										<Action Name="" ID="{72D0A5B7-FFD4-4485-89C0-1CE483C004E7}" ShortID="98079214">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Gio_BodyFall_SFX" ID="{1C8F9536-D52C-45D0-A623-83E5599EE09F}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="BGM" ID="{9CDCA231-D856-47FE-87D4-C764D1F1B686}" ShortID="798698964">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="10"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Folder Name="Combat" ID="{995A0FC6-8951-4D6E-B230-A35242F7DF68}" ShortID="908401955">
+							<ChildrenList>
+								<Event Name="Combat_Stage_01_BGM" ID="{7BCDF135-933D-41D4-815F-F088C4C99554}">
+									<ChildrenList>
+										<Action Name="" ID="{4E87B608-88CF-4237-8465-FCE78B9526B9}" ShortID="42722409">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stage01" ID="{EDFF6601-E49A-4567-B089-C681163EC14D}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="MainMenu" ID="{31CF9317-F47D-463D-895B-C5DCC321BE7A}" ShortID="683634052">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="16"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="MainMenu_Click_SFX" ID="{C32E89F9-9B02-46BB-BEE8-CF96B95100A1}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="16"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{582C8AFE-82B1-4567-859E-FB1A988EAAE6}" ShortID="413452311">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="!!Test UI Click" ID="{C7E1AADB-FDCB-4698-9A8B-448FDBC27D6D}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MainMenu_Hover_SFX" ID="{86244DD4-AF42-4524-91C7-610B0B9700DE}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="16"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="NonCombat_SFX" ID="{1E51731E-76D6-4EE1-8126-8F8554664E3D}" ShortID="770240936">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="2"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="Ob_Fire_SwitchOn" ID="{8BB1BB58-A88B-42E9-A1A9-6A636667ED6C}"/>
+						<Event Name="Ob_Fire_Ignition" ID="{76B2431A-EE15-411C-A03D-8813E54D0A41}"/>
+						<Event Name="Talk_Typing" ID="{3B183886-3E47-46C8-B46C-90F0AAEAAE63}"/>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,0 +1,15 @@
+Interactable	ID	Lines	Speaker	State
+Cutscene	0	우당탕탕탕-	Empty	
+		으윽…	Gio	Idle
+		여기가 어디지?		
+		집..?		
+		?!	Timmy	Idle
+		누구니?		
+		?	Gio	Idle
+		제가 묻고 싶은 말인데		
+		저는 콩쿠르 대기실에 있었거든요		
+	1	여기가 우리 마을이야	Timmy	Idle
+		마을을 돌아다니다 보면 분명 돌아갈 방법을 찾을 수 있을 거야.		
+		한 번 둘러보자고.		
+	2	마을을 탐험하려면, 이 세계의 전투 방식을 알아두는 게 좋을 거야.	Timmy	Idle
+		내가 전투 방법을 알려줄테니까 잘 익혀 보도록 해.		

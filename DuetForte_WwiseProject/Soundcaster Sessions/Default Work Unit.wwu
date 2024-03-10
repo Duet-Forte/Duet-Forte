@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A0877B20-58AD-472F-8D6D-0987E9B8EBCE}" SchemaVersion="110">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{A0877B20-58AD-472F-8D6D-0987E9B8EBCE}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="New Soundcaster Session" ID="{F6E6B315-50D2-46AD-9EDB-7C00035AF874}">
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="SFX_SideChain" ID="{9DBA2321-9B93-46FB-B2D6-705DA328989E}"/>
+							<Value>-11.9881241408274</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Wood" ID="{E7BEFA96-7BB0-4C03-A005-3665BF6C9B6C}"/>
+						<CurrentSwitchRef Name="StageEnd" ID="{F303DAA7-5840-49CF-ABC5-817F363683C0}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>
