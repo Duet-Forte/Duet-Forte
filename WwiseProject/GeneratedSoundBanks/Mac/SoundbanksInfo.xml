@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{42D536F4-7AB3-4FEA-A17E-BB6E858B6C47}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{9E50EFD2-B177-C0E7-08FE-8ACFA909D534}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -29,10 +29,6 @@
 					<ShortName>Wood6.wav</ShortName>
 					<CachePath>SFX/Wood6_C376C168.wem</CachePath>
 				</File>
-				<File Id="286678559" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>용사의집 v0308_Loop.wav</ShortName>
-					<CachePath>SFX/용사의집 v0308_Loop_D79FB2B7.wem</CachePath>
-				</File>
 				<File Id="408028945" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wood3.wav</ShortName>
 					<CachePath>SFX/Wood3_1B54FF37.wem</CachePath>
@@ -45,21 +41,11 @@
 					<ShortName>Wood1.wav</ShortName>
 					<CachePath>SFX/Wood1_43788234.wem</CachePath>
 				</File>
-				<File Id="1062809324" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>용사의집 v0308.wav</ShortName>
-					<CachePath>SFX/용사의집 v0308_D79FB2B7.wem</CachePath>
-				</File>
 			</Media>
 			<Events>
-				<Event Id="2299963368" Name="Gio_BodyFall_SFX" DurationType="OneShot" DurationMin="5.1996665" DurationMax="5.1996665">
+				<Event Id="445441148" Name="Gio" DurationType="OneShot" DurationMin="5.1996665" DurationMax="5.1996665">
 					<MediaRefs>
 						<MediaRef Id="43014063"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="537516138" Name="NonCombat_TimmyHouse_BGM" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="286678559"/>
-						<MediaRef Id="1062809324"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3461836331" Name="Player_Step" DurationType="OneShot" DurationMin="0.062993795" DurationMax="0.14310288">
@@ -122,18 +108,23 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{BCAFB01B-D187-D593-F8FD-C5B3EB1B9F7C}">
+		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{0B537FFD-8B5A-9F7B-264D-52104C4C60A4}">
 			<ShortName>MainMenu</ShortName>
 			<Path>MainMenu.bnk</Path>
 			<Media>
+				<File Id="435389909" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SceneChainge.wav</ShortName>
+					<CachePath>SFX/SceneChainge_6DA71000.wem</CachePath>
+				</File>
 				<File Id="977216514" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Games, Video, Menu UI, Select, Notification 18 SND83166 1.wav</ShortName>
 					<CachePath>SFX/Games, Video, Menu UI, Select, Notification 18 SND83166 1_10C4C929.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1154772126" Name="MainMenu_Click_SFX" DurationType="OneShot" DurationMin="0.20739584" DurationMax="0.20739584">
+				<Event Id="1154772126" Name="MainMenu_Click_SFX" DurationType="OneShot" DurationMin="5.5557585" DurationMax="5.5557585">
 					<MediaRefs>
+						<MediaRef Id="435389909"/>
 						<MediaRef Id="977216514"/>
 					</MediaRefs>
 				</Event>
@@ -225,5 +216,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{301E44AC-FE44-4DC6-D868-025AAC5B5956}</FileHash>
+	<FileHash>{54EA462D-56F2-7BC8-07D4-7AF4D7097F6B}</FileHash>
 </SoundBanksInfo>

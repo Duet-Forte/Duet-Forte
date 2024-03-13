@@ -1,6 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
-	537516138	NonCombat_TimmyHouse_BGM			\Default Work Unit\BGM\NonCombat\NonCombat_TimmyHouse_BGM	
-	2299963368	Gio_BodyFall_SFX			\Default Work Unit\Player\NonCombat\Gio_BodyFall_SFX	
+	445441148	Gio			\Default Work Unit\Player\NonCombat\Gio	
 	3461836331	Player_Step			\Default Work Unit\Player\NonCombat\Player_Step	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
@@ -10,13 +9,11 @@ Switch	ID	Name	Switch Group			Notes
 	2058049674	Wood	State			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	43014063	Gio_BodyFall_SFX	C:\Users\xcwhy\Documents\DuetForteProject\DuetForte\DuetForte_WwiseProject\.cache\Mac\SFX\Gio_BodyFall_SFX_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\NonCombat\Gio_BodyFall\Gio_BodyFall_SFX		998432
-	84793872	Wood5	C:\Users\xcwhy\Documents\DuetForteProject\DuetForte\DuetForte_WwiseProject\.cache\Mac\SFX\Wood5_FE717F8F.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood5		17920
-	94650861	Wood4	C:\Users\xcwhy\Documents\DuetForteProject\DuetForte\DuetForte_WwiseProject\.cache\Mac\SFX\Wood4_DB34D142.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood4		27572
-	229353679	Wood6	C:\Users\xcwhy\Documents\DuetForteProject\DuetForte\DuetForte_WwiseProject\.cache\Mac\SFX\Wood6_C376C168.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood6		16060
-	286678559	용사의집 v0308_Loop	C:\Users\xcwhy\Documents\DuetForteProject\DuetForte\DuetForte_WwiseProject\.cache\Mac\SFX\용사의집 v0308_Loop_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Timmy_House\Timmy_House\Timmy_House_Loop\용사의집 v0308_Loop		3141916
-	408028945	Wood3	C:\Users\xcwhy\Documents\DuetForteProject\DuetForte\DuetForte_WwiseProject\.cache\Mac\SFX\Wood3_1B54FF37.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood3		12232
-	414174222	Wood2	C:\Users\xcwhy\Documents\DuetForteProject\DuetForte\DuetForte_WwiseProject\.cache\Mac\SFX\Wood2_715FA64B.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood2		14672
-	826601067	Wood1	C:\Users\xcwhy\Documents\DuetForteProject\DuetForte\DuetForte_WwiseProject\.cache\Mac\SFX\Wood1_43788234.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood1		12192
-	1062809324	용사의집 v0308	C:\Users\xcwhy\Documents\DuetForteProject\DuetForte\DuetForte_WwiseProject\.cache\Mac\SFX\용사의집 v0308_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Timmy_House\Timmy_House\Timmy_House\용사의집 v0308		3456096
+	43014063	Gio_BodyFall_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Gio_BodyFall_SFX_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\NonCombat\Gio_BodyFall\Gio_BodyFall_SFX		998432
+	84793872	Wood5	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Wood5_FE717F8F.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood5		17920
+	94650861	Wood4	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Wood4_DB34D142.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood4		27572
+	229353679	Wood6	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Wood6_C376C168.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood6		16060
+	408028945	Wood3	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Wood3_1B54FF37.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood3		12232
+	414174222	Wood2	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Wood2_715FA64B.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood2		14672
+	826601067	Wood1	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Wood1_43788234.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood1		12192
 
