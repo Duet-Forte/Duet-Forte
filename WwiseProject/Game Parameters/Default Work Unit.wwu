@@ -10,6 +10,7 @@
 						<Property Name="Min" Type="Real64" Value="-48"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="Volume" ID="{7A449F19-D1C9-41E2-B3D8-D3D5A074948A}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

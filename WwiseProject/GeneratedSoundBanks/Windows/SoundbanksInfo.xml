@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{9E50EFD2-B177-C0E7-08FE-8ACFA909D534}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{1D265009-D71B-8373-84EF-A12D0DD5366C}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -43,12 +43,12 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="445441148" Name="Gio" DurationType="OneShot" DurationMin="5.1996665" DurationMax="5.1996665">
+				<Event Id="2299963368" Name="Gio_BodyFall_SFX" DurationType="OneShot" DurationMin="5.1996665" DurationMax="5.1996665">
 					<MediaRefs>
 						<MediaRef Id="43014063"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3461836331" Name="Player_Step" DurationType="OneShot" DurationMin="0.062993795" DurationMax="0.14310288">
+				<Event Id="4038898239" Name="Player_Step_SFX" DurationType="OneShot" DurationMin="0.062993795" DurationMax="0.14310288">
 					<MediaRefs>
 						<MediaRef Id="84793872"/>
 						<MediaRef Id="94650861"/>
@@ -67,7 +67,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{90DB04DD-EA66-F3F7-E6D9-6D921F138AF7}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{57FE7B13-CEE2-E6F8-CE55-BFF62C5CC3A9}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -92,6 +92,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 			<GameParameters>
+				<GameParameter Id="2415836739" Name="Volume"/>
 				<GameParameter Id="2862064063" Name="SFX_SideChain"/>
 			</GameParameters>
 			<SwitchGroups>
@@ -108,13 +109,17 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{0B537FFD-8B5A-9F7B-264D-52104C4C60A4}">
+		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{4665D97C-DEE3-606F-1CFB-7E53F1C56A8E}">
 			<ShortName>MainMenu</ShortName>
 			<Path>MainMenu.bnk</Path>
 			<Media>
 				<File Id="435389909" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SceneChainge.wav</ShortName>
-					<CachePath>SFX/SceneChainge_6DA71000.wem</CachePath>
+					<CachePath>SFX/SceneChainge_0F56642E.wem</CachePath>
+				</File>
+				<File Id="953925931" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Test UI Hover.wav</ShortName>
+					<CachePath>SFX/Test UI Hover_771F4306.wem</CachePath>
 				</File>
 				<File Id="977216514" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Games, Video, Menu UI, Select, Notification 18 SND83166 1.wav</ShortName>
@@ -122,21 +127,35 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1154772126" Name="MainMenu_Click_SFX" DurationType="OneShot" DurationMin="5.5557585" DurationMax="5.5557585">
+				<Event Id="162289589" Name="MainMenu_Click_GameStart_SFX" DurationType="OneShot" DurationMin="5.2650824" DurationMax="5.2650824">
 					<MediaRefs>
 						<MediaRef Id="435389909"/>
 						<MediaRef Id="977216514"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1154772126" Name="MainMenu_Click_SFX" DurationType="OneShot" DurationMin="0.20739584" DurationMax="0.20739584">
+					<MediaRefs>
+						<MediaRef Id="977216514"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="294506560" Name="MainMenu_Hover_SFX" DurationType="OneShot" DurationMin="0.1767535" DurationMax="0.1767535">
+					<MediaRefs>
+						<MediaRef Id="953925931"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{04D2C609-33AC-3262-F292-0505CBAB1434}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{EFED7B49-3358-FC94-8ABF-F7F3E6E5BB31}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
 				<File Id="420250481" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Combat_Timmy-01.wav</ShortName>
 					<CachePath>SFX/Combat_Timmy-01_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="514950658" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat_test01.wav</ShortName>
+					<CachePath>SFX/Combat_test01_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="519697605" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_공격신호_01.wav</ShortName>
@@ -180,6 +199,11 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="207956517" Name="Combat_test01" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="514950658"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3452252061" Name="Player_Attack_A_SFX" DurationType="OneShot" DurationMin="0.40254888" DurationMax="0.47266912">
 					<MediaRefs>
 						<MediaRef Id="602281588"/>
@@ -206,6 +230,9 @@
 					</MediaRefs>
 				</Event>
 			</Events>
+			<GameParameters>
+				<GameParameter Id="2415836739" Name="Volume"/>
+			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="1608553872" Name="Stage01">
 					<Switches>
@@ -216,5 +243,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{192685C0-09A2-1452-98DF-248F4170EAEB}</FileHash>
+	<FileHash>{7B1CBC4E-EF33-9EBA-1585-7D54E717B8B9}</FileHash>
 </SoundBanksInfo>

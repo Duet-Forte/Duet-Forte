@@ -1,6 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
-	445441148	Gio			\Default Work Unit\Player\NonCombat\Gio	
-	3461836331	Player_Step			\Default Work Unit\Player\NonCombat\Player_Step	
+	2299963368	Gio_BodyFall_SFX			\Default Work Unit\Player\NonCombat\Gio_BodyFall_SFX	
+	4038898239	Player_Step_SFX			\Default Work Unit\Player\NonCombat\Player_Step_SFX	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	1382476432	State			\Default Work Unit\State	
