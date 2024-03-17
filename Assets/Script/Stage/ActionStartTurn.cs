@@ -9,20 +9,20 @@ public class ActionStartTurn : ITurnHandler
     // 카메라의 줌인도 담당
     //
     StageManager stageManager;
-    
+    GameObject blackBox;
     
     
     public void InitSettings(StageManager stageManager)
     {
         
         this.stageManager = stageManager;
-        
+        blackBox = stageManager.BlackBox;
 
     }
     
     public IEnumerator TurnStart() {
         Debug.Log("ActionStartTurn");
-
+        blackBox.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.45f);
         stageManager.SelectRandomBattlePos();
         //battleCamManager.ZoomIn();
         Debug.Log("재설정된 battlePos : "+stageManager.BattlePos);

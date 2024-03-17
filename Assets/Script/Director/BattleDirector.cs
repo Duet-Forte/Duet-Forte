@@ -36,6 +36,11 @@ namespace Director
 
 
         }
+        public void Rush(GameObject target, Vector2 endValue, float duringTime,Ease ease) {
+
+            target.transform.DOLocalMove(endValue, duringTime).SetEase(ease);
+        
+        }
 
     }
 

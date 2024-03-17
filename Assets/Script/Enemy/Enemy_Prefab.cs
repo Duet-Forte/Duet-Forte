@@ -180,7 +180,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
 
         if (isEnteringGuardCounterPhase) // 가드카운터 턴으로 이사
         {
-            yield return EnterGuardCounterPhase();
+            //yield return EnterGuardCounterPhase();
         }
         
         yield return WaitForTargetedTime(attackDelay);
@@ -267,9 +267,9 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         originalPosition = transform.position; //원래 위치
         #endregion
         #region QTE 
-        qteEffect = Instantiate(Resources.Load<GameObject>("Effect/QTE_Effect"))
+        /*qteEffect = Instantiate(Resources.Load<GameObject>("Effect/QTE_Effect"))
             .GetComponent<QTE>();
-        qteEffect.InitSettings(sPB);
+        qteEffect.InitSettings(sPB);*/
         #endregion
         #region 디버깅!!!
         /*for (int i = 0; i < attackIcon.Length; ++i)
@@ -341,6 +341,19 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         }
         else { enemyAnimator.Hurt(isSlash); }
 
+        healthPoint -= playerAttack;
+        OnGetDamage?.Invoke(playerAttack);
+        if (healthPoint <= 0)
+            stageManager.OnEnemyDie();
+    }
+    public void GetDamage(int playerAttack) {
+        if (playerAttack <= 0)
+        {
+            enemyAnimator.Guard();
+            return;
+        }
+
+        battleDirector.Shake(gameObject);
         healthPoint -= playerAttack;
         OnGetDamage?.Invoke(playerAttack);
         if (healthPoint <= 0)

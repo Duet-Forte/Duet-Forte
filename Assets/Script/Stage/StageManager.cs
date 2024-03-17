@@ -9,6 +9,7 @@ public class StageManager : MonoBehaviour
 {
     [SerializeField] private Stage stage; // 추후 오프필드에서 특정 적과 조우 시 주입해 줄 예정.
     [SerializeField] private Transform enemyTransform;
+    [SerializeField] private GameObject blackBox;
 
     private PatternParser parser;
     private JudgeManager judgeManager;
@@ -62,6 +63,7 @@ public class StageManager : MonoBehaviour
     public int TurnCount { get { IncreaseTurnCount(); return turnCount; } }
     public ControlTurnUI TurnUI { set => turnUI = value; get => turnUI; }
     public EnemySignalUI EnemySignalUI { get => enemySignalUI; set => enemySignalUI = value; }
+    public GameObject BlackBox { get => blackBox; }
     #region 디버깅용
     [SerializeField] public Image[] attackIcon;
     [SerializeField] public Image[] defenseIcon;
@@ -176,7 +178,6 @@ public class StageManager : MonoBehaviour
     private void InitTurnSettings()
     {
         turnHandler = new ITurnHandler[(int)CustomEnum.Turn.NumberOfTurnTypes];
-
         enemyTurn = new EnemyTurn();
         enemyTurn.InitSettings(this);
         turnHandler[(int)CustomEnum.Turn.EnemyTurn] = enemyTurn;
@@ -246,10 +247,10 @@ public class StageManager : MonoBehaviour
     }
     private void BindPlayerEvents() {
 
-        /*
+        
         judgeManager.OnComboChange -= playerInterface.PlayerGuardCounter.CheckCombo;
         judgeManager.OnComboChange += playerInterface.PlayerGuardCounter.CheckCombo;
-        */
+        
     }
 
     private void BindEnemyEvents()

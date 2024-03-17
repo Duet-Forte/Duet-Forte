@@ -47,9 +47,13 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
     [SerializeField] ParticleSystem dashParticle;
     #endregion
 
+    BattleDirector director;
+    SpacialAttack spacialAttack;
     HitParticle  HitParticle;
     void Start()
     {
+        director = new BattleDirector();
+        spacialAttack = new SpacialAttack();
         HitParticle = new HitParticle();
         thePlayerAnimator = GetComponent<Animator>();
 
@@ -90,8 +94,11 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
     }
     public void guardCount() {
         thePlayerAnimator.SetTrigger(guardCounter);
+        spacialAttack.GenerateGuardCounterSlash(gameObject);
+        director.Rush(gameObject, new Vector2(gameObject.transform.localPosition.x+35, gameObject.transform.localPosition.y), 0.025f, DG.Tweening.Ease.OutExpo);
         Debug.Log("Player GuardCounter");
     }
+    
 
     /// <summary>
     /// 불 값에 따라 A공격과 B공격이 나뉨
@@ -122,7 +129,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
             randomAttackCase= Random.RandomRange(minDedupleAnim, maxDedupleSlashAnim);
             }
             thePlayerAnimator.SetFloat(slashCase, randomAttackCase);
-            
+            dedupleSlashAnimCase = randomAttackCase;
             return;
         }
         if (!isSlash) {
@@ -131,6 +138,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
                 randomAttackCase = Random.RandomRange(minDedupleAnim, maxDeduplePierceAnim);
             }
             thePlayerAnimator.SetFloat(pierceCase, randomAttackCase);
+            deduplePierceAnimCase = randomAttackCase;
             
             return;
         }

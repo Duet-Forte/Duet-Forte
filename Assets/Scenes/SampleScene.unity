@@ -292,8 +292,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: bad7da6ded4329741879265be0c7ca14,
-      type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: bad7da6ded4329741879265be0c7ca14, type: 2}
   useCallbacks: 0
   Callbacks: []
   playingId: 0
@@ -319,8 +318,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 5b294e869066b02428d1382f8c6deb24,
-      type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 5b294e869066b02428d1382f8c6deb24, type: 2}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
@@ -467,8 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c91911acbea8a428c6e9c4bff97059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitializationSettings: {fileID: 11400000, guid: 78ad69f993ba25e4d827d54f34655e5f,
-    type: 2}
+  InitializationSettings: {fileID: 11400000, guid: 78ad69f993ba25e4d827d54f34655e5f, type: 2}
   basePath: 
   language: 
   defaultPoolSize: 0
@@ -941,34 +938,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720135772012798722}
   m_CullTransparentMesh: 1
---- !u!1 &1987259479
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1987259480}
-  m_Layer: 0
-  m_Name: GameObject01
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1987259480
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987259479}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.7399435, y: -0.23192877, z: -0.031210318}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

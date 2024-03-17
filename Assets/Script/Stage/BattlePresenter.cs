@@ -66,6 +66,15 @@ public class BattlePresenter
         playerInterface.GetDamage(damage);
     }
 
+    public void GuardCounterToEnemy(float playerAttack) {
+        enemy.GetDamage((int)playerAttack);
+        Object.Instantiate<GameObject>(Resources.Load<GameObject>("VFX/VFX_Prefab/Combat/Player/Hit/Player_CounterAttack_GuardCounter_Hit_VFX"),enemy.Transform.position, Quaternion.identity);
+
+    }
+    private void GuardCounterDamage() { 
+    
+    
+    }
     /// <summary>
     /// 공격력과 방어력을 넣으면 공격력-방어력을 반올림시켜서 int로 return하는 함수
     /// </summary>

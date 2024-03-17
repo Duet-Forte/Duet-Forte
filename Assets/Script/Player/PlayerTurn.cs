@@ -35,10 +35,10 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
     Vector2 originPlayerPos;//플레이어 원래 있는 위치
     Vector2 battlePos;
     Vector2 middlePos;
-    private float positionOffset=-4f;
+    private float positionOffset=-7f;
     private bool isMoveDone=false; // battlePos까지 이동을 마쳤는지?
 
-    
+    public Vector2 BattlePos { get => battlePos; }
     #endregion
 
     #region 외부클래스

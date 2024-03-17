@@ -161,7 +161,7 @@ Animator:
   m_GameObject: {fileID: 5612330584740958209}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a78be4c049bdcbb45bb0f606f4837d26, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3b89b9e4b42319f47a4bc5e7bb0cf0b1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -201,9 +201,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a826ba37858804f9b0314739555ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  A_AttackParticle: {fileID: 8618785753547430662, guid: 19a04059b00ef6145ac1d8b3849e1211, type: 3}
-  B_AttackParticle: {fileID: 0}
-  guardCounterParticle: {fileID: 0}
+  AttackParticle:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   parryParticle: {fileID: 0}
   attackCountDownSignal: {fileID: 0}
   attackSignal: {fileID: 0}

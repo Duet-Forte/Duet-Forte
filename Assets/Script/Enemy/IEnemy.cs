@@ -32,6 +32,7 @@ public interface IEnemy
     /// <param name="playerAttack"></param>
     /// <param name="isSlash">true는 베기-A,false는 찌르기-B</param>
     public void GetDamage(int playerAttack,bool isSlash);
+    public void GetDamage(int playerAttack);
     public void StopActions();
 
     public void ReturnToOriginPos();

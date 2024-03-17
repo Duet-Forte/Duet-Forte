@@ -21,7 +21,7 @@ public class Metronome : MonoBehaviour
 
     public double CurrentTime { get => currentTime; }
     public double SecondsPerBeat { get => secondsPerBeat; }
-    
+    public Stage getStage { get => stage; }
     private void Awake()//ΩÃ±€≈Ê
     {
         if (instance == null)

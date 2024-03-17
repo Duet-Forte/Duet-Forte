@@ -18,12 +18,17 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     string guardCounter = "GuardCounter";
     string beat = "Beat";
     string attack = "Attack";
+    string attackCase = "AttackCase";
     #endregion
+    #region 공격 모션 중복방지 변수
+    int randomAttackCase;
+    int minDedupleAnim=0;
+    int maxDedupleAnim;
+    int dedupleAnimCase;
 
+    #endregion
     #region VFX 파티클 변수
-    [SerializeField] ParticleSystem A_AttackParticle;
-    [SerializeField] ParticleSystem B_AttackParticle;
-    [SerializeField] ParticleSystem guardCounterParticle;
+    [SerializeField] ParticleSystem[] AttackParticle;
     [SerializeField] ParticleSystem parryParticle;
     [SerializeField] ParticleSystem attackCountDownSignal;
     [SerializeField] ParticleSystem attackSignal;
@@ -35,7 +40,9 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     {
     
         theEnemyAnimator = GetComponent<Animator>();
-        hitParticle = new HitParticle(); 
+        hitParticle = new HitParticle();
+        maxDedupleAnim = AttackParticle.Length;
+        dedupleAnimCase = Random.RandomRange(minDedupleAnim, maxDedupleAnim);
     }
     #region 애니메이션
 
@@ -81,27 +88,32 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     public void Attack() {
 
         theEnemyAnimator.SetTrigger(attack);
-        Particle_Slash_1();
+        DeduplicateAttack();
+
+
+    }
+    private void DeduplicateAttack()//공격 애니메이션과 파티클 재생
+    {
+            randomAttackCase = Random.RandomRange(minDedupleAnim, maxDedupleAnim);
+            while (randomAttackCase == dedupleAnimCase)
+            { //중복되지 않을 때까지
+                randomAttackCase = Random.RandomRange(minDedupleAnim, maxDedupleAnim);
+            }
+            theEnemyAnimator.SetFloat(attackCase, randomAttackCase);
+            PlayAttackParticle(randomAttackCase);
+            dedupleAnimCase = randomAttackCase;
+            return;
     }
     #endregion
     #region 파티클
     #region 애니메이션에 참조된 파티클
-    void Particle_Slash_1()
+    void PlayAttackParticle(int attackCase)
     {//애니메이션 클립에 이벤트로 추가함. 공격 애니메이션의 중간부분에 재생시킴
-        
-        ParticleSystem slashParticle = GameObject.Instantiate<ParticleSystem>(A_AttackParticle);
-        slashParticle.transform.SetParent(gameObject.transform);
-        slashParticle.transform.localPosition=Vector3.zero;
+        if (AttackParticle[attackCase] != null)
+        {
+            AttackParticle[attackCase].Play();
+        }
     }
-    void Particle_Pierce_1()
-    {
-        B_AttackParticle.Play();
-    }
-    void Particle_GuardCount()
-    {
-        guardCounterParticle.Play();
-    }
-    
     public void Particle_DashDust()
     {
         dashParticle.Play();

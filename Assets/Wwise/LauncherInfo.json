@@ -1,5 +1,5 @@
 {
-    "originalSdkFolder": "C:\\Program Files (x86)\\Audiokinetic\\Wwise 2022.1.8.8316\\SDK",
+    "originalSdkFolder": "C:\\Users\\xcwhy\\Documents\\DuetForteProject\\DuetForte\\DuetForte_WwiseProject",
     "currentVersion": {
         "nickname": "",
         "build": 2888,
@@ -79,18 +79,6 @@
         {
             "id": "Packages",
             "valueId": "Extensions"
-        },
-        {
-            "id": "DeploymentPlatforms",
-            "valueId": "Mac"
-        },
-        {
-            "id": "DeploymentPlatforms",
-            "valueId": "Windows"
-        },
-        {
-            "id": "Packages",
-            "valueId": "Unity"
         },
         {
             "id": "DeploymentPlatforms",
