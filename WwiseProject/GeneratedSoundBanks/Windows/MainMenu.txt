@@ -1,6 +1,10 @@
 Event	ID	Name			Wwise Object Path	Notes
+	162289589	MainMenu_Click_GameStart_SFX			\Default Work Unit\MainMenu\MainMenu_Click_GameStart_SFX	
+	294506560	MainMenu_Hover_SFX			\Default Work Unit\MainMenu\MainMenu_Hover_SFX	
 	1154772126	MainMenu_Click_SFX			\Default Work Unit\MainMenu\MainMenu_Click_SFX	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	977216514	!!Test UI Click	C:\Users\xcwhy\Documents\DuetForteProject\DuetForte\DuetForte_WwiseProject\.cache\Windows\SFX\Games, Video, Menu UI, Select, Notification 18 SND83166 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\메인메뉴 UI\!!Test UI Click		39916
+	435389909	SceneChainge	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Windows\SFX\SceneChainge_0F56642E.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\메인메뉴 UI\SceneChainge		1010992
+	953925931	!!Test UI Hover	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Test UI Hover_771F4306.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\메인메뉴 UI\!!Test UI Hover		34032
+	977216514	!!Test UI Click	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Games, Video, Menu UI, Select, Notification 18 SND83166 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\메인메뉴 UI\!!Test UI Click		39916
 

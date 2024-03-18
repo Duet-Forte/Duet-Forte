@@ -70,7 +70,7 @@
 						</Folder>
 						<Folder Name="NonCombat" ID="{54CFB25B-72DE-4551-8CF8-ECF08073C2D1}" ShortID="313020846">
 							<ChildrenList>
-								<Event Name="Player_Step" ID="{2175E7C5-DBE4-4C7E-8B5F-D1285725AA69}">
+								<Event Name="Player_Step_SFX" ID="{2175E7C5-DBE4-4C7E-8B5F-D1285725AA69}">
 									<ChildrenList>
 										<Action Name="" ID="{964ACE89-2CF5-4E49-BD95-4FE8BC5470C2}" ShortID="1012276160">
 											<ReferenceList>
@@ -81,7 +81,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Gio" ID="{CA4BCAB6-D3C9-43A5-AAC9-1BECBB8FA693}">
+								<Event Name="Gio_BodyFall_SFX" ID="{CA4BCAB6-D3C9-43A5-AAC9-1BECBB8FA693}">
 									<ChildrenList>
 										<Action Name="" ID="{72D0A5B7-FFD4-4485-89C0-1CE483C004E7}" ShortID="98079214">
 											<ReferenceList>
@@ -115,6 +115,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Combat_test01" ID="{28F43BD0-07AA-4029-87FD-589C864D1681}">
+									<ChildrenList>
+										<Action Name="" ID="{D9763138-21EF-4A6A-A2E0-C923F8850C3D}" ShortID="940800567">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Combat_test01" ID="{4127FDB7-C234-4016-A555-91CCB105AEC5}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
@@ -125,7 +136,7 @@
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ChildrenList>
-						<Event Name="MainMenu_Click_SFX" ID="{C32E89F9-9B02-46BB-BEE8-CF96B95100A1}">
+						<Event Name="MainMenu_Click_GameStart_SFX" ID="{C32E89F9-9B02-46BB-BEE8-CF96B95100A1}">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="16"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
@@ -138,6 +149,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{7955E9E4-A2E8-4E75-A9CC-D21C347BB503}" ShortID="847955124">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SceneChainge" ID="{4E52C683-E2D1-471A-957A-91AD448260AA}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="MainMenu_Hover_SFX" ID="{86244DD4-AF42-4524-91C7-610B0B9700DE}">
@@ -145,6 +163,26 @@
 								<Property Name="Color" Type="int16" Value="16"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{561900BB-1AD0-45A8-843C-C691B10B45AE}" ShortID="166562910">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="!!Test UI Hover" ID="{CAF7F314-4A51-4E7F-9168-DCE803F4CD66}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MainMenu_Click_SFX" ID="{7E2CE3A4-76DC-462D-9E07-4AB3C177AD2E}">
+							<ChildrenList>
+								<Action Name="" ID="{A7B216BE-C054-4E20-86FA-4F363FC7302E}" ShortID="714891328">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="!!Test UI Click" ID="{C7E1AADB-FDCB-4698-9A8B-448FDBC27D6D}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
 						</Event>
 					</ChildrenList>
 				</Folder>
