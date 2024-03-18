@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using Director;
 public class EnemyAnimator : MonoBehaviour, IAnimator
 {
     Animator theEnemyAnimator;
-    HitParticle hitParticle;
+    
     // Start is called before the first frame update
     #region 애니메이터 파라미터 이름
     string dash = "Dash";
@@ -40,7 +41,7 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     {
     
         theEnemyAnimator = GetComponent<Animator>();
-        hitParticle = new HitParticle();
+        
         maxDedupleAnim = AttackParticle.Length;
         dedupleAnimCase = Random.RandomRange(minDedupleAnim, maxDedupleAnim);
     }
@@ -63,16 +64,10 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
         theEnemyAnimator.SetTrigger(guard);
         Debug.Log("Enemy Guard");
     }
-    public void Hurt(bool isSlash)
+    public void Hurt()
     {
         theEnemyAnimator.SetTrigger(hurt);
-        if (isSlash)
-        {
-            hitParticle.Generate_Player_Hit_Slash(gameObject);
-        }
-        else {
-            hitParticle.Generate_Player_Hit_Pierce(gameObject);
-        }
+        
         Debug.Log("Enemy Hurt");
     }
     

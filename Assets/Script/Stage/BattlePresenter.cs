@@ -7,7 +7,7 @@ using Util;
 /// <summary>
 /// Enemy와 Player사이에서 대미지 교환 VFX 전달 등등 전투하면서 일어나는 각종 처리들을 이어주는 진행자 역할을 한다. 
 /// </summary>
-public class BattlePresenter
+public class BattlePresenter : MonoBehaviour
 {
     #region 중재시 필요한 외부 클래스 및 변수들
     StageManager stageManager;
@@ -28,8 +28,8 @@ public class BattlePresenter
     
    
     public void InitSettings(StageManager stageManager) {
-        
-        
+
+        hitParticle = new HitParticle();
         this.stageManager = stageManager;
         enemy = this.stageManager.Enemy;
         enemyName = enemy.EnemyName;
@@ -42,16 +42,19 @@ public class BattlePresenter
         if (isSlash)
         {
             damage = DamageCalculate(playerAttack,enemySlashDefense);
-            enemy.GetDamage(damage,isSlash);
+            enemy.GetDamage(damage);
+            hitParticle.Generate_Player_Hit_Slash(enemy.Transform);
             return;
         }
         if (!isSlash)
         {
             damage = DamageCalculate(playerAttack, enemyPierceDefense);
-            enemy.GetDamage(damage,isSlash);
+            enemy.GetDamage(damage);
+            hitParticle.Generate_Player_Hit_Pierce(enemy.Transform);
             return;
         }
-        enemy.GetDamage(damage,isSlash);
+        
+        enemy.GetDamage(damage);
     
     }
 
@@ -67,13 +70,23 @@ public class BattlePresenter
     }
 
     public void GuardCounterToEnemy(float playerAttack) {
-        enemy.GetDamage((int)playerAttack);
+        StartCoroutine(GuardCounter(playerAttack));
         Object.Instantiate<GameObject>(Resources.Load<GameObject>("VFX/VFX_Prefab/Combat/Player/Hit/Player_CounterAttack_GuardCounter_Hit_VFX"),enemy.Transform.position, Quaternion.identity);
 
     }
     private void GuardCounterDamage() { 
     
     
+    }
+    IEnumerator GuardCounter(float playerAttack) {
+        
+        enemy.GetDamage((int)playerAttack);
+        yield return new WaitForSeconds(0.45f);
+        for (int guardCounterCount = 0; guardCounterCount < 10; guardCounterCount++) {
+            enemy.GetDamage((int)playerAttack);
+            yield return new WaitForSeconds(0.1f);
+
+        }
     }
     /// <summary>
     /// 공격력과 방어력을 넣으면 공격력-방어력을 반올림시켜서 int로 return하는 함수

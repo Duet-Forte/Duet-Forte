@@ -88,7 +88,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
         Particle_Parry(isPerfect);
         Debug.Log("Player Parry");
     }
-    public void Hurt(bool isSlash) {
+    public void Hurt() {
         thePlayerAnimator.SetTrigger(hurt);
         Debug.Log("Player Hurt");
     }

@@ -89,7 +89,7 @@ public class StageManager : MonoBehaviour
         SetUI();
         SpawnEnemy(enemyName);// 지정된 위치에 소환
         SpawnPlayer();
-        battlePresenter = new BattlePresenter();
+        battlePresenter = new GameObject("BattlePresenter").AddComponent<BattlePresenter>();
         battlePresenter.InitSettings(this);
         InitObjectsSettings();
         UIManager = new UIManager();

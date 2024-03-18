@@ -9,7 +9,7 @@ public interface IAnimator
     public void BackDash();
     public void Guard();
 
-    public void Hurt(bool isSlash=true);
+    public void Hurt();
 
     public void Idle();
 

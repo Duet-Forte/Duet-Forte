@@ -84,16 +84,16 @@ namespace Director
             parryParticle.transform.localPosition = new Vector3(2.61f, 1.54f, 0f);
 
         }
-        public void Generate_Player_Hit_Slash(GameObject target) { 
+        public void Generate_Player_Hit_Slash(Transform target) { 
             ParticleSystem playerHitSlash = GameObject.Instantiate<ParticleSystem>(Resources.Load<ParticleSystem>("VFX/VFX_Prefab/Combat/Player/Hit/Player_Hit_Slash01_VFX"));
-            playerHitSlash.transform.SetParent(target.transform);
+            playerHitSlash.transform.SetParent(target);
             playerHitSlash.transform.localPosition = Vector3.zero;
 
         }
-        public void Generate_Player_Hit_Pierce(GameObject target)
+        public void Generate_Player_Hit_Pierce(Transform target)
         {
             ParticleSystem playerHitSlash = GameObject.Instantiate<ParticleSystem>(Resources.Load<ParticleSystem>("VFX/VFX_Prefab/Combat/Player/Hit/Player_Hit_Poke01_VFX"));
-            playerHitSlash.transform.SetParent(target.transform);
+            playerHitSlash.transform.SetParent(target);
             playerHitSlash.transform.localPosition = Vector3.zero;
 
         }
