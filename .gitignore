@@ -81,7 +81,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-��ó: https://i-believe-in-me.tistory.com/148 [Do you believe in you?:Ƽ���丮]
+ÃâÃ³: https://i-believe-in-me.tistory.com/148 [Do you believe in you?:Æ¼½ºÅä¸®]
 
 ## ---------------- ##
 ##   WWise stuff    ##
@@ -93,6 +93,11 @@ WWiseProject/*.prof
 WwiseProject/*_WwiseProject.*.validationcache
 WwiseProject/*_WwiseProject.*.wsettings
 WwiseProject/**/*.akd
+
+# Wsise folder stuff
+Assets/Wwise/LauncherInfo.json
+Assets/Wwise/LauncherInfo.json.meta
+Assets/WwiseSettings.xml
 
 # build stuff (unsure?)
 # Assets/Wwise/Deployment/Plugins/Windows/**/*.meta
