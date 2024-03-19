@@ -35,6 +35,59 @@
 								<ActiveSource Name="Games, Video, Menu UI, Select, Notification 18 SND83166 1" ID="{09D0225F-B38F-4195-947F-5B7E2DCFFE0B}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="SceneChainge" ID="{4E52C683-E2D1-471A-957A-91AD448260AA}" ShortID="143112473">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SceneChainge" ID="{AA091B5C-F6B1-484B-A503-AA90AFD150E1}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.734917733089579"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>SceneChainge.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="435389909"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SceneChainge" ID="{AA091B5C-F6B1-484B-A503-AA90AFD150E1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="!!Test UI Hover" ID="{CAF7F314-4A51-4E7F-9168-DCE803F4CD66}" ShortID="639158209">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Test UI Hover" ID="{C19EEAA9-1B4D-41DE-8F0E-6B6894066558}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0573552711761121"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.234108775137112"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Test UI Hover.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="953925931"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Test UI Hover" ID="{C19EEAA9-1B4D-41DE-8F0E-6B6894066558}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 				<Folder Name="NonCombat" ID="{7E04E921-0CB3-4306-A71A-F0F0B52259CD}" ShortID="618855455">
