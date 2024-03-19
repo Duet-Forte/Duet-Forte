@@ -223,7 +223,7 @@ public class Enemy : MonoBehaviour
         if (judge.Name.Equals(CustomEnum.JudgeName.Miss))
         {
             AkSoundEngine.PostEvent("Miss", gameObject);
-            playerAnim.Hurt(true); //체인지 세트 72
+            playerAnim.Hurt(); //체인지 세트 72
         }
         else
         {

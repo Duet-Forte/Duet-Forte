@@ -21,7 +21,7 @@ public class CenterFrame : MonoBehaviour
             //BGMSTART
             AkSoundEngine.PostEvent("Combat_Stage_01_BGM", gameObject);
             AkSoundEngine.SetSwitch("Stage01", "StageStart", gameObject);
-
+                       
         }
     }
     // Update is called once per frame

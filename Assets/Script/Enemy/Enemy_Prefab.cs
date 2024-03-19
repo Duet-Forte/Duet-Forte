@@ -180,7 +180,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
 
         if (isEnteringGuardCounterPhase) // 가드카운터 턴으로 이사
         {
-            yield return EnterGuardCounterPhase();
+            //yield return EnterGuardCounterPhase();
         }
         
         yield return WaitForTargetedTime(attackDelay);
@@ -267,9 +267,9 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         originalPosition = transform.position; //원래 위치
         #endregion
         #region QTE 
-        qteEffect = Instantiate(Resources.Load<GameObject>("Effect/QTE_Effect"))
+        /*qteEffect = Instantiate(Resources.Load<GameObject>("Effect/QTE_Effect"))
             .GetComponent<QTE>();
-        qteEffect.InitSettings(sPB);
+        qteEffect.InitSettings(sPB);*/
         #endregion
         #region 디버깅!!!
         /*for (int i = 0; i < attackIcon.Length; ++i)
@@ -315,6 +315,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         yield return WaitForTargetedTime(qteEffect.Speed);
     }
     #endregion
+
+    #region 대미지 피격함수 클래스를 따로 파서 이사할 예정
     public void GiveDamage()//나중에 플레이어 클래스에서 GetDamage로 바꿔서 이사예정
     {
         int damage = 1; // 임시적으로 1데미지 줌.
@@ -327,7 +329,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         
     }
     
-    public void GetDamage(int playerAttack,bool isSlash)
+    public void GetDamage(int playerAttack)// getdamage 메서드 자체를 이사시켜야될 듯
     {
         if (playerAttack <= 0) {
             enemyAnimator.Guard();
@@ -335,24 +337,35 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         }
 
         battleDirector.Shake(gameObject);
-        if (isSlash)
-        {
-            enemyAnimator.Hurt(isSlash);
-        }
-        else { enemyAnimator.Hurt(isSlash); }
+        enemyAnimator.Hurt();
 
         healthPoint -= playerAttack;
         OnGetDamage?.Invoke(playerAttack);
         if (healthPoint <= 0)
             stageManager.OnEnemyDie();
     }
+    /*public void GetDamage(int playerAttack) {//가드카운터 피격
+        if (playerAttack <= 0)
+        {
+            enemyAnimator.Guard();
+            return;
+        }
+
+        battleDirector.Shake(gameObject);
+        healthPoint -= playerAttack;
+        //피격 애니메이션
+        OnGetDamage?.Invoke(playerAttack);
+        if (healthPoint <= 0)
+            stageManager.OnEnemyDie();
+    }*/
+    #endregion
     public void HandleParryJudge(Judge judge, int damage = 0)//패링 판정 다루는 함수
     {
         
         if (judge.Name.Equals(CustomEnum.JudgeName.Miss))
         {
             //AkSoundEngine.PostEvent("Miss", gameObject);
-            playerInter.PlayerAnimator.Hurt(true); //체인지 세트 72
+            playerInter.PlayerAnimator.Hurt(); 
         }
         else if(judge.Name.Equals(CustomEnum.JudgeName.Perfect))
         {

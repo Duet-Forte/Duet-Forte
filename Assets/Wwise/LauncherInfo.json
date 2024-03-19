@@ -99,6 +99,7 @@
         {
             "id": "DeploymentPlatforms",
             "valueId": "Windows"
+
         },
         {
             "id": "Packages",

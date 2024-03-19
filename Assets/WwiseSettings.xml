@@ -12,6 +12,7 @@
   <WwiseInstallationPathMac />
   <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise 2022.1.8.8316</WwiseInstallationPathWindows>
   <WwiseProjectPath>../../Duet-Forte/WwiseProject/DuetForte_WwiseProject.wproj</WwiseProjectPath>
+
   <UseWaapi>true</UseWaapi>
   <WaapiPort>8080</WaapiPort>
   <WaapiIP>127.0.0.1</WaapiIP>

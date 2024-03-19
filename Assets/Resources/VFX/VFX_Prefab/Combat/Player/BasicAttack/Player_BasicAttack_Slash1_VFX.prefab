@@ -4310,21 +4310,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.5215232
-          inSlope: 1.0336696
-          outSlope: 1.0336696
+          value: 0.54573125
+          inSlope: 1.0629749
+          outSlope: 1.0629749
           tangentMode: 0
           weightedMode: 3
           inWeight: 0.33333334
-          outWeight: 0.3785638
+          outWeight: 0.395466
         - serializedVersion: 3
-          time: 0.9934082
+          time: 0.9473663
           value: 1
-          inSlope: 0.28892845
-          outSlope: 0.28892845
+          inSlope: 0.04929528
+          outSlope: 0.04929528
           tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.14156358
+          weightedMode: 3
+          inWeight: 0.39294708
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 0
@@ -23910,30 +23910,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.34475058
-          inSlope: 1.5864065
-          outSlope: 1.5864065
+          value: 0.33507243
+          inSlope: 1.8345782
+          outSlope: 1.8345782
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.22460598
+          outWeight: 0.09373104
         - serializedVersion: 3
-          time: 0.4458072
-          value: 0.7234537
-          inSlope: 0.35431495
-          outSlope: 0.35431495
+          time: 0.9473663
+          value: 1
+          inSlope: 0.061326303
+          outSlope: 0.061326303
           tangentMode: 0
           weightedMode: 3
-          inWeight: 0.33333334
-          outWeight: 0.45235407
-        - serializedVersion: 3
-          time: 0.99432373
-          value: 1
-          inSlope: 0.92684025
-          outSlope: 0.92684025
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.1912255
+          inWeight: 0.3970815
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
