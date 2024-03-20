@@ -134,12 +134,12 @@ GameObject:
   - component: {fileID: 73039892}
   - component: {fileID: 73039891}
   m_Layer: 0
-  m_Name: export202401311125032243
+  m_Name: JaewooksPainting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &73039891
 SpriteRenderer:
   m_ObjectHideFlags: 0

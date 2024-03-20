@@ -20,6 +20,8 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     string beat = "Beat";
     string attack = "Attack";
     string attackCase = "AttackCase";
+    string patternSignal = "PatternSignal";
+    string readyToPatternSignal = "ReadyToPatternSignal";
     #endregion
     #region 공격 모션 중복방지 변수
     int randomAttackCase;
@@ -46,6 +48,13 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
         dedupleAnimCase = Random.RandomRange(minDedupleAnim, maxDedupleAnim);
     }
     #region 애니메이션
+    public void ReadyToPatternSignal() {
+        theEnemyAnimator.SetTrigger(readyToPatternSignal);
+        
+    }
+    public void PatternSignal() {
+        theEnemyAnimator.SetTrigger(patternSignal);
+    }
 
     public void Dash()
     {
@@ -77,7 +86,7 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     {
 
         theEnemyAnimator.SetTrigger(idle);
-
+        Debug.Log("Enemy Idle");
 
     }
     public void Attack() {

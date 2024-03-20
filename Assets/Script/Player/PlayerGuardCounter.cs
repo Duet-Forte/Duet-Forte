@@ -12,6 +12,7 @@ public class PlayerGuardCounter : MonoBehaviour
     BattlePresenter battlePresenter;
     float playerAttackStat;
     GuardCounterQTE guardCounterQTE;
+    CustomEnum.JudgeName guardCounterJudge;
     float hitDelay = 0.45f;
     private void Start()
     {
@@ -31,6 +32,7 @@ public class PlayerGuardCounter : MonoBehaviour
     
     public IEnumerator EnterGuardCounterPhase()
     {
+        guardCounterJudge = CustomEnum.JudgeName.Miss; //null값대신 초기화
         if (isEnteringGuardCounterPhase)
         {
             Debug.Log("가드 카운터!");
@@ -44,9 +46,10 @@ public class PlayerGuardCounter : MonoBehaviour
     private IEnumerator ProgressGuardCounterPhase()
     {
         yield return guardCounterQTE.StartQTE(GetComponent<PlayerTurn>().BattlePos); //QTE 재생
-        if (guardCounterQTE.GetQTEJudge != CustomEnum.JudgeName.Miss)
+        guardCounterJudge = guardCounterQTE.GetQTEJudge;
+        if (guardCounterJudge != CustomEnum.JudgeName.Miss)
         {
-            battlePresenter.GuardCounterToEnemy(CalculateBasicAttackDamage(guardCounterQTE.GetQTEJudge));
+            battlePresenter.GuardCounterToEnemy(CalculateBasicAttackDamage(guardCounterJudge));
             GetComponent<PlayerAnimator>().guardCount();
         }
         yield return new WaitForSeconds(hitDelay);

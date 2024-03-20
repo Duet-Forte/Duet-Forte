@@ -29,7 +29,7 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
     [SerializeField] GameObject playerAttackSignal;
   //[SerializeField] private bool canAttack = false; //공격 가능한지?
     
-    int dashDuringTime = 2;//대쉬해서 적한테 접근하는 시간 단위는 비트
+    int dashDuringTime = 3;//대쉬해서 적한테 접근하는 시간 단위는 비트
     #region 위치관련 변수
     
     Vector2 originPlayerPos;//플레이어 원래 있는 위치

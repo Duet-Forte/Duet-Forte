@@ -126,6 +126,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
 
     IEnumerator DisplayPatternSignal() {
         Metronome.instance.OnBeating -= StartDisplay;
+        enemyAnimator.ReadyToPatternSignal();
         for (int i = 0; i < patternLength; ++i)
         {
             double targetTime = ((1f / patternArray[i]) * Const.QUARTER_NOTE) * stageManager.SecondsPerBeat;//패턴의 노트와 노트 사이의 시간
@@ -134,6 +135,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
             yield return WaitForTargetedTime(targetTimes[i]);//패턴의 노트간 해당 시간만큼 대기
             uiSound.SignalSound(gameObject, false);
             enemySignalUI.AttackActive();
+            enemyAnimator.PatternSignal();
         }
         
         defenseQTE.StartQTE();
@@ -200,7 +202,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     #region 이동관련 함수
     public void ReturnToOriginPos() {
         enemyAnimator.BackDash();
-        transform.DOMove(originalPosition, stageManager.SecondsPerBeat).SetEase(Ease.OutQuart).OnComplete(()=>enemyAnimator.Idle());
+        transform.DOMove(originalPosition, 3).SetEase(Ease.OutQuart).OnComplete(()=>enemyAnimator.Idle());
     }
     public void DashToBattlePos()
     {

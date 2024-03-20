@@ -131,13 +131,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                     //스킬 보너스 효과 적용
                 }
             }
-
-
-
-        
-
         }
-
     }
     IEnumerator SkillCast(ParticleSystem skill) {
         yield return new WaitForSeconds(0.6f); //기본공격 파티클이 끝나고 잠시 텀 갖기

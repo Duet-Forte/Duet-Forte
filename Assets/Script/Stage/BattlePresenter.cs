@@ -54,7 +54,7 @@ public class BattlePresenter : MonoBehaviour
             return;
         }
         
-        enemy.GetDamage(damage);
+        
     
     }
 
