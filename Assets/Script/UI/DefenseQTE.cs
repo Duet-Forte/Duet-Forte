@@ -24,12 +24,15 @@ public class DefenseQTE : MonoBehaviour
         bool isDone = false;
         
         outCircle.transform.localScale = outCircleScale;
-        outCircle.transform.DOScale(new Vector3(0.9f, 0.9f, 0.9f), secondPerBeat+secondPerBeat/10).OnComplete(()=> { isDone = true; });
+        outCircle.transform.DOScale(new Vector3(0.9f, 0.9f, 0.9f), secondPerBeat + secondPerBeat / 10);
         while (!isDone) {
             if (Input.GetKeyDown(KeyCode.F)|| Input.GetKeyDown(KeyCode.J)) {
                 isDone = true;
                 EndQTE();
                 break;
+            }
+            if (outCircle.transform.localScale == new Vector3(0.9f, 0.9f, 0.9f)) {
+                isDone = true;
             }
             yield return null;
 

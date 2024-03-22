@@ -24,6 +24,7 @@ public abstract class Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (isEnabled)
             image.color = selectedColor;
+        AkSoundEngine.PostEvent("MainMenu_Hover_SFX", gameObject);
         Debug.Log(index);
     }
 

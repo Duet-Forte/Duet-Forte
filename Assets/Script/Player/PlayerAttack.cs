@@ -43,7 +43,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     {
         playerSkillSet = GetComponent<SkillSet>();
         playerAttackStat= GetComponent<PlayerStatus>().PlayerAttack;
-        bpm = Metronome.instance.stage.BPM;
+        bpm = Metronome.instance.getStage.BPM;
 
         playerAnimator = GetComponent<PlayerAnimator>();
         thePlayerAttackTimingCheck = FindObjectOfType<PlayerAttackTimingCheck>();
@@ -236,8 +236,5 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             return playerAttackStat * 0.2f;
         }
         return 0;
-
-
-
     }
 }

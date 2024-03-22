@@ -52,7 +52,7 @@ ParticleSystem:
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
-  autoRandomSeed: 1
+  autoRandomSeed: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -109,7 +109,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 0
+  randomSeed: 7640
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9915,7 +9915,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0.05
+    scalar: 0
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -14177,7 +14177,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.3785638
         - serializedVersion: 3
-          time: 0.9934082
+          time: 0.9473663
           value: 1
           inSlope: 0.28892845
           outSlope: 0.28892845
@@ -14785,7 +14785,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0.02
+    scalar: 0
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -16157,7 +16157,7 @@ ParticleSystem:
     frameOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.213125
+      scalar: 0.00375
       minScalar: 0.9999
       maxCurve:
         serializedVersion: 2
@@ -19039,7 +19039,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: -0.11784977
+          value: -0.09023136
           inSlope: 3.4606912
           outSlope: 3.4606912
           tangentMode: 0
@@ -19047,7 +19047,7 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0.16428654
         - serializedVersion: 3
-          time: 0.96579856
+          time: 0.9473663
           value: 1
           inSlope: 0.14315619
           outSlope: 0.14315619

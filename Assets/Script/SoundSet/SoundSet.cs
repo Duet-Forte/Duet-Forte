@@ -16,7 +16,7 @@ namespace SoundSet
         }
         //예시코드 끝
        
-        public void PlayerAttack(GameObject parameterObject,bool isSlash)//플레이어가 공격할 때 나는 사운드(더미 데이터임)
+        public void PlayerAttack(GameObject parameterObject,bool isSlash)//플레이어가 공격할 때 나는 사운드
         {
             if (isSlash)
             {

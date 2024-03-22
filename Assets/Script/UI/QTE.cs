@@ -8,6 +8,7 @@ public class QTE : MonoBehaviour
     private int animationSpeedHash = Animator.StringToHash("Speed");
     private int endTrigger = Animator.StringToHash("isEnd");
     private bool isQte = false;
+    
 
     private Animator animator;
     private float animationPlaySpeed;
@@ -20,6 +21,7 @@ public class QTE : MonoBehaviour
         gameObject.SetActive(false);
         animator = GetComponent<Animator>();
         animationPlaySpeed = secondsPerBeat;
+        animationPlaySpeed = (float)Metronome.instance.SecondsPerBeat;
     }
     public void StartQTE(Vector2 targetPosition)
     {
@@ -51,6 +53,9 @@ public class QTE : MonoBehaviour
         gameObject.SetActive(false);
         return;
     }
+    public bool getQTEEnd() {
+        return !isQte;
+    }
 
     private void Update()
     {
@@ -58,6 +63,7 @@ public class QTE : MonoBehaviour
         {
             animator.SetTrigger(endTrigger);
             Debug.Log("지금 누름");
+            isQte = false;
         }
     }
     public void JudgePerfect() => judge = CustomEnum.QTEJudge.Perfect;
