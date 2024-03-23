@@ -26,6 +26,8 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     [SerializeField] List<CustomEnum.JudgeName> timingList;           //판정여부
     [SerializeField] string[] skillCommandEnteredToArray = { "R" };           //skillCommandEntered를 배열로 바꿔 저장할 변수
     [SerializeField] ParticleSystem castSkillParticle;
+    Queue<string> inputBuffer;
+    bool canInputBuffer;
     #endregion
 
     #region 외부 클래스
@@ -50,7 +52,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         theStageManager = FindObjectOfType<StageManager>();
         battlePresenter = theStageManager.BattlePresenter;
         targetedEnemy = theStageManager.Enemy;
-        
+        inputBuffer = new Queue<string>();
 
     }
 
@@ -58,15 +60,12 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         if (attackKey != "R")//베기 혹은 찌르기이면 
         {
             skillCommandEntered.Add(attackKey);
-            timingList.Add(thePlayerAttackTimingCheck.CheckTiming());
             Debug.Log("마지막 판정 디버깅 : "+timingList.Last());
             if (attackKey == "A") {
-                //targetedEnemy.GetDamage(CalculateBasicAttackDamage(timingList.Last()),true);
-                battlePresenter.PlayerToEnemy(CalculateBasicAttackDamage(timingList.Last()), true);
+                battlePresenter.PlayerToEnemy(CalculateBasicAttackDamage(timingList.Last()), true); //battlepresenter에게 대미지 전달
                 return;
             }
             if (attackKey == "B") {
-                //targetedEnemy.GetDamage(CalculateBasicAttackDamage(timingList.Last()),false);
                 battlePresenter.PlayerToEnemy(CalculateBasicAttackDamage(timingList.Last()), false);
                 return;
             }
@@ -81,6 +80,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         Array.Clear(skillCommandEnteredToArray, 0, skillCommandEnteredToArray.Length);//마찬가지로 커맨드 초기화
         timingList.Clear();//판정 초기화
         Metronome.instance.OnBeating -= CountDownOnBeat;//제한시간 감소시키는 이벤트 구독취소
+        Metronome.instance.OffBeating -= AttackOnBeat;
         canAttack = false;//공격 불가능
     }
     
@@ -140,8 +140,8 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     
     // Update is called once per frame
     void BasicAttackCoolDown() {
-        //Metronome.instance.CurrentTime >= Metronome.instance.SecondsPerBeat * 0.5 && Metronome.instance.CurrentTime <= Metronome.instance.SecondsPerBeat * 0.5 + Time.deltaTime
-        if (true) {//정말 더러운 조건...이지만 좋은 방법을 못찾음
+        
+        if (Metronome.instance.CurrentTime >= Metronome.instance.SecondsPerBeat * 0.5 && Metronome.instance.CurrentTime <= Metronome.instance.SecondsPerBeat * 0.5 + Time.deltaTime) {//정말 더러운 조건...이지만 좋은 방법을 못찾음
             canAttack = true;
             return ;
         }
@@ -161,29 +161,66 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                 elapsedRestTime = 0d;
             }
     }
+
+    void AttackOnBeat() {  //Metronome.Onbeat에 구독할 예정
+                                       //queue카운트가 최소 1이상 있을 때
+                                       //Metronome의 OnBeat에서 dequeue하기
+        if (inputBuffer.Count >= 1) {
+            string attackKey = inputBuffer.Dequeue();
+            if (attackKey == "A") {
+                AddCommand(attackKey);
+                playerAnimator.Attack(true);
+                playerSoundSet.PlayerAttack(gameObject, true);
+            }
+            if (attackKey == "B")
+            {
+                AddCommand(attackKey);
+                playerAnimator.Attack(false);
+                playerSoundSet.PlayerAttack(gameObject, false);
+            }
+
+        }
+        //애니메이션
+        //커맨드 입력
+    }
+    private void EnqueueAttackBuffer(string attackKey) {
+        if (inputBuffer.Count <= 2)
+        {
+            inputBuffer.Enqueue(attackKey);
+        }
+    
+    }
+    private void checkAttackTiming() {
+        timingList.Add(thePlayerAttackTimingCheck.CheckTiming());
+    }
     public IEnumerator StartAttack() {
         AttackSetting();
         Metronome.instance.OnBeating += CountDownOnBeat;
+        Metronome.instance.OffBeating += AttackOnBeat;
         
         while (true)
         {
             RestCoolTime();
             BasicAttackCoolDown();
-            if (Input.GetKeyDown(KeyCode.F)&&canAttack)
+            if (Input.GetKeyDown(KeyCode.F))
             {  //나중에 PlayerInput 클래스에서 가져온 변수로 쓸 예정
-                
-                AddCommand("A");
+
+                /*AddCommand("A");
                 playerAnimator.Attack(true);
-                playerSoundSet.PlayerAttack(gameObject, true);
+                playerSoundSet.PlayerAttack(gameObject, true);*/
                 //대미지 처리
+                EnqueueAttackBuffer("A");
+                checkAttackTiming();
                 canAttack = false;
             }
-            else if (Input.GetKeyDown(KeyCode.J)&&canAttack)
+            else if (Input.GetKeyDown(KeyCode.J))
             {
-                AddCommand("B");
+                /*AddCommand("B");
                 playerAnimator.Attack(false);
-                playerSoundSet.PlayerAttack(gameObject, false);
+                playerSoundSet.PlayerAttack(gameObject, false);*/
                 //대미지 처리
+                EnqueueAttackBuffer("B");
+                checkAttackTiming();
                 canAttack = false;
             }
             CheckSkillCommand();
@@ -199,7 +236,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             }
             if (currentLimitBeat == 0) {
                 
-                Debug.Log("공격 후 최대비트 초과");
+                Debug.Log("공격 시도 후 최대비트 초과");
                 
                 AttackEnd();
                 yield return new WaitForSeconds((float)Metronome.instance.SecondsPerBeat);
