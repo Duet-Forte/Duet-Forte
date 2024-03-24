@@ -17,7 +17,8 @@ public class BeatDebug : MonoBehaviour
         Metronome.instance.OnBeating += PlaySequence;
     }
     void PlaySequence() {
-        beatingSequence.Play();
+        
+        beatingSequence.Restart();
     }
     // Update is called once per frame
     void Update()
