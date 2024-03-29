@@ -23,10 +23,6 @@ public class ActionEndTurn : ITurnHandler
         blackBox.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         stageManager.PlayerInterface.PlayerTurn.ReturnToOriginPos();
         stageManager.Enemy.ReturnToOriginPos();
-        //battleCamManager.ZoomOut();
-        //stageManager.Enemy.
-        //stageManager.Enemy.
-        //stageManager.Entity.
 
         yield return null;
     }
