@@ -186,10 +186,8 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     private void EnqueueAttackBuffer(string attackKey) {
         if (inputBuffer.Count < 2)
         {
-            if (inputBuffer.Count == 1) {
-                    Debug.Log("버퍼에 추가됨");
-                
-            }
+            if (inputBuffer.Count == 1) Debug.Log("버퍼에 추가됨");
+          
                 inputBuffer.Enqueue(attackKey);
         }
     

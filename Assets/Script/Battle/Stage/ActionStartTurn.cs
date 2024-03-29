@@ -23,9 +23,9 @@ public class ActionStartTurn : ITurnHandler
     
     public IEnumerator TurnStart() 
     {
-        AkSoundEngine.PostEvent("Combat_test01", stageManager.PlayerInterface.gameObject );
+        /*AkSoundEngine.PostEvent("Combat_test01", stageManager.PlayerInterface.gameObject );
         int volume = 0;
-        DOTween.To(() => volume, x => volume = x, 100, 3f).SetEase(Ease.Linear).OnUpdate(() => AkSoundEngine.SetRTPCValue("Volume", volume));
+        DOTween.To(() => volume, x => volume = x, 100, 3f).SetEase(Ease.Linear).OnUpdate(() => AkSoundEngine.SetRTPCValue("Volume", volume));*/
         
         Debug.Log("ActionStartTurn");
         blackBox.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.45f);
