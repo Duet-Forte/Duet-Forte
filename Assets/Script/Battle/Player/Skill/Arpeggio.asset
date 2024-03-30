@@ -25,3 +25,5 @@ MonoBehaviour:
   isSpacialSkill: 0
   skillParticle: {fileID: 5837205098259529973, guid: 64d84d08ff9178141956d3fcbfd33867, type: 3}
   skillAnimationClip: {fileID: 0}
+  coolTimeTurn: 0
+  animation: {fileID: 11400000, guid: 8fedd9a3a1e4f55418abeafed79b4f5e, type: 2}

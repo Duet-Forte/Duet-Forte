@@ -16,6 +16,7 @@ public class PlayerSkill : ScriptableObject
     [SerializeField] ParticleSystem skillParticle;
     [SerializeField] private AnimationClip skillAnimationClip;
     [SerializeField] private int coolTimeTurn;
+    [SerializeField] private SkillAnimation animation;
     public string SkillName { get => skillName; }
     public int Damage { get => damage; }
     public string[] SkillCommand { get => skillCommand; } // 성재 : string을 사용해서 A,B,R 이렇게 사용하는 게 메모리 측면에서 이득을 볼 수 있을 듯 /재욱: 확인확인
@@ -25,4 +26,6 @@ public class PlayerSkill : ScriptableObject
     public AnimationClip SkillAnimation { get => skillAnimationClip; }
 
     public int CoolTimeTurn { get => coolTimeTurn; }
+
+    public SkillAnimation Animation { get => animation; }   
 }
