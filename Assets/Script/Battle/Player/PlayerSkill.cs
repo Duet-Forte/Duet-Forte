@@ -9,7 +9,8 @@ public class PlayerSkill : ScriptableObject
     //이름, 설명, 대미지, 커맨드, 
     [SerializeField] private string skillName;
     [SerializeField] private string skill_Information;
-    [SerializeField] private int damage;
+    [Tooltip("배열의 길이는 타수를 의미함 각 타수마다 대미지를 넣을 것")]
+    [SerializeField] private int[] damage; //공격 타수가 배열 길이
     [SerializeField] private string[] skillCommand;//"A" "B" "R"로 이루어짐 (일단은 커맨드는 엇박없이 정박으로만 이루어짐)
     [SerializeField] private Sprite skillIcon;
     [SerializeField] private bool isSpacialSkill;
@@ -18,7 +19,7 @@ public class PlayerSkill : ScriptableObject
     [SerializeField] private int coolTimeTurn;
     [SerializeField] private SkillAnimation animation;
     public string SkillName { get => skillName; }
-    public int Damage { get => damage; }
+    public int[] Damage { get => damage; }
     public string[] SkillCommand { get => skillCommand; } // 성재 : string을 사용해서 A,B,R 이렇게 사용하는 게 메모리 측면에서 이득을 볼 수 있을 듯 /재욱: 확인확인
     public ParticleSystem SkillParticle { get => skillParticle;  }
     public Sprite SkillIcon { get => skillIcon; }

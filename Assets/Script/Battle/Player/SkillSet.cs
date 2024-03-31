@@ -44,6 +44,8 @@ public class SkillSet : MonoBehaviour
             
         }
     }
-
+    void PlaySkill() { 
+    
+    }
   
 }

@@ -193,9 +193,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
             HitParticle.GenerateParryHit(gameObject,isPerfect);
         }
     }
-    void PerfectParryingParticle() {
-        HitParticle.GenerateParryHit(gameObject, true);
-    }
+   
     public void Particle_DashDust() {
         dashParticle.Play();
         //Instantiate<ParticleSystem>(dashParticle).Play();

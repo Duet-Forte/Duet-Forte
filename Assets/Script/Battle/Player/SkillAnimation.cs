@@ -11,6 +11,8 @@ public class SkillAnimation : ScriptableObject
     public AnimationClip Clip { get => clip; }
     public ParticleSystem[] SkillParticles { get => skillParticles; }
     void PlayParticles() {
+        ParticleSystem parryParticle = GameObject.Instantiate<ParticleSystem>(skillParticles[particleCount]);
+        //parryParticle.transform.SetParent(.transform);
         skillParticles[particleCount].Play();
         particleCount++;
         if (particleCount == skillParticles.Length) particleCount = 0;
