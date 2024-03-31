@@ -32,17 +32,19 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
 
     #region 외부 클래스
     SkillSet playerSkillSet;
+    PlayerSkill.Skill currentSkill;
     PlayerAnimator playerAnimator;
     PlayerAttackTimingCheck thePlayerAttackTimingCheck;
     StageManager theStageManager;
     BattlePresenter battlePresenter;
-    IEnemy targetedEnemy;
     PlayerSoundSet playerSoundSet=new PlayerSoundSet();
+    Animation anim;
     
     #endregion
     // Start is called before the first frame update
     void Start()
     {
+        
         playerSkillSet = GetComponent<SkillSet>();
         playerAttackStat= GetComponent<PlayerStatus>().PlayerAttack;
         bpm = Metronome.instance.getStage.BPM;
@@ -51,7 +53,6 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         thePlayerAttackTimingCheck = FindObjectOfType<PlayerAttackTimingCheck>();
         theStageManager = FindObjectOfType<StageManager>();
         battlePresenter = theStageManager.BattlePresenter;
-        targetedEnemy = theStageManager.Enemy;
         inputBuffer = new Queue<string>();
 
     }
@@ -62,11 +63,11 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             skillCommandEntered.Add(attackKey);
             Debug.Log("마지막 판정 디버깅 : "+timingList.Last());
             if (attackKey == "A") {
-                battlePresenter.PlayerToEnemy(CalculateBasicAttackDamage(timingList.Last()), true); //battlepresenter에게 대미지 전달
+                battlePresenter.PlayerBasicAttackToEnemy(CalculateBasicAttackDamage(timingList.Last()), true); //battlepresenter에게 대미지 전달
                 return;
             }
             if (attackKey == "B") {
-                battlePresenter.PlayerToEnemy(CalculateBasicAttackDamage(timingList.Last()), false);
+                battlePresenter.PlayerBasicAttackToEnemy(CalculateBasicAttackDamage(timingList.Last()), false);
                 return;
             }
             
@@ -118,12 +119,10 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                   //파티클이 전부 재생될때 까지 대기
                     Debug.Log($"스킬 {playerSkillSet.ArrayOfSkillName[skillSetIndex]} 발동됨");
                     Debug.Log($"{skillSetIndex}번째 파티클");
+                    currentSkill = playerSkillSet.ArrayOfSkill[skillSetIndex];
+                    castSkillParticle = playerSkillSet.ArrayOfSkillParticle[skillSetIndex];//파티클이지만 PlayerSkill.Skill에 포함됨 삭제 예정
 
-                    castSkillParticle = playerSkillSet.ArrayOfSkillParticle[skillSetIndex];//해당 스킬의 파티클 받아오기
-                    
-                    
-                    
-                    StartCoroutine(SkillCast(castSkillParticle));
+                    StartCoroutine(SkillCast(currentSkill));
 
                     isCastSkill = true;
                     //스킬액션씬
@@ -133,9 +132,16 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             }
         }
     }
-    IEnumerator SkillCast(ParticleSystem skill) {
-        yield return new WaitForSeconds(0.6f); //기본공격 파티클이 끝나고 잠시 텀 갖기
-        skill?.Play();
+    IEnumerator SkillCast(PlayerSkill.Skill currentSkill) {
+        ParticleSystem tmp = GameObject.Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity);
+        tmp.transform.parent = gameObject.transform;
+        tmp.gameObject.transform.localScale = gameObject.transform.localScale;
+        //애니메이션 클립 동적할당
+        for (int i = 0; i < currentSkill.damage.Length; i++) { 
+        yield return new WaitForSeconds(currentSkill.waitTimes[i]);
+            battlePresenter.PlayerSkillToEnemy(currentSkill.damage[i], currentSkill.damageType[i]);
+        }
+
     }
     
     // Update is called once per frame
@@ -147,24 +153,11 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         }
         
     }
-    void RestCoolTime() {
-            if (canAttack)//공격가능상태에서 약 0.7박자가 지나면 Rest 추가 
-            {
-                elapsedRestTime += Time.deltaTime;
-                if (elapsedRestTime >= theStageManager.SecondsPerBeat*0.7d) {
-                    elapsedRestTime = 0d;
-                    canAttack = false;
-                    AddCommand("R");    
-                }
-            }
-            if (!canAttack) {
-                elapsedRestTime = 0d;
-            }
-    }
-
+    
     void AttackOnBeat() {  //Metronome.Onbeat에 구독할 예정
-                                       //queue카운트가 최소 1이상 있을 때
-                                       //Metronome의 OnBeat에서 dequeue하기
+                           //queue카운트가 최소 1이상 있을 때
+                           //Metronome의 OnBeat에서 dequeue하기
+        if (inputBuffer.Count == 0) { AddCommand("R"); return; }//버퍼가 비어있다면 쉬표 추가
         if (inputBuffer.Count >= 1) {
             string attackKey = inputBuffer.Dequeue();
             if (attackKey == "A") {
@@ -180,6 +173,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             }
 
         }
+        
         //애니메이션
         //커맨드 입력
     }
@@ -202,7 +196,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         
         while (true)
         {
-            RestCoolTime();
+            //RestCoolTime();
             BasicAttackCoolDown();
             if (Input.GetKeyDown(KeyCode.F))
             {  //나중에 PlayerInput 클래스에서 가져온 변수로 쓸 예정
@@ -232,7 +226,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                 
                 AttackEnd();
                 Debug.Log(castSkillParticle.main.duration+"초 대기");
-                yield return new WaitForSeconds(castSkillParticle.main.duration+0.6f);
+                yield return new WaitForSeconds(3f);//스킬 애니메이션 클립의 길이만큼 대기 후 종료로 수정해야함. 04.01
                 
                 yield break;// 스킬이 발동되어 반복문 탈출 공격 종료
             }

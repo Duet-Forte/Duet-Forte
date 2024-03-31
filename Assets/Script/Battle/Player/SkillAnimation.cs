@@ -10,7 +10,7 @@ public class SkillAnimation : ScriptableObject
 
     public AnimationClip Clip { get => clip; }
     public ParticleSystem[] SkillParticles { get => skillParticles; }
-    void PlayParticles() {
+    public void PlayParticles() {
         ParticleSystem parryParticle = GameObject.Instantiate<ParticleSystem>(skillParticles[particleCount]);
         //parryParticle.transform.SetParent(.transform);
         skillParticles[particleCount].Play();

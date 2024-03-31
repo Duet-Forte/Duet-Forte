@@ -56,7 +56,6 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
         spacialAttack = new SpacialAttack();
         HitParticle = new HitParticle();
         thePlayerAnimator = GetComponent<Animator>();
-
         minDedupleAnim = 1;
         maxDeduplePierceAnim = 3;
         maxDedupleSlashAnim = 5;

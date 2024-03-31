@@ -15,7 +15,6 @@ MonoBehaviour:
   skillName: Trill
   skill_Information: "\uB5A4 \uAFB8\uBC08\uC74C(Trill) - ABABAB\uB97C \uBC18\uBCF5\uD574\uC11C
     \uC785\uB825"
-  damage: 11
   skillCommand:
   - A
   - B
@@ -25,5 +24,11 @@ MonoBehaviour:
   - B
   skillIcon: {fileID: 1283256111, guid: 901c6b0eb98292246ae96544fbdd4bb4, type: 3}
   isSpacialSkill: 0
+  coolTimeTurn: 0
   skillParticle: {fileID: 6095963863851529274, guid: bf44cd32b478104448ee26cbc6814faa, type: 3}
-  skillAnimationClip: {fileID: 0}
+  damage: 0000000000000000
+  waitTimes:
+  - 1.1
+  - 0.6
+  damageType: 0000
+  skillClip: {fileID: 7400000, guid: 0969bd54635d5fe4fb940cc5329c9d87, type: 2}

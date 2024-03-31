@@ -9,7 +9,7 @@ public class SkillSet : MonoBehaviour
     [SerializeField] private ParticleSystem[] arrayOfSkillParticle = new ParticleSystem[4];
     [SerializeField] string[][] arrayOfCommand;
     [SerializeField]private string[] arrayOfSkillName= new string[4];
-
+    private PlayerSkill.Skill[] arrayOfSkill=new PlayerSkill.Skill[4];
     private AnimationClip[] arrayOfAnimationClip = new AnimationClip[4];
     [SerializeField]private List<string[]> skillCommand = new List<string[]>();
     private Sprite[] arrayOfSkillIcon=new Sprite[4];
@@ -21,7 +21,7 @@ public class SkillSet : MonoBehaviour
     
     public Sprite[] ArrayOfSkillIcon { get => arrayOfSkillIcon; }
     public ParticleSystem[] ArrayOfSkillParticle { get => arrayOfSkillParticle; }
-    public AnimationClip[] ArrayOfAnimationClip { get => arrayOfAnimationClip; }
+    public PlayerSkill.Skill[] ArrayOfSkill { get => arrayOfSkill; }
     #endregion
 
     void Awake()
@@ -32,20 +32,20 @@ public class SkillSet : MonoBehaviour
             arrayOfCommand=skillCommand.ToArray();
             arrayOfSkillName[index] = skillSet[index].SkillName;
             arrayOfSkillIcon[index] = skillSet[index].SkillIcon;
+            arrayOfSkill[index] = skillSet[index].GetSkill;
             if (skillSet[index].SkillParticle != null)
             {
-                ParticleSystem tmp = GameObject.Instantiate(skillSet[index].SkillParticle, transform.position, Quaternion.identity);
+                /*ParticleSystem tmp = GameObject.Instantiate(skillSet[index].SkillParticle, transform.position, Quaternion.identity);
                 tmp.transform.parent = gameObject.transform;
                 tmp.gameObject.transform.localScale = gameObject.transform.localScale;
                 //tmp.transform.SetParent(gameObject.transform, false);
-                arrayOfSkillParticle[index] = tmp;
+                arrayOfSkillParticle[index] = tmp;*/
             }
-            arrayOfAnimationClip[index] = skillSet[index].SkillAnimation;
+            
             
         }
+        
     }
-    void PlaySkill() { 
     
-    }
   
 }
