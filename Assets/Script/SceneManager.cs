@@ -17,6 +17,7 @@ public class SceneManager : MonoBehaviour
     private void Start()
     {
         InitSetting();
+        
     }
 
     private void InitSetting()
@@ -36,7 +37,7 @@ public class SceneManager : MonoBehaviour
     }
     public void SetBattleScene(string name)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Rebuilding SampleStage");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Rebuilding SampleStage", LoadSceneMode.Additive);
         StageManager stageManager = FindAnyObjectByType<StageManager>();
 
         if (stageManager != null)
