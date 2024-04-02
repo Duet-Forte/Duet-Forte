@@ -14,7 +14,6 @@ public abstract class ScrollPool : MonoBehaviour
     [SerializeField] private GameObject contentPrefab;
     [SerializeField] private float padding;
     [SerializeField] private float spacing;
-    [SerializeField] private float resetThreshold;
     [SerializeField] private int poolSize;
     [SerializeField] private RectTransform contentArea;
 
@@ -27,6 +26,7 @@ public abstract class ScrollPool : MonoBehaviour
     private float currentYStandard;
     private int downCount;
     private float previousYPos;
+    private float resetThreshold;
 
     private int testint = 0;
     private const int DEFAULT_Y_POSITION = 0;
@@ -37,7 +37,8 @@ public abstract class ScrollPool : MonoBehaviour
         contentHeight = contentPrefab.GetComponent<RectTransform>().rect.height;
         pooledContents = new LinkedList<ScrollContent>();
         contentYPositions = new LinkedList<float>();
-        float standardYPositionsValue = spacing + (contentHeight * 0.5f);
+        float standardYPositionsValue = padding + (contentHeight * 0.5f) - spacing;
+        resetThreshold = padding + contentHeight;
         contentYPositions.AddLast(standardYPositionsValue);
         previousYPos = DEFAULT_Y_POSITION;
         isDown = true;
@@ -46,7 +47,8 @@ public abstract class ScrollPool : MonoBehaviour
         //Set Size
         SetAreaSize(numberOfContents);
 
-        for (int i = 0; i < poolSize; ++i)
+        int createStandard = poolSize >= numberOfContents ? numberOfContents : poolSize;
+        for (int i = 0; i < createStandard; ++i)
             contentPool.Get();
     }
 

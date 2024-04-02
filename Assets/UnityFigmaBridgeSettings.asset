@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DocumentUrl: https://www.figma.com/file/WvgRJ34gv7hJaXtgmIdn6i/Skill?type=design&node-id=0-1&mode=design&t=XT1VBwhwj5TW8dWI-0
   BuildPrototypeFlow: 1
-  RunTimeAssetsScenePath: 
+  RunTimeAssetsScenePath: Assets/Scenes/SkillSet UI.unity
   EnableAutoLayout: 0
   ScreenBindingNamespace: 
   ServerRenderImageScale: 3
