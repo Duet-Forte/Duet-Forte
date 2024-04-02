@@ -11,14 +11,18 @@ using UnityEngine.UIElements;
 /// </summary>
 public abstract class ScrollPool : MonoBehaviour
 {
+    [Header("Scroll Pool Settings")]
+    [Space]
     [SerializeField] private GameObject contentPrefab;
     [SerializeField] private float padding;
     [SerializeField] private float spacing;
     [SerializeField] private int poolSize;
     [SerializeField] private RectTransform contentArea;
 
-    private ObjectPool<ScrollContent> contentPool;
-    private LinkedList<ScrollContent> pooledContents;
+    protected ObjectPool<ScrollContent> contentPool;
+    protected LinkedList<ScrollContent> pooledContents;
+    protected event Action onDown;
+    protected event Action onUp;
 
     private LinkedList<float> contentYPositions;
     private bool isDown;
@@ -27,13 +31,13 @@ public abstract class ScrollPool : MonoBehaviour
     private int downCount;
     private float previousYPos;
     private float resetThreshold;
+    protected int createStandard;
 
     private int testint = 0;
     private const int DEFAULT_Y_POSITION = 0;
-    public void InitSettings<T>(T[] contents) where T : class
+    public void InitSettings(int contentCount)
     {
         //Initializing factors
-        int numberOfContents = contents.Length;
         contentHeight = contentPrefab.GetComponent<RectTransform>().rect.height;
         pooledContents = new LinkedList<ScrollContent>();
         contentYPositions = new LinkedList<float>();
@@ -45,11 +49,9 @@ public abstract class ScrollPool : MonoBehaviour
         contentPool = new ObjectPool<ScrollContent>(CreateObject, OnGet, OnRelease, OnDestroyPool, maxSize: poolSize);
 
         //Set Size
-        SetAreaSize(numberOfContents);
+        SetAreaSize(contentCount);
 
-        int createStandard = poolSize >= numberOfContents ? numberOfContents : poolSize;
-        for (int i = 0; i < createStandard; ++i)
-            contentPool.Get();
+        createStandard = poolSize >= contentCount ? contentCount : poolSize;
     }
 
     /// <summary>
@@ -93,7 +95,7 @@ public abstract class ScrollPool : MonoBehaviour
 
     public void Update()
     {
-        //Check current scroll state. If the scroll moves beyond a certain level, contents menu will move.
+        //Check current scroll state. If the scroll moves beyond a certain level, contentCount menu will move.
         isDown = previousYPos >= contentArea.localPosition.y ? false : true; 
         currentYStandard = contentArea.localPosition.y - (resetThreshold * downCount);
         // Check whether the scroll is over the range of scroll view.
@@ -104,12 +106,14 @@ public abstract class ScrollPool : MonoBehaviour
             // Check whether the scroll is over the range of scroll view.
             if (Mathf.Abs(contentYPositions.Last.Value - padding - contentHeight) > contentArea.rect.height)
                 return;
+            onDown?.Invoke();
             downCount++;
             pooledContents.First.Value.ReleaseSelf();
             contentPool.Get();
         }
         else if (currentYStandard < 0)
         {
+            onUp?.Invoke();
             downCount--;
             pooledContents.Last.Value.ReleaseSelf();
             contentPool.Get();
@@ -117,17 +121,14 @@ public abstract class ScrollPool : MonoBehaviour
         previousYPos = contentArea.localPosition.y ;
     }
 
-    //public abstract void SetContents<T>(T[] contents) where T : class;
+    public abstract ScrollContent InitScrollContent(GameObject gameObject);
 
     #region pool Funcs
     protected ScrollContent CreateObject()
     {
         GameObject go = Instantiate(contentPrefab, contentArea);
         go.name = $"Skill {testint++}";
-        ScrollContent scrollContent = go.GetComponent<ScrollContent>();
-        if (scrollContent == null)
-            scrollContent = go.AddComponent<ScrollContent>();
-        scrollContent.InitSetting(contentPool);
+        ScrollContent scrollContent = InitScrollContent(go);
         pooledContents.AddLast(scrollContent);
         return scrollContent;
     }

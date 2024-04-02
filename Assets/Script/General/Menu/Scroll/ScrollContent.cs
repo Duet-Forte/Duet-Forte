@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class ScrollContent : MonoBehaviour
+public abstract class ScrollContent : MonoBehaviour
 {
     public ObjectPool<ScrollContent> pool;
     public void InitSetting(ObjectPool<ScrollContent> pool) => this.pool = pool;
@@ -11,4 +11,5 @@ public class ScrollContent : MonoBehaviour
         gameObject.SetActive(false); 
         pool.Release(this);
     }
+    public abstract void RefreshContent(int rowIndex);
 }

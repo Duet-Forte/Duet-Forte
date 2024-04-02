@@ -61,5 +61,9 @@ namespace Util
         public const float DAMAGEUI_UI_HEIGHT = 50f;
         public const float DAMAGEUI_FADE_SPEED = 1f;
         #endregion
+
+        #region 메뉴 UI 변수
+        public const int CONTENT_IN_ROW = 3;
+        #endregion
     }
 }
