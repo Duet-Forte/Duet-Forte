@@ -133,10 +133,11 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         }
     }
     IEnumerator SkillCast(PlayerSkill.Skill currentSkill) {
+        yield return new WaitForSeconds(0.5f);
         ParticleSystem tmp = GameObject.Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity);
         tmp.transform.parent = gameObject.transform;
         tmp.gameObject.transform.localScale = gameObject.transform.localScale;
-        yield return new WaitForSeconds(0.5f);
+        
         //애니메이션 클립 동적할당
         playerAnimator.Skill2(currentSkill.skillClip);
         
