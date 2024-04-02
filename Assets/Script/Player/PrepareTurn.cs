@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using Util;
+using Util.CustomEnum;
 
 public class PrepareTurn :ITurnHandler
 {
@@ -39,7 +39,7 @@ public class PrepareTurn :ITurnHandler
         prepareTurnUI.UISwitch(false);
         yield return new WaitForSeconds(UIDesolveTime);
         Debug.Log("PrepareTurn End");
-        stageManager.CurrentTurn = CustomEnum.Turn.ActionStartTurn;
+        stageManager.CurrentTurn = Turn.ActionStartTurn;
         
     }
 

@@ -56,7 +56,7 @@ public class DialogueDataBase
             else if (tempDic["State"] != string.Empty)
                 recentState = tempDic["State"];
 
-            sb.Append(";" + recentSpeaker + "_" + recentState);
+            sb.Append(';' + recentSpeaker + '/' + recentState);
             lines.Add(sb.ToString());
             sb.Clear();
         }

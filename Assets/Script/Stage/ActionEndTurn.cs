@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Util;
+using Util.CustomEnum;
 
 
 public class ActionEndTurn : ITurnHandler
@@ -34,7 +34,7 @@ public class ActionEndTurn : ITurnHandler
     // Update is called once per frame
     public IEnumerator TurnEnd()
     {
-        stageManager.CurrentTurn = CustomEnum.Turn.PrepareTurn;
+        stageManager.CurrentTurn = Turn.PrepareTurn;
         yield return null;
     }
 }

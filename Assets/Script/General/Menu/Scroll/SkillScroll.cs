@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class SkillScroll : ScrollPool
 {
-
     public GameObject[] test = new GameObject[10];
     private void Start()
     {

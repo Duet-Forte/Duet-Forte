@@ -1,11 +1,11 @@
 Interactable	ID	Speaker	State	Lines
 Cutscene	0	Empty		우당탕탕탕-
-		Gio	Idle	으윽…
+		Zio	Idle	으윽…
 				여기가 어디지?
 				집..?
 		Timmy	Idle	?!
 				<rainb>누구니?</rainb>
-		Gio	Idle	?
+		Zio	Idle	?
 				제가 묻고 싶은 말인데
 				저는 콩쿠르 대기실에 있었거든요
 	1	Timmy	Idle	여기가 우리 마을이야

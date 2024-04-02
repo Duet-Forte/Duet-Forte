@@ -1,6 +1,6 @@
 namespace Util
 {
-    public static class CustomEnum
+    namespace CustomEnum
     {
         public enum JudgeName
         {
@@ -29,7 +29,13 @@ namespace Util
             Good,
             Miss
         };
-        
+
+        public enum Speaker
+        {
+            player,
+            NPC,
+            Empty
+        }
 
     }
 }

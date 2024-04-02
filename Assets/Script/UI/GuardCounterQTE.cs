@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using Util;
+using Util.CustomEnum;
 public class GuardCounterQTE : MonoBehaviour
 {
     [SerializeField]GameObject outCircle;
     [SerializeField]GameObject inCircle;
-    CustomEnum.JudgeName QTEJudge;
+    JudgeName QTEJudge;
     Vector3 originOutCircleScale=new Vector3(4,4,4);
     float secondPerBeat;
     Vector2 perfectZone=new Vector2(0.95f,1.15f);
@@ -15,7 +15,7 @@ public class GuardCounterQTE : MonoBehaviour
     Vector2 goodZone = new Vector2(1.4f, 1.8f);
     Vector2 missZone = new Vector2(1.8f, 4f);
 
-    public CustomEnum.JudgeName GetQTEJudge { get => QTEJudge; }
+    public JudgeName GetQTEJudge { get => QTEJudge; }
     private void OnEnable()
     {
         
@@ -39,25 +39,25 @@ public class GuardCounterQTE : MonoBehaviour
             {
                 isDone = true;
                 if (outCircle.transform.localScale.x >= perfectZone.x && outCircle.transform.localScale.x <= perfectZone.y) {
-                    QTEJudge = CustomEnum.JudgeName.Perfect;
+                    QTEJudge = JudgeName.Perfect;
                     Debug.Log("가드카운터 QTE 판정 Perfect");
                     EndQTE();
                     break;
                 }
                 if (outCircle.transform.localScale.x >= greatZone.x && outCircle.transform.localScale.x <= greatZone.y){
-                    QTEJudge = CustomEnum.JudgeName.Great;
+                    QTEJudge = JudgeName.Great;
                     Debug.Log("가드카운터 QTE 판정 Great");
                     EndQTE();
                     break;
                 }
                 if (outCircle.transform.localScale.x >= goodZone.x && outCircle.transform.localScale.x <= goodZone.y){
-                    QTEJudge = CustomEnum.JudgeName.Good;
+                    QTEJudge = JudgeName.Good;
                     Debug.Log("가드카운터 QTE 판정 Good");
                     EndQTE();
                     break;
                 }
                 if (outCircle.transform.localScale.x >= missZone.x && outCircle.transform.localScale.x <= missZone.y){
-                    QTEJudge = CustomEnum.JudgeName.Miss;
+                    QTEJudge = JudgeName.Miss;
                     Debug.Log("가드카운터 QTE 판정 Miss");
                     EndQTE();
                     break;

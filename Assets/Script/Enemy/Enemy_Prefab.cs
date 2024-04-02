@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
+using Util.CustomEnum;
 using UnityEngine.UI;
 using SoundSet;
 
@@ -322,7 +323,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         int damage = 1; // 임시적으로 1데미지 줌.
         enemyAnimator.Attack();
         Judge judge = new Judge();
-        judge.Name = CustomEnum.JudgeName.Miss;
+        judge.Name = JudgeName.Miss;
         HandleParryJudge(judge);
         OnAttack?.Invoke(damage);
         battlePresenter.EnemyToPlayer(damage);
@@ -362,12 +363,12 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public void HandleParryJudge(Judge judge, int damage = 0)//패링 판정 다루는 함수
     {
         
-        if (judge.Name.Equals(CustomEnum.JudgeName.Miss))
+        if (judge.Name.Equals(JudgeName.Miss))
         {
             //AkSoundEngine.PostEvent("Miss", gameObject);
             playerInter.PlayerAnimator.Hurt(); 
         }
-        else if(judge.Name.Equals(CustomEnum.JudgeName.Perfect))
+        else if(judge.Name.Equals(JudgeName.Perfect))
         {
             //AkSoundEngine.PostEvent("Parry_Sound", gameObject);
             playerSoundSet.PerfectParrySound(gameObject);

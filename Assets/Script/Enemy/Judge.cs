@@ -1,24 +1,24 @@
 using UnityEngine;
-using Util;
+using Util.CustomEnum;
 
 public struct Judge
 {
-    private CustomEnum.JudgeName name;
-    public CustomEnum.JudgeName Name { get { return name; } set { name = value; } }
+    private JudgeName name;
+    public JudgeName Name { get { return name; } set { name = value; } }
     public Color Color {
         get
         {
             switch ((int)name)
             { 
-                case (int)CustomEnum.JudgeName.Perfect:
+                case (int)JudgeName.Perfect:
                     return Color.green;
-                case (int)CustomEnum.JudgeName.Great:
+                case (int)JudgeName.Great:
                     return Color.yellow;
-                case (int)CustomEnum.JudgeName.Good:
+                case (int)JudgeName.Good:
                     return Color.blue;
-                case (int)CustomEnum.JudgeName.Bad:
+                case (int)JudgeName.Bad:
                     return Color.red;
-                case (int)CustomEnum.JudgeName.Miss:
+                case (int)JudgeName.Miss:
                     return Color.black;
                 default:
                     return Color.white;

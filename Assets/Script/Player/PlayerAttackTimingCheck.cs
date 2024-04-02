@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
+using Util.CustomEnum;
 
 public class PlayerAttackTimingCheck : MonoBehaviour
 {
@@ -23,31 +24,31 @@ public class PlayerAttackTimingCheck : MonoBehaviour
         perfectJudgeTime=Const.PERFECT_JUDGE * theStageManager.SecondsPerBeat;
         
     }
-    public CustomEnum.JudgeName CheckTiming() {
+    public JudgeName CheckTiming() {
         double currentTiming = Metronome.instance.CurrentTime;
         if (currentTiming > badJudgeTime)
         {
             if (currentTiming >= theStageManager.SecondsPerBeat - perfectJudgeTime)
             {
-                Debug.Log($"플레이어 공격 : {CustomEnum.JudgeName.Perfect}");
-                return CustomEnum.JudgeName.Perfect;
+                Debug.Log($"플레이어 공격 : {JudgeName.Perfect}");
+                return JudgeName.Perfect;
             }
 
             if (currentTiming >= theStageManager.SecondsPerBeat - greatJudgeTime)
             {
-                Debug.Log($"플레이어 공격 : {CustomEnum.JudgeName.Great}");
-                return CustomEnum.JudgeName.Great;
+                Debug.Log($"플레이어 공격 : {JudgeName.Great}");
+                return JudgeName.Great;
 
             }
 
             if (currentTiming >= theStageManager.SecondsPerBeat - goodJudgeTime)
             {
-                Debug.Log($"플레이어 공격 : {CustomEnum.JudgeName.Good}");
-                return CustomEnum.JudgeName.Good;
+                Debug.Log($"플레이어 공격 : {JudgeName.Good}");
+                return JudgeName.Good;
             }
             else {
-                Debug.Log($"플레이어 공격 : {CustomEnum.JudgeName.Bad}");
-                return CustomEnum.JudgeName.Bad; }
+                Debug.Log($"플레이어 공격 : {JudgeName.Bad}");
+                return JudgeName.Bad; }
            
             
             
@@ -56,31 +57,31 @@ public class PlayerAttackTimingCheck : MonoBehaviour
         else if (currentTiming <= badJudgeTime) {
             if (currentTiming <= perfectJudgeTime)
             { 
-                Debug.Log($"플레이어 공격 : {CustomEnum.JudgeName.Perfect}");
-                return CustomEnum.JudgeName.Perfect;
+                Debug.Log($"플레이어 공격 : {JudgeName.Perfect}");
+                return JudgeName.Perfect;
                
             }
 
             if (currentTiming <= greatJudgeTime)
             {
-                Debug.Log($"플레이어 공격 : {CustomEnum.JudgeName.Great}");
-                return CustomEnum.JudgeName.Great;
+                Debug.Log($"플레이어 공격 : {JudgeName.Great}");
+                return JudgeName.Great;
                 
             }
 
             if (currentTiming <= goodJudgeTime)
             {
-                Debug.Log($"플레이어 공격 : {CustomEnum.JudgeName.Good}");
-                return CustomEnum.JudgeName.Good;
+                Debug.Log($"플레이어 공격 : {JudgeName.Good}");
+                return JudgeName.Good;
                
             }
             else {
-                Debug.Log($"플레이어 공격 : {CustomEnum.JudgeName.Bad}");
-                return CustomEnum.JudgeName.Bad; 
+                Debug.Log($"플레이어 공격 : {JudgeName.Bad}");
+                return JudgeName.Bad; 
             }
 
         }
-        return CustomEnum.JudgeName.Perfect;//currentTime이 미세하게 secondsPerBeat를 넘은 경우
+        return JudgeName.Perfect;//currentTime이 미세하게 secondsPerBeat를 넘은 경우
         
 
     

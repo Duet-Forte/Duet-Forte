@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Util;
+using Util.CustomEnum;
 
 public class GuardCounterTurn : ITurnHandler
 {
@@ -32,7 +32,7 @@ public class GuardCounterTurn : ITurnHandler
     public IEnumerator TurnEnd()
     {
         //각자 본인 위치로 돌아감.
-        stageManager.CurrentTurn = CustomEnum.Turn.ActionEndTurn;
+        stageManager.CurrentTurn = Turn.ActionEndTurn;
         Debug.Log("가드카운터 턴 종료");
         yield return null;
     }
