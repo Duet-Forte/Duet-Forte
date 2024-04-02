@@ -5,7 +5,7 @@ using Director;
 public class PlayerAnimator : MonoBehaviour, IAnimator
 {
     Animator thePlayerAnimator;
-
+    AnimatorOverrideController animatorOverrideController;
     // Start is called before the first frame update
     #region 애니메이터 파라미터 이름
     string dash = "Dash";
@@ -21,6 +21,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
     string slashCase = "SlashCase";
     string pierceCase = "PierceCase";
     string canAttack = "CanAttack";
+    string skill = "Skill";
     #endregion
     #region 애니메이션 중복방지
     int dedupleSlashAnimCase;//연속으로 같은 애니메이션 나오는 걸 방지하는 변수
@@ -56,6 +57,8 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
         spacialAttack = new SpacialAttack();
         HitParticle = new HitParticle();
         thePlayerAnimator = GetComponent<Animator>();
+        animatorOverrideController = new AnimatorOverrideController();
+        animatorOverrideController.runtimeAnimatorController = thePlayerAnimator.runtimeAnimatorController;
         minDedupleAnim = 1;
         maxDeduplePierceAnim = 3;
         maxDedupleSlashAnim = 5;
@@ -97,7 +100,19 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
         director.Rush(gameObject, new Vector2(gameObject.transform.localPosition.x+35, gameObject.transform.localPosition.y), 0.025f, DG.Tweening.Ease.OutExpo);
         Debug.Log("Player GuardCounter");
     }
-    
+    public void Skill() {
+        thePlayerAnimator.SetTrigger(skill);
+        Debug.Log("Player Skill");
+
+    }
+
+    public void Skill2(AnimationClip skillClip) {
+        Skill();
+        animatorOverrideController["DummySkill"] = skillClip;
+        thePlayerAnimator.runtimeAnimatorController = animatorOverrideController;
+        
+        
+    }
 
     /// <summary>
     /// 불 값에 따라 A공격과 B공격이 나뉨

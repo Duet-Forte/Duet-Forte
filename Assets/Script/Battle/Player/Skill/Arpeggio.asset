@@ -22,7 +22,7 @@ MonoBehaviour:
   isSpacialSkill: 0
   coolTimeTurn: 0
   skillParticle: {fileID: 7677469749278342125, guid: c98cc4196ea5a1b4f980fce2d8d6216c, type: 3}
-  damage: 1e0000001e000000
+  damage: 0300000003000000
   waitTimes:
   - 1.1
   - 0.6
