@@ -115,7 +115,10 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     {//애니메이션 클립에 이벤트로 추가함. 공격 애니메이션의 중간부분에 재생시킴
         if (AttackParticle[attackCase] != null)
         {
-            AttackParticle[attackCase].Play();
+            ParticleSystem tmp= Instantiate<ParticleSystem>(AttackParticle[attackCase]);
+            tmp.transform.SetParent(gameObject.transform);
+            tmp.transform.localPosition= Vector3.zero;
+            
         }
     }
     public void Particle_DashDust()
@@ -138,6 +141,7 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
 
     #endregion
 
+    
     public void PlayerBeat()
     {
 

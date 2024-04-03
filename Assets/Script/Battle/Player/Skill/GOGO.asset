@@ -15,11 +15,9 @@ MonoBehaviour:
   skillName: GoGo
   skill_Information: 
   skillCommand:
-  - A
-  - R
   - B
-  - A
-  - A
+  - B
+  - B
   skillIcon: {fileID: -644481506, guid: 901c6b0eb98292246ae96544fbdd4bb4, type: 3}
   isSpacialSkill: 0
   coolTimeTurn: 0
@@ -29,4 +27,4 @@ MonoBehaviour:
   - 1.1
   - 0.6
   damageType: 0000
-  skillClip: {fileID: 7400000, guid: 0969bd54635d5fe4fb940cc5329c9d87, type: 2}
+  skillClip: {fileID: 7400000, guid: 07759e5cfd992b0458c2b0a81e1ca657, type: 2}
