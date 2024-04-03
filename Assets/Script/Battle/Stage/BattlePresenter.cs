@@ -36,7 +36,7 @@ public class BattlePresenter : MonoBehaviour
         Debug.Log(enemyName);
         playerInterface = this.stageManager.PlayerInterface;
     }
-    public void PlayerToEnemy(float playerAttack,bool isSlash) {
+    public void PlayerBasicAttackToEnemy(float playerAttack,bool isSlash) {
         int damage = 0;
         GetDefense();
         if (isSlash)
@@ -53,8 +53,11 @@ public class BattlePresenter : MonoBehaviour
             hitParticle.Generate_Player_Hit_Pierce(enemy.Transform);
             return;
         }
-        
-        
+    }
+    public void PlayerSkillToEnemy(float playerAttack,bool isSlash) { 
+
+        Debug.Log(playerAttack);
+        enemy.GetDamage((int)playerAttack);
     
     }
 

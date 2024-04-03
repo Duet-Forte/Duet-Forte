@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Swing
   skill_Information: "\uC27C\uD45C\uB97C \uC798 \uC774\uC6A9\uD574\uC57C \uD568"
-  damage: 20
   skillCommand:
   - A
   - A
@@ -22,4 +21,11 @@ MonoBehaviour:
   - A
   skillIcon: {fileID: 1898778777, guid: 901c6b0eb98292246ae96544fbdd4bb4, type: 3}
   isSpacialSkill: 0
-  skillParticle: {fileID: 4677089740142733494, guid: 13fcaaf0d61105f4f8d0cbe28bd0d3f3, type: 3}
+  coolTimeTurn: 0
+  skillParticle: {fileID: 7677469749278342125, guid: c98cc4196ea5a1b4f980fce2d8d6216c, type: 3}
+  damage: 0000000000000000
+  waitTimes:
+  - 1.1
+  - 0.6
+  damageType: 0000
+  skillClip: {fileID: 7400000, guid: 0969bd54635d5fe4fb940cc5329c9d87, type: 2}

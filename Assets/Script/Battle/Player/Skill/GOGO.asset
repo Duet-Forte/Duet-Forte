@@ -14,14 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: GoGo
   skill_Information: 
-  damage: 40
   skillCommand:
-  - A
-  - R
   - B
-  - A
-  - A
+  - B
+  - B
   skillIcon: {fileID: -644481506, guid: 901c6b0eb98292246ae96544fbdd4bb4, type: 3}
   isSpacialSkill: 0
-  skillParticle: {fileID: 6616243863726000380, guid: db22d6afa429bab4785bfc987f754e42, type: 3}
-  skillAnimationClip: {fileID: 0}
+  coolTimeTurn: 0
+  skillParticle: {fileID: 7677469749278342125, guid: c98cc4196ea5a1b4f980fce2d8d6216c, type: 3}
+  damage: 0000000000000000
+  waitTimes:
+  - 1.1
+  - 0.6
+  damageType: 0000
+  skillClip: {fileID: 7400000, guid: 07759e5cfd992b0458c2b0a81e1ca657, type: 2}
