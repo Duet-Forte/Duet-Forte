@@ -104,7 +104,6 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
                 randomAttackCase = Random.RandomRange(minDedupleAnim, maxDedupleAnim);
             }
             theEnemyAnimator.SetFloat(attackCase, randomAttackCase);
-            PlayAttackParticle(randomAttackCase);
             dedupleAnimCase = randomAttackCase;
             return;
     }

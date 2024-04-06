@@ -39,6 +39,8 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     BattlePresenter battlePresenter;
     PlayerSoundSet playerSoundSet=new PlayerSoundSet();
     Animation anim;
+
+    SkillPopUpUI skillPopUpUI;
     
     #endregion
     // Start is called before the first frame update
@@ -120,8 +122,8 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                     Debug.Log($"스킬 {playerSkillSet.ArrayOfSkillName[skillSetIndex]} 발동됨");
                     Debug.Log($"{skillSetIndex}번째 파티클");
                     currentSkill = playerSkillSet.ArrayOfSkill[skillSetIndex];
+                    SkillUI(playerSkillSet.ArrayOfSkillIcon[skillSetIndex], playerSkillSet.ArrayOfSkillName[skillSetIndex]);
                     castSkillParticle = playerSkillSet.ArrayOfSkillParticle[skillSetIndex];//파티클이지만 PlayerSkill.Skill에 포함됨 삭제 예정
-
                     StartCoroutine(SkillCast(currentSkill));
 
                     isCastSkill = true;
@@ -134,6 +136,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     }
     IEnumerator SkillCast(PlayerSkill.Skill currentSkill) {
         yield return new WaitForSeconds(0.5f);
+
         ParticleSystem tmp = GameObject.Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity);
         tmp.transform.parent = gameObject.transform;
         tmp.gameObject.transform.localScale = gameObject.transform.localScale;
@@ -147,7 +150,15 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         }
 
     }
-    
+
+    #region 스킬 팝업 UI
+    void SkillUI(Sprite skillImage,string skillName) {
+        skillPopUpUI=Instantiate(Resources.Load<GameObject>("UI/SkillPopUpUICanvas")).GetComponentInChildren<SkillPopUpUI>();
+        skillPopUpUI.Appear(skillImage, skillName);
+        
+    }
+    void SkillUI() { skillPopUpUI.Disappear(); }
+    #endregion
     // Update is called once per frame
     void BasicAttackCoolDown() {
         
@@ -158,6 +169,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         
     }
     
+
     void AttackOnBeat() {  //Metronome.Onbeat에 구독할 예정
                            //queue카운트가 최소 1이상 있을 때
                            //Metronome의 OnBeat에서 dequeue하기
@@ -229,9 +241,10 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                 Debug.Log("스킬 발동됨");
                 
                 AttackEnd();
+                
                 Debug.Log(castSkillParticle.main.duration+"초 대기");
                 yield return new WaitForSeconds(3f);//스킬 애니메이션 클립의 길이만큼 대기 후 종료로 수정해야함. 04.01
-                
+                SkillUI();
                 yield break;// 스킬이 발동되어 반복문 탈출 공격 종료
             }
             if (currentLimitBeat == 0) {
