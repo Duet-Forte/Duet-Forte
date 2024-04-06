@@ -18,6 +18,6 @@ public class SkillPopUpUI : MonoBehaviour
     }
     public void Disappear() {
 
-        transform.DOMove(new Vector2(transform.position.x - 600, transform.position.y), 0.2f).OnComplete(()=>Destroy(gameObject));
+        transform.DOMove(new Vector2(transform.position.x - 600, transform.position.y), 0.2f).OnComplete(()=>Destroy(transform.parent.gameObject));
     }
 }
