@@ -105,6 +105,7 @@ public class PlayerInterface : MonoBehaviour
         playerAnimator = GetComponent<PlayerAnimator>();
         playerStatus = GetComponent<PlayerStatus>();
         cinemachineImpulseSource = GetComponent<Cinemachine.CinemachineImpulseSource>();
+        
 
     }
 

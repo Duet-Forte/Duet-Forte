@@ -25,14 +25,14 @@ public class StageManager : MonoBehaviour
     GameObject enemyObject;
     GameObject timingUI;
     private BattlePresenter battlePresenter;
-
+    #region UI
     private DefenseQTE defenseQTE;
     private UIManager UIManager; // 이사 예정입니다~
     private int turnCount = 0;
     private PrepareTurnUI prepareTurnUI;
     private ControlTurnUI turnUI;
     private EnemySignalUI enemySignalUI;
-
+    #endregion
     private PrepareTurn prepareTurn;
     private PlayerTurn playerTurn; //추후 플레이어 턴 완료되면 그 때 변경
     private GuardCounterTurn guardCounterTurn;
