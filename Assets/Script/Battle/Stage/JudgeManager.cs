@@ -31,7 +31,7 @@ public class JudgeManager
     {
         stageManager = currentStageManager;
         playerInterface = currentStageManager.PlayerInterface;
-        healthPoint = Const.INITIAL_HEALTH_POINT;// 이사예정
+        healthPoint = playerInterface.PlayerStatus.PlayerHealthPoint;// 이사예정
         maxGauge = currentStageManager.PlayerInterface.PlayerStatus.PlayerGuardCounterGuage; //마찬가지
         goodJudgeTime = Const.GOOD_JUDGE * stageManager.SecondsPerBeat;
         greatJudgeTime = Const.GREAT_JUDGE * stageManager.SecondsPerBeat;
@@ -50,7 +50,7 @@ public class JudgeManager
     public void IncreaseGauge() // 이동 예정
     {
         ++combo;
-        OnComboChange?.Invoke(combo, 1);
+        OnComboChange?.Invoke(combo, maxGauge);
     }
 
     public void DecreaseHealthPoint(int damage) // 이동 예정 - BattlePresenter로

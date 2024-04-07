@@ -20,7 +20,9 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     #region 기본적인 스테이터스
     [Header("Enemy Info")]
     [Space(5f)]
+    [Tooltip("기능적 이름, hitparticle의 컨벤션과 이름이 같아야 한다.")]
     [SerializeField] string enemyName;
+    [SerializeField] string flavorTextName;
     [SerializeField] string enemyInfo;
     [SerializeField] Sprite enemyImage;
     [Header("Entity Stats")]
@@ -112,7 +114,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     private void OnEnable()//플레이버 텍스트 띄우기
     {
         GameObject flavorTextUI = GameObject.Instantiate(Resources.Load<GameObject>("UI/FlavorText"));
-        flavorTextUI.GetComponentInChildren<FlavorTextUI>().InitSetting(enemyImage,enemyName,enemyInfo);
+        flavorTextUI.GetComponentInChildren<FlavorTextUI>().InitSetting(enemyImage,flavorTextName,enemyInfo);
     }
 
     #region 디스플레이부터 공격함수까지~

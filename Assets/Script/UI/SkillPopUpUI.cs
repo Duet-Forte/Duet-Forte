@@ -8,16 +8,16 @@ public class SkillPopUpUI : MonoBehaviour
 {
     [SerializeField] Sprite dummySprite;
     [SerializeField] string dummyText;
-    
+    [SerializeField] private int moveOffset;
     public void Appear(Sprite skillImage,string skillName) {
 
         transform.GetChild(1).GetComponent<Image>().sprite=skillImage;
         transform.GetChild(0).GetComponent<TMP_Text>().text=skillName;
-        transform.DOMove(new Vector2(transform.position.x + 600, transform.position.y), 0.2f);
+        transform.DOMove(new Vector2(transform.position.x + moveOffset, transform.position.y), 0.2f);
 
     }
     public void Disappear() {
 
-        transform.DOMove(new Vector2(transform.position.x - 600, transform.position.y), 0.2f).OnComplete(()=>Destroy(transform.parent.gameObject));
+        transform.DOMove(new Vector2(transform.position.x - moveOffset, transform.position.y), 0.2f).OnComplete(()=>Destroy(transform.parent.gameObject));
     }
 }
