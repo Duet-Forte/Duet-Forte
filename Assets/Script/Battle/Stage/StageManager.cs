@@ -19,19 +19,20 @@ public class StageManager : MonoBehaviour
     private ActionEndTurn actionEndTurn;
     private BattleCamManager battleCamManager;
 
-
     private GameObject player;
     private PlayerInterface playerInterface;
     GameObject enemyObject;
     GameObject timingUI;
     private BattlePresenter battlePresenter;
 
+    #region UI
     private DefenseQTE defenseQTE;
     private UIManager UIManager; // 이사 예정입니다~
     private int turnCount = 0;
     private PrepareTurnUI prepareTurnUI;
     private ControlTurnUI turnUI;
     private EnemySignalUI enemySignalUI;
+    #endregion
 
     private PrepareTurn prepareTurn;
     private PlayerTurn playerTurn; //추후 플레이어 턴 완료되면 그 때 변경
@@ -146,7 +147,7 @@ public class StageManager : MonoBehaviour
         enemySignalUI.InitSettings();
         EnemySignalUI = enemySignalUI;
 
-        Debug.Log(defenseQTE);
+       
 
     }
     public void OnEnemyDie()
@@ -250,7 +251,8 @@ public class StageManager : MonoBehaviour
         
         judgeManager.OnComboChange -= playerInterface.PlayerGuardCounter.CheckCombo;
         judgeManager.OnComboChange += playerInterface.PlayerGuardCounter.CheckCombo;
-        
+        playerInterface.PlayerGuardCounter.OnGuardCounterEnd -= judgeManager.ResetCombo;//플레이어 가드카운터의 end이벤트에 구독할 예정
+        playerInterface.PlayerGuardCounter.OnGuardCounterEnd += judgeManager.ResetCombo;
     }
 
     private void BindEnemyEvents()
@@ -259,8 +261,7 @@ public class StageManager : MonoBehaviour
         enemy.OnFramePass += judgeManager.CheckMissFrame;
         enemy.OnAttack -= judgeManager.DecreaseHealthPoint;
         enemy.OnAttack += judgeManager.DecreaseHealthPoint;
-        enemy.OnGuardCounterEnd -= judgeManager.ResetCombo;//플레이어 가드카운터의 end이벤트에 구독할 예정
-        enemy.OnGuardCounterEnd += judgeManager.ResetCombo;
+        
     }
 
     public void IncreaseTurnCount() {

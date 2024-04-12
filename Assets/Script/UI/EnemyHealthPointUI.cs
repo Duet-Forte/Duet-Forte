@@ -2,6 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using Util;
+using TMPro;
 
 public class EnemyHealthPointUI : InGameUI
 {
@@ -10,7 +11,7 @@ public class EnemyHealthPointUI : InGameUI
     private bool isProductionProceeding;
     private float enemyMaxHealthPoint;
     private float currentHealthPoint;
-
+    private TMP_Text healthPoint;
     private Tween productionTween;
     public void InitSettings(int enemyMaxHealthPoint)
     {
@@ -22,11 +23,15 @@ public class EnemyHealthPointUI : InGameUI
         filling.DOFillAmount(Const.STATUSUI_MAX_HP_RATIO, Const.STATUSUI_PROCESS_SPEED);
         damagedFilling.DOFillAmount(Const.STATUSUI_MAX_HP_RATIO, Const.STATUSUI_PROCESS_SPEED);
         currentHealthPoint = enemyMaxHealthPoint;
+        healthPoint = transform.Find("HealthPointText").GetComponent<TMP_Text>();
+        healthPoint.text = enemyMaxHealthPoint.ToString() + "/"+ enemyMaxHealthPoint.ToString();
+
     }
 
     public void GetDamage(int damage)
     {
         currentHealthPoint -= damage;
+        healthPoint.text = currentHealthPoint.ToString()+"/"+enemyMaxHealthPoint.ToString();
         float currentHealthPointRatio = Mathf.Clamp01(currentHealthPoint / enemyMaxHealthPoint);
         filling.DOFillAmount(currentHealthPointRatio, Const.STATUSUI_PROCESS_SPEED);
         // 기본적으로 filling이 현재체력에 맞춰 줄어들고, 해당 동작 후 일정 시간이 지나면 damagedFilling이 따라감.
