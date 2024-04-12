@@ -14736,7 +14736,7 @@ Transform:
 --- !u!198 &4214291812743566734
 ParticleSystem:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 7773117070066946561, guid: 5fa381166ca0d6043b862dc27f6336d2, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4214291812743566736}
