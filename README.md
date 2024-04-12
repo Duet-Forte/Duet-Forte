@@ -24,6 +24,7 @@
 
 ### 개발 환경
  - ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white) 2021.3.22f1
+ - Wwise 2022.1.8.8316.2888
  - [DOTween](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)
  - [UniTask](https://github.com/Cysharp/UniTask)
  - [Febucci Text Animator](https://assetstore.unity.com/packages/tools/gui/text-animator-for-unity-254677)
