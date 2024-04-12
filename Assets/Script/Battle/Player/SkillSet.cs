@@ -13,6 +13,8 @@ public class SkillSet : MonoBehaviour
     private AnimationClip[] arrayOfAnimationClip = new AnimationClip[4];
     [SerializeField]private List<string[]> skillCommand = new List<string[]>();
     private Sprite[] arrayOfSkillIcon=new Sprite[4];
+    private int maxCoolTimeTurn;
+    private int currentCoolTimeTurn;
 
     #region 프로퍼티
     public List<string[]> SkillCommand { get=>skillCommand; private set { skillCommand = value; } }//스트링 배열의 스킬 커맨드
@@ -28,20 +30,22 @@ public class SkillSet : MonoBehaviour
     {
         //skillSet =~~//비전투 씬에서 세팅된 스킬을 받아올 예정
         for (int index = 0; index < skillSet.Length; index++) {//커맨드 리스트 할당
-            skillCommand.Add(skillSet[index].SkillCommand);
-            arrayOfCommand=skillCommand.ToArray();
-            arrayOfSkillName[index] = skillSet[index].SkillName;
-            arrayOfSkillIcon[index] = skillSet[index].SkillIcon;
-            arrayOfSkill[index] = skillSet[index].GetSkill;
-            if (skillSet[index].SkillParticle != null)
+            if (skillSet[index] != null)
             {
-                /*ParticleSystem tmp = GameObject.Instantiate(skillSet[index].SkillParticle, transform.position, Quaternion.identity);
-                tmp.transform.parent = gameObject.transform;
-                tmp.gameObject.transform.localScale = gameObject.transform.localScale;
-                //tmp.transform.SetParent(gameObject.transform, false);
-                arrayOfSkillParticle[index] = tmp;*/
+                skillCommand.Add(skillSet[index].SkillCommand);
+                arrayOfCommand = skillCommand.ToArray();
+                arrayOfSkillName[index] = skillSet[index].SkillName;
+                arrayOfSkillIcon[index] = skillSet[index].SkillIcon;
+                arrayOfSkill[index] = skillSet[index].GetSkill;
+                if (skillSet[index].SkillParticle != null)
+                {
+                    /*ParticleSystem tmp = GameObject.Instantiate(skillSet[index].SkillParticle, transform.position, Quaternion.identity);
+                    tmp.transform.parent = gameObject.transform;
+                    tmp.gameObject.transform.localScale = gameObject.transform.localScale;
+                    //tmp.transform.SetParent(gameObject.transform, false);
+                    arrayOfSkillParticle[index] = tmp;*/
+                }
             }
-            
             
         }
         

@@ -16,7 +16,6 @@ public class PrepareTurn :ITurnHandler
         this.stageManager = stageManager;
         prepareTurnUI = stageManager.PrepareTurnUI;
         turnUI = stageManager.TurnUI;
-        Debug.Log("prepareTurnUI가 잘 초기화 됨 : "+prepareTurnUI);
         UIDesolveTime = 0.8f;
         
     }
@@ -26,7 +25,7 @@ public class PrepareTurn :ITurnHandler
         Debug.Log("PrepareTurn");
         //yield return new WaitUntil(() => prepareTurnUI.PopUpSkillUI()!=null);
         turnUI.AppearanceTurnUI(stageManager.TurnCount);
-        Debug.Log(prepareTurnUI.PopUpSkillUI());
+        Debug.Log(prepareTurnUI.AppearSkillUI());
         prepareTurnUI.UISwitch(true);
         yield return null;
     }

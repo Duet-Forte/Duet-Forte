@@ -38,11 +38,19 @@ public class PrepareTurnUI : InGameUI
 
         for (int Prepare_Skill_UI_Index = 0; Prepare_Skill_UI_Index < transform.childCount; Prepare_Skill_UI_Index++) //각 UI에 스킬 아이콘, 이름, 커맨드 입력하는 반복문
         {
-            arrayOfUITransform[Prepare_Skill_UI_Index] = transform.GetChild(Prepare_Skill_UI_Index).GetComponent<RectTransform>();
-            transform.GetChild(Prepare_Skill_UI_Index).GetChild(0).GetComponent<Image>().sprite = skillSetIcon[Prepare_Skill_UI_Index];//아이콘
-            transform.GetChild(Prepare_Skill_UI_Index).GetChild(1).GetComponent<TMP_Text>().text = skillSetName[Prepare_Skill_UI_Index];//스킬이름
-            transform.GetChild(Prepare_Skill_UI_Index).GetChild(2).GetComponent<TMP_Text>().text = arrayOfParsedCommand[Prepare_Skill_UI_Index];//스킬커맨드
-
+            
+            if (theSkillSet.ArrayOfSkill != null)
+            {
+                transform.GetChild(Prepare_Skill_UI_Index).GetChild(0).GetComponent<Image>().sprite = skillSetIcon[Prepare_Skill_UI_Index];//아이콘
+                transform.GetChild(Prepare_Skill_UI_Index).GetChild(1).GetComponent<TMP_Text>().text = skillSetName[Prepare_Skill_UI_Index];//스킬이름
+                transform.GetChild(Prepare_Skill_UI_Index).GetChild(2).GetComponent<TMP_Text>().text = arrayOfParsedCommand[Prepare_Skill_UI_Index];//스킬커맨드
+            }
+            if (theSkillSet.getSkillSet[Prepare_Skill_UI_Index] == null)
+            {
+                Debug.Log("UI 파괴");
+                Destroy(transform.GetChild(Prepare_Skill_UI_Index).gameObject);
+            }
+            arrayOfUITransform[Prepare_Skill_UI_Index] = transform.GetChild(Prepare_Skill_UI_Index)?.GetComponent<RectTransform>();
         }
         
 
@@ -72,40 +80,41 @@ public class PrepareTurnUI : InGameUI
 
 
     }
-    public IEnumerator PopUpSkillUI()
+    public void applyCoolTimeTurn() { 
+        
+
+
+    }
+    public IEnumerator AppearSkillUI()
     {
-        //UI팝업
         Debug.Log("PrepareTurn UI POPUP");
         for (int UIindex = 0; UIindex < arrayOfUITransform.Length; UIindex++)
         {
+            if (arrayOfUITransform[UIindex] != null)
             arrayOfUITransform[UIindex].DOMove(new Vector2(arrayOfUITransform[UIindex].position.x + UIXOffset, arrayOfUITransform[UIindex].position.y)
                 , UIMoveTime);
 
             yield return new WaitForSeconds(0.2f);
         }
     }
-    public IEnumerator PopDownSkillUI()
-    {
-        //UI팝다운(?)
+    public IEnumerator DisappearSkillUI()
+    {   
         Debug.Log("PrepareTurn UI POPDOWN");
         for (int UIindex = 0; UIindex < arrayOfUITransform.Length; UIindex++)
         {
-            arrayOfUITransform[UIindex].DOMove(new Vector2(arrayOfUITransform[UIindex].position.x - UIXOffset, arrayOfUITransform[UIindex].position.y)
+            if (arrayOfUITransform[UIindex] != null)
+                arrayOfUITransform[UIindex]?.DOMove(new Vector2(arrayOfUITransform[UIindex].position.x - UIXOffset, arrayOfUITransform[UIindex].position.y)
                 ,UIMoveTime).SetEase(Ease.InBack);
 
             yield return new WaitForSeconds(0.2f);
         }
     }
     public void UISwitch(bool onOff) {
-        if (onOff) { StartCoroutine(PopUpSkillUI()); }
+        if (onOff) { StartCoroutine(AppearSkillUI()); }
         else if (!onOff) {
-            StartCoroutine(PopDownSkillUI());
+            StartCoroutine(DisappearSkillUI());
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.D)) { PopUpSkillUI(); }
-        if (Input.GetKeyDown(KeyCode.K)) { PopDownSkillUI(); }
-    }
+    
 }
