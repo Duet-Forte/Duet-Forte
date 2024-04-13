@@ -28,9 +28,10 @@ public class EnemyHealthPointUI : InGameUI
 
     }
 
-    public void GetDamage(int damage)
+    public void GetDamage(Damage damage)
     {
-        currentHealthPoint -= damage;
+        
+        currentHealthPoint -= damage.GetCalculatedDamage();
         healthPoint.text = currentHealthPoint.ToString()+"/"+enemyMaxHealthPoint.ToString();
         float currentHealthPointRatio = Mathf.Clamp01(currentHealthPoint / enemyMaxHealthPoint);
         filling.DOFillAmount(currentHealthPointRatio, Const.STATUSUI_PROCESS_SPEED);

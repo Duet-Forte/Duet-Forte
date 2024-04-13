@@ -10,7 +10,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] private Stage stage; // 추후 오프필드에서 특정 적과 조우 시 주입해 줄 예정.
     [SerializeField] private Transform enemyTransform;
     [SerializeField] private GameObject blackBox;
-
+    
     private PatternParser parser;
     private JudgeManager judgeManager;
     private IEnemy enemy;
@@ -24,6 +24,13 @@ public class StageManager : MonoBehaviour
     GameObject enemyObject;
     GameObject timingUI;
     private BattlePresenter battlePresenter;
+
+    #region battlePos 좌표
+    private float battlePosXMin = -15f;
+    private float battlePosXMax = 15f;
+    private float battlePosYMin = -30f;
+    private float battlePosYMax = -20f;
+    #endregion
 
     #region UI
     private DefenseQTE defenseQTE;
@@ -210,7 +217,7 @@ public class StageManager : MonoBehaviour
 
     public void SelectRandomBattlePos() {
 
-        battlePos = new Vector3(UnityEngine.Random.Range(-15f, 15f), UnityEngine.Random.Range(-4f, -24f), -6f);
+        battlePos = new Vector3(UnityEngine.Random.Range(battlePosXMin, battlePosXMax), UnityEngine.Random.Range(battlePosYMin,battlePosYMax), -6f);
         battleCamManager.ZoomInTrack = battlePos;
 
     }

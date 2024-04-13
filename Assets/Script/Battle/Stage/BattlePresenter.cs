@@ -36,28 +36,29 @@ public class BattlePresenter : MonoBehaviour
         Debug.Log(enemyName);
         playerInterface = this.stageManager.PlayerInterface;
     }
-    public void PlayerBasicAttackToEnemy(float playerAttack,bool isSlash) {
-        int damage = 0;
+    public void PlayerBasicAttackToEnemy(Damage damage) {
+        int calculatedDamage = 0;
         GetDefense();
-        if (isSlash)
+
+        if (damage.GetDamageType() == CustomEnum.DamageType.Slash)
         {
-            damage = DamageCalculate(playerAttack,enemySlashDefense);
+            damage.CalculateDamageWithJudge((int)enemySlashDefense);
             enemy.GetDamage(damage);
             hitParticle.Generate_Player_Hit_Slash(enemy.Transform);
-            return;
         }
-        if (!isSlash)
+        else
         {
-            damage = DamageCalculate(playerAttack, enemyPierceDefense);
+            damage.CalculateDamageWithJudge((int)enemyPierceDefense);
             enemy.GetDamage(damage);
             hitParticle.Generate_Player_Hit_Pierce(enemy.Transform);
-            return;
         }
+      
+        
     }
-    public void PlayerSkillToEnemy(float playerAttack,bool isSlash) { 
+    public void PlayerSkillToEnemy(Damage damage) { 
 
-        Debug.Log(playerAttack);
-        enemy.GetDamage((int)playerAttack);
+        
+        enemy.GetDamage(damage);
     
     }
 
@@ -72,8 +73,9 @@ public class BattlePresenter : MonoBehaviour
         playerInterface.GetDamage(damage);
     }
 
-    public void GuardCounterToEnemy(float playerAttack) {
-        StartCoroutine(GuardCounter(playerAttack));
+    public void GuardCounterToEnemy(Damage damage) {
+        damage.CalculateDamageWithJudge(0);//트루대미지
+        StartCoroutine(GuardCounter(damage));
         Object.Instantiate<GameObject>(Resources.Load<GameObject>("VFX/VFX_Prefab/Combat/Player/Hit/Player_CounterAttack_GuardCounter_Hit_VFX"),enemy.Transform.position, Quaternion.identity);
 
     }
@@ -81,12 +83,12 @@ public class BattlePresenter : MonoBehaviour
     
     
     }
-    IEnumerator GuardCounter(float playerAttack) {
+    IEnumerator GuardCounter(Damage damage) {
         
-        enemy.GetDamage((int)playerAttack);
+        enemy.GetDamage(damage);
         yield return new WaitForSeconds(0.45f);
         for (int guardCounterCount = 0; guardCounterCount < 10; guardCounterCount++) {
-            enemy.GetDamage((int)playerAttack);
+            enemy.GetDamage(damage);
             yield return new WaitForSeconds(0.1f);
 
         }

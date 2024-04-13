@@ -8,8 +8,9 @@ using Util;
 
 public class DamageUI : MonoBehaviour
 {
-    private Image[] image;
-    private Queue<Sprite> queue;
+    private Image[] image=new Image[11];
+    private Queue<Sprite> BlueDamagequeue;
+    private Queue<Sprite> RedDamagequeue;
     private RectTransform rectTransform;
     private IObjectPool<DamageUI> pool;
     private int YMAX = Screen.height;
@@ -22,31 +23,69 @@ public class DamageUI : MonoBehaviour
     }
     public void InitSettings(IObjectPool<DamageUI> pool, Canvas canvas)
     {
-        image = GetComponentsInChildren<Image>();
+        for (int i = 0; i < 11; i++){
+            image[i]=transform.Find("Damage"+i).GetComponent<Image>();
+        }
         rectTransform = GetComponent<RectTransform>();
-        queue = new Queue<Sprite>();
+        RedDamagequeue = new Queue<Sprite>();
+        BlueDamagequeue = new Queue<Sprite>();
         transform.SetParent(canvas.transform);
         this.pool = pool;
         SetLayout();
         ResetSettings();
     }
 
-    public void ParseDamage(int damage)
+    public void ParseDamage(Damage damage)
     {
-        while (damage > 0)
-        {
-            queue.Enqueue(DamageUIContainer.Skins[damage % 10]);
-            damage /= 10;
-        }
-
-        rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH * queue.Count, Const.DAMAGEUI_UI_HEIGHT);
-
+        int calculatedDamage = damage.GetCalculatedDamage();
+        int digit = (int)Mathf.Log10(calculatedDamage) + 1;
         int index = 0;
-        while (queue.Count > 0)
+        if (damage.GetDamageType()==CustomEnum.DamageType.Slash)
         {
-            image[index].gameObject.SetActive(true);
-            image[index++].sprite = queue.Dequeue();
+            
+            while (digit >= 0)
+            {
+                
+                RedDamagequeue.Enqueue(DamageUIContainer.RedSkins[(int)(calculatedDamage / Mathf.Pow(10, digit))]);
+                digit--;
+                
+            }
+            rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH * RedDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
+
+
+            while (RedDamagequeue.Count > 0)
+            {
+                image[index].gameObject.SetActive(true);
+                image[index++].sprite = RedDamagequeue.Dequeue();
+            }
         }
+        else
+        {
+            while (digit >= 0)
+            {
+                BlueDamagequeue.Enqueue(DamageUIContainer.BlueSkins[(int)(calculatedDamage / Mathf.Pow(10, digit))]);
+                digit--;
+
+            }
+            rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH * BlueDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
+
+
+            while (BlueDamagequeue.Count > 0)
+            {
+                image[index].gameObject.SetActive(true);
+                image[index++].sprite = BlueDamagequeue.Dequeue();
+            }
+        }
+
+        /*while (damage > 0)
+        {
+            RedDamagequeue.Enqueue(DamageUIContainer.Skins[damage % 10]);
+            damage /= 10;
+        }*/
+        
+        rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH * RedDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
+
+        
 
         MoveUI();
     }

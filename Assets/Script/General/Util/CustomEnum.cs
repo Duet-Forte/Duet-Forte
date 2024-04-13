@@ -29,7 +29,12 @@ namespace Util
             Good,
             Miss
         };
+        public enum DamageType { 
         
+            Slash,
+            Pierce,
+            GuardCounter
+        };
 
     }
 }

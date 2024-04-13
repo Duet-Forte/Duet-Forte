@@ -49,7 +49,7 @@ public class PlayerGuardCounter : MonoBehaviour
         guardCounterJudge = guardCounterQTE.GetQTEJudge;
         if (guardCounterJudge != CustomEnum.JudgeName.Miss)
         {
-            battlePresenter.GuardCounterToEnemy(CalculateBasicAttackDamage(guardCounterJudge));
+            battlePresenter.GuardCounterToEnemy(new Damage(playerAttackStat, guardCounterJudge,new GuardCounterDamage()));
             GetComponent<PlayerAnimator>().guardCount();
         }
         yield return new WaitForSeconds(hitDelay);

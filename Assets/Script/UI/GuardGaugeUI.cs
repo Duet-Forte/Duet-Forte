@@ -1,4 +1,5 @@
 using DG.Tweening;
+using UnityEngine;
 using UnityEngine.UI;
 using Util;
 
@@ -10,6 +11,7 @@ public class GuardGaugeUI : InGameUI
     {
         filling = transform.Find("Filling").GetComponent<Image>();
         filling.fillAmount = 0;
+        
     }
 
     public void ResetGauge()
