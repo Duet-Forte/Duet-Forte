@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{5E534DD0-7A6B-BFD3-71CB-7FD228F24D83}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{3A517738-5ADC-C817-2896-99F28D13EC29}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -17,13 +17,29 @@
 					<ShortName>Gio_BodyFall_SFX.wav</ShortName>
 					<CachePath>SFX/Gio_BodyFall_SFX_10C4C929.wem</CachePath>
 				</File>
+				<File Id="333670188" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Typing04.wav</ShortName>
+					<CachePath>SFX/Typing04_A63F6DF0.wem</CachePath>
+				</File>
 				<File Id="367550639" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Wood03.wav</ShortName>
 					<CachePath>SFX/FootStep_Wood03_10C4C929.wem</CachePath>
 				</File>
+				<File Id="373033679" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Typing02.wav</ShortName>
+					<CachePath>SFX/Typing02_70C632B6.wem</CachePath>
+				</File>
 				<File Id="393957476" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Dirt04.wav</ShortName>
 					<CachePath>SFX/FootStep_Dirt04_10C4C929.wem</CachePath>
+				</File>
+				<File Id="407478213" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ob_Fire_SwitchOn.wav</ShortName>
+					<CachePath>SFX/Ob_Fire_SwitchOn_10C4C929.wem</CachePath>
+				</File>
+				<File Id="439251448" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ob_Fire_Fire.wav</ShortName>
+					<CachePath>SFX/Ob_Fire_Fire_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="500923705" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Dirt01.wav</ShortName>
@@ -37,6 +53,10 @@
 					<ShortName>FootStep_Dirt02.wav</ShortName>
 					<CachePath>SFX/FootStep_Dirt02_10C4C929.wem</CachePath>
 				</File>
+				<File Id="602525784" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Typing03.wav</ShortName>
+					<CachePath>SFX/Typing03_E2B87ACB.wem</CachePath>
+				</File>
 				<File Id="602929188" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Grass01.wav</ShortName>
 					<CachePath>SFX/FootStep_Grass01_10C4C929.wem</CachePath>
@@ -49,6 +69,10 @@
 					<ShortName>FootStep_Dirt05.wav</ShortName>
 					<CachePath>SFX/FootStep_Dirt05_10C4C929.wem</CachePath>
 				</File>
+				<File Id="687851540" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Typing01.wav</ShortName>
+					<CachePath>SFX/Typing01_4FF2EC51.wem</CachePath>
+				</File>
 				<File Id="750448001" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Wood04.wav</ShortName>
 					<CachePath>SFX/FootStep_Wood04_10C4C929.wem</CachePath>
@@ -56,6 +80,10 @@
 				<File Id="826799344" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Grass05.wav</ShortName>
 					<CachePath>SFX/FootStep_Grass05_10C4C929.wem</CachePath>
+				</File>
+				<File Id="868424379" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ob_Fire_Ignition.wav</ShortName>
+					<CachePath>SFX/Ob_Fire_Ignition_B2495316.wem</CachePath>
 				</File>
 				<File Id="872771126" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Wood02.wav</ShortName>
@@ -87,6 +115,21 @@
 				<Event Id="2299963368" Name="Gio_BodyFall_SFX" DurationType="OneShot" DurationMin="5.1996665" DurationMax="5.1996665">
 					<MediaRefs>
 						<MediaRef Id="43014063"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1043137757" Name="Ob_Fireplace_Fire_SFX" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="439251448"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1888007992" Name="Ob_Fireplace_Ignition_SFX" DurationType="OneShot" DurationMin="0.5395" DurationMax="0.5395">
+					<MediaRefs>
+						<MediaRef Id="868424379"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3840304745" Name="Ob_Fireplace_Switch_SFX" DurationType="OneShot" DurationMin="0.48697916" DurationMax="0.48697916">
+					<MediaRefs>
+						<MediaRef Id="407478213"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="4038898239" Name="Player_Step_SFX" DurationType="OneShot" DurationMin="0.17045833" DurationMax="0.35375">
@@ -127,6 +170,14 @@
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
+				</Event>
+				<Event Id="387630415" Name="UI_Text_Typing_SFX" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="333670188"/>
+						<MediaRef Id="373033679"/>
+						<MediaRef Id="602525784"/>
+						<MediaRef Id="687851540"/>
+					</MediaRefs>
 				</Event>
 			</Events>
 			<SwitchGroups>
@@ -183,7 +234,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{2F7CB940-2CD9-E9B3-852A-2BC8D31A89E3}">
+		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{8F549EEB-1717-2F30-75B1-BC4F0D65496B}">
 			<ShortName>MainMenu</ShortName>
 			<Path>MainMenu.bnk</Path>
 			<Media>
@@ -316,5 +367,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9B3685E2-785F-0869-162A-B4F8D7AD5719}</FileHash>
+	<FileHash>{53D0AFA9-3B5D-BEAD-9CC7-7A2E4AA99E5F}</FileHash>
 </SoundBanksInfo>
