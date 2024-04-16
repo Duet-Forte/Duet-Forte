@@ -4,7 +4,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1154772126	MainMenu_Click_SFX			\Default Work Unit\MainMenu\MainMenu_Click_SFX	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	435389909	SceneChainge	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\SceneChainge_0F56642E.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\메인메뉴 UI\SceneChainge		1010992
-	953925931	!!Test UI Hover	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Test UI Hover_771F4306.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\메인메뉴 UI\!!Test UI Hover		34032
-	977216514	!!Test UI Click	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Games, Video, Menu UI, Select, Notification 18 SND83166 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\메인메뉴 UI\!!Test UI Click		39916
+	82007089	Ui_Click	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Click01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\메인메뉴 UI\Ui_Click		26468
+	435389909	SceneChainge	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\SceneChainge_0F56642E.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\메인메뉴 UI\SceneChainge		1010992
+	452364886	Ui_Hover	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Hover01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\메인메뉴 UI\Ui_Hover		9676
 

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TestStage
   m_EditorClassIdentifier: 
   id: 0
-  bpm: 170
+  bpm: 135
   enemyName: Timmy

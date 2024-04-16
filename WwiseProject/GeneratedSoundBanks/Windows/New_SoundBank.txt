@@ -18,12 +18,12 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	2415836739	Volume			\Default Work Unit\Volume	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	420250481	Combat_Timmy-01	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Combat_Timmy-01_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\Combat_BGM\Combat_Timmy\Combat_Timmy-01		22769040
-	514950658	Combat_test01	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Combat_test01_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Combat_test01\Combat_test01		1084332
-	519697605	SFX_공격신호_01	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Windows\SFX\SFX_공격신호_01_3B09756F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Player_Attack_StrongSignal_SFX\SFX_공격신호_01		107184
-	547379373	Test_Music	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Test_Music_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\Test_Music\Test_Music		2024644
-	602281588	세로베기	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Windows\SFX\세로베기_365A4FE4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_A\세로베기		90848
-	673427602	SFX_공격신호_02	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Windows\SFX\SFX_공격신호_02_08E89FA1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Player_Attack_WeakSignal_SFX\SFX_공격신호_02		32644
-	723090075	패링-03	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Windows\SFX\패링-03_F4D2FBC2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Parry\패링-03		207308
-	1010775400	찌르기	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Windows\SFX\찌르기_C57D4EAF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_B\찌르기		118588
+	420250481	Combat_Timmy-01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Combat_Timmy-01_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\Combat_BGM\Combat_Timmy\Combat_Timmy-01		22769040
+	514950658	Combat_test01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Combat_test01_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Combat_test01\Combat_test01		1084332
+	519697605	SFX_공격신호_01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\SFX_공격신호_01_3B09756F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Player_Attack_StrongSignal_SFX\SFX_공격신호_01		107184
+	547379373	Test_Music	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Test_Music_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\Test_Music\Test_Music		2024644
+	602281588	세로베기	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\세로베기_365A4FE4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_A\세로베기		90848
+	673427602	SFX_공격신호_02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\SFX_공격신호_02_08E89FA1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Player_Attack_WeakSignal_SFX\SFX_공격신호_02		32644
+	723090075	패링-03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\패링-03_F4D2FBC2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Parry\패링-03		207308
+	1010775400	찌르기	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\찌르기_C57D4EAF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_B\찌르기		118588
 

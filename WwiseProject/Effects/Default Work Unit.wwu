@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{2FBF2FEA-D334-4797-A484-BF6EAAF6D085}" SchemaVersion="110">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{2FBF2FEA-D334-4797-A484-BF6EAAF6D085}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2FBF2FEA-D334-4797-A484-BF6EAAF6D085}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="Compressor" ID="{E4426FF1-ACF4-4AD7-BDF3-8E6B3A20F24E}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+					<PropertyList>
+						<Property Name="AttackTime" Type="Real32" Value="0"/>
+						<Property Name="Ratio" Type="Real32" Value="5"/>
+						<Property Name="ReleaseTime" Type="Real32" Value="0.54"/>
+						<Property Name="Threshold" Type="Real32" Value="-21.9"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="Parametric_EQ" ID="{C29C10DA-5F07-4D07-AAB9-A68A9A6BEDAF}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FrequencyBand3" Type="Real32" Value="4482"/>
+						<Property Name="GainBand2" Type="Real32" Value="-1.5"/>
+						<Property Name="GainBand3" Type="Real32" Value="-1"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="Gain" ID="{FAC9A994-9A46-4391-AC5B-4334A8ACA8B0}" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+					<PropertyList>
+						<Property Name="FullBandGain" Type="Real32" Value="3.5"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>

@@ -12,6 +12,8 @@
 				<SwitchGroup Name="State" ID="{BE4C57CF-4F82-403E-8C33-03AC77F61FA9}">
 					<ChildrenList>
 						<Switch Name="Wood" ID="{E7BEFA96-7BB0-4C03-A005-3665BF6C9B6C}"/>
+						<Switch Name="Dirt" ID="{9529130D-6599-413E-8375-62BA0F2F9BEB}"/>
+						<Switch Name="Grass" ID="{8249416A-34C6-413D-BDAF-7A118DF0D034}"/>
 					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>

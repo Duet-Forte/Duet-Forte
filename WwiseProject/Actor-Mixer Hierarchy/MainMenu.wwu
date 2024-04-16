@@ -13,28 +13,6 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="!!Test UI Click" ID="{C7E1AADB-FDCB-4698-9A8B-448FDBC27D6D}" ShortID="893100020">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Games, Video, Menu UI, Select, Notification 18 SND83166 1" ID="{09D0225F-B38F-4195-947F-5B7E2DCFFE0B}">
-									<Language>SFX</Language>
-									<AudioFile>Games, Video, Menu UI, Select, Notification 18 SND83166 1.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="977216514"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Games, Video, Menu UI, Select, Notification 18 SND83166 1" ID="{09D0225F-B38F-4195-947F-5B7E2DCFFE0B}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="SceneChainge" ID="{4E52C683-E2D1-471A-957A-91AD448260AA}" ShortID="143112473">
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -61,7 +39,7 @@
 								<ActiveSource Name="SceneChainge" ID="{AA091B5C-F6B1-484B-A503-AA90AFD150E1}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="!!Test UI Hover" ID="{CAF7F314-4A51-4E7F-9168-DCE803F4CD66}" ShortID="639158209">
+						<Sound Name="Ui_Hover" ID="{CAF7F314-4A51-4E7F-9168-DCE803F4CD66}" ShortID="639158209">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
@@ -71,21 +49,38 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Test UI Hover" ID="{C19EEAA9-1B4D-41DE-8F0E-6B6894066558}">
-									<PropertyList>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.0573552711761121"/>
-										<Property Name="TrimEnd" Type="Real64" Value="0.234108775137112"/>
-									</PropertyList>
+								<AudioFileSource Name="Hover01" ID="{CCD1FAC5-46C7-472A-9DC9-4F0F75A14B1A}">
 									<Language>SFX</Language>
-									<AudioFile>Test UI Hover.wav</AudioFile>
+									<AudioFile>Hover01.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="953925931"/>
+										<MediaID ID="452364886"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="Test UI Hover" ID="{C19EEAA9-1B4D-41DE-8F0E-6B6894066558}" Platform="Linked"/>
+								<ActiveSource Name="Hover01" ID="{CCD1FAC5-46C7-472A-9DC9-4F0F75A14B1A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Ui_Click" ID="{0BC5BB9E-6FC2-4A6B-8939-1DD624AE0CC7}" ShortID="655187395">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Click01" ID="{C272F758-F306-4F8B-B5EA-8D03386A6C66}">
+									<Language>SFX</Language>
+									<AudioFile>Click01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="82007089"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Click01" ID="{C272F758-F306-4F8B-B5EA-8D03386A6C66}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

@@ -72,10 +72,10 @@
 							<ChildrenList>
 								<Event Name="Player_Step_SFX" ID="{2175E7C5-DBE4-4C7E-8B5F-D1285725AA69}">
 									<ChildrenList>
-										<Action Name="" ID="{964ACE89-2CF5-4E49-BD95-4FE8BC5470C2}" ShortID="1012276160">
+										<Action Name="" ID="{20580B1A-AA14-4871-A566-8DB81A818DED}" ShortID="480130934">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="PlayerFootStep_Wood" ID="{E9A9C2C7-4DDE-4FFA-A978-8D83D66D164F}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="PlayerFootStep" ID="{D98E70D1-3C64-4DEF-BC0C-29DBF19D57BF}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -142,13 +142,6 @@
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
-								<Action Name="" ID="{582C8AFE-82B1-4567-859E-FB1A988EAAE6}" ShortID="413452311">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="!!Test UI Click" ID="{C7E1AADB-FDCB-4698-9A8B-448FDBC27D6D}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{7955E9E4-A2E8-4E75-A9CC-D21C347BB503}" ShortID="847955124">
 									<ReferenceList>
 										<Reference Name="Target">
@@ -167,7 +160,7 @@
 								<Action Name="" ID="{561900BB-1AD0-45A8-843C-C691B10B45AE}" ShortID="166562910">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="!!Test UI Hover" ID="{CAF7F314-4A51-4E7F-9168-DCE803F4CD66}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+											<ObjectRef Name="Ui_Hover" ID="{CAF7F314-4A51-4E7F-9168-DCE803F4CD66}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -175,10 +168,10 @@
 						</Event>
 						<Event Name="MainMenu_Click_SFX" ID="{7E2CE3A4-76DC-462D-9E07-4AB3C177AD2E}">
 							<ChildrenList>
-								<Action Name="" ID="{A7B216BE-C054-4E20-86FA-4F363FC7302E}" ShortID="714891328">
+								<Action Name="" ID="{D3F704E8-5378-4229-AD95-1C5AC0EC41A9}" ShortID="641882700">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="!!Test UI Click" ID="{C7E1AADB-FDCB-4698-9A8B-448FDBC27D6D}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+											<ObjectRef Name="Ui_Click" ID="{0BC5BB9E-6FC2-4A6B-8939-1DD624AE0CC7}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
