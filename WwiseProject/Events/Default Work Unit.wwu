@@ -160,7 +160,7 @@
 								<Action Name="" ID="{561900BB-1AD0-45A8-843C-C691B10B45AE}" ShortID="166562910">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="!!Test UI Hover" ID="{CAF7F314-4A51-4E7F-9168-DCE803F4CD66}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+											<ObjectRef Name="Ui_Hover" ID="{CAF7F314-4A51-4E7F-9168-DCE803F4CD66}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -171,7 +171,7 @@
 								<Action Name="" ID="{D3F704E8-5378-4229-AD95-1C5AC0EC41A9}" ShortID="641882700">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Click01" ID="{0BC5BB9E-6FC2-4A6B-8939-1DD624AE0CC7}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+											<ObjectRef Name="Ui_Click" ID="{0BC5BB9E-6FC2-4A6B-8939-1DD624AE0CC7}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

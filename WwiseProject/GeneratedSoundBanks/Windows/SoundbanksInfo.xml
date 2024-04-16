@@ -183,7 +183,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{8F34CD40-9884-A4E5-7CC6-A3F3F1585A11}">
+		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{2F7CB940-2CD9-E9B3-852A-2BC8D31A89E3}">
 			<ShortName>MainMenu</ShortName>
 			<Path>MainMenu.bnk</Path>
 			<Media>
@@ -195,9 +195,9 @@
 					<ShortName>SceneChainge.wav</ShortName>
 					<CachePath>SFX/SceneChainge_0F56642E.wem</CachePath>
 				</File>
-				<File Id="953925931" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Test UI Hover.wav</ShortName>
-					<CachePath>SFX/Test UI Hover_771F4306.wem</CachePath>
+				<File Id="452364886" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hover01.wav</ShortName>
+					<CachePath>SFX/Hover01_10C4C929.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -211,9 +211,9 @@
 						<MediaRef Id="82007089"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="294506560" Name="MainMenu_Hover_SFX" DurationType="OneShot" DurationMin="0.1767535" DurationMax="0.1767535">
+				<Event Id="294506560" Name="MainMenu_Hover_SFX" DurationType="OneShot" DurationMin="0.049895834" DurationMax="0.049895834">
 					<MediaRefs>
-						<MediaRef Id="953925931"/>
+						<MediaRef Id="452364886"/>
 					</MediaRefs>
 				</Event>
 			</Events>
@@ -316,5 +316,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3EDB5ABD-1D86-D2E9-F789-2240C87B68A2}</FileHash>
+	<FileHash>{BFB5769E-31CE-C6C4-EAA3-2A0F814247DD}</FileHash>
 </SoundBanksInfo>
