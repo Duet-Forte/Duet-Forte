@@ -4,49 +4,35 @@ using Util;
 
 public static class DamageUIContainer //추후 컨테이너 필요하면 그곳으로 이동
 {
-    private static Sprite[] damageSkins;
-    public static Sprite[] Skins
-    {
-        get
-        {
-            if (damageSkins == null)
-            {
-                damageSkins = new Sprite[10];
-                for (int i = 0; i < damageSkins.Length; ++i)
-                {
-                    damageSkins[i] = Resources.Load<Sprite>(Const.SPRITE_PATH + $"Damage/{i}");
-                }
-            }
-            return damageSkins;
-        }
-    }
+    private static Sprite[] redDamageSkins;
+    private static Sprite[] blueDamageSkins;
     public static Sprite[] RedSkins
     {
         get {
-            if (damageSkins == null)
+            if (redDamageSkins == null)
             {
-                damageSkins = new Sprite[10];
-                for (int i = 0; i < damageSkins.Length; ++i)
+                redDamageSkins = new Sprite[10];
+                for (int i = 0; i < redDamageSkins.Length; ++i)
                 {
-                    damageSkins[i] = Resources.Load<Sprite>(Const.SPRITE_PATH + $"Damage/RED_{i}");
+                    redDamageSkins[i] = Resources.Load<Sprite>(Const.SPRITE_PATH + $"Damage/RED_{i}");
                 }
             }
-            return damageSkins;
+            return redDamageSkins;
         }
     }
     public static Sprite[] BlueSkins
     {
         get
         {
-            if (damageSkins == null)
+            if (blueDamageSkins == null)
             {
-                damageSkins = new Sprite[10];
-                for (int i = 0; i < damageSkins.Length; ++i)
+                blueDamageSkins = new Sprite[10];
+                for (int i = 0; i < blueDamageSkins.Length; ++i)
                 {
-                    damageSkins[i] = Resources.Load<Sprite>(Const.SPRITE_PATH + $"Damage/BLUE_{i}");
+                    blueDamageSkins[i] = Resources.Load<Sprite>(Const.SPRITE_PATH + $"Damage/BLUE_{i}");
                 }
             }
-            return damageSkins;
+            return blueDamageSkins;
         }
     }
 }

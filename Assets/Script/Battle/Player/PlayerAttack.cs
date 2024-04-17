@@ -142,7 +142,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         tmp.gameObject.transform.localScale = gameObject.transform.localScale;
         
         //애니메이션 클립 동적할당
-        playerAnimator.Skill2(currentSkill.skillClip);
+        playerAnimator.Skill(currentSkill.skillClip);
         
         for (int i = 0; i < currentSkill.damage.Length; i++) { 
         yield return new WaitForSeconds(currentSkill.waitTimes[i]);

@@ -100,14 +100,9 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
         director.Rush(gameObject, new Vector2(gameObject.transform.localPosition.x+35, gameObject.transform.localPosition.y), 0.025f, DG.Tweening.Ease.OutExpo);
         Debug.Log("Player GuardCounter");
     }
-    public void Skill() {
+
+    public void Skill(AnimationClip skillClip) {
         thePlayerAnimator.SetTrigger(skill);
-        Debug.Log("Player Skill");
-
-    }
-
-    public void Skill2(AnimationClip skillClip) {
-        Skill();
         animatorOverrideController["DummySkill"] = skillClip;
         thePlayerAnimator.runtimeAnimatorController = animatorOverrideController;
         

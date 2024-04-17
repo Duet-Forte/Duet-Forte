@@ -37,29 +37,41 @@ public class BattlePresenter : MonoBehaviour
         playerInterface = this.stageManager.PlayerInterface;
     }
     public void PlayerBasicAttackToEnemy(Damage damage) {
-        int calculatedDamage = 0;
         GetDefense();
 
         if (damage.GetDamageType() == CustomEnum.DamageType.Slash)
         {
             damage.CalculateDamageWithJudge((int)enemySlashDefense);
             enemy.GetDamage(damage);
-            hitParticle.Generate_Player_Hit_Slash(enemy.Transform);
+
+            if(damage.GetCalculatedDamage()>0)hitParticle.Generate_Player_Hit_Slash(enemy.Transform);
         }
         else
         {
             damage.CalculateDamageWithJudge((int)enemyPierceDefense);
             enemy.GetDamage(damage);
-            hitParticle.Generate_Player_Hit_Pierce(enemy.Transform);
+            if (damage.GetCalculatedDamage() > 0) hitParticle.Generate_Player_Hit_Pierce(enemy.Transform);
         }
       
         
     }
-    public void PlayerSkillToEnemy(Damage damage) { 
+    public void PlayerSkillToEnemy(Damage damage) {
 
+        GetDefense();
         
-        enemy.GetDamage(damage);
-    
+        if (damage.GetDamageType() == CustomEnum.DamageType.Slash)
+        {
+            damage.CalculateDamage((int)enemySlashDefense);
+            enemy.GetDamage(damage);
+            if (damage.GetCalculatedDamage() > 0) hitParticle.Generate_Player_Hit_Slash(enemy.Transform);
+        }
+        else
+        {
+            damage.CalculateDamage((int)enemyPierceDefense);
+            enemy.GetDamage(damage);
+            if (damage.GetCalculatedDamage() > 0) hitParticle.Generate_Player_Hit_Pierce(enemy.Transform);
+        }
+
     }
 
     public void EnemyToPlayer(float enemyAttack) {

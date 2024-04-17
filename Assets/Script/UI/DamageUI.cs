@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -43,15 +44,19 @@ public class DamageUI : MonoBehaviour
         List<int> damageByDigit= new List<int>();
         if (damage.GetDamageType()==CustomEnum.DamageType.Slash)
         {
-            
-            while (digit >= 0)
+            Debug.Log("RedDamage");
+            while (calculatedDamage> 0)
             {
-                
-                RedDamagequeue.Enqueue(DamageUIContainer.RedSkins[(int)(calculatedDamage / Mathf.Pow(10, digit))]);
-                digit--;
+
+                int tmp = calculatedDamage % 10;
+                damageByDigit.Add(tmp);
+                calculatedDamage /= 10;
                 
             }
-            Debug.Log(RedDamagequeue.Count);
+            damageByDigit=Enumerable.Reverse<int>(damageByDigit).ToList();
+            foreach (int i in damageByDigit) {
+                RedDamagequeue.Enqueue(DamageUIContainer.RedSkins[i]);
+            }
             rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH*RedDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
 
 
@@ -61,13 +66,21 @@ public class DamageUI : MonoBehaviour
                 image[index++].sprite = RedDamagequeue.Dequeue();
             }
         }
-        else
+        else if(damage.GetDamageType()==CustomEnum.DamageType.Pierce)
         {
-            while (digit >= 0)
+            Debug.Log("BlueDamage");
+            while (calculatedDamage > 0)
             {
-                BlueDamagequeue.Enqueue(DamageUIContainer.BlueSkins[(int)(calculatedDamage / Mathf.Pow(10, digit))]);
-                digit--;
 
+                int tmp = calculatedDamage % 10;
+                damageByDigit.Add(tmp);
+                calculatedDamage /= 10;
+
+            }
+            damageByDigit = Enumerable.Reverse<int>(damageByDigit).ToList();
+            foreach (int i in damageByDigit)
+            {
+                BlueDamagequeue.Enqueue(DamageUIContainer.BlueSkins[i]);
             }
             rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH * BlueDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
 
