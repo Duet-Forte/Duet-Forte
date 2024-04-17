@@ -38,8 +38,9 @@ public class DamageUI : MonoBehaviour
     public void ParseDamage(Damage damage)
     {
         int calculatedDamage = damage.GetCalculatedDamage();
-        int digit = (int)Mathf.Log10(calculatedDamage) + 1;
+        int digit = (int)Mathf.Log10(calculatedDamage)+1;
         int index = 0;
+        List<int> damageByDigit= new List<int>();
         if (damage.GetDamageType()==CustomEnum.DamageType.Slash)
         {
             
@@ -50,7 +51,8 @@ public class DamageUI : MonoBehaviour
                 digit--;
                 
             }
-            rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH * RedDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
+            Debug.Log(RedDamagequeue.Count);
+            rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH*RedDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
 
 
             while (RedDamagequeue.Count > 0)
@@ -69,7 +71,6 @@ public class DamageUI : MonoBehaviour
             }
             rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH * BlueDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
 
-
             while (BlueDamagequeue.Count > 0)
             {
                 image[index].gameObject.SetActive(true);
@@ -83,7 +84,7 @@ public class DamageUI : MonoBehaviour
             damage /= 10;
         }*/
         
-        rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH * RedDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
+        //rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH * RedDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
 
         
 
