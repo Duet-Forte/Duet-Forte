@@ -15,12 +15,12 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
-  - DepthOnly
   - SHADOWCASTER
+  - DepthOnly
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -37,7 +37,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9a0e3be5ef5db914b82422c7ffd8ac0a, type: 3}
+        m_Texture: {fileID: 2800000, guid: fd22055283d250b4082bfe13e17a462d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -75,6 +75,7 @@ Material:
     - _Cutoff_Softness: 0
     - _Distortion_Amount: -0.16
     - _DstBlend: 10
+    - _Gauge: 0.33
     - _Gradient_map_onoff: 0
     - _Height: 0.54
     - _Inner_Radius: 0
@@ -90,7 +91,7 @@ Material:
     - _Ractangle_Mask: 1
     - _Radial_Scale: 0
     - _Rotate: 0
-    - _Smoothness: 0
+    - _Smoothness: 0.06
     - _Smoothness_1: 0
     - _SrcBlend: 5
     - _Surface: 1
@@ -104,13 +105,13 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _BurnColor: {r: 1, g: 1, b: 1, a: 0}
-    - _Distortion_Panning: {r: 0, g: -0.13, b: 0, a: 0}
+    - _Distortion_Panning: {r: 0.06, g: -0.13, b: 0, a: 0}
     - _Distortion_Tiling: {r: 0.6, g: 1.16, b: 0, a: 0}
     - _InsubColor: {r: 1, g: 0, b: 0, a: 1}
     - _Insub_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Insub_Panning: {r: 0, g: 0, b: 0, a: 0}
     - _Insub_Tiling: {r: 1, g: 1, b: 0, a: 0}
-    - _MainColor: {r: 3.3096266, g: 7.014519, b: 14.928529, a: 1}
+    - _MainColor: {r: 1.2901278, g: 1.9889413, b: 3.4621153, a: 1}
     - _MainTex_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _MainTex_Panning: {r: 0, g: 0, b: 0, a: 0}
     - _MainTex_Tiling: {r: 1, g: 1, b: 0, a: 0}
