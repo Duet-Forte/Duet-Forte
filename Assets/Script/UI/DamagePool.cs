@@ -18,7 +18,7 @@ public class DamagePool : IStageUI
 
     private DamageUI CreateDamageUI()
     {
-        GameObject damageUIPrefab = Resources.Load<GameObject>(Const.UI_DAMAGE);
+        GameObject damageUIPrefab = Resources.Load<GameObject>("UI/Damage/DamgeText");
          DamageUI damageUI = Object
             .Instantiate(damageUIPrefab)
             .GetComponent<DamageUI>();

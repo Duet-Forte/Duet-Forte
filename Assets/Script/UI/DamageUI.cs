@@ -15,19 +15,24 @@ public class DamageUI : MonoBehaviour
     private RectTransform rectTransform;
     private IObjectPool<DamageUI> pool;
     private int YMAX = Screen.height;
-
+    private Image judgeLetter;
+    private Image judgeEffect;
 
     public RectTransform RectTransform { get 
         { if (rectTransform == null)
-                rectTransform = GetComponent<RectTransform>();
+                rectTransform = transform.Find("Damage").GetComponent<RectTransform>();
           return rectTransform; } 
     }
     public void InitSettings(IObjectPool<DamageUI> pool, Canvas canvas)
     {
+        GameObject damagePool=transform.Find("Damage").gameObject;
         for (int i = 0; i < 11; i++){
-            image[i]=transform.Find("Damage"+i).GetComponent<Image>();
+            image[i]=damagePool.transform.Find("Damage"+i).gameObject.GetComponent<Image>();
         }
-        rectTransform = GetComponent<RectTransform>();
+        judgeEffect = transform.Find("DamageJudgeEffect").gameObject.GetComponent<Image>();
+        judgeLetter = transform.Find("DamageJudgeLetter").gameObject.GetComponent<Image>();
+        rectTransform = transform.Find("Damage").gameObject.GetComponent<RectTransform>();
+        
         RedDamagequeue = new Queue<Sprite>();
         BlueDamagequeue = new Queue<Sprite>();
         transform.SetParent(canvas.transform);
@@ -42,6 +47,13 @@ public class DamageUI : MonoBehaviour
         int digit = (int)Mathf.Log10(calculatedDamage)+1;
         int index = 0;
         List<int> damageByDigit= new List<int>();
+
+        if (damage.JudgeName != null) {
+            if (damage.JudgeName == CustomEnum.JudgeName.Perfect) { judgeEffect = Resources.Load<Image>("UI/Damage/PerfectEffect"); judgeLetter = Resources.Load<Image>("UI/Damage/PerfectLetter"); }
+            if (damage.JudgeName == CustomEnum.JudgeName.Great) { judgeEffect = Resources.Load<Image>("UI/Damage/GreatEffect"); judgeLetter = Resources.Load<Image>("UI/Damage/GreatLetter"); }
+            if (damage.JudgeName == CustomEnum.JudgeName.Good) { judgeEffect = Resources.Load<Image>("UI/Damage/GoodEffect"); judgeLetter = Resources.Load<Image>("UI/Damage/GoodLetter"); }
+        }
+
         if (damage.GetDamageType()==CustomEnum.DamageType.Slash)
         {
             Debug.Log("RedDamage");
@@ -65,6 +77,7 @@ public class DamageUI : MonoBehaviour
                 image[index].gameObject.SetActive(true);
                 image[index++].sprite = RedDamagequeue.Dequeue();
             }
+            
         }
         else if(damage.GetDamageType()==CustomEnum.DamageType.Pierce)
         {
@@ -114,9 +127,9 @@ public class DamageUI : MonoBehaviour
 
     private void SetLayout()
     {
-        HorizontalLayoutGroup horizontalLayoutGroup = GetComponent<HorizontalLayoutGroup>();
+        HorizontalLayoutGroup horizontalLayoutGroup = transform.Find("Damage").GetComponent<HorizontalLayoutGroup>();
         if (horizontalLayoutGroup == null)
-            horizontalLayoutGroup = transform.AddComponent<HorizontalLayoutGroup>();
+            horizontalLayoutGroup = transform.Find("Damage").gameObject.AddComponent<HorizontalLayoutGroup>();
         horizontalLayoutGroup.enabled = true;
         horizontalLayoutGroup.spacing = 5;
         horizontalLayoutGroup.childAlignment = TextAnchor.MiddleLeft;
