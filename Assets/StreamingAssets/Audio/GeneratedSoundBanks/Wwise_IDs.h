@@ -19,16 +19,12 @@ namespace AK
         static const AkUniqueID MAINMENU_CLICK_GAMESTART_SFX = 162289589U;
         static const AkUniqueID MAINMENU_CLICK_SFX = 1154772126U;
         static const AkUniqueID MAINMENU_HOVER_SFX = 294506560U;
-        static const AkUniqueID OB_FIREPLACE_FIRE_SFX = 1043137757U;
-        static const AkUniqueID OB_FIREPLACE_IGNITION_SFX = 1888007992U;
-        static const AkUniqueID OB_FIREPLACE_SWITCH_SFX = 3840304745U;
         static const AkUniqueID PLAYER_ATTACK_A_SFX = 3452252061U;
         static const AkUniqueID PLAYER_ATTACK_B_SFX = 1532296734U;
         static const AkUniqueID PLAYER_ATTACK_STRONGSIGNAL_SFX = 1248207521U;
         static const AkUniqueID PLAYER_ATTACK_WEAKSIGNAL_SFX = 324050508U;
         static const AkUniqueID PLAYER_PARRY_SFX = 3410875789U;
         static const AkUniqueID PLAYER_STEP_SFX = 4038898239U;
-        static const AkUniqueID UI_TEXT_TYPING_SFX = 387630415U;
     } // namespace EVENTS
 
     namespace SWITCHES
