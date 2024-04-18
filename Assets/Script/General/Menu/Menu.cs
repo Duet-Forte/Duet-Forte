@@ -11,28 +11,23 @@ public abstract class Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     protected MenuSelector selector;
     protected Image image;
     protected int index;
-    [SerializeField] protected Color selectedColor;
 
     public virtual void InitSettings(MenuSelector selector, int index)
     {
-        this.selector = selector;
+        if(this.selector == null)
+            this.selector = selector;
         this.index = index;
         image = GetComponent<Image>();
         isEnabled = true;
     }
     public virtual void OnSelected()
     {
-        if (isEnabled)
-            image.color = selectedColor;
         AkSoundEngine.PostEvent("MainMenu_Hover_SFX", gameObject);
-        Debug.Log(index);
     }
 
     public virtual void OnDeselected()
     {
-        if (isEnabled)
-            image.color = Color.white;
-        Debug.Log("∫Ò»∞º∫»≠µ  " + index);
+
     }
 
     public virtual void OnPointerEnter(PointerEventData data)

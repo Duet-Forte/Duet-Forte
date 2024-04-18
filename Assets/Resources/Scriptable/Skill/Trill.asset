@@ -10,19 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9a7f12d40a9bb14cac7a1bf72b1b909, type: 3}
-  m_Name: Arpeggio
+  m_Name: Trill
   m_EditorClassIdentifier: 
-  skillName: Arpeggio
-  skill_Information: "\uC544\uD504\uB808\uC9C0\uC624,,?"
-  damage: 30
+  skillName: Trill
+  skill_Information: "\uB5A4 \uAFB8\uBC08\uC74C(Trill) - ABABAB\uB97C \uBC18\uBCF5\uD574\uC11C
+    \uC785\uB825"
+  damage: 11
   skillCommand:
   - A
+  - B
   - A
   - B
+  - A
   - B
-  - B
-  skillIcon: {fileID: -1451286363, guid: 901c6b0eb98292246ae96544fbdd4bb4, type: 3}
+  skillIcon: {fileID: 1283256111, guid: 901c6b0eb98292246ae96544fbdd4bb4, type: 3}
   isSpacialSkill: 0
-  skillParticle: {fileID: 5837205098259529973, guid: 64d84d08ff9178141956d3fcbfd33867, type: 3}
+  skillParticle: {fileID: 6095963863851529274, guid: bf44cd32b478104448ee26cbc6814faa, type: 3}
   skillAnimationClip: {fileID: 0}
-  coolTimeTurn: 0

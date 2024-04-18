@@ -90,7 +90,6 @@ public abstract class ScrollPool : MonoBehaviour
             currentY = contentYPositions.AddFirst(contentYPositions.First.Value + padding + contentHeight).Value;
         }
         rect.localPosition = new Vector3(rect.localPosition.x, currentY, rect.localPosition.z);
-        Debug.Log(contentYPositions.Count);
     }
 
     public void Update()

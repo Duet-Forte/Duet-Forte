@@ -14,7 +14,7 @@ public class SceneManager : MonoBehaviour
     private DataStorage dataStorage;
     public DataStorage Storage { get => dataStorage; }
 
-    private void Start()
+    private void Awake()
     {
         InitSetting();
         

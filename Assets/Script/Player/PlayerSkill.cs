@@ -23,6 +23,7 @@ public class PlayerSkill : ScriptableObject
     public Sprite SkillIcon { get => skillIcon; }
    
     public AnimationClip SkillAnimation { get => skillAnimationClip; }
+    public string Information { get => skill_Information; }
 
     public int CoolTimeTurn { get => coolTimeTurn; }
 }

@@ -1,14 +1,20 @@
 using Util;
 using UnityEngine;
 using Unity.VisualScripting;
+using System.Collections.Generic;
+using UnityEngine.Pool;
 
 public class SkillScroll : ScrollPool
 {
     [Header("Skill Scroll Settings")]
     [Space]
-    [SerializeField] private PlayerSkill[] data;
+    [SerializeField] private SkillSaver skillSaver;
+    [Header("Debug")]
     [SerializeField] private int currentMinIndex;
     [SerializeField] private int currentMaxIndex;
+    private SkillSelector skillSelector;
+    public ObjectPool<ScrollContent> CurrentPool { get => contentPool; }
+    public SkillSelector SkillSelector { get => skillSelector; }
 
     private void Start()
     {
@@ -17,7 +23,8 @@ public class SkillScroll : ScrollPool
     public void InitSettings()
     {
         BindEvent();
-        InitSettings((data.Length / Const.CONTENT_IN_ROW) + 1);
+        InitSettings((DataBase.Instance.Skill.Data.Length / Const.CONTENT_IN_ROW) + 1);
+        skillSelector = transform.GetOrAddComponent<SkillSelector>();
         currentMinIndex = 0;
         currentMaxIndex = createStandard - 1;
         for (int i = 0; i < createStandard; ++i)
@@ -32,7 +39,7 @@ public class SkillScroll : ScrollPool
         SkillContent skillContent = gameObject.GetComponent<SkillContent>();
         if (skillContent == null)
             skillContent = gameObject.AddComponent<SkillContent>();
-        skillContent.InitSettings(data, contentPool);
+        skillContent.InitSettings(this, skillSaver);
         return skillContent;
     }
 
@@ -55,7 +62,7 @@ public class SkillScroll : ScrollPool
 
     private void IncreaseRowIndex()
     {
-        if (currentMaxIndex > data.Length / Const.CONTENT_IN_ROW)
+        if (currentMaxIndex > DataBase.Instance.Skill.Data.Length / Const.CONTENT_IN_ROW)
             return;
         currentMaxIndex++;
         currentMinIndex++;
