@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
+using Util.CustomEnum;
 
 
 public class Enemy : MonoBehaviour
@@ -204,7 +205,7 @@ public class Enemy : MonoBehaviour
     {
         int damage = 1; // 임시적으로 1데미지 줌.
         Judge judge = new Judge();
-        judge.Name = CustomEnum.JudgeName.Miss;
+        judge.Name = JudgeName.Miss;
         HandleParryJudge(judge);
         OnAttack?.Invoke(damage);
     }
@@ -218,9 +219,9 @@ public class Enemy : MonoBehaviour
     }
     public void HandleParryJudge(Judge judge, int damage = 0)
     {
-        if(judge.Name.Equals(CustomEnum.JudgeName.Perfect))
+        if(judge.Name.Equals(JudgeName.Perfect))
             GetDamage(damage);                                      //임의로 패링 퍼펙트 했을 때 대미지 받음
-        if (judge.Name.Equals(CustomEnum.JudgeName.Miss))
+        if (judge.Name.Equals(JudgeName.Miss))
         {
             AkSoundEngine.PostEvent("Miss", gameObject);
             playerAnim.Hurt(); //체인지 세트 72

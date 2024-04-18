@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 307126670119122356}
   - component: {fileID: 307126670119122357}
   - component: {fileID: 307126670119122346}
-  - component: {fileID: 307126670119122347}
   - component: {fileID: 307126670119122359}
   - component: {fileID: 307126670119122358}
+  - component: {fileID: 1257194185038300826}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1186509851
-  m_SortingLayer: 2
+  m_SortingLayerID: 153567263
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 50e9c80fcc3a55345b12b9529eaf2e9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -109,20 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &307126670119122347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307126670119122344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4b3c5659ee0ff4409afafa4d5b26956, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 4
-  rayIntensity: 1
 --- !u!61 &307126670119122359
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -159,7 +145,7 @@ Animator:
   m_GameObject: {fileID: 307126670119122344}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1ce761ac9e5769748a5d348d8ca5bc97, type: 2}
+  m_Controller: {fileID: 9100000, guid: cea65dc7dc22c9549ba30385a67987c2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -170,3 +156,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1257194185038300826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307126670119122344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dcf30c1207a300459441a5d40215f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 5
+  rayIntensity: 1

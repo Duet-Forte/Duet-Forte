@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
-using Util;
+using Util.CustomEnum;
 using SoundSet;
 
 public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드와 비교
@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
 
     #region 커맨드 관련 자료형
     List<string> skillCommandEntered=new List<string>();//입력받은 커맨드
-    [SerializeField] List<CustomEnum.JudgeName> timingList;           //판정여부
+    [SerializeField] List<JudgeName> timingList;           //판정여부
     [SerializeField] string[] skillCommandEnteredToArray = { "R" };           //skillCommandEntered를 배열로 바꿔 저장할 변수
     [SerializeField] ParticleSystem castSkillParticle;
     Queue<string> inputBuffer;
@@ -75,7 +75,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             
         }
         skillCommandEntered.Add(attackKey);
-        timingList.Add(CustomEnum.JudgeName.Rest);
+        timingList.Add(JudgeName.Rest);
 
     }
     void AttackEnd() {//공격기회가 끝나면 호출되는 함수
@@ -261,21 +261,21 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     
     //입력받은 커맨드가 스킬셋에 있는 커맨드인지 검사
 
-    float CalculateBasicAttackDamage(CustomEnum.JudgeName judgeName) {
-        if (judgeName == CustomEnum.JudgeName.Miss) { //Rest판정
+    float CalculateBasicAttackDamage(JudgeName judgeName) {
+        if (judgeName == JudgeName.Miss) { //Rest판정
             return 0;
         }
-        if (judgeName == CustomEnum.JudgeName.Perfect) {
+        if (judgeName == JudgeName.Perfect) {
             return playerAttackStat * 1.0f;
         }
-        if (judgeName == CustomEnum.JudgeName.Great) {
+        if (judgeName == JudgeName.Great) {
             return playerAttackStat * 0.8f;
         }
-        if (judgeName == CustomEnum.JudgeName.Good)
+        if (judgeName == JudgeName.Good)
         {
             return playerAttackStat * 0.5f;
         }
-        if (judgeName == CustomEnum.JudgeName.Bad)
+        if (judgeName == JudgeName.Bad)
         {
             return playerAttackStat * 0.2f;
         }

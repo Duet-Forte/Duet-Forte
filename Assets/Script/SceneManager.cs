@@ -14,9 +14,10 @@ public class SceneManager : MonoBehaviour
     private DataStorage dataStorage;
     public DataStorage Storage { get => dataStorage; }
 
-    private void Start()
+    private void Awake()
     {
         InitSetting();
+        
     }
 
     private void InitSetting()
@@ -36,7 +37,7 @@ public class SceneManager : MonoBehaviour
     }
     public void SetBattleScene(string name)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Rebuilding SampleStage");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Rebuilding SampleStage", LoadSceneMode.Additive);
         StageManager stageManager = FindAnyObjectByType<StageManager>();
 
         if (stageManager != null)
