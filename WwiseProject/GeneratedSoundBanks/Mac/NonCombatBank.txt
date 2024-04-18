@@ -1,5 +1,9 @@
 Event	ID	Name			Wwise Object Path	Notes
+	387630415	UI_Text_Typing_SFX			\Default Work Unit\MainMenu\UI_Text_Typing_SFX	
+	1043137757	Ob_Fireplace_Fire_SFX			\Default Work Unit\NonCombat_SFX\Ob_Fireplace_Fire_SFX	
+	1888007992	Ob_Fireplace_Ignition_SFX			\Default Work Unit\NonCombat_SFX\Ob_Fireplace_Ignition_SFX	
 	2299963368	Gio_BodyFall_SFX			\Default Work Unit\Player\NonCombat\Gio_BodyFall_SFX	
+	3840304745	Ob_Fireplace_Switch_SFX			\Default Work Unit\NonCombat_SFX\Ob_Fireplace_Switch_SFX	
 	4038898239	Player_Step_SFX			\Default Work Unit\Player\NonCombat\Player_Step_SFX	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
@@ -15,16 +19,23 @@ Effect plug-ins	ID	Name	Type				Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	43014063	Gio_BodyFall_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Gio_BodyFall_SFX_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\NonCombat\Gio_BodyFall\Gio_BodyFall_SFX		998432
+	333670188	Typing04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Typing04_A63F6DF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Typing\Typing\Typing04		26992
 	367550639	FootStep_Wood03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Wood03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\FootStep_Wood03		49472
+	373033679	Typing02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Typing02_70C632B6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Typing\Typing\Typing02		40196
 	393957476	FootStep_Dirt04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Dirt04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Dirt\FootStep_Dirt04		42116
+	407478213	Ob_Fire_SwitchOn	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Ob_Fire_SwitchOn_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Object\FirePlace\Ob_Fire_SwitchOn		93596
+	439251448	Ob_Fire_Fire	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Ob_Fire_Fire_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Object\FirePlace\Ob_Fire_Fire		15360100
 	500923705	FootStep_Dirt01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Dirt01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Dirt\FootStep_Dirt01		68016
 	527714309	FootStep_Grass03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Grass03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Grass\FootStep_Grass03		61256
 	594306566	FootStep_Dirt02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Dirt02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Dirt\FootStep_Dirt02		51320
+	602525784	Typing03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Typing03_E2B87ACB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Typing\Typing\Typing03		25620
 	602929188	FootStep_Grass01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Grass01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Grass\FootStep_Grass01		59644
 	604837605	FootStep_Grass02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Grass02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Grass\FootStep_Grass02		44748
 	654213218	FootStep_Dirt05	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Dirt05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Dirt\FootStep_Dirt05		39824
+	687851540	Typing01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Typing01_4FF2EC51.wem		\Actor-Mixer Hierarchy\Default Work Unit\Typing\Typing\Typing01		43688
 	750448001	FootStep_Wood04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Wood04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\FootStep_Wood04		35792
 	826799344	FootStep_Grass05	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Grass05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Grass\FootStep_Grass05		42232
+	868424379	Ob_Fire_Ignition	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Ob_Fire_Ignition_B2495316.wem		\Actor-Mixer Hierarchy\Default Work Unit\Object\FirePlace\Ob_Fire_Ignition		103680
 	872771126	FootStep_Wood02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Wood02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\FootStep_Wood02		39876
 	907227252	FootStep_Wood05	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Wood05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\FootStep_Wood05		42192
 	911106767	FootStep_Wood01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Wood01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\FootStep_Wood01		32824
