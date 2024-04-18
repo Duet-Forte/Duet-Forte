@@ -476,7 +476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &292159129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1713,11 +1713,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4519929502507067722, guid: 17916459407213c49a9d6ba35c93cdd1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4519929502507067722, guid: 17916459407213c49a9d6ba35c93cdd1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4519929502507067722, guid: 17916459407213c49a9d6ba35c93cdd1, type: 3}
       propertyPath: m_AnchorMin.y
@@ -1837,23 +1837,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7707467950789584333, guid: 17916459407213c49a9d6ba35c93cdd1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7707467950789584333, guid: 17916459407213c49a9d6ba35c93cdd1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7707467950789584333, guid: 17916459407213c49a9d6ba35c93cdd1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 7749403175741379980, guid: 17916459407213c49a9d6ba35c93cdd1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 146
       objectReference: {fileID: 0}
     - target: {fileID: 7749403175741379980, guid: 17916459407213c49a9d6ba35c93cdd1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 8139556899947028050, guid: 17916459407213c49a9d6ba35c93cdd1, type: 3}
       propertyPath: m_IsActive
@@ -1861,7 +1861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8621551026560101909, guid: 17916459407213c49a9d6ba35c93cdd1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000044028184
+      value: 0.000016258373
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17916459407213c49a9d6ba35c93cdd1, type: 3}

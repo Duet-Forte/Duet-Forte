@@ -37,6 +37,7 @@ public class PlayerSkill : ScriptableObject
     public string[] SkillCommand { get => skillCommand; } // 성재 : string을 사용해서 A,B,R 이렇게 사용하는 게 메모리 측면에서 이득을 볼 수 있을 듯 /재욱: 확인확인
     public ParticleSystem SkillParticle { get => skillParticle;  }
     public Sprite SkillIcon { get => skillIcon; }
+    public string Information { get => skill_Information; }
 
     public int CoolTimeTurn { get => coolTimeTurn; }
     

@@ -32,7 +32,7 @@ public class GuardCounterQTE : MonoBehaviour
         bool isDone = false;
 
         outCircle.transform.localScale = originOutCircleScale;
-        QTEJudge = CustomEnum.JudgeName.Miss;
+        QTEJudge = JudgeName.Miss;
         outCircle.transform.DOScale(new Vector3(0.9f, 0.9f, 0.9f), (secondPerBeat*2) + (secondPerBeat / 20)).OnComplete(() => { isDone = true; }); //임시.. 비트에 맞게 수정요망
         while (!isDone)
         {
