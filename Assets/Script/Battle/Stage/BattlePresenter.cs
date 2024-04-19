@@ -14,6 +14,7 @@ public class BattlePresenter : MonoBehaviour
     PlayerInterface playerInterface;
     IEnemy enemy;
     string enemyName;
+    BattleDirector battleDirector=new BattleDirector();
     #endregion
 
     #region 플레이어와 적 스탯
@@ -36,29 +37,44 @@ public class BattlePresenter : MonoBehaviour
         Debug.Log(enemyName);
         playerInterface = this.stageManager.PlayerInterface;
     }
-    public void PlayerBasicAttackToEnemy(float playerAttack,bool isSlash) {
-        int damage = 0;
+    public void PlayerBasicAttackToEnemy(Damage damage) {
         GetDefense();
-        if (isSlash)
-        {
-            damage = DamageCalculate(playerAttack,enemySlashDefense);
-            enemy.GetDamage(damage);
-            hitParticle.Generate_Player_Hit_Slash(enemy.Transform);
-            return;
-        }
-        if (!isSlash)
-        {
-            damage = DamageCalculate(playerAttack, enemyPierceDefense);
-            enemy.GetDamage(damage);
-            hitParticle.Generate_Player_Hit_Pierce(enemy.Transform);
-            return;
-        }
-    }
-    public void PlayerSkillToEnemy(float playerAttack,bool isSlash) { 
 
-        Debug.Log(playerAttack);
-        enemy.GetDamage((int)playerAttack);
-    
+        if (damage.GetDamageType() == CustomEnum.DamageType.Slash)
+        {
+            damage.CalculateDamageWithJudge((int)enemySlashDefense);
+            enemy.GetDamage(damage);
+
+            if(damage.GetCalculatedDamage()>0)hitParticle.Generate_Player_Hit_Slash(enemy.Transform);
+        }
+        else
+        {
+            damage.CalculateDamageWithJudge((int)enemyPierceDefense);
+            enemy.GetDamage(damage);
+            if (damage.GetCalculatedDamage() > 0) hitParticle.Generate_Player_Hit_Pierce(enemy.Transform);
+        }
+      
+        
+    }
+    public void PlayerSkillToEnemy(Damage damage) {
+
+        GetDefense();
+        
+        if (damage.GetDamageType() == CustomEnum.DamageType.Slash)
+        {
+            damage.CalculateDamage((int)enemySlashDefense);
+            enemy.GetDamage(damage);
+            CameraShake(0.5f,1f,100,30);
+            if (damage.GetCalculatedDamage() > 0) hitParticle.Generate_Player_Hit_Slash(enemy.Transform);
+        }
+        else
+        {
+            damage.CalculateDamage((int)enemyPierceDefense);
+            enemy.GetDamage(damage);
+            CameraShake(0.5f, 1f, 100, 30);
+            if (damage.GetCalculatedDamage() > 0) hitParticle.Generate_Player_Hit_Pierce(enemy.Transform);
+        }
+
     }
 
     public void EnemyToPlayer(float enemyAttack) {
@@ -68,12 +84,14 @@ public class BattlePresenter : MonoBehaviour
         int damage;
         GetDefense();
         damage = DamageCalculate(enemyAttack,playerDefense);
+        CameraShake(1f,1f,100,50);
 
         playerInterface.GetDamage(damage);
     }
 
-    public void GuardCounterToEnemy(float playerAttack) {
-        StartCoroutine(GuardCounter(playerAttack));
+    public void GuardCounterToEnemy(Damage damage) {
+        damage.CalculateDamageWithJudge(0);//트루대미지
+        StartCoroutine(GuardCounter(damage));
         Object.Instantiate<GameObject>(Resources.Load<GameObject>("VFX/VFX_Prefab/Combat/Player/Hit/Player_CounterAttack_GuardCounter_Hit_VFX"),enemy.Transform.position, Quaternion.identity);
 
     }
@@ -81,12 +99,15 @@ public class BattlePresenter : MonoBehaviour
     
     
     }
-    IEnumerator GuardCounter(float playerAttack) {
+    private void CameraShake(float duration, float strength, int vibrato, int randomness) {
+        battleDirector.CameraShake(duration, strength, vibrato, randomness);
+    }
+    IEnumerator GuardCounter(Damage damage) {
         
-        enemy.GetDamage((int)playerAttack);
+        enemy.GetDamage(damage);
         yield return new WaitForSeconds(0.45f);
         for (int guardCounterCount = 0; guardCounterCount < 10; guardCounterCount++) {
-            enemy.GetDamage((int)playerAttack);
+            enemy.GetDamage(damage);
             yield return new WaitForSeconds(0.1f);
 
         }

@@ -65,11 +65,11 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             skillCommandEntered.Add(attackKey);
             Debug.Log("마지막 판정 디버깅 : "+timingList.Last());
             if (attackKey == "A") {
-                battlePresenter.PlayerBasicAttackToEnemy(CalculateBasicAttackDamage(timingList.Last()), true); //battlepresenter에게 대미지 전달
+                battlePresenter.PlayerBasicAttackToEnemy(new Damage(playerAttackStat,timingList.Last(),new SlashDamage())); //battlepresenter에게 대미지 전달
                 return;
             }
             if (attackKey == "B") {
-                battlePresenter.PlayerBasicAttackToEnemy(CalculateBasicAttackDamage(timingList.Last()), false);
+                battlePresenter.PlayerBasicAttackToEnemy(new Damage(playerAttackStat, timingList.Last(), new PierceDamage()));
                 return;
             }
             
@@ -142,11 +142,11 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         tmp.gameObject.transform.localScale = gameObject.transform.localScale;
         
         //애니메이션 클립 동적할당
-        playerAnimator.Skill2(currentSkill.skillClip);
+        playerAnimator.Skill(currentSkill.skillClip);
         
         for (int i = 0; i < currentSkill.damage.Length; i++) { 
         yield return new WaitForSeconds(currentSkill.waitTimes[i]);
-            battlePresenter.PlayerSkillToEnemy(currentSkill.damage[i], currentSkill.damageType[i]);
+            battlePresenter.PlayerSkillToEnemy(new Damage(currentSkill.damage[i], currentSkill.damageType[i]?new SlashDamage():new PierceDamage()));
         }
 
     }

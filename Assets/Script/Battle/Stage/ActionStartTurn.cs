@@ -28,7 +28,7 @@ public class ActionStartTurn : ITurnHandler
         DOTween.To(() => volume, x => volume = x, 100, 3f).SetEase(Ease.Linear).OnUpdate(() => AkSoundEngine.SetRTPCValue("Volume", volume));*/
         
         Debug.Log("ActionStartTurn");
-        blackBox.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.45f);
+        blackBox.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.7f);
         stageManager.SelectRandomBattlePos();
         //battleCamManager.ZoomIn();
         Debug.Log("재설정된 battlePos : "+stageManager.BattlePos);

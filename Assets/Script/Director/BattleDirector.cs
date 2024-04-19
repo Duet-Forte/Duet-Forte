@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using Util;
-
+using Cinemachine;
 /// <summary>
 /// 이 스크립트는 전투파트에서의 연출을 다루고 있습니다.
 /// 오브젝트가 피격시 뒤로 밀린다거나 캐릭터가 흔들린다던가 공격시 앞으로 이동하는 등의 
@@ -26,6 +26,11 @@ namespace Director
 
             target.transform.DOShakePosition(0.3f, 0.5f, 100, 30);
 
+        }
+        public void CameraShake(float duration, float strength,int vibrato,float randomness) {
+            ICinemachineCamera currentCam= CinemachineCore.Instance.GetActiveBrain(0).ActiveVirtualCamera;
+            GameObject camera=currentCam.VirtualCameraGameObject;
+            camera.transform.DOShakePosition(duration, strength, vibrato, randomness);
         }
         public void SlowMotion(float duration) {
             int normalTimeSpeed = 1;

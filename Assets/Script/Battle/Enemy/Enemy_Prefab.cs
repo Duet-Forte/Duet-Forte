@@ -58,7 +58,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public event Action OnFramePass;
     public event Action OnGuardCounterEnd;
     public event Action<int> OnAttack;
-    public event Action<int> OnGetDamage;
+    public event Action<Damage> OnGetDamage;
 
     #region 외부 클래스
     private PlayerInterface playerInter;//체인지 세트 72 - 플레이어에 접근해서 가드나 피격 애니메이션 재생시키기 위한 변수
@@ -345,9 +345,9 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         
     }
     
-    public void GetDamage(int playerAttack)// getdamage 메서드 자체를 이사시켜야될 듯
+    public void GetDamage(Damage damage)// getdamage 메서드 자체를 이사시켜야될 듯
     {
-        if (playerAttack <= 0) {
+        if (damage.GetCalculatedDamage() <= 0) {
             enemyAnimator.Guard();
             return;
         }
@@ -355,8 +355,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         battleDirector.Shake(gameObject);
         enemyAnimator.Hurt();
 
-        healthPoint -= playerAttack;
-        OnGetDamage?.Invoke(playerAttack);
+        healthPoint -= damage.GetCalculatedDamage();
+        OnGetDamage?.Invoke(damage);
         if (healthPoint <= 0)
             stageManager.OnEnemyDie();
     }
@@ -387,6 +387,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         {
             //AkSoundEngine.PostEvent("Parry_Sound", gameObject);
             playerSoundSet.PerfectParrySound(gameObject);
+            battleDirector.CameraShake(0.3f, 1, 100, 30);
             //AkSoundEngine.PostEvent("Player_Parry_SFX", gameObject);
             playerInter.PlayerAnimator.Parry(true);
             //체인지 세트 72
@@ -395,6 +396,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         {
             //AkSoundEngine.PostEvent("Parry_Sound", gameObject);
             playerSoundSet.PerfectParrySound(gameObject);
+            battleDirector.CameraShake(0.3f, 0.5f, 100, 30);
             //AkSoundEngine.PostEvent("Player_Parry_SFX", gameObject);
             playerInter.PlayerAnimator.Parry(false);
             //체인지 세트 72

@@ -1,0 +1,717 @@
+fileFormatVersion: 2
+guid: d409991ed91dcda4bb8b6633d3b1a1ac
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_0
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 3957
+        width: 380
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4845c50f737d8694a932b82b0185e0c3
+      internalID: -1694138871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_1
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 3950
+        width: 473
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deaf05be945b6e3409dff90c3d3843d8
+      internalID: 1417809859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_2
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 3943
+        width: 438
+        height: 549
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003f937b6441c2a4592e23da8ddff085
+      internalID: -1512121593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_3
+      rect:
+        serializedVersion: 2
+        x: 2451
+        y: 3950
+        width: 493
+        height: 533
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf826e2f2d8f30a4c8a7b780c676f798
+      internalID: -893646098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_4
+      rect:
+        serializedVersion: 2
+        x: 3243
+        y: 3934
+        width: 455
+        height: 549
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ddc0115f38fda841ae70210e3d60bb0
+      internalID: 363785954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_5
+      rect:
+        serializedVersion: 2
+        x: 3975
+        y: 3934
+        width: 495
+        height: 549
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad7aed6408e6b2478ebeede85eab2fb
+      internalID: 357311572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_6
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 3147
+        width: 472
+        height: 537
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db29ce2315fe32d439de65a7c3f598f5
+      internalID: -271594941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_7
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 3135
+        width: 503
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23898bdf5c01334da0a5663c7042f08
+      internalID: -123807893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_8
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 3147
+        width: 483
+        height: 546
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc0193735d834944b5d5f751b162c47
+      internalID: 568736778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_9
+      rect:
+        serializedVersion: 2
+        x: 2445
+        y: 3138
+        width: 499
+        height: 531
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b43eb6ad5903514fa1f00e7cb8a6e45
+      internalID: 1138065663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_10
+      rect:
+        serializedVersion: 2
+        x: 3279
+        y: 3145
+        width: 381
+        height: 539
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2070568e4bd19bc469ec93e4d4fe5102
+      internalID: 30751245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_11
+      rect:
+        serializedVersion: 2
+        x: 3986
+        y: 3136
+        width: 472
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e321bd80506dc44684b8d87703f40ed
+      internalID: -1829943780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_12
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 2136
+        width: 451
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa614ca3df70e3a4bb9790d41bcc13dc
+      internalID: 1472231336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_13
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 2826
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a2434bb878a9c44aee17490d468f15
+      internalID: 714062940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_14
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 2826
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc78e7ea479a52c42ae948e5c347a24f
+      internalID: -311995643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_15
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2817
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1d46fba63dd824db382a7df5dfbe3f
+      internalID: -1782927294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_16
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 2826
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca3244a748af22a4ebcabfcd633fbd28
+      internalID: -1504002024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_17
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 2817
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910fb131e7f44c04c957e468abde2947
+      internalID: -759005891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_18
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 2813
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd5d487c6090a1418bc3704e0af7463
+      internalID: -1777168947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_19
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 2754
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e069e674952959e4ab49e2b060eb5b4c
+      internalID: -384857149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_20
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 2145
+        width: 497
+        height: 538
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca7eba96c623d045910e3645be37200
+      internalID: -1004048364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_21
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 2130
+        width: 454
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e8df102baeb2c45be135f1ab6fce19
+      internalID: -1630559483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_22
+      rect:
+        serializedVersion: 2
+        x: 2456
+        y: 2136
+        width: 499
+        height: 556
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86c430f43789fa4b82bd862a4d31e46
+      internalID: 1843525038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_23
+      rect:
+        serializedVersion: 2
+        x: 3246
+        y: 2132
+        width: 470
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb56770ef8193b4da89e013f19c22cd
+      internalID: 2081773838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_24
+      rect:
+        serializedVersion: 2
+        x: 3968
+        y: 2123
+        width: 508
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832ed79892a2df84d8f51a2aa9a7cd7c
+      internalID: -2127292182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_25
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 1115
+        width: 497
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d835abead65fb54bb924265fcfa6982
+      internalID: 1164072967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_Damage_768slice_26
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 1115
+        width: 524
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd242181bd12b146bc197598d1410f9
+      internalID: 1896253754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Ui_Damage_768slice_0: -1694138871
+      Ui_Damage_768slice_1: 1417809859
+      Ui_Damage_768slice_10: 30751245
+      Ui_Damage_768slice_11: -1829943780
+      Ui_Damage_768slice_12: 1472231336
+      Ui_Damage_768slice_13: 714062940
+      Ui_Damage_768slice_14: -311995643
+      Ui_Damage_768slice_15: -1782927294
+      Ui_Damage_768slice_16: -1504002024
+      Ui_Damage_768slice_17: -759005891
+      Ui_Damage_768slice_18: -1777168947
+      Ui_Damage_768slice_19: -384857149
+      Ui_Damage_768slice_2: -1512121593
+      Ui_Damage_768slice_20: -1004048364
+      Ui_Damage_768slice_21: -1630559483
+      Ui_Damage_768slice_22: 1843525038
+      Ui_Damage_768slice_23: 2081773838
+      Ui_Damage_768slice_24: -2127292182
+      Ui_Damage_768slice_25: 1164072967
+      Ui_Damage_768slice_26: 1896253754
+      Ui_Damage_768slice_3: -893646098
+      Ui_Damage_768slice_4: 363785954
+      Ui_Damage_768slice_5: 357311572
+      Ui_Damage_768slice_6: -271594941
+      Ui_Damage_768slice_7: -123807893
+      Ui_Damage_768slice_8: 568736778
+      Ui_Damage_768slice_9: 1138065663
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

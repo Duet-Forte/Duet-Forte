@@ -166,7 +166,7 @@ MonoBehaviour:
   skillSet:
   - {fileID: 11400000, guid: b6eb7aee860a77d4a9560991960797c0, type: 2}
   - {fileID: 11400000, guid: 5b9f0189bbf56ec43a88567bb4972ee0, type: 2}
-  - {fileID: 11400000, guid: cb885359cba39f04eb2a2e99b916f2b4, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   arrayOfSkillParticle:
   - {fileID: 0}

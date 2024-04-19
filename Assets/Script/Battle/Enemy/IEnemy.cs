@@ -19,7 +19,7 @@ public interface IEnemy
     public event Action OnFramePass;
     public event Action OnGuardCounterEnd;
     public event Action<int> OnAttack;
-    public event Action<int> OnGetDamage;
+    public event Action<Damage> OnGetDamage;
     
     public void BindPattern(EnemyPattern[] enemyPattern);
     public void CheckCombo(int currentCombo, int maxGauge);
@@ -32,7 +32,7 @@ public interface IEnemy
     /// <param name="playerAttack"></param>
     /// <param name="isSlash">true는 베기-A,false는 찌르기-B</param>
 
-    public void GetDamage(int playerAttack);
+    public void GetDamage(Damage damage);
     public void StopActions();
 
     public void ReturnToOriginPos();

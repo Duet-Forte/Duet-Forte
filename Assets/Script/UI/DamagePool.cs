@@ -18,7 +18,7 @@ public class DamagePool : IStageUI
 
     private DamageUI CreateDamageUI()
     {
-        GameObject damageUIPrefab = Resources.Load<GameObject>(Const.UI_DAMAGE);
+        GameObject damageUIPrefab = Resources.Load<GameObject>("UI/Damage/DamgeText");
          DamageUI damageUI = Object
             .Instantiate(damageUIPrefab)
             .GetComponent<DamageUI>();
@@ -49,5 +49,5 @@ public class DamagePool : IStageUI
         enemy.OnGetDamage += ShowDamage;
     }
 
-    public void ShowDamage(int damage) => pool.Get().ParseDamage(damage);
+    public void ShowDamage(Damage damage) => pool.Get().ParseDamage(damage);//공격유형 추가하기
 }
