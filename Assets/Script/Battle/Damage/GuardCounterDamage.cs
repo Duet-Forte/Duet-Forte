@@ -3,36 +3,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
+using Util.CustomEnum;
 
 public class GuardCounterDamage : DamageType
 {
-    public override int GetDamage(float attack, int defense, CustomEnum.JudgeName judgeName)//트루대미지
+    public override int GetDamage(float attack, int defense, JudgeName judgeName)//트루대미지
     {
-        if (judgeName == CustomEnum.JudgeName.Miss)
+        if (judgeName == JudgeName.Miss)
         { //Rest판정
             return 0;
         }
-        if (judgeName == CustomEnum.JudgeName.Perfect)
+        if (judgeName == JudgeName.Perfect)
         {
             return (int)(attack * 1.0f);
         }
-        if (judgeName == CustomEnum.JudgeName.Great)
+        if (judgeName == JudgeName.Great)
         {
             return (int)(attack * 0.8f);
         }
-        if (judgeName == CustomEnum.JudgeName.Good)
+        if (judgeName == JudgeName.Good)
         {
             return (int)(attack * 0.5f);
         }
-        if (judgeName == CustomEnum.JudgeName.Bad)
+        if (judgeName == JudgeName.Bad)
         {
             return (int)(attack * 0.2f);
         }
         return 0;
     }
-    public override CustomEnum.DamageType GetDamageType()
+    public override Util.CustomEnum.DamageType GetDamageType()
     {
-        return CustomEnum.DamageType.GuardCounter;
+        return Util.CustomEnum.DamageType.GuardCounter;
     }
 
 }

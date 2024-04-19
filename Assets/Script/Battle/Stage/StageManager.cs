@@ -29,8 +29,8 @@ public class StageManager : MonoBehaviour
     #region battlePos ÁÂÇ¥
     private float battlePosXMin = -15f;
     private float battlePosXMax = 15f;
-    private float battlePosYMin = -30f;
-    private float battlePosYMax = -20f;
+    private float battlePosYMin = -20f;
+    private float battlePosYMax = -7f;
     #endregion
 
     #region UI
@@ -90,7 +90,9 @@ public class StageManager : MonoBehaviour
             judgeManager?.UpdateInput();
         }
     }
-
+    public void StageStart(Stage stage) {
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn);
+    }
     private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn)
     {
         secondsPerBeat = Const.MINUTE_TO_SECOND / bitPerMinute;

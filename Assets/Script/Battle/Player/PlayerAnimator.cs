@@ -132,15 +132,11 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
         if (isSlash) {
             thePlayerAnimator.SetFloat(slashCase, randomAttackCase);
             randomAttackCase = Random.RandomRange(minDedupleAnim, maxDedupleSlashAnim);
-          
-            
             return;
         }
         if (!isSlash) {
             thePlayerAnimator.SetFloat(pierceCase, randomAttackCase);
             randomAttackCase = Random.RandomRange(minDedupleAnim, maxDeduplePierceAnim);
-           
-            
             return;
         }
         

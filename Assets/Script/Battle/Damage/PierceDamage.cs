@@ -4,8 +4,8 @@ using UnityEngine;
 using Util;
 public class PierceDamage : DamageType
 {
-    public override CustomEnum.DamageType GetDamageType()
+    public override Util.CustomEnum.DamageType GetDamageType()
     {
-        return CustomEnum.DamageType.Pierce;
+        return Util.CustomEnum.DamageType.Pierce;
     }
 }

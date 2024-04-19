@@ -26,7 +26,7 @@ public class SkillSet : MonoBehaviour
     public PlayerSkill.Skill[] ArrayOfSkill { get => arrayOfSkill; }
     #endregion
 
-    void Awake()
+    void Awake()//테스트용으로 남겨둠.
     {
         //skillSet =~~//비전투 씬에서 세팅된 스킬을 받아올 예정
         for (int index = 0; index < skillSet.Length; index++) {//커맨드 리스트 할당
@@ -51,5 +51,28 @@ public class SkillSet : MonoBehaviour
         
     }
     
-  
+  public void InitSettings(PlayerSkill[] skillSet) {
+        this.skillSet = skillSet;
+        for (int index = 0; index < skillSet.Length; index++)
+        {//커맨드 리스트 할당
+            if (skillSet[index] != null)
+            {
+                skillCommand.Add(skillSet[index].SkillCommand);
+                arrayOfCommand = skillCommand.ToArray();
+                arrayOfSkillName[index] = skillSet[index].SkillName;
+                arrayOfSkillIcon[index] = skillSet[index].SkillIcon;
+                arrayOfSkill[index] = skillSet[index].GetSkill;
+                if (skillSet[index].SkillParticle != null)
+                {
+                    /*ParticleSystem tmp = GameObject.Instantiate(skillSet[index].SkillParticle, transform.position, Quaternion.identity);
+                    tmp.transform.parent = gameObject.transform;
+                    tmp.gameObject.transform.localScale = gameObject.transform.localScale;
+                    //tmp.transform.SetParent(gameObject.transform, false);
+                    arrayOfSkillParticle[index] = tmp;*/
+                }
+            }
+
+        }
+    }
 }
+
