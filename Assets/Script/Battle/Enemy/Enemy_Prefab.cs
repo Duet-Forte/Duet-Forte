@@ -386,6 +386,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         {
             //AkSoundEngine.PostEvent("Parry_Sound", gameObject);
             playerSoundSet.PerfectParrySound(gameObject);
+            battleDirector.CameraShake(0.3f, 1, 100, 30);
             //AkSoundEngine.PostEvent("Player_Parry_SFX", gameObject);
             playerInter.PlayerAnimator.Parry(true);
             //체인지 세트 72
@@ -394,6 +395,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         {
             //AkSoundEngine.PostEvent("Parry_Sound", gameObject);
             playerSoundSet.PerfectParrySound(gameObject);
+            battleDirector.CameraShake(0.3f, 0.5f, 100, 30);
             //AkSoundEngine.PostEvent("Player_Parry_SFX", gameObject);
             playerInter.PlayerAnimator.Parry(false);
             //체인지 세트 72

@@ -24,8 +24,6 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
     string skill = "Skill";
     #endregion
     #region 애니메이션 중복방지
-    int dedupleSlashAnimCase;//연속으로 같은 애니메이션 나오는 걸 방지하는 변수
-    int deduplePierceAnimCase;
     int randomAttackCase=0;
 
     int minDedupleAnim;
@@ -65,8 +63,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
         endAttackAnim = -1;
         randomAttackCase = 0;
 
-        deduplePierceAnimCase =Random.RandomRange(minDedupleAnim, maxDeduplePierceAnim);//애니메이션이 2종류이기 때문에
-        dedupleSlashAnimCase = Random.RandomRange(minDedupleAnim, maxDedupleSlashAnim);//애니메이션이 4종류이기 때문에
+       
 
     }
     #region 애니메이션
@@ -134,22 +131,15 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
         
         if (isSlash) {
             thePlayerAnimator.SetFloat(slashCase, randomAttackCase);
-            dedupleSlashAnimCase = randomAttackCase;
             randomAttackCase = Random.RandomRange(minDedupleAnim, maxDedupleSlashAnim);
-            while (randomAttackCase == dedupleSlashAnimCase) { //중복되지 않을 때까지
-            randomAttackCase= Random.RandomRange(minDedupleAnim, maxDedupleSlashAnim);
-            }
+          
             
             return;
         }
         if (!isSlash) {
             thePlayerAnimator.SetFloat(pierceCase, randomAttackCase);
-            deduplePierceAnimCase = randomAttackCase;
             randomAttackCase = Random.RandomRange(minDedupleAnim, maxDeduplePierceAnim);
-            while (randomAttackCase == deduplePierceAnimCase) { //중복되지 않을 때까지
-                randomAttackCase = Random.RandomRange(minDedupleAnim, maxDeduplePierceAnim);
-            }
-            
+           
             
             return;
         }

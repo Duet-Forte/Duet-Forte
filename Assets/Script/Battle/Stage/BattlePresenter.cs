@@ -14,6 +14,7 @@ public class BattlePresenter : MonoBehaviour
     PlayerInterface playerInterface;
     IEnemy enemy;
     string enemyName;
+    BattleDirector battleDirector=new BattleDirector();
     #endregion
 
     #region 플레이어와 적 스탯
@@ -63,12 +64,14 @@ public class BattlePresenter : MonoBehaviour
         {
             damage.CalculateDamage((int)enemySlashDefense);
             enemy.GetDamage(damage);
+            CameraShake(0.5f,1f,100,30);
             if (damage.GetCalculatedDamage() > 0) hitParticle.Generate_Player_Hit_Slash(enemy.Transform);
         }
         else
         {
             damage.CalculateDamage((int)enemyPierceDefense);
             enemy.GetDamage(damage);
+            CameraShake(0.5f, 1f, 100, 30);
             if (damage.GetCalculatedDamage() > 0) hitParticle.Generate_Player_Hit_Pierce(enemy.Transform);
         }
 
@@ -81,6 +84,7 @@ public class BattlePresenter : MonoBehaviour
         int damage;
         GetDefense();
         damage = DamageCalculate(enemyAttack,playerDefense);
+        CameraShake(1f,1f,100,50);
 
         playerInterface.GetDamage(damage);
     }
@@ -94,6 +98,9 @@ public class BattlePresenter : MonoBehaviour
     private void GuardCounterDamage() { 
     
     
+    }
+    private void CameraShake(float duration, float strength, int vibrato, int randomness) {
+        battleDirector.CameraShake(duration, strength, vibrato, randomness);
     }
     IEnumerator GuardCounter(Damage damage) {
         
