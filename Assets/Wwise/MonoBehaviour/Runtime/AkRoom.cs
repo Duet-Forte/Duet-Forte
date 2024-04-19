@@ -13,7 +13,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2023 Audiokinetic Inc.
+Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
 [UnityEngine.AddComponentMenu("Wwise/Spatial Audio/AkRoom")]
@@ -66,13 +66,97 @@ public class AkRoom : AkTriggerHandler
 
 	private UnityEngine.Collider roomCollider = null;
 
-	private UnityEngine.Vector3 previousPosition;
-	private UnityEngine.Vector3 previousScale;
-	private UnityEngine.Quaternion previousRotation;
+	private int previousRoomState;
+	private int previousTransformState;
+	private int previousGeometryState;
+
 	private bool bSentToWwise = false;
 	private ulong geometryID = AkSurfaceReflector.INVALID_GEOMETRY_ID;
+	private bool bGeometrySetByRoom = false;
+
+	private bool _isAReverbZoneInWwise = false;
+	private ulong _parentRoomID = AkRoom.INVALID_ROOM_ID;
+
+	public bool IsAReverbZoneInWwise { get { return _isAReverbZoneInWwise; } }
+	public ulong ParentRoomID { get { return _parentRoomID; } }
 
 	#endregion
+
+	private int GetRoomState()
+	{
+		int[] hashCodes = new[] {
+			reverbAuxBus.IsValid() ? reverbAuxBus.GetHashCode() : 0,
+			reverbLevel.GetHashCode(),
+			transmissionLoss.GetHashCode(),
+			roomToneEvent.IsValid() ? roomToneEvent.GetHashCode() : 0,
+			roomToneAuxSend.GetHashCode(),
+			transform.rotation.GetHashCode()
+		};
+
+		return AK.Wwise.BaseType.CombineHashCodes(hashCodes);
+	}
+
+	private int GetTransformState()
+	{
+		var scale = transform.lossyScale;
+
+		if (IsAssociatedGeometryFromCollider())
+		{
+			if (roomCollider == null)
+			{
+				roomCollider = GetComponent<UnityEngine.Collider>();
+			}
+
+			if (roomCollider.GetType() == typeof(UnityEngine.BoxCollider))
+			{
+				scale = new UnityEngine.Vector3(
+					transform.lossyScale.x * ((UnityEngine.BoxCollider)roomCollider).size.x,
+					transform.lossyScale.y * ((UnityEngine.BoxCollider)roomCollider).size.y,
+					transform.lossyScale.z * ((UnityEngine.BoxCollider)roomCollider).size.z);
+			}
+			else if (roomCollider.GetType() == typeof(UnityEngine.CapsuleCollider))
+			{
+				scale = GetCubeScaleFromCapsule(
+					transform.lossyScale,
+					((UnityEngine.CapsuleCollider)roomCollider).radius,
+					((UnityEngine.CapsuleCollider)roomCollider).height,
+					((UnityEngine.CapsuleCollider)roomCollider).direction);
+			}
+			else if (roomCollider.GetType() == typeof(UnityEngine.SphereCollider))
+			{
+				scale = roomCollider.bounds.size;
+			}
+		}
+
+		int[] hashCodes = new[] {
+			transform.position.GetHashCode(),
+			transform.rotation.GetHashCode(),
+			scale.GetHashCode(),
+		};
+
+		return AK.Wwise.BaseType.CombineHashCodes(hashCodes);
+	}
+
+	private int GetGeometryState()
+	{
+		if (roomCollider == null)
+		{
+			roomCollider = GetComponent<UnityEngine.Collider>();
+		}
+		int colliderHash = roomCollider.GetHashCode();
+
+		int meshHash = 0;
+		if (roomCollider.GetType() == typeof(UnityEngine.MeshCollider))
+		{
+			meshHash = ((UnityEngine.MeshCollider)roomCollider).sharedMesh.GetHashCode();
+		}
+
+		int[] hashCodes = new[] {
+			colliderHash,
+			meshHash
+		};
+		return AK.Wwise.BaseType.CombineHashCodes(hashCodes);
+	}
 
 	public bool TryEnter(AkRoomAwareObject roomAwareObject)
 	{
@@ -113,40 +197,12 @@ public class AkRoom : AkTriggerHandler
 		return AkSoundEngine.GetAkGameObjectID(gameObject);
 	}
 
-	public ulong GetGeometryID()
-	{
-		return geometryID;
-	}
-
-	public void SetGeometryID(ulong id)
-	{
-		if (geometryID != id)
-		{
-			// if the associated geometry used to be from the collider
-			if (IsAssociatedGeometryFromCollider())
-			{
-				AkSoundEngine.RemoveGeometry(geometryID);
-			}
-			geometryID = id;
-		}
-	}
-
 	public bool IsAssociatedGeometryFromCollider()
 	{
 		return geometryID == GetID();
 	}
 
 	private void SetGeometryFromCollider()
-	{
-		_SetGeometryFromCollider(true);
-	}
-
-	private void UpdateGeometryFromCollider()
-	{
-		_SetGeometryFromCollider(false);
-	}
-
-	private void _SetGeometryFromCollider(bool needSetGeometry)
 	{
 		if (roomCollider == null)
 		{
@@ -155,79 +211,131 @@ public class AkRoom : AkTriggerHandler
 
 		if (roomCollider.GetType() == typeof(UnityEngine.MeshCollider))
 		{
-			geometryID = GetID();
-			UnityEngine.MeshCollider meshCollider = GetComponent<UnityEngine.MeshCollider>();
-
-			if (needSetGeometry)
+			var MeshGeometryData = new AkSurfaceReflector.GeometryData();
+			AkSurfaceReflector.GetGeometryDataFromMesh(((UnityEngine.MeshCollider)roomCollider).sharedMesh, ref MeshGeometryData);
+			for (int s = 0; s < MeshGeometryData.numSurfaces; s++)
 			{
-				AkSurfaceReflector.SetGeometryFromMesh(meshCollider.sharedMesh, geometryID, false, false, false);
+				MeshGeometryData.surfaces[s].transmissionLoss = 0;
 			}
-			AkSurfaceReflector.SetGeometryInstance(geometryID, geometryID, INVALID_ROOM_ID, transform);
+
+			geometryID = GetID();
+			AkSoundEngine.SetGeometry(
+				geometryID,
+				MeshGeometryData.triangles,
+				MeshGeometryData.numTriangles,
+				MeshGeometryData.vertices,
+				MeshGeometryData.numVertices,
+				MeshGeometryData.surfaces,
+				MeshGeometryData.numSurfaces,
+				false,
+				false);
+
+			bGeometrySetByRoom = true;
 		}
-		else if (roomCollider.GetType() == typeof(UnityEngine.BoxCollider))
+		else if ((roomCollider.GetType() == typeof(UnityEngine.BoxCollider) || (roomCollider.GetType() == typeof(UnityEngine.CapsuleCollider)) && AkInitializer.CubeGeometryData.numTriangles != 0))
+		{
+			// The capsule collider is approximated with a cube geometry
+			geometryID = GetID();
+
+			AkSoundEngine.SetGeometry(
+				geometryID,
+				AkInitializer.CubeGeometryData.triangles,
+				AkInitializer.CubeGeometryData.numTriangles,
+				AkInitializer.CubeGeometryData.vertices,
+				AkInitializer.CubeGeometryData.numVertices,
+				AkInitializer.CubeGeometryData.surfaces,
+				AkInitializer.CubeGeometryData.numSurfaces,
+				false,
+				false);
+
+			bGeometrySetByRoom = true;
+		}
+		else if (roomCollider.GetType() == typeof(UnityEngine.SphereCollider) && AkInitializer.SphereGeometryData.numTriangles != 0)
 		{
 			geometryID = GetID();
-			UnityEngine.BoxCollider boxCollider = GetComponent<UnityEngine.BoxCollider>();
-			UnityEngine.GameObject tempGameObject = UnityEngine.GameObject.CreatePrimitive(UnityEngine.PrimitiveType.Cube);
-			UnityEngine.Mesh mesh = tempGameObject.GetComponent<UnityEngine.MeshFilter>().sharedMesh;
 
-			tempGameObject.transform.position = boxCollider.bounds.center;
-			tempGameObject.transform.rotation = transform.rotation;
-			UnityEngine.Vector3 roomScale = new UnityEngine.Vector3();
-			roomScale.x = transform.lossyScale.x * boxCollider.size.x;
-			roomScale.y = transform.lossyScale.y * boxCollider.size.y;
-			roomScale.z = transform.lossyScale.z * boxCollider.size.z;
-			tempGameObject.transform.localScale = roomScale;
+			AkSoundEngine.SetGeometry(
+				geometryID,
+				AkInitializer.SphereGeometryData.triangles,
+				AkInitializer.SphereGeometryData.numTriangles,
+				AkInitializer.SphereGeometryData.vertices,
+				AkInitializer.SphereGeometryData.numVertices,
+				AkInitializer.SphereGeometryData.surfaces,
+				AkInitializer.SphereGeometryData.numSurfaces,
+				false,
+				false);
 
-			if (needSetGeometry)
-			{
-				AkSurfaceReflector.SetGeometryFromMesh(mesh, geometryID, false, false, false);
-			}
-			AkSurfaceReflector.SetGeometryInstance(geometryID, geometryID, INVALID_ROOM_ID, tempGameObject.transform);
-
-			UnityEngine.GameObject.DestroyImmediate(tempGameObject);
-		}
-		else if (roomCollider.GetType() == typeof(UnityEngine.CapsuleCollider))
-		{
-			geometryID = GetID();
-			UnityEngine.CapsuleCollider capsuleCollider = GetComponent<UnityEngine.CapsuleCollider>();
-			UnityEngine.GameObject tempGameObject = UnityEngine.GameObject.CreatePrimitive(UnityEngine.PrimitiveType.Cube);
-			UnityEngine.Mesh mesh = tempGameObject.GetComponent<UnityEngine.MeshFilter>().sharedMesh;
-
-			tempGameObject.transform.position = capsuleCollider.bounds.center;
-			tempGameObject.transform.rotation = transform.rotation;
-			tempGameObject.transform.localScale = GetCubeScaleFromCapsule(transform.lossyScale, capsuleCollider.radius, capsuleCollider.height, capsuleCollider.direction);
-
-			if (needSetGeometry)
-			{
-				AkSurfaceReflector.SetGeometryFromMesh(mesh, geometryID, false, false, false);
-			}
-			AkSurfaceReflector.SetGeometryInstance(geometryID, geometryID, INVALID_ROOM_ID, tempGameObject.transform);
-
-			UnityEngine.GameObject.DestroyImmediate(tempGameObject);
-		}
-		else if (roomCollider.GetType() == typeof(UnityEngine.SphereCollider))
-		{
-			geometryID = GetID();
-			UnityEngine.GameObject tempGameObject = UnityEngine.GameObject.CreatePrimitive(UnityEngine.PrimitiveType.Sphere);
-			UnityEngine.Mesh mesh = tempGameObject.GetComponent<UnityEngine.MeshFilter>().sharedMesh;
-
-			tempGameObject.transform.position = roomCollider.bounds.center;
-			tempGameObject.transform.localScale = roomCollider.bounds.size;
-
-			if (needSetGeometry)
-			{
-				AkSurfaceReflector.SetGeometryFromMesh(mesh, geometryID, false, false, false);
-			}
-			AkSurfaceReflector.SetGeometryInstance(geometryID, geometryID, INVALID_ROOM_ID, tempGameObject.transform);
-
-			UnityEngine.GameObject.DestroyImmediate(tempGameObject);
+			bGeometrySetByRoom = true;
 		}
 		else
 		{
 			UnityEngine.Debug.LogWarning(name + " has an invalid collider for wet transmission. Wet Transmission will be disabled.");
-			SetGeometryID(AkSurfaceReflector.INVALID_GEOMETRY_ID);
+			geometryID = AkSurfaceReflector.INVALID_GEOMETRY_ID;
+		}
+	}
 
+	private void SetGeometryInstanceFromCollider()
+	{
+		if (!bGeometrySetByRoom)
+		{
+			SetGeometryFromCollider();
+		}
+
+		if (!bGeometrySetByRoom)
+		{
+			return;
+		}
+
+		if (roomCollider == null)
+		{
+			roomCollider = GetComponent<UnityEngine.Collider>();
+		}
+
+		if (roomCollider.GetType() == typeof(UnityEngine.MeshCollider))
+		{
+			geometryID = GetID();
+			AkSurfaceReflector.SetGeometryInstance(geometryID, geometryID, INVALID_ROOM_ID, transform, false);
+		}
+		else if (roomCollider.GetType() == typeof(UnityEngine.BoxCollider) && AkInitializer.CubeGeometryData.numTriangles != 0)
+		{
+			geometryID = GetID();
+
+			AkTransform geometryInstanceTransform = new AkTransform();
+			geometryInstanceTransform.Set(roomCollider.bounds.center, transform.forward, transform.up);
+			UnityEngine.Vector3 geometryInstanceScale = new UnityEngine.Vector3(
+				transform.lossyScale.x * ((UnityEngine.BoxCollider)roomCollider).size.x,
+				transform.lossyScale.y * ((UnityEngine.BoxCollider)roomCollider).size.y,
+				transform.lossyScale.z * ((UnityEngine.BoxCollider)roomCollider).size.z);
+
+			AkSoundEngine.SetGeometryInstance(geometryID, geometryInstanceTransform, geometryInstanceScale, geometryID, INVALID_ROOM_ID, false);
+		}
+		else if (roomCollider.GetType() == typeof(UnityEngine.CapsuleCollider) && AkInitializer.CubeGeometryData.numTriangles != 0)
+		{
+			geometryID = GetID();
+
+			AkTransform geometryInstanceTransform = new AkTransform();
+			geometryInstanceTransform.Set(roomCollider.bounds.center, transform.forward, transform.up);
+			UnityEngine.Vector3 geometryInstanceScale = GetCubeScaleFromCapsule(
+				transform.lossyScale,
+				((UnityEngine.CapsuleCollider)roomCollider).radius,
+				((UnityEngine.CapsuleCollider)roomCollider).height,
+				((UnityEngine.CapsuleCollider)roomCollider).direction);
+
+			AkSoundEngine.SetGeometryInstance(geometryID, geometryInstanceTransform, geometryInstanceScale, geometryID, INVALID_ROOM_ID, false);
+		}
+		else if (roomCollider.GetType() == typeof(UnityEngine.SphereCollider) && AkInitializer.SphereGeometryData.numTriangles != 0)
+		{
+			geometryID = GetID();
+
+			AkTransform geometryInstanceTransform = new AkTransform();
+			geometryInstanceTransform.Set(roomCollider.bounds.center, transform.forward, transform.up);
+			UnityEngine.Vector3 geometryInstanceScale = roomCollider.bounds.size;
+
+			AkSoundEngine.SetGeometryInstance(geometryID, geometryInstanceTransform, geometryInstanceScale, geometryID, INVALID_ROOM_ID, false);
+		}
+		else
+		{
+			UnityEngine.Debug.LogWarning(name + " has an invalid collider for wet transmission. Wet Transmission will be disabled.");
 			geometryID = AkSurfaceReflector.INVALID_GEOMETRY_ID;
 		}
 	}
@@ -259,38 +367,87 @@ public class AkRoom : AkTriggerHandler
 
 		if (geometryID == AkSurfaceReflector.INVALID_GEOMETRY_ID)
 		{
-			SetGeometryFromCollider();
+			SetGeometryInstanceFromCollider();
 		}
 
 		AkSoundEngine.SetRoom(GetID(), roomParams, geometryID, name);
 		bSentToWwise = true;
+	}
 
-		AkRoomManager.RegisterRoomUpdate(this);
+	public void SetRoom(ulong id)
+	{
+		if (geometryID != id)
+		{
+			if (IsAssociatedGeometryFromCollider())
+			{
+				AkSoundEngine.RemoveGeometryInstance(GetID());
+			}
+			geometryID = id;
+		}
+		SetRoom();
+	}
+
+	public bool UsesGeometry(ulong id)
+	{
+		return geometryID == id;
 	}
 
 	private void Update()
 	{
-		if (previousPosition != transform.position ||
-			previousScale != transform.lossyScale ||
-			previousRotation != transform.rotation)
+		int currentTransformState = GetTransformState();
+		int currentGeometryState = GetGeometryState();
+		int currentRoomState = GetRoomState();
+
+		bool GeometryNeedsUpdate = false;
+		bool GeometryInstanceNeedsUpdate = false;
+		bool RoomNeedsUpdate = false;
+		bool PortalsNeedUpdate = false;
+
+		if (previousTransformState != currentTransformState)
 		{
 			if (IsAssociatedGeometryFromCollider())
 			{
-				UpdateGeometryFromCollider();
+				GeometryInstanceNeedsUpdate = true;
 			}
+			PortalsNeedUpdate = true;
+			previousTransformState = currentTransformState;
+		}
 
-			if (previousRotation != transform.rotation)
+		if (previousGeometryState != currentGeometryState)
+		{
+			if (IsAssociatedGeometryFromCollider())
 			{
-				SetRoom();
+				GeometryNeedsUpdate = true;
 			}
-			else
-			{
-				AkRoomManager.RegisterRoomUpdate(this);
-			}
+			PortalsNeedUpdate = true;
+			previousGeometryState = currentGeometryState;
+		}
 
-			previousPosition = transform.position;
-			previousScale = transform.lossyScale;
-			previousRotation = transform.rotation;
+		if (previousRoomState != currentRoomState)
+		{
+			RoomNeedsUpdate = true;
+			previousRoomState = currentRoomState;
+		}
+
+		if (GeometryNeedsUpdate)
+		{
+			SetGeometryFromCollider();
+			SetGeometryInstanceFromCollider();
+		}
+
+		if (GeometryInstanceNeedsUpdate)
+		{
+			SetGeometryInstanceFromCollider();
+		}
+
+		if (RoomNeedsUpdate)
+		{
+			SetRoom();
+		}
+
+		if (PortalsNeedUpdate)
+		{
+			AkRoomManager.RegisterRoomUpdate(this);
 		}
 	}
 
@@ -332,14 +489,17 @@ public class AkRoom : AkTriggerHandler
 		AkSurfaceReflector surfaceReflectorComponent = gameObject.GetComponent<AkSurfaceReflector>();
 		if (surfaceReflectorComponent != null && surfaceReflectorComponent.enabled)
 		{
-			SetGeometryID(surfaceReflectorComponent.GetID());
+			geometryID = surfaceReflectorComponent.GetID();
 		}
 		else
 		{
+			// better call both, even if the geometry might have already been sent to wwise, in case something related to the geometry changed while the room was disabled.
 			SetGeometryFromCollider();
+			SetGeometryInstanceFromCollider();
 		}
 
 		SetRoom();
+		AkRoomManager.RegisterRoomUpdate(this);
 
 		// if objects entered the room while disabled, enter them now
 		for (var i = 0; i < roomAwareObjectsDetectedWhileDisabled.Count; ++i)
@@ -351,9 +511,9 @@ public class AkRoom : AkTriggerHandler
 		base.OnEnable();
 
 		// init update condition
-		previousPosition = transform.position;
-		previousScale = transform.lossyScale;
-		previousRotation = transform.rotation;
+		previousRoomState = GetRoomState();
+		previousTransformState = GetTransformState();
+		previousGeometryState = GetGeometryState();
 	}
 
 	private void OnDisable()
@@ -367,8 +527,11 @@ public class AkRoom : AkTriggerHandler
 		roomAwareObjectsEntered.Clear();
 
 		AkRoomManager.RegisterRoomUpdate(this);
-
-		SetGeometryID(AkSurfaceReflector.INVALID_GEOMETRY_ID);
+		if (IsAssociatedGeometryFromCollider())
+		{
+			AkSoundEngine.RemoveGeometryInstance(GetID());
+		}
+		geometryID = AkSurfaceReflector.INVALID_GEOMETRY_ID;
 
 		// stop sounds applied to the room game object
 		if (roomToneEvent.IsValid())
@@ -381,7 +544,18 @@ public class AkRoom : AkTriggerHandler
 		bSentToWwise = false;
 	}
 
-	private void OnTriggerEnter(UnityEngine.Collider in_other)
+	protected override void OnDestroy()
+	{
+		if (bGeometrySetByRoom)
+		{
+			AkSoundEngine.RemoveGeometry(GetID());
+			bGeometrySetByRoom = false;
+		}
+
+		base.OnDestroy();
+	}
+
+    private void OnTriggerEnter(UnityEngine.Collider in_other)
 	{
 		AkRoomAwareManager.ObjectEnteredRoom(in_other, this);
 	}
@@ -402,6 +576,44 @@ public class AkRoom : AkTriggerHandler
 	public override void HandleEvent(UnityEngine.GameObject in_gameObject)
 	{
 		PostRoomTone();
+	}
+
+	/// <summary>
+	/// Establish a parent-child relationship between this Room and a parent Room. Sound propagate between a Reverb Zone and its parent as if they were the same Room, without the need for a connecting Portal.
+	/// Examples of Reverb Zones include a covered area with no walls, a forested area within an outdoor space, or any situation where multiple reverb effects are desired within a common space.
+	/// Reverb Zones have many advantages compared to standard Game-Defined Auxiliary Sends. They are part of the wet path, and form reverb chains with other Rooms; they are spatialized according to their 3D extent; they are also subject to other acoustic phenomena simulated in Wwise Spatial Audio, such as diffraction and transmission.
+	/// If a Room is already assigned to a parent Room, it is first be removed from the original parent (exactly as if RemoveReverbZone were called) before it is assigned to the new parent Room.
+	/// The automatically created 'Outdoors' Room is commonly used as a parent Room for Reverb Zones, since they often model open spaces.
+	/// Calls AK::SpatialAudio::SetReverbZone() with the Parent Room and transition Region Width parameters.
+	/// </summary>
+	/// <param name="parentRoom">The AkRoom component to set as the Reverb Zone's parent. A parent Room can have multiple Reverb Zones, but a Reverb Zone can only have a single Parent. A Room cannot be its own parent. Set to null to attach the Reverb Zone to the automatically created 'Outdoors' room.</param>
+	/// <param name="transitionRegionWidth">The width of the transition region between the Reverb Zone and its parent. The transition region is centered around the Reverb Zone geometry. It only applies where triangle transmission loss is set to 0.</param>
+	public void SetReverbZone(AkRoom parentRoom, float transitionRegionWidth)
+	{
+		_parentRoomID = AkRoom.INVALID_ROOM_ID;
+		if (parentRoom != null)
+		{
+			_parentRoomID = parentRoom.GetID();
+		}
+
+		if (transitionRegionWidth < 0.0f)
+		{
+			UnityEngine.Debug.LogWarning("SetReverbZone: Transition region width is a negative number. It has been clamped to 0.");
+			transitionRegionWidth = 0.0f;
+		}
+
+		AkSoundEngine.SetReverbZone(GetID(), ParentRoomID, transitionRegionWidth);
+		_isAReverbZoneInWwise = true;
+	}
+
+	/// <summary>
+	/// Remove this Room, a Reverb Zone, from its parent. Sound can no longer propagate between this Room and its parent, unless they are explicitly connected with a Portal.
+	/// Calls AK::SpatialAudio::RemoveReverbZone() with this Room's ID."/>.
+	/// </summary>
+	public void RemoveReverbZone()
+	{
+		AkSoundEngine.RemoveReverbZone(GetID());
+		_isAReverbZoneInWwise = false;
 	}
 
 	public class PriorityList
@@ -492,6 +704,18 @@ public class AkRoom : AkTriggerHandler
 		{
 			transmissionLoss = value;
 		}
+	}
+
+	[System.Obsolete(AkSoundEngine.Deprecation_2023_1_0)]
+	public ulong GetGeometryID()
+	{
+		return geometryID;
+	}
+
+	[System.Obsolete(AkSoundEngine.Deprecation_2023_1_0)]
+	public void SetGeometryID(ulong id)
+	{
+		geometryID = id;
 	}
 #endregion
 }

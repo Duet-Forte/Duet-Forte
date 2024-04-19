@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
 	<RootPaths>
 		<ProjectRoot>../..</ProjectRoot>
 		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
@@ -9,59 +9,36 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{42D536F4-7AB3-4FEA-A17E-BB6E858B6C47}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{96509E0F-DE40-ABF9-BFC5-5CC1507BB0FF}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
-				<File Id="43014063" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Gio_BodyFall_SFX.wav</ShortName>
-					<CachePath>SFX/Gio_BodyFall_SFX_10C4C929.wem</CachePath>
-				</File>
 				<File Id="84793872" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wood5.wav</ShortName>
-					<CachePath>SFX/Wood5_FE717F8F.wem</CachePath>
+					<CachePath>SFX/Wood5_E841E330.wem</CachePath>
 				</File>
 				<File Id="94650861" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wood4.wav</ShortName>
-					<CachePath>SFX/Wood4_DB34D142.wem</CachePath>
+					<CachePath>SFX/Wood4_974AA219.wem</CachePath>
 				</File>
 				<File Id="229353679" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wood6.wav</ShortName>
-					<CachePath>SFX/Wood6_C376C168.wem</CachePath>
-				</File>
-				<File Id="286678559" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>용사의집 v0308_Loop.wav</ShortName>
-					<CachePath>SFX/용사의집 v0308_Loop_D79FB2B7.wem</CachePath>
+					<CachePath>SFX/Wood6_BCFB7B5F.wem</CachePath>
 				</File>
 				<File Id="408028945" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wood3.wav</ShortName>
-					<CachePath>SFX/Wood3_1B54FF37.wem</CachePath>
+					<CachePath>SFX/Wood3_D3AED424.wem</CachePath>
 				</File>
 				<File Id="414174222" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wood2.wav</ShortName>
-					<CachePath>SFX/Wood2_715FA64B.wem</CachePath>
+					<CachePath>SFX/Wood2_4E4B3044.wem</CachePath>
 				</File>
 				<File Id="826601067" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wood1.wav</ShortName>
-					<CachePath>SFX/Wood1_43788234.wem</CachePath>
-				</File>
-				<File Id="1062809324" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>용사의집 v0308.wav</ShortName>
-					<CachePath>SFX/용사의집 v0308_D79FB2B7.wem</CachePath>
+					<CachePath>SFX/Wood1_BF63F7D7.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2299963368" Name="Gio_BodyFall_SFX" DurationType="OneShot" DurationMin="5.1996665" DurationMax="5.1996665">
-					<MediaRefs>
-						<MediaRef Id="43014063"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="537516138" Name="NonCombat_TimmyHouse_BGM" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="286678559"/>
-						<MediaRef Id="1062809324"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="3461836331" Name="Player_Step" DurationType="OneShot" DurationMin="0.062993795" DurationMax="0.14310288">
 					<MediaRefs>
 						<MediaRef Id="84793872"/>
@@ -81,7 +58,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{90DB04DD-EA66-F3F7-E6D9-6D921F138AF7}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{2AD8E179-984F-DADB-03FD-D95D646878C5}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -122,13 +99,13 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{BCAFB01B-D187-D593-F8FD-C5B3EB1B9F7C}">
+		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{4F064395-55C9-EC49-12FB-65865EC024EB}">
 			<ShortName>MainMenu</ShortName>
 			<Path>MainMenu.bnk</Path>
 			<Media>
 				<File Id="977216514" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Games, Video, Menu UI, Select, Notification 18 SND83166 1.wav</ShortName>
-					<CachePath>SFX/Games, Video, Menu UI, Select, Notification 18 SND83166 1_10C4C929.wem</CachePath>
+					<CachePath>SFX/Games, Video, Menu UI, Select, Notification 18 SND83166 1_818F3B66.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -139,37 +116,37 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{04D2C609-33AC-3262-F292-0505CBAB1434}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{25A176B7-DABE-AFDE-032B-215FA383495D}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
 				<File Id="420250481" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Combat_Timmy-01.wav</ShortName>
-					<CachePath>SFX/Combat_Timmy-01_D79FB2B7.wem</CachePath>
+					<CachePath>SFX/Combat_Timmy-01_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="519697605" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_공격신호_01.wav</ShortName>
-					<CachePath>SFX/SFX_공격신호_01_3B09756F.wem</CachePath>
+					<CachePath>SFX/SFX_공격신호_01_1246C0D0.wem</CachePath>
 				</File>
 				<File Id="547379373" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Test_Music.wav</ShortName>
-					<CachePath>SFX/Test_Music_D79FB2B7.wem</CachePath>
+					<CachePath>SFX/Test_Music_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="602281588" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>세로베기.wav</ShortName>
-					<CachePath>SFX/세로베기_365A4FE4.wem</CachePath>
+					<CachePath>SFX/세로베기_9ECBE823.wem</CachePath>
 				</File>
 				<File Id="673427602" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_공격신호_02.wav</ShortName>
-					<CachePath>SFX/SFX_공격신호_02_08E89FA1.wem</CachePath>
+					<CachePath>SFX/SFX_공격신호_02_FDAA390E.wem</CachePath>
 				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
-					<CachePath>SFX/패링-03_F4D2FBC2.wem</CachePath>
+					<CachePath>SFX/패링-03_03D2EA21.wem</CachePath>
 				</File>
 				<File Id="1010775400" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>찌르기.wav</ShortName>
-					<CachePath>SFX/찌르기_C57D4EAF.wem</CachePath>
+					<CachePath>SFX/찌르기_C769B134.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -225,5 +202,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{89EFB953-F666-45B0-72C3-472E8A56B677}</FileHash>
+	<FileHash>{0AE5AED8-99AC-CF1B-CFFE-2D30DDB7670B}</FileHash>
 </SoundBanksInfo>

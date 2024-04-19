@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2023 Audiokinetic Inc.
+Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
 ﻿﻿public class AkBasePlatformSettings : UnityEngine.ScriptableObject
@@ -42,6 +42,24 @@ Copyright (c) 2023 Audiokinetic Inc.
 		get { return "English(US)"; }
 	}
 
+
+	public virtual bool LoadBanksAsynchronously
+    {
+		get 
+		{
+#if AK_WWISE_ADDRESSABLES && UNITY_ADDRESSABLES
+			return true;
+#else
+			return false;
+#endif
+		}
+	}
+
+	public virtual bool SuspendAudioDuringFocusLoss
+	{
+		get { return true; }
+	}
+
 	public virtual bool RenderDuringFocusLoss
 	{
 		get { return false; }
@@ -55,11 +73,6 @@ Copyright (c) 2023 Audiokinetic Inc.
 	public virtual AkCommunicationSettings AkCommunicationSettings
 	{
 		get { return new AkCommunicationSettings(); }
-	}
-
-	public virtual bool UseAsyncOpen
-	{
-		get { return false; }
 	}
 
 	public virtual uint MemoryAllocationSizeLimit
@@ -271,10 +284,8 @@ public partial class AkCommonUserSettings
 			UnityEngine.Debug.Log("Cannot find Wwise plugin path");
 			return null;
 		}
-#elif UNITY_ANDROID || UNITY_WSA
+#elif UNITY_ANDROID
 		return null;
-#elif UNITY_STADIA
-		return System.IO.Path.Combine(UnityEngine.Application.dataPath, ".." + System.IO.Path.DirectorySeparatorChar);
 #else
 		return System.IO.Path.Combine(UnityEngine.Application.dataPath, "Plugins" + System.IO.Path.DirectorySeparatorChar);
 #endif
@@ -322,64 +333,84 @@ public partial class AkCommonUserSettings
 	[System.Serializable]
 	public class SpatialAudioSettings
 	{
-		[UnityEngine.Tooltip("Maximum number of portals that sound can propagate through.")]
+		[UnityEngine.Tooltip("Maximum number of portals that sound can propagate through. The default value is 8.")]
 		[UnityEngine.Range(0, AkSoundEngine.AK_MAX_SOUND_PROPAGATION_DEPTH)]
 		public uint m_MaxSoundPropagationDepth = AkSoundEngine.AK_MAX_SOUND_PROPAGATION_DEPTH;
 
-		[UnityEngine.Tooltip("Distance (in game units) that an emitter or listener has to move to trigger a recalculation of reflections/diffraction. Larger values can reduce the CPU load at the cost of reduced accuracy.")]
-		public float m_MovementThreshold = 0.1f;
+		[UnityEngine.Tooltip("Distance (in game units) that an emitter or listener has to move to trigger a recalculation of reflections and diffraction. A high distance value has a lower CPU load than a low distance value, but the accuracy is also lower. Note that this value does not affect the ray tracing itself. Rays are cast each time a Spatial Audio update is executed. The default value is 0.25.")]
+		/// Distance (in game units) that an emitter or listener has to move to trigger a recalculation of reflections and diffraction.
+		/// A high distance value has a lower CPU load than a low distance value, but the accuracy is also lower. Note that this value does not affect the ray tracing itself. Rays are cast each time a Spatial Audio update is executed.
+		/// The default value is 0.25.
+		public float m_MovementThreshold = 0.25f;
 
-		[UnityEngine.Tooltip("The number of primary rays used in stochastic ray casting.")]
-		/// The number of primary rays used in stochastic ray casting.
-		public uint m_NumberOfPrimaryRays = 100;
+		[UnityEngine.Tooltip("The number of primary rays used in the ray tracing engine. A larger value increases the chances of finding reflection and diffraction paths but results in higher CPU usage. When the CPU limit is active (see the CPU Limit Percentage Spatial Audio Setting), this setting represents the maximum allowed number of primary rays. The default value is 35.")]
+		/// The number of primary rays used in the ray tracing engine. A larger value increases the chances of finding reflection and diffraction paths but results in higher CPU usage.
+		/// When the CPU limit is active (see the CPU Limit Percentage Spatial Audio Setting), this setting represents the maximum allowed number of primary rays. The default value is 35.
+		public uint m_NumberOfPrimaryRays = 35;
 
 		[UnityEngine.Range(0, 4)]
-		[UnityEngine.Tooltip("The maximum number of reflections that will be processed for a sound path before it reaches the listener.")]
+		[UnityEngine.Tooltip("The maximum reflection order: the number of \"bounces\" in a reflection path. A higher reflection order renders more detail at the expense of higher CPU usage. The default value is 2.")]
 		[UnityEngine.Serialization.FormerlySerializedAs("m_ReflectionsOrder")]
-		/// The maximum number of reflections that will be processed for a sound path before it reaches the listener.
-		/// Valid range: 1-4.
-		public uint m_MaxReflectionOrder = 1;
+		/// The maximum reflection order: the number of "bounces" in a reflection path. A higher reflection order renders more detail at the expense of higher CPU usage.
+		/// Valid range: 1-4. The default value is 2.
+		public uint m_MaxReflectionOrder = 2;
 
         [UnityEngine.Range(0, 8)]
-        [UnityEngine.Tooltip("Maximum diffraction order - the number of 'bends' in a diffraction path. A higher diffraction order accommodates more complex geometry at the expense of higher CPU usage. Diffraction must be enabled on the geometry to find diffraction paths. Set to 0 to disable diffraction on all geometry. This parameter limits the recursion depth of diffraction rays cast from the listener to scan the environment, and also the depth of the diffraction search to find paths between emitter and listener. To optimize CPU usage, it can be set to the maximum number of edges expected to be traversed by obstructing geometry.")]
-        /// Maximum diffraction order - the number of 'bends' in a diffraction path. A higher diffraction order accommodates more complex geometry at the expense of higher CPU usage.
-        /// This parameter limits the recursion depth of diffraction rays cast from the listener to scan the environment, and also the depth of the diffraction search to find paths between emitter and listener.
-        /// To optimize CPU usage, it can be set to the maximum number of edges expected to be traversed by obstructing geometry. 
-        /// Valid range: 1-4.
-        public uint m_MaxDiffractionOrder = 4;
+        [UnityEngine.Tooltip("Maximum diffraction order: the number of \"bends\" in a diffraction path. A high diffraction order accommodates more complex geometry at the expense of higher CPU usage. Diffraction must be enabled on the geometry to find diffraction paths. Set to 0 to disable diffraction on all geometry. This parameter limits the recursion depth of diffraction rays cast from the listener to scan the environment and also the depth of the diffraction search to find paths between emitter and listener. To optimize CPU usage, set it to the maximum number of edges you expect the obstructing geometry to traverse. The default value is 4.")]
+		/// Maximum diffraction order: the number of "bends" in a diffraction path. A high diffraction order accommodates more complex geometry at the expense of higher CPU usage.
+		/// Diffraction must be enabled on the geometry to find diffraction paths. Set to 0 to disable diffraction on all geometry.
+		/// This parameter limits the recursion depth of diffraction rays cast from the listener to scan the environment and also the depth of the diffraction search to find paths between emitter and listener.
+		/// To optimize CPU usage, set it to the maximum number of edges you expect the obstructing geometry to traverse.
+		/// Valid range: 1-4. The default value is 4.
+		public uint m_MaxDiffractionOrder = 4;
 
         [UnityEngine.Range(0, 4)]
-        [UnityEngine.Tooltip("The maximum possible number of diffraction points at each end of a reflection path. Diffraction on reflection allows reflections to fade in and out smoothly as the listener or emitter move in and out of the reflection's shadow zone. When greater than zero, diffraction rays are fired from the listener to search for reflections around one or more corners from the listener. Diffraction must be enabled on the geometry to find diffracted reflections. Set to 0 to disable diffraction on reflections.")]
-        /// The maximum possible number of diffraction points at each end of a reflection paths. Diffraction on reflection allows reflections to fade in and out smoothly as the listener or emitter move in and out of the reflection's shadow zone.
-        /// When greater than zero, diffraction rays are fired from the listener to search for reflections around one or more corners from the listener. Diffraction must be enabled on the geometry to find diffracted reflections.
-        /// Set to 0 to disable diffraction on reflections.
-        public uint m_DiffractionOnReflectionsOrder = 2;
+        [UnityEngine.Tooltip("The maximum possible number of diffraction points at each end of a reflection path. Diffraction on reflection allows reflections to fade in and out smoothly as the listener or emitter moves in and out of the reflection's shadow zone. When greater than zero, diffraction rays are sent from the listener to search for reflections around one or more corners from the listener. Diffraction must be enabled on the geometry to find diffracted reflections. Set to 0 to disable diffraction on reflections. Set to 2 or greater to allow Reflection paths to travel through Portals. The default value is 2.")]
+		/// The maximum possible number of diffraction points at each end of a reflection path.
+		/// Diffraction on reflection allows reflections to fade in and out smoothly as the listener or emitter moves in and out of the reflection's shadow zone.
+		/// When greater than zero, diffraction rays are sent from the listener to search for reflections around one or more corners from the listener.
+		/// Diffraction must be enabled on the geometry to find diffracted reflections.
+		/// Set to 0 to disable diffraction on reflections. Set to 2 or greater to allow Reflection paths to travel through Portals. The default value is 2.
+		public uint m_DiffractionOnReflectionsOrder = 2;
 
-        [UnityEngine.Tooltip("Length of the rays that are cast inside Spatial Audio. Effectively caps the maximum length of an individual segment in a reflection or diffraction path.")]
-        /// Length of the rays that are cast inside Spatial Audio. Effectively caps the maximum length of an individual segment in a reflection or diffraction path.
-        public float m_MaxPathLength = 10000.0f;
+		[UnityEngine.Tooltip("The maximum number of game-defined auxiliary sends that can originate from a single emitter. An emitter can send to its own Room and to all adjacent Rooms if the emitter and listener are in the same Room. If a limit is set, the most prominent sends are kept, based on spread to the adjacent portal from the emitter's perspective. Set to 1 to only allow emitters to send directly to their current Room, and to the Room a listener is transitioning to if inside a portal. Set to 0 to disable the limit. The default value is 3.")]
+		/// The maximum number of game-defined auxiliary sends that can originate from a single emitter.
+		/// An emitter can send to its own Room and to all adjacent Rooms if the emitter and listener are in the same Room.
+		/// If a limit is set, the most prominent sends are kept, based on spread to the adjacent portal from the emitter's perspective.
+		/// Set to 1 to only allow emitters to send directly to their current Room, and to the Room a listener is transitioning to if inside a portal.
+		/// Set to 0 to disable the limit. The default value is 3.
+		public uint m_MaxEmitterRoomAuxSends = 3;
 
-        [UnityEngine.Tooltip("Controls the maximum percentage of an audio frame the raytracing engine can use. Percentage [0, 100] of the current audio frame. A value of 0 indicates no limit on the amount of CPU used for raytracing.")]
-		/// Controls the maximum percentage of an audio frame the raytracing engine can use. Percentage [0, 100] of the current audio frame. A value of 0 indicates no limit on the amount of CPU used for raytracing.
+        [UnityEngine.Tooltip("Length of the rays that are cast inside Spatial Audio. Effectively caps the maximum length of an individual segment in a reflection or diffraction path. The default value is 1000.")]
+		/// Length of the rays that are cast inside Spatial Audio. Effectively caps the maximum length of an individual segment in a reflection or diffraction path. The default value is 1000.
+		public float m_MaxPathLength = 1000.0f;
+
+        [UnityEngine.Tooltip("Defines the targeted computation time allocated for the ray tracing engine as a percentage [0, 100] of the current audio frame. The ray tracing engine dynamically adapts the number of primary rays to target the specified computation time. The computed number of primary rays cannot exceed the value specified by the Number Of Primary Rays Spatial Audio Setting. A value of 0 indicates no target has been set. In this case, the number of primary rays is fixed and is set by the Number Of Primary Rays Spatial Audio Setting. The default value is 0.")]
+		/// Defines the targeted computation time allocated for the ray tracing engine as a percentage [0, 100] of the current audio frame.
+		/// The ray tracing engine dynamically adapts the number of primary rays to target the specified computation time.
+		/// The computed number of primary rays cannot exceed the value specified by the Number Of Primary Rays Spatial Audio Setting.
+		/// A value of 0 indicates no target has been set. In this case, the number of primary rays is fixed and is set by the Number Of Primary Rays Spatial Audio Setting.
+		/// The default value is 0.
 		public float m_CPULimitPercentage = 0.0f;
 
-        [UnityEngine.Tooltip("Enables computation of diffraction along reflection paths.")]
-        [UnityEngine.Serialization.FormerlySerializedAs("m_EnableDiffraction")]
-        /// Enable computation of diffraction along reflection paths.
-        public bool m_EnableDiffractionOnReflections = true;
-
-		[UnityEngine.Tooltip("Enables computation of geometric diffraction and transmission paths for all sources that have the \"Enable Diffraction and Transmission\" box selected in the Positioning tab of the Wwise Property Editor. This flag enables sound paths around (diffraction) and through (transmission) geometry. Set EnableGeometricDiffractionAndTransmission to false to ensure that geometry is only used to calculate reflection. Diffraction edges must be enabled on geometry for diffraction calculation. If EnableGeometricDiffractionAndTransmission is false but a sound has \"Enable Diffraction and Transmission\" selected in the Positioning tab of the Wwise Authoring tool, the sound only diffracts through portals but passes through geometry as if it were not there. Disable this setting if the game performs its own obstruction calculation, but geometry is still passed to Spatial Audio for reflection calculation.")]
+		[UnityEngine.Tooltip("Enable computation of geometric diffraction and transmission paths for all sources that have the \"Diffraction and Transmission\" option selected in the Positioning tab of the Wwise Property Editor. This flag enables sound paths around (diffraction) and through (transmission) geometry. Setting EnableGeometricDiffractionAndTransmission to false implies that geometry is only to be used for reflection calculation. Diffraction edges must be enabled on geometry for diffraction calculation. If EnableGeometricDiffractionAndTransmission is false but a sound has \"Diffraction and Transmission\" selected in the Positioning tab of Wwise Authoring, the sound will diffract through portals but pass through geometry as if it isn't there. Typically, we recommend you disable this setting if the game will perform obstruction calculations, but geometry is still passed to Spatial Audio for reflection calculations. The default value is true.")]
 		[UnityEngine.Serialization.FormerlySerializedAs("m_EnableDirectPathDiffraction")]
-		/// Enable direct path diffraction.
+		/// Enable computation of geometric diffraction and transmission paths for all sources that have the \"Diffraction and Transmission\" option selected in the Positioning tab of the Wwise Property Editor.
+		/// This flag enables sound paths around (diffraction) and through (transmission) geometry. Setting EnableGeometricDiffractionAndTransmission to false implies that geometry is only to be used for reflection calculation.
+		/// Diffraction edges must be enabled on geometry for diffraction calculation.
+		/// If EnableGeometricDiffractionAndTransmission is false but a sound has \"Diffraction and Transmission\" selected in the Positioning tab of Wwise Authoring, the sound will diffract through portals but pass through geometry as if it isn't there.
+		/// Typically, we recommend you disable this setting if the game will perform obstruction calculations, but geometry is still passed to Spatial Audio for reflection calculations.
+		/// The default value is true.
 		public bool m_EnableGeometricDiffractionAndTransmission = true;
 
-        [UnityEngine.Tooltip("An emitter that is diffracted through a portal or around geometry will have its apparent or virtual position calculated by Wwise Spatial Audio and passed on to the sound engine.")]
-		/// An emitter that is diffracted through a portal or around geometry will have its apparent or virtual position calculated by Wwise Spatial Audio and passed on to the sound engine.
+        [UnityEngine.Tooltip("An emitter that is diffracted through a portal or around geometry will have its apparent or virtual position calculated by Wwise Spatial Audio and passed on to the sound engine. The default value is true.")]
+		/// An emitter that is diffracted through a portal or around geometry will have its apparent or virtual position calculated by Wwise Spatial Audio and passed on to the sound engine. The default value is true.
 		public bool m_CalcEmitterVirtualPosition = true;
 
 		[UnityEngine.MinAttribute(1)]
-		[UnityEngine.Tooltip("Spread the computation of paths on uLoadBalancingSpread frames [1..[. When uLoadBalancingSpread is set to 1, no load balancing is done. Values greater than 1 indicate the computation of paths will be spread on this number of frames.")]
-		/// Spread the computation of paths on uLoadBalancingSpread frames [1..[. When uLoadBalancingSpread is set to 1, no load balancing is done. Values greater than 1 indicate the computation of paths will be spread on this number of frames.
+		[UnityEngine.Tooltip("The computation of spatial audio paths is spread on LoadBalancingSpread frames. Spreading the computation of paths over several frames can prevent CPU peaks. The spread introduces a delay in path computation. The default value is 1.")]
+		/// The computation of spatial audio paths is spread on LoadBalancingSpread frames.
+		/// Spreading the computation of paths over several frames can prevent CPU peaks. The spread introduces a delay in path computation. The default value is 1.
 		public uint m_LoadBalancingSpread = 1;
 	}
 
@@ -393,6 +424,7 @@ public partial class AkCommonUserSettings
 		settings.uNumberOfPrimaryRays = m_SpatialAudioSettings.m_NumberOfPrimaryRays;
 		settings.uMaxReflectionOrder = m_SpatialAudioSettings.m_MaxReflectionOrder;
         settings.uMaxDiffractionOrder = m_SpatialAudioSettings.m_MaxDiffractionOrder;
+		settings.uMaxEmitterRoomAuxSends = m_SpatialAudioSettings.m_MaxEmitterRoomAuxSends;
         settings.uDiffractionOnReflectionsOrder = m_SpatialAudioSettings.m_DiffractionOnReflectionsOrder;
 		settings.fMaxPathLength = m_SpatialAudioSettings.m_MaxPathLength;
 		settings.fCPULimitPercentage = m_SpatialAudioSettings.m_CPULimitPercentage;
@@ -429,6 +461,13 @@ public partial class AkCommonUserSettings
 [System.Serializable]
 public class AkCommonAdvancedSettings
 {
+	public enum MemSpanCount
+	{
+		Small = 0,
+		Medium = 1,
+		Huge = 2
+	}
+
 	[UnityEngine.Tooltip("Size of memory pool for I/O (for automatic streams). It is rounded down to a multiple of uGranularity and then passed directly to AK::MemoryMgr::CreatePool().")]
 	public uint m_IOMemorySize = 2 * 1024 * 1024;
 
@@ -437,6 +476,9 @@ public class AkCommonAdvancedSettings
 
 	[UnityEngine.Tooltip("If true the device attempts to reuse IO buffers that have already been streamed from disk. This is particularly useful when streaming small looping sounds. The drawback is a small CPU hit when allocating memory, and a slightly larger memory footprint in the StreamManager pool.")]
 	public bool m_UseStreamCache = false;
+
+	[UnityEngine.Tooltip("Default settings for loading banks.This setting can be overriden by each bank.")]
+	public bool m_LoadBankAsynchronously = false;
 
 	[UnityEngine.Tooltip("Maximum number of bytes that can be \"pinned\" using AK::SoundEngine::PinEventInStreamCache() or AK::IAkStreamMgr::PinFileInCache()")]
 	public uint m_MaximumPinnedBytesInCache = unchecked((uint)(-1));
@@ -481,20 +523,23 @@ public class AkCommonAdvancedSettings
 
 	public virtual void CopyTo(AkUnityPlatformSpecificSettings settings) { }
 
-	[UnityEngine.Tooltip("The state of the \"in_bRenderAnyway\" argument passed to the AkSoundEngine.Suspend() function when the \"OnApplicationFocus\" Unity callback is received with \"false\" as its argument.")]
+	[UnityEngine.Tooltip("Whether to suspend the Wwise SoundEngine when the application loses focus.")]
+	public bool m_SuspendAudioDuringFocusLoss = true;
+
+	[UnityEngine.Tooltip("Only used when \"Suspend Audio During Focus Loss\" is enabled. The state of the \"in_bRenderAnyway\" argument passed to the AkSoundEngine.Suspend() function when the \"OnApplicationFocus\" Unity callback is received with \"false\" as its argument.")]
 	public bool m_RenderDuringFocusLoss;
 
 	[UnityEngine.Tooltip("Sets the sub-folder underneath UnityEngine.Application.persistentDataPath that will be used as the SoundBank base path. This is useful when the Init.bnk needs to be downloaded. Setting this to an empty string uses the typical SoundBank base path resolution. Setting this to \".\" uses UnityEngine.Application.persistentDataPath.")]
 	public string m_SoundBankPersistentDataPath;
-
-	[UnityEngine.Tooltip("Use Async Open in the low-level IO hook.")]
-	public bool m_UseAsyncOpen = false;
 
 	[UnityEngine.Tooltip("Maximum amount of memory that Wwise can use. Use 0 for unlimited memory.")]
 	public uint m_MemoryAllocationSizeLimit = 0;
 
 	[UnityEngine.Tooltip("Memory allocator debug level. For use under Audiokinetic Support supervision.")]
 	public uint m_MemoryDebugLevel = 0;
+
+	[UnityEngine.Tooltip("Controls amount of memory mapped by Wwise. Smaller values use less memory at the cost of greater CPU utilization. For more information, refer to \"Tuning Span Count\" in the Wwise SDK Documentation.")]
+	public MemSpanCount m_MemorySpanCount = MemSpanCount.Huge;
 }
 
 [System.Serializable]
@@ -572,9 +617,9 @@ public abstract class AkCommonPlatformSettings : AkBasePlatformSettings
 			advancedSettings.CopyTo(settings.platformSettings);
 			advancedSettings.CopyTo(settings.unityPlatformSpecificSettings);
 
-			settings.useAsyncOpen = advancedSettings.m_UseAsyncOpen;
 			settings.uMemAllocationSizeLimit = advancedSettings.m_MemoryAllocationSizeLimit;
 			settings.uMemDebugLevel = advancedSettings.m_MemoryDebugLevel;
+			settings.uMemSpanCount = (uint)advancedSettings.m_MemorySpanCount;
 			return settings;
 		}
 	}
@@ -602,9 +647,19 @@ public abstract class AkCommonPlatformSettings : AkBasePlatformSettings
 		get { return GetUserSettings().m_StartupLanguage; }
 	}
 
+	public override bool LoadBanksAsynchronously
+	{
+		get { return GetAdvancedSettings().m_LoadBankAsynchronously; }	
+	}
+
 	public override string SoundBankPersistentDataPath
 	{
 		get { return GetAdvancedSettings().m_SoundBankPersistentDataPath; }
+	}
+
+	public override bool SuspendAudioDuringFocusLoss
+	{
+		get { return GetAdvancedSettings().m_SuspendAudioDuringFocusLoss; }
 	}
 
 	public override bool RenderDuringFocusLoss
@@ -615,11 +670,6 @@ public abstract class AkCommonPlatformSettings : AkBasePlatformSettings
 	public override string SoundbankPath
 	{
 		get { return GetUserSettings().m_BasePath; }
-	}
-
-	public override bool UseAsyncOpen
-	{
-		get { return GetAdvancedSettings().m_UseAsyncOpen; }
 	}
 
 	public override uint MemoryAllocationSizeLimit

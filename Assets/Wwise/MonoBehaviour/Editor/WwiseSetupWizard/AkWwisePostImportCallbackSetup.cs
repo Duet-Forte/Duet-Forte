@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2023 Audiokinetic Inc.
+Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
 #if UNITY_EDITOR
@@ -64,7 +64,9 @@ public class AkWwisePostImportCallbackSetup
 				ScheduleMigration();
 			}
 			else
+			{
 				RefreshCallback();
+			}
 		}
 		catch (System.Exception e)
 		{
@@ -178,7 +180,7 @@ public class AkWwisePostImportCallbackSetup
 	private static void RefreshPlugins()
 	{
 		if (string.IsNullOrEmpty(AkWwiseProjectInfo.GetData().CurrentPluginConfig))
-			AkWwiseProjectInfo.GetData().CurrentPluginConfig = AkPluginActivator.CONFIG_PROFILE;
+			AkWwiseProjectInfo.GetData().CurrentPluginConfig = AkPluginActivatorConstants.CONFIG_PROFILE;
 
 		AkPluginActivator.ActivatePluginsForEditor();
 	}
@@ -321,17 +323,31 @@ public class AkWwisePostImportCallbackSetup
 		{
 			if (settings.CreateWwiseGlobal)
 			{
+				UnityEngine.Debug.LogFormat("WwiseUnity: No Wwise object in the scene ({0}), creating one.", s_CurrentScene);
 				//No Wwise object in this scene, create one so that the sound engine is initialized and terminated properly even if the scenes are loaded
 				//in the wrong order.
 				var objWwise = new UnityEngine.GameObject("WwiseGlobal");
 
 				//Attach initializer and terminator components
-				UnityEditor.Undo.AddComponent<AkInitializer>(objWwise);
+				var akInitializer = UnityEditor.Undo.AddComponent<AkInitializer>(objWwise);
+				akInitializer.InitializeInitializationSettings();
 
+			}
+		}
+		else if (AkInitializers.Length > 0)
+		{
+			foreach(AkInitializer Initializer in AkInitializers)
+			{
+				if (!Initializer.InitializationSettings)
+				{
+					UnityEngine.Debug.LogFormat("WwiseUnity: Initializing {0} (GO {1}).", Initializer.name, Initializer.gameObject.name);
+					Initializer.InitializeInitializationSettings();
+				}
 			}
 		}
 		else if (settings.CreateWwiseGlobal == false && AkInitializers[0].gameObject.name == "WwiseGlobal")
 		{
+			UnityEngine.Debug.LogFormat("WwiseUnity: CreateWwiseGlobal is false. Removing the AkInitializer in scene ({0}).", s_CurrentScene);
 			UnityEditor.Undo.DestroyObjectImmediate(AkInitializers[0].gameObject);
 		}
 

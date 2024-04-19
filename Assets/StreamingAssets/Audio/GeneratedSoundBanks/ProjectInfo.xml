@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo>
-	<Project Name="DuetForte_WwiseProject" GUID="{F92F80CD-8236-44F1-B040-41295031B50E}" Generator="2022.1.8.8316"/>
-	<CacheRoot>../../../../DuetForte_WwiseProject/.cache</CacheRoot>
+	<Project Name="DuetForte_WwiseProject" GUID="{F92F80CD-8236-44F1-B040-41295031B50E}" Generator="2023.1.3.8471"/>
+	<CacheRoot>../../../../WwiseProject/.cache</CacheRoot>
 	<Platforms>
-		<Platform Name="Mac" GUID="{C470B63E-1B99-41E2-9373-08CB2F939B13}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="../../../../DuetForte_WwiseProject/GeneratedSoundBanks/Mac"/>
-		<Platform Name="Windows" GUID="{273CD506-072E-469B-A10B-08B9800F1950}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../DuetForte_WwiseProject/GeneratedSoundBanks/Windows"/>
+		<Platform Name="Mac" GUID="{C470B63E-1B99-41E2-9373-08CB2F939B13}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="../../../../WwiseProject/GeneratedSoundBanks/Mac"/>
+		<Platform Name="Windows" GUID="{273CD506-072E-469B-A10B-08B9800F1950}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../WwiseProject/GeneratedSoundBanks/Windows"/>
 	</Platforms>
 	<Languages>
 		<Language Name="English(US)" Id="684519430" GUID="{8698E17B-4967-4CAD-B3A1-BF578FA1E521}" Default="true" UseAsStandIn="true"/>
 	</Languages>
-	<FileHash>{36AD4702-EA62-4959-4F46-599DA726561A}</FileHash>
+	<FileHash>{0395FC9F-64ED-BDB6-DDDC-3B55A49D99BD}</FileHash>
 </ProjectInfo>

@@ -14,9 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID COMBAT_STAGE_01_BGM = 890880275U;
-        static const AkUniqueID GIO_BODYFALL_SFX = 2299963368U;
         static const AkUniqueID MAINMENU_CLICK_SFX = 1154772126U;
-        static const AkUniqueID NONCOMBAT_TIMMYHOUSE_BGM = 537516138U;
         static const AkUniqueID PLAYER_ATTACK_A_SFX = 3452252061U;
         static const AkUniqueID PLAYER_ATTACK_B_SFX = 1532296734U;
         static const AkUniqueID PLAYER_ATTACK_STRONGSIGNAL_SFX = 1248207521U;
