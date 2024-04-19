@@ -75,7 +75,7 @@ Material:
     - _Cutoff_Softness: 0
     - _Distortion_Amount: -0.16
     - _DstBlend: 10
-    - _Gauge: 0.33
+    - _Gauge: -0.1
     - _Gradient_map_onoff: 0
     - _Height: 0.54
     - _Inner_Radius: 0
@@ -91,7 +91,7 @@ Material:
     - _Ractangle_Mask: 1
     - _Radial_Scale: 0
     - _Rotate: 0
-    - _Smoothness: 0.06
+    - _Smoothness: 0
     - _Smoothness_1: 0
     - _SrcBlend: 5
     - _Surface: 1
