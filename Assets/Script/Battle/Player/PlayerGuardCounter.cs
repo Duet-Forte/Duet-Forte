@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using Director;
-using Util;
+using Util.CustomEnum;
 public class PlayerGuardCounter : MonoBehaviour
 {
     public event Action OnGuardCounterEnd;
@@ -12,7 +11,7 @@ public class PlayerGuardCounter : MonoBehaviour
     BattlePresenter battlePresenter;
     float playerAttackStat;
     GuardCounterQTE guardCounterQTE;
-    CustomEnum.JudgeName guardCounterJudge;
+    JudgeName guardCounterJudge;
     float hitDelay = 0.45f;
     private void Start()
     {
@@ -32,7 +31,7 @@ public class PlayerGuardCounter : MonoBehaviour
     
     public IEnumerator EnterGuardCounterPhase()
     {
-        guardCounterJudge = CustomEnum.JudgeName.Miss; //null값대신 초기화
+        guardCounterJudge = JudgeName.Miss; //null값대신 초기화
         if (isEnteringGuardCounterPhase)
         {
             Debug.Log("가드 카운터!");
@@ -47,7 +46,7 @@ public class PlayerGuardCounter : MonoBehaviour
     {
         yield return guardCounterQTE.StartQTE(GetComponent<PlayerTurn>().BattlePos); //QTE 재생
         guardCounterJudge = guardCounterQTE.GetQTEJudge;
-        if (guardCounterJudge != CustomEnum.JudgeName.Miss)
+        if (guardCounterJudge != JudgeName.Miss)
         {
             battlePresenter.GuardCounterToEnemy(new Damage(playerAttackStat, guardCounterJudge,new GuardCounterDamage()));
             GetComponent<PlayerAnimator>().guardCount();
@@ -58,21 +57,21 @@ public class PlayerGuardCounter : MonoBehaviour
         yield return null;
     }
 
-    float CalculateBasicAttackDamage(CustomEnum.JudgeName judgeName)
+    float CalculateBasicAttackDamage(JudgeName judgeName)
     {
-        if (judgeName == CustomEnum.JudgeName.Miss)
+        if (judgeName == JudgeName.Miss)
         { //Rest판정
             return 0;
         }
-        if (judgeName == CustomEnum.JudgeName.Perfect)
+        if (judgeName == JudgeName.Perfect)
         {
             return playerAttackStat * 2.0f;
         }
-        if (judgeName == CustomEnum.JudgeName.Great)
+        if (judgeName == JudgeName.Great)
         {
             return playerAttackStat * 1.6f;
         }
-        if (judgeName == CustomEnum.JudgeName.Good)
+        if (judgeName == JudgeName.Good)
         {
             return playerAttackStat * 1f;
         }

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Util;
+using Util.CustomEnum;
 
 public class JudgeManager
 {
@@ -85,20 +86,20 @@ public class JudgeManager
         Judge judge = new Judge();
         if (judgeTime <= perfectJudgeTime)
         {
-            judge.Name = CustomEnum.JudgeName.Perfect;
+            judge.Name = JudgeName.Perfect;
             IncreaseGauge();
         }
         else if (judgeTime <= greatJudgeTime)
         {
-            judge.Name = CustomEnum.JudgeName.Great;
+            judge.Name = JudgeName.Great;
         }
         else if (judgeTime <= goodJudgeTime)
         {
-            judge.Name = CustomEnum.JudgeName.Good;
+            judge.Name = JudgeName.Good;
         }
         else
         {
-            judge.Name = CustomEnum.JudgeName.Bad;
+            judge.Name = JudgeName.Bad;
         }
         int damage = UnityEngine.Random.Range(1,3);
         Debug.Log(judgeTime);

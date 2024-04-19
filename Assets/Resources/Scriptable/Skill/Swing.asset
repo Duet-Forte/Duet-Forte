@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a7f12d40a9bb14cac7a1bf72b1b909, type: 3}
+  m_Name: Swing
+  m_EditorClassIdentifier: 
+  skillName: Swing
+  skill_Information: "\uC2A4\uC704\uC789 \uC27C\uD45C\uB97C \uC798 \uC774\uC6A9\uD574\uC57C
+    \uD568"
+  damage: 20
+  skillCommand:
+  - A
+  - A
+  - R
+  - A
+  skillIcon: {fileID: 1898778777, guid: 901c6b0eb98292246ae96544fbdd4bb4, type: 3}
+  isSpacialSkill: 0
+  skillParticle: {fileID: 4677089740142733494, guid: 13fcaaf0d61105f4f8d0cbe28bd0d3f3, type: 3}
+  skillAnimationClip: {fileID: 0}
+  coolTimeTurn: 0

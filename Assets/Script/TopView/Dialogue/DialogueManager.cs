@@ -3,16 +3,19 @@ using Febucci.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Util.CustomEnum;
 
 public class DialogueManager
 {
     private static DialogueManager instance;
 
     private GameObject window;
+    private DialogueWindow dialogueWindow;
     private Image characterSprite;
     private TextMeshProUGUI talkerName;
     private TextMeshProUGUI contentText;
     private TypewriterByCharacter typewriter;
+    private Speaker currentSpeaker;
     public static DialogueManager Instance
     {
         get
@@ -40,6 +43,7 @@ public class DialogueManager
             }
             typewriter = contentText.GetComponent<TypewriterByCharacter>();
             characterSprite = window.transform.GetChild(0).Find("Image").GetComponent<Image>();
+            dialogueWindow = window.GetComponent<DialogueWindow>();
         }
 
         window.SetActive(true);
@@ -56,16 +60,24 @@ public class DialogueManager
             dialogue.Speaker = dialogue.Speakers[i];
             if(dialogue.Speaker != null)
             {
-                talkerName.text = dialogue.Speaker.Split("_")[0];
-                if (dialogue.Speaker.Split("_")[0] == "Empty")
+                talkerName.text = dialogue.Speaker.Split('/')[0];
+                if (talkerName.text == "Empty")
+                {
                     talkerName.text = string.Empty;
+                    currentSpeaker = Speaker.Empty;
+                }
+                else if (talkerName.text == "Zio")
+                    currentSpeaker = Speaker.player;
+                else
+                    currentSpeaker = Speaker.NPC;
+
                 if (dialogue.Sprite != null)
                     characterSprite.sprite = dialogue.Sprite;
                 else
                     characterSprite.enabled = false;
             }
-            if (dialogue.Speaker == "Empty")
-                talkerName.text = string.Empty;
+
+            dialogueWindow.SetPosition(currentSpeaker);
             await UniTask.Delay(500);
             await UniTask.WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         }

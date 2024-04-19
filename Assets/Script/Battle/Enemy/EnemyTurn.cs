@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using Util;
+using Util.CustomEnum;
 public class EnemyTurn : ITurnHandler
 {
     private StageManager stageManager;
@@ -25,7 +25,7 @@ public class EnemyTurn : ITurnHandler
 
     public IEnumerator TurnEnd()
     {
-        stageManager.CurrentTurn = CustomEnum.Turn.GuardCounterTurn;                
+        stageManager.CurrentTurn = Turn.GuardCounterTurn;                
         Debug.Log("에너미 턴 종료");
         yield return null;
     }

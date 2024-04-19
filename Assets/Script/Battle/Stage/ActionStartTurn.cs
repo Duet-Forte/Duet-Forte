@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Util;
+using Util.CustomEnum;
 using DG.Tweening;
 
 public class ActionStartTurn : ITurnHandler
@@ -43,7 +43,7 @@ public class ActionStartTurn : ITurnHandler
     // Update is called once per frame
     public IEnumerator TurnEnd()
     {
-        stageManager.CurrentTurn = CustomEnum.Turn.PlayerTurn;
+        stageManager.CurrentTurn = Turn.PlayerTurn;
         yield return null;
     }
 }

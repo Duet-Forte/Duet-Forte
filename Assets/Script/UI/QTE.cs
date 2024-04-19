@@ -1,4 +1,4 @@
-using Util;
+using Util.CustomEnum;
 using UnityEngine;
 using UnityEditor.Rendering;
 
@@ -8,12 +8,12 @@ public class QTE : MonoBehaviour
     private int animationSpeedHash = Animator.StringToHash("Speed");
     private int endTrigger = Animator.StringToHash("isEnd");
     private bool isQte = false;
-    
+
 
     private Animator animator;
     private float animationPlaySpeed;
-    private CustomEnum.QTEJudge judge;
-    public CustomEnum.QTEJudge Judge { set { judge = value; } }
+    private QTEJudge judge;
+    public QTEJudge Judge { set { judge = value; } }
     public Animator Animator { get { return animator; } }
     public float Speed { get { return animationPlaySpeed; } }
     public void InitSettings(float secondsPerBeat)
@@ -37,13 +37,13 @@ public class QTE : MonoBehaviour
         isQte = false;
         switch (judge)
         {
-            case CustomEnum.QTEJudge.Perfect:
+            case QTEJudge.Perfect:
                 Debug.Log("Perfect!");
                 break;
-            case CustomEnum.QTEJudge.Good:
+            case QTEJudge.Good:
                 Debug.Log("Good");
                 break;
-            case CustomEnum.QTEJudge.Miss:
+            case QTEJudge.Miss:
                 Debug.Log("Miss");
                 break;
             default:
@@ -53,21 +53,22 @@ public class QTE : MonoBehaviour
         gameObject.SetActive(false);
         return;
     }
-    public bool getQTEEnd() {
+    public bool getQTEEnd()
+    {
         return !isQte;
     }
 
     private void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.F)||Input.GetKeyDown(KeyCode.J))&&isQte)
+        if ((Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.J)) && isQte)
         {
             animator.SetTrigger(endTrigger);
             Debug.Log("지금 누름");
             isQte = false;
         }
     }
-    public void JudgePerfect() => judge = CustomEnum.QTEJudge.Perfect;
-    public void JudgeGood() => judge = CustomEnum.QTEJudge.Good;
-    public void JudgeMiss() => judge = CustomEnum.QTEJudge.Miss;
+    public void JudgePerfect() => judge = QTEJudge.Perfect;
+    public void JudgeGood() => judge = QTEJudge.Good;
+    public void JudgeMiss() => judge = QTEJudge.Miss;
     public void OnAnimationEnd() => animator.SetTrigger(endTrigger);
 }

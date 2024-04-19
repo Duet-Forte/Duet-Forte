@@ -10,6 +10,7 @@ public class DialogueDataBase
     private int currentFieldId;
     public void ResetLine(int fieldId)
     {
+        // 현재 필드에 해당하는 대사를 불러옴
         if (dialogues == null)
             dialogues = new List<Dictionary<string, Dialogue[]>>();
         currentFieldId = fieldId;
@@ -31,6 +32,7 @@ public class DialogueDataBase
         int nextStart = startColumn[categoryId + 1];
         int id = 0;
         string recentSpeaker = "Empty";
+        string recentState = string.Empty;
 
         for (int column = currentStart; column < nextStart; ++column)
         {
@@ -40,19 +42,21 @@ public class DialogueDataBase
             {
                 dialogueList.Add(new Dialogue(id, lines.ToArray()));
                 recentSpeaker = "Empty";
+                recentState = string.Empty;
                 lines.Clear();
                 ++id;
             }
             sb.Append(tempDic["Lines"]);
+
             if (tempDic["Speaker"] != string.Empty)
             {
-                sb.Append(";" + tempDic["Speaker"] + "_" + tempDic["State"]);
                 recentSpeaker = tempDic["Speaker"];
+                recentState = tempDic["State"];
             }
             else if (tempDic["State"] != string.Empty)
-            {
-                sb.Append(";" + recentSpeaker + "_" + tempDic["State"]);
-            }
+                recentState = tempDic["State"];
+
+            sb.Append(';' + recentSpeaker + '/' + recentState);
             lines.Add(sb.ToString());
             sb.Clear();
         }

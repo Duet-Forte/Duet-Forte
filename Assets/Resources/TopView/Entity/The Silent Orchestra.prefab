@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6279623868933161491}
   - component: {fileID: 6279623868933161488}
   - component: {fileID: 6279623868933161490}
-  - component: {fileID: 6279623868933161493}
+  - component: {fileID: 5666961586409161963}
   m_Layer: 0
   m_Name: The Silent Orchestra
   m_TagString: Untagged
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1186509851
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1460147541, guid: ed4edcc13cc60764181cc25a7679faf6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1291246, y: 1.4312431}
   m_EdgeRadius: 0
---- !u!114 &6279623868933161493
+--- !u!114 &5666961586409161963
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +121,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6279623868933161489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 187ed1532aa1d6449918c03d963dc555, type: 3}
+  m_Script: {fileID: 11500000, guid: bd3694b2cb9111e4abecb86606e70b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

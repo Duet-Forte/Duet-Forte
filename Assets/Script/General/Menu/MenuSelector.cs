@@ -4,15 +4,20 @@ using UnityEngine;
 // 클래스 설명 : 여러 메뉴를 등록하고, 키보드를 이용한 메뉴 조작 지원을 위한 클래스
 public class MenuSelector : MonoBehaviour
 {
-    private Menu[] menuArray;
-    private int currentIndex;
-    private int previousIndex;
+    [SerializeField] private Transform menuParent;
+    protected Menu[] menuArray;
+    protected int currentIndex;
+    protected int previousIndex;
+    public Menu[] Menu {get => menuArray; }
 
-    public void InitSetting()
+    public virtual void InitSetting()
     {
         menuArray = GetComponentsInChildren<Menu>();
-
-        for(int index = 0; index < menuArray.Length; ++index)
+        if (menuArray == null ) 
+        {
+            menuArray = menuParent.GetComponentsInChildren<Menu>();
+        }
+        for (int index = 0; index < menuArray.Length; ++index)
         {
             menuArray[index].InitSettings(this, index);
         }
@@ -27,13 +32,14 @@ public class MenuSelector : MonoBehaviour
 
     private void Update() //추후 input System 적용 예정.
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        /*
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             int changedIndex = currentIndex - 1;
             SetIndex(changedIndex);
             menuArray[currentIndex].OnSelected();
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             int changedIndex = currentIndex + 1;
             SetIndex(changedIndex);
@@ -43,9 +49,10 @@ public class MenuSelector : MonoBehaviour
         {
             menuArray[currentIndex].OnPressed();
         }
+        */
     }
 
-    public void SetIndex(int index)
+    public virtual void SetIndex(int index)
     {
         previousIndex = currentIndex;
         menuArray[previousIndex].OnDeselected();
@@ -59,7 +66,5 @@ public class MenuSelector : MonoBehaviour
         {
             currentIndex = menuArray.Length - 1;
         }
-
-        Debug.Log("인덱스 변경 " + currentIndex);
     }
 }

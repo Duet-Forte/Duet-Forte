@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 1329804339}
   - component: {fileID: 1329804338}
   - component: {fileID: 1329804341}
-  - component: {fileID: 1329804340}
+  - component: {fileID: 1329804342}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -339,30 +339,6 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &1329804340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329804334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf9a77930ee64664ba7bd591a5e8c236, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 394f4c8698525ca47afde824ef8e3c89, type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!114 &1329804341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +372,30 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1329804342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329804334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf9a77930ee64664ba7bd591a5e8c236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9c03a566e8080ec4e9232322ea153432, type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &1348503977
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,9 +408,9 @@ GameObject:
   - component: {fileID: 1348503982}
   - component: {fileID: 1348503981}
   - component: {fileID: 1348503980}
-  - component: {fileID: 1348503979}
+  - component: {fileID: 1348503983}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,19 +437,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000015259, y: 0.000015259}
   m_SizeDelta: {x: 929.354, y: 506.9681}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1348503979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348503977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe408bde116e4a429c25986e60ea619, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MusicID: Player_Step
 --- !u!114 &1348503980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,16 +481,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348503979}
+      - m_Target: {fileID: 1348503983}
         m_TargetAssemblyTypeName: WwiseLab, Assembly-CSharp
         m_MethodName: OnClick
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu_Click_SFX
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1348503981
@@ -544,6 +531,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348503977}
   m_CullTransparentMesh: 1
+--- !u!114 &1348503983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348503977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a78f354f140b74fbb87e2f9695bd23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1439580023
 GameObject:
   m_ObjectHideFlags: 0

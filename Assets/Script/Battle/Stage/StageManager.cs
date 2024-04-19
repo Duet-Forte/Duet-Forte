@@ -3,6 +3,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using Util;
+using Util.CustomEnum;
 using UnityEngine.UI;
 
 public class StageManager : MonoBehaviour
@@ -48,7 +49,7 @@ public class StageManager : MonoBehaviour
     private float secondsPerBeat;
     private bool isStageOver;
     private ITurnHandler[] turnHandler;
-    private CustomEnum.Turn currentTurn;
+    private Turn currentTurn;
     private Vector3 battlePos;
 
     public event Action OnGameOver;
@@ -59,7 +60,7 @@ public class StageManager : MonoBehaviour
     public float SecondsPerBeat { get { return secondsPerBeat; } }
     public IEnemy Enemy { get { return enemy; } }
     public JudgeManager JudgeManager { get { return judgeManager; } }
-    public CustomEnum.Turn CurrentTurn { set { currentTurn = value; Debug.Log("여기서 " + currentTurn + " 으로 바뀜"); } }
+    public Turn CurrentTurn { set { currentTurn = value; Debug.Log("여기서 " + currentTurn + " 으로 바뀜"); } }
     #endregion
     public Vector2 BattlePos { get => battlePos; }
     public PlayerInterface PlayerInterface { get => playerInterface; }
@@ -79,7 +80,7 @@ public class StageManager : MonoBehaviour
 
     private void Awake()
     {
-        InitSettings(stage.BPM, stage.EnemyName, CustomEnum.Turn.PrepareTurn);// 추후 stage에서 가져올 것 (bpm, 적 이름, 시작 턴 )
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn);// 추후 stage에서 가져올 것 (bpm, 적 이름, 시작 턴 )
     }
 
     private void Update()
@@ -90,7 +91,7 @@ public class StageManager : MonoBehaviour
         }
     }
 
-    private void InitSettings(int bitPerMinute, string enemyName, CustomEnum.Turn startTurn)
+    private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn)
     {
         secondsPerBeat = Const.MINUTE_TO_SECOND / bitPerMinute;
         isStageOver = false;
@@ -112,7 +113,7 @@ public class StageManager : MonoBehaviour
 
     }
 
-    private IEnumerator StageScheduler(CustomEnum.Turn StartTurn)
+    private IEnumerator StageScheduler(Turn StartTurn)
     {
         currentTurn = StartTurn;
         // 오프닝 연출 추가
@@ -185,32 +186,32 @@ public class StageManager : MonoBehaviour
 
     private void InitTurnSettings()
     {
-        turnHandler = new ITurnHandler[(int)CustomEnum.Turn.NumberOfTurnTypes];
+        turnHandler = new ITurnHandler[(int)Turn.NumberOfTurnTypes];
         enemyTurn = new EnemyTurn();
         enemyTurn.InitSettings(this);
-        turnHandler[(int)CustomEnum.Turn.EnemyTurn] = enemyTurn;
+        turnHandler[(int)Turn.EnemyTurn] = enemyTurn;
 
         prepareTurn = new PrepareTurn();
         #region 중간발표용 prepareTurn
 
         #endregion
         prepareTurn.InitSettings(this);
-        turnHandler[(int)CustomEnum.Turn.PrepareTurn] = prepareTurn;
+        turnHandler[(int)Turn.PrepareTurn] = prepareTurn;
 
         playerTurn = player.GetComponent<PlayerTurn>();
-        turnHandler[(int)CustomEnum.Turn.PlayerTurn] = playerTurn;
+        turnHandler[(int)Turn.PlayerTurn] = playerTurn;
 
         actionStartTurn = new ActionStartTurn();
         actionStartTurn.InitSettings(this);
-        turnHandler[(int)CustomEnum.Turn.ActionStartTurn] = actionStartTurn;
+        turnHandler[(int)Turn.ActionStartTurn] = actionStartTurn;
 
         actionEndTurn = new ActionEndTurn();
         actionEndTurn.InitSettings(this);
-        turnHandler[(int)CustomEnum.Turn.ActionEndTurn] = actionEndTurn;
+        turnHandler[(int)Turn.ActionEndTurn] = actionEndTurn;
 
         guardCounterTurn = new GuardCounterTurn();
         guardCounterTurn.InitSettings(this);
-        turnHandler[(int)CustomEnum.Turn.GuardCounterTurn] = guardCounterTurn;
+        turnHandler[(int)Turn.GuardCounterTurn] = guardCounterTurn;
 
 
     }

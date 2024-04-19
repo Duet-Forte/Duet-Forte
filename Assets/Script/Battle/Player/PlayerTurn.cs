@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
-using Util;
+using Util.CustomEnum;
 using Cinemachine;
 using Director;
 using SoundSet;
@@ -89,7 +89,7 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
     {
         //playerAnimator.Idle();
         actionCase = 0;
-        stageManager.CurrentTurn = CustomEnum.Turn.EnemyTurn;
+        stageManager.CurrentTurn = Turn.EnemyTurn;
         Debug.Log("플레이어 턴 끝");
         yield return null;
     }
