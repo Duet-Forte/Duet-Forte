@@ -40,7 +40,7 @@ public class BattlePresenter : MonoBehaviour
     public void PlayerBasicAttackToEnemy(Damage damage) {
         GetDefense();
 
-        if (damage.GetDamageType() == CustomEnum.DamageType.Slash)
+        if (damage.GetDamageType() == Util.CustomEnum.DamageType.Slash)
         {
             damage.CalculateDamageWithJudge((int)enemySlashDefense);
             enemy.GetDamage(damage);
@@ -60,7 +60,7 @@ public class BattlePresenter : MonoBehaviour
 
         GetDefense();
         
-        if (damage.GetDamageType() == CustomEnum.DamageType.Slash)
+        if (damage.GetDamageType() == Util.CustomEnum.DamageType.Slash)
         {
             damage.CalculateDamage((int)enemySlashDefense);
             enemy.GetDamage(damage);

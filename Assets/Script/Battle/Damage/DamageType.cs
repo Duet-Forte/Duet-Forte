@@ -4,7 +4,7 @@ using UnityEngine;
 using Util;
 public abstract class DamageType
 {
-    public abstract CustomEnum.DamageType GetDamageType();
+    public abstract Util.CustomEnum.DamageType GetDamageType();
     public virtual int GetDamage(float attack, int defense) {
         if (attack < 0) { return 0; }
         if (defense < 0) { return (int)attack; }
@@ -31,24 +31,24 @@ public abstract class DamageType
         }
         return 0;
     }
-    public virtual int GetDamage(float attack, int defense, CustomEnum.JudgeName judgeName) {
-        if (judgeName == CustomEnum.JudgeName.Miss)
+    public virtual int GetDamage(float attack, int defense, Util.CustomEnum.JudgeName judgeName) {
+        if (judgeName == Util.CustomEnum.JudgeName.Miss)
         { //RestÆÇÁ¤
             return 0;
         }
-        if (judgeName == CustomEnum.JudgeName.Perfect)
+        if (judgeName == Util.CustomEnum.JudgeName.Perfect)
         {
             return GetDamage(attack * 1.0f,defense);
         }
-        if (judgeName == CustomEnum.JudgeName.Great)
+        if (judgeName == Util.CustomEnum.JudgeName.Great)
         {
             return GetDamage(attack * 0.8f, defense);
         }
-        if (judgeName == CustomEnum.JudgeName.Good)
+        if (judgeName == Util.CustomEnum.JudgeName.Good)
         {
             return GetDamage(attack * 0.5f, defense);
         }
-        if (judgeName == CustomEnum.JudgeName.Bad)
+        if (judgeName == Util.CustomEnum.JudgeName.Bad)
         {
             return GetDamage(attack * 0.2f, defense);
         }

@@ -5,8 +5,8 @@ using Util;
 
 public class SlashDamage : DamageType
 {
-    public override CustomEnum.DamageType GetDamageType()
+    public override Util.CustomEnum.DamageType GetDamageType()
     {
-        return CustomEnum.DamageType.Slash;
+        return Util.CustomEnum.DamageType.Slash;
     }
 }
