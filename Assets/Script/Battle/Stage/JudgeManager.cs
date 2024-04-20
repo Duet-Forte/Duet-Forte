@@ -48,17 +48,10 @@ public class JudgeManager
         }
     }
 
-    public void IncreaseGauge() // 이동 예정
+    public void IncreaseGauge(int combo) // 이동 예정
     {
-        ++combo;
+        combo += combo;
         OnComboChange?.Invoke(combo, maxGauge);
-    }
-
-    public void DecreaseHealthPoint(int damage) // 이동 예정 - BattlePresenter로
-    {
-        healthPoint -= damage;
-        if (healthPoint <= 0)
-            stageManager.OnPlayerDie();
     }
 
     private void CheckScore(float parryTime)
@@ -87,15 +80,17 @@ public class JudgeManager
         if (judgeTime <= perfectJudgeTime)
         {
             judge.Name = JudgeName.Perfect;
-            IncreaseGauge();
+            IncreaseGauge(3);
         }
         else if (judgeTime <= greatJudgeTime)
         {
             judge.Name = JudgeName.Great;
+            IncreaseGauge(2);
         }
         else if (judgeTime <= goodJudgeTime)
         {
             judge.Name = JudgeName.Good;
+            IncreaseGauge(1);
         }
         else
         {

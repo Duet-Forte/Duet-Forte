@@ -322,6 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 155052784}
   - component: {fileID: 155052783}
+  - component: {fileID: 155052785}
   m_Layer: 0
   m_Name: Stage Manager
   m_TagString: Untagged
@@ -375,6 +376,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &155052785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155052782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b38366cec16824dae75bfaf500ae01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &185696487
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,7 +2734,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819354511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.113, y: 2.8, z: 0}
+  m_LocalPosition: {x: -0.113, y: 0.3, z: 0}
   m_LocalScale: {x: 2.3, y: 2.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2800,7 +2813,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1935178899}
   - component: {fileID: 1935178900}
-  - component: {fileID: 1935178901}
   m_Layer: 0
   m_Name: TurnStage
   m_TagString: Untagged
@@ -2835,19 +2847,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c42cb6d18fd7aa4fa04ee4f5823996f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1935178901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935178897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b38366cec16824dae75bfaf500ae01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stage: {fileID: 11400000, guid: 7c9c5684a82346a4683582a51ef49193, type: 2}
 --- !u!1 &1994674332
 GameObject:
   m_ObjectHideFlags: 0

@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLevel: 1
-  playerHealthPoint: 15
+  playerHealthPoint: 100
   playerGuardCounterGuage: 10
   playerExp: 0
   maxPlayerExp: 0

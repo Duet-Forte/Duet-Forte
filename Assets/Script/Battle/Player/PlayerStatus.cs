@@ -23,8 +23,17 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] private float playerAttack;//공격력
     [SerializeField] private float playerDefence;//방어력
 
-    
-    public int PlayerHealthPoint { get => playerHealthPoint; }
+
+    public int PlayerHealthPoint { get => playerHealthPoint; 
+        set { 
+            playerHealthPoint -= value; 
+            if (playerHealthPoint <= 0) {
+                playerHealthPoint = 0; 
+
+            } 
+        }
+    }
+
     public float PlayerAttack { get => playerAttack; }
     public float PlayerDefence { get => playerDefence; }
     public int PlayerGuardCounterGuage { get => playerGuardCounterGuage; }

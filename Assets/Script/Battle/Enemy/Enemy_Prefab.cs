@@ -57,7 +57,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
 
     public event Action OnFramePass;
     public event Action OnGuardCounterEnd;
-    public event Action<int> OnAttack;
+    public event Action<Damage> OnAttack;
     public event Action<Damage> OnGetDamage;
 
     #region 외부 클래스
@@ -335,12 +335,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     #region 대미지 피격함수 클래스를 따로 파서 이사할 예정
     public void GiveDamage()//나중에 플레이어 클래스에서 GetDamage로 바꿔서 이사예정
     {
-        int damage = 1; // 임시적으로 1데미지 줌.
+        Damage damage = new Damage(enemyAttack);
         enemyAnimator.Attack();
-        Judge judge = new Judge();
-        judge.Name = JudgeName.Miss;
-        HandleParryJudge(judge);
-        OnAttack?.Invoke(damage);
         battlePresenter.EnemyToPlayer(damage);
         
     }
@@ -360,46 +356,26 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         if (healthPoint <= 0)
             stageManager.OnEnemyDie();
     }
-    /*public void GetDamage(int playerAttack) {//가드카운터 피격
-        if (playerAttack <= 0)
-        {
-            enemyAnimator.Guard();
-            return;
-        }
-
-        battleDirector.Shake(gameObject);
-        healthPoint -= playerAttack;
-        //피격 애니메이션
-        OnGetDamage?.Invoke(playerAttack);
-        if (healthPoint <= 0)
-            stageManager.OnEnemyDie();
-    }*/
+    
     #endregion
     public void HandleParryJudge(Judge judge, int damage = 0)//패링 판정 다루는 함수
     {
         
         if (judge.Name.Equals(JudgeName.Miss))
         {
-            //AkSoundEngine.PostEvent("Miss", gameObject);
             playerInter.PlayerAnimator.Hurt(); 
         }
         else if(judge.Name.Equals(JudgeName.Perfect))
         {
-            //AkSoundEngine.PostEvent("Parry_Sound", gameObject);
             playerSoundSet.PerfectParrySound(gameObject);
             battleDirector.CameraShake(0.3f, 1, 100, 30);
-            //AkSoundEngine.PostEvent("Player_Parry_SFX", gameObject);
             playerInter.PlayerAnimator.Parry(true);
-            //체인지 세트 72
         }
         else
         {
-            //AkSoundEngine.PostEvent("Parry_Sound", gameObject);
             playerSoundSet.PerfectParrySound(gameObject);
             battleDirector.CameraShake(0.3f, 0.5f, 100, 30);
-            //AkSoundEngine.PostEvent("Player_Parry_SFX", gameObject);
             playerInter.PlayerAnimator.Parry(false);
-            //체인지 세트 72
         }
         enemySignalUI.DefenseActive(judge);
         isNoteChecked[currentNoteIndex] = true;

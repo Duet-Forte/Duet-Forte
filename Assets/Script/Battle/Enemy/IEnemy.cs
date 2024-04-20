@@ -18,7 +18,7 @@ public interface IEnemy
     public IEnumerator Attack();
     public event Action OnFramePass;
     public event Action OnGuardCounterEnd;
-    public event Action<int> OnAttack;
+    public event Action<Damage> OnAttack;
     public event Action<Damage> OnGetDamage;
     
     public void BindPattern(EnemyPattern[] enemyPattern);

@@ -37,16 +37,7 @@ public class SkillSet : MonoBehaviour
                 arrayOfSkillName[index] = skillSet[index].SkillName;
                 arrayOfSkillIcon[index] = skillSet[index].SkillIcon;
                 arrayOfSkill[index] = skillSet[index].GetSkill;
-                if (skillSet[index].SkillParticle != null)
-                {
-                    /*ParticleSystem tmp = GameObject.Instantiate(skillSet[index].SkillParticle, transform.position, Quaternion.identity);
-                    tmp.transform.parent = gameObject.transform;
-                    tmp.gameObject.transform.localScale = gameObject.transform.localScale;
-                    //tmp.transform.SetParent(gameObject.transform, false);
-                    arrayOfSkillParticle[index] = tmp;*/
-                }
             }
-            
         }
         
     }
@@ -62,14 +53,6 @@ public class SkillSet : MonoBehaviour
                 arrayOfSkillName[index] = skillSet[index].SkillName;
                 arrayOfSkillIcon[index] = skillSet[index].SkillIcon;
                 arrayOfSkill[index] = skillSet[index].GetSkill;
-                if (skillSet[index].SkillParticle != null)
-                {
-                    /*ParticleSystem tmp = GameObject.Instantiate(skillSet[index].SkillParticle, transform.position, Quaternion.identity);
-                    tmp.transform.parent = gameObject.transform;
-                    tmp.gameObject.transform.localScale = gameObject.transform.localScale;
-                    //tmp.transform.SetParent(gameObject.transform, false);
-                    arrayOfSkillParticle[index] = tmp;*/
-                }
             }
 
         }

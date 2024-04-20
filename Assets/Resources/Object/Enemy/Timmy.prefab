@@ -191,7 +191,7 @@ MonoBehaviour:
     \uC62C\uACE7\uC740 \uC120\uC728\uC774 \uB4E4\uB824\uC628\uB2E4."
   enemyImage: {fileID: 21300000, guid: 8bc02315aa9c37045943fe8b7994651f, type: 3}
   healthPoint: 120
-  enemyAttack: 1
+  enemyAttack: 10
   slashDefense: 0
   pierceDefense: 0
 --- !u!114 &42170436234032234
