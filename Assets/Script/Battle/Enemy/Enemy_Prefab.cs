@@ -238,7 +238,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     }
 
     #endregion
-    private IEnumerator WaitForTargetedTime(double targetTime)// 메트로놈 OnBeat구독하면 필요없어질 듯
+    private IEnumerator WaitForTargetedTime(double targetTime)
     {
         double elapsedTime = timeOffset; //초기값은 0
 

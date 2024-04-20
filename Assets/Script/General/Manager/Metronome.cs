@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using Unity.VisualScripting;
 using Util;
+using AK.Wwise;
 
 public class Metronome :MonoBehaviour
 {
@@ -39,10 +40,13 @@ public class Metronome :MonoBehaviour
         bPM = stage.BPM;
         secondsPerBeat = Const.MINUTE_TO_SECOND / bPM;
         this.stage = stage;
-
+        //AkSoundEngine.PostEvent();
     }
-
-
+    
+    private void InvokeOnBeating()
+    {
+        OnBeating?.Invoke();
+    }
    /* void Start()
     {
         bPM = instance.stage.BPM;
