@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PluginInfo Platform="Mac" BasePlatform="Mac">
 	<PluginLibs>
+		<PluginLib LibName="Wwise Delay" LibId="6946819" Type="Effect" DLL="AkDelay" StaticLib="AkDelayFX"/>
 		<PluginLib LibName="Wwise Meter" LibId="8454147" Type="Effect" DLL="AkSoundEngineDLL" StaticLib="AkMeterFX"/>
 		<PluginLib LibName="Wwise Gain" LibId="9109507" Type="Effect" DLL="AkGain" StaticLib="AkGainFX"/>
 		<PluginLib LibName="System" LibId="11403271" Type="AudioDevice"/>
 		<PluginLib LibName="No Output" LibId="11862023" Type="AudioDevice"/>
 	</PluginLibs>
-	<FileHash>{562CF49C-6B62-476B-E5B9-CED8827B1E08}</FileHash>
+	<FileHash>{766D038A-2288-C09F-D48E-93B217EA47DC}</FileHash>
 </PluginInfo>

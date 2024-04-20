@@ -9,17 +9,41 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{5E534DD0-7A6B-BFD3-71CB-7FD228F24D83}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{978D4951-121B-0076-8905-788CA577A85B}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
+				<File Id="18628162" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ob_Fire_SwitchOn.wav</ShortName>
+					<CachePath>SFX/Ob_Fire_SwitchOn_10C4C929.wem</CachePath>
+				</File>
 				<File Id="43014063" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gio_BodyFall_SFX.wav</ShortName>
 					<CachePath>SFX/Gio_BodyFall_SFX_10C4C929.wem</CachePath>
 				</File>
+				<File Id="48994660" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Door.wav</ShortName>
+					<CachePath>SFX/Door_10C4C929.wem</CachePath>
+				</File>
+				<File Id="57689545" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ob_Fire_Fire.wav</ShortName>
+					<CachePath>SFX/Ob_Fire_Fire_10C4C929.wem</CachePath>
+				</File>
+				<File Id="225295536" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Typing01.wav</ShortName>
+					<CachePath>SFX/Typing01_10C4C929.wem</CachePath>
+				</File>
+				<File Id="327002089" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Typing02.wav</ShortName>
+					<CachePath>SFX/Typing02_10C4C929.wem</CachePath>
+				</File>
 				<File Id="367550639" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Wood03.wav</ShortName>
 					<CachePath>SFX/FootStep_Wood03_10C4C929.wem</CachePath>
+				</File>
+				<File Id="377896432" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Typing03.wav</ShortName>
+					<CachePath>SFX/Typing03_10C4C929.wem</CachePath>
 				</File>
 				<File Id="393957476" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Dirt04.wav</ShortName>
@@ -28,6 +52,10 @@
 				<File Id="500923705" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Dirt01.wav</ShortName>
 					<CachePath>SFX/FootStep_Dirt01_10C4C929.wem</CachePath>
+				</File>
+				<File Id="504031559" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Typing04.wav</ShortName>
+					<CachePath>SFX/Typing04_10C4C929.wem</CachePath>
 				</File>
 				<File Id="527714309" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Grass03.wav</ShortName>
@@ -73,6 +101,10 @@
 					<ShortName>FootStep_Grass04.wav</ShortName>
 					<CachePath>SFX/FootStep_Grass04_10C4C929.wem</CachePath>
 				</File>
+				<File Id="1014191835" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ob_Fire_Ignition.wav</ShortName>
+					<CachePath>SFX/Ob_Fire_Ignition_10C4C929.wem</CachePath>
+				</File>
 				<File Id="1039083357" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Dirt03.wav</ShortName>
 					<CachePath>SFX/FootStep_Dirt03_10C4C929.wem</CachePath>
@@ -80,6 +112,7 @@
 			</Media>
 			<Plugins>
 				<ShareSets>
+					<Plugin Id="196835669" Name="New_Delay" LibName="Wwise Delay" LibId="6946819"/>
 					<Plugin Id="635371784" Name="Gain" LibName="Wwise Gain" LibId="9109507"/>
 				</ShareSets>
 			</Plugins>
@@ -87,6 +120,31 @@
 				<Event Id="2299963368" Name="Gio_BodyFall_SFX" DurationType="OneShot" DurationMin="5.1996665" DurationMax="5.1996665">
 					<MediaRefs>
 						<MediaRef Id="43014063"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4145632761" Name="Ob_Door_SFX" DurationType="OneShot" DurationMin="1.969375" DurationMax="1.969375">
+					<MediaRefs>
+						<MediaRef Id="48994660"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3989126589" Name="Ob_Fire_Fire_Amb" DurationType="OneShot" DurationMin="80.00002" DurationMax="80.00002">
+					<MediaRefs>
+						<MediaRef Id="57689545"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="198066997" Name="Ob_Fire_Ignition_SFX" DurationType="OneShot" DurationMin="0.5395" DurationMax="0.5395">
+					<MediaRefs>
+						<MediaRef Id="1014191835"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="196835669"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+				<Event Id="3661802867" Name="Ob_Fire_SwitchOn_SFX" DurationType="OneShot" DurationMin="0.48697916" DurationMax="0.48697916">
+					<MediaRefs>
+						<MediaRef Id="18628162"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="4038898239" Name="Player_Step_SFX" DurationType="OneShot" DurationMin="0.17045833" DurationMax="0.35375">
@@ -128,6 +186,14 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="1024104135" Name="Ui_Typing_SFX" DurationType="OneShot" DurationMin="0.1329375" DurationMax="0.22704166">
+					<MediaRefs>
+						<MediaRef Id="225295536"/>
+						<MediaRef Id="327002089"/>
+						<MediaRef Id="377896432"/>
+						<MediaRef Id="504031559"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 			<SwitchGroups>
 				<SwitchGroup Id="1382476432" Name="State">
@@ -139,7 +205,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{262E6869-0F67-BEE9-579D-D5B4162AE624}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{9A55F4D9-9988-D12A-A104-4A88A8D53606}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -218,25 +284,17 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{EFED7B49-3358-FC94-8ABF-F7F3E6E5BB31}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{F35A972F-10E6-DDBB-B6F1-5EBD238B974C}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
-				<File Id="420250481" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Combat_Timmy-01.wav</ShortName>
-					<CachePath>SFX/Combat_Timmy-01_D79FB2B7.wem</CachePath>
-				</File>
-				<File Id="514950658" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Combat_test01.wav</ShortName>
-					<CachePath>SFX/Combat_test01_D79FB2B7.wem</CachePath>
+				<File Id="464889255" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat_Timmy-0420.wav</ShortName>
+					<CachePath>SFX/Combat_Timmy-0420_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="519697605" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_공격신호_01.wav</ShortName>
 					<CachePath>SFX/SFX_공격신호_01_3B09756F.wem</CachePath>
-				</File>
-				<File Id="547379373" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Test_Music.wav</ShortName>
-					<CachePath>SFX/Test_Music_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="602281588" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>세로베기.wav</ShortName>
@@ -256,25 +314,9 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="890880275" Name="Combat_Stage_01_BGM" DurationType="Infinite">
-					<SwitchContainers>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1608553872" Id="3133938216"/>
-							<MediaRefs>
-								<MediaRef Id="547379373"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1608553872" Id="1795948371"/>
-							<MediaRefs>
-								<MediaRef Id="420250481"/>
-							</MediaRefs>
-						</SwitchContainer>
-					</SwitchContainers>
-				</Event>
-				<Event Id="207956517" Name="Combat_test01" DurationType="Infinite">
+				<Event Id="890880275" Name="Combat_Stage_01_BGM" DurationType="OneShot" DurationMin="69.333336" DurationMax="69.333336">
 					<MediaRefs>
-						<MediaRef Id="514950658"/>
+						<MediaRef Id="464889255"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3452252061" Name="Player_Attack_A_SFX" DurationType="OneShot" DurationMin="0.40254888" DurationMax="0.47266912">
@@ -303,18 +345,7 @@
 					</MediaRefs>
 				</Event>
 			</Events>
-			<GameParameters>
-				<GameParameter Id="2415836739" Name="Volume"/>
-			</GameParameters>
-			<SwitchGroups>
-				<SwitchGroup Id="1608553872" Name="Stage01">
-					<Switches>
-						<Switch Id="1795948371" Name="StageStart"/>
-						<Switch Id="3133938216" Name="StageEnd"/>
-					</Switches>
-				</SwitchGroup>
-			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{BFB5769E-31CE-C6C4-EAA3-2A0F814247DD}</FileHash>
+	<FileHash>{A02C0533-A0E9-2D64-B05E-B07197E9E0F5}</FileHash>
 </SoundBanksInfo>
