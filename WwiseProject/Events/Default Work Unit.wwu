@@ -185,9 +185,61 @@
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ChildrenList>
-						<Event Name="Ob_Fire_SwitchOn" ID="{8BB1BB58-A88B-42E9-A1A9-6A636667ED6C}"/>
-						<Event Name="Ob_Fire_Ignition" ID="{76B2431A-EE15-411C-A03D-8813E54D0A41}"/>
-						<Event Name="Talk_Typing" ID="{3B183886-3E47-46C8-B46C-90F0AAEAAE63}"/>
+						<Event Name="Ob_Fire_Fire_Amb" ID="{6C36585B-93F8-46C7-B717-FD2BED270011}">
+							<ChildrenList>
+								<Action Name="" ID="{D54494D3-E24C-412A-BA00-CEAE245A4528}" ShortID="568987157">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ob_Fire_Fire" ID="{6D1C0821-D28A-4C8B-96B0-0F4067C97920}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Ob_Fire_Ignition_SFX" ID="{3BBD899A-CE29-4CB5-B91F-5F34CB3DA146}">
+							<ChildrenList>
+								<Action Name="" ID="{476DAFCF-3BB2-49D8-81FC-560E5A0E45DF}" ShortID="809811773">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ob_Fire_Ignition" ID="{4B405262-2BB6-4C90-9C83-12040009EF99}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Ob_Fire_SwitchOn_SFX" ID="{9E465848-C42E-4AC2-99D6-68BE1934963E}">
+							<ChildrenList>
+								<Action Name="" ID="{5D87B2DC-D3B8-46E3-BD90-2004C35D7540}" ShortID="642055312">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ob_Fire_SwitchOn" ID="{8E6B5B4B-C7F8-4574-B63A-EC7AC1EBD718}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Ui_Typing_SFX" ID="{F3D82A3E-91A5-487D-A508-CCF578006146}">
+							<ChildrenList>
+								<Action Name="" ID="{A626E6B9-5F6C-4CA1-9399-79E356EC3313}" ShortID="915475559">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Typing" ID="{7E663EA4-82D9-47C0-8EAE-27EC555C0363}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Ob_Door_SFX" ID="{EEA03CBB-FA8E-42F1-B383-AFD7970E215D}">
+							<ChildrenList>
+								<Action Name="" ID="{DB7034A9-E3A2-4409-9AF3-476D86579696}" ShortID="527894416">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Door" ID="{94374C88-E5C9-49D4-BB22-EE07E44965C1}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PluginInfo Platform="Windows" BasePlatform="Windows">
 	<PluginLibs>
+		<PluginLib LibName="Wwise Delay" LibId="6946819" Type="Effect" DLL="AkDelay" StaticLib="AkDelayFX"/>
 		<PluginLib LibName="Wwise Meter" LibId="8454147" Type="Effect" DLL="AkSoundEngineDLL" StaticLib="AkMeterFX"/>
 		<PluginLib LibName="Wwise Gain" LibId="9109507" Type="Effect" DLL="AkGain" StaticLib="AkGainFX"/>
 		<PluginLib LibName="System" LibId="11403271" Type="AudioDevice"/>
 		<PluginLib LibName="No Output" LibId="11862023" Type="AudioDevice"/>
 	</PluginLibs>
-	<FileHash>{87B533B1-BA1A-250B-7D17-E449DCC79A55}</FileHash>
+	<FileHash>{BA532366-0496-C32A-715F-4F2C8FB33E32}</FileHash>
 </PluginInfo>

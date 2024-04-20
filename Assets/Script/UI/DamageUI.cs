@@ -53,7 +53,6 @@ public class DamageUI : MonoBehaviour
             if (damage.JudgeName == Util.CustomEnum.JudgeName.Great) { judgeEffect = Resources.Load<Image>("UI/Damage/GreatEffect"); judgeLetter = Resources.Load<Image>("UI/Damage/GreatLetter"); }
             if (damage.JudgeName == Util.CustomEnum.JudgeName.Good) { judgeEffect = Resources.Load<Image>("UI/Damage/GoodEffect"); judgeLetter = Resources.Load<Image>("UI/Damage/GoodLetter"); }
         }
-
         if (damage.GetDamageType()==Util.CustomEnum.DamageType.Slash)
         {
             Debug.Log("RedDamage");

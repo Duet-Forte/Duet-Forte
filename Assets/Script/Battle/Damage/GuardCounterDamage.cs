@@ -7,16 +7,18 @@ using Util.CustomEnum;
 
 public class GuardCounterDamage : DamageType
 {
-    public override int GetDamage(float attack, int defense, JudgeName judgeName)//Æ®·ç´ë¹ÌÁö
+
+    public override int GetDamage(float attack, int defense, JudgeName judgeName)//Ã†Â®Â·Ã§Â´Ã«Â¹ÃŒÃÃ¶
     {
         if (judgeName == JudgeName.Miss)
-        { //RestÆÇÁ¤
+        { //RestÃ†Ã‡ÃÂ¤
             return 0;
         }
         if (judgeName == JudgeName.Perfect)
         {
             return (int)(attack * 1.2f);
         }
+
         if (judgeName == JudgeName.Great)
         {
             return (int)(attack * 1f);

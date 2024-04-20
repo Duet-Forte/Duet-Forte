@@ -23,6 +23,20 @@
 						<Property Name="FullBandGain" Type="Real32" Value="3.5"/>
 					</PropertyList>
 				</Effect>
+				<Effect Name="New_Delay" ID="{A40E6054-F7DE-4082-A0A2-10129A73F6AB}" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
+					<PropertyList>
+						<Property Name="DelayTime" Type="Real32" Value="0.3"/>
+						<Property Name="Feedback" Type="Real32" Value="4.5"/>
+						<Property Name="WetDryMix" Type="Real32" Value="20"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="New_RoomVerb" ID="{C5E19734-2C76-4B75-AE7E-2ECB28EA7691}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+					<PropertyList>
+						<Property Name="Diffusion" Type="Real32" Value="21"/>
+						<Property Name="RoomShape" Type="Real32" Value="12"/>
+						<Property Name="StereoWidth" Type="Real32" Value="74"/>
+					</PropertyList>
+				</Effect>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>

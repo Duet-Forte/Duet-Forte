@@ -7,6 +7,7 @@ using Util.CustomEnum;
 
 public class Damage 
 {
+
     public Damage(float attack,JudgeName judgeName,DamageType damageType ) { 
     this.attack = attack;
     this.judgeName = judgeName;

@@ -389,7 +389,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9c03a566e8080ec4e9232322ea153432, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 394f4c8698525ca47afde824ef8e3c89, type: 2}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
@@ -490,7 +490,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainMenu_Click_SFX
+          m_StringArgument: Ob_Door_SFX
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1348503981
