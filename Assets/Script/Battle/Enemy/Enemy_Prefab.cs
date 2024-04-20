@@ -163,7 +163,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         double patternStartTime = Time.time;
         double sumOfTime = 0;
         uiSound.SignalSound(gameObject, true);
-        for (int i = 0; i < patternLength; ++i)
+        for (int i = 0; i < patternLength; i++)
         {
             stageManager.JudgeManager.EarlyCount = 0;
             isNoteChecked[i] = false;
