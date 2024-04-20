@@ -5,92 +5,49 @@ using UnityEngine;
 
 public class FieldManager
 {
-    private Field[] fields;
-    private GameObject playerPrefab;
+    private int currentFieldID;
     private GameObject player;
-    private int currentFieldId;
-    public int FieldID { get { return currentFieldId; } set { currentFieldId = value; onFieldIDChange?.Invoke(currentFieldId); } }
-
+    private Dictionary<int, GameObject> fieldPrefabs;
+    private Field currentField;
+    public int ID { get => currentFieldID; set { currentFieldID = value; onFieldIDChange?.Invoke(currentFieldID); } }
+    public Field Field { get => currentField; }
     public GameObject Player { get {return player;} }
     public event Action<int> onFieldIDChange;
 
     public void InitSettings()
     {
-        List<Dictionary<string, string>> fieldData = TSVReader.Read("FieldData.tsv");
-        playerPrefab = Resources.Load<GameObject>("TopView/Player");
-        int numberOfFields = TSVReader.FindRepeatNumber(fieldData , "ID");
-        fields = new Field[numberOfFields];
-        TSVReader.ParseData(fieldData, "ID", ParseEntity);
+        fieldPrefabs = new Dictionary<int, GameObject>();
         BindEvent();
     }
-
     public void SpawnPlayer(Vector2 spawnPoint)
     {
         if(player == null)
-            player = UnityEngine.Object.Instantiate(playerPrefab);
-        player.transform.position = spawnPoint;
-    }
-
-    public void SpawnEntity(string name, int id = 0)
-    {
-        TopViewObject topViewObject = fields[currentFieldId].Entity(name, id);
-        if (topViewObject != null)
-            fields[currentFieldId].SpawnEntity(topViewObject);
-        else
-            Debug.Log($"스폰 실패! {name}의 오브젝트가 존재하지 않습니다!");
-    }
-    public void SpawnEntityAtPoint(string name, Vector2 spawnPoint, int id = 0)
-    {
-        TopViewObject topViewObject = fields[currentFieldId].Entity(name, id);
-        if (topViewObject != null)
-            fields[currentFieldId].SpawnEntity(topViewObject, spawnPoint);
-        else
-            Debug.Log($"스폰 실패! {name}의 오브젝트가 존재하지 않습니다!");
-    }
-    public void SpawnEntityGroup(string name)
-    {
-        fields[currentFieldId].ParseEntityGroup(name);
-    }
-    public void EnterBattle(string name)
-    {
-
-    }
-
-
-    private void ParseEntity(List<Dictionary<string, string>> fieldData, int[] startColumn, int id)
-    {
-        fields[id] = new Field(id);
-        StringBuilder name = new StringBuilder();
-        List<Vector2> spawnPoints = new List<Vector2>();
-
-        for (int column = startColumn[id]; column < startColumn[id + 1]; ++column)
         {
-            if (fieldData[column]["Name"] != string.Empty)
-            {
-                if (spawnPoints.Count > 0)
-                {
-                    fields[ id].ParseData(name.ToString(), spawnPoints.ToArray());
-                    spawnPoints.Clear();
-                    name.Clear();
-                }
-                name.Append(fieldData[column]["Name"]);
-            }
-
-            int spawnPointX = int.Parse(fieldData[column]["Spawn X"]);
-            int spawnPointY = int.Parse(fieldData[column]["Spawn Y"]);
-            Vector2 spawnPoint = new Vector2(spawnPointX, spawnPointY);
-            spawnPoints.Add(spawnPoint);
+            GameObject playerPrefab = Resources.Load<GameObject>(Util.Const.TOPVIEW_PLAYER);
+            player = UnityEngine.Object.Instantiate(playerPrefab);
         }
-
-        fields[id].ParseData(name.ToString(), spawnPoints.ToArray());
-        fields[id].InitAllEntity();
-        spawnPoints.Clear();
-        name.Clear();
+        player.transform.position = spawnPoint;
     }
 
     private void BindEvent()
     {
         onFieldIDChange -= DataBase.Instance.Dialogue.ResetLine;
         onFieldIDChange += DataBase.Instance.Dialogue.ResetLine;
+        onFieldIDChange -= SetField;
+        onFieldIDChange += SetField;
+    }
+
+    private void SetField(int fieldIndex)
+    {
+        if (fieldPrefabs.Count == 0 || fieldPrefabs[fieldIndex] == null)
+        {
+            // Test Code
+            fieldPrefabs.Add(fieldIndex, Resources.Load<GameObject>("TopView/0"));
+        }
+        if(currentField != null)
+            GameObject.Destroy(currentField.gameObject);
+        GameObject field = GameObject.Instantiate(fieldPrefabs[fieldIndex]);
+        currentField = field.GetComponent<Field>();
+        currentField.InitSettings(fieldIndex);
     }
 }

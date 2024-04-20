@@ -13,6 +13,8 @@ public class SceneManager : MonoBehaviour
 
     private DataStorage dataStorage;
     public DataStorage Storage { get => dataStorage; }
+    private CutsceneManager cutsceneManager;
+    public CutsceneManager CutsceneManager { get => cutsceneManager; }
 
     private void Awake()
     {
@@ -33,7 +35,9 @@ public class SceneManager : MonoBehaviour
         fieldManager = new FieldManager();
         dataStorage = new DataStorage();
         fieldManager.InitSettings();
-        fieldManager.FieldID = 0;
+        fieldManager.ID = 0;
+        cutsceneManager = GetComponent<CutsceneManager>();
+        cutsceneManager.InitSettings();
     }
     public void SetBattleScene(string name)
     {
