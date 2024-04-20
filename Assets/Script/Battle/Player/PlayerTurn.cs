@@ -164,7 +164,8 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
             if (delayBeatCount == 0)
             { // delayBeatCount만큼의 박자 뒤에 공격신호
                 Metronome.instance.OnBeating -= DecreaseOnBeat;// 구독해제
-                StartCoroutine(AttackSignal());//공격신호 파티클재생
+                //StartCoroutine(AttackSignal());//공격신호 파티클재생
+                playerAnimator.attackSignalPlay();
                 uiSound.SignalSound(gameObject, true); //공격 시작 신호
                 break;
             }

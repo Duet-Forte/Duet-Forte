@@ -16,13 +16,10 @@ public class BeatDebug : MonoBehaviour
         beatingSequence.Append(beat.transform.DOScale(originScale, 0.3f));
         Metronome.instance.OnBeating += PlaySequence;
     }
+
     void PlaySequence() {
         
         beatingSequence.Restart();
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

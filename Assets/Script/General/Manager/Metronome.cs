@@ -5,10 +5,10 @@ using System;
 using Unity.VisualScripting;
 using Util;
 
-public class Metronome : MonoBehaviour
+public class Metronome :MonoBehaviour
 {
     public static Metronome instance = null;
-    public Stage stage; //bpm이나 bgm정보 등 stage에 관한 정보
+    private Stage stage; //bpm이나 bgm정보 등 stage에 관한 정보
 
     private double currentTime = 0d;//정박세는 변수
     private double currentTimeOfOffBeat = 0d;//엇박세는 변수
@@ -22,7 +22,7 @@ public class Metronome : MonoBehaviour
     public double CurrentTime { get => currentTime; }
     public double SecondsPerBeat { get => secondsPerBeat; }
     public Stage getStage { get => stage; }
-    private void Awake()//싱글톤
+    public void InitSettins(Stage stage)//싱글톤
     {
         if (instance == null)
         {
@@ -31,11 +31,15 @@ public class Metronome : MonoBehaviour
         }
         else {
             if (instance != this)
-                Destroy(this.gameObject);
+            {
+              //Destroy(this.gameObject);
+            }
         
         }
         bPM = stage.BPM;
         secondsPerBeat = Const.MINUTE_TO_SECOND / bPM;
+        this.stage = stage;
+
     }
 
 

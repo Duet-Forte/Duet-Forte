@@ -10,18 +10,18 @@ public abstract class DamageType
         if (defense < 0) { return (int)attack; }
 
         int calculatedDamage = 0;
-        float tmpDamage = attack - defense;//¹İ¿Ã¸²À» ÇÏ±â À§ÇØ ÀúÀåÇÏ´Â ÀÓ½Ãº¯¼ö
+        float tmpDamage = attack - defense;//ë°˜ì˜¬ë¦¼ì„ í•˜ê¸° ìœ„í•´ ì €ì¥í•˜ëŠ” ì„ì‹œë³€ìˆ˜
 
         if (tmpDamage - (int)tmpDamage >= 0.5f)
-        {//½Ç¼öºÎ°¡ 0.5ÀÌ»óÀÌ¸é
-            calculatedDamage = (int)tmpDamage + 1;//¿Ã¸²
+        {//ì‹¤ìˆ˜ë¶€ê°€ 0.5ì´ìƒì´ë©´
+            calculatedDamage = (int)tmpDamage + 1;//ì˜¬ë¦¼
         }
         else
-        {//0.5¹Ì¸¸ÀÌ¸é
-            calculatedDamage = (int)tmpDamage;//¹ö¸²
+        {//0.5ë¯¸ë§Œì´ë©´
+            calculatedDamage = (int)tmpDamage;//ë²„ë¦¼
         }
 
-        if (tmpDamage > 0) //ÀÏ¹İÀûÀÎ ´ë¹ÌÁö °è»ê 
+        if (tmpDamage > 0) //ì¼ë°˜ì ì¸ ëŒ€ë¯¸ì§€ ê³„ì‚° 
         {
             return calculatedDamage;
         }
@@ -33,20 +33,20 @@ public abstract class DamageType
     }
     public virtual int GetDamage(float attack, int defense, Util.CustomEnum.JudgeName judgeName) {
         if (judgeName == Util.CustomEnum.JudgeName.Miss)
-        { //RestÆÇÁ¤
+        { //RestíŒì •
             return 0;
         }
         if (judgeName == Util.CustomEnum.JudgeName.Perfect)
         {
-            return GetDamage(attack * 1.0f,defense);
+            return GetDamage(attack * 1.2f,defense);
         }
         if (judgeName == Util.CustomEnum.JudgeName.Great)
         {
-            return GetDamage(attack * 0.8f, defense);
+            return GetDamage(attack * 1f, defense);
         }
         if (judgeName == Util.CustomEnum.JudgeName.Good)
         {
-            return GetDamage(attack * 0.5f, defense);
+            return GetDamage(attack * 0.8f, defense);
         }
         if (judgeName == Util.CustomEnum.JudgeName.Bad)
         {

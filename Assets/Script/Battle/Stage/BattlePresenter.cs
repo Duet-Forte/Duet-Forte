@@ -77,16 +77,15 @@ public class BattlePresenter : MonoBehaviour
 
     }
 
-    public void EnemyToPlayer(float enemyAttack) {
+    public void EnemyToPlayer(Damage enemyAttack) {
         
         string enemyHitVFXPath = Const.ENEMY_VFX_PATH + enemyName+"/"+enemyName+"_BasicHit_VFX"; //enemy가 사용하는 vfx  
         Object.Instantiate<GameObject>(Resources.Load<GameObject>(enemyHitVFXPath),playerInterface.transform.position,Quaternion.identity);
-        int damage;
         GetDefense();
-        damage = DamageCalculate(enemyAttack,playerDefense);
+        enemyAttack.CalculateDamageWithJudge((int)playerDefense);
         CameraShake(1f,1f,100,50);
 
-        playerInterface.GetDamage(damage);
+        playerInterface.GetDamage(enemyAttack);
     }
 
     public void GuardCounterToEnemy(Damage damage) {

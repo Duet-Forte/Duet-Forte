@@ -57,25 +57,6 @@ public class PlayerGuardCounter : MonoBehaviour
         yield return null;
     }
 
-    float CalculateBasicAttackDamage(JudgeName judgeName)
-    {
-        if (judgeName == JudgeName.Miss)
-        { //Rest∆«¡§
-            return 0;
-        }
-        if (judgeName == JudgeName.Perfect)
-        {
-            return playerAttackStat * 2.0f;
-        }
-        if (judgeName == JudgeName.Great)
-        {
-            return playerAttackStat * 1.6f;
-        }
-        if (judgeName == JudgeName.Good)
-        {
-            return playerAttackStat * 1f;
-        }
-        return 0;
-    }
+  
 
 }

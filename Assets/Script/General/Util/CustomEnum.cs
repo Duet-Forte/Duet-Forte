@@ -33,7 +33,8 @@ namespace Util
         
             Slash,
             Pierce,
-            GuardCounter
+            GuardCounter,
+            Enemy
         };
 
         public enum Speaker

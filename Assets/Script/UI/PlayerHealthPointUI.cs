@@ -25,12 +25,14 @@ public class PlayerHealthPointUI : InGameUI
         currentHealthPoint = playerMaxHealthPoint;
         healthPoint = transform.Find("HealthPointText").GetComponent<TMP_Text>();
         healthPoint.text = playerMaxHealthPoint.ToString() + "/" + playerMaxHealthPoint.ToString();
+        SubscribeBeatingUISequence();
 
     }
+    
 
-    public void GetDamage(int damage)
+    public void GetDamage(Damage damage)
     {
-        currentHealthPoint -= damage;
+        currentHealthPoint -= damage.GetCalculatedDamage();
         healthPoint.text = currentHealthPoint.ToString() + "/" + enemyMaxHealthPoint.ToString();
         float currentHealthPointRatio = Mathf.Clamp01(currentHealthPoint / enemyMaxHealthPoint);
         filling.DOFillAmount(currentHealthPointRatio, Const.STATUSUI_PROCESS_SPEED);
@@ -48,4 +50,5 @@ public class PlayerHealthPointUI : InGameUI
                 .OnComplete(() => isProductionProceeding = false);
             });
     }
+    
 }

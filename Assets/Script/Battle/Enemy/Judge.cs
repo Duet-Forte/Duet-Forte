@@ -3,6 +3,9 @@ using Util.CustomEnum;
 
 public struct Judge
 {
+    public Judge(JudgeName judgeName) { 
+    this.name= judgeName;
+    }
     private JudgeName name;
     public JudgeName Name { get { return name; } set { name = value; } }
     public Color Color {

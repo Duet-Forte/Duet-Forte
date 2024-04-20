@@ -11,7 +11,7 @@ public class GuardGaugeUI : InGameUI
     {
         filling = transform.Find("Filling").GetComponent<Image>();
         filling.fillAmount = 0;
-        
+        SubscribeBeatingUISequence();
     }
 
     public void ResetGauge()

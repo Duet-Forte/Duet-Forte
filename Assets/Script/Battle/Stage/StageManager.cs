@@ -11,7 +11,8 @@ public class StageManager : MonoBehaviour
     [SerializeField] private Stage stage; // 추후 오프필드에서 특정 적과 조우 시 주입해 줄 예정.
     [SerializeField] private Transform enemyTransform;
     [SerializeField] private GameObject blackBox;
-    
+
+    Metronome metronome;
     private PatternParser parser;
     private JudgeManager judgeManager;
     private IEnemy enemy;
@@ -29,8 +30,8 @@ public class StageManager : MonoBehaviour
     #region battlePos 좌표
     private float battlePosXMin = -15f;
     private float battlePosXMax = 15f;
-    private float battlePosYMin = -30f;
-    private float battlePosYMax = -20f;
+    private float battlePosYMin = -20f;
+    private float battlePosYMax = -7f;
     #endregion
 
     #region UI
@@ -61,7 +62,6 @@ public class StageManager : MonoBehaviour
     public IEnemy Enemy { get { return enemy; } }
     public JudgeManager JudgeManager { get { return judgeManager; } }
     public Turn CurrentTurn { set { currentTurn = value; Debug.Log("여기서 " + currentTurn + " 으로 바뀜"); } }
-    #endregion
     public Vector2 BattlePos { get => battlePos; }
     public PlayerInterface PlayerInterface { get => playerInterface; }
 
@@ -73,6 +73,7 @@ public class StageManager : MonoBehaviour
     public ControlTurnUI TurnUI { set => turnUI = value; get => turnUI; }
     public EnemySignalUI EnemySignalUI { get => enemySignalUI; set => enemySignalUI = value; }
     public GameObject BlackBox { get => blackBox; }
+    #endregion
     #region 디버깅용
     [SerializeField] public Image[] attackIcon;
     [SerializeField] public Image[] defenseIcon;
@@ -90,9 +91,13 @@ public class StageManager : MonoBehaviour
             judgeManager?.UpdateInput();
         }
     }
-
+    public void StageStart(Stage stage) {//don't destroy on load에서 주입받을 메서드
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn);
+    }
     private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn)
     {
+        metronome = GetComponent<Metronome>();
+        metronome.InitSettins(stage);
         secondsPerBeat = Const.MINUTE_TO_SECOND / bitPerMinute;
         isStageOver = false;
         SetUI();
@@ -267,8 +272,7 @@ public class StageManager : MonoBehaviour
     {
         enemy.OnFramePass -= judgeManager.CheckMissFrame;
         enemy.OnFramePass += judgeManager.CheckMissFrame;
-        enemy.OnAttack -= judgeManager.DecreaseHealthPoint;
-        enemy.OnAttack += judgeManager.DecreaseHealthPoint;
+        
         
     }
 
@@ -287,7 +291,6 @@ public class StageManager : MonoBehaviour
             judgeManager.OnMissParry -= enemy.GiveDamage;
             judgeManager.OnParrySuccess -= enemy.HandleParryJudge;
             enemy.OnFramePass -= judgeManager.CheckMissFrame;
-            enemy.OnAttack -= judgeManager.DecreaseHealthPoint;
             OnGameOver -= enemy.StopActions;
             OnStageClear -= enemy.StopActions;
         }

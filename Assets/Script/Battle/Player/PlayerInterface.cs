@@ -1,3 +1,5 @@
+using Director;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +12,10 @@ public class PlayerInterface : MonoBehaviour
     PlayerTurn playerTurn;
     PlayerAttack playerAttack;
     PlayerGuardCounter playerGuardCounter;
+    BattleDirector battleDirector=new BattleDirector();
     Cinemachine.CinemachineImpulseSource cinemachineImpulseSource;
+    public event Action<Damage> OnGetDamage;
 
-    
 
     #region 위치 관련 변수
     Vector3 parryPos = new Vector3(2.61f, 1.54f, 0f);
@@ -80,8 +83,21 @@ public class PlayerInterface : MonoBehaviour
 
     #endregion
 
-    public void GetDamage(int damage) { 
-    
+    public void GetDamage(Damage damage) {
+        if (damage.GetCalculatedDamage()<=0)
+        {
+            playerAnimator.Guard();
+            return;
+        }
+        battleDirector.Shake(gameObject);
+        playerAnimator.Hurt();
+        playerStatus.PlayerHealthPoint=damage.GetCalculatedDamage();
+        OnGetDamage.Invoke(damage);
+        if (playerStatus.PlayerHealthPoint <= 0) { //플레이어 사망 이벤트
+                                                   
+        }
+
+
     }
 
     public Cinemachine.CinemachineImpulseSource CinemachineImpulseSource
