@@ -24,6 +24,7 @@ public class Damage
         this.judgeName = JudgeName.Perfect;
         this.damageType = new GuardCounterDamage();
     }
+    
 
     private float attack;
     private int calculatedAttack;
@@ -36,7 +37,6 @@ public class Damage
     }
     public void CalculateDamageWithJudge(int defense)
     {
-
         calculatedAttack= damageType.GetDamage(attack, defense,judgeName);
     }
     public int GetCalculatedDamage() { 

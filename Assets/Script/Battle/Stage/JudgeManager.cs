@@ -11,8 +11,8 @@ public class JudgeManager
     private int maxGauge; // 마찬가지
     private int combo;
 
-    public event Action OnMissParry;
-    public event Action<Judge, int> OnParrySuccess;
+    public event Action<Judge> OnMissParry;
+    public event Action<Judge> OnParrySuccess;
     public event Action<int, int> OnComboChange;//UI 게이지에 반영
     #region 프로퍼티
     public int GuardGauge { get { return maxGauge; } set { maxGauge = value; } }
@@ -50,8 +50,8 @@ public class JudgeManager
 
     public void IncreaseGauge(int combo) // 이동 예정
     {
-        combo += combo;
-        OnComboChange?.Invoke(combo, maxGauge);
+        this.combo += combo;
+        OnComboChange?.Invoke(this.combo, maxGauge);
     }
 
     private void CheckScore(float parryTime)
@@ -66,7 +66,7 @@ public class JudgeManager
             ++earlyCount;
             if (earlyCount >= Const.MAX_EARLY_COUNT)
             {
-                MissNote();
+                MissNote(new Judge(JudgeName.Bad));
             }
             return;
         }
@@ -80,31 +80,33 @@ public class JudgeManager
         if (judgeTime <= perfectJudgeTime)
         {
             judge.Name = JudgeName.Perfect;
-            IncreaseGauge(3);
+            IncreaseGauge(3);            
         }
         else if (judgeTime <= greatJudgeTime)
         {
             judge.Name = JudgeName.Great;
             IncreaseGauge(2);
+            MissNote(judge);
         }
         else if (judgeTime <= goodJudgeTime)
         {
             judge.Name = JudgeName.Good;
             IncreaseGauge(1);
+            MissNote(judge);
         }
         else
         {
             judge.Name = JudgeName.Bad;
         }
-        int damage = UnityEngine.Random.Range(1,3);
+        
         Debug.Log(judgeTime);
         Debug.Log("판정 시작 : " + judgeStartTime + " 판정 끝 : " + judgeEndTime);
-        OnParrySuccess?.Invoke(judge, damage);
+        OnParrySuccess?.Invoke(judge);
     }
-    private void MissNote()
+    private void MissNote(Judge judge)
     {
         Debug.Log($"Miss!");
-        OnMissParry?.Invoke();
+        OnMissParry?.Invoke(judge);
         isMissedInCurrentFrame = true; 
     }
 

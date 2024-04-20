@@ -39,6 +39,7 @@ public class Metronome :MonoBehaviour
         bPM = stage.BPM;
         secondsPerBeat = Const.MINUTE_TO_SECOND / bPM;
         this.stage = stage;
+
     }
 
 

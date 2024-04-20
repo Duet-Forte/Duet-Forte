@@ -38,15 +38,15 @@ public abstract class DamageType
         }
         if (judgeName == Util.CustomEnum.JudgeName.Perfect)
         {
-            return GetDamage(attack * 1.0f,defense);
+            return GetDamage(attack * 1.2f,defense);
         }
         if (judgeName == Util.CustomEnum.JudgeName.Great)
         {
-            return GetDamage(attack * 0.8f, defense);
+            return GetDamage(attack * 1f, defense);
         }
         if (judgeName == Util.CustomEnum.JudgeName.Good)
         {
-            return GetDamage(attack * 0.5f, defense);
+            return GetDamage(attack * 0.8f, defense);
         }
         if (judgeName == Util.CustomEnum.JudgeName.Bad)
         {

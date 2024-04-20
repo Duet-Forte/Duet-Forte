@@ -82,7 +82,7 @@ public class BattlePresenter : MonoBehaviour
         string enemyHitVFXPath = Const.ENEMY_VFX_PATH + enemyName+"/"+enemyName+"_BasicHit_VFX"; //enemy가 사용하는 vfx  
         Object.Instantiate<GameObject>(Resources.Load<GameObject>(enemyHitVFXPath),playerInterface.transform.position,Quaternion.identity);
         GetDefense();
-        enemyAttack.CalculateDamage((int)playerDefense);
+        enemyAttack.CalculateDamageWithJudge((int)playerDefense);
         CameraShake(1f,1f,100,50);
 
         playerInterface.GetDamage(enemyAttack);

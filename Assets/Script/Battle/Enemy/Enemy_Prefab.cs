@@ -184,7 +184,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
             }
             if (!isNoteChecked[i])
             {
-                GiveDamage();
+                GiveDamage(new Judge(JudgeName.Miss));
                 enemyAnimator.Attack();
                 Debug.Log($"{judgeEndTime}에 판정 종료");
             }
@@ -333,9 +333,9 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     #endregion
 
     #region 대미지 피격함수 클래스를 따로 파서 이사할 예정
-    public void GiveDamage()//나중에 플레이어 클래스에서 GetDamage로 바꿔서 이사예정
+    public void GiveDamage(Judge judge)//나중에 플레이어 클래스에서 GetDamage로 바꿔서 이사예정
     {
-        Damage damage = new Damage(enemyAttack);
+        Damage damage = new Damage(enemyAttack, judge.Name, new EnemyDamage());
         enemyAnimator.Attack();
         battlePresenter.EnemyToPlayer(damage);
         
@@ -358,7 +358,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     }
     
     #endregion
-    public void HandleParryJudge(Judge judge, int damage = 0)//패링 판정 다루는 함수
+    public void HandleParryJudge(Judge judge)//패링 판정 다루는 함수
     {
         
         if (judge.Name.Equals(JudgeName.Miss))

@@ -23,8 +23,8 @@ public interface IEnemy
     
     public void BindPattern(EnemyPattern[] enemyPattern);
     public void CheckCombo(int currentCombo, int maxGauge);
-    public void HandleParryJudge(Judge judge, int damage);
-    public void GiveDamage();
+    public void HandleParryJudge(Judge judge);
+    public void GiveDamage(Judge judge);
     /// <summary>
     /// bool 값은 true이면 베기(A공격), false이면 찌르기(B공격)
     /// 방어도에 따라 실제 받는 대미지로 계산되는 함수가 있음.
