@@ -11,7 +11,7 @@ public class JudgeManager
     private int maxGauge; // 마찬가지
     private int combo;
 
-    public event Action<Judge> OnParryEnd;
+    public event Action<Judge> OnMissParry;
     public event Action<Judge> OnParrySuccess;
     public event Action<int, int> OnComboChange;//UI 게이지에 반영
     #region 프로퍼티
@@ -66,8 +66,7 @@ public class JudgeManager
             ++earlyCount;
             if (earlyCount >= Const.MAX_EARLY_COUNT)
             {
-                EndParry(new Judge(JudgeName.Miss));
-                isMissedInCurrentFrame = true;
+                MissNote(new Judge(JudgeName.Bad));
             }
             return;
         }
@@ -87,13 +86,13 @@ public class JudgeManager
         {
             judge.Name = JudgeName.Great;
             IncreaseGauge(2);
-           
+            MissNote(judge);
         }
         else if (judgeTime <= goodJudgeTime)
         {
             judge.Name = JudgeName.Good;
             IncreaseGauge(1);
-           
+            MissNote(judge);
         }
         else
         {
@@ -102,13 +101,13 @@ public class JudgeManager
         
         Debug.Log(judgeTime);
         Debug.Log("판정 시작 : " + judgeStartTime + " 판정 끝 : " + judgeEndTime);
-        EndParry(judge);
+        OnParrySuccess?.Invoke(judge);
     }
-    private void EndParry(Judge judge)
+    private void MissNote(Judge judge)
     {
         Debug.Log($"Miss!");
-        OnParryEnd?.Invoke(judge);
-        
+        OnMissParry?.Invoke(judge);
+        isMissedInCurrentFrame = true; 
     }
 
     public void CheckMissFrame() => isMissedInCurrentFrame = false;
