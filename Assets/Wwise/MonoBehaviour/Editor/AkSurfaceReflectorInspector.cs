@@ -13,7 +13,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2023 Audiokinetic Inc.
+Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
 [UnityEditor.CustomEditor(typeof(AkSurfaceReflector))]
@@ -60,6 +60,7 @@ public class AkSurfaceReflectorInspector : UnityEditor.Editor
 		}
 
 		UnityEditor.EditorGUILayout.PropertyField(AssociatedRoom);
+		CheckAssociatedRoom(m_AkSurfaceReflector);
 
 		serializedObject.ApplyModifiedProperties();
 	}
@@ -83,6 +84,23 @@ public class AkSurfaceReflectorInspector : UnityEditor.Editor
 		{
 			UnityEditor.EditorGUILayout.HelpBox(
 				"There are more " + name + " than the Mesh has submeshes. Additional ones will be ignored.",
+				UnityEditor.MessageType.Warning);
+		}
+	}
+
+	public static void CheckAssociatedRoom(AkSurfaceReflector surfaceReflector)
+	{
+		if (surfaceReflector == null || surfaceReflector.AssociatedRoom == null)
+		{
+			return;
+		}
+
+		UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
+
+		using (new UnityEditor.EditorGUILayout.VerticalScope("box"))
+		{
+			UnityEditor.EditorGUILayout.HelpBox(
+				"The Associated Room property is deprecated and will be removed in a future version. We recommend not using it by leaving it set to None.",
 				UnityEditor.MessageType.Warning);
 		}
 	}

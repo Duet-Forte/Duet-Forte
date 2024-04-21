@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2023 Audiokinetic Inc.
+Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
 public class AkWwiseInitializationSettings : AkCommonPlatformSettings
@@ -39,12 +39,13 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 		get { return PlatformSettingsList.Count; }
 	}
 
+
 	[UnityEngine.HideInInspector]
-	public AkCommonUserSettings UserSettings;
+	public AkCommonUserSettings UserSettings = new AkCommonUserSettings();
 	[UnityEngine.HideInInspector]
-	public AkCommonAdvancedSettings AdvancedSettings;
+	public AkCommonAdvancedSettings AdvancedSettings = new AkCommonAdvancedSettings();
 	[UnityEngine.HideInInspector]
-	public AkCommonCommSettings CommsSettings;
+	public AkCommonCommSettings CommsSettings = new AkCommonCommSettings();
 
 	protected override AkCommonUserSettings GetUserSettings()
 	{
@@ -59,6 +60,12 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 	protected override AkCommonCommSettings GetCommsSettings()
 	{
 		return CommsSettings;
+	}
+	
+	//Deprecated
+	public void ResetSoundEngine(bool _)
+	{
+		AkSoundEngineInitialization.Instance.ResetSoundEngine();
 	}
 
 	private static readonly string[] AllGlobalValues = new[]
@@ -83,13 +90,13 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 		"UserSettings.m_SpatialAudioSettings.m_MovementThreshold",
 		"UserSettings.m_SpatialAudioSettings.m_NumberOfPrimaryRays",
 		"UserSettings.m_SpatialAudioSettings.m_MaxReflectionOrder",
+		"UserSettings.m_SpatialAudioSettings.m_MaxDiffractionOrder",
+		"UserSettings.m_SpatialAudioSettings.m_DiffractionOnReflectionsOrder",
+		"UserSettings.m_SpatialAudioSettings.m_MaxEmitterRoomAuxSends",
 		"UserSettings.m_SpatialAudioSettings.m_MaxPathLength",
 		"UserSettings.m_SpatialAudioSettings.m_CPULimitPercentage",
-		"UserSettings.m_SpatialAudioSettings.m_EnableDiffractionOnReflections",
 		"UserSettings.m_SpatialAudioSettings.m_EnableGeometricDiffractionAndTransmission",
 		"UserSettings.m_SpatialAudioSettings.m_CalcEmitterVirtualPosition",
-		"UserSettings.m_SpatialAudioSettings.m_UseObstruction",
-		"UserSettings.m_SpatialAudioSettings.m_UseOcclusion",
 		"UserSettings.m_SpatialAudioSettings.m_LoadBalancingSpread",
 		"CommsSettings.m_PoolSize",
 		"CommsSettings.m_DiscoveryBroadcastPort",
@@ -106,13 +113,14 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 		"AdvancedSettings.m_MaximumHardwareTimeoutMs",
 		"AdvancedSettings.m_SpatialAudioSettings.m_DiffractionShadowAttenuationFactor",
 		"AdvancedSettings.m_SpatialAudioSettings.m_DiffractionShadowDegrees",
+		"AdvancedSettings.m_SuspendAudioDuringFocusLoss",
 		"AdvancedSettings.m_RenderDuringFocusLoss",
-		"AdvancedSettings.m_UseAsyncOpen",
 		"AdvancedSettings.m_SoundBankPersistentDataPath",
 		"AdvancedSettings.m_DebugOutOfRangeCheckEnabled",
 		"AdvancedSettings.m_DebugOutOfRangeLimit",
 		"AdvancedSettings.m_MemoryAllocationSizeLimit",
-		"AdvancedSettings.m_MemoryDebugLevel"
+		"AdvancedSettings.m_MemoryDebugLevel",
+		"AdvancedSettings.m_MemorySpanCount"
 	};
 
 	public abstract class PlatformSettings : AkCommonPlatformSettings
@@ -242,6 +250,14 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 	private static AkWwiseInitializationSettings m_Instance = null;
 	private static AkBasePlatformSettings m_ActivePlatformSettings = null;
 
+
+#if UNITY_EDITOR
+	public void SetActiveSettings()
+	{
+		Instance.ActiveSettingsHash = GetHashOfActiveSettings();
+	}
+#endif
+
 	public static AkWwiseInitializationSettings Instance
 	{
 		get
@@ -251,6 +267,7 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 #if UNITY_EDITOR
 				var name = typeof(AkWwiseInitializationSettings).Name;
 				m_Instance = GetOrCreateAsset<AkWwiseInitializationSettings>(name, name);
+				AkSoundEngineInitialization.Instance.initializationDelegate += m_Instance.SetActiveSettings;
 #else
 				m_Instance = CreateInstance<AkWwiseInitializationSettings>();
 				UnityEngine.Debug.LogWarning("WwiseUnity: No platform specific settings were created. Default initialization settings will be used.");
@@ -292,177 +309,25 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 	private void OnEnable()
 	{
 		if (m_Instance == null)
+		{
 			m_Instance = this;
+#if UNITY_EDITOR
+			AkSoundEngineInitialization.Instance.initializationDelegate += m_Instance.SetActiveSettings;
+#endif
+		}
 		else if (m_Instance != this)
+		{
 			UnityEngine.Debug.LogWarning("WwiseUnity: There are multiple AkWwiseInitializationSettings objects instantiated; only one will be used.");
+
+		}
 	}
-	#endregion
-
-	#region Sound Engine Initialization
-	public bool InitializeSoundEngine()
-	{
-#if UNITY_EDITOR
-		Instance.ActiveSettingsHash = GetHashOfActiveSettings();
-		Instance.ActiveSettingsHaveChanged = true;
-#endif
-
-		UnityEngine.Debug.LogFormat("WwiseUnity: Wwise(R) SDK Version {0}.", AkSoundEngine.WwiseVersion);
-
-		var initResult = AkSoundEngine.Init(ActivePlatformSettings.AkInitializationSettings);
-		if (initResult != AKRESULT.AK_Success)
-		{
-			UnityEngine.Debug.LogError($"WwiseUnity: Failed to initialize the sound engine. Reason: {initResult}");
-			AkSoundEngine.Term();
-			return false;
-		}
-
-		if (AkSoundEngine.InitSpatialAudio(ActivePlatformSettings.AkSpatialAudioInitSettings) != AKRESULT.AK_Success)
-		{
-			UnityEngine.Debug.LogWarning("WwiseUnity: Failed to initialize spatial audio.");
-		}
-
-		AkSoundEngine.InitCommunication(ActivePlatformSettings.AkCommunicationSettings);
-
-		var akBasePathGetterInstance =  AkBasePathGetter.Get();
-		var soundBankBasePath = akBasePathGetterInstance.SoundBankBasePath;
-		if (string.IsNullOrEmpty(soundBankBasePath))
-		{
-			// this is a nearly impossible situation
-			UnityEngine.Debug.LogError("WwiseUnity: Couldn't find SoundBanks base path. Terminating sound engine.");
-			AkSoundEngine.Term();
-			return false;
-		}
-
-		var persistentDataPath = akBasePathGetterInstance.PersistentDataPath;
-		var isBasePathSameAsPersistentPath = soundBankBasePath == persistentDataPath;
-
-#if UNITY_ANDROID
-		var canSetBasePath = !isBasePathSameAsPersistentPath;
-		var canSetPersistentDataPath = true;
-#else
-		var canSetBasePath = true;
-		var canSetPersistentDataPath = !isBasePathSameAsPersistentPath;
-#endif
-
-//We don't use the standard base path with addressables, only the persistentdatapath for streaming media 
-#if AK_WWISE_ADDRESSABLES && UNITY_ADDRESSABLES
-		canSetBasePath=false;
-#endif
-		if (canSetBasePath && AkSoundEngine.SetBasePath(soundBankBasePath) != AKRESULT.AK_Success)
-		{
-#if !UNITY_ANDROID || UNITY_EDITOR
-#if UNITY_EDITOR
-			var format = "WwiseUnity: Failed to set SoundBanks base path to <{0}>. Make sure SoundBank path is correctly set under Edit > Project Settings > Wwise > Editor > Asset Management.";
-#else
-			var format = "WwiseUnity: Failed to set SoundBanks base path to <{0}>. Make sure SoundBank path is correctly set under Edit > Project Settings > Wwise > Initialization.";
-#endif
-			// It might be normal for SetBasePath to return AK_PathNotFound on Android. Silence the error log to avoid confusion.
-			UnityEngine.Debug.LogErrorFormat(format, soundBankBasePath);
-#endif
-		}
-
-		if (canSetPersistentDataPath && !string.IsNullOrEmpty(persistentDataPath))
-		{
-			AkSoundEngine.AddBasePath(persistentDataPath);
-		}
-
-		var decodedBankFullPath = akBasePathGetterInstance.DecodedBankFullPath;
-		if (!string.IsNullOrEmpty(decodedBankFullPath))
-		{
-			// AkSoundEngine.SetDecodedBankPath creates the folders for writing to (if they don't exist)
-			AkSoundEngine.SetDecodedBankPath(decodedBankFullPath);
-
-			int lastSeparatorIndex = decodedBankFullPath.LastIndexOf('\\');
-			if (lastSeparatorIndex >= 0)
-			{
-				string parentPath = decodedBankFullPath.Substring(0, lastSeparatorIndex);
-				// Some media are put in the platform folder directly (instead of the decoded banks folder), so add it the base paths.
-				AkSoundEngine.AddBasePath(parentPath);
-			}
-
-			// Adding decoded bank path last to ensure that it is the first one used when writing decoded banks.
-			AkSoundEngine.AddBasePath(decodedBankFullPath);
-		}
-
-		AkSoundEngine.SetCurrentLanguage(ActivePlatformSettings.InitialLanguage);
-
-		AkCallbackManager.Init(ActivePlatformSettings.CallbackManagerInitializationSettings);
-		UnityEngine.Debug.Log("WwiseUnity: Sound engine initialized successfully.");
-		LoadInitBank();
-		return true;
-	}
-
-	protected virtual void LoadInitBank()
-	{
-		AkBankManager.LoadInitBank();
-	}
-
-	protected virtual void ClearBanks()
-	{
-		AkSoundEngine.ClearBanks();
-	}
-
-	protected virtual void ResetBanks()
-	{
-		AkBankManager.Reset();
-	}
-
-
-	public bool ResetSoundEngine(bool isPlaying)
-	{
-		if (isPlaying)
-		{
-			ClearBanks();
-			LoadInitBank();
-		}
-
-		AkCallbackManager.Init(ActivePlatformSettings.CallbackManagerInitializationSettings);
-		return true;
-	}
-
-	public void TerminateSoundEngine()
-	{
-		if (!AkSoundEngine.IsInitialized())
-			return;
-
-		AkSoundEngine.SetOfflineRendering(false);
-
-		// Stop everything, and make sure the callback buffer is empty. We try emptying as much as possible, and wait 10 ms before retrying.
-		// Callbacks can take a long time to be posted after the call to RenderAudio().
-		AkSoundEngine.StopAll();
-		ClearBanks();
-		AkSoundEngine.RenderAudio();
-
-		for (var retry = 0; retry < 5;)
-		{
-			if (AkCallbackManager.PostCallbacks() == 0)
-			{
-				SleepForMilliseconds(10);
-				++retry;
-			}
-
-			SleepForMilliseconds(1);
-		}
-
-		AkSoundEngine.Term();
-
-		// Make sure we have no callbacks left after Term. Some might be posted during termination.
-		AkCallbackManager.PostCallbacks();
-
-		AkCallbackManager.Term();
-		ResetBanks();
 
 #if UNITY_EDITOR
-		Instance.ActiveSettingsHash = string.Empty;
-		Instance.ActiveSettingsHaveChanged = true;
-#endif
-	}
-
-	private static void SleepForMilliseconds(double milliseconds)
+	private void OnDisable()
 	{
-		using (var tmpEvent = new System.Threading.ManualResetEvent(false))
-			tmpEvent.WaitOne(System.TimeSpan.FromMilliseconds(milliseconds));
+		AkSoundEngineInitialization.Instance.initializationDelegate -= m_Instance.SetActiveSettings;
 	}
+#endif
 #endregion
 
 #if UNITY_EDITOR
@@ -471,7 +336,9 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 		var path = System.IO.Path.Combine(AkWwiseEditorSettings.WwiseScriptableObjectRelativePath, fileName + ".asset");
 		var asset = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(path);
 		if (asset)
+		{
 			return asset;
+		}
 
 		var guids = UnityEditor.AssetDatabase.FindAssets("t:" + typeof(T).Name);
 		foreach (var assetGuid in guids)
@@ -479,12 +346,17 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 			var assetPath = UnityEditor.AssetDatabase.GUIDToAssetPath(assetGuid);
 			asset = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(assetPath);
 			if (asset)
+			{
 				return asset;
+			}
 		}
 
 		asset = CreateInstance(className) as T;
-		AkUtilities.CreateFolder(AkWwiseEditorSettings.WwiseScriptableObjectRelativePath);
-		UnityEditor.AssetDatabase.CreateAsset(asset, path);
+		if (!AkUtilities.IsMigrating)
+		{
+			AkUtilities.CreateFolder(AkWwiseEditorSettings.WwiseScriptableObjectRelativePath);
+			UnityEditor.AssetDatabase.CreateAsset(asset, path);
+		}
 		return asset;
 	}
 
@@ -498,7 +370,9 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 	{
 		var type = obj.GetType();
 		if (type.IsPrimitive || type == typeof(string))
+		{
 			return name + ": " + obj.ToString() + "\n";
+		}
 
 		string ret = string.Empty;
 		foreach (var subFieldInfo in type.GetFields(BindingFlags))
@@ -508,9 +382,13 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 			var fields = subType.GetFields(BindingFlags);
 
 			if (fields.Length == 0)
+			{
 				ret += subFieldInfo.Name + ": " + subObject.ToString() + "\n";
+			}
 			else
+			{
 				ret += GetHashOfActiveSettingsField(subFieldInfo.Name, subObject);
+			}
 		}
 
 		return ret;
@@ -536,7 +414,9 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 	public static void UpdatePlatforms()
 	{
 		if (!AkUtilities.IsWwiseProjectAvailable)
+		{
 			return;
+		}
 
 		var customPlatformSettingsMap = new System.Collections.Generic.Dictionary<string, PlatformSettings>();
 		var instance = Instance;
@@ -547,7 +427,9 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 				var settings = instance.PlatformSettingsList[i];
 				var name = instance.PlatformSettingsNameList[i];
 				if (settings && !string.IsNullOrEmpty(name))
+				{
 					customPlatformSettingsMap.Add(name, settings);
+				}
 			}
 		}
 
@@ -573,7 +455,9 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 			{
 				allCustomPlatforms.Add(customWwisePlatform);
 				if (customPlatformSettingsMap.ContainsKey(customWwisePlatform))
+				{
 					continue;
+				}
 
 				PlatformSettings settings;
 				if (m_PlatformSettingsClassNames.TryGetValue(customWwisePlatform, out customClassName))
@@ -594,7 +478,9 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 		{
 			var instantiatedCustomPlatform = pair.Key;
 			if (!allCustomPlatforms.Contains(instantiatedCustomPlatform))
+			{
 				customPlatformSettingsToRemoveMap.Add(instantiatedCustomPlatform, pair.Value);
+			}
 		}
 
 		foreach (var pair in customPlatformSettingsToRemoveMap)
@@ -691,7 +577,9 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 			{
 				var property = serializedObject.FindProperty(settingsGroup);
 				if (property == null)
+				{
 					return;
+				}
 
 				var type = System.Type.GetType(property.type);
 				foreach (var field in type.GetFields())
@@ -754,19 +642,41 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 			serializedObject.Update();
 
 			foreach (var setting in GlobalSettingsGroups)
+			{
 				setting.Draw();
+			}
 
 			serializedObject.ApplyModifiedProperties();
 
 			UnityEditor.EditorGUILayout.Space();
 
 			foreach (var setting in PlatformSpecificSettingsGroups)
+			{
 				setting.Draw();
+			}
 
 			if (UnityEditor.EditorGUI.EndChangeCheck())
+			{
 				Instance.ActiveSettingsHaveChanged = true;
+			}
 
 			UnityEditor.EditorGUIUtility.labelWidth = labelWidth;
+		}
+
+		public override void OnDeactivate()
+		{
+			base.OnDeactivate();
+			if(Instance.ActiveSettingsHaveChanged)
+			{
+				if (AkWwiseEditorSettings.Instance.LoadSoundEngineInEditMode && !AkSoundEngine.IsInitialized())
+				{
+					AkSoundEngineInitialization.Instance.ResetSoundEngine();
+				}
+				else if (!AkWwiseEditorSettings.Instance.LoadSoundEngineInEditMode && AkSoundEngine.IsInitialized())
+				{
+					AkSoundEngineInitialization.Instance.TerminateSoundEngine();
+				}
+			}
 		}
 
 		private bool UpdateRequired = false;
@@ -839,11 +749,8 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 
 		private static void DrawHelpBox()
 		{
-			if (Instance.ActiveSettingsHaveChanged)
-			{
-				var hash = GetHashOfActiveSettings();
-				Instance.ActiveSettingsHaveChanged = string.IsNullOrEmpty(hash) || hash != Instance.ActiveSettingsHash;
-			}
+			var hash = GetHashOfActiveSettings();
+			Instance.ActiveSettingsHaveChanged = string.IsNullOrEmpty(hash) || hash != Instance.ActiveSettingsHash;
 
 			var helpBoxText = "No changes have been made. Please be advised that changes will take effect once the Editor exits play mode.";
 			var messageType = UnityEditor.MessageType.Info;
@@ -854,6 +761,7 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 			}
 			else if (Instance.ActiveSettingsHaveChanged)
 			{
+				Instance.ActiveSettingsHaveChanged = true;
 				helpBoxText = "Changes have been made and will take effect once the Editor exits play mode.";
 				messageType = UnityEditor.MessageType.Warning;
 			}
@@ -1197,7 +1105,12 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 						if (!wasUsingGlobalValue)
 							position.width = UnityEditor.EditorGUIUtility.labelWidth;
 
-						var isUsingGlobalValue = UnityEditor.EditorGUI.ToggleLeft(position, new UnityEngine.GUIContent(Platform.Name, tooltip), wasUsingGlobalValue);
+						var OverrideTooltip = "Enable to use global value.";
+						if (wasUsingGlobalValue)
+						{
+							OverrideTooltip = "Disable to override global value.";
+						}
+						var isUsingGlobalValue = UnityEditor.EditorGUI.ToggleLeft(position, new UnityEngine.GUIContent(Platform.Name, OverrideTooltip), wasUsingGlobalValue);
 						position.width = width;
 
 						if (wasUsingGlobalValue != isUsingGlobalValue)
@@ -1205,18 +1118,30 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 
 						if (!isUsingGlobalValue)
 						{
-							position.x += UnityEditor.EditorGUIUtility.labelWidth;
-							position.width -= UnityEditor.EditorGUIUtility.labelWidth;
-							UnityEditor.EditorGUI.indentLevel = 1; // Not zero, so that a control handle is available
-
 							Platform.SerializedObject.Update();
-							UnityEditor.EditorGUI.PropertyField(position, Property, new UnityEngine.GUIContent { tooltip = tooltip });
-							Platform.SerializedObject.ApplyModifiedProperties();
 						}
 						else if (forceExpand)
+						{
 							PropagateValue(globalProperty, Property);
+						}
 						else
+						{
 							UpdateValue(globalProperty);
+						}
+
+						// Draw the PropertyField in the correct place
+						position.x += UnityEditor.EditorGUIUtility.labelWidth;
+						position.width -= UnityEditor.EditorGUIUtility.labelWidth;
+						UnityEditor.EditorGUI.indentLevel = 1; // Not zero, so that a control handle is available
+						UnityEngine.GUI.enabled = !isUsingGlobalValue; // If using Global value, draw the PropertyField, but greyed out.
+						UnityEditor.EditorGUI.PropertyField(position, Property, new UnityEngine.GUIContent { tooltip = tooltip });
+
+
+						if (!isUsingGlobalValue)
+						{
+							Platform.SerializedObject.ApplyModifiedProperties();
+						}
+						UnityEngine.GUI.enabled = true;
 
 						UnityEditor.EditorGUI.indentLevel = indentLevel;
 					}

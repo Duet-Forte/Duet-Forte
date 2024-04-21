@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: UI_BackGround_Equalizer_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: dd27fa5f8f5a1d64dbc44e9b1ccfc02b, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 61b8d5444c9ef394c8fa9dca6452db3e, type: 3}
   m_ValidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
@@ -46,10 +46,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _InSubTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _InsubTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -95,7 +91,6 @@ Material:
     - _Contrast: 1.69
     - _Cull: 2
     - _CustomData_MainTexOffset_X_Y__Cutoff_Z__InSubTexCutoff_W: 0
-    - _CustomData_MaintexOffset_X_Y__Cutoff_Z__DistAmount_W__Onoff: 0
     - _Cutoff: 0
     - _Cutoff_Softness: 1
     - _Distortion_Amount: 0
@@ -105,9 +100,6 @@ Material:
     - _InSubTex_CutoffSoftness: 0
     - _InSubTex_DistortionAmount: 0
     - _Inner_Radius: 0
-    - _Insubtex_Cutoff: 0
-    - _Insubtex_Cutoffsoftness: 0
-    - _Insubtex_distortion: 0
     - _Length_Scale: 1
     - _OnOff_Mask: 0
     - _Outer_Radius: 0
@@ -121,7 +113,6 @@ Material:
     - _SrcBlend: 5
     - _Surface: 1
     - _Use_InSubTex: 0
-    - _Use_Insub: 0
     - _Use_SecondTex: 0
     - _ZTest: 4
     - _ZWrite: 0
@@ -136,11 +127,6 @@ Material:
     - _InSub_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _InSub_Panning: {r: 0, g: 0, b: 0, a: 0}
     - _InSub_Tiling: {r: 1, g: 1, b: 0, a: 0}
-    - _InsubColor: {r: 1, g: 0, b: 0, a: 1}
-    - _Insub_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Insub_Panning: {r: 0, g: 0, b: 0, a: 0}
-    - _Insub_Tiling: {r: 1, g: 1, b: 0, a: 0}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
     - _MainTex_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _MainTex_Panning: {r: 0, g: 0, b: 0, a: 0}
     - _MainTex_Tiling: {r: 1, g: 1, b: 0, a: 0}
@@ -151,7 +137,4 @@ Material:
     - _SecondTex_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SecondTex_Panning: {r: 0, g: 0, b: 0, a: 0}
     - _SecondTex_Tiling: {r: 1, g: 1, b: 0, a: 0}
-    - _Second_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Second_Panning: {r: 0, g: 0, b: 0, a: 0}
-    - _Second_Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

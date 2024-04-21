@@ -13,7 +13,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2023 Audiokinetic Inc.
+Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
 [UnityEditor.CustomEditor(typeof(AkRoom))]
@@ -45,23 +45,13 @@ public class AkRoomInspector : UnityEditor.Editor
 
 	public override void OnInspectorGUI()
 	{
-		bool roomNeedsUpdate = false;
-
 		serializedObject.Update();
 
 		using (new UnityEditor.EditorGUILayout.VerticalScope("box"))
 		{
-			// Start a code block to check for GUI changes
-			UnityEditor.EditorGUI.BeginChangeCheck();
-
 			UnityEditor.EditorGUILayout.PropertyField(reverbAuxBus);
 			UnityEditor.EditorGUILayout.PropertyField(reverbLevel);
 			UnityEditor.EditorGUILayout.PropertyField(transmissionLoss);
-
-			if (UnityEditor.EditorGUI.EndChangeCheck())
-			{
-				roomNeedsUpdate = true;
-			}
 
 			UnityEditor.EditorGUILayout.PropertyField(priority);
 
@@ -73,16 +63,8 @@ public class AkRoomInspector : UnityEditor.Editor
 		{
 			m_PostEventHandlerInspector.OnGUI();
 
-			// Start a code block to check for GUI changes
-			UnityEditor.EditorGUI.BeginChangeCheck();
-
 			UnityEditor.EditorGUILayout.PropertyField(roomToneEvent);
 			UnityEditor.EditorGUILayout.PropertyField(roomToneAuxSend);
-
-			if (UnityEditor.EditorGUI.EndChangeCheck())
-			{
-				roomNeedsUpdate = true;
-			}
 
 			TriggerCheck(m_AkRoom);
 		}
@@ -90,11 +72,6 @@ public class AkRoomInspector : UnityEditor.Editor
 		AkRoomAwareObjectInspector.RigidbodyCheck(m_AkRoom.gameObject);
 
 		serializedObject.ApplyModifiedProperties();
-
-		if (roomNeedsUpdate)
-		{
-			m_AkRoom.SetRoom();
-		}
 	}
 
 	public static void WetTransmissionCheck(UnityEngine.GameObject gameObject)

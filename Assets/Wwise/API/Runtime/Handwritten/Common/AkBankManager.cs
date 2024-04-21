@@ -13,7 +13,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2023 Audiokinetic Inc.
+Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
 /// @brief Maintains the list of loaded SoundBanks loaded. This is currently used only with AkAmbient objects.
@@ -46,6 +46,10 @@ public static class AkBankManager
 
 	public static void ReloadAllBanks()
 	{
+		if (!AkSoundEngine.IsInitialized())
+		{
+			return;
+		}
 		lock (m_BankHandles)
 		{
 			foreach (var bankHandle in m_BankHandles.Values)
@@ -143,6 +147,18 @@ public static class AkBankManager
 		}
 	}
 
+	public static void UnloadAllBanks()
+	{
+		lock (m_BankHandles)
+		{
+			foreach(var bank in m_BankHandles)
+			{
+				bank.Value.UnloadBank(false);
+			}
+			Reset();
+		}
+	}
+
 	private class BankHandle
 	{
 		protected readonly string bankName;
@@ -163,11 +179,6 @@ public static class AkBankManager
 
 		public void LoadBank()
 		{
-#if UNITY_EDITOR
-			if (!AkSoundEngine.EditorIsSoundEngineLoaded)
-				return;
-#endif
-
 			if (RefCount == 0 && !BanksToUnload.Remove(this))
 			{
 				var res = DoLoadBank();

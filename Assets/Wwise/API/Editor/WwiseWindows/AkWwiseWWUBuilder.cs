@@ -15,12 +15,12 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2023 Audiokinetic Inc.
+Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
 #pragma warning disable 0168
 [UnityEditor.InitializeOnLoad]
-public class AkWwiseWWUBuilder
+public class AkWwiseWWUBuilder : UnityEditor.AssetPostprocessor
 {
 	private const string s_progTitle = "Populating Wwise Picker";
 	private const int s_SecondsBetweenChecks = 3;
@@ -35,16 +35,22 @@ public class AkWwiseWWUBuilder
 	private int m_currentWwuCnt;
 	private int m_totWwuCnt = 1;
 
-	static AkWwiseWWUBuilder()
+	static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths, bool didDomainReload)
 	{
 		if (UnityEditor.AssetDatabase.IsAssetImportWorkerProcess())
 		{
 			return;
 		}
 
-		// This method gets called from InitializeOnLoad and uses the AkWwiseProjectInfo later on so it needs to check if it can run right now
-		InitializeWwiseProjectData();
-
+		if (didDomainReload)
+		{
+			// This method gets called from InitializeOnLoad and uses the AkWwiseProjectInfo later on so it needs to check if it can run right now
+			InitializeWwiseProjectData();
+		}
+	}
+	
+	static AkWwiseWWUBuilder()
+	{
 		UnityEditor.EditorApplication.playModeStateChanged += (UnityEditor.PlayModeStateChange playMode) =>
 		{
 			if (playMode == UnityEditor.PlayModeStateChange.EnteredEditMode)

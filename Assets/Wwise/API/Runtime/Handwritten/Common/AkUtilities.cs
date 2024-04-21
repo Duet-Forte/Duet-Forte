@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2023 Audiokinetic Inc.
+Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
 #if !(UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
@@ -144,15 +144,21 @@ public partial class AkUtilities
 			result = System.IO.Path.Combine(settings.WwiseInstallationPathWindows, @"Authoring\x64\Release\bin\WwiseConsole.exe");
 
 			if (!System.IO.File.Exists(result))
+			{
 				result = System.IO.Path.Combine(settings.WwiseInstallationPathWindows, @"Authoring\Win32\Release\bin\WwiseConsole.exe");
+			}
 		}
 #elif UNITY_EDITOR_OSX
 		if (!string.IsNullOrEmpty(settings.WwiseInstallationPathMac))
+		{
 			result = System.IO.Path.Combine(settings.WwiseInstallationPathMac, "Contents/Tools/WwiseConsole.sh");
+		}
 #endif
 
 		if (result != null && System.IO.File.Exists(result))
+		{
 			return result;
+		}
 
 		return null;
 	}
@@ -199,7 +205,9 @@ public partial class AkUtilities
 			foreach (var platform in platforms)
 			{
 				if (!string.IsNullOrEmpty(platform))
+				{
 					arguments += " " + platform;
+				}
 			}
 		}
 
@@ -227,7 +235,9 @@ public partial class AkUtilities
 			System.IO.Path.GetFileNameWithoutExtension(wwiseProjectPath) + "." + System.Environment.UserName + ".wsettings");
 
 		if (!System.IO.File.Exists(userConfigFile))
+		{
 			return false;
+		}
 
 		var userConfigDoc = new System.Xml.XmlDocument();
 		userConfigDoc.Load(userConfigFile);
@@ -279,14 +289,24 @@ public partial class AkUtilities
 		try
 		{
 			if (WwiseProjectPath.Length == 0)
+			{
 				return;
+			}
 
 			if (!AkUtilities.IsWwiseProjectAvailable)
-				return;
+			{
+				IsWwiseProjectAvailable = System.IO.File.Exists(WwiseProjectPath);
+				if (!IsWwiseProjectAvailable)
+				{
+					return;	
+				}
+			}
 
 			var t = System.IO.File.GetLastWriteTime(WwiseProjectPath);
 			if (t <= s_LastBankPathUpdate)
+			{
 				return;
+			}
 
 			s_ProjectBankPaths.Clear();
 			var doc = new System.Xml.XmlDocument();
@@ -331,10 +351,14 @@ public partial class AkUtilities
 		try
 		{
 			if (WwiseProjectPath.Length == 0)
+			{
 				return;
+			}
 
 			if (!System.IO.File.Exists(WwiseProjectPath))
+			{
 				return;
+			}
 
 			s_ProjectBankPaths.Clear();
 
@@ -387,7 +411,9 @@ public partial class AkUtilities
 		try
 		{
 			if (WwiseProjectPath.Length == 0)
+			{
 				return true;
+			}
 
 			var doc = new System.Xml.XmlDocument { PreserveWhitespace = true };
 			doc.Load(WwiseProjectPath);
@@ -421,7 +447,9 @@ public partial class AkUtilities
 			{
 				// Value is present, we simply have to modify it.
 				if (!node.MoveToAttribute("Value", ""))
+				{
 					return false;
+				}
 
 				// Modify the value to true
 				node.SetValue("True");
@@ -446,7 +474,9 @@ public partial class AkUtilities
 		try
 		{
 			if (WwiseProjectPath.Length == 0)
+			{
 				return true;
+			}
 
 			var doc = new System.Xml.XmlDocument { PreserveWhitespace = true };
 			doc.Load(WwiseProjectPath);
@@ -466,7 +496,9 @@ public partial class AkUtilities
 
 			// Change the "Value" attribute
 			if (!node.MoveToAttribute("Value", ""))
+			{
 				return false;
+			}
 
 			node.SetValue(SoundbankPath);
 			doc.Save(WwiseProjectPath);
@@ -490,16 +522,22 @@ public partial class AkUtilities
 		try
 		{
 			if (string.IsNullOrEmpty(fromPath))
+			{
 				return toPath;
+			}
 
 			if (string.IsNullOrEmpty(toPath))
+			{
 				return "";
+			}
 
 			var fromUri = new System.Uri(fromPath);
 			var toUri = new System.Uri(toPath);
 
 			if (fromUri.Scheme != toUri.Scheme)
+			{
 				return toPath;
+			}
 
 			var relativeUri = fromUri.MakeRelativeUri(toUri);
 			var relativePath = System.Uri.UnescapeDataString(relativeUri.ToString());
@@ -516,15 +554,21 @@ public partial class AkUtilities
 	public static string GetFullPath(string BasePath, string RelativePath)
 	{
 		if (string.IsNullOrEmpty(BasePath))
+		{
 			return "";
+		}
 
 		var wrongSeparatorChar = System.IO.Path.DirectorySeparatorChar == '/' ? '\\' : '/';
 
 		if (string.IsNullOrEmpty(RelativePath))
+		{
 			return BasePath.Replace(wrongSeparatorChar, System.IO.Path.DirectorySeparatorChar);
+		}
 
 		if (System.IO.Path.GetPathRoot(RelativePath) != "")
+		{
 			return RelativePath.Replace(wrongSeparatorChar, System.IO.Path.DirectorySeparatorChar);
+		}
 
 		return System.IO.Path.GetFullPath(System.IO.Path.Combine(BasePath, RelativePath));
 	}
@@ -539,20 +583,26 @@ public partial class AkUtilities
 		}
 
 		if (!System.IO.Directory.Exists(destDirName))
+		{
 			System.IO.Directory.CreateDirectory(destDirName);
+		}
 
 		var files = dir.GetFiles();
 		foreach (var file in files)
 		{
 			var destFilePath = System.IO.Path.Combine(destDirName, file.Name);
 			if (System.IO.File.Exists(destFilePath))
+			{
 				UnityEngine.Debug.LogWarningFormat("WwiseUnity: Destination file path will be overwritten: {0}", destFilePath);
+			}
 
 			file.CopyTo(destFilePath, true);
 		}
 
 		if (!copySubDirs)
+		{
 			return true;
+		}
 
 		var dirs = dir.GetDirectories();
 		foreach (var subdir in dirs)
@@ -574,29 +624,40 @@ public partial class AkUtilities
 		}
 
 		if (!System.IO.Directory.Exists(destDirName))
+		{
 			AssetDatabase.CreateFolder(System.IO.Path.GetDirectoryName(destDirName), System.IO.Path.GetFileName(destDirName));
+		}
 
 		var files = dir.GetFiles();
 		string error, source, destFilePath;
 		foreach (var file in files)
 		{
-			if (file.Extension == ".meta") continue;
+			if (file.Extension == ".meta")
+			{
+				continue;
+			}
 
 			destFilePath = System.IO.Path.Combine(destDirName, file.Name);
 			if (System.IO.File.Exists(destFilePath))
+			{
 				UnityEngine.Debug.LogWarningFormat("WwiseUnity: Destination file path will be overwritten: {0}", destFilePath);
+			}
 
 			source = System.IO.Path.Combine("Assets", AkUtilities.MakeRelativePath(UnityEngine.Application.dataPath, file.FullName));
 			source = source.Replace(System.IO.Path.AltDirectorySeparatorChar, System.IO.Path.DirectorySeparatorChar);
 
 			error = AssetDatabase.MoveAsset(source, destFilePath);
 			if (!string.IsNullOrEmpty(error))
+			{
 				UnityEngine.Debug.LogErrorFormat("WwiseUnity: Error while attempting to move <{0}> to <{1}>: {2}", source, destFilePath, error);
+			}
 
 		}
 
 		if (!copySubDirs)
+		{
 			return true;
+		}
 
 		var dirs = dir.GetDirectories();
 		foreach (var subdir in dirs)
@@ -608,7 +669,9 @@ public partial class AkUtilities
 			error = UnityEditor.AssetDatabase.MoveAsset(source, destSubDirName);
 
 			if (!string.IsNullOrEmpty(error))
+			{
 				UnityEngine.Debug.LogErrorFormat("WwiseUnity: Error while attempting to move <{0}> to <{1}>: {2}", source, destSubDirName, error);
+			}
 		}
 
 		return true;
@@ -633,6 +696,7 @@ public partial class AkUtilities
 			var error = UnityEditor.AssetDatabase.CreateFolder(parentFolder, folders[i]);
 			if (string.IsNullOrEmpty(error))
 			{
+				UnityEngine.Debug.LogFormat("WwiseUnity: Created folder <{0}> in <{0}>", folders[i], parentFolder);
 				created = true;
 				continue;
 			}
@@ -641,7 +705,9 @@ public partial class AkUtilities
 		}
 
 		if (created)
+		{
 			UnityEditor.AssetDatabase.SaveAssets();
+		}
 
 		return true;
 	}
@@ -656,8 +722,17 @@ public partial class AkUtilities
 	{
 		oldPath = oldPath.Replace(System.IO.Path.AltDirectorySeparatorChar, System.IO.Path.DirectorySeparatorChar);
 		newPath = newPath.Replace(System.IO.Path.AltDirectorySeparatorChar, System.IO.Path.DirectorySeparatorChar);
+		
 		if (oldPath.Equals(newPath, System.StringComparison.OrdinalIgnoreCase))
+		{
 			return false;
+		}
+
+		if (!AssetDatabase.IsValidFolder(oldPath))
+		{
+			UnityEngine.Debug.LogWarningFormat("WwiseUnity: Refusing to move nonexistent folder <{0}>", oldPath);
+			return false;
+		}
 
 		var error = string.Empty;
 		var newParentFolder = System.IO.Path.GetDirectoryName(newPath);
@@ -665,18 +740,24 @@ public partial class AkUtilities
 		{
 			error = UnityEditor.AssetDatabase.RenameAsset(oldPath, newPath.Substring(newParentFolder.Length + 1));
 			if (string.IsNullOrEmpty(error))
+			{
 				return true;
+			}
 
 			UnityEngine.Debug.LogErrorFormat("WwiseUnity: Error while attempting to rename folder <{0}> to <{1}>: {2}", oldPath, newPath, error);
 			return false;
 		}
 
 		if (!CreateFolder(newParentFolder))
+		{
 			return false;
+		}
 
 		error = UnityEditor.AssetDatabase.MoveAsset(oldPath, newPath);
 		if (string.IsNullOrEmpty(error))
+		{
 			return true;
+		}
 
 		UnityEngine.Debug.LogWarningFormat("WwiseUnity: Error while attempting to move folder <{0}> to <{1}>: {2}", oldPath, newPath, error);
 		return false;
@@ -687,7 +768,9 @@ public partial class AkUtilities
 		var windows = UnityEngine.Resources.FindObjectsOfTypeAll<UnityEditor.EditorWindow>();
 		foreach (var win in windows)
 			if (win.titleContent.text == "Inspector")
+			{
 				win.Repaint();
+			}
 	}
 
 	public static string ParseOsxPathFromWinePath(string path)
@@ -703,15 +786,21 @@ public partial class AkUtilities
 	{
 		var serializedProperty = property.serializedObject.FindProperty("m_Script");
 		if (serializedProperty == null)
+		{
 			return null;
+		}
 
 		var monoScript = serializedProperty.objectReferenceValue as UnityEditor.MonoScript;
 		if (monoScript == null)
+		{
 			return null;
+		}
 
 		var scriptTypeFromProperty = monoScript.GetClass();
 		if (scriptTypeFromProperty == null)
+		{
 			return null;
+		}
 
 		return GetFieldInfoFromPropertyPath(scriptTypeFromProperty, property.propertyPath);
 	}
@@ -728,9 +817,13 @@ public partial class AkUtilities
 			if (i < array.Length - 1 && text == "Array" && array[i + 1].StartsWith("data["))
 			{
 				if (type.IsArray)
+				{
 					type = type.GetElementType();
+				}
 				else if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(System.Collections.Generic.List<>))
+				{
 					type = type.GetGenericArguments()[0];
+				}
 
 				i++;
 			}
@@ -748,7 +841,9 @@ public partial class AkUtilities
 
 					type2 = type2.BaseType;
 					if (type2 == null)
+					{
 						return null;
+					}
 				}
 			}
 		}
@@ -760,7 +855,9 @@ public partial class AkUtilities
 	{
 		var attributes = field.GetCustomAttributes(typeof(UnityEngine.TooltipAttribute), inherit) as UnityEngine.TooltipAttribute[];
 		if (attributes != null && attributes.Length > 0)
+		{
 			return attributes[0].tooltip;
+		}
 
 		return string.Empty;
 	}
@@ -778,22 +875,22 @@ public partial class AkUtilities
 	public static void FixSlashes(ref string path, char separatorChar, char badChar, bool addTrailingSlash)
 	{
 		if (string.IsNullOrEmpty(path))
+		{
 			return;
+		}
 
 		path = path.Trim().Replace(badChar, separatorChar).TrimStart('\\');
 
 		// Append a trailing slash to play nicely with Wwise
 		if (addTrailingSlash && !path.EndsWith(separatorChar.ToString()))
+		{
 			path += separatorChar;
+		}
 	}
 
 	public static void FixSlashes(ref string path)
 	{
-#if UNITY_WSA
-		var separatorChar = '\\';
-#else
 		var separatorChar = System.IO.Path.DirectorySeparatorChar;
-#endif // UNITY_WSA
 		var badChar = separatorChar == '\\' ? '/' : '\\';
 		FixSlashes(ref path, separatorChar, badChar, true);
 	}
@@ -879,7 +976,9 @@ public partial class AkUtilities
 			}
 
 			if (s_hashSize == 32)
+			{
 				return hval;
+			}
 
 			// XOR-Fold to the required number of bits
 			return (hval >> s_hashSize) ^ (hval & s_mask);

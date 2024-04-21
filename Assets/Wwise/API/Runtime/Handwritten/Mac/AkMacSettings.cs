@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2023 Audiokinetic Inc.
+Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
 ﻿#if (UNITY_STANDALONE_OSX && !UNITY_EDITOR) || UNITY_EDITOR_OSX
@@ -25,7 +25,7 @@ public partial class AkCommonUserSettings
 }
 #endif
 
-public class AkMacSettings : AkWwiseInitializationSettings.CommonPlatformSettings
+public class AkMacSettings : AkWwiseInitializationSettings.PlatformSettings
 {
 #if UNITY_EDITOR
 	[UnityEditor.InitializeOnLoadMethod]
@@ -39,4 +39,45 @@ public class AkMacSettings : AkWwiseInitializationSettings.CommonPlatformSetting
 		RegisterPlatformSettingsClass<AkMacSettings>("Mac");
 	}
 #endif // UNITY_EDITOR
+
+	[System.Serializable]
+	public class PlatformAdvancedSettings : AkCommonAdvancedSettings
+	{
+		[UnityEngine.Tooltip("Number of Apple Spatial Audio point sources to allocate for 3D audio use (each point source is a system audio object).")]
+		public uint NumSpatialAudioPointSources = 128;
+		
+		[UnityEngine.Tooltip("Print debug information related to audio device initialization in the system log.")]
+		public bool VerboseSystemOutput = false;
+		
+		public override void CopyTo(AkPlatformInitSettings settings)
+		{
+#if (UNITY_STANDALONE_OSX && !UNITY_EDITOR) || UNITY_EDITOR_OSX
+			settings.uNumSpatialAudioPointSources = NumSpatialAudioPointSources;
+			settings.bVerboseSystemOutput = VerboseSystemOutput;
+#endif
+		}
+	}
+	
+	protected override AkCommonUserSettings GetUserSettings()
+	{
+		return UserSettings;
+	}
+
+	protected override AkCommonAdvancedSettings GetAdvancedSettings()
+	{
+		return AdvancedSettings;
+	}
+
+	protected override AkCommonCommSettings GetCommsSettings()
+	{
+		return CommsSettings;
+	}
+
+	[UnityEngine.HideInInspector]
+	public AkCommonUserSettings UserSettings;
+	[UnityEngine.HideInInspector]
+	public PlatformAdvancedSettings AdvancedSettings;
+	[UnityEngine.HideInInspector]
+	public AkCommonCommSettings CommsSettings;
+
 }
