@@ -66,7 +66,7 @@ public class JudgeManager
             ++earlyCount;
             if (earlyCount >= Const.MAX_EARLY_COUNT)
             {
-                MissNote(new Judge(JudgeName.Bad));
+                MissNote(new Judge(JudgeName.Miss));
             }
             return;
         }
@@ -86,13 +86,13 @@ public class JudgeManager
         {
             judge.Name = JudgeName.Great;
             IncreaseGauge(2);
-            MissNote(judge);
+            //MissNote(judge);
         }
         else if (judgeTime <= goodJudgeTime)
         {
             judge.Name = JudgeName.Good;
             IncreaseGauge(1);
-            MissNote(judge);
+            //MissNote(judge);
         }
         else
         {

@@ -336,8 +336,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public void GiveDamage(Judge judge)//나중에 플레이어 클래스에서 GetDamage로 바꿔서 이사예정
     {
         Damage damage = new Damage(enemyAttack, judge.Name, new EnemyDamage());
-        Judge judge1 = new Judge();
         enemyAnimator.Attack();
+        HandleParryJudge(judge);
         battlePresenter.EnemyToPlayer(damage);
         
     }
@@ -365,7 +365,10 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         if (judge.Name.Equals(JudgeName.Miss))
         {
             playerInter.PlayerAnimator.Hurt();
-
+            enemySignalUI.DefenseActive(judge);
+            isNoteChecked[currentNoteIndex] = false;
+            ++currentNoteIndex;
+            return;
         }
         else if(judge.Name.Equals(JudgeName.Perfect))
         {

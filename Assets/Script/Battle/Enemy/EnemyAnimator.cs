@@ -27,7 +27,6 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     int randomAttackCase;
     int minDedupleAnim=0;
     int maxDedupleAnim;
-    int dedupleAnimCase;
 
     #endregion
     #region VFX 파티클 변수
@@ -45,7 +44,6 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
         theEnemyAnimator = GetComponent<Animator>();
         
         maxDedupleAnim = AttackParticle.Length;
-        dedupleAnimCase = Random.RandomRange(minDedupleAnim, maxDedupleAnim);
     }
     #region 애니메이션
     public void ReadyToPatternSignal() {
@@ -99,12 +97,7 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     private void DeduplicateAttack()//공격 애니메이션과 파티클 재생
     {
             randomAttackCase = Random.RandomRange(minDedupleAnim, maxDedupleAnim);
-            while (randomAttackCase == dedupleAnimCase)
-            { //중복되지 않을 때까지
-                randomAttackCase = Random.RandomRange(minDedupleAnim, maxDedupleAnim);
-            }
             theEnemyAnimator.SetFloat(attackCase, randomAttackCase);
-            dedupleAnimCase = randomAttackCase;
             return;
     }
     #endregion
