@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{2FBF2FEA-D334-4797-A484-BF6EAAF6D085}" SchemaVersion="110">
+<WwiseDocument Type="WorkUnit" ID="{2FBF2FEA-D334-4797-A484-BF6EAAF6D085}" SchemaVersion="119">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{2FBF2FEA-D334-4797-A484-BF6EAAF6D085}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2FBF2FEA-D334-4797-A484-BF6EAAF6D085}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="Compressor" ID="{E4426FF1-ACF4-4AD7-BDF3-8E6B3A20F24E}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+					<PropertyList>
+						<Property Name="AttackTime" Type="Real32" Value="0"/>
+						<Property Name="Ratio" Type="Real32" Value="5"/>
+						<Property Name="ReleaseTime" Type="Real32" Value="0.54"/>
+						<Property Name="Threshold" Type="Real32" Value="-21.9"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="Parametric_EQ" ID="{C29C10DA-5F07-4D07-AAB9-A68A9A6BEDAF}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FrequencyBand3" Type="Real32" Value="4482"/>
+						<Property Name="GainBand2" Type="Real32" Value="-1.5"/>
+						<Property Name="GainBand3" Type="Real32" Value="-1"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="Gain" ID="{FAC9A994-9A46-4391-AC5B-4334A8ACA8B0}" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+					<PropertyList>
+						<Property Name="FullBandGain" Type="Real32" Value="3.5"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="New_Delay" ID="{A40E6054-F7DE-4082-A0A2-10129A73F6AB}" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
+					<PropertyList>
+						<Property Name="DelayTime" Type="Real32" Value="0.3"/>
+						<Property Name="Feedback" Type="Real32" Value="4.5"/>
+						<Property Name="WetDryMix" Type="Real32" Value="20"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="New_RoomVerb" ID="{C5E19734-2C76-4B75-AE7E-2ECB28EA7691}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+					<PropertyList>
+						<Property Name="Diffusion" Type="Real32" Value="21"/>
+						<Property Name="RoomShape" Type="Real32" Value="12"/>
+						<Property Name="StereoWidth" Type="Real32" Value="74"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>

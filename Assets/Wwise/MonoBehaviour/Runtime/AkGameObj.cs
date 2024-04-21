@@ -13,29 +13,29 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2023 Audiokinetic Inc.
+Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
 [UnityEngine.AddComponentMenu("Wwise/AkGameObj")]
 [UnityEngine.DisallowMultipleComponent]
 [UnityEngine.ExecuteInEditMode] //ExecuteInEditMode necessary to maintain proper state of isStaticObject.
 [UnityEngine.DefaultExecutionOrder(-25)]
-///@brief This component represents a sound object in your scene tracking its position and other game syncs such as Switches, RTPC and environment values. You can add this to any object that will emit sound, and it will be added to any object that an AkAudioListener is attached to. Note that if it is not present, Wwise will add it automatically, with the default values, to any Unity Game Object that is passed to Wwise.
+///@brief This component represents a sound object in your scene and tracks its position and other game syncs such as Switches, RTPCs, and environment values. You can add this to any object that emits sound, and it is added to any object to which an AkAudioListener is attached. If it is not present, Wwise adds it automatically, with the default values, to any Unity Game Object that is passed to Wwise.
 /// \sa
-/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__gameobj.html" target="_blank">Integration Details - Game Objects</a> (Note: This is described in the Wwise SDK documentation.)
-/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__events.html" target="_blank">Integration Details - Events</a> (Note: This is described in the Wwise SDK documentation.)
-/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__listeners.html" target="_blank">Integrating Listeners</a> (Note: This is described in the Wwise SDK documentation.)
-/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__switch.html" target="_blank">Integration Details - Switches</a> (Note: This is described in the Wwise SDK documentation.)
-/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__states.html" target="_blank">Integration Details - States</a> (Note: This is described in the Wwise SDK documentation.)
-/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__environments.html" target="_blank">Integration Details - Environments and Game-defined Auxiliary Sends</a> (Note: This is described in the Wwise SDK documentation.)
+/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__gameobj.html" target="_blank">Integration Details - Game Objects</a> (SDK documentation)
+/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__events.html" target="_blank">Integration Details - Events</a> (SDK documentation)
+/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__listeners.html" target="_blank">Integrating Listeners</a> (SDK documentation)
+/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__switch.html" target="_blank">Integration Details - Switches</a> (SDK documentation)
+/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__states.html" target="_blank">Integration Details - States</a> (SDK documentation)
+/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__environments.html" target="_blank">Integration Details - Environments and Game-defined Auxiliary Sends</a> (SDK documentation)
 public class AkGameObj : UnityEngine.MonoBehaviour
 {
 	[UnityEngine.SerializeField] private AkGameObjListenerList m_listeners = new AkGameObjListenerList();
 
-	/// Is this object affected by Environment changes?  Set to false if not affected in order to save some useless calls.  Default is true.
+	/// Indicates whether the object is affected by environmental changes. Set to false if the object is not affected in order to save some unnecessary calls. The default value is true.
 	public bool isEnvironmentAware = true;
 
-	/// Maintains and persists the Static setting of the gameobject, which is available only in the editor.
+	/// Maintains and persists the Static setting of the game object, which is available only in the editor.
 	[UnityEngine.SerializeField] private bool isStaticObject = false;
 
 	/// Cache the bounds to avoid calls to GetComponent()
@@ -45,7 +45,7 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 
 	private AkGameObjPositionData m_posData;
 
-	/// When not set to null, the position will be offset relative to the Game Object position by the Position Offset
+	/// When not set to null, the position is offset relative to the Game Object position by the Position Offset
 	public AkGameObjPositionOffsetData m_positionOffsetData;
 
 	public bool IsUsingDefaultListeners
@@ -73,12 +73,34 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 	public AKRESULT Register()
 	{
 		if (isRegistered)
+		{
 			return AKRESULT.AK_Success;
+		}
 
 		isRegistered = true;
 		return AkSoundEngine.RegisterGameObj(gameObject, gameObject.name);
 	}
 
+	private void UnregisterGameObject()
+	{
+		if (AkSoundEngine.IsInitialized())
+        {
+			Unregister();
+		}
+    }
+
+	public AKRESULT Unregister()
+	{
+		if (!isRegistered)
+		{
+			return AKRESULT.AK_Success;
+		}
+
+		isRegistered = false;
+		m_posData = null;
+		return AkSoundEngine.UnregisterGameObj(gameObject);
+	}
+	
 	private void SetPosition()
 	{
 		var position = GetPosition();
@@ -88,7 +110,9 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 		if (m_posData != null)
 		{
 			if (m_posData.position == position && m_posData.forward == forward && m_posData.up == up)
+			{
 				return;
+			}
 
 			m_posData.position = position;
 			m_posData.forward = forward;
@@ -101,19 +125,35 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 	private void Awake()
 	{
 #if UNITY_EDITOR
-		if (!AkSoundEngine.EditorIsSoundEngineLoaded || AkUtilities.IsMigrating)
+		if (AkUtilities.IsMigrating)
+		{
 			return;
+		}
 
 		if (!UnityEditor.EditorApplication.isPlaying)
+		{
 			UnityEditor.EditorApplication.update += CheckStaticStatus;
+		}
+		AkSoundEngineInitialization.Instance.initializationDelegate += RegisterGameObject;
+		AkSoundEngineInitialization.Instance.terminationDelegate += UnregisterGameObject;
 #endif
 
 		// If the object was marked as static, don't update its position to save cycles.
 		if (!isStaticObject)
+		{
 			m_posData = new AkGameObjPositionData();
+		}
 
 		// Cache the bounds to avoid calls to GetComponent()
 		m_Collider = GetComponent<UnityEngine.Collider>();
+	}
+
+    private void RegisterGameObject()
+    {
+		if (!AkSoundEngine.IsInitialized())
+        {
+			return;
+        }
 
 		//Register a Game Object in the sound engine, with its name.
 		if (Register() == AKRESULT.AK_Success)
@@ -125,7 +165,9 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 				m_envData = new AkGameObjEnvironmentData();
 
 				if (m_Collider)
+				{
 					m_envData.AddAkEnvironment(m_Collider, m_Collider);
+				}
 
 				m_envData.UpdateAuxSend(gameObject, transform.position);
 			}
@@ -138,7 +180,9 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 	{
 #if UNITY_EDITOR
 		if (AkUtilities.IsMigrating)
+		{
 			return;
+		}
 
 		try
 		{
@@ -159,29 +203,38 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 	{
 #if UNITY_EDITOR
 		if (AkUtilities.IsMigrating)
+		{
 			return;
+		}
 #endif
-
-		//if enabled is set to false, then the update function wont be called
-		enabled = !isStaticObject;
+		RegisterGameObject();
 	}
 
 #if UNITY_EDITOR
 	private void OnDisable()
 	{
-		if (!UnityEditor.EditorApplication.isPlaying &&AkSoundEngine.IsInitialized())
-			AkSoundEngine.UnregisterGameObj(gameObject);
+		if (!AkSoundEngineInitialization.Instance.ShouldKeepSoundEngineEnabled())
+		{
+			Unregister();
+		}
 	}
 #endif
 
 	private void OnDestroy()
 	{
 #if UNITY_EDITOR
-		if (!AkSoundEngine.EditorIsSoundEngineLoaded || AkUtilities.IsMigrating)
+		if (AkUtilities.IsMigrating)
+		{
 			return;
+		}
 
 		if (!UnityEditor.EditorApplication.isPlaying)
+		{
 			UnityEditor.EditorApplication.update -= CheckStaticStatus;
+		}
+
+		AkSoundEngineInitialization.Instance.initializationDelegate -= RegisterGameObject;
+		AkSoundEngineInitialization.Instance.terminationDelegate -= UnregisterGameObject;
 #endif
 
 		// We can't do the code in OnDestroy if the gameObj is unregistered, so do it now.
@@ -189,31 +242,35 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 		foreach (var handler in eventHandlers)
 		{
 			if (handler.triggerList.Contains(AkTriggerHandler.DESTROY_TRIGGER_ID))
+			{
 				handler.DoDestroy();
+			}
 		}
 
-#if UNITY_EDITOR
-		if (!UnityEditor.EditorApplication.isPlaying)
-			return;
-#endif
-
 		if (AkSoundEngine.IsInitialized())
-			AkSoundEngine.UnregisterGameObj(gameObject);
+		{
+			Unregister();
+		}
 	}
 
 	private void Update()
 	{
 #if UNITY_EDITOR
-		if (!AkSoundEngine.EditorIsSoundEngineLoaded || AkUtilities.IsMigrating ||
-		    !UnityEditor.EditorApplication.isPlaying)
+		if (AkUtilities.IsMigrating || !UnityEditor.EditorApplication.isPlaying)
+		{
 			return;
+		}
 #endif
 
-		if (m_envData != null)
-			m_envData.UpdateAuxSend(gameObject, transform.position);
-
 		if (!isStaticObject)
-			SetPosition();
+		{
+			if (m_envData != null)
+			{
+				m_envData.UpdateAuxSend(gameObject, transform.position);
+			}
+
+			SetPosition();			
+		}
 	}
 
 	/// Gets the position including the position offset, if applyPositionOffset is enabled. User can also override this method to calculate an arbitrary position.
@@ -221,7 +278,9 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 	public virtual UnityEngine.Vector3 GetPosition()
 	{
 		if (m_positionOffsetData == null)
+		{
 			return transform.position;
+		}
 
 		var worldOffset = transform.rotation * m_positionOffsetData.positionOffset;
 		return transform.position + worldOffset;
@@ -245,29 +304,39 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 	{
 #if UNITY_EDITOR
 		if (AkUtilities.IsMigrating || !UnityEditor.EditorApplication.isPlaying)
+		{
 			return;
+		}
 #endif
 
 		if (isEnvironmentAware && m_envData != null)
+		{
 			m_envData.AddAkEnvironment(other, m_Collider);
+		}
 	}
 
 	private void OnTriggerExit(UnityEngine.Collider other)
 	{
 #if UNITY_EDITOR
 		if (AkUtilities.IsMigrating || !UnityEditor.EditorApplication.isPlaying)
+		{
 			return;
+		}
 #endif
 
 		if (isEnvironmentAware && m_envData != null)
+		{
 			m_envData.RemoveAkEnvironment(other, m_Collider);
+		}
 	}
 
 #if UNITY_EDITOR
 	public void OnDrawGizmosSelected()
 	{
 		if (AkUtilities.IsMigrating)
+		{
 			return;
+		}
 
 		var position = GetPosition();
 		UnityEngine.Gizmos.DrawIcon(position, "WwiseAudioSpeaker.png", false);

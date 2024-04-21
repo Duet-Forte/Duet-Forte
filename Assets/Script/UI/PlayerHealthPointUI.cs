@@ -1,48 +1,54 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using Util;
+using TMPro;
 
 public class PlayerHealthPointUI : InGameUI
 {
-    private Image[] healthPointFilling;
-    private int currentIndex;
-
-    public void InitSettings(int playerHP)
+    private Image damagedFilling;
+    private Image filling;
+    private bool isProductionProceeding;
+    private float enemyMaxHealthPoint;
+    private float currentHealthPoint;
+    private TMP_Text healthPoint;
+    private Tween productionTween;
+    public void InitSettings(int playerMaxHealthPoint)
     {
-        GameObject healthPointFramePrefab = Resources.Load<GameObject>(Const.UI_PLAYERHP_FRAME_PATH);
-        currentIndex = 0;
-        healthPointFilling = new Image[playerHP];
+        damagedFilling = transform.Find("DamagedHP").GetComponent<Image>();
+        filling = transform.Find("Filling").GetComponent<Image>();
+        this.enemyMaxHealthPoint = playerMaxHealthPoint;
+        filling.fillAmount = 0;
+        damagedFilling.fillAmount = 0;
+        filling.DOFillAmount(Const.STATUSUI_MAX_HP_RATIO, Const.STATUSUI_PROCESS_SPEED);
+        damagedFilling.DOFillAmount(Const.STATUSUI_MAX_HP_RATIO, Const.STATUSUI_PROCESS_SPEED);
+        currentHealthPoint = playerMaxHealthPoint;
+        healthPoint = transform.Find("HealthPointText").GetComponent<TMP_Text>();
+        healthPoint.text = playerMaxHealthPoint.ToString() + "/" + playerMaxHealthPoint.ToString();
+        SubscribeBeatingUISequence();
 
-        for (int i = 1; i <= playerHP; ++i)
-        {
-            GameObject healthPointFrame = Instantiate(healthPointFramePrefab, transform);
-            healthPointFilling[playerHP - i] = healthPointFrame.transform.GetChild(0).GetComponent<Image>();
-        }
     }
+    
 
-    public void GetDamage(int damage)
+    public void GetDamage(Damage damage)
     {
-        if (currentIndex >= healthPointFilling.Length)
+        currentHealthPoint -= damage.GetCalculatedDamage();
+        healthPoint.text = currentHealthPoint.ToString() + "/" + enemyMaxHealthPoint.ToString();
+        float currentHealthPointRatio = Mathf.Clamp01(currentHealthPoint / enemyMaxHealthPoint);
+        filling.DOFillAmount(currentHealthPointRatio, Const.STATUSUI_PROCESS_SPEED);
+        // 기본적으로 filling이 현재체력에 맞춰 줄어들고, 해당 동작 후 일정 시간이 지나면 damagedFilling이 따라감.
+        if (isProductionProceeding)
         {
             return;
         }
-        for (int i = 0; i < damage; ++i)
-        {
-            healthPointFilling[currentIndex].enabled = false;
-            currentIndex++;
-        }
+        productionTween?.Kill();
+        productionTween = DOVirtual.DelayedCall(Const.STATUSUI_WAIT_TIME,
+            () =>
+            {
+                isProductionProceeding = true;
+                damagedFilling.DOFillAmount(currentHealthPointRatio, Const.STATUSUI_PROCESS_SPEED)
+                .OnComplete(() => isProductionProceeding = false);
+            });
     }
-
-    public void GetHeal(int healAmount)
-    {
-        if (currentIndex < 0)
-        {
-            return;
-        }
-        for (int i = 0; i < healAmount; ++i)
-        {
-            currentIndex--;
-            healthPointFilling[currentIndex].enabled = true;
-        }
-    }
+    
 }

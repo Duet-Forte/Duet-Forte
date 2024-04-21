@@ -35,10 +35,6 @@ public class UIManager
         prepareTurnUI = GameObject.Instantiate(Resources.Load<GameObject>("UI/PrepareTurnUI"),canvas.transform);
         stageManager.PrepareTurnUI = prepareTurnUI.GetComponent<PrepareTurnUI>();
         stageManager.PrepareTurnUI.InitSetting();
-        
-
-        
-
 
         if (damagePool == null)
             damagePool = new DamagePool();

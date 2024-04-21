@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{F41330C0-3924-450B-88EB-C3334021F72B}" SchemaVersion="110">
+<WwiseDocument Type="WorkUnit" ID="{F41330C0-3924-450B-88EB-C3334021F72B}" SchemaVersion="119">
 	<Metadatas>
 		<WorkUnit Name="Default Work Unit" ID="{F41330C0-3924-450B-88EB-C3334021F72B}" PersistMode="Standalone"/>
 	</Metadatas>

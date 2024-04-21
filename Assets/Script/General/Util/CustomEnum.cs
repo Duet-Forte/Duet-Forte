@@ -14,11 +14,11 @@ namespace Util
         }
         public enum Turn
         {
-            ActionStartTurn=0,// ÀüÅõ À§Ä¡·Î ÀÌµ¿ Ä«¸Ş¶ó ¿¬Ãâ- ÁÜÀÎ
+            ActionStartTurn=0,// ì „íˆ¬ ìœ„ì¹˜ë¡œ ì´ë™ ì¹´ë©”ë¼ ì—°ì¶œ- ì¤Œì¸
             PlayerTurn,
             EnemyTurn,
             GuardCounterTurn,
-            ActionEndTurn,// ¿ø·¡ À§Ä¡·Î ÀÌµ¿ Ä«¸Ş¶ó ¿¬Ãâ - ÁÜ¾Æ¿ô
+            ActionEndTurn,// ì›ë˜ ìœ„ì¹˜ë¡œ ì´ë™ ì¹´ë©”ë¼ ì—°ì¶œ - ì¤Œì•„ì›ƒ
             PrepareTurn,
             NumberOfTurnTypes
         };
@@ -29,6 +29,13 @@ namespace Util
             Good,
             Miss
         };
+        public enum DamageType { 
+        
+            Slash,
+            Pierce,
+            GuardCounter,
+            Enemy
+        };
 
         public enum Speaker
         {
@@ -36,6 +43,7 @@ namespace Util
             NPC,
             Empty
         }
+
 
     }
 }

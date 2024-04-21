@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" SchemaVersion="110">
+<WwiseDocument Type="WorkUnit" ID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" SchemaVersion="119">
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" PersistMode="Standalone">
 			<ChildrenList>
@@ -72,10 +72,10 @@
 							<ChildrenList>
 								<Event Name="Player_Step_SFX" ID="{2175E7C5-DBE4-4C7E-8B5F-D1285725AA69}">
 									<ChildrenList>
-										<Action Name="" ID="{964ACE89-2CF5-4E49-BD95-4FE8BC5470C2}" ShortID="1012276160">
+										<Action Name="" ID="{20580B1A-AA14-4871-A566-8DB81A818DED}" ShortID="480130934">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="PlayerFootStep_Wood" ID="{E9A9C2C7-4DDE-4FFA-A978-8D83D66D164F}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="PlayerFootStep" ID="{D98E70D1-3C64-4DEF-BC0C-29DBF19D57BF}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -142,13 +142,6 @@
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
-								<Action Name="" ID="{582C8AFE-82B1-4567-859E-FB1A988EAAE6}" ShortID="413452311">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="!!Test UI Click" ID="{C7E1AADB-FDCB-4698-9A8B-448FDBC27D6D}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{7955E9E4-A2E8-4E75-A9CC-D21C347BB503}" ShortID="847955124">
 									<ReferenceList>
 										<Reference Name="Target">
@@ -167,7 +160,7 @@
 								<Action Name="" ID="{561900BB-1AD0-45A8-843C-C691B10B45AE}" ShortID="166562910">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="!!Test UI Hover" ID="{CAF7F314-4A51-4E7F-9168-DCE803F4CD66}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+											<ObjectRef Name="Ui_Hover" ID="{CAF7F314-4A51-4E7F-9168-DCE803F4CD66}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -175,10 +168,10 @@
 						</Event>
 						<Event Name="MainMenu_Click_SFX" ID="{7E2CE3A4-76DC-462D-9E07-4AB3C177AD2E}">
 							<ChildrenList>
-								<Action Name="" ID="{A7B216BE-C054-4E20-86FA-4F363FC7302E}" ShortID="714891328">
+								<Action Name="" ID="{D3F704E8-5378-4229-AD95-1C5AC0EC41A9}" ShortID="641882700">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="!!Test UI Click" ID="{C7E1AADB-FDCB-4698-9A8B-448FDBC27D6D}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+											<ObjectRef Name="Ui_Click" ID="{0BC5BB9E-6FC2-4A6B-8939-1DD624AE0CC7}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -192,9 +185,61 @@
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ChildrenList>
-						<Event Name="Ob_Fire_SwitchOn" ID="{8BB1BB58-A88B-42E9-A1A9-6A636667ED6C}"/>
-						<Event Name="Ob_Fire_Ignition" ID="{76B2431A-EE15-411C-A03D-8813E54D0A41}"/>
-						<Event Name="Talk_Typing" ID="{3B183886-3E47-46C8-B46C-90F0AAEAAE63}"/>
+						<Event Name="Ob_Fire_Fire_Amb" ID="{6C36585B-93F8-46C7-B717-FD2BED270011}">
+							<ChildrenList>
+								<Action Name="" ID="{D54494D3-E24C-412A-BA00-CEAE245A4528}" ShortID="568987157">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ob_Fire_Fire" ID="{6D1C0821-D28A-4C8B-96B0-0F4067C97920}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Ob_Fire_Ignition_SFX" ID="{3BBD899A-CE29-4CB5-B91F-5F34CB3DA146}">
+							<ChildrenList>
+								<Action Name="" ID="{476DAFCF-3BB2-49D8-81FC-560E5A0E45DF}" ShortID="809811773">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ob_Fire_Ignition" ID="{4B405262-2BB6-4C90-9C83-12040009EF99}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Ob_Fire_SwitchOn_SFX" ID="{9E465848-C42E-4AC2-99D6-68BE1934963E}">
+							<ChildrenList>
+								<Action Name="" ID="{5D87B2DC-D3B8-46E3-BD90-2004C35D7540}" ShortID="642055312">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ob_Fire_SwitchOn" ID="{8E6B5B4B-C7F8-4574-B63A-EC7AC1EBD718}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Ui_Typing_SFX" ID="{F3D82A3E-91A5-487D-A508-CCF578006146}">
+							<ChildrenList>
+								<Action Name="" ID="{A626E6B9-5F6C-4CA1-9399-79E356EC3313}" ShortID="915475559">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Typing" ID="{7E663EA4-82D9-47C0-8EAE-27EC555C0363}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Ob_Door_SFX" ID="{EEA03CBB-FA8E-42F1-B383-AFD7970E215D}">
+							<ChildrenList>
+								<Action Name="" ID="{DB7034A9-E3A2-4409-9AF3-476D86579696}" ShortID="527894416">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Door" ID="{94374C88-E5C9-49D4-BB22-EE07E44965C1}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

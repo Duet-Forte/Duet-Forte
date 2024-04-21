@@ -32,6 +32,7 @@ public class GuardCounterQTE : MonoBehaviour
         bool isDone = false;
 
         outCircle.transform.localScale = originOutCircleScale;
+        QTEJudge = JudgeName.Miss;
         outCircle.transform.DOScale(new Vector3(0.9f, 0.9f, 0.9f), (secondPerBeat*2) + (secondPerBeat / 20)).OnComplete(() => { isDone = true; }); //임시.. 비트에 맞게 수정요망
         while (!isDone)
         {
@@ -41,28 +42,24 @@ public class GuardCounterQTE : MonoBehaviour
                 if (outCircle.transform.localScale.x >= perfectZone.x && outCircle.transform.localScale.x <= perfectZone.y) {
                     QTEJudge = JudgeName.Perfect;
                     Debug.Log("가드카운터 QTE 판정 Perfect");
-                    EndQTE();
                     break;
                 }
                 if (outCircle.transform.localScale.x >= greatZone.x && outCircle.transform.localScale.x <= greatZone.y){
                     QTEJudge = JudgeName.Great;
                     Debug.Log("가드카운터 QTE 판정 Great");
-                    EndQTE();
                     break;
                 }
                 if (outCircle.transform.localScale.x >= goodZone.x && outCircle.transform.localScale.x <= goodZone.y){
                     QTEJudge = JudgeName.Good;
                     Debug.Log("가드카운터 QTE 판정 Good");
-                    EndQTE();
                     break;
                 }
                 if (outCircle.transform.localScale.x >= missZone.x && outCircle.transform.localScale.x <= missZone.y){
                     QTEJudge = JudgeName.Miss;
                     Debug.Log("가드카운터 QTE 판정 Miss");
-                    EndQTE();
                     break;
                 }
-                //EndQTE();
+                
                 break;
             }
             

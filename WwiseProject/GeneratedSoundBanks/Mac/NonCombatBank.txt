@@ -1,19 +1,47 @@
 Event	ID	Name			Wwise Object Path	Notes
+	198066997	Ob_Fire_Ignition_SFX			\Default Work Unit\NonCombat_SFX\Ob_Fire_Ignition_SFX	
+	1024104135	Ui_Typing_SFX			\Default Work Unit\NonCombat_SFX\Ui_Typing_SFX	
 	2299963368	Gio_BodyFall_SFX			\Default Work Unit\Player\NonCombat\Gio_BodyFall_SFX	
+	3661802867	Ob_Fire_SwitchOn_SFX			\Default Work Unit\NonCombat_SFX\Ob_Fire_SwitchOn_SFX	
+	3989126589	Ob_Fire_Fire_Amb			\Default Work Unit\NonCombat_SFX\Ob_Fire_Fire_Amb	
 	4038898239	Player_Step_SFX			\Default Work Unit\Player\NonCombat\Player_Step_SFX	
+	4145632761	Ob_Door_SFX			\Default Work Unit\NonCombat_SFX\Ob_Door_SFX	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	1382476432	State			\Default Work Unit\State	
 
 Switch	ID	Name	Switch Group			Notes
 	2058049674	Wood	State			
+	2195636714	Dirt	State			
+	4248645337	Grass	State			
+
+Effect plug-ins	ID	Name	Type				Notes
+	196835669	New_Delay	Wwise Delay			
+	635371784	Gain	Wwise Gain			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	43014063	Gio_BodyFall_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Gio_BodyFall_SFX_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\NonCombat\Gio_BodyFall\Gio_BodyFall_SFX		998432
-	84793872	Wood5	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Wood5_FE717F8F.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood5		17920
-	94650861	Wood4	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Wood4_DB34D142.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood4		27572
-	229353679	Wood6	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Wood6_C376C168.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood6		16060
-	408028945	Wood3	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Wood3_1B54FF37.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood3		12232
-	414174222	Wood2	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Wood2_715FA64B.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood2		14672
-	826601067	Wood1	C:\Users\xcwhy\Documents\GitHub\DuetForte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Wood1_43788234.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\Wood1		12192
+	18628162	Ob_Fire_SwitchOn	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Ob_Fire_SwitchOn_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\FirePlace\Ob_Fire_SwitchOn		93596
+	43014063	Gio_BodyFall_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Gio_BodyFall_SFX_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\NonCombat\Gio_BodyFall\Gio_BodyFall_SFX		998432
+	48994660	Door	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Door_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Door\Door		378216
+	57689545	Ob_Fire_Fire	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Ob_Fire_Fire_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\FirePlace\Ob_Fire_Fire		15360100
+	225295536	Typing01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Typing01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Typing\Typing01		43688
+	327002089	Typing02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Typing02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Typing\Typing02		40196
+	367550639	FootStep_Wood03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Wood03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\FootStep_Wood03		49472
+	377896432	Typing03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Typing03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Typing\Typing03		25620
+	393957476	FootStep_Dirt04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Dirt04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Dirt\FootStep_Dirt04		42116
+	500923705	FootStep_Dirt01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Dirt01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Dirt\FootStep_Dirt01		68016
+	504031559	Typing04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Typing04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Typing\Typing04		26992
+	527714309	FootStep_Grass03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Grass03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Grass\FootStep_Grass03		61256
+	594306566	FootStep_Dirt02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Dirt02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Dirt\FootStep_Dirt02		51320
+	602929188	FootStep_Grass01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Grass01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Grass\FootStep_Grass01		59644
+	604837605	FootStep_Grass02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Grass02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Grass\FootStep_Grass02		44748
+	654213218	FootStep_Dirt05	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Dirt05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Dirt\FootStep_Dirt05		39824
+	750448001	FootStep_Wood04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Wood04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\FootStep_Wood04		35792
+	826799344	FootStep_Grass05	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Grass05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Grass\FootStep_Grass05		42232
+	872771126	FootStep_Wood02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Wood02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\FootStep_Wood02		39876
+	907227252	FootStep_Wood05	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Wood05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\FootStep_Wood05		42192
+	911106767	FootStep_Wood01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Wood01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\FootStep_Wood01		32824
+	944051312	FootStep_Grass04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Grass04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Grass\FootStep_Grass04		37396
+	1014191835	Ob_Fire_Ignition	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Ob_Fire_Ignition_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\FirePlace\Ob_Fire_Ignition		103680
+	1039083357	FootStep_Dirt03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Dirt03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Dirt\FootStep_Dirt03		42948
 

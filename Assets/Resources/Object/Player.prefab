@@ -34,7 +34,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096212241409138036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -60, y: -20, z: 6}
+  m_LocalPosition: {x: -40, y: -16.5, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -91,7 +91,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -658094308, guid: 1959c608a21adcc47b63c302142d473b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 71c06c6318c51714298636e2e6c6830a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,8 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLevel: 1
-  playerHealthPoint: 15
-  playerGuardCounterGuage: 10
+  playerHealthPoint: 100
+  playerGuardCounterGuage: 20
   playerExp: 0
   maxPlayerExp: 0
   playerAttack: 3
@@ -166,8 +166,8 @@ MonoBehaviour:
   skillSet:
   - {fileID: 11400000, guid: b6eb7aee860a77d4a9560991960797c0, type: 2}
   - {fileID: 11400000, guid: 5b9f0189bbf56ec43a88567bb4972ee0, type: 2}
-  - {fileID: 11400000, guid: cb885359cba39f04eb2a2e99b916f2b4, type: 2}
-  - {fileID: 11400000, guid: 1973c589a7877844799c95e14d7b057e, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   arrayOfSkillParticle:
   - {fileID: 0}
   - {fileID: 0}

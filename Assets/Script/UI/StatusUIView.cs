@@ -7,7 +7,7 @@ public class StatusUIView : MonoBehaviour, IStageUI
 
     private GuardGaugeUI guardGaugeUI;
     private PlayerHealthPointUI playerHealthPointUI;
-    private EnemyHealthPointUI enemyHealthPointUI;
+    private PlayerHealthPointUI enemyHealthPointUI;
     private PrepareTurnUI prepareTurnUI;
 
     public void InitSettings(StageManager stageManager, Canvas canvas) // judgeManager은 추후 플레이어 스탯을 가지고 있는 클래스로 대신할 예정.
@@ -28,7 +28,7 @@ public class StatusUIView : MonoBehaviour, IStageUI
         playerHealthPointUI.InitSettings(stageManager.JudgeManager.HP);
 
         enemyHealthPointUI = Instantiate(prefabs[2], transform)
-            .AddComponent<EnemyHealthPointUI>();
+            .AddComponent<PlayerHealthPointUI>();
         enemyHealthPointUI.InitSettings(stageManager.Enemy.HealthPoint);
 
         BindUIEvents(stageManager);
@@ -51,8 +51,8 @@ public class StatusUIView : MonoBehaviour, IStageUI
 
     private void BindPlayerHealthPointUIEvents(StageManager stageManager)
     {
-        stageManager.Enemy.OnAttack -= playerHealthPointUI.GetDamage;
-        stageManager.Enemy.OnAttack += playerHealthPointUI.GetDamage;
+        stageManager.PlayerInterface.OnGetDamage -= playerHealthPointUI.GetDamage;
+        stageManager.PlayerInterface.OnGetDamage += playerHealthPointUI.GetDamage;
     }
     private void BindEnemyHealthPointUIEvents(StageManager stageManager)
     {
