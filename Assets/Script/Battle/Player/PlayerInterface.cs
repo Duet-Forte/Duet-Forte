@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Util.CustomEnum;
 
 public class PlayerInterface : MonoBehaviour
 {
@@ -89,8 +90,10 @@ public class PlayerInterface : MonoBehaviour
             playerAnimator.Guard();
             return;
         }
-        battleDirector.Shake(gameObject);
-        playerAnimator.Hurt();
+        if (damage.JudgeName==JudgeName.Miss) {
+            battleDirector.Shake(gameObject);
+            playerAnimator.Hurt();
+        }
         playerStatus.PlayerHealthPoint=damage.GetCalculatedDamage();
         OnGetDamage.Invoke(damage);
         if (playerStatus.PlayerHealthPoint <= 0) { //플레이어 사망 이벤트

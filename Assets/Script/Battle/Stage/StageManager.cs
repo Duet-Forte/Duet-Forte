@@ -252,10 +252,8 @@ public class StageManager : MonoBehaviour
     }
     private void BindJudgeManagerEvents()
     {
-        judgeManager.OnMissParry -= enemy.GiveDamage;
-        judgeManager.OnMissParry += enemy.GiveDamage;
-        judgeManager.OnParrySuccess -= enemy.HandleParryJudge;
-        judgeManager.OnParrySuccess += enemy.HandleParryJudge;
+        judgeManager.OnParryEnd -= enemy.GiveDamage;
+        judgeManager.OnParryEnd += enemy.GiveDamage;
         judgeManager.OnComboChange -= enemy.CheckCombo;
         judgeManager.OnComboChange += enemy.CheckCombo;
     }
@@ -288,8 +286,7 @@ public class StageManager : MonoBehaviour
     {
         if(judgeManager != null)
         {
-            judgeManager.OnMissParry -= enemy.GiveDamage;
-            judgeManager.OnParrySuccess -= enemy.HandleParryJudge;
+            judgeManager.OnParryEnd -= enemy.GiveDamage;
             enemy.OnFramePass -= judgeManager.CheckMissFrame;
             OnGameOver -= enemy.StopActions;
             OnStageClear -= enemy.StopActions;
