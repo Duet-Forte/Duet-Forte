@@ -7,4 +7,5 @@ Project migration to XML Schema (XSD) version 116 is completed.
 Project migration to XML Schema (XSD) version 117 is completed.
 Project migration to XML Schema (XSD) version 118 is completed.
 Project migration to XML Schema (XSD) version 119 is completed.
-Some new object properties have been added or obsolete properties deleted. The project file was updated. These changes will not have an impact on your project.
+Container '\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Grass' has a 'Effect0' reference to 'Gain' that is invalid, for platform 'Linked'. The reference has been removed.
+Sound '\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\FirePlace\Ob_Fire_Ignition' has a 'Effect0' reference to 'New_Delay' that is invalid, for platform 'Linked'. The reference has been removed.

@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID COMBAT_STAGE_01_BGM = 890880275U;
+        static const AkUniqueID COMBAT_TEST01 = 207956517U;
         static const AkUniqueID GIO_BODYFALL_SFX = 2299963368U;
         static const AkUniqueID MAINMENU_CLICK_GAMESTART_SFX = 162289589U;
         static const AkUniqueID MAINMENU_CLICK_SFX = 1154772126U;
