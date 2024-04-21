@@ -20,7 +20,7 @@ public struct Judge
                 case (int)JudgeName.Good:
                     return Color.blue;
                 case (int)JudgeName.Bad:
-                    return Color.red;
+                    return new Color(255f/255f,100f / 255f, 7f / 255f);
                 case (int)JudgeName.Miss:
                     return Color.black;
                 default:

@@ -18,9 +18,9 @@ public class EnemySignalUI : MonoBehaviour
 
     public void InitSettings() {
         
-    GameObject attackIconsAsGameObject=transform.GetChild(0).gameObject;
-    GameObject defenseIconsAsGameObject = transform.GetChild(1).gameObject;
-         attackIcons= attackIconsAsGameObject.GetComponentsInChildren<SignalIcon>();
+        GameObject attackIconsAsGameObject=transform.GetChild(0).gameObject;
+        GameObject defenseIconsAsGameObject = transform.GetChild(1).gameObject;
+        attackIcons= attackIconsAsGameObject.GetComponentsInChildren<SignalIcon>();
         defenseIcons = defenseIconsAsGameObject.GetComponentsInChildren<SignalIcon>();
         DisableAllIcon();
 
@@ -34,7 +34,7 @@ public class EnemySignalUI : MonoBehaviour
     }
     public void DefenseActive(Judge judge) {
 
-        if (judge.Color == Color.black)
+        if (judge.Name == Util.CustomEnum.JudgeName.Miss)
         {//miss상황일때
             attackIcons[defenseIconCounter].AttackEffect();
             defenseIconCounter++;

@@ -163,7 +163,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         double patternStartTime = Time.time;
         double sumOfTime = 0;
         uiSound.SignalSound(gameObject, true);
-        for (int i = 0; i < patternLength; i++)
+        for (int i = 0; i < patternLength; ++i)
         {
             stageManager.JudgeManager.EarlyCount = 0;
             isNoteChecked[i] = false;
@@ -175,14 +175,14 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
             {
                 OnFramePass?.Invoke();
 
-                if (isNoteChecked[i])
+                if (isNoteChecked[i])//패링했을 때
                 {
                     enemyAnimator.Attack();
                     break;
                 }
                 yield return null;
             }
-            if (!isNoteChecked[i])
+            if (!isNoteChecked[i])//패링 못했을 때
             {
                 GiveDamage(new Judge(JudgeName.Miss));
                 enemyAnimator.Attack();
@@ -336,6 +336,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public void GiveDamage(Judge judge)//나중에 플레이어 클래스에서 GetDamage로 바꿔서 이사예정
     {
         Damage damage = new Damage(enemyAttack, judge.Name, new EnemyDamage());
+        Judge judge1 = new Judge();
         enemyAnimator.Attack();
         battlePresenter.EnemyToPlayer(damage);
         
@@ -363,19 +364,22 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         
         if (judge.Name.Equals(JudgeName.Miss))
         {
-            playerInter.PlayerAnimator.Hurt(); 
+            playerInter.PlayerAnimator.Hurt();
+
         }
         else if(judge.Name.Equals(JudgeName.Perfect))
         {
             playerSoundSet.PerfectParrySound(gameObject);
             battleDirector.CameraShake(0.3f, 1, 100, 30);
             playerInter.PlayerAnimator.Parry(true);
+            
         }
         else
         {
             playerSoundSet.PerfectParrySound(gameObject);
             battleDirector.CameraShake(0.3f, 0.5f, 100, 30);
             playerInter.PlayerAnimator.Parry(false);
+           
         }
         enemySignalUI.DefenseActive(judge);
         isNoteChecked[currentNoteIndex] = true;
