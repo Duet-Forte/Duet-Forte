@@ -1,15 +1,62 @@
-Interactable	ID	Speaker	State	Lines
-Cutscene	0	Empty		우당탕탕탕-
-		Zio	Idle	으윽…
-				여기가 어디지?
-				집..?
-		Timmy	Idle	?!
-				<rainb>누구니?</rainb>
-		Zio	Idle	?
-				제가 묻고 싶은 말인데
-				저는 콩쿠르 대기실에 있었거든요
-	1	Timmy	Idle	여기가 우리 마을이야
-				마을을 돌아다니다 보면 분명 돌아갈 방법을 찾을 수 있을 거야.
-				한 번 둘러보자고.
-	2	Timmy	Idle	마을을 탐험하려면, 이 세계의 전투 방식을 알아두는 게 좋을 거야.
-				내가 전투 방법을 알려줄테니까 잘 익혀 보도록 해.
+Interactable	ID	Speaker	State	Lines	Event	EventName	Note
+					Sound		지오 위치: 벽난로 앞,
+Cutscene	0	Zio	Panic	콜록콜록	(추후 추가 예정)		
+		Zio	Panic	(무슨 먼지가 이렇게…….)			
+		Zio	Panic	으윽….			
+		Zio	Panic	(의자가 부서진 건가…?)			
+							지오 뒷 모습 → 다시 앞 모습
+	1	Zio	Panic	(벽난로?)			
+		Timmy	Happy	…드디어 왔구나!			
+							새가 티미 쪽으로 날아감
+	2	Zio	Panic	아! 내 타이…			
+							티미가 지오 쪽으로 이동 – 티미 위치: 침대와 의자 사이쪽 → 벽난로
+	3	Zio	Panic	(원래 사람이 있었나?<br>잠깐, 내가 들어온 창고가 이렇게 생겼던가?)			
+		Timmy	Happy	이거 네 거야?			
+		Zio	Default	네 맞아요. 감사합니다.			
+		Zio	Panic	아, 죄송해요. 갑자기 새가 이걸 물어가는 바람에 마음대로 들어와 버렸어요.			
+		Zio	Panic	이게 저한테 정말 중요한 거라서요.			
+		Timmy	Happy	괜찮아. 그보다 이제야 왔구나!			
+		Zio	Default	네? 저요?			
+		Timmy	Happy	응! 널 기다리고 있었어!			
+		Zio	Panic	저… 다른 분과 착각한 것 같아요.<br>전 나가볼게요. 대기실로 돌아가야 해서요.			
+							지오 이동 – 지오 위치: 벽난로 → 문 앞
+	4	Timmy	Default	너 맞는데, 잠깐만!			
+		Zio	Panic	마음대로 들어와서 죄송했어요. 근데 저 정말 급해서요!			
+							Fadeout 티미 방 → Fadein 마을 *카메라 연출 가능하면, 마을 풀샷 → 티미 집 앞에 있는 지오 줌인
+	5	Zio	Panic	…여기가 대체 어디야?			
+							티미 등장 후 지오 옆에 붙어 서기
+	6	Timmy	Happy	바로 마왕성으로 가려는 거야?			
+		Zio	Panic	네? 무슨 성이요?<br>저는 콩쿠르 대기실을 찾고 있어요.			
+		Timmy	Default	그걸 콩쿠르라고도 부르던가…?			
+		Zio	Panic	원래 여기 다른 집은 없었는데…<br>여기가 대체 어디죠? 저 원래 있던 곳으로 돌아가야 해요.			
+		Timmy	Default	원래 있던 곳?			
+		Timmy	Happy	역시 넌 내가 기다리던 사람이 맞아!			
+		Zio	Angry	아까부터 무슨 소리 하시는 거예요.			
+		Timmy	Default	조력자는 신탁을 모르는 건가?			
+		Timmy	Default	너 내가 이번 용사인 건 알아?			
+		Zio	Panic	용…사요?			
+		Timmy	Default	응. 내가 용사, 너는 날 도와줄 조력자.			
+		Zio	Angry	저 이럴 시간 없어요.			
+		Timmy	Default	맞는데, 너 회색 연기와 함께 나타났잖아.<br>신탁에서 조력자가 아까 너처럼 나타날 거라 했어.			
+		Zio	Default	그건 회색 연기가 아니라 굴뚝의 먼지였어요.			
+		Timmy	Default	하지만 그렇게라도 내 앞에 나타난 사람은 네가 처음이야.			
+		Zio	Default	벽난로에서 사람이 나오는 게 흔한 일은 아니잖아요.<br>저도 아까가 처음이었고요.			
+		Zio	Angry	무슨 영문인지 모르겠지만, 전 용사 놀이에 맞춰줄 시간 없어요.			
+		Timmy	Default	이건 놀이가 아닌데…<br>믿기 힘들면, 네가 조력자임을 확인해 보는 거 어때?			
+		Zio	Default	하… 그걸 어떻게 확인할 수 있는데요?			
+		Timmy	Default	분명 조력자는 음악적 재능을 타고났을 거야.<br>한번 해볼래?			
+		Zio	Default	대신 제가 조력자가 아니면, 저와 같이 콩쿠르 대기실을 찾아주세요.			
+		Timmy	Happy	좋아! 네가 조력자가 맞으면, 나랑 마왕을 무찌르러 가는 거야.			
+		Zio	Default	네. 그러죠.			
+							튜토리얼 전투
+	7	Timmy	Happy	봐, 넌 선율을 타고났던 거야!<br>역시 조력자가 맞았어!			
+		Zio	Panic	그럼 지금부터 뭘 하면 되는 거죠?<br>아까부터 말했지만 저에겐 시간이 별로 없어요.			
+		Timmy	Happy	저 멀리 마왕성에 있는 마왕을 해치우면 돼.			
+		Zio	Default	아… 마왕이요.<br>얼마나 오래 걸리는데요?			
+		Timmy	Happy	글쎄? 얼마나 빨리 가느냐에 따라 다르겠지?			
+		Timmy	Happy	맞다. 내가 말했었나?<br>신탁에 완전한 평화가 오면 조력자도 원래의 자리로 돌아간대.			
+		Zio	Default	원래 자리….			
+		Timmy	Happy	응. 마왕을 무찌르면 너도 돌아갈 수 있을 거야.<br>신탁이 그렇게 내려왔으니까.			
+		Timmy	Happy	우선 작은 몬스터로 연습을 더 해보자.<br>아니면 마을 구경을 하는 건 어때?			
+		Zio	Default	제가 아직은 혼란스러워서요. 잠시 혼자 있어도 될까요?			
+		Timmy	Default	응. 날 만나려면 여기로 다시 찾아와!			
