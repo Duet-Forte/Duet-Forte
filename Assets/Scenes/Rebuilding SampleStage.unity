@@ -388,6 +388,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b38366cec16824dae75bfaf500ae01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MusicEvent: music
+  MuisicStopEvent: music_stop
+  KickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 155052785}
+        m_TargetAssemblyTypeName: Metronome, Assembly-CSharp
+        m_MethodName: WwiseCallbackEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &185696487
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +734,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -155697466, guid: aaf67963b90996c4a81a5b001c79797e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5372549, g: 0.5372549, b: 0.5372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2716,7 +2733,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b7354cbb2bfd5d447a69e51841f08517, type: 3}
-  m_Color: {r: 1, g: 0.07691298, b: 0, a: 1}
+  m_Color: {r: 0.5372549, g: 0.5372549, b: 0.5372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
