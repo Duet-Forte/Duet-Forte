@@ -8,8 +8,8 @@ public class EnemySignalUI : MonoBehaviour
 {
     SignalIcon[] defenseIcons=new SignalIcon[7];
     SignalIcon[] attackIcons= new SignalIcon[7];
-    Color blockedAttackColor = new Color(137, 137, 137);
-    Color originAttackColor = new Color(255, 255, 255);
+    Color blockedAttackColor = new Color(137f/255f, 137f/255f, 137f/255f);
+    Color originAttackColor = new Color(1f, 1f, 1f);
 
     int attackIconCounter = 0;
     int defenseIconCounter = 0;
