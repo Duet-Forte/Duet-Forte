@@ -14,13 +14,13 @@ public struct Judge
             switch ((int)name)
             { 
                 case (int)JudgeName.Perfect:
-                    return new Color(56f / 255f, 255f / 255f, 0f / 255f);//초록색
+                    return Color.green;
                 case (int)JudgeName.Great:
-                    return new Color(255f / 255f, 178f / 255f, 0f / 255f);//노랑색
+                    return Color.yellow;
                 case (int)JudgeName.Good:
-                    return new Color(255f / 255f, 100f / 255f, 7f / 255f);//주황색
+                    return Color.blue;
                 case (int)JudgeName.Bad:
-                    return new Color(255f/255f,30f / 255f, 0f / 255f);//붉은 색
+                    return Color.red;
                 case (int)JudgeName.Miss:
                     return Color.black;
                 default:

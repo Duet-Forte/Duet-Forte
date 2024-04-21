@@ -183,7 +183,7 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
     }
     IEnumerator ConsiderAttacking()
     {//영어가 딸려서...변수명 추천받음  /  적에게 접근 후 공격할 지 안할 지 분기가 되는 코루틴
-        AttackSignal();
+
         Debug.Log("ConsiderAttacking 진입");
         delayBeatCount = noAttackDelay;// 4박자 동안 플레이어 턴 유지
         Metronome.instance.OnBeating += DecreaseOnBeat;

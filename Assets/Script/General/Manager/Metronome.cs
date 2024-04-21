@@ -4,8 +4,6 @@ using UnityEngine;
 using System;
 using Unity.VisualScripting;
 using Util;
-using UnityEngine.Events;
-using AK.Wwise;
 
 public class Metronome :MonoBehaviour
 {
@@ -20,14 +18,6 @@ public class Metronome :MonoBehaviour
     
     public event Action OnBeating;
     public event Action OffBeating;
-
-    #region wwise callbackFunc
-    public string MusicEvent;
-    public string MuisicStopEvent;
-
-    public UnityEvent KickEvent;
-    private Unit musicEventPlayingID;
-    #endregion
 
     public double CurrentTime { get => currentTime; }
     public double SecondsPerBeat { get => secondsPerBeat; }
@@ -49,23 +39,16 @@ public class Metronome :MonoBehaviour
         bPM = stage.BPM;
         secondsPerBeat = Const.MINUTE_TO_SECOND / bPM;
         this.stage = stage;
-        //AkSoundEngine.PostEvent();
-    }
-    public void WwiseCallbackEvent() { Debug.Log("Kick"); }
-    private void InvokeOnBeating()
-    {
-        //musicEventPlayingID = AkSoundEngine.PostEvent(MusicEvent, gameObject, (uint)AkCallbackType.AK_MusicSyncUserCue, SetKickEvent, this);
-    }
-    public void SetKickEvent(object in_cookie, AkCallbackType in_type, object in_callbackInfo) {
-        AkMusicSyncCallbackInfo musicSyncInfo = in_callbackInfo as AkMusicSyncCallbackInfo;
 
-        if (musicSyncInfo == null) {
-            return;
-        }
-        KickEvent.Invoke();
-        Debug.Log("Kick Happended");
     }
-   
+
+
+   /* void Start()
+    {
+        bPM = instance.stage.BPM;
+    }*/
+
+    // Update is called once per frame
     void Update()
     {
         currentTime += Time.deltaTime;

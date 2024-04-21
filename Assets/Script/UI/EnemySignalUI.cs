@@ -8,8 +8,8 @@ public class EnemySignalUI : MonoBehaviour
 {
     SignalIcon[] defenseIcons=new SignalIcon[7];
     SignalIcon[] attackIcons= new SignalIcon[7];
-    Color blockedAttackColor = new Color(137f/255f, 137f/255f, 137f/255f);
-    Color originAttackColor = new Color(1f, 1f, 1f);
+    Color blockedAttackColor = new Color(137, 137, 137);
+    Color originAttackColor = new Color(255, 255, 255);
 
     int attackIconCounter = 0;
     int defenseIconCounter = 0;
@@ -18,9 +18,9 @@ public class EnemySignalUI : MonoBehaviour
 
     public void InitSettings() {
         
-        GameObject attackIconsAsGameObject=transform.GetChild(0).gameObject;
-        GameObject defenseIconsAsGameObject = transform.GetChild(1).gameObject;
-        attackIcons= attackIconsAsGameObject.GetComponentsInChildren<SignalIcon>();
+    GameObject attackIconsAsGameObject=transform.GetChild(0).gameObject;
+    GameObject defenseIconsAsGameObject = transform.GetChild(1).gameObject;
+         attackIcons= attackIconsAsGameObject.GetComponentsInChildren<SignalIcon>();
         defenseIcons = defenseIconsAsGameObject.GetComponentsInChildren<SignalIcon>();
         DisableAllIcon();
 
@@ -34,7 +34,7 @@ public class EnemySignalUI : MonoBehaviour
     }
     public void DefenseActive(Judge judge) {
 
-        if (judge.Name == Util.CustomEnum.JudgeName.Miss)
+        if (judge.Color == Color.black)
         {//miss상황일때
             attackIcons[defenseIconCounter].AttackEffect();
             defenseIconCounter++;
