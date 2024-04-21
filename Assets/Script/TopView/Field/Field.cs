@@ -1,83 +1,73 @@
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
+using Util;
 
-public class Field
+public class Field : MonoBehaviour
 {
-    private Dictionary<string, TopViewObject[]> entities;
-    private FieldData data;
-    public Field(int id)
-    {
-        InitSetting(id);
-    }
-    public TopViewObject Entity(string name, int id = 0)
-    {
-        if(!entities.TryGetValue(name, out var interactable))
-            return null;
-        return interactable[id];
-    }
+    private int id;
+    [SerializeField] private Transform entitySpawnParent;
+    [SerializeField] private Transform cutsceneObjectParent;
+    private Dictionary<string, TopViewEntity[]> entities;
+    private Dictionary<string, GameObject> cutsceneObject;
 
-    public void InitSetting(int id)
+    public void InitSettings(int id)
     {
-        data = new FieldData();
-        data.InitSettings(id);
-        entities = new Dictionary<string, TopViewObject[]>();
+        this.id = id;
+        entities = new Dictionary<string, TopViewEntity[]>();
+        cutsceneObject = new Dictionary<string, GameObject>();
+        SetEntity();
+        SetCutsceneObject();
     }
-
-    public void ParseData(string name, Vector2[] spawnPoints)
+    public void SetEntity()
     {
-        data.ParseData(name, spawnPoints);      
-    }
+        StringBuilder sb = new StringBuilder();
 
-    public void InitAllEntity()
-    {
-        foreach(var name in data.Name)
+        for (int count = 0; count < entitySpawnParent.childCount; ++count)
         {
-            ParseEntityGroup(name);
-        }
-    }
+            // temp는 특정 에너미의 스폰포인트의 부모입니다.
+            Transform temp = entitySpawnParent.GetChild(count);
 
-    public void ParseEntityGroup(string name)
-    {
-        GameObject prefab = DataBase.Instance.Entity.Prefabs[name];
-        int spawnCount = data.SpawnPoints[name].Length;
-        TopViewObject[] topViewObjects = new TopViewObject[spawnCount];
+            string enemyName = temp.name;
+            sb.Append(Const.TOPVIEW_ENTITY);
+            sb.Append(enemyName);
+            GameObject enemyPrefab = Resources.Load<GameObject>(sb.ToString());
 
-        for (int count = 0; count < spawnCount; ++count)
-        {
-            GameObject entityObject = Object.Instantiate(prefab);
-            TopViewObject topViewEntity = entityObject.GetComponent<TopViewObject>();
-            if (topViewEntity == null) 
+            TopViewEntity[] tempEnemies = new TopViewEntity[temp.childCount];
+            for(int tempChildID = 0; tempChildID < temp.childCount; ++tempChildID)
             {
-                Debug.Log($"{name} 객체에 컴포넌트가 없습니다.");
-                return;
+                GameObject enemy = Instantiate(enemyPrefab);
+                tempEnemies[tempChildID] = enemy.GetComponent<TopViewEntity>();
+                Vector2 enemySpawnPoint = temp.GetChild(tempChildID).position;
+
+                // NPC의 경우, 모든 스폰 포인트에 생성한 후, InitSettings에서 현재 ID의 객체를 제외하고는 전부 Destroy
+                // 몬스터의 경우, 생존 여부를 파악 후, InitSettings에서 생성 여부 결정
+                tempEnemies[tempChildID].InitSettings(enemyName, enemySpawnPoint, tempChildID);
             }
-            entityObject.SetActive(false);
 
-            topViewEntity.InitSettings(name, count);
-            topViewObjects[count] = topViewEntity;
+            entities.Add(enemyName, tempEnemies);
+            sb.Clear();
         }
-        
-        entities.Add(name, topViewObjects);
     }
 
-    public void SpawnEntity(TopViewObject entity, Vector2 spawnPoint)
+    public void SetCutsceneObject()
     {
-        entity.gameObject.SetActive(true);
-        entity.transform.position = spawnPoint;
-    }
-
-    public void SpawnEntity(TopViewObject entity)
-    {
-        entity.gameObject.SetActive(true);
-        entity.transform.position = data.SpawnPoints[entity.Name][entity.Id];
-    }
-
-    public void SpawnAllEntity()
-    {
-        foreach(var dataPair in entities)
+        for(int count = 0; count < cutsceneObjectParent.childCount; ++count)
         {
-            foreach (var entity in dataPair.Value)
-                entity.gameObject.SetActive(true);
+            GameObject tempCutsceneObject = cutsceneObjectParent.GetChild(count).gameObject;
+            cutsceneObject.Add(tempCutsceneObject.name, tempCutsceneObject);
         }
+    }
+
+    public TopViewEntity GetEntity(string name, int id = 0)
+    {
+        entities.TryGetValue(name, out var entity);
+        return entity[id];
+    }
+
+    public GameObject GetCutsceneObject(string name)
+    {
+        cutsceneObject.TryGetValue(name, out var entity);
+        return entity;
     }
 }

@@ -2,14 +2,14 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class TopViewEnemy : TopViewObject
+public class TopViewEnemy : TopViewEntity
 {
     private bool isAlive = true;
     public event Action<string> OnFightPlayer; 
 
-    public override void InitSettings(string name, int id = 0)
+    public override void InitSettings(string name, Vector2 intialSpawnPoint, int id = 0)
     {
-        base.InitSettings(name, id);
+        base.InitSettings(name, intialSpawnPoint, id);
         OnFightPlayer -= SceneManager.Instance.SetBattleScene;
         OnFightPlayer += SceneManager.Instance.SetBattleScene;
     }
