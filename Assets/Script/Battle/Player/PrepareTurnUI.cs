@@ -17,13 +17,14 @@ public class PrepareTurnUI : InGameUI
 
     #region UI이동 관련 변수
     private float UIMoveTime = 0.3f;
-    private float UIXOffset = 900f;
+    [SerializeField] private float defaultX;
+    [SerializeField] private float popX;
 
     #endregion
     //스킬 아이콘, 스킬 이름, 스킬 커맨드 등 초기화
 
 
-  
+
 
     public void InitSetting()
     {
@@ -91,9 +92,7 @@ public class PrepareTurnUI : InGameUI
         for (int UIindex = 0; UIindex < arrayOfUITransform.Length; UIindex++)
         {
             if (arrayOfUITransform[UIindex] != null)
-            arrayOfUITransform[UIindex].DOMove(new Vector2(arrayOfUITransform[UIindex].position.x + UIXOffset, arrayOfUITransform[UIindex].position.y)
-                , UIMoveTime);
-
+            arrayOfUITransform[UIindex].DOAnchorPosX(popX, UIMoveTime);
             yield return new WaitForSeconds(0.2f);
         }
     }
@@ -103,8 +102,7 @@ public class PrepareTurnUI : InGameUI
         for (int UIindex = 0; UIindex < arrayOfUITransform.Length; UIindex++)
         {
             if (arrayOfUITransform[UIindex] != null)
-                arrayOfUITransform[UIindex]?.DOMove(new Vector2(arrayOfUITransform[UIindex].position.x - UIXOffset, arrayOfUITransform[UIindex].position.y)
-                ,UIMoveTime).SetEase(Ease.InBack);
+                arrayOfUITransform[UIindex]?.DOAnchorPosX(defaultX, UIMoveTime).SetEase(Ease.InBack);
 
             yield return new WaitForSeconds(0.2f);
         }

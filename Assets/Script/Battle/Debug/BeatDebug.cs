@@ -14,7 +14,7 @@ public class BeatDebug : MonoBehaviour
         beatingSequence = DOTween.Sequence().SetAutoKill(false);
         beatingSequence.Append(beat.transform.DOScale(new Vector3 (3,3),0.01f));
         beatingSequence.Append(beat.transform.DOScale(originScale, 0.3f));
-        Metronome.instance.OnBeating += PlaySequence;
+        //Metronome.instance.OnBeating += PlaySequence;
     }
 
     void PlaySequence() {
