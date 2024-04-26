@@ -12,7 +12,8 @@ public class StatusUIView : MonoBehaviour, IStageUI
 
     public void InitSettings(StageManager stageManager, Canvas canvas) // judgeManager은 추후 플레이어 스탯을 가지고 있는 클래스로 대신할 예정.
     {
-        if(prefabs == null)
+        GetComponent<ScreenSpaceCameraUI>().InitSettings();
+        if (prefabs == null)
         {
             prefabs = new GameObject[3];
             prefabs[0] = Resources.Load<GameObject>(Const.UI_GUARDGAUGE_PATH);

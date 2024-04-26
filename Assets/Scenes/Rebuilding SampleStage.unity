@@ -345,6 +345,8 @@ MonoBehaviour:
   stage: {fileID: 11400000, guid: 7c9c5684a82346a4683582a51ef49193, type: 2}
   enemyTransform: {fileID: 645863507}
   blackBox: {fileID: 1994674332}
+  sceneTransitionPrefab: {fileID: 2935451109651248324, guid: 9b0af4abc5a153044a025fa11f50d8e7, type: 3}
+  mainCamera: {fileID: 0}
   attackIcon:
   - {fileID: 0}
   - {fileID: 0}
@@ -1852,6 +1854,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 5b294e869066b02428d1382f8c6deb24, type: 2}
   decodeBank: 0
+  overrideLoadSetting: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
   unloadTriggerList: 
