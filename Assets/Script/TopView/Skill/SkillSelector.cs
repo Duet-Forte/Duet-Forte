@@ -1,33 +1,66 @@
 using Util;
 using UnityEngine;
+using System;
 
 public class SkillSelector : MenuSelector
 {
-    private SkillSaver skillSaver;
-    private SkillScroll skillScroll;
+    private SkillSetter skillScroll;
 
-
+    public void InitSettings(SkillSetter skillScroll)
+    {
+        base.InitSetting();
+        this.skillScroll = skillScroll;
+        menuArray[currentIndex].OnSelected();
+    }
 
     public void Update()
     {
+        if (!skillScroll.IsSelectorSelected)
+            return;
+
+        int changedIndex = 0;
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            int changedIndex = currentIndex - 1;
-            if (changedIndex / Const.CONTENT_IN_ROW == currentIndex / Const.CONTENT_IN_ROW)
+            changedIndex = currentIndex - 1;
+            if(previousIndex == -1)
+            {
+                menuArray[currentIndex].OnSelected();
+                previousIndex = currentIndex;
+                return;
+            }
+            else if (changedIndex >= 0 && changedIndex / Const.CONTENT_IN_ROW == currentIndex / Const.CONTENT_IN_ROW)
                 SetIndex(changedIndex);
             menuArray[currentIndex].OnSelected();
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            int changedIndex = currentIndex + 1;
-            if (changedIndex / Const.CONTENT_IN_ROW == currentIndex / Const.CONTENT_IN_ROW)
-            {
+            changedIndex = currentIndex + 1;
+            if (changedIndex < menuArray.Length && changedIndex / Const.CONTENT_IN_ROW == currentIndex / Const.CONTENT_IN_ROW)
                 SetIndex(changedIndex);
-                menuArray[currentIndex].OnSelected();
+            else
+            {
+                skillScroll.IsSelectorSelected = false;
+                menuArray[currentIndex].OnDeselected();
+                previousIndex = -1;
+                return;
             }
-
+            menuArray[currentIndex].OnSelected();
         }
-        else if (Input.GetKeyDown(KeyCode.Return))
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            changedIndex = currentIndex - Const.CONTENT_IN_ROW;
+            if (changedIndex >= 0)
+                SetIndex(changedIndex);
+            menuArray[currentIndex].OnSelected();
+        }
+        else if(Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            changedIndex = currentIndex + Const.CONTENT_IN_ROW;
+            if (changedIndex < menuArray.Length)
+                SetIndex(changedIndex);
+            menuArray[currentIndex].OnSelected();
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
         {
             menuArray[currentIndex].OnPressed();
         }
@@ -43,6 +76,5 @@ public class SkillSelector : MenuSelector
     public void MoveToSkillSaver()
     {
         menuArray[currentIndex].OnDeselected();
-
     }
 }

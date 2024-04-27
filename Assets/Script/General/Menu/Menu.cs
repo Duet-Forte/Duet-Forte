@@ -12,6 +12,8 @@ public abstract class Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     protected Image image;
     protected int index;
 
+    public bool isEnableMouseControl;
+
     public virtual void InitSettings(MenuSelector selector, int index)
     {
         if(this.selector == null)
@@ -22,7 +24,7 @@ public abstract class Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
     public virtual void OnSelected()
     {
-        AkSoundEngine.PostEvent("MainMenu_Hover_SFX", gameObject);
+        //AkSoundEngine.PostEvent("MainMenu_Hover_SFX", gameObject);
     }
 
     public virtual void OnDeselected()
@@ -34,18 +36,23 @@ public abstract class Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         // 마우스를 통해 메뉴를 선택하면 이전 선택 메뉴가
         // 선택된 것이 갱신되지 않는 이슈를 해결하기 위해.
-        selector.SetIndex(index);
-        OnSelected();
+        if(isEnableMouseControl)
+        {
+            selector.SetIndex(index);
+            OnSelected();
+        }
     }
 
     public virtual void OnPointerExit(PointerEventData data)
     {
-        OnDeselected();
+        if(isEnableMouseControl) 
+            OnDeselected();
     }
 
     public void OnPointerClick(PointerEventData data)
     {
-        OnPressed();
+        if (isEnableMouseControl)
+            OnPressed();
     }
 
     public abstract void OnPressed();

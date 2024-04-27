@@ -25,11 +25,6 @@ public class MenuSelector : MonoBehaviour
         previousIndex = 0;
     }
 
-    private void Start()
-    {
-        InitSetting();
-    }
-
     private void Update() //추후 input System 적용 예정.
     {
         /*
