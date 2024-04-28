@@ -85,9 +85,9 @@ public class StageManager : MonoBehaviour
     [ContextMenu("DEBUG/SceneStart")]
     private void TestPlay()
     {
-        /*InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn);
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn);
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
-        wipe.FadeIn();*/
+        wipe.FadeIn();
     }
 
     private void Update()
