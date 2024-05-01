@@ -85,7 +85,7 @@ public class StageManager : MonoBehaviour
     [ContextMenu("DEBUG/SceneStart")]
     private void TestPlay()
     {
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn);
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,null);
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.FadeIn();
     }
@@ -97,14 +97,14 @@ public class StageManager : MonoBehaviour
             judgeManager?.UpdateInput();
         }
     }
-    public void StageStart(Stage stage) 
+    public void StageStart(Stage stage, PlayerSkill[] skillSet) 
     {//don't destroy on load에서 주입받을
         this.stage = stage;
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn);
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,skillSet);
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.FadeIn();
     }
-    private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn)
+    private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn,PlayerSkill[] skillSet)
     {
         metronome = GetComponent<Metronome>();
         metronome.InitSettins(stage);
@@ -112,7 +112,7 @@ public class StageManager : MonoBehaviour
         isStageOver = false;
         SetUI();
         SpawnEnemy(enemyName);// 지정된 위치에 소환
-        SpawnPlayer();
+        SpawnPlayer(skillSet);
         battlePresenter = new GameObject("BattlePresenter").AddComponent<BattlePresenter>();
         battlePresenter.InitSettings(this);
         InitObjectsSettings();
@@ -145,11 +145,12 @@ public class StageManager : MonoBehaviour
         AkSoundEngine.SetSwitch("Stage01", "StageEnd", gameObject);
     }
 
-    private void SpawnPlayer()
+    private void SpawnPlayer(PlayerSkill[] skillSet)
     {
         player = Instantiate(Resources.Load<GameObject>("Object/Player"));
         playerInterface = player.GetComponent<PlayerInterface>();
         playerInterface.PlayerStatus.InitSetting();
+        playerInterface.PlayerSkillSet.InitSettings(skillSet);
     }
     private void SpawnEnemy(string enemyName)
     {

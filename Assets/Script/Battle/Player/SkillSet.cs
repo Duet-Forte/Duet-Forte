@@ -41,6 +41,7 @@ public class SkillSet : MonoBehaviour
     }
     
   public void InitSettings(PlayerSkill[] skillSet) {
+        if (skillSet == null) return;
         this.skillSet = skillSet;
         for (int index = 0; index < skillSet.Length; index++)
         {//커맨드 리스트 할당

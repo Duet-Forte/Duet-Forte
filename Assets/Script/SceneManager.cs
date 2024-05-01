@@ -75,7 +75,7 @@ public class SceneManager : MonoBehaviour
         }
 
         UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.SceneManager.GetSceneByName("Rebuilding SampleStage"));
-        stageManager.StageStart(testStage);
+        stageManager.StageStart(testStage,null);
     }
 
     private async UniTask LoadBattleScene()
