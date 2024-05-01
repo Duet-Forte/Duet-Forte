@@ -15,11 +15,14 @@ public class BeatDebug : MonoBehaviour
         beatingSequence.Append(beat.transform.DOScale(new Vector3 (3,3),0.01f));
         beatingSequence.Append(beat.transform.DOScale(originScale, 0.3f));
         //Metronome.instance.OnBeating += PlaySequence;
+        Invoke("SubscribeSequence", 0.5f);
     }
 
-    void PlaySequence() {
+    private void PlaySequence() {
         
         beatingSequence.Restart();
     }
-  
+    private void SubscribeSequence() {
+        Metronome.instance.OnBeating += PlaySequence;
+    }
 }

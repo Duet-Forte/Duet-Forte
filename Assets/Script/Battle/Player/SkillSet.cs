@@ -10,11 +10,9 @@ public class SkillSet : MonoBehaviour
     [SerializeField] string[][] arrayOfCommand;
     [SerializeField]private string[] arrayOfSkillName= new string[4];
     private PlayerSkill.Skill[] arrayOfSkill=new PlayerSkill.Skill[4];
-    private AnimationClip[] arrayOfAnimationClip = new AnimationClip[4];
     [SerializeField]private List<string[]> skillCommand = new List<string[]>();
     private Sprite[] arrayOfSkillIcon=new Sprite[4];
-    private int maxCoolTimeTurn;
-    private int currentCoolTimeTurn;
+
 
     #region 프로퍼티
     public List<string[]> SkillCommand { get=>skillCommand; private set { skillCommand = value; } }//스트링 배열의 스킬 커맨드

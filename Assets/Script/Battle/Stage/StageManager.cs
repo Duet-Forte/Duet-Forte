@@ -161,7 +161,6 @@ public class StageManager : MonoBehaviour
     }
     private void SetUI() //플레이어,적 스탯과 관련 없는 UI
     {
-        timingUI = Instantiate(Resources.Load<GameObject>("UI/TimingUI"));
         GameObject defQTECanvas = Instantiate(Resources.Load<GameObject>("UI/DefenseQTECanvas"));
         defenseQTE = defQTECanvas.GetComponentInChildren<DefenseQTE>(true);
 
