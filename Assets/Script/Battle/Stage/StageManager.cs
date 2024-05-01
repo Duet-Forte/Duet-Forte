@@ -149,6 +149,7 @@ public class StageManager : MonoBehaviour
     {
         player = Instantiate(Resources.Load<GameObject>("Object/Player"));
         playerInterface = player.GetComponent<PlayerInterface>();
+        playerInterface.PlayerStatus.InitSetting();
     }
     private void SpawnEnemy(string enemyName)
     {
