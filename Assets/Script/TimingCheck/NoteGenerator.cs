@@ -13,8 +13,8 @@ public class NoteGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       theTimingManager= GetComponent<TimingManager>();
-        Metronome.instance.OnBeating += GenerateNote;
+       /*theTimingManager= GetComponent<TimingManager>();
+        Metronome.instance.OnBeating += GenerateNote;*/
     }
 
     // Update is called once per frame
