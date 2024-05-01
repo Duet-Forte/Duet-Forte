@@ -81,18 +81,18 @@ public class JudgeManager
         if (judgeTime <= perfectJudgeTime)
         {
             judge.Name = JudgeName.Perfect;
-            IncreaseGauge(3);            
+            IncreaseGauge(Util.Const.PERFECT_ICREASE_GAUAGE);            
         }
         else if (judgeTime <= greatJudgeTime)
         {
             judge.Name = JudgeName.Great;
-            IncreaseGauge(2);
+            IncreaseGauge(Util.Const.GREAT_ICREASE_GAUAGE);
            
         }
         else if (judgeTime <= goodJudgeTime)
         {
             judge.Name = JudgeName.Good;
-            IncreaseGauge(1);
+            IncreaseGauge(Util.Const.GOOD_ICREASE_GAUAGE);
            
         }
         else
