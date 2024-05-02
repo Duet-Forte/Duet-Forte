@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Distortion_Guide:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 205b829f4bdaadb438acac9b6a79fff6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -63,19 +63,19 @@ Material:
     - _Blend: 0
     - _CastShadows: 0
     - _Cull: 0
-    - _Distortion_Amount: 0
+    - _Distortion_Amount: 0.23
     - _DstBlend: 10
-    - _Gauge: -0.1
+    - _Gauge: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0
+    - _Smoothness: 0.03
     - _SrcBlend: 5
     - _Surface: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Distortion_Panning: {r: 0, g: 0, b: 0, a: 0}
+    - _Distortion_Panning: {r: 0.17, g: 0.09, b: 0, a: 0}
     - _Distortion_Tiling: {r: 1, g: 1, b: 0, a: 0}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
+    - _MainColor: {r: 0.4760578, g: 1.759344, b: 5.278032, a: 1}
   m_BuildTextureStacks: []

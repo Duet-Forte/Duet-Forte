@@ -1,5 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &376507679539574126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8932430708902163250}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8932430708902163250
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376507679539574126}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1241.2983}
+  m_LocalScale: {x: 12.408088, y: 12.408088, z: 12.408088}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1738141617039676769}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1.5580577}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1738141615553610633
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +144,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -285,8 +321,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.07
-      minScalar: 0.03
+      scalar: 3
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -669,10 +705,10 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: -90, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Scale: {x: 4.91, y: 4.91, z: 1}
     placementMode: 1
     m_MeshMaterialIndex: 0
-    m_MeshNormalOffset: 0
+    m_MeshNormalOffset: -100.52
     m_MeshSpawn:
       mode: 1
       spread: 0
@@ -4790,7 +4826,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 298
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4849,13 +4885,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 3358600324622899464}
   - {fileID: 2275909811547560703}
   m_Father: {fileID: 1738141617039676769}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -35}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1738141617039676774
@@ -4885,12 +4922,12 @@ RectTransform:
   m_GameObject: {fileID: 1738141617039676774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1738141616774394104}
   - {fileID: 1738141615553610632}
-  - {fileID: 3358600324622899464}
+  - {fileID: 8932430708902163250}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4954,7 +4991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3358600324622899464
 Transform:
   m_ObjectHideFlags: 0
@@ -4967,8 +5004,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1738141617039676769}
-  m_RootOrder: 2
+  m_Father: {fileID: 1738141616774394104}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &3790416402826259372
 ParticleSystem:
@@ -9765,25 +9802,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1738141616774394104}
     m_Modifications:
+    - target: {fileID: 5670763451272007797, guid: 81c5748b02a3b604fa6c42a27cadc7e9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6175109228952924576, guid: 81c5748b02a3b604fa6c42a27cadc7e9, type: 3}
       propertyPath: m_Name
       value: Ui_01
       objectReference: {fileID: 0}
     - target: {fileID: 6843700725731158810, guid: 81c5748b02a3b604fa6c42a27cadc7e9, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6843700725731158810, guid: 81c5748b02a3b604fa6c42a27cadc7e9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 138.20998
       objectReference: {fileID: 0}
     - target: {fileID: 6843700725731158810, guid: 81c5748b02a3b604fa6c42a27cadc7e9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 138.20998
       objectReference: {fileID: 0}
     - target: {fileID: 6843700725731158810, guid: 81c5748b02a3b604fa6c42a27cadc7e9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 138.20998
       objectReference: {fileID: 0}
     - target: {fileID: 6843700725731158810, guid: 81c5748b02a3b604fa6c42a27cadc7e9, type: 3}
       propertyPath: m_LocalPosition.x
