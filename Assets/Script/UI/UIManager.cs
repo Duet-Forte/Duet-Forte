@@ -24,6 +24,7 @@ public class UIManager
         }
         statusUIView = Object.Instantiate(preFab[0], canvas.transform).GetComponent<StatusUIView>();
         statusUIView.InitSettings(stageManager, canvas);
+        //statusUIView.GetOrAddComponent<ScreenSpaceCameraUI>().InitSettings(canvas);
 
         #region 현재 턴 표시하는 UI 세팅
         turnUIAsGameObject = Resources.Load<GameObject>(Const.UI_TURN);

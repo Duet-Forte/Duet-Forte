@@ -5,12 +5,15 @@ using UnityEngine;
 using Util;
 using Util.CustomEnum;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class StageManager : MonoBehaviour
 {
     [SerializeField] private Stage stage; // 추후 오프필드에서 특정 적과 조우 시 주입해 줄 예정.
     [SerializeField] private Transform enemyTransform;
     [SerializeField] private GameObject blackBox;
+    [SerializeField] private GameObject sceneTransitionPrefab;
+    [SerializeField] private CinemachineVirtualCamera mainCamera;
 
     Metronome metronome;
     private PatternParser parser;
@@ -79,9 +82,12 @@ public class StageManager : MonoBehaviour
     [SerializeField] public Image[] defenseIcon;
     #endregion
 
-    private void Awake()
+    [ContextMenu("DEBUG/SceneStart")]
+    private void TestPlay()
     {
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn);// 추후 stage에서 가져올 것 (bpm, 적 이름, 시작 턴 )
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,null);
+        WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
+        wipe.FadeIn();
     }
 
     private void Update()
@@ -91,10 +97,14 @@ public class StageManager : MonoBehaviour
             judgeManager?.UpdateInput();
         }
     }
-    public void StageStart(Stage stage) {//don't destroy on load에서 주입받을 메서드
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn);
+    public void StageStart(Stage stage, PlayerSkill[] skillSet) 
+    {//don't destroy on load에서 주입받을
+        this.stage = stage;
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,skillSet);
+        WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
+        wipe.FadeIn();
     }
-    private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn)
+    private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn,PlayerSkill[] skillSet)
     {
         metronome = GetComponent<Metronome>();
         metronome.InitSettins(stage);
@@ -102,7 +112,7 @@ public class StageManager : MonoBehaviour
         isStageOver = false;
         SetUI();
         SpawnEnemy(enemyName);// 지정된 위치에 소환
-        SpawnPlayer();
+        SpawnPlayer(skillSet);
         battlePresenter = new GameObject("BattlePresenter").AddComponent<BattlePresenter>();
         battlePresenter.InitSettings(this);
         InitObjectsSettings();
@@ -135,10 +145,12 @@ public class StageManager : MonoBehaviour
         AkSoundEngine.SetSwitch("Stage01", "StageEnd", gameObject);
     }
 
-    private void SpawnPlayer()
+    private void SpawnPlayer(PlayerSkill[] skillSet)
     {
         player = Instantiate(Resources.Load<GameObject>("Object/Player"));
         playerInterface = player.GetComponent<PlayerInterface>();
+        playerInterface.PlayerStatus.InitSetting();
+        playerInterface.PlayerSkillSet.InitSettings(skillSet);
     }
     private void SpawnEnemy(string enemyName)
     {
@@ -151,7 +163,6 @@ public class StageManager : MonoBehaviour
     }
     private void SetUI() //플레이어,적 스탯과 관련 없는 UI
     {
-        timingUI = Instantiate(Resources.Load<GameObject>("UI/TimingUI"));
         GameObject defQTECanvas = Instantiate(Resources.Load<GameObject>("UI/DefenseQTECanvas"));
         defenseQTE = defQTECanvas.GetComponentInChildren<DefenseQTE>(true);
 
