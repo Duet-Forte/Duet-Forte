@@ -82,7 +82,6 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         skillCommandEntered.Clear();//입력받았던 커맨드키 초기화
         Array.Clear(skillCommandEnteredToArray, 0, skillCommandEnteredToArray.Length);//마찬가지로 커맨드 초기화
         timingList.Clear();//판정 초기화
-        ClearBuffer();//인풋 버퍼 초기화
         Metronome.instance.OnBeating -= CountDownOnBeat;//제한시간 감소시키는 이벤트 구독취소
         Metronome.instance.OffBeating -= AttackOnBeat;
         canAttack = false;//공격 불가능
@@ -203,9 +202,6 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         }
     
     }
-    private void ClearBuffer() { 
-        inputBuffer.Clear();
-    }
     private void checkAttackTiming() {
         timingList.Add(thePlayerAttackTimingCheck.CheckTiming());
     }
@@ -221,13 +217,20 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             if (Input.GetKeyDown(KeyCode.F))
             {  //나중에 PlayerInput 클래스에서 가져온 변수로 쓸 예정
 
-                
+                /*AddCommand("A");
+                playerAnimator.Attack(true);
+                playerSoundSet.PlayerAttack(gameObject, true);*/
+                //대미지 처리
                 EnqueueAttackBuffer("A");
                 checkAttackTiming();
                 canAttack = false;
             }
             else if (Input.GetKeyDown(KeyCode.J))
             {
+                /*AddCommand("B");
+                playerAnimator.Attack(false);
+                playerSoundSet.PlayerAttack(gameObject, false);*/
+                //대미지 처리
                 EnqueueAttackBuffer("B");
                 checkAttackTiming();
                 canAttack = false;
@@ -256,7 +259,26 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         }
     }
     
-   
+    //입력받은 커맨드가 스킬셋에 있는 커맨드인지 검사
 
-  
+    float CalculateBasicAttackDamage(JudgeName judgeName) {
+        if (judgeName == JudgeName.Miss) { //Rest판정
+            return 0;
+        }
+        if (judgeName == JudgeName.Perfect) {
+            return playerAttackStat * 1.0f;
+        }
+        if (judgeName == JudgeName.Great) {
+            return playerAttackStat * 0.8f;
+        }
+        if (judgeName == JudgeName.Good)
+        {
+            return playerAttackStat * 0.5f;
+        }
+        if (judgeName == JudgeName.Bad)
+        {
+            return playerAttackStat * 0.2f;
+        }
+        return 0;
+    }
 }

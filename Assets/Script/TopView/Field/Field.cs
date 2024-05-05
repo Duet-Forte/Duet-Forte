@@ -1,4 +1,3 @@
-using Cinemachine;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -9,11 +8,9 @@ public class Field : MonoBehaviour
     private int id;
     [SerializeField] private Transform entitySpawnParent;
     [SerializeField] private Transform cutsceneObjectParent;
-    [SerializeField] private Transform cameraPathsParent;
     private Dictionary<string, TopViewEntity[]> entities;
     private Dictionary<string, GameObject> cutsceneObject;
-    private Dictionary<string, CinemachinePath> cameraPaths;
-    
+
     public void InitSettings(int id)
     {
         this.id = id;
@@ -21,7 +18,6 @@ public class Field : MonoBehaviour
         cutsceneObject = new Dictionary<string, GameObject>();
         SetEntity();
         SetCutsceneObject();
-        SetCameraPaths();
     }
     public void SetEntity()
     {
@@ -54,15 +50,6 @@ public class Field : MonoBehaviour
         }
     }
 
-    private void SetCameraPaths()
-    {
-        cameraPaths = new Dictionary<string, CinemachinePath>();
-        for(int count = 0; count < cameraPathsParent.childCount; ++count)
-        {
-            CinemachinePath pathTransform = cameraPathsParent.GetChild(count).GetComponent<CinemachinePath>();
-            cameraPaths.Add(pathTransform.name, pathTransform);
-        }
-    }
     public void SetCutsceneObject()
     {
         for(int count = 0; count < cutsceneObjectParent.childCount; ++count)
@@ -82,12 +69,5 @@ public class Field : MonoBehaviour
     {
         cutsceneObject.TryGetValue(name, out var entity);
         return entity;
-    }
-
-    public CinemachinePath SetCameraPath(CinemachineVirtualCamera virtualCamera, string cutsceneName)
-    {
-        cameraPaths.TryGetValue(cutsceneName, out CinemachinePath cutscenePath);
-        virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_Path = cutscenePath;
-        return cutscenePath;
     }
 }

@@ -56,10 +56,10 @@ Material:
     m_Ints: []
     m_Floats:
     - Vector1_d96c407e4d3e4c5599627a739f3a3764: 0.23
-    - _MaskAmount: 0.17
+    - _MaskAmount: 1.01
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _cutoff: 0
+    - _cutoff: 1.14
     - _smooth: 0.1
     - _smoothness: 0.01
     m_Colors: []

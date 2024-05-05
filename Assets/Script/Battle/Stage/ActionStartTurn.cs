@@ -23,13 +23,20 @@ public class ActionStartTurn : ITurnHandler
     
     public IEnumerator TurnStart() 
     {
+        /*AkSoundEngine.PostEvent("Combat_test01", stageManager.PlayerInterface.gameObject );
+        int volume = 0;
+        DOTween.To(() => volume, x => volume = x, 100, 3f).SetEase(Ease.Linear).OnUpdate(() => AkSoundEngine.SetRTPCValue("Volume", volume));*/
+        
         Debug.Log("ActionStartTurn");
         blackBox.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.7f);
         stageManager.SelectRandomBattlePos();
+        //battleCamManager.ZoomIn();
         Debug.Log("재설정된 battlePos : "+stageManager.BattlePos);
         stageManager.PlayerInterface.PlayerTurn.DashToBattlePos();
         stageManager.Enemy.DashToBattlePos();
         yield return new WaitUntil(() => stageManager.PlayerInterface.PlayerTurn.IsMoveDone);
+        //battleCam = FindObjectOfType<Camera>();
+        //battleCam.orthographicSize = 16;
         yield return null;
     }
 

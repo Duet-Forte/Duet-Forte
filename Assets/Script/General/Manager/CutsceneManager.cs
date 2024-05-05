@@ -13,16 +13,16 @@ public class CutsceneManager : MonoBehaviour
     private bool isReachedLoopEndPoint;
     private bool isTalking;
     private double loopStartTime;
+    private Sequence fadeInAndOut;
     [SerializeField] private PlayableAsset[] cutscenes;
     [SerializeField] private Image fadeOutPanel;
     private Dictionary<string, PlayableAsset> cutsceneDictionary;
-
 
     public void InitSettings()
     {
         director = GetComponent<PlayableDirector>();
         cutsceneDictionary = new Dictionary<string, PlayableAsset>();
-        foreach (var cutscene in cutscenes)
+        foreach(var cutscene in cutscenes)
         {
             cutsceneDictionary.Add(cutscene.name, cutscene);
         }
@@ -33,8 +33,6 @@ public class CutsceneManager : MonoBehaviour
         BindCutscene(director, "Player", cutscenePlayer);
         BindCutscene(director, "Pitch", pitch);
         BindCutscene(director, "Timmy", timmy);
-        BindCutscene(director, "Camera", Camera.main.gameObject);
-        SceneManager.Instance.FieldManager.Field.SetCameraPath(SceneManager.Instance.CameraManager.CutsceneCamera, "Tutorial");
         isReachedLoopEndPoint = false;
         director.Play();
     }
@@ -50,6 +48,7 @@ public class CutsceneManager : MonoBehaviour
         isTalking = false;
         director.Play();
     }
+
     public void SpawnPlayer()
     {
         cutscenePlayer.SetActive(false);
@@ -70,20 +69,16 @@ public class CutsceneManager : MonoBehaviour
 
         isReachedLoopEndPoint = true;
     }
-    public void FadeOut(float time)
+    public void FadeOut()
     {
-        Sequence fadeInAndOut = DOTween.Sequence();
-        Tween fadeIn = fadeOutPanel.DOFade(1, time);
-        Tween fadeOut = fadeOutPanel.DOFade(0, time);
-        fadeInAndOut = DOTween.Sequence();
-        fadeInAndOut.Append(fadeIn).Append(fadeOut);
+        if(fadeInAndOut == null)
+        {
+            Tween fadeIn = fadeOutPanel.DOFade(1, 1f);
+            Tween fadeOut = fadeOutPanel.DOFade(0, 1f);
+            fadeInAndOut = DOTween.Sequence();
+            fadeInAndOut.Append(fadeIn).Append(fadeOut);
+        }
         fadeInAndOut.Play();
-    }
-    [ContextMenu("DEBUG/StartBattle")]
-    public void EnterBattle()
-    {
-        director.Pause();
-        SceneManager.Instance.SetBattleScene(null);
     }
     public virtual void BindCutscene(PlayableDirector director, string trackGroupName, GameObject bindObject)
     {
@@ -102,7 +97,8 @@ public class CutsceneManager : MonoBehaviour
                     case AnimationTrack animationTrack:
                         director.SetGenericBinding(animationTrack, bindObject.GetComponent<Animator>());
                         break;
-                    default:
+                    case SignalTrack signalTrack:
+
                         break;
                 }
             }

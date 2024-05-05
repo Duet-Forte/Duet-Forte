@@ -48,9 +48,6 @@ public class Metronome :MonoBehaviour
         }
         bPM = stage.BPM;
         secondsPerBeat = Const.MINUTE_TO_SECOND / bPM;
-
-        MusicStart();
-
         this.stage = stage;
         //AkSoundEngine.PostEvent();
     }
@@ -68,11 +65,7 @@ public class Metronome :MonoBehaviour
         KickEvent.Invoke();
         Debug.Log("Kick Happended");
     }
-    private void MusicStart() { 
-
-        AkSoundEngine.PostEvent("Combat_Stage_01_BGM", gameObject);
-        AkSoundEngine.SetSwitch("Stage01", "StageStart", gameObject);
-    }
+   
     void Update()
     {
         currentTime += Time.deltaTime;

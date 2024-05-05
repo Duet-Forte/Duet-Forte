@@ -139,11 +139,14 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
             randomAttackCase = Random.RandomRange(minDedupleAnim, maxDeduplePierceAnim);
             return;
         }
-
-
+        
+    
     }
     public void Idle() { 
+
         thePlayerAnimator.SetTrigger(idle);
+      
+
     }
     #endregion
     #region ÆÄÆ¼Å¬
