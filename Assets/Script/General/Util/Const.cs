@@ -15,7 +15,7 @@ namespace Util
         public const float PERFECT_JUDGE = 0.2f;
         #endregion
         #region ½ºÅÈ°ü·Ã
-        public const int GUARD_COUNTER_GAUGE = 100;
+        public const int GUARD_COUNTER_GAUGE = 20;
         public const int PERFECT_ICREASE_GAUAGE = 15;
         public const int GREAT_ICREASE_GAUAGE = 8;
         public const int GOOD_ICREASE_GAUAGE = 4;
