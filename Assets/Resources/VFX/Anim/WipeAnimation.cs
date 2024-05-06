@@ -15,20 +15,16 @@ public class WipeAnimation : MonoBehaviour
     [SerializeField] GameObject parentObject;
     Tween fadeOut;
     Tween fadeIn;
-    public float maxCutOff;
-    public float minCutOff; 
+    public float cutoff;
     void Awake()
     {
         _animator = gameObject.GetComponent<Animator>();
         _image = gameObject.GetComponent<Image>();
-        fadeOut = _image.materialForRendering.DOFloat(maxCutOff, _SizeId, 2f);
-        fadeIn = _image.materialForRendering.DOFloat(minCutOff, _SizeId, 2f);
     }
 
     public void FadeOut(Action onFadeOut = null)
     {
         parentObject.GetComponent<Canvas>().worldCamera = Camera.main;
-        _image.materialForRendering.SetFloat(_SizeId, minCutOff);
         Sequence temp = DOTween.Sequence();
 
         temp.Append(fadeOut);
@@ -41,7 +37,6 @@ public class WipeAnimation : MonoBehaviour
     public void FadeIn(Action onFadeIn = null)
     {
         parentObject.GetComponent<Canvas>().worldCamera = Camera.main;
-        _image.materialForRendering.SetFloat(_SizeId, maxCutOff);
         Sequence temp = DOTween.Sequence();
 
         temp.Append(fadeIn);
@@ -49,10 +44,5 @@ public class WipeAnimation : MonoBehaviour
         temp.AppendCallback(() => { onFadeIn?.Invoke(); });
 
         temp.Play();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
