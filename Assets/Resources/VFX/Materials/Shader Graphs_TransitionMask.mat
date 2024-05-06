@@ -59,7 +59,7 @@ Material:
     - _MaskAmount: 1.01
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _cutoff: 1.14
+    - _cutoff: 0
     - _smooth: 0.1
     - _smoothness: 0.01
     m_Colors: []
