@@ -24,6 +24,7 @@ public class UIManager
         }
         statusUIView = Object.Instantiate(preFab[0], canvas.transform).GetComponent<StatusUIView>();
         statusUIView.InitSettings(stageManager, canvas);
+        GameObject.Instantiate(Resources.Load<GameObject>("UI/Status/UI_GuardCounterGauge"),canvas.transform);
         //statusUIView.GetOrAddComponent<ScreenSpaceCameraUI>().InitSettings(canvas);
 
         #region 현재 턴 표시하는 UI 세팅
@@ -46,11 +47,16 @@ public class UIManager
     {
         GameObject canvasObject = new GameObject("Stage UI Canvas");
         canvas = canvasObject.AddComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-
+        canvas.renderMode = RenderMode.ScreenSpaceCamera;
+        canvas.worldCamera = Camera.main;
         CanvasScaler scaler = canvas.AddComponent<CanvasScaler>();
         scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
         scaler.referenceResolution = new Vector2(1920, 1080);
         scaler.matchWidthOrHeight = 0;
+        canvas.sortingOrder = 2;
+        
+        
+
     }
+
 }
