@@ -40,6 +40,9 @@
 							</ObjectLists>
 						</Bus>
 						<Bus Name="Combat_BGM" ID="{2FB2F25A-A16D-4778-A33F-3C805C3AD93B}">
+							<PropertyList>
+								<Property Name="MaxDuckVolume" Type="Real64" Value="0"/>
+							</PropertyList>
 							<ObjectLists>
 								<ObjectList Name="RTPC">
 									<Reference>
@@ -71,14 +74,14 @@
 																		<SegmentShape>Exp3</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>-14.68672</XPos>
-																		<YPos>-6.76199</YPos>
+																		<XPos>-14.42172</XPos>
+																		<YPos>-3.57894</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Log3</SegmentShape>
 																	</Point>
 																	<Point>
 																		<XPos>0</XPos>
-																		<YPos>-13.52585</YPos>
+																		<YPos>-6.22601</YPos>
 																		<Flags>37</Flags>
 																	</Point>
 																</PointList>

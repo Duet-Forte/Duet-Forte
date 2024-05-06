@@ -13,10 +13,10 @@
 							<ChildrenList>
 								<Event Name="Player_Attack_A_SFX" ID="{FAAB1A55-AB92-4B88-B7FB-A86190CBF2FC}">
 									<ChildrenList>
-										<Action Name="" ID="{28FED9E9-82F7-42BA-AC73-0E0C6EB1C46D}" ShortID="969658606">
+										<Action Name="" ID="{2DB06A32-8E1E-490F-9C96-FBF718F50126}" ShortID="839988719">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="세로베기" ID="{E2307D4C-0048-4F23-AFC7-74A8C6732801}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="베기02" ID="{F476059A-0AA2-4B92-A45D-CE2DD97AF41B}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -28,6 +28,20 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="찌르기" ID="{33C1E332-B061-4206-B899-5D48884BF647}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{CC694C4D-F46A-47A9-8669-95DD42D6CF30}" ShortID="386272215">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Gio06" ID="{B45ED2E2-517A-467E-8417-9664B3EDE701}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{1EB79C29-E270-448F-A2BC-424BEA87B706}" ShortID="826329221">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PunchRandom" ID="{0C6D4A37-CF70-4734-949B-4ACE2BC8FD8E}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -46,10 +60,10 @@
 								</Event>
 								<Event Name="Player_Attack_WeakSignal_SFX" ID="{E1E65314-CE0A-4A59-8CAE-68303D53B1EB}">
 									<ChildrenList>
-										<Action Name="" ID="{04725304-1A93-46C4-B433-C6FFA1906B9C}" ShortID="743810092">
+										<Action Name="" ID="{27468000-20B5-4638-8878-0E55DDA9CFE9}" ShortID="51668979">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="SFX_공격신호_02" ID="{F6D7310A-828B-4B7C-B572-D5702798ABCC}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="TestSignal" ID="{68628F3F-4D7D-461A-8D07-705EC2D5FC4A}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -106,10 +120,10 @@
 							<ChildrenList>
 								<Event Name="Combat_Stage_01_BGM" ID="{7BCDF135-933D-41D4-815F-F088C4C99554}">
 									<ChildrenList>
-										<Action Name="" ID="{4E87B608-88CF-4237-8465-FCE78B9526B9}" ShortID="42722409">
+										<Action Name="" ID="{D3D36FF8-4E6B-45E1-ADCB-FA52D16C488D}" ShortID="739922977">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Stage01" ID="{EDFF6601-E49A-4567-B089-C681163EC14D}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
+													<ObjectRef Name="NewCombat" ID="{18CD9999-6E06-4772-9087-F30E4D32BE9E}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
