@@ -24,7 +24,7 @@ public abstract class Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
     public virtual void OnSelected()
     {
-        //AkSoundEngine.PostEvent("MainMenu_Hover_SFX", gameObject);
+
     }
 
     public virtual void OnDeselected()

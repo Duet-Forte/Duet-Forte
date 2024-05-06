@@ -1,4 +1,4 @@
-using Mono.Cecil.Cil;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 // 클래스 설명 : 여러 메뉴를 등록하고, 키보드를 이용한 메뉴 조작 지원을 위한 클래스
@@ -8,6 +8,7 @@ public class MenuSelector : MonoBehaviour
     protected Menu[] menuArray;
     protected int currentIndex;
     protected int previousIndex;
+    protected InputAction uiControl;
     public Menu[] Menu {get => menuArray; }
 
     public virtual void InitSetting()
@@ -23,28 +24,6 @@ public class MenuSelector : MonoBehaviour
         }
         currentIndex = 0;
         previousIndex = 0;
-    }
-
-    private void Update() //추후 input System 적용 예정.
-    {
-        /*
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            int changedIndex = currentIndex - 1;
-            SetIndex(changedIndex);
-            menuArray[currentIndex].OnSelected();
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            int changedIndex = currentIndex + 1;
-            SetIndex(changedIndex);
-            menuArray[currentIndex].OnSelected();
-        }
-        else if (Input.GetKeyDown(KeyCode.Return))
-        {
-            menuArray[currentIndex].OnPressed();
-        }
-        */
     }
 
     public virtual void SetIndex(int index)
