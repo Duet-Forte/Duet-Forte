@@ -106,7 +106,8 @@ public class BattlePresenter : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
 
         }
-        yield return new WaitForSeconds(4.8f);
+        yield return new WaitForSeconds(1.68f);
+        enemy.GetDamage(damage);
     }
     /// <summary>
     /// 공격력과 방어력을 넣으면 공격력-방어력을 반올림시켜서 int로 return하는 함수
