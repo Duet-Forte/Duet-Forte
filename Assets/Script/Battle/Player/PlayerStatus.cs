@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Util;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class PlayerStatus : MonoBehaviour
     //일단은 임시로 직렬화
     [SerializeField] private int playerLevel;
     [SerializeField] private int playerHealthPoint;
-    [SerializeField] private int playerGuardCounterGuage;
+    private int playerGuardCounterGuage;
     [SerializeField] private int playerExp;
     [SerializeField] private int maxPlayerExp;
     [SerializeField] private float playerAttack;//공격력
@@ -47,7 +48,7 @@ public class PlayerStatus : MonoBehaviour
     
 
     public void InitSetting() { //비전투 씬에서 받아온 레벨과 아이템을 기반으로 전투에 필요한 스탯을 재설정하는 함수
-    
+        playerGuardCounterGuage = Util.Const.GUARD_COUNTER_GAUGE;
     
     }
     

@@ -27,7 +27,6 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     int randomAttackCase;
     int minDedupleAnim=0;
     int maxDedupleAnim;
-    int dedupleAnimCase;
 
     #endregion
     #region VFX 파티클 변수
@@ -45,7 +44,6 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
         theEnemyAnimator = GetComponent<Animator>();
         
         maxDedupleAnim = AttackParticle.Length;
-        dedupleAnimCase = Random.RandomRange(minDedupleAnim, maxDedupleAnim);
     }
     #region 애니메이션
     public void ReadyToPatternSignal() {
@@ -99,34 +97,28 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     private void DeduplicateAttack()//공격 애니메이션과 파티클 재생
     {
             randomAttackCase = Random.RandomRange(minDedupleAnim, maxDedupleAnim);
-            while (randomAttackCase == dedupleAnimCase)
-            { //중복되지 않을 때까지
-                randomAttackCase = Random.RandomRange(minDedupleAnim, maxDedupleAnim);
-            }
             theEnemyAnimator.SetFloat(attackCase, randomAttackCase);
-            dedupleAnimCase = randomAttackCase;
             return;
     }
     #endregion
     #region 파티클
     #region 애니메이션에 참조된 파티클
-    void PlayAttackParticle(int attackCase)
-    {//애니메이션 클립에 이벤트로 추가함. 공격 애니메이션의 중간부분에 재생시킴
-        if (AttackParticle[attackCase] != null)
-        {
-            ParticleSystem tmp= Instantiate<ParticleSystem>(AttackParticle[attackCase]);
-            tmp.transform.SetParent(gameObject.transform);
-            tmp.transform.localPosition= Vector3.zero;
-            
-        }
-    }
     public void Particle_DashDust()
     {
         dashParticle.Play();
         //Instantiate<ParticleSystem>(dashParticle).Play();
     }
     #endregion
+    void PlayAttackParticle(int attackCase)
+    {
+        if (AttackParticle[attackCase] != null)
+        {
+            ParticleSystem tmp = Instantiate<ParticleSystem>(AttackParticle[attackCase]);
+            tmp.transform.SetParent(gameObject.transform);
+            tmp.transform.localPosition = Vector3.zero;
 
+        }
+    }
     #region 공격신호
     public void attackCountDown()
     {

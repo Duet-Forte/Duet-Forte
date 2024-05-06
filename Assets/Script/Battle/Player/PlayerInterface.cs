@@ -3,10 +3,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Util.CustomEnum;
 
 public class PlayerInterface : MonoBehaviour
 {
-
+    SkillSet playerSkillSet;
     PlayerAnimator playerAnimator;
     PlayerStatus playerStatus;
     PlayerTurn playerTurn;
@@ -77,6 +78,19 @@ public class PlayerInterface : MonoBehaviour
     
     
     }
+    public SkillSet PlayerSkillSet
+    {
+        get
+        {
+            if (playerSkillSet != null)
+            {
+                return playerSkillSet;
+            }
+            return GetComponent<SkillSet>();
+        }
+
+
+    }
 
     #region 파티클 생성 위치
     public Vector3 ParryPos { get => parryPos; }
@@ -89,8 +103,10 @@ public class PlayerInterface : MonoBehaviour
             playerAnimator.Guard();
             return;
         }
-        battleDirector.Shake(gameObject);
-        playerAnimator.Hurt();
+        if (damage.JudgeName==JudgeName.Miss) {
+            battleDirector.Shake(gameObject);
+            playerAnimator.Hurt();
+        }
         playerStatus.PlayerHealthPoint=damage.GetCalculatedDamage();
         OnGetDamage.Invoke(damage);
         if (playerStatus.PlayerHealthPoint <= 0) { //플레이어 사망 이벤트
