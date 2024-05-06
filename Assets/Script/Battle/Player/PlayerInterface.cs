@@ -7,7 +7,7 @@ using Util.CustomEnum;
 
 public class PlayerInterface : MonoBehaviour
 {
-
+    SkillSet playerSkillSet;
     PlayerAnimator playerAnimator;
     PlayerStatus playerStatus;
     PlayerTurn playerTurn;
@@ -77,6 +77,19 @@ public class PlayerInterface : MonoBehaviour
         }
     
     
+    }
+    public SkillSet PlayerSkillSet
+    {
+        get
+        {
+            if (playerSkillSet != null)
+            {
+                return playerSkillSet;
+            }
+            return GetComponent<SkillSet>();
+        }
+
+
     }
 
     #region 파티클 생성 위치

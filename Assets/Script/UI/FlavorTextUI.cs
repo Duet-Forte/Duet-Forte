@@ -9,21 +9,27 @@ public class FlavorTextUI : MonoBehaviour
     [SerializeField] Sprite enemyPortrait;
     [SerializeField] TMP_Text name;
     [SerializeField] TMP_Text enemyInfo;
-    [SerializeField] private int moveOffset;
+    [SerializeField] private float defaultX;
+    [SerializeField] private float popX;
+    private RectTransform rectTransform;
     // Start is called before the first frame update
     
-    public void InitSetting(Sprite enemyPortrait, string name, string enemyInfo) {
+    public void InitSetting(Sprite enemyPortrait, string name, string enemyInfo) 
+    {
+        GetComponent<ScreenSpaceCameraUI>().InitSettings();
         this.enemyPortrait = enemyPortrait;
         this.name.text = name;
         this.enemyInfo.text = enemyInfo;
+        rectTransform = GetComponent<RectTransform>();
         StartCoroutine( AppearAndDisappear());
         
 
     }
-    IEnumerator AppearAndDisappear() {
-        transform.DOMove(new Vector2(transform.position.x - moveOffset, transform.position.y), 0.4f);
+    IEnumerator AppearAndDisappear() 
+    {
+        rectTransform.DOAnchorPosX(popX, 0.2f);
         yield return new WaitForSeconds(6.5f);
-        transform.DOMove(new Vector2(transform.position.x + moveOffset, transform.position.y), 0.4f).OnComplete(()=>Destroy(transform.parent.gameObject));
+        rectTransform.DOAnchorPosX(defaultX, 0.2f).OnComplete(()=>Destroy(transform.parent.gameObject));
     }
     // Update is called once per frame
     

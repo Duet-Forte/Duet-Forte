@@ -14,6 +14,12 @@ namespace Util
         public const float GREAT_JUDGE = 0.3f;
         public const float PERFECT_JUDGE = 0.2f;
         #endregion
+        #region 스탯관련
+        public const int GUARD_COUNTER_GAUGE = 100;
+        public const int PERFECT_ICREASE_GAUAGE = 15;
+        public const int GREAT_ICREASE_GAUAGE = 8;
+        public const int GOOD_ICREASE_GAUAGE = 4;
+        #endregion
 
         #region 적 공격
         public const float ATTACK_DELAY_BEATS = 2f; // 몇 박을 쉬고 실제 공격으로 이어지는 지.
