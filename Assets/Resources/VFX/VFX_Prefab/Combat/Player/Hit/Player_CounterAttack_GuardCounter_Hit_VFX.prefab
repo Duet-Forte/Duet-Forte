@@ -670,7 +670,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: -1.8, y: 0, z: 0}
+    m_Position: {x: -1.8, y: 0, z: 31.9}
     m_Rotation: {x: -57.09, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -14700,8 +14700,8 @@ Transform:
   m_GameObject: {fileID: 2392400079365377237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1545817632726630930}
   m_RootOrder: 4
@@ -19579,8 +19579,8 @@ Transform:
   m_GameObject: {fileID: 2462634162374842937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1545817632726630930}
   m_RootOrder: 5
@@ -39151,7 +39151,7 @@ Transform:
   m_GameObject: {fileID: 4499829215023226796}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1545817632726630930}
@@ -49016,8 +49016,8 @@ Transform:
   m_GameObject: {fileID: 6977262394615878767}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1545817632726630930}
   m_RootOrder: 6
@@ -54656,7 +54656,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: -0.86, y: 0, z: 0}
+    m_Position: {x: -0.86, y: 0, z: 25.9}
     m_Rotation: {x: 0, y: -154.13, z: 24.5}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
