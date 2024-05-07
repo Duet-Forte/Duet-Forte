@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{6316D96C-F6A3-B083-3AE6-85734BABFF61}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{3FB23428-0C27-8789-5251-955A70ACB7DF}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -409,5 +409,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{BEF46F9A-05BB-E925-9C8A-FA02B21D93F0}</FileHash>
+	<FileHash>{D0F99476-DD97-B68D-3B3E-9181B10D8964}</FileHash>
 </SoundBanksInfo>
