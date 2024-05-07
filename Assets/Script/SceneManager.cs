@@ -57,7 +57,7 @@ public class SceneManager : MonoBehaviour
     public void SetBattleScene(string name)
     {
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
-        wipe.FadeOut(InitBattleScene);
+        wipe.Fade(true, InitBattleScene);
     }
 
     public void SetTopViewScene()

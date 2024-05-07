@@ -87,7 +87,7 @@ public class StageManager : MonoBehaviour
     {
         InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,null);
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
-        wipe.FadeIn();
+        wipe.Fade(false);
     }
 
     private void Update()
@@ -102,7 +102,7 @@ public class StageManager : MonoBehaviour
         this.stage = stage;
         InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,skillSet);
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
-        wipe.FadeIn();
+        wipe.Fade(false);
     }
     private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn,PlayerSkill[] skillSet)
     {

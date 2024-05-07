@@ -9,39 +9,25 @@ public class WipeAnimation : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private Animator _animator;
-    private Image _image;
-    private readonly int _SizeId = Shader.PropertyToID("_cutoff");
+    private Animator animator;
     [SerializeField] GameObject parentObject;
-    Tween fadeOut;
-    Tween fadeIn;
     public float cutoff;
     void Awake()
     {
-        _animator = gameObject.GetComponent<Animator>();
-        _image = gameObject.GetComponent<Image>();
+        animator = GetComponent<Animator>();
     }
 
-    public void FadeOut(Action onFadeOut = null)
+    public void Fade(bool isFadeIn, Action onFade = null)
     {
         parentObject.GetComponent<Canvas>().worldCamera = Camera.main;
         Sequence temp = DOTween.Sequence();
 
-        temp.Append(fadeOut);
+        if(isFadeIn)
+            temp.AppendCallback(() => animator.Play("FadeIn"));
+        else
+            temp.AppendCallback(() => animator.Play("FadeOut"));
 
-        temp.AppendCallback(() => { onFadeOut?.Invoke();});
-
-        temp.Play();
-    }
-
-    public void FadeIn(Action onFadeIn = null)
-    {
-        parentObject.GetComponent<Canvas>().worldCamera = Camera.main;
-        Sequence temp = DOTween.Sequence();
-
-        temp.Append(fadeIn);
-
-        temp.AppendCallback(() => { onFadeIn?.Invoke(); });
+        temp.AppendCallback(() => { onFade?.Invoke();});
 
         temp.Play();
     }
