@@ -444,6 +444,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b53658658c3f9f44c9e2e240555b216e, type: 2}
     - {fileID: 11400000, guid: d0b1e51d351943a439ed1c4da22c134f, type: 2}
     - {fileID: 11400000, guid: 37801406cca15104ba88e66b9dbb9a02, type: 2}
+    - {fileID: 11400000, guid: 762dea4dc3cbceb49aa70bdcb903fc41, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -526,7 +527,21 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: Town
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 362427654}
+          m_TargetAssemblyTypeName: CutsceneManager, Assembly-CSharp
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: TimmyHouse
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &362427654
