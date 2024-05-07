@@ -37,6 +37,24 @@
 						<Property Name="StereoWidth" Type="Real32" Value="74"/>
 					</PropertyList>
 				</Effect>
+				<Effect Name="New_Guitar_Distortion" ID="{49E10239-0984-476A-BAE7-AF2C8CC53DA6}" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+					<PropertyList>
+						<Property Name="DistortionDrive" Type="Real32" Value="22"/>
+						<Property Name="DistortionTone" Type="Real32" Value="65"/>
+						<Property Name="DistortionType" Type="int32" Value="1"/>
+						<Property Name="PostEQBand1Frequency" Type="Real32" Value="239"/>
+						<Property Name="PostEQBand2Frequency" Type="Real32" Value="181"/>
+						<Property Name="PostEQBand3Frequency" Type="Real32" Value="168"/>
+						<Property Name="WetDryMix" Type="Real32" Value="69"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="New_Harmonizer" ID="{515838B7-1985-4CA3-B772-EF7A345F060A}" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3"/>
+				<Effect Name="New_Parametric_EQ" ID="{791BF109-C310-4099-930A-595BBF85CB75}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FrequencyBand1" Type="Real32" Value="400"/>
+						<Property Name="GainBand1" Type="Real32" Value="2.5"/>
+					</PropertyList>
+				</Effect>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>

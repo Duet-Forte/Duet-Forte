@@ -363,7 +363,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &290184914
 PrefabInstance:
@@ -372,6 +372,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2734133821201430731, guid: 35531d311f374f648800a791bc28f4c6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5531352612611189384, guid: 35531d311f374f648800a791bc28f4c6, type: 3}
       propertyPath: m_Name
       value: Timmy_BasicAttack_Slash03_VFX (1)
@@ -447,7 +451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4214291812743566735, guid: bf2cb729db073fb4fa6a1ce11fb02c70, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4214291812743566735, guid: bf2cb729db073fb4fa6a1ce11fb02c70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -698,7 +702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &791884860
 Transform:
   m_ObjectHideFlags: 0
@@ -949,7 +953,7 @@ Transform:
   m_Children:
   - {fileID: 2078060503}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1579274965
 MonoBehaviour:
@@ -1029,7 +1033,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6473437178112654912, guid: ed4064fc38a9fb74fbfaf3a328396562, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6473437178112654912, guid: ed4064fc38a9fb74fbfaf3a328396562, type: 3}
       propertyPath: m_LocalPosition.x

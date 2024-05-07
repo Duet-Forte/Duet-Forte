@@ -17,13 +17,19 @@ Switch	ID	Name	Switch Group			Notes
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	2415836739	Volume			\Default Work Unit\Volume	
 
+Effect plug-ins	ID	Name	Type				Notes
+	3435419520	New_Guitar_Distortion	Wwise Guitar Distortion			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	420250481	Combat_Timmy-01	C:\Users\Administrator\Desktop\HONG\BRIDGE\Duet-Forte\WwiseProject\.cache\Mac\SFX\Combat_Timmy-01_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\Combat_BGM\Combat_Timmy_Loop\Combat_Timmy-01		22769040
-	514950658	Combat_test01	C:\Users\Administrator\Desktop\HONG\BRIDGE\Duet-Forte\WwiseProject\.cache\Mac\SFX\Combat_test01_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Combat_test01\Combat_test01		1084332
-	519697605	SFX_공격신호_01	C:\Users\Administrator\Desktop\HONG\BRIDGE\Duet-Forte\WwiseProject\.cache\Mac\SFX\SFX_공격신호_01_1246C0D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Player_Attack_StrongSignal_SFX\SFX_공격신호_01		107184
-	547379373	Test_Music	C:\Users\Administrator\Desktop\HONG\BRIDGE\Duet-Forte\WwiseProject\.cache\Mac\SFX\Test_Music_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\Test_Music\Test_Music		2024644
-	602281588	세로베기	C:\Users\Administrator\Desktop\HONG\BRIDGE\Duet-Forte\WwiseProject\.cache\Mac\SFX\세로베기_9ECBE823.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_A\세로베기		90848
-	673427602	SFX_공격신호_02	C:\Users\Administrator\Desktop\HONG\BRIDGE\Duet-Forte\WwiseProject\.cache\Mac\SFX\SFX_공격신호_02_FDAA390E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Player_Attack_WeakSignal_SFX\SFX_공격신호_02		32644
-	723090075	패링-03	C:\Users\Administrator\Desktop\HONG\BRIDGE\Duet-Forte\WwiseProject\.cache\Mac\SFX\패링-03_03D2EA21.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Parry\패링-03		207308
-	1010775400	찌르기	C:\Users\Administrator\Desktop\HONG\BRIDGE\Duet-Forte\WwiseProject\.cache\Mac\SFX\찌르기_C769B134.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_B\찌르기		118588
+	292868217	03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\03_2B6424CB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\03		341432
+	481124707	0502_Loop	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\0502_Loop_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\NewCombat\NewCombat_Timmy_Loop\0502_Loop		10922764
+	514950658	Combat_test01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Combat_test01_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Combat_test01\Combat_test01		1084332
+	519697605	SFX_공격신호_01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\SFX_공격신호_01_1246C0D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Player_Attack_StrongSignal_SFX\SFX_공격신호_01		107184
+	723090075	패링-03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\패링-03_03D2EA21.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Parry\패링-03		207308
+	755516841	0502_1	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\0502_1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\NewCombat\NewCombat_Timmy\0502_1		12288100
+	871955409	베기02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\베기02_FBBBB094.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_A\베기02		147864
+	937501252	04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\04_10904949.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\04		341432
+	987644166	01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\01_7C5E0745.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\01		341432
+	1010775400	찌르기	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\찌르기_C769B134.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_B\찌르기		118588
+	1026749207	02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\02_A56704D4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\02		341432
 

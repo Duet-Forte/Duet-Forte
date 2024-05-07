@@ -9,7 +9,7 @@ using Cinemachine;
 
 public class StageManager : MonoBehaviour
 {
-    [SerializeField] private Stage stage; // ÃßÈÄ ¿ÀÇÁÇÊµå¿¡¼­ Æ¯Á¤ Àû°ú Á¶¿ì ½Ã ÁÖÀÔÇØ ÁÙ ¿¹Á¤.
+    [SerializeField] private Stage stage; // ì¶”í›„ ì˜¤í”„í•„ë“œì—ì„œ íŠ¹ì • ì ê³¼ ì¡°ìš° ì‹œ ì£¼ì…í•´ ì¤„ ì˜ˆì •.
     [SerializeField] private Transform enemyTransform;
     [SerializeField] private GameObject blackBox;
     [SerializeField] private GameObject sceneTransitionPrefab;
@@ -30,7 +30,7 @@ public class StageManager : MonoBehaviour
     GameObject timingUI;
     private BattlePresenter battlePresenter;
 
-    #region battlePos ÁÂÇ¥
+    #region battlePos ì¢Œí‘œ
     private float battlePosXMin = -15f;
     private float battlePosXMax = 15f;
     private float battlePosYMin = -20f;
@@ -39,7 +39,7 @@ public class StageManager : MonoBehaviour
 
     #region UI
     private DefenseQTE defenseQTE;
-    private UIManager UIManager; // ÀÌ»ç ¿¹Á¤ÀÔ´Ï´Ù~
+    private UIManager UIManager; // ì´ì‚¬ ì˜ˆì •ì…ë‹ˆë‹¤~
     private int turnCount = 0;
     private PrepareTurnUI prepareTurnUI;
     private ControlTurnUI turnUI;
@@ -47,7 +47,7 @@ public class StageManager : MonoBehaviour
     #endregion
 
     private PrepareTurn prepareTurn;
-    private PlayerTurn playerTurn; //ÃßÈÄ ÇÃ·¹ÀÌ¾î ÅÏ ¿Ï·áµÇ¸é ±× ¶§ º¯°æ
+    private PlayerTurn playerTurn; //ì¶”í›„ í”Œë ˆì´ì–´ í„´ ì™„ë£Œë˜ë©´ ê·¸ ë•Œ ë³€ê²½
     private GuardCounterTurn guardCounterTurn;
 
     private float secondsPerBeat;
@@ -60,11 +60,11 @@ public class StageManager : MonoBehaviour
     public event Action OnStageClear;
     public event Action OnTurnStart;
 
-    #region ÇÁ·ÎÆÛÆ¼
+    #region í”„ë¡œí¼í‹°
     public float SecondsPerBeat { get { return secondsPerBeat; } }
     public IEnemy Enemy { get { return enemy; } }
     public JudgeManager JudgeManager { get { return judgeManager; } }
-    public Turn CurrentTurn { set { currentTurn = value; Debug.Log("¿©±â¼­ " + currentTurn + " À¸·Î ¹Ù²ñ"); } }
+    public Turn CurrentTurn { set { currentTurn = value; Debug.Log("ì—¬ê¸°ì„œ " + currentTurn + " ìœ¼ë¡œ ë°”ë€œ"); } }
     public Vector2 BattlePos { get => battlePos; }
     public PlayerInterface PlayerInterface { get => playerInterface; }
 
@@ -77,7 +77,7 @@ public class StageManager : MonoBehaviour
     public EnemySignalUI EnemySignalUI { get => enemySignalUI; set => enemySignalUI = value; }
     public GameObject BlackBox { get => blackBox; }
     #endregion
-    #region µğ¹ö±ë¿ë
+    #region ë””ë²„ê¹…ìš©
     [SerializeField] public Image[] attackIcon;
     [SerializeField] public Image[] defenseIcon;
     #endregion
@@ -85,9 +85,9 @@ public class StageManager : MonoBehaviour
     [ContextMenu("DEBUG/SceneStart")]
     private void TestPlay()
     {
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn);
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,null);
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
-        wipe.FadeIn();
+        wipe.Fade(false);
     }
 
     private void Update()
@@ -97,22 +97,22 @@ public class StageManager : MonoBehaviour
             judgeManager?.UpdateInput();
         }
     }
-    public void StageStart(Stage stage) 
-    {//don't destroy on load¿¡¼­ ÁÖÀÔ¹ŞÀ»
+    public void StageStart(Stage stage, PlayerSkill[] skillSet) 
+    {//don't destroy on loadì—ì„œ ì£¼ì…ë°›ì„
         this.stage = stage;
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn);
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,skillSet);
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
-        wipe.FadeIn();
+        wipe.Fade(false);
     }
-    private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn)
+    private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn,PlayerSkill[] skillSet)
     {
         metronome = GetComponent<Metronome>();
         metronome.InitSettins(stage);
         secondsPerBeat = Const.MINUTE_TO_SECOND / bitPerMinute;
         isStageOver = false;
         SetUI();
-        SpawnEnemy(enemyName);// ÁöÁ¤µÈ À§Ä¡¿¡ ¼ÒÈ¯
-        SpawnPlayer();
+        SpawnEnemy(enemyName);// ì§€ì •ëœ ìœ„ì¹˜ì— ì†Œí™˜
+        SpawnPlayer(skillSet);
         battlePresenter = new GameObject("BattlePresenter").AddComponent<BattlePresenter>();
         battlePresenter.InitSettings(this);
         InitObjectsSettings();
@@ -122,7 +122,7 @@ public class StageManager : MonoBehaviour
         BattleCamSetting();
         StartCoroutine(StageScheduler(startTurn));
 
-        // ¾Æ·¡ µÎ ÁÙÀº »óÀ§ ¸Å´ÏÀú¿¡¼­ È£ÃâÇÒ ¿¹Á¤ÀÔ´Ï´Ù~ ¾Æ¸¶ °ÔÀÓ ¸Å´ÏÀúÀÏµí?
+        // ì•„ë˜ ë‘ ì¤„ì€ ìƒìœ„ ë§¤ë‹ˆì €ì—ì„œ í˜¸ì¶œí•  ì˜ˆì •ì…ë‹ˆë‹¤~ ì•„ë§ˆ ê²Œì„ ë§¤ë‹ˆì €ì¼ë“¯?
         // UIManager = new UIManager();
         // UIManager.StartStage(this);
 
@@ -131,7 +131,7 @@ public class StageManager : MonoBehaviour
     private IEnumerator StageScheduler(Turn StartTurn)
     {
         currentTurn = StartTurn;
-        // ¿ÀÇÁ´× ¿¬Ãâ Ãß°¡
+        // ì˜¤í”„ë‹ ì—°ì¶œ ì¶”ê°€
         while (!isStageOver)
         {
             ResetSettings();
@@ -140,15 +140,17 @@ public class StageManager : MonoBehaviour
                 break;
             yield return turnHandler[(int)currentTurn].TurnEnd();
         }
-        // °ÔÀÓ Á¾·á ÀÌÈÄ ¿¬ÃâÀº ¾Æ·¡ PlayerDie È¤Àº EnemyDie¿¡¼­..
+        // ê²Œì„ ì¢…ë£Œ ì´í›„ ì—°ì¶œì€ ì•„ë˜ PlayerDie í˜¹ì€ EnemyDieì—ì„œ..
         AkSoundEngine.PostEvent("Combat_Stage_01_BGM", gameObject);
         AkSoundEngine.SetSwitch("Stage01", "StageEnd", gameObject);
     }
 
-    private void SpawnPlayer()
+    private void SpawnPlayer(PlayerSkill[] skillSet)
     {
         player = Instantiate(Resources.Load<GameObject>("Object/Player"));
         playerInterface = player.GetComponent<PlayerInterface>();
+        playerInterface.PlayerStatus.InitSetting();
+        playerInterface.PlayerSkillSet.InitSettings(skillSet);
     }
     private void SpawnEnemy(string enemyName)
     {
@@ -159,9 +161,8 @@ public class StageManager : MonoBehaviour
         enemyObject.transform.SetParent(enemyTransform);
         enemyObject.transform.SetParent(null);
     }
-    private void SetUI() //ÇÃ·¹ÀÌ¾î,Àû ½ºÅÈ°ú °ü·Ã ¾ø´Â UI
+    private void SetUI() //í”Œë ˆì´ì–´,ì  ìŠ¤íƒ¯ê³¼ ê´€ë ¨ ì—†ëŠ” UI
     {
-        timingUI = Instantiate(Resources.Load<GameObject>("UI/TimingUI"));
         GameObject defQTECanvas = Instantiate(Resources.Load<GameObject>("UI/DefenseQTECanvas"));
         defenseQTE = defQTECanvas.GetComponentInChildren<DefenseQTE>(true);
 
@@ -175,20 +176,20 @@ public class StageManager : MonoBehaviour
     }
     public void OnEnemyDie()
     {
-        Debug.Log("½ºÅ×ÀÌÁö Å¬¸®¾î!");
+        Debug.Log("ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´!");
         OnStageClear?.Invoke();
         isStageOver = true;
     }
 
     public void OnPlayerDie()
     {
-        Debug.Log("°ÔÀÓ ¿À¹ö!");
+        Debug.Log("ê²Œì„ ì˜¤ë²„!");
         OnGameOver?.Invoke();
         isStageOver = true;
     }
     private void InitObjectsSettings()
     {
-        #region µğ¹ö±ë¿ë
+        #region ë””ë²„ê¹…ìš©
         Enemy_Prefab debugEnemy = enemy as Enemy_Prefab;
 
         #endregion
@@ -207,7 +208,7 @@ public class StageManager : MonoBehaviour
         turnHandler[(int)Turn.EnemyTurn] = enemyTurn;
 
         prepareTurn = new PrepareTurn();
-        #region Áß°£¹ßÇ¥¿ë prepareTurn
+        #region ì¤‘ê°„ë°œí‘œìš© prepareTurn
 
         #endregion
         prepareTurn.InitSettings(this);
@@ -272,7 +273,7 @@ public class StageManager : MonoBehaviour
         
         judgeManager.OnComboChange -= playerInterface.PlayerGuardCounter.CheckCombo;
         judgeManager.OnComboChange += playerInterface.PlayerGuardCounter.CheckCombo;
-        playerInterface.PlayerGuardCounter.OnGuardCounterEnd -= judgeManager.ResetCombo;//ÇÃ·¹ÀÌ¾î °¡µåÄ«¿îÅÍÀÇ endÀÌº¥Æ®¿¡ ±¸µ¶ÇÒ ¿¹Á¤
+        playerInterface.PlayerGuardCounter.OnGuardCounterEnd -= judgeManager.ResetCombo;//í”Œë ˆì´ì–´ ê°€ë“œì¹´ìš´í„°ì˜ endì´ë²¤íŠ¸ì— êµ¬ë…í•  ì˜ˆì •
         playerInterface.PlayerGuardCounter.OnGuardCounterEnd += judgeManager.ResetCombo;
     }
 

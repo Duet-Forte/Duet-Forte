@@ -1,11 +1,6 @@
-using Cysharp.Threading.Tasks;
-using SoundSet;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Experimental.AI;
+using UnityEngine.InputSystem;
+using Util.CustomEnum;
 //테스트 클래스
 
 public class PlayerController : MonoBehaviour
@@ -13,10 +8,9 @@ public class PlayerController : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private float velocity = 3f;
     [SerializeField] private float rayIntensity = 1.0f;
-    private float h;
-    private float v;
     private Rigidbody2D rb;
     private Animator anim;
+    private Vector2 direction;
     private Vector2 lastDirection;
 
     private int xDirectionAnimationHash;
@@ -25,45 +19,51 @@ public class PlayerController : MonoBehaviour
     private int yIdleAnimationHash;
     private int moveAnimationHash;
 
+    private InputAction moveAction;
     private bool canInteract;
     private IInteractable interactable;
     private bool isStopped;
     public bool IsStopped { get => isStopped; set => isStopped = value; }
 
-    private void Awake()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         SetAnimatorHash();
         lastDirection = new Vector2(0, -1);
         canInteract = false;
+        SceneManager.Instance.InputController.BindPlayerInputAction(PlayerAction.Move, OnMove);
+        SceneManager.Instance.InputController.BindPlayerInputAction(PlayerAction.Interact, OnInteract);
+        moveAction = SceneManager.Instance.InputController.GetAction(PlayerAction.Move);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        h = Input.GetAxisRaw("Horizontal");
-        v = Input.GetAxisRaw("Vertical");
+        if (!isStopped)
+        {
+            direction = moveAction.ReadValue<Vector2>();
+            rb.velocity = direction * velocity;
+            Debug.Log(rb.velocity);
+            SetAnimatorFloat(direction);
+            SetRay(lastDirection);
+        }
+    }
 
-        if (canInteract && Input.GetKeyDown(KeyCode.E))
+    private void OnInteract(InputAction.CallbackContext context)
+    {
+        if (canInteract)
         {
             Stop();
             canInteract = false;
             interactable?.InteractPlayer(this);
         }
     }
-
-    private void FixedUpdate()
+    private void OnMove(InputAction.CallbackContext context)
     {
-        Vector2 direction = new Vector2(h, v);
-
-        if (!isStopped)
-        {
-            rb.velocity = direction.normalized * velocity;
-            SetAnimatorFloat(direction);
-            SetRay(lastDirection);
-        }
+        lastDirection = context.ReadValue<Vector2>();
+        SetMinusOrPlus(lastDirection.x);
+        SetMinusOrPlus(lastDirection.y);
     }
-
     // 애니메이터 파라미터 해싱
     private void SetAnimatorHash()
     {
@@ -76,8 +76,8 @@ public class PlayerController : MonoBehaviour
 
     private void SetAnimatorFloat(Vector2 direction)
     {
-        int x = (int)direction.x;
-        int y = (int)direction.y;
+        int x = SetMinusOrPlus(direction.x);
+        int y = SetMinusOrPlus(direction.y);
 
         anim.SetFloat(xDirectionAnimationHash, x);
         anim.SetFloat(yDirectionAnimationHash, y);
@@ -96,7 +96,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             anim.SetBool(moveAnimationHash, true);
-            lastDirection = new Vector2(x, y);
         }
     }
 
@@ -117,9 +116,19 @@ public class PlayerController : MonoBehaviour
     public void Stop()
     {
         isStopped = true;
-        h = 0;
-        v = 0;
+        direction = Vector2.zero;
         anim.SetBool(moveAnimationHash, false);
     }
   
+    private int SetMinusOrPlus(float someNumber)
+    {
+        int answer;
+        if (someNumber > 0)
+            answer = 1;
+        else if (someNumber < 0)
+            answer = -1;
+        else
+            answer = 0;
+        return answer;
+    }
 }

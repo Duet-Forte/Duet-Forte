@@ -103,23 +103,22 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     #endregion
     #region 파티클
     #region 애니메이션에 참조된 파티클
-    void PlayAttackParticle(int attackCase)
-    {//애니메이션 클립에 이벤트로 추가함. 공격 애니메이션의 중간부분에 재생시킴
-        if (AttackParticle[attackCase] != null)
-        {
-            ParticleSystem tmp= Instantiate<ParticleSystem>(AttackParticle[attackCase]);
-            tmp.transform.SetParent(gameObject.transform);
-            tmp.transform.localPosition= Vector3.zero;
-            
-        }
-    }
     public void Particle_DashDust()
     {
         dashParticle.Play();
         //Instantiate<ParticleSystem>(dashParticle).Play();
     }
     #endregion
+    void PlayAttackParticle(int attackCase)
+    {
+        if (AttackParticle[attackCase] != null)
+        {
+            ParticleSystem tmp = Instantiate<ParticleSystem>(AttackParticle[attackCase]);
+            tmp.transform.SetParent(gameObject.transform);
+            tmp.transform.localPosition = Vector3.zero;
 
+        }
+    }
     #region 공격신호
     public void attackCountDown()
     {
