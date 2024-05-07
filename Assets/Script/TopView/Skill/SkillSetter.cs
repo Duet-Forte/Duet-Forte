@@ -4,27 +4,29 @@ using Unity.VisualScripting;
 using System.Collections.Generic;
 using UnityEngine.Pool;
 
-public class SkillScroll : ScrollPool
+public class SkillSetter : ScrollPool
 {
-    [Header("Skill Scroll Settings")]
+    [Header("Skill Setter Settings")]
     [Space]
     [SerializeField] private SkillSaver skillSaver;
     [Header("Debug")]
     [SerializeField] private int currentMinIndex;
     [SerializeField] private int currentMaxIndex;
     private SkillSelector skillSelector;
+    private bool isSkillSelectorSelected; // 현재 SkillSaver와 SkillSelector 중 어디에 위치해 있는지 적용.
     public ObjectPool<ScrollContent> CurrentPool { get => contentPool; }
     public SkillSelector SkillSelector { get => skillSelector; }
+    public SkillSaver SkillSaver { get => skillSaver; }
+    public bool IsSelectorSelected { get => isSkillSelectorSelected; set => isSkillSelectorSelected = value; }
 
     private void Start()
-    {
+    {   
         InitSettings();
     }
     public void InitSettings()
     {
         BindEvent();
         InitSettings((DataBase.Instance.Skill.Data.Length / Const.CONTENT_IN_ROW) + 1);
-        skillSelector = transform.GetOrAddComponent<SkillSelector>();
         currentMinIndex = 0;
         currentMaxIndex = createStandard - 1;
         for (int i = 0; i < createStandard; ++i)
@@ -32,6 +34,10 @@ public class SkillScroll : ScrollPool
             contentPool.Get();
             pooledContents.Last.Value.RefreshContent(i);
         }
+        isSkillSelectorSelected = true;
+        skillSelector = transform.GetOrAddComponent<SkillSelector>();
+        skillSelector.InitSettings(this);
+        skillSaver.InitSettings(this);
     }
 
     public override ScrollContent InitScrollContent(GameObject gameObject)

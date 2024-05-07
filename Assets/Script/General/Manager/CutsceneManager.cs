@@ -108,4 +108,9 @@ public class CutsceneManager : MonoBehaviour
             }
         }
     }
+
+    public void PlaySound(string soundName)
+    {
+        AkSoundEngine.PostEvent(soundName, gameObject);
+    }
 }
