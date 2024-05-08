@@ -15,7 +15,7 @@ public class SkillContent : ScrollContent
     private TextMeshProUGUI[] skillName;
     private SkillSaver skillSaver;
     private SkillSelector skillSelector;
-    public void InitSettings(SkillScroll skillScroll, SkillSaver skillSaver)
+    public void InitSettings(SkillSetter skillScroll, SkillSaver skillSaver)
     {
         pool = skillScroll.CurrentPool;
         skillSelector = skillScroll.SkillSelector;
@@ -43,32 +43,28 @@ public class SkillContent : ScrollContent
     public override void RefreshContent(int currentRowIndex)
     {
         int currentIndex = currentRowIndex * Const.CONTENT_IN_ROW;
+        int count = 0;
         if (currentRowIndex < ((DataBase.Instance.Skill.Data.Length - 1) / 3))
-        {
-            foreach (Transform transform in skillWindow)
-                transform.gameObject.SetActive(true);
-            for (int i = 0; i < Const.CONTENT_IN_ROW; ++i)
-            {
-                int index = currentIndex + i;
-                skillIcons[i].sprite = DataBase.Instance.Skill.Data[currentIndex + i].SkillIcon;
-                skillName[i].text = DataBase.Instance.Skill.Data[currentIndex + i].SkillName;
-                currentSkills[i].InitSettings(skillSelector,index);
-            }
-        }
+            count = Const.CONTENT_IN_ROW;
         else
+            count = DataBase.Instance.Skill.Data.Length % Const.CONTENT_IN_ROW;
+
+        for(int i = 0; i < count; ++i)
+            skillWindow[i].gameObject.SetActive(true);
+        for (int i = count; i < Const.CONTENT_IN_ROW; ++i)
         {
-            int count = DataBase.Instance.Skill.Data.Length % Const.CONTENT_IN_ROW;
-            for (int i = Const.CONTENT_IN_ROW - 1; i >= count; --i)
-            {
-                skillWindow[i].gameObject.SetActive(false);
-            }
-            for (int i = 0; i < count; ++i)
-            {
-                int index = currentIndex + i;
-                skillIcons[i].sprite = DataBase.Instance.Skill.Data[currentIndex + i].SkillIcon;
-                skillName[i].text = DataBase.Instance.Skill.Data[currentIndex + i].SkillName;
-                currentSkills[i].InitSettings(skillSelector, index);
-            }
+            if (i >= Const.CONTENT_IN_ROW)
+                break;
+            skillWindow[i].gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < count; ++i)
+        {
+            int index = currentIndex + i;
+            skillIcons[i].sprite = DataBase.Instance.Skill.Data[currentIndex + i].SkillIcon;
+            skillName[i].text = DataBase.Instance.Skill.Data[currentIndex + i].SkillName;
+            currentSkills[i].InitSettings(skillSelector, index);
+            currentSkills[i].BindSaverEvent(skillSaver);
         }
     }
 }

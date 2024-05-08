@@ -31,20 +31,6 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
-										<Action Name="" ID="{CC694C4D-F46A-47A9-8669-95DD42D6CF30}" ShortID="386272215">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Gio06" ID="{B45ED2E2-517A-467E-8417-9664B3EDE701}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{1EB79C29-E270-448F-A2BC-424BEA87B706}" ShortID="826329221">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="PunchRandom" ID="{0C6D4A37-CF70-4734-949B-4ACE2BC8FD8E}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Player_Attack_StrongSignal_SFX" ID="{CEBB90E6-DF06-40C5-B9D3-CFA7BB20AD42}">
@@ -135,6 +121,35 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Combat_test01" ID="{4127FDB7-C234-4016-A555-91CCB105AEC5}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="NonCombat" ID="{1DE90227-F2CE-4BCD-959E-D19B9759659B}" ShortID="910019772">
+							<ChildrenList>
+								<Event Name="NonCombat_BGM" ID="{575C244A-0600-4857-8FB1-38C422D374DA}">
+									<ChildrenList>
+										<Action Name="" ID="{CCB7CAD8-AE1E-4226-BF55-95335797EFE1}" ShortID="197924282">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="NonCombat" ID="{E0BC89F1-A599-446F-B92E-179A81DF5F32}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="NonCombat_BGM_Stop" ID="{84301470-64BF-4C0B-9F16-1C6E537F6A82}">
+									<ChildrenList>
+										<Action Name="" ID="{1EA4D9FD-7A99-4104-A9CA-17E1C4B57AF1}" ShortID="469107405">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="NonCombat" ID="{E0BC89F1-A599-446F-B92E-179A81DF5F32}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{6316D96C-F6A3-B083-3AE6-85734BABFF61}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{385B21F1-E788-687E-F0CD-45C806D9120A}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -219,7 +219,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{73BA15CF-1866-0336-E8F7-FE1F056F2B30}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{FB1A2531-6E9C-77D9-8298-722CCDFAD123}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -328,7 +328,6 @@
 					<ShortName>SFX_공격신호_01.wav</ShortName>
 					<CachePath>SFX/SFX_공격신호_01_1246C0D0.wem</CachePath>
 				</File>
-
 				<File Id="608773852" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skill_BBB02.wav</ShortName>
 					<CachePath>SFX/Skill_BBB02_C3CD0A02.wem</CachePath>
@@ -343,7 +342,7 @@
 				</File>
 				<File Id="871955409" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>베기02.wav</ShortName>
-					<CachePath>SFX/베기02_FBBBB094.wem</CachePath>
+					<CachePath>SFX/베기02_818F3B66.wem</CachePath>
 				</File>
 				<File Id="937501252" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>04.wav</ShortName>
@@ -355,11 +354,15 @@
 				</File>
 				<File Id="1010775400" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>찌르기.wav</ShortName>
-					<CachePath>SFX/찌르기_C769B134.wem</CachePath>
+					<CachePath>SFX/찌르기_818F3B66.wem</CachePath>
 				</File>
 				<File Id="1026749207" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>02.wav</ShortName>
 					<CachePath>SFX/02_A56704D4.wem</CachePath>
+				</File>
+				<File Id="1044175636" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Climax.wav</ShortName>
+					<CachePath>SFX/Climax_818F3B66.wem</CachePath>
 				</File>
 			</Media>
 			<Plugins>
@@ -379,12 +382,12 @@
 						<MediaRef Id="514950658"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3452252061" Name="Player_Attack_A_SFX" DurationType="OneShot" DurationMin="0.7696147" DurationMax="0.7696147">
+				<Event Id="3452252061" Name="Player_Attack_A_SFX" DurationType="OneShot" DurationMin="0.83211184" DurationMax="0.856">
 					<MediaRefs>
 						<MediaRef Id="871955409"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1532296734" Name="Player_Attack_B_SFX" DurationType="OneShot" DurationMin="0.5168674" DurationMax="0.5892831">
+				<Event Id="1532296734" Name="Player_Attack_B_SFX" DurationType="OneShot" DurationMin="1.0086666" DurationMax="1.0086666">
 					<MediaRefs>
 						<MediaRef Id="1010775400"/>
 					</MediaRefs>

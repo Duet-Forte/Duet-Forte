@@ -1,6 +1,9 @@
 Event	ID	Name			Wwise Object Path	Notes
 	207956517	Combat_test01			\Default Work Unit\BGM\Combat\Combat_test01	
 	324050508	Player_Attack_WeakSignal_SFX			\Default Work Unit\Player\Combat\Player_Attack_WeakSignal_SFX	
+	329721875	Skill_BBB			\Default Work Unit\Player\Combat\Skill_BBB	
+	342568291	Skill_Climax			\Default Work Unit\Player\Combat\Skill_Climax	
+	547286594	Skill_AAA			\Default Work Unit\Player\Combat\Skill_AAA	
 	890880275	Combat_Stage_01_BGM			\Default Work Unit\BGM\Combat\Combat_Stage_01_BGM	
 	1248207521	Player_Attack_StrongSignal_SFX			\Default Work Unit\Player\Combat\Player_Attack_StrongSignal_SFX	
 	1532296734	Player_Attack_B_SFX			\Default Work Unit\Player\Combat\Player_Attack_B_SFX	
@@ -21,7 +24,6 @@ Effect plug-ins	ID	Name	Type				Notes
 	3435419520	New_Guitar_Distortion	Wwise Guitar Distortion			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-
 	80525940	Skill_AAA	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Skill_AAA02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Skill_AAA\Skill_AAA		366632
 	292868217	03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\03_2B6424CB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\03		341432
 	481124707	0502_Loop	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\0502_Loop_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\NewCombat\NewCombat_Timmy_Loop\0502_Loop		10922764
@@ -30,9 +32,10 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	608773852	Skill_BBB	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Skill_BBB02_C3CD0A02.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Skill_BBB\Skill_BBB		536256
 	723090075	패링-03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\패링-03_03D2EA21.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Parry\패링-03		207308
 	755516841	0502_1	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\0502_1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\NewCombat\NewCombat_Timmy\0502_1		12288100
-	871955409	베기02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\베기02_FBBBB094.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_A\베기02		147864
+	871955409	베기02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\베기02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_A\베기02		164448
 	937501252	04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\04_10904949.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\04		341432
 	987644166	01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\01_7C5E0745.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\01		341432
-	1010775400	찌르기	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\찌르기_C769B134.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_B\찌르기		118588
+	1010775400	찌르기	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\찌르기_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_B\찌르기		193760
 	1026749207	02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\02_A56704D4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\02		341432
+	1044175636	Climax	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Climax_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Skill_Climax\Climax		1094172
 

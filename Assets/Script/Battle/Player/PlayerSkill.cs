@@ -11,7 +11,10 @@ public class PlayerSkill : ScriptableObject
         public AnimationClip skillClip;
         public float[] waitTimes;
         public ParticleSystem skillParticle;
-        
+        public  string soundEventName;
+        public void PlaySkillSound(string soundEventName, GameObject player) {
+            AkSoundEngine.PostEvent(soundEventName, player);
+        }
     }
     
     //이름, 설명, 대미지, 커맨드, 
@@ -32,15 +35,22 @@ public class PlayerSkill : ScriptableObject
     [SerializeField] private bool[] damageType;
     [Tooltip("스킬에 사용되는 애니메이션 클립.")]
     [SerializeField] AnimationClip skillClip;
+    [Tooltip("스킬에 사용되는 애니메이션 클립.")]
+    [SerializeField] string soundEventName;
     public string SkillName { get => skillName; }
     public int[] Damage { get => damage; }
     public string[] SkillCommand { get => skillCommand; } // 성재 : string을 사용해서 A,B,R 이렇게 사용하는 게 메모리 측면에서 이득을 볼 수 있을 듯 /재욱: 확인확인
     public ParticleSystem SkillParticle { get => skillParticle;  }
     public Sprite SkillIcon { get => skillIcon; }
     public string Information { get => skill_Information; }
+    public string SoundEventName { get => soundEventName; }
 
     public int CoolTimeTurn { get => coolTimeTurn; }
-    
+
+    public void PlaySkillSound(GameObject player) {
+        AkSoundEngine.PostEvent(soundEventName,player);
+    }
+
     public Skill GetSkill
     {
         get {
@@ -50,10 +60,10 @@ public class PlayerSkill : ScriptableObject
             skill.waitTimes = waitTimes;
             skill.skillClip = skillClip;
             skill.damageType = damageType;
+            skill.soundEventName = soundEventName;
             return skill;
             
-        }
-        
+            }  
         } 
 }
 
