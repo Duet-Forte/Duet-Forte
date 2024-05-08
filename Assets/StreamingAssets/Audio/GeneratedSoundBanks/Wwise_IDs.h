@@ -32,6 +32,7 @@ namespace AK
         static const AkUniqueID PLAYER_STEP_SFX = 4038898239U;
         static const AkUniqueID SKILL_AAA = 547286594U;
         static const AkUniqueID SKILL_BBB = 329721875U;
+        static const AkUniqueID SKILL_CLIMAX = 342568291U;
         static const AkUniqueID UI_TYPING_SFX = 1024104135U;
     } // namespace EVENTS
 

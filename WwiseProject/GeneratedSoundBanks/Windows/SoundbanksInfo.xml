@@ -304,7 +304,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{BA4D47E8-62D2-E653-9838-E28863D787C4}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{325E5A7D-108B-5735-8AD6-B063173D37BF}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -330,7 +330,7 @@
 				</File>
 				<File Id="661783282" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skill_BBB.wav</ShortName>
-					<CachePath>SFX/Skill_BBB_818F3B66.wem</CachePath>
+					<CachePath>SFX/Skill_BBB_1297ED6F.wem</CachePath>
 				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
@@ -359,6 +359,10 @@
 				<File Id="1026749207" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>02.wav</ShortName>
 					<CachePath>SFX/02_A56704D4.wem</CachePath>
+				</File>
+				<File Id="1044175636" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Climax.wav</ShortName>
+					<CachePath>SFX/Climax_818F3B66.wem</CachePath>
 				</File>
 			</Media>
 			<Plugins>
@@ -416,9 +420,14 @@
 						<MediaRef Id="24126989"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="329721875" Name="Skill_BBB" DurationType="OneShot" DurationMin="2.8155208" DurationMax="2.8155208">
+				<Event Id="329721875" Name="Skill_BBB" DurationType="OneShot" DurationMin="2.7090032" DurationMax="2.7090032">
 					<MediaRefs>
 						<MediaRef Id="661783282"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="342568291" Name="Skill_Climax" DurationType="OneShot" DurationMin="5.6983123" DurationMax="5.6983123">
+					<MediaRefs>
+						<MediaRef Id="1044175636"/>
 					</MediaRefs>
 				</Event>
 			</Events>
@@ -427,5 +436,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{2C94B5E5-CFAC-5D62-D539-2D8C29E8D2A5}</FileHash>
+	<FileHash>{E974162B-8BA8-493B-4F46-FC4057709DC2}</FileHash>
 </SoundBanksInfo>
