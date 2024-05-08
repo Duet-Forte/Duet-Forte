@@ -219,7 +219,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{CF1C5886-C841-447C-551B-810615163163}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{25CF18E3-0560-DF7C-330D-E6B8EBEAD070}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -304,10 +304,14 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{B67A6850-D093-83A3-936A-8DBFA8D8F899}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{BA4D47E8-62D2-E653-9838-E28863D787C4}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
+				<File Id="24126989" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Skill_AAA.wav</ShortName>
+					<CachePath>SFX/Skill_AAA_818F3B66.wem</CachePath>
+				</File>
 				<File Id="292868217" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>03.wav</ShortName>
 					<CachePath>SFX/03_2B6424CB.wem</CachePath>
@@ -324,6 +328,10 @@
 					<ShortName>SFX_공격신호_01.wav</ShortName>
 					<CachePath>SFX/SFX_공격신호_01_1246C0D0.wem</CachePath>
 				</File>
+				<File Id="661783282" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Skill_BBB.wav</ShortName>
+					<CachePath>SFX/Skill_BBB_818F3B66.wem</CachePath>
+				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
 					<CachePath>SFX/패링-03_03D2EA21.wem</CachePath>
@@ -334,7 +342,7 @@
 				</File>
 				<File Id="871955409" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>베기02.wav</ShortName>
-					<CachePath>SFX/베기02_FBBBB094.wem</CachePath>
+					<CachePath>SFX/베기02_818F3B66.wem</CachePath>
 				</File>
 				<File Id="937501252" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>04.wav</ShortName>
@@ -346,7 +354,7 @@
 				</File>
 				<File Id="1010775400" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>찌르기.wav</ShortName>
-					<CachePath>SFX/찌르기_C769B134.wem</CachePath>
+					<CachePath>SFX/찌르기_818F3B66.wem</CachePath>
 				</File>
 				<File Id="1026749207" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>02.wav</ShortName>
@@ -370,12 +378,12 @@
 						<MediaRef Id="514950658"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3452252061" Name="Player_Attack_A_SFX" DurationType="OneShot" DurationMin="0.7696147" DurationMax="0.7696147">
+				<Event Id="3452252061" Name="Player_Attack_A_SFX" DurationType="OneShot" DurationMin="0.83211184" DurationMax="0.856">
 					<MediaRefs>
 						<MediaRef Id="871955409"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1532296734" Name="Player_Attack_B_SFX" DurationType="OneShot" DurationMin="0.5168674" DurationMax="0.5892831">
+				<Event Id="1532296734" Name="Player_Attack_B_SFX" DurationType="OneShot" DurationMin="1.0086666" DurationMax="1.0086666">
 					<MediaRefs>
 						<MediaRef Id="1010775400"/>
 					</MediaRefs>
@@ -403,11 +411,21 @@
 						<MediaRef Id="723090075"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="547286594" Name="Skill_AAA" DurationType="OneShot" DurationMin="2.290375" DurationMax="2.290375">
+					<MediaRefs>
+						<MediaRef Id="24126989"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="329721875" Name="Skill_BBB" DurationType="OneShot" DurationMin="2.8155208" DurationMax="2.8155208">
+					<MediaRefs>
+						<MediaRef Id="661783282"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="2415836739" Name="Volume"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B9BFE5DD-D891-313C-8BA4-1456BC2FE0DA}</FileHash>
+	<FileHash>{17FFF12C-F1FE-D593-C3A9-7FF80507B856}</FileHash>
 </SoundBanksInfo>

@@ -141,6 +141,20 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="NonCombat_BGM_Stop" ID="{84301470-64BF-4C0B-9F16-1C6E537F6A82}">
+									<ChildrenList>
+										<Action Name="" ID="{1EA4D9FD-7A99-4104-A9CA-17E1C4B57AF1}" ShortID="469107405">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="NonCombat" ID="{E0BC89F1-A599-446F-B92E-179A81DF5F32}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

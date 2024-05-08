@@ -1,6 +1,8 @@
 Event	ID	Name			Wwise Object Path	Notes
 	207956517	Combat_test01			\Default Work Unit\BGM\Combat\Combat_test01	
 	324050508	Player_Attack_WeakSignal_SFX			\Default Work Unit\Player\Combat\Player_Attack_WeakSignal_SFX	
+	329721875	Skill_BBB			\Default Work Unit\Player\Combat\Skill_BBB	
+	547286594	Skill_AAA			\Default Work Unit\Player\Combat\Skill_AAA	
 	890880275	Combat_Stage_01_BGM			\Default Work Unit\BGM\Combat\Combat_Stage_01_BGM	
 	1248207521	Player_Attack_StrongSignal_SFX			\Default Work Unit\Player\Combat\Player_Attack_StrongSignal_SFX	
 	1532296734	Player_Attack_B_SFX			\Default Work Unit\Player\Combat\Player_Attack_B_SFX	
@@ -21,15 +23,17 @@ Effect plug-ins	ID	Name	Type				Notes
 	3435419520	New_Guitar_Distortion	Wwise Guitar Distortion			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	24126989	Skill_AAA	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Skill_AAA_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\Skill_AAA\Skill_AAA		439848
 	292868217	03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\03_2B6424CB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\03		341432
 	481124707	0502_Loop	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\0502_Loop_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\NewCombat\NewCombat_Timmy_Loop\0502_Loop		10922764
 	514950658	Combat_test01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Combat_test01_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Combat_test01\Combat_test01		1084332
 	519697605	SFX_공격신호_01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\SFX_공격신호_01_1246C0D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Player_Attack_StrongSignal_SFX\SFX_공격신호_01		107184
+	661783282	Skill_BBB	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Skill_BBB_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\Skill_BBB\Skill_BBB		540676
 	723090075	패링-03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\패링-03_03D2EA21.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Parry\패링-03		207308
 	755516841	0502_1	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\0502_1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\NewCombat\NewCombat_Timmy\0502_1		12288100
-	871955409	베기02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\베기02_FBBBB094.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_A\베기02		147864
+	871955409	베기02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\베기02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_A\베기02		164448
 	937501252	04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\04_10904949.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\04		341432
 	987644166	01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\01_7C5E0745.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\01		341432
-	1010775400	찌르기	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\찌르기_C769B134.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_B\찌르기		118588
+	1010775400	찌르기	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\찌르기_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_B\찌르기		193760
 	1026749207	02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\02_A56704D4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\02		341432
 
