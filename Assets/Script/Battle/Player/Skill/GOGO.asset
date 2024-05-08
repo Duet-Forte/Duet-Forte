@@ -29,3 +29,4 @@ MonoBehaviour:
   - 1.13
   damageType: 000000
   skillClip: {fileID: 7400000, guid: 07759e5cfd992b0458c2b0a81e1ca657, type: 2}
+  soundEventName: Skill_BBB
