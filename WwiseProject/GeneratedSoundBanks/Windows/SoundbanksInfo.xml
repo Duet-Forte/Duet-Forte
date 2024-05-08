@@ -304,10 +304,14 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{B67A6850-D093-83A3-936A-8DBFA8D8F899}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{8E1141D0-3970-20DC-0D1B-A4C433A65DD5}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
+				<File Id="80525940" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Skill_AAA02.wav</ShortName>
+					<CachePath>SFX/Skill_AAA02_818F3B66.wem</CachePath>
+				</File>
 				<File Id="292868217" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>03.wav</ShortName>
 					<CachePath>SFX/03_2B6424CB.wem</CachePath>
@@ -323,6 +327,11 @@
 				<File Id="519697605" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_공격신호_01.wav</ShortName>
 					<CachePath>SFX/SFX_공격신호_01_1246C0D0.wem</CachePath>
+				</File>
+
+				<File Id="608773852" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Skill_BBB02.wav</ShortName>
+					<CachePath>SFX/Skill_BBB02_C3CD0A02.wem</CachePath>
 				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
@@ -403,11 +412,26 @@
 						<MediaRef Id="723090075"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="547286594" Name="Skill_AAA" DurationType="OneShot" DurationMin="1.9090416" DurationMax="1.9090416">
+					<MediaRefs>
+						<MediaRef Id="80525940"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="329721875" Name="Skill_BBB" DurationType="OneShot" DurationMin="2.79249" DurationMax="2.79249">
+					<MediaRefs>
+						<MediaRef Id="608773852"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="342568291" Name="Skill_Climax" DurationType="OneShot" DurationMin="5.6983123" DurationMax="5.6983123">
+					<MediaRefs>
+						<MediaRef Id="1044175636"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="2415836739" Name="Volume"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8A7516E5-C36D-36BD-FAFC-ED654511DE94}</FileHash>
+	<FileHash>{3C61246F-0F98-93C2-82CC-B0D97FC37DA0}</FileHash>
 </SoundBanksInfo>
