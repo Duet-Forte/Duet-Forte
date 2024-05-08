@@ -53,7 +53,7 @@ public class PlayerGuardCounter : MonoBehaviour
         }
         yield return new WaitForSeconds(hitDelay);
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(4.5f);
         yield return null;
     }
 

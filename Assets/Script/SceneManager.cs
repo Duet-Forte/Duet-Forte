@@ -24,9 +24,6 @@ public class SceneManager : MonoBehaviour
     private CutsceneManager cutsceneManager;
     public CutsceneManager CutsceneManager { get => cutsceneManager; }
 
-    private InputController inputController;
-    public InputController InputController { get {  return inputController; } }
-
     private void Awake()
     {
         InitSetting();
@@ -50,14 +47,12 @@ public class SceneManager : MonoBehaviour
         cameraManager.InitSetting();
         cutsceneManager = GetComponent<CutsceneManager>();
         cutsceneManager.InitSettings();
-        inputController = GetComponent<InputController>();
-        inputController.InitSettings();
     }
 
     public void SetBattleScene(string name)
     {
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
-        wipe.Fade(true, InitBattleScene);
+        wipe.FadeOut(InitBattleScene);
     }
 
     public void SetTopViewScene()

@@ -430,11 +430,11 @@ MonoBehaviour:
   referenceFontSize: 10
   isResettingTimeOnNewText: 1
   useDefaultDatabases: 1
-  databaseBehaviors: {fileID: 11400000, guid: 40201829761a5094b9e505e7fdbd5bec, type: 2}
+  databaseBehaviors: {fileID: 11400000, guid: 7cd44ecc31385364ead90b7b2167f00a, type: 2}
   databaseAppearances: {fileID: 11400000, guid: 429caa594ed8dc941b9f18530ce1c904, type: 2}
   useDefaultStyleSheet: 1
   styleSheet: {fileID: 0}
-  databaseActions: {fileID: 11400000, guid: c43ccbfb1303cc84a80189a747a8dacf, type: 2}
+  databaseActions: {fileID: 11400000, guid: bf928e5c4d865d640ba2a8b18a5330cc, type: 2}
   defaultAppearancesTags:
   - size
   defaultDisappearancesTags:
@@ -475,7 +475,7 @@ MonoBehaviour:
   onMessage:
     m_PersistentCalls:
       m_Calls: []
-  waitForNormalChars: 0.06
+  waitForNormalChars: 0.03
   waitLong: 0.03
   waitMiddle: 0.03
   avoidMultiplePunctuactionWait: 0

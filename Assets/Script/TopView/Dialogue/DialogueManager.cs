@@ -79,16 +79,8 @@ public class DialogueManager
 
             dialogueWindow.SetPosition(currentSpeaker);
             await UniTask.Delay(500);
-            await UniTask.WaitUntil(IsKeyTriggered);
+            await UniTask.WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         }
         window.SetActive(false);
-    }
-
-    private bool IsKeyTriggered()
-    {
-        if (SceneManager.Instance.InputController.GetAction(PlayerAction.Interact).triggered)
-            return true;
-        else
-            return false;
     }
 }

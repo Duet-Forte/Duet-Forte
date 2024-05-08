@@ -44,11 +44,6 @@ namespace Util
             Empty
         }
 
-        public enum PlayerAction
-        {
-            Move,
-            Interact
-        }
 
     }
 }

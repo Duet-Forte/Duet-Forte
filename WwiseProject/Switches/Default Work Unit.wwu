@@ -16,12 +16,6 @@
 						<Switch Name="Grass" ID="{8249416A-34C6-413D-BDAF-7A118DF0D034}"/>
 					</ChildrenList>
 				</SwitchGroup>
-				<SwitchGroup Name="NonCombatBGM" ID="{4571E8BA-5B32-47F9-8B3E-86385A041FB8}">
-					<ChildrenList>
-						<Switch Name="TimmyHouse" ID="{AF486976-B369-49A0-A087-CBEBE15D4E19}"/>
-						<Switch Name="Town" ID="{401E7736-0EC8-4F72-A31A-094448197EC8}"/>
-					</ChildrenList>
-				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>

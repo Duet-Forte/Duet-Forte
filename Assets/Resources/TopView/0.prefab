@@ -79965,7 +79965,6 @@ Transform:
   m_Children:
   - {fileID: 987597028047454565}
   - {fileID: 4471920991501954344}
-  - {fileID: 3057919196098203235}
   - {fileID: 141854381421431447}
   - {fileID: 1118849536103186593}
   m_Father: {fileID: 6110154164631208658}
@@ -81147,7 +81146,7 @@ Transform:
   - {fileID: 6110154163178087053}
   - {fileID: 6110154162957145370}
   m_Father: {fileID: 485659428456261286}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7094516491341565503
 GameObject:
@@ -81203,7 +81202,7 @@ MonoBehaviour:
   - position: {x: 0, y: 0, z: 0}
     tangent: {x: 1, y: 0, z: 0}
     roll: 0
-  - position: {x: 125, y: -15, z: -50}
+  - position: {x: 100, y: 0, z: 0}
     tangent: {x: 0, y: 0, z: 0}
     roll: 0
   - position: {x: 100, y: -10, z: 0}
@@ -81443,7 +81442,7 @@ Transform:
   m_Children:
   - {fileID: 8194677901310235508}
   m_Father: {fileID: 485659428456261286}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8899758272658345257
 GameObject:
@@ -81477,78 +81476,6 @@ Transform:
   m_Father: {fileID: 6110154164136015043}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9117017840839858228
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3057919196098203235}
-  - component: {fileID: 6870994105397858008}
-  - component: {fileID: 1484418680534603705}
-  m_Layer: 8
-  m_Name: SoundCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3057919196098203235
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9117017840839858228}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: -1, z: 0}
-  m_LocalScale: {x: 15, y: 6.5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 485659428456261286}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &6870994105397858008
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9117017840839858228}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &1484418680534603705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9117017840839858228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8292566764598c5449667b2ae0d45038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundType: Wood
 --- !u!1001 &6110154164232039353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81570,7 +81497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179695466896532396, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4179695466896532396, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -81637,10 +81564,6 @@ PrefabInstance:
     - target: {fileID: 9002746828571633425, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_Name
       value: Timmy
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002746828571633425, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633426, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_RootOrder

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a7f12d40a9bb14cac7a1bf72b1b909, type: 3}
+  m_Name: Toccata
+  m_EditorClassIdentifier: 
+  skillName: Toccata
+  skill_Information: 
+  skillCommand:
+  - B
+  - B
+  - B
+  skillIcon: {fileID: -644481506, guid: 901c6b0eb98292246ae96544fbdd4bb4, type: 3}
+  isSpacialSkill: 0
+  coolTimeTurn: 2
+  skillParticle: {fileID: 3494102379653789117, guid: 09c1a4d43c7ccc54887fe51cd1c6671d, type: 3}
+  damage: 040000000400000007000000
+  waitTimes:
+  - 0.06
+  - 0.24
+  - 1.13
+  damageType: 000000
+  skillClip: {fileID: 7400000, guid: 07759e5cfd992b0458c2b0a81e1ca657, type: 2}

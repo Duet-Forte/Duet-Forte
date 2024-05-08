@@ -108,10 +108,4 @@ public class CutsceneManager : MonoBehaviour
             }
         }
     }
-
-    public void PlaySound(string name)
-    {
-        AkSoundEngine.SetSwitch("NonCombatBGM", name, gameObject);
-        AkSoundEngine.PostEvent("NonCombat_BGM", gameObject);
-    }
 }

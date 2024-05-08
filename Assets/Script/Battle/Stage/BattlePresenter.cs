@@ -94,10 +94,6 @@ public class BattlePresenter : MonoBehaviour
         Object.Instantiate<GameObject>(Resources.Load<GameObject>("VFX/VFX_Prefab/Combat/Player/Hit/Player_CounterAttack_GuardCounter_Hit_VFX"),enemy.Transform.position, Quaternion.identity);
 
     }
-    private void GuardCounterDamage() { 
-    
-    
-    }
     private void CameraShake(float duration, float strength, int vibrato, int randomness) {
         battleDirector.CameraShake(duration, strength, vibrato, randomness);
     }
@@ -110,6 +106,8 @@ public class BattlePresenter : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
 
         }
+        yield return new WaitForSeconds(1.68f);
+        enemy.GetDamage(damage);
     }
     /// <summary>
     /// 공격력과 방어력을 넣으면 공격력-방어력을 반올림시켜서 int로 return하는 함수

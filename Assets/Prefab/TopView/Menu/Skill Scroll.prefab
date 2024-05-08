@@ -453,7 +453,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 4519929502507067722}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99930745
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1414,7 +1414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00018903181}
+  m_AnchoredPosition: {x: 0, y: 0.00013965888}
   m_SizeDelta: {x: 0, y: 658}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &2015723866356828272
@@ -2568,7 +2568,7 @@ MonoBehaviour:
   spacing: 50
   poolSize: 5
   contentArea: {fileID: 8621551026560101909}
-  skillSaver: {fileID: 998282503024331775}
+  skillSelector: {fileID: 0}
   currentMinIndex: 0
   currentMaxIndex: 0
 --- !u!1 &5784206639328270656
