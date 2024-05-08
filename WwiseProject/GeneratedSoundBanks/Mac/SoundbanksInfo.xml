@@ -304,13 +304,13 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{8E1141D0-3970-20DC-0D1B-A4C433A65DD5}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{325E5A7D-108B-5735-8AD6-B063173D37BF}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
-				<File Id="80525940" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Skill_AAA02.wav</ShortName>
-					<CachePath>SFX/Skill_AAA02_818F3B66.wem</CachePath>
+				<File Id="24126989" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Skill_AAA.wav</ShortName>
+					<CachePath>SFX/Skill_AAA_818F3B66.wem</CachePath>
 				</File>
 				<File Id="292868217" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>03.wav</ShortName>
@@ -328,9 +328,9 @@
 					<ShortName>SFX_공격신호_01.wav</ShortName>
 					<CachePath>SFX/SFX_공격신호_01_1246C0D0.wem</CachePath>
 				</File>
-				<File Id="608773852" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Skill_BBB02.wav</ShortName>
-					<CachePath>SFX/Skill_BBB02_C3CD0A02.wem</CachePath>
+				<File Id="661783282" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Skill_BBB.wav</ShortName>
+					<CachePath>SFX/Skill_BBB_1297ED6F.wem</CachePath>
 				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
@@ -415,14 +415,14 @@
 						<MediaRef Id="723090075"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="547286594" Name="Skill_AAA" DurationType="OneShot" DurationMin="1.9090416" DurationMax="1.9090416">
+				<Event Id="547286594" Name="Skill_AAA" DurationType="OneShot" DurationMin="2.290375" DurationMax="2.290375">
 					<MediaRefs>
-						<MediaRef Id="80525940"/>
+						<MediaRef Id="24126989"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="329721875" Name="Skill_BBB" DurationType="OneShot" DurationMin="2.79249" DurationMax="2.79249">
+				<Event Id="329721875" Name="Skill_BBB" DurationType="OneShot" DurationMin="2.7090032" DurationMax="2.7090032">
 					<MediaRefs>
-						<MediaRef Id="608773852"/>
+						<MediaRef Id="661783282"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="342568291" Name="Skill_Climax" DurationType="OneShot" DurationMin="5.6983123" DurationMax="5.6983123">
@@ -436,5 +436,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{045A13D5-116D-6CE8-DFC4-01C88E1445B6}</FileHash>
+	<FileHash>{0E267738-F340-A38E-D663-858FCB65EDF4}</FileHash>
 </SoundBanksInfo>
