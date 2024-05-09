@@ -88,12 +88,23 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Skill_Climax" ID="{B11E428B-2CF9-4B36-A476-054F9032B016}">
+								<Event Name="Player_Skill_Climax_SFX" ID="{B11E428B-2CF9-4B36-A476-054F9032B016}">
 									<ChildrenList>
 										<Action Name="" ID="{D2734C09-6670-4F03-9F94-260709F811D8}" ShortID="146980099">
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Climax" ID="{A0680B75-430F-4B1B-BB89-3013E2EBFD84}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Enemy_Timmy_Attack_SFX" ID="{8F4016CE-D1D0-4ECA-8309-4496680D6838}">
+									<ChildrenList>
+										<Action Name="" ID="{3B1CC7D2-2073-401A-B1BF-6C424F8A486B}" ShortID="618073063">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Timmy_Attack" ID="{BF7442DE-367C-4F1D-9525-3213BB73DAD1}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
