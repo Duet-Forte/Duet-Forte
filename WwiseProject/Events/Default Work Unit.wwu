@@ -66,7 +66,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Skill_AAA" ID="{317160BB-8B38-49C8-9F67-BF0E16F77A4F}">
+								<Event Name="Player_Skill_AAA_SFX" ID="{317160BB-8B38-49C8-9F67-BF0E16F77A4F}">
 									<ChildrenList>
 										<Action Name="" ID="{4AD1E0E8-F8AA-4F1C-93E7-84C24FC0F68B}" ShortID="961703978">
 											<ReferenceList>
@@ -77,12 +77,23 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Skill_BBB" ID="{5AC455B7-78C2-43D5-80A7-D8A2E4292CA9}">
+								<Event Name="Player_Skill_BBB_SFX" ID="{5AC455B7-78C2-43D5-80A7-D8A2E4292CA9}">
 									<ChildrenList>
 										<Action Name="" ID="{536FB9AB-8815-4E08-84C7-FB1114A23717}" ShortID="53113347">
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Skill_BBB02" ID="{4711DA37-A6E6-46EF-8DD6-7C54BD12903E}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Skill_Climax" ID="{B11E428B-2CF9-4B36-A476-054F9032B016}">
+									<ChildrenList>
+										<Action Name="" ID="{D2734C09-6670-4F03-9F94-260709F811D8}" ShortID="146980099">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Climax" ID="{A0680B75-430F-4B1B-BB89-3013E2EBFD84}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

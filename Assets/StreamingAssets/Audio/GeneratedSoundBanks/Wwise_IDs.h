@@ -29,9 +29,10 @@ namespace AK
         static const AkUniqueID PLAYER_ATTACK_STRONGSIGNAL_SFX = 1248207521U;
         static const AkUniqueID PLAYER_ATTACK_WEAKSIGNAL_SFX = 324050508U;
         static const AkUniqueID PLAYER_PARRY_SFX = 3410875789U;
+        static const AkUniqueID PLAYER_SKILL_AAA_SFX = 2518233790U;
+        static const AkUniqueID PLAYER_SKILL_BBB_SFX = 3250415283U;
         static const AkUniqueID PLAYER_STEP_SFX = 4038898239U;
-        static const AkUniqueID SKILL_AAA = 547286594U;
-        static const AkUniqueID SKILL_BBB = 329721875U;
+        static const AkUniqueID SKILL_CLIMAX = 342568291U;
         static const AkUniqueID UI_TYPING_SFX = 1024104135U;
     } // namespace EVENTS
 

@@ -219,7 +219,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{CF1C5886-C841-447C-551B-810615163163}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{24941A5F-233B-42DF-AC36-9FE933E94C2D}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -304,7 +304,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{684059DE-2272-EA54-C34F-F21DE11EE98E}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{7B3F211D-526D-633E-53FF-FDF336B9583E}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -351,6 +351,10 @@
 				<File Id="987644166" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>01.wav</ShortName>
 					<CachePath>SFX/01_7C5E0745.wem</CachePath>
+				</File>
+				<File Id="991299104" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Climax.wav</ShortName>
+					<CachePath>SFX/Climax_818F3B66.wem</CachePath>
 				</File>
 				<File Id="1010775400" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>찌르기.wav</ShortName>
@@ -411,14 +415,19 @@
 						<MediaRef Id="723090075"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="547286594" Name="Skill_AAA" DurationType="OneShot" DurationMin="1.9090416" DurationMax="1.9090416">
+				<Event Id="2518233790" Name="Player_Skill_AAA_SFX" DurationType="OneShot" DurationMin="2.4710834" DurationMax="2.4710834">
 					<MediaRefs>
 						<MediaRef Id="329739412"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="329721875" Name="Skill_BBB" DurationType="OneShot" DurationMin="2.8155208" DurationMax="2.8155208">
+				<Event Id="3250415283" Name="Player_Skill_BBB_SFX" DurationType="OneShot" DurationMin="2.8155208" DurationMax="2.8155208">
 					<MediaRefs>
 						<MediaRef Id="167940839"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="342568291" Name="Skill_Climax" DurationType="OneShot" DurationMin="5.6983123" DurationMax="5.6983123">
+					<MediaRefs>
+						<MediaRef Id="991299104"/>
 					</MediaRefs>
 				</Event>
 			</Events>
@@ -427,5 +436,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{334B9CE1-D90B-B351-8D39-F356DFAD7C5B}</FileHash>
+	<FileHash>{C0383DBB-E76C-789B-15CE-6B0FCAD45B5D}</FileHash>
 </SoundBanksInfo>

@@ -24,6 +24,7 @@
 														<Custom>
 															<Effect Name="Meter (Custom)" ID="{54D332FE-DD61-4229-8D2F-6CAD865945F2}" ShortID="130867727" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
 																<PropertyList>
+																	<Property Name="Min" Type="Real32" Value="-46.6"/>
 																	<Property Name="ReleaseTime" Type="Real32" Value="0.3"/>
 																</PropertyList>
 																<PluginData>
@@ -74,14 +75,14 @@
 																		<SegmentShape>Exp3</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>-14.42172</XPos>
-																		<YPos>-3.57894</YPos>
+																		<XPos>-17.36128</XPos>
+																		<YPos>-7.62394</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Log3</SegmentShape>
 																	</Point>
 																	<Point>
 																		<XPos>0</XPos>
-																		<YPos>-6.22601</YPos>
+																		<YPos>-7.9746</YPos>
 																		<Flags>37</Flags>
 																	</Point>
 																</PointList>
