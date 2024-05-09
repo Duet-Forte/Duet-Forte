@@ -36,6 +36,9 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     /// </summary>
     [SerializeField] private float slashDefense;
     [SerializeField] private float pierceDefense;
+    [Header("Sounds")]
+    [Space(5f)]
+    [SerializeField] private string soundEventName;
     [Space(10f)]
     #endregion
     
@@ -186,6 +189,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
             {
                 GiveDamage(new Judge(JudgeName.Miss));
                 enemyAnimator.Attack();
+                AkSoundEngine.PostEvent(soundEventName,gameObject);
                 Debug.Log($"{judgeEndTime}에 판정 종료");
             }
         }
