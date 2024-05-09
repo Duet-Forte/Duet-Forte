@@ -207,8 +207,10 @@
 											<ChildrenList>
 												<AudioFileSource Name="Climax" ID="{B722E60B-1389-465A-8EB9-4779035DB5C4}">
 													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.734138420245399"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="0.238886311349693"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.244712806748466"/>
+														<Property Name="TrimEnd" Type="Real64" Value="4.62041085122699"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Climax.wav</AudioFile>
@@ -429,6 +431,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Skill_BBB02" ID="{372CDC6A-24F9-464E-B02B-9CB857320C66}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0760687201772324"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Skill_BBB02.wav</AudioFile>
 											<MediaIDList>
@@ -1266,6 +1272,11 @@
 						<RandomSequenceContainer Name="Timmy_Attack" ID="{BF7442DE-367C-4F1D-9525-3213BB73DAD1}" ShortID="420516824">
 							<PropertyList>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1388,6 +1399,112 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Emotion" ID="{B2D26E5E-DD77-4030-B302-BED22064F1AB}" ShortID="330882492">
+					<ChildrenList>
+						<ActorMixer Name="Character_Emotion_QuestionMark_SFX" ID="{82007E55-A5E7-4DBE-8BE3-9D72D0B1D5C8}" ShortID="597704003">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Character_Emotion_QuestionMark_SFX" ID="{DBF03ED3-21B3-408F-8174-CDB4E553A74E}" ShortID="153182846">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Character_Emotion_QuestionMark_SFX" ID="{A3B30B6E-5296-4800-8C13-FAE63AF6A4CC}">
+											<Language>SFX</Language>
+											<AudioFile>Character_Emotion_QuestionMark_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="98167887"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Character_Emotion_QuestionMark_SFX" ID="{A3B30B6E-5296-4800-8C13-FAE63AF6A4CC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="Character_Emotion_Angry_SFX" ID="{C0CC502F-681B-45A4-979C-943B649A2318}" ShortID="578334068">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Character_Emotion_Angry_SFX" ID="{5408626D-A2B2-4744-AEFE-F08417429049}" ShortID="14264849">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Character_Emotion_Angry_SFX" ID="{4695804C-6EDE-4350-859D-8ED5E9CA341D}">
+											<Language>SFX</Language>
+											<AudioFile>Character_Emotion_Angry_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="742910854"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Character_Emotion_Angry_SFX" ID="{4695804C-6EDE-4350-859D-8ED5E9CA341D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="Character_Emotion_Dumbfounded_SFX" ID="{CAAAD7B2-BC80-4A37-967F-FD930A125C00}" ShortID="1003359423">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Character_Emotion_Dumbfounded_SFX" ID="{1F8AD3C9-7555-4C77-B497-CF1C5C95B7AE}" ShortID="690483466">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Character_Emotion_Dumbfounded_SFX" ID="{C2B1B11D-0349-48EA-ACA2-F28B71FAAEF5}">
+											<Language>SFX</Language>
+											<AudioFile>Character_Emotion_Dumbfounded_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="624505842"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Character_Emotion_Dumbfounded_SFX" ID="{C2B1B11D-0349-48EA-ACA2-F28B71FAAEF5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

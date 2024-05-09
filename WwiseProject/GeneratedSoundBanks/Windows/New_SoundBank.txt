@@ -26,7 +26,7 @@ Effect plug-ins	ID	Name	Type				Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	12610899	Timmy_Attack04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Timmy_Attack04_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Timmy_Attack\Timmy_Attack04		146764
-	167940839	Skill_BBB02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Skill_BBB02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Player_Skill_BBB\Skill_BBB02		540676
+	167940839	Skill_BBB02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Skill_BBB02_F2FE02AE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Player_Skill_BBB\Skill_BBB02		534872
 	171558463	Timmy_Attack05	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Timmy_Attack05_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Timmy_Attack\Timmy_Attack05		146764
 	292868217	03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\03_2B6424CB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\03		341432
 	329739412	Skill_AAA02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Skill_AAA02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Player_Skill_AAA\Skill_AAA02		474544
@@ -41,7 +41,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	937501252	04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\04_10904949.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\04		341432
 	961845890	Timmy_Attack02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Timmy_Attack02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy\Timmy_Attack\Timmy_Attack02		146764
 	987644166	01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\01_7C5E0745.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\01		341432
-	991299104	Climax	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Climax_1982A884.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Skill_Climax\Climax		1048304
+	991299104	Climax	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Climax_07A0A014.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Skill_Climax\Climax		840232
 	1010775400	찌르기	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\찌르기_C769B134.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Attack_B\찌르기		118588
 	1026749207	02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\02_A56704D4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\02		341432
 

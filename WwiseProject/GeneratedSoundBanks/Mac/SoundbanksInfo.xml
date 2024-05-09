@@ -304,7 +304,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{C267682E-A36E-D750-81CB-7165D78525E2}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{6EA33108-697F-3866-643C-1B2B116D6AF4}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -314,7 +314,7 @@
 				</File>
 				<File Id="167940839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skill_BBB02.wav</ShortName>
-					<CachePath>SFX/Skill_BBB02_818F3B66.wem</CachePath>
+					<CachePath>SFX/Skill_BBB02_F2FE02AE.wem</CachePath>
 				</File>
 				<File Id="171558463" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Timmy_Attack05.wav</ShortName>
@@ -374,7 +374,7 @@
 				</File>
 				<File Id="991299104" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Climax.wav</ShortName>
-					<CachePath>SFX/Climax_1982A884.wem</CachePath>
+					<CachePath>SFX/Climax_07A0A014.wem</CachePath>
 				</File>
 				<File Id="1010775400" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>찌르기.wav</ShortName>
@@ -449,12 +449,12 @@
 						<MediaRef Id="329739412"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3250415283" Name="Player_Skill_BBB_SFX" DurationType="OneShot" DurationMin="2.8155208" DurationMax="2.8155208">
+				<Event Id="3250415283" Name="Player_Skill_BBB_SFX" DurationType="OneShot" DurationMin="2.7852855" DurationMax="2.7852855">
 					<MediaRefs>
 						<MediaRef Id="167940839"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="127602315" Name="Player_Skill_Climax_SFX" DurationType="OneShot" DurationMin="5.4594264" DurationMax="5.4594264">
+				<Event Id="127602315" Name="Player_Skill_Climax_SFX" DurationType="OneShot" DurationMin="4.375698" DurationMax="4.375698">
 					<MediaRefs>
 						<MediaRef Id="991299104"/>
 					</MediaRefs>
@@ -465,5 +465,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{40BFB2D1-6FDB-C4DE-9AC1-DB83C5A708B7}</FileHash>
+	<FileHash>{50E0E46D-C5A6-F26E-D52E-B3023519C0EC}</FileHash>
 </SoundBanksInfo>
