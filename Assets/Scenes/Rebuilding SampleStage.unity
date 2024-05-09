@@ -1320,8 +1320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentObject: {fileID: 424645860}
-  maxCutOff: 1
-  minCutOff: 0
+  cutoff: 0
 --- !u!95 &623317212
 Animator:
   serializedVersion: 5
