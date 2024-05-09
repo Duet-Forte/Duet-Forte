@@ -76,91 +76,6 @@
 												<ActiveSource Name="세로베기" ID="{9C237635-CCB0-4369-919E-8D73FF760E03}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="베기01" ID="{E620B3A8-399F-49BF-9864-F4D7ACAC227C}" ShortID="314581371">
-											<PropertyList>
-												<Property Name="Lowpass" Type="int16">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{F7364532-F2BC-4F44-BEA5-9BCC0766D456}">
-																<PropertyList>
-																	<Property Name="Max" Type="Real64" Value="30"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-												<Property Name="Pitch" Type="int32">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{8B032B1F-F103-45E9-99D5-687B277CEB20}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="405"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="베기01" ID="{35B93B7F-B869-48D2-B0ED-D060A73E1007}">
-													<PropertyList>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="0.100022133027523"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>베기01.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="503310199"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="베기01" ID="{35B93B7F-B869-48D2-B0ED-D060A73E1007}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="베기02" ID="{F476059A-0AA2-4B92-A45D-CE2DD97AF41B}" ShortID="123336903">
-											<PropertyList>
-												<Property Name="OverrideOutput" Type="bool" Value="True"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>5</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Player_SFX" ID="{9854CAB5-4487-4908-9DBC-710416C0C96B}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="베기02" ID="{F4B87599-C41A-40AA-A428-FBEE9E1BE167}">
-													<PropertyList>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="0.0863853211009175"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>베기02.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="871955409"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="베기02" ID="{F4B87599-C41A-40AA-A428-FBEE9E1BE167}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="Player_Attack_B" ID="{1A056B7C-0A6F-48A8-BF00-6326897893C1}" ShortID="941446484">
@@ -267,153 +182,6 @@
 										</Sound>
 									</ChildrenList>
 								</ActorMixer>
-								<RandomSequenceContainer Name="Gio_Random" ID="{A3E8CCF3-A9DF-44D0-BA4F-215BBB5DE26A}" ShortID="495686976">
-									<PropertyList>
-										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-										<Property Name="OverrideEffect" Type="bool" Value="True"/>
-										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-6</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="Gio01" ID="{14B517FA-5E83-4D46-8EE8-767F9CBA361C}" ShortID="1029761515">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Gio01" ID="{15344C5B-40AD-40BE-8B0C-2DAF013364C9}">
-													<Language>SFX</Language>
-													<AudioFile>Gio01.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="238034370"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Gio01" ID="{15344C5B-40AD-40BE-8B0C-2DAF013364C9}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Gio02" ID="{3B773D6A-3910-4E3C-8F33-7D65980CE137}" ShortID="384056972">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Gio02" ID="{0A0217AF-0BA6-4088-89C2-A443468929DC}">
-													<Language>SFX</Language>
-													<AudioFile>Gio02.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="235074429"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Gio02" ID="{0A0217AF-0BA6-4088-89C2-A443468929DC}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Gio03" ID="{250A064A-D4A2-478E-BDB7-998846C1CAA1}" ShortID="492307962">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Gio03" ID="{A39E9132-5BE1-429C-8C16-37B179272A27}">
-													<Language>SFX</Language>
-													<AudioFile>Gio03.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="624638690"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Gio03" ID="{A39E9132-5BE1-429C-8C16-37B179272A27}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Gio04" ID="{31BED1B1-32EC-4856-B4FE-F17D18627207}" ShortID="373174203">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Gio04" ID="{17D07FB7-A059-483D-B73C-E6D7D903CF33}">
-													<Language>SFX</Language>
-													<AudioFile>Gio04.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="512168034"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Gio04" ID="{17D07FB7-A059-483D-B73C-E6D7D903CF33}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Gio05" ID="{0B90442B-E41E-43C3-A1A3-BAD8C0D06BDB}" ShortID="519080129">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Gio05" ID="{51A8794A-1AE5-407F-A920-450613B39C0D}">
-													<Language>SFX</Language>
-													<AudioFile>Gio05.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="631131009"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Gio05" ID="{51A8794A-1AE5-407F-A920-450613B39C0D}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
-									<ObjectLists>
-										<ObjectList Name="Effects">
-											<Reference>
-												<Local>
-													<EffectSlot Name="" ID="{D67654F7-BF18-4886-88AA-2CBC4D8F2A85}" ShortID="764100806">
-														<ReferenceList>
-															<Reference Name="Effect" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
-																<ObjectRef Name="New_Guitar_Distortion" ID="{49E10239-0984-476A-BAE7-AF2C8CC53DA6}" WorkUnitID="{2FBF2FEA-D334-4797-A484-BF6EAAF6D085}"/>
-															</Reference>
-														</ReferenceList>
-													</EffectSlot>
-												</Local>
-											</Reference>
-										</ObjectList>
-									</ObjectLists>
-								</RandomSequenceContainer>
 							</ChildrenList>
 						</ActorMixer>
 						<RandomSequenceContainer Name="TestSignal" ID="{68628F3F-4D7D-461A-8D07-705EC2D5FC4A}" ShortID="826764282">
@@ -559,6 +327,80 @@
 								</ObjectList>
 							</ObjectLists>
 						</RandomSequenceContainer>
+						<ActorMixer Name="Player_Skill_AAA" ID="{CD473CB9-0B8C-4320-B805-9741D01939D8}" ShortID="523328598">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Skill_AAA02" ID="{EF00A6DA-0184-4EBF-95F6-00AAC841C43F}" ShortID="439346438">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Player_SFX" ID="{9854CAB5-4487-4908-9DBC-710416C0C96B}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Skill_AAA02" ID="{49E55B22-0070-4563-9187-C5AD070778BA}">
+											<Language>SFX</Language>
+											<AudioFile>Skill_AAA02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="329739412"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Skill_AAA02" ID="{49E55B22-0070-4563-9187-C5AD070778BA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="Player_Skill_BBB" ID="{89CFFBB5-C0FB-4843-869A-592A065C93B9}" ShortID="119204888">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Skill_BBB02" ID="{4711DA37-A6E6-46EF-8DD6-7C54BD12903E}" ShortID="58703711">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Player_SFX" ID="{9854CAB5-4487-4908-9DBC-710416C0C96B}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Skill_BBB02" ID="{372CDC6A-24F9-464E-B02B-9CB857320C66}">
+											<Language>SFX</Language>
+											<AudioFile>Skill_BBB02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="167940839"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Skill_BBB02" ID="{372CDC6A-24F9-464E-B02B-9CB857320C66}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Player_Signal" ID="{41B79B7C-2F88-45D7-843E-AFDE0AB31A6E}" ShortID="669497816">

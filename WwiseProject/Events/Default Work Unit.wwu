@@ -16,7 +16,7 @@
 										<Action Name="" ID="{2DB06A32-8E1E-490F-9C96-FBF718F50126}" ShortID="839988719">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="베기02" ID="{F476059A-0AA2-4B92-A45D-CE2DD97AF41B}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="세로베기" ID="{E2307D4C-0048-4F23-AFC7-74A8C6732801}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -61,6 +61,28 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="패링-03" ID="{970B953D-489F-42AE-82B4-3B52A3811A89}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Skill_AAA" ID="{317160BB-8B38-49C8-9F67-BF0E16F77A4F}">
+									<ChildrenList>
+										<Action Name="" ID="{4AD1E0E8-F8AA-4F1C-93E7-84C24FC0F68B}" ShortID="961703978">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Skill_AAA02" ID="{EF00A6DA-0184-4EBF-95F6-00AAC841C43F}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Skill_BBB" ID="{5AC455B7-78C2-43D5-80A7-D8A2E4292CA9}">
+									<ChildrenList>
+										<Action Name="" ID="{536FB9AB-8815-4E08-84C7-FB1114A23717}" ShortID="53113347">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Skill_BBB02" ID="{4711DA37-A6E6-46EF-8DD6-7C54BD12903E}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
