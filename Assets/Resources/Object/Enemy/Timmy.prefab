@@ -208,8 +208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackParticle:
   - {fileID: 8618785753547430662, guid: 19a04059b00ef6145ac1d8b3849e1211, type: 3}
-  - {fileID: 5531352612611189389, guid: ee14ce440b78d7e4384160cd7227e08f, type: 3}
-  - {fileID: 2734133821201430730, guid: 35531d311f374f648800a791bc28f4c6, type: 3}
+  - {fileID: 5531352612611189389, guid: 35531d311f374f648800a791bc28f4c6, type: 3}
+  - {fileID: 2734133821201430730, guid: ee14ce440b78d7e4384160cd7227e08f, type: 3}
   - {fileID: 4214291812743566734, guid: bf2cb729db073fb4fa6a1ce11fb02c70, type: 3}
   parryParticle: {fileID: 0}
   attackCountDownSignal: {fileID: 0}
