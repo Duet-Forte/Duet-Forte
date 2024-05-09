@@ -304,13 +304,21 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{7B3F211D-526D-633E-53FF-FDF336B9583E}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{C267682E-A36E-D750-81CB-7165D78525E2}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
+				<File Id="12610899" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Timmy_Attack04.wav</ShortName>
+					<CachePath>SFX/Timmy_Attack04_818F3B66.wem</CachePath>
+				</File>
 				<File Id="167940839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skill_BBB02.wav</ShortName>
 					<CachePath>SFX/Skill_BBB02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="171558463" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Timmy_Attack05.wav</ShortName>
+					<CachePath>SFX/Timmy_Attack05_818F3B66.wem</CachePath>
 				</File>
 				<File Id="292868217" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>03.wav</ShortName>
@@ -323,6 +331,10 @@
 				<File Id="481124707" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>0502_Loop.wav</ShortName>
 					<CachePath>SFX/0502_Loop_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="484130538" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Timmy_Attack03.wav</ShortName>
+					<CachePath>SFX/Timmy_Attack03_818F3B66.wem</CachePath>
 				</File>
 				<File Id="514950658" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Combat_test01.wav</ShortName>
@@ -344,9 +356,17 @@
 					<ShortName>0502_1.wav</ShortName>
 					<CachePath>SFX/0502_1_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="775650042" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Timmy_Attack01.wav</ShortName>
+					<CachePath>SFX/Timmy_Attack01_818F3B66.wem</CachePath>
+				</File>
 				<File Id="937501252" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>04.wav</ShortName>
 					<CachePath>SFX/04_10904949.wem</CachePath>
+				</File>
+				<File Id="961845890" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Timmy_Attack02.wav</ShortName>
+					<CachePath>SFX/Timmy_Attack02_818F3B66.wem</CachePath>
 				</File>
 				<File Id="987644166" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>01.wav</ShortName>
@@ -354,7 +374,7 @@
 				</File>
 				<File Id="991299104" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Climax.wav</ShortName>
-					<CachePath>SFX/Climax_818F3B66.wem</CachePath>
+					<CachePath>SFX/Climax_1982A884.wem</CachePath>
 				</File>
 				<File Id="1010775400" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>찌르기.wav</ShortName>
@@ -380,6 +400,15 @@
 				<Event Id="207956517" Name="Combat_test01" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="514950658"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="837159709" Name="Enemy_Timmy_Attack_SFX" DurationType="OneShot" DurationMin="0.7638958" DurationMax="0.7638958">
+					<MediaRefs>
+						<MediaRef Id="12610899"/>
+						<MediaRef Id="171558463"/>
+						<MediaRef Id="484130538"/>
+						<MediaRef Id="775650042"/>
+						<MediaRef Id="961845890"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3452252061" Name="Player_Attack_A_SFX" DurationType="OneShot" DurationMin="0.40254888" DurationMax="0.47266912">
@@ -425,7 +454,7 @@
 						<MediaRef Id="167940839"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="342568291" Name="Skill_Climax" DurationType="OneShot" DurationMin="5.6983123" DurationMax="5.6983123">
+				<Event Id="127602315" Name="Player_Skill_Climax_SFX" DurationType="OneShot" DurationMin="5.4594264" DurationMax="5.4594264">
 					<MediaRefs>
 						<MediaRef Id="991299104"/>
 					</MediaRefs>
@@ -436,5 +465,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9E68C00C-A830-DF6E-63C5-2F98E5D241E2}</FileHash>
+	<FileHash>{CEACDF35-9EC5-D85C-E1EC-9B4781FF2C2A}</FileHash>
 </SoundBanksInfo>
