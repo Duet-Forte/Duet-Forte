@@ -27,6 +27,9 @@ namespace SoundSet
             }
 
         }
+        public void PlayerGuardCounter(GameObject parameterObject) { // 가드카운터 사운드
+            AkSoundEngine.PostEvent("...", parameterObject);
+        }
 
       
 

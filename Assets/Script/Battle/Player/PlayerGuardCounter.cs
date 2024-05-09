@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Util.CustomEnum;
+using SoundSet;
+
 public class PlayerGuardCounter : MonoBehaviour
 {
     public event Action OnGuardCounterEnd;
     private bool isEnteringGuardCounterPhase;
-
+    private SoundSet.PlayerSoundSet playerSoundSet;
     BattlePresenter battlePresenter;
     float playerAttackStat;
     GuardCounterQTE guardCounterQTE;
@@ -20,6 +22,8 @@ public class PlayerGuardCounter : MonoBehaviour
         battlePresenter = FindObjectOfType<StageManager>().BattlePresenter;
         
         playerAttackStat= GetComponent<PlayerStatus>().PlayerAttack;
+
+        playerSoundSet= new SoundSet.PlayerSoundSet();
     }
     public void CheckCombo(int currentCombo, int maxGauge)
     {
@@ -49,6 +53,7 @@ public class PlayerGuardCounter : MonoBehaviour
         if (guardCounterJudge != JudgeName.Miss)
         {
             battlePresenter.GuardCounterToEnemy(new Damage(playerAttackStat, guardCounterJudge,new GuardCounterDamage()));
+            playerSoundSet.PlayerGuardCounter(gameObject);
             GetComponent<PlayerAnimator>().guardCount();
         }
         yield return new WaitForSeconds(hitDelay);
