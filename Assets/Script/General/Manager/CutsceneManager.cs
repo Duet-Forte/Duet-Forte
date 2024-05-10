@@ -16,7 +16,6 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private PlayableAsset[] cutscenes;
     [SerializeField] private Image fadeOutPanel;
     private Dictionary<string, PlayableAsset> cutsceneDictionary;
-    private uint bgmID;
 
     public void InitSettings()
     {
@@ -70,19 +69,18 @@ public class CutsceneManager : MonoBehaviour
 
         isReachedLoopEndPoint = true;
     }
+    public void FadeIn(float time)
+    {
+        Tween fadeIn = fadeOutPanel.DOFade(1, time);
+    }
     public void FadeOut(float time)
     {
-        Sequence fadeInAndOut = DOTween.Sequence();
-        Tween fadeIn = fadeOutPanel.DOFade(1, time);
         Tween fadeOut = fadeOutPanel.DOFade(0, time);
-        fadeInAndOut = DOTween.Sequence();
-        fadeInAndOut.Append(fadeIn).Append(fadeOut);
-        fadeInAndOut.Play();
     }
     [ContextMenu("DEBUG/StartBattle")]
     public void EnterBattle()
     {
-        AkSoundEngine.StopPlayingID(bgmID);
+        AkSoundEngine.PostEvent("NonCombat_BGM_Stop", gameObject);
         director.Pause();
         SceneManager.Instance.SetBattleScene(null);
     }
@@ -112,8 +110,8 @@ public class CutsceneManager : MonoBehaviour
 
     public void PlaySound(string name)
     {
-        AkSoundEngine.StopPlayingID(bgmID);
+        AkSoundEngine.PostEvent("NonCombat_BGM_Stop", gameObject);
         AkSoundEngine.SetSwitch("NonCombatBGM", name, gameObject);
-        bgmID = AkSoundEngine.PostEvent("NonCombat_BGM", gameObject);
+        AkSoundEngine.PostEvent("NonCombat_BGM", gameObject);
     }
 }
