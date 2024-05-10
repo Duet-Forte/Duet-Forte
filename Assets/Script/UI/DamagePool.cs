@@ -27,7 +27,7 @@ public class DamagePool : IStageUI
     private void OnGetUI(DamageUI damageUI)
     {
         Vector2 spawnPoint = enemy.Transform.position;
-        damageUI.RectTransform.position = new Vector2 (spawnPoint.x, spawnPoint.y + 3f);
+        damageUI.Position.position = new Vector2 (spawnPoint.x, spawnPoint.y + 5f);
         damageUI.MoveUI();
     }
 

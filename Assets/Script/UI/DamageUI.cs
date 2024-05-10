@@ -20,10 +20,10 @@ public class DamageUI : MonoBehaviour
     private Image judgeEffect;
     private ScreenSpaceCameraUI cameraUI;
 
-    public RectTransform RectTransform { get 
-        { if (rectTransform == null)
-                rectTransform = transform.Find("Damage").GetComponent<RectTransform>();
-          return rectTransform; } 
+    public RectTransform Position { get 
+        { if (canvasRectTransform == null)
+                canvasRectTransform = GetComponentInParent<RectTransform>();
+            return canvasRectTransform; } 
     }
     public void InitSettings(IObjectPool<DamageUI> pool)
     {
@@ -142,6 +142,5 @@ public class DamageUI : MonoBehaviour
         canvasRectTransform.DOMoveY(YMAX, Const.DAMAGEUI_FADE_SPEED)
             .SetEase(Ease.InBounce)
             .OnComplete(() => pool.Release(this));
-        Debug.Log("¿òÁ÷ÀÓ!");
     }
 }

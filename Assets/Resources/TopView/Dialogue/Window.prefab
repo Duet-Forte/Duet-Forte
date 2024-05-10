@@ -286,6 +286,7 @@ GameObject:
   - component: {fileID: 2218876693370141495}
   - component: {fileID: 3040334425783000742}
   - component: {fileID: 590742659743011548}
+  - component: {fileID: 4951199092070891030}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -471,7 +472,19 @@ MonoBehaviour:
       m_Calls: []
   onCharacterVisible:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4951199092070891030}
+        m_TargetAssemblyTypeName: TypeSound, Assembly-CSharp
+        m_MethodName: MakeTypeSound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onMessage:
     m_PersistentCalls:
       m_Calls: []
@@ -484,6 +497,18 @@ MonoBehaviour:
   useTypewriterWaitForDisappearances: 1
   disappearanceWaitTime: 0.015
   disappearanceSpeedMultiplier: 1
+--- !u!114 &4951199092070891030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218876693370141489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4dbe1394ee7414daeba88828bf8457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2827396929461209306
 GameObject:
   m_ObjectHideFlags: 0
