@@ -13,29 +13,40 @@ public class DamageUI : MonoBehaviour
     private Queue<Sprite> BlueDamagequeue;
     private Queue<Sprite> RedDamagequeue;
     private RectTransform rectTransform;
+    private RectTransform canvasRectTransform;
     private IObjectPool<DamageUI> pool;
-    private int YMAX = Screen.height;
-    private Image judgeLetter;
+    private int YMAX = 15;
     private Image judgeEffect;
+    private Image judgeLetter;
+    private Sprite[] judgeEffects;
+    private Sprite[] judgeLetters;
+    private ScreenSpaceCameraUI cameraUI;
 
-    public RectTransform RectTransform { get 
-        { if (rectTransform == null)
-                rectTransform = transform.Find("Damage").GetComponent<RectTransform>();
-          return rectTransform; } 
+    public RectTransform Position { get 
+        { if (canvasRectTransform == null)
+                canvasRectTransform = GetComponentInParent<RectTransform>();
+            return canvasRectTransform; } 
     }
-    public void InitSettings(IObjectPool<DamageUI> pool, Canvas canvas)
+    public void InitSettings(IObjectPool<DamageUI> pool)
     {
-        GameObject damagePool=transform.Find("Damage").gameObject;
+        cameraUI = transform.GetComponent<ScreenSpaceCameraUI>();
+        if (cameraUI == null)
+            cameraUI = gameObject.AddComponent<ScreenSpaceCameraUI>();
+        GameObject damagePool= transform.Find("Damage").gameObject;
         for (int i = 0; i < 11; i++){
             image[i]=damagePool.transform.Find("Damage"+i).gameObject.GetComponent<Image>();
         }
-        judgeEffect = transform.Find("DamageJudgeEffect").gameObject.GetComponent<Image>();
-        judgeLetter = transform.Find("DamageJudgeLetter").gameObject.GetComponent<Image>();
+        judgeEffect = image[0].transform.Find("DamageJudgeEffect").gameObject.GetComponent<Image>();
+        judgeLetter = image[0].transform.Find("DamageJudgeLetter").gameObject.GetComponent<Image>();
+
+        judgeEffects = Resources.LoadAll<Sprite>("UI/Damage/Effect");
+        judgeLetters = Resources.LoadAll<Sprite>("UI/Damage/Letter");
+
         rectTransform = transform.Find("Damage").gameObject.GetComponent<RectTransform>();
-        
+        GetComponentInParent<Canvas>().worldCamera = Camera.main;
+        canvasRectTransform = GetComponentInParent<RectTransform>();
         RedDamagequeue = new Queue<Sprite>();
         BlueDamagequeue = new Queue<Sprite>();
-        transform.SetParent(canvas.transform);
         this.pool = pool;
         SetLayout();
         ResetSettings();
@@ -48,12 +59,11 @@ public class DamageUI : MonoBehaviour
         int index = 0;
         List<int> damageByDigit= new List<int>();
 
-        if (damage.JudgeName != null) {
-            if (damage.JudgeName == Util.CustomEnum.JudgeName.Perfect) { judgeEffect = Resources.Load<Image>("UI/Damage/PerfectEffect"); judgeLetter = Resources.Load<Image>("UI/Damage/PerfectLetter"); }
-            if (damage.JudgeName == Util.CustomEnum.JudgeName.Great) { judgeEffect = Resources.Load<Image>("UI/Damage/GreatEffect"); judgeLetter = Resources.Load<Image>("UI/Damage/GreatLetter"); }
-            if (damage.JudgeName == Util.CustomEnum.JudgeName.Good) { judgeEffect = Resources.Load<Image>("UI/Damage/GoodEffect"); judgeLetter = Resources.Load<Image>("UI/Damage/GoodLetter"); }
-        }
-        if (damage.GetDamageType()==Util.CustomEnum.DamageType.Slash)
+        Debug.Log(Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1));
+        judgeEffect.sprite = judgeEffects[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
+        judgeLetter.sprite = judgeLetters[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
+
+        if (damage.GetDamageType() == Util.CustomEnum.DamageType.Slash)
         {
             Debug.Log("RedDamage");
             while (calculatedDamage> 0)
@@ -110,10 +120,6 @@ public class DamageUI : MonoBehaviour
         }*/
         
         //rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH * RedDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
-
-        
-
-        MoveUI();
     }
     public void ResetSettings()
     {
@@ -136,10 +142,10 @@ public class DamageUI : MonoBehaviour
         horizontalLayoutGroup.childControlWidth = true;
     }
 
-    private void MoveUI()
+    public void MoveUI()
     {
-        rectTransform.DOMoveY(YMAX, Const.DAMAGEUI_FADE_SPEED)
-            .SetEase(Ease.InElastic)
+        canvasRectTransform.DOMoveY(YMAX, Const.DAMAGEUI_FADE_SPEED)
+            .SetEase(Ease.InBounce)
             .OnComplete(() => pool.Release(this));
     }
 }
