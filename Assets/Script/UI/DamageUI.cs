@@ -16,8 +16,10 @@ public class DamageUI : MonoBehaviour
     private RectTransform canvasRectTransform;
     private IObjectPool<DamageUI> pool;
     private int YMAX = 15;
-    private Image judgeLetter;
     private Image judgeEffect;
+    private Image judgeLetter;
+    private Sprite[] judgeEffects;
+    private Sprite[] judgeLetters;
     private ScreenSpaceCameraUI cameraUI;
 
     public RectTransform Position { get 
@@ -36,6 +38,10 @@ public class DamageUI : MonoBehaviour
         }
         judgeEffect = image[0].transform.Find("DamageJudgeEffect").gameObject.GetComponent<Image>();
         judgeLetter = image[0].transform.Find("DamageJudgeLetter").gameObject.GetComponent<Image>();
+
+        judgeEffects = Resources.LoadAll<Sprite>("UI/Damage/Effect");
+        judgeLetters = Resources.LoadAll<Sprite>("UI/Damage/Letter");
+
         rectTransform = transform.Find("Damage").gameObject.GetComponent<RectTransform>();
         GetComponentInParent<Canvas>().worldCamera = Camera.main;
         canvasRectTransform = GetComponentInParent<RectTransform>();
@@ -53,12 +59,11 @@ public class DamageUI : MonoBehaviour
         int index = 0;
         List<int> damageByDigit= new List<int>();
 
-        if (damage.JudgeName != null) {
-            if (damage.JudgeName == Util.CustomEnum.JudgeName.Perfect) { judgeEffect = Resources.Load<Image>("UI/Damage/PerfectEffect"); judgeLetter = Resources.Load<Image>("UI/Damage/PerfectLetter"); }
-            if (damage.JudgeName == Util.CustomEnum.JudgeName.Great) { judgeEffect = Resources.Load<Image>("UI/Damage/GreatEffect"); judgeLetter = Resources.Load<Image>("UI/Damage/GreatLetter"); }
-            if (damage.JudgeName == Util.CustomEnum.JudgeName.Good) { judgeEffect = Resources.Load<Image>("UI/Damage/GoodEffect"); judgeLetter = Resources.Load<Image>("UI/Damage/GoodLetter"); }
-        }
-        if (damage.GetDamageType()==Util.CustomEnum.DamageType.Slash)
+        Debug.Log(Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1));
+        judgeEffect.sprite = judgeEffects[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
+        judgeLetter.sprite = judgeLetters[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
+
+        if (damage.GetDamageType() == Util.CustomEnum.DamageType.Slash)
         {
             Debug.Log("RedDamage");
             while (calculatedDamage> 0)

@@ -4,7 +4,7 @@ namespace Util
     {
         public enum JudgeName
         {
-            Rest=0,
+            Rest = 0,
             Perfect,
             Great,
             Good,
