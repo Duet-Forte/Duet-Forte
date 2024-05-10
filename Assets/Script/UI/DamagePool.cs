@@ -4,32 +4,31 @@ using Util;
 
 public class DamagePool : IStageUI
 {
-    private Canvas canvas;
     private IObjectPool<DamageUI> pool;
     private IEnemy enemy;
 
     public void InitSettings(StageManager stageManager, Canvas canvas)
     {
         enemy = stageManager.Enemy;
-        this.canvas = canvas;
-        pool = new ObjectPool<DamageUI>(CreateDamageUI, OnGetUI, OnReleaseUI, OnDestroyUI, maxSize: 4);
+        pool = new ObjectPool<DamageUI>(CreateDamageUI, OnGetUI, OnReleaseUI, OnDestroyUI, maxSize: 10);
         BindEvent();
     }
 
     private DamageUI CreateDamageUI()
     {
-        GameObject damageUIPrefab = Resources.Load<GameObject>("UI/Damage/DamgeText");
+        GameObject damageUIPrefab = Resources.Load<GameObject>("UI/Damage/DamageText");
          DamageUI damageUI = Object
             .Instantiate(damageUIPrefab)
-            .GetComponent<DamageUI>();
-        damageUI.InitSettings(pool, canvas);
+            .GetComponentInChildren<DamageUI>();
+        damageUI.InitSettings(pool);
         return damageUI;
     }
 
     private void OnGetUI(DamageUI damageUI)
     {
-        Vector2 spawnPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, enemy.Transform.position);
-        damageUI.RectTransform.position = new Vector2 (spawnPoint.x, spawnPoint.y + 300);
+        Vector2 spawnPoint = enemy.Transform.position;
+        damageUI.RectTransform.position = new Vector2 (spawnPoint.x, spawnPoint.y + 3f);
+        damageUI.MoveUI();
     }
 
     private void OnReleaseUI(DamageUI damageUI)

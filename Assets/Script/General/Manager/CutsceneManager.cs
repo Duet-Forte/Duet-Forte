@@ -16,7 +16,7 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private PlayableAsset[] cutscenes;
     [SerializeField] private Image fadeOutPanel;
     private Dictionary<string, PlayableAsset> cutsceneDictionary;
-
+    private uint bgmID;
 
     public void InitSettings()
     {
@@ -82,6 +82,7 @@ public class CutsceneManager : MonoBehaviour
     [ContextMenu("DEBUG/StartBattle")]
     public void EnterBattle()
     {
+        AkSoundEngine.StopPlayingID(bgmID);
         director.Pause();
         SceneManager.Instance.SetBattleScene(null);
     }
@@ -111,7 +112,8 @@ public class CutsceneManager : MonoBehaviour
 
     public void PlaySound(string name)
     {
+        AkSoundEngine.StopPlayingID(bgmID);
         AkSoundEngine.SetSwitch("NonCombatBGM", name, gameObject);
-        AkSoundEngine.PostEvent("NonCombat_BGM", gameObject);
+        bgmID = AkSoundEngine.PostEvent("NonCombat_BGM", gameObject);
     }
 }
