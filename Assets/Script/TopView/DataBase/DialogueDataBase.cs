@@ -62,8 +62,6 @@ public class DialogueDataBase
         }
         dialogueList.Add(new Dialogue(id, lines.ToArray()));
         dialogues[currentFieldId].Add(data[currentStart]["Interactable"], dialogueList.ToArray());
-        dialogueList = null;
-        lines = null;
     }
 
     public Sprite GetSprite(string fileName)
