@@ -6,7 +6,6 @@ public class Fade : StateMachineBehaviour
 {
     private Image image;
     private WipeAnimation wipeAnimation;
-    private float previousCutoff;
     private int sizeID;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -21,8 +20,10 @@ public class Fade : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         image.materialForRendering.SetFloat(sizeID, wipeAnimation.cutoff);
-        if (previousCutoff == wipeAnimation.cutoff)
-            animator.SetTrigger("EndFade");
-        previousCutoff = wipeAnimation.cutoff;
+    }
+
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        Destroy(animator.transform.parent.gameObject);
     }
 }

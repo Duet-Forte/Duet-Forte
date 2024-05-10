@@ -17,12 +17,14 @@ public class WipeAnimation : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void Fade(bool isFadeIn, Action onFade = null)
+    public void Fade(bool isFadeIn, Action beforeFade = null, Action onFade = null)
     {
         parentObject.GetComponent<Canvas>().worldCamera = Camera.main;
         Sequence temp = DOTween.Sequence();
 
-        if(isFadeIn)
+        temp.AppendCallback(() => { beforeFade?.Invoke(); });
+
+        if (isFadeIn)
             temp.AppendCallback(() => animator.Play("FadeIn"));
         else
             temp.AppendCallback(() => animator.Play("FadeOut"));
