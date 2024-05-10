@@ -22,7 +22,7 @@
 												<ReferenceList>
 													<Reference Name="Effect">
 														<Custom>
-															<Effect Name="Meter (Custom)" ID="{54D332FE-DD61-4229-8D2F-6CAD865945F2}" ShortID="130867727" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+															<Effect Name="Meter (SideChain)" ID="{54D332FE-DD61-4229-8D2F-6CAD865945F2}" ShortID="130867727" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
 																<PropertyList>
 																	<Property Name="Min" Type="Real32" Value="-46.6"/>
 																	<Property Name="ReleaseTime" Type="Real32" Value="0.3"/>

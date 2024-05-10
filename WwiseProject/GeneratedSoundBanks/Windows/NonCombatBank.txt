@@ -3,6 +3,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	918533349	NonCombat_BGM			\Default Work Unit\BGM\NonCombat\NonCombat_BGM	
 	1024104135	Ui_Typing_SFX			\Default Work Unit\NonCombat_SFX\Ui_Typing_SFX	
 	2299963368	Gio_BodyFall_SFX			\Default Work Unit\Player\NonCombat\Gio_BodyFall_SFX	
+	2869548328	NonCombat_BGM_Stop			\Default Work Unit\BGM\NonCombat\NonCombat_BGM_Stop	
 	3661802867	Ob_Fire_SwitchOn_SFX			\Default Work Unit\NonCombat_SFX\Ob_Fire_SwitchOn_SFX	
 	3989126589	Ob_Fire_Fire_Amb			\Default Work Unit\NonCombat_SFX\Ob_Fire_Fire_Amb	
 	4038898239	Player_Step_SFX			\Default Work Unit\Player\NonCombat\Player_Step_SFX	

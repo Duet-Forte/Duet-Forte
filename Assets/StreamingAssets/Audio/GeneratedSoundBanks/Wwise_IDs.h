@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID MAINMENU_CLICK_SFX = 1154772126U;
         static const AkUniqueID MAINMENU_HOVER_SFX = 294506560U;
         static const AkUniqueID NONCOMBAT_BGM = 918533349U;
+        static const AkUniqueID NONCOMBAT_BGM_STOP = 2869548328U;
         static const AkUniqueID OB_DOOR_SFX = 4145632761U;
         static const AkUniqueID OB_FIRE_FIRE_AMB = 3989126589U;
         static const AkUniqueID OB_FIRE_IGNITION_SFX = 198066997U;

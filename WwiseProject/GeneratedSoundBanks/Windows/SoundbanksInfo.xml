@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{385B21F1-E788-687E-F0CD-45C806D9120A}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{A3478F69-A873-E94A-1222-CCF1E13086FB}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -140,6 +140,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="2869548328" Name="NonCombat_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4145632761" Name="Ob_Door_SFX" DurationType="OneShot" DurationMin="1.969375" DurationMax="1.969375">
 					<MediaRefs>
 						<MediaRef Id="48994660"/>
@@ -224,7 +225,7 @@
 			<Path>Init.bnk</Path>
 			<Plugins>
 				<Custom>
-					<Plugin Id="130867727" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
+					<Plugin Id="130867727" Name="Meter (SideChain)" LibName="Wwise Meter" LibId="8454147"/>
 				</Custom>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
@@ -304,7 +305,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{6EA33108-697F-3866-643C-1B2B116D6AF4}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{87A9D678-15E3-6844-8F4F-314E24CC6517}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -314,7 +315,7 @@
 				</File>
 				<File Id="167940839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skill_BBB02.wav</ShortName>
-					<CachePath>SFX/Skill_BBB02_F2FE02AE.wem</CachePath>
+					<CachePath>SFX/Skill_BBB02_E8BEDBF4.wem</CachePath>
 				</File>
 				<File Id="171558463" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Timmy_Attack05.wav</ShortName>
@@ -374,7 +375,7 @@
 				</File>
 				<File Id="991299104" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Climax.wav</ShortName>
-					<CachePath>SFX/Climax_07A0A014.wem</CachePath>
+					<CachePath>SFX/Climax_123FF819.wem</CachePath>
 				</File>
 				<File Id="1010775400" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>찌르기.wav</ShortName>
@@ -465,5 +466,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4620B9A1-B758-CCA0-F44C-7D7CC2264310}</FileHash>
+	<FileHash>{ED4CB57D-7106-3C7C-A0EA-EFD9655CB9A4}</FileHash>
 </SoundBanksInfo>
