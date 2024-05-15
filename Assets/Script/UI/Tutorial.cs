@@ -8,11 +8,7 @@ using Unity.VisualScripting;
 public class Tutorial : MonoBehaviour
 {
     [SerializeField] private GameObject layOut;
-    [Header("ȭ�� ������Ʈ")]
-    [Tooltip("�̹������ϰ� Text_TMP�� �ڽ� ������Ʈ�� ���� �־�� ��.")]
     [SerializeField] private GameObject windowPrefab;
-    [Header("ȭ�� ����")]
-    [Tooltip("�� �������� �ִ� 3���� ��µ�.")]
     [SerializeField] private int windowCount;
     [SerializeField] private List<string> describes;
     [SerializeField] private List<Sprite> screenshots;
@@ -26,7 +22,7 @@ public class Tutorial : MonoBehaviour
 
     private void Start()
     {
-        InitSettings();
+       InitSettings();
     }
     public void InitSettings() {
         windows= new GameObject[windowCount];
@@ -35,12 +31,15 @@ public class Tutorial : MonoBehaviour
         {
             maxPage++;
         }
+
         for(int i=0; i<windowCount;i++) {
-            windows[i] = windowPrefab;
+            windows[i] = Instantiate(windowPrefab);
             windows[i].GetComponentInChildren<TMP_Text>().text=describes[i];
-            windows[i].GetComponentInChildren<Image>().sprite=screenshots[i];
+            windows[i].transform.Find("Screenshot").GetComponent<Image>().sprite=screenshots[i];
         }
+        
         Appear(currentPage);
+        StartCoroutine(WaitingForInput());
     }
 
     public void Appear(int currentPage) {
@@ -55,11 +54,18 @@ public class Tutorial : MonoBehaviour
 
         for (int currentIndex = currentPage * MAX_ACTIVE_WINDOW_COUNT; currentIndex < startIndex + MAX_ACTIVE_WINDOW_COUNT; currentIndex++) {
             Debug.Log(currentIndex);
-            GameObject tmp= Instantiate(windows[currentIndex],Vector3.zero,Quaternion.identity);
-            tmp.transform.SetParent(layOut.transform);
+            try
+            {
+                GameObject tmp = Instantiate(windows[currentIndex], Vector3.zero, Quaternion.identity);
+                tmp.transform.SetParent(layOut.transform);
+            }
+            catch {
+            
+            }
+            
         }
-
-        StartCoroutine(WaitingForInput());
+        
+        
 
 
     }
@@ -74,13 +80,17 @@ public class Tutorial : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.J)) { //Next
                 currentPage++;
-                if (currentPage > maxPage)currentPage = maxPage;
+                if (currentPage > maxPage-1)currentPage = maxPage-1;
                 Debug.Log("pressed J");
                 Appear(currentPage);
                 
             }
-            if(currentPage==maxPage&&Input.GetKeyDown(KeyCode.Escape))// out of tutorial
+            if (currentPage == maxPage && Input.GetKeyDown(KeyCode.Escape))
+            { // out of tutorial
+                isTutorial=false;
+            }
             yield return null;
+
         }
         
         }
