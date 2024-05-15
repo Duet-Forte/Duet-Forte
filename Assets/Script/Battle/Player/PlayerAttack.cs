@@ -69,7 +69,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                 return;
             }
             if (attackKey == "B") {
-                battlePresenter.PlayerBasicAttackToEnemy(new Damage(playerAttackStat, timingList.Last(), new PierceDamage()));
+                battlePresenter.PlayerBasicAttackToEnemy(new Damage(playerAttackStat,timingList.Last(), new PierceDamage()));
                 return;
             }
             
@@ -202,6 +202,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             if (inputBuffer.Count == 1) Debug.Log("버퍼에 추가됨");
           
                 inputBuffer.Enqueue(attackKey);
+                checkAttackTiming();
         }
     
     }
@@ -225,13 +226,11 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
 
                 
                 EnqueueAttackBuffer("A");
-                checkAttackTiming();
                 canAttack = false;
             }
             else if (Input.GetKeyDown(KeyCode.J))
             {
                 EnqueueAttackBuffer("B");
-                checkAttackTiming();
                 canAttack = false;
             }
             CheckSkillCommand();
