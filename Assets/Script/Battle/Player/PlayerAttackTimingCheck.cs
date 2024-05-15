@@ -48,7 +48,8 @@ public class PlayerAttackTimingCheck : MonoBehaviour
             }
             else {
                 Debug.Log($"플레이어 공격 : {JudgeName.Bad}");
-                return JudgeName.Bad; }
+                return JudgeName.Bad; 
+            }
            
             
             
