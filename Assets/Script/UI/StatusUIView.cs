@@ -48,6 +48,7 @@ public class StatusUIView : MonoBehaviour, IStageUI
         stageManager.Enemy.OnGuardCounterEnd += guardGaugeUI.ResetGauge;
         stageManager.JudgeManager.OnComboChange -= guardGaugeUI.UpdateGauge;
         stageManager.JudgeManager.OnComboChange += guardGaugeUI.UpdateGauge;
+
     }
 
     private void BindPlayerHealthPointUIEvents(StageManager stageManager)

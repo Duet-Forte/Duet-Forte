@@ -12,21 +12,21 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private int windowCount;
     [SerializeField] private List<string> describes;
     [SerializeField] private List<Sprite> screenshots;
+    [SerializeField] private string[] titles;
+    [SerializeField] private TMP_Text title;
     GameObject[] windows;
     private bool isTutorial=true;
-    private const int minPage=0;
     private int maxPage;
-    private int restWindow;
     private const int MAX_ACTIVE_WINDOW_COUNT = 3;
     private int currentPage = 0; //0으로 시작
 
     private void Start()
     {
-       InitSettings();
+       StartCoroutine(InitSettings());
     }
-    public void InitSettings() {
+    public IEnumerator InitSettings() {
         windows= new GameObject[windowCount];
-        maxPage = windowCount / MAX_ACTIVE_WINDOW_COUNT;
+        maxPage = (windowCount / MAX_ACTIVE_WINDOW_COUNT)-1;
         if (windowCount % MAX_ACTIVE_WINDOW_COUNT > 0)//잔여 window가 있으면 마지막 페이지 추가
         {
             maxPage++;
@@ -39,10 +39,11 @@ public class Tutorial : MonoBehaviour
         }
         
         Appear(currentPage);
-        StartCoroutine(WaitingForInput());
+        yield return StartCoroutine(WaitingForInput());
     }
 
     public void Appear(int currentPage) {
+        title.text = titles[currentPage];
         int startIndex = currentPage * MAX_ACTIVE_WINDOW_COUNT;
         if (layOut.transform.childCount != 0)
         {
@@ -53,7 +54,6 @@ public class Tutorial : MonoBehaviour
         }
 
         for (int currentIndex = currentPage * MAX_ACTIVE_WINDOW_COUNT; currentIndex < startIndex + MAX_ACTIVE_WINDOW_COUNT; currentIndex++) {
-            Debug.Log(currentIndex);
             try
             {
                 GameObject tmp = Instantiate(windows[currentIndex], Vector3.zero, Quaternion.identity);
@@ -74,14 +74,12 @@ public class Tutorial : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F)) { //Prev
                 currentPage--;
                 if(currentPage < 0)currentPage = 0;
-                Debug.Log("pressed F");
                 Appear(currentPage);
                 
             }
             if (Input.GetKeyDown(KeyCode.J)) { //Next
                 currentPage++;
-                if (currentPage > maxPage-1)currentPage = maxPage-1;
-                Debug.Log("pressed J");
+                if (currentPage > maxPage)currentPage = maxPage;
                 Appear(currentPage);
                 
             }
@@ -92,10 +90,10 @@ public class Tutorial : MonoBehaviour
             yield return null;
 
         }
-        
+        DisAppear();
         }
 
-    public void DisAppear(int currentPage){
-
+    private void DisAppear(){
+        Destroy(gameObject);
     }
 }
