@@ -44,6 +44,7 @@ public class StageManager : MonoBehaviour
     private PrepareTurnUI prepareTurnUI;
     private ControlTurnUI turnUI;
     private EnemySignalUI enemySignalUI;
+    private Tutorial tutorialUI;
     #endregion
 
     private PrepareTurn prepareTurn;
@@ -69,6 +70,7 @@ public class StageManager : MonoBehaviour
     public PlayerInterface PlayerInterface { get => playerInterface; }
 
     public PrepareTurnUI PrepareTurnUI { get => prepareTurnUI; set { prepareTurnUI = value; } }
+    public Tutorial TutorialUI { get => tutorialUI; }
     public BattleCamManager BattleCamManager { get => battleCamManager; }
     public BattlePresenter BattlePresenter { get => battlePresenter; }
     public DefenseQTE DefenseQTE { get => defenseQTE; }
@@ -165,7 +167,8 @@ public class StageManager : MonoBehaviour
     {
         GameObject defQTECanvas = Instantiate(Resources.Load<GameObject>("UI/DefenseQTECanvas"));
         defenseQTE = defQTECanvas.GetComponentInChildren<DefenseQTE>(true);
-
+        GameObject tutorialCanvas = Instantiate(Resources.Load<GameObject>(Const.UI_FIRST_TUTORIAL_PATH));
+        tutorialUI = tutorialCanvas.GetComponentInChildren<Tutorial>();
         GameObject enemySignalUIAsGameObject = Instantiate(Resources.Load<GameObject>(Const.UI_ENEMYSIGNAL));
         enemySignalUI =enemySignalUIAsGameObject.GetComponentInChildren<EnemySignalUI>();
         enemySignalUI.InitSettings();
@@ -208,9 +211,6 @@ public class StageManager : MonoBehaviour
         turnHandler[(int)Turn.EnemyTurn] = enemyTurn;
 
         prepareTurn = new PrepareTurn();
-        #region 중간발표용 prepareTurn
-
-        #endregion
         prepareTurn.InitSettings(this);
         turnHandler[(int)Turn.PrepareTurn] = prepareTurn;
 
