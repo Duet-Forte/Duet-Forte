@@ -43,6 +43,7 @@ public class Tutorial : MonoBehaviour
             windows[i] = Instantiate(windowPrefab,gameObject.transform);
             windows[i].GetComponentInChildren<TMP_Text>().text=describes[i];
             windows[i].transform.Find("Screenshot").GetComponent<Image>().sprite=screenshots[i];
+            windows[i].SetActive(false);
         }
         
         Appear(currentPage);
@@ -65,6 +66,7 @@ public class Tutorial : MonoBehaviour
             try
             {
                 GameObject tmp = Instantiate(windows[currentIndex], Vector3.zero, Quaternion.identity,layOut.transform);
+                tmp.SetActive(true);
                 //tmp.transform.SetParent(layOut.transform);
             }
             catch {
