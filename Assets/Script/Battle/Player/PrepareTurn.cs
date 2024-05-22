@@ -57,6 +57,7 @@ public class PrepareTurn :ITurnHandler
         while (elapsedTime <= time)
         {
             elapsedTime += Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.Space)) elapsedTime = time;
             yield return null;
         }
     }
