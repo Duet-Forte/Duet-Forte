@@ -44,7 +44,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     
     #endregion
     // Start is called before the first frame update
-    void Start()
+    public void InitSettins(StageManager stageManager,PlayerAttackTimingCheck playerAttackTimingCheck)
     {
         
         playerSkillSet = GetComponent<SkillSet>();
@@ -52,8 +52,9 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         bpm = Metronome.instance.getStage.BPM;
 
         playerAnimator = GetComponent<PlayerAnimator>();
-        thePlayerAttackTimingCheck = FindObjectOfType<PlayerAttackTimingCheck>();
-        theStageManager = FindObjectOfType<StageManager>();
+        thePlayerAttackTimingCheck = playerAttackTimingCheck;
+        thePlayerAttackTimingCheck.InitSettings();
+        theStageManager = stageManager;
         battlePresenter = theStageManager.BattlePresenter;
         inputBuffer = new Queue<string>();
 

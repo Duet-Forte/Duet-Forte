@@ -15,7 +15,7 @@ public class PlayerAttackTimingCheck : MonoBehaviour
     private bool isMissedInCurrentFrame; 
     private int earlyCount;
     #endregion
-    void Start()
+    public void InitSettings()
     {
         theStageManager = FindObjectOfType<StageManager>();
         badJudgeTime = Const.BAD_JUDGE * theStageManager.SecondsPerBeat;
@@ -88,9 +88,5 @@ public class PlayerAttackTimingCheck : MonoBehaviour
     
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
