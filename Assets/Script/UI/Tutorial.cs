@@ -7,43 +7,52 @@ using Unity.VisualScripting;
 
 public class Tutorial : MonoBehaviour
 {
-    [SerializeField] private GameObject layOut;
-    [Header("ȭ�� ������Ʈ")]
-    [Tooltip("�̹������ϰ� Text_TMP�� �ڽ� ������Ʈ�� ���� �־�� ��.")]
+    
     [SerializeField] private GameObject windowPrefab;
-    [Header("ȭ�� ����")]
-    [Tooltip("�� �������� �ִ� 3���� ��µ�.")]
     [SerializeField] private int windowCount;
     [SerializeField] private List<string> describes;
     [SerializeField] private List<Sprite> screenshots;
+    [SerializeField] private string[] titles;
+    private TMP_Text title;
+    [SerializeField] private GameObject pack;
+    private TMP_Text pageNumber;
     GameObject[] windows;
+    private GameObject layOut;
     private bool isTutorial=true;
-    private const int minPage=0;
     private int maxPage;
-    private int restWindow;
     private const int MAX_ACTIVE_WINDOW_COUNT = 3;
     private int currentPage = 0; //0으로 시작
-
-    private void Start()
-    {
-        InitSettings();
-    }
-    public void InitSettings() {
-        windows= new GameObject[windowCount];
-        maxPage = windowCount / MAX_ACTIVE_WINDOW_COUNT;
+    private TMP_Text exitScript;
+    
+    
+    
+    public IEnumerator InitSettings() {
+        pack.SetActive(true);
+        layOut = pack.transform.Find("Layout").gameObject;
+        title = pack.transform.Find("Title").GetComponent<TMP_Text>();
+        pageNumber = pack.transform.Find("PageNumber").GetComponent<TMP_Text>();
+        exitScript = pack.transform.Find("ExitScript").GetComponent<TMP_Text>();
+        windows = new GameObject[windowCount];
+        maxPage = (windowCount / MAX_ACTIVE_WINDOW_COUNT)-1;
         if (windowCount % MAX_ACTIVE_WINDOW_COUNT > 0)//잔여 window가 있으면 마지막 페이지 추가
         {
             maxPage++;
         }
+
         for(int i=0; i<windowCount;i++) {
-            windows[i] = windowPrefab;
+            windows[i] = Instantiate(windowPrefab,gameObject.transform);
             windows[i].GetComponentInChildren<TMP_Text>().text=describes[i];
-            windows[i].GetComponentInChildren<Image>().sprite=screenshots[i];
+            windows[i].transform.Find("Screenshot").GetComponent<Image>().sprite=screenshots[i];
+            windows[i].SetActive(false);
         }
+        
         Appear(currentPage);
+        yield return StartCoroutine(WaitingForInput());
+        exitScript.gameObject.SetActive(false);
     }
 
-    public void Appear(int currentPage) {
+    private void Appear(int currentPage) {
+        title.text = titles[currentPage];
         int startIndex = currentPage * MAX_ACTIVE_WINDOW_COUNT;
         if (layOut.transform.childCount != 0)
         {
@@ -54,12 +63,20 @@ public class Tutorial : MonoBehaviour
         }
 
         for (int currentIndex = currentPage * MAX_ACTIVE_WINDOW_COUNT; currentIndex < startIndex + MAX_ACTIVE_WINDOW_COUNT; currentIndex++) {
-            Debug.Log(currentIndex);
-            GameObject tmp= Instantiate(windows[currentIndex],Vector3.zero,Quaternion.identity);
-            tmp.transform.SetParent(layOut.transform);
+            try
+            {
+                GameObject tmp = Instantiate(windows[currentIndex], Vector3.zero, Quaternion.identity,layOut.transform);
+                tmp.SetActive(true);
+                //tmp.transform.SetParent(layOut.transform);
+            }
+            catch {
+            
+            }
+            
         }
+        pageNumber.text = (currentPage+1) + "/" + (maxPage+1);
 
-        StartCoroutine(WaitingForInput());
+
 
 
     }
@@ -67,25 +84,31 @@ public class Tutorial : MonoBehaviour
         while (isTutorial) {
             if (Input.GetKeyDown(KeyCode.F)) { //Prev
                 currentPage--;
+                exitScript.gameObject.SetActive(false);
                 if(currentPage < 0)currentPage = 0;
-                Debug.Log("pressed F");
                 Appear(currentPage);
                 
             }
             if (Input.GetKeyDown(KeyCode.J)) { //Next
                 currentPage++;
-                if (currentPage > maxPage)currentPage = maxPage;
-                Debug.Log("pressed J");
+                if(currentPage == maxPage) exitScript.gameObject.SetActive(true); //마지막 페이지에 esc 설명 띄우기
+                if (currentPage > maxPage) { 
+                    currentPage = maxPage; 
+                }
                 Appear(currentPage);
                 
             }
-            if(currentPage==maxPage&&Input.GetKeyDown(KeyCode.Escape))// out of tutorial
+            if (currentPage == maxPage && Input.GetKeyDown(KeyCode.Escape))
+            { // out of tutorial
+                isTutorial=false;
+            }
             yield return null;
+
         }
-        
+        DisAppear();
         }
 
-    public void DisAppear(int currentPage){
-
+    private void DisAppear(){
+        Destroy(gameObject);
     }
 }

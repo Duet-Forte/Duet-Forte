@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using Util.CustomEnum;
 
+
 public class PrepareTurn :ITurnHandler
 {
     private StageManager stageManager;
@@ -10,6 +11,7 @@ public class PrepareTurn :ITurnHandler
     private PrepareTurnUI prepareTurnUI;
     private float UIDesolveTime;
     ControlTurnUI turnUI;
+    private Tutorial tutorial;
     public void InitSettings(StageManager stageManager)
     {
         //this.prepareTurnUI = prepareTurnUI;
@@ -17,6 +19,7 @@ public class PrepareTurn :ITurnHandler
         prepareTurnUI = stageManager.PrepareTurnUI;
         turnUI = stageManager.TurnUI;
         UIDesolveTime = 0.8f;
+        tutorial = stageManager.TutorialUI;
         
     }
     //
@@ -27,6 +30,12 @@ public class PrepareTurn :ITurnHandler
         turnUI.AppearanceTurnUI(stageManager.TurnCount);
         Debug.Log(prepareTurnUI.AppearSkillUI());
         prepareTurnUI.UISwitch(true);
+        //if(PlayerPrefs.)
+        yield return Timer(3f);
+        if (tutorial != null)
+        {
+            yield return tutorial.InitSettings();
+        }
         yield return null;
     }
 
@@ -48,6 +57,7 @@ public class PrepareTurn :ITurnHandler
         while (elapsedTime <= time)
         {
             elapsedTime += Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.Space)) elapsedTime = time;
             yield return null;
         }
     }

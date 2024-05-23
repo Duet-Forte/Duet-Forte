@@ -57,7 +57,7 @@ namespace Util
         public const string ENEMY_VFX_PATH = "VFX/VFX_Prefab/Combat/Enemy/";
 
         public const string UI_STATUS_CANVAS_PATH = "UI/Status/UI_ParryGauge_Gauge01_Canvas";
-
+        public const string UI_FIRST_TUTORIAL_PATH = "UI/Tutorial";
         #endregion
 
         #region UI 연출 변수
