@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 155052783}
   - component: {fileID: 155052785}
   - component: {fileID: 155052786}
+  - component: {fileID: 155052787}
   m_Layer: 0
   m_Name: Stage Manager
   m_TagString: Untagged
@@ -430,6 +431,18 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &155052787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155052782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c42cb6d18fd7aa4fa04ee4f5823996f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &185696487
 GameObject:
   m_ObjectHideFlags: 0

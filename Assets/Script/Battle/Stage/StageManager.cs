@@ -114,9 +114,9 @@ public class StageManager : MonoBehaviour
         isStageOver = false;
         SetUI();
         SpawnEnemy(enemyName);// 지정된 위치에 소환
-        SpawnPlayer(skillSet);
         battlePresenter = new GameObject("BattlePresenter").AddComponent<BattlePresenter>();
         battlePresenter.InitSettings(this);
+        SpawnPlayer(skillSet);
         InitObjectsSettings();
         UIManager = new UIManager();
         UIManager.StartStage(this);
@@ -153,6 +153,8 @@ public class StageManager : MonoBehaviour
         playerInterface = player.GetComponent<PlayerInterface>();
         playerInterface.PlayerStatus.InitSetting();
         playerInterface.PlayerSkillSet.InitSettings(skillSet);
+        battlePresenter.InitSettings(this);
+        playerInterface.PlayerAttack.InitSettins(this,GetComponent<PlayerAttackTimingCheck>());
     }
     private void SpawnEnemy(string enemyName)
     {
