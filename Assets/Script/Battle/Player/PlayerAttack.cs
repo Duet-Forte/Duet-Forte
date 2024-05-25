@@ -150,7 +150,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         
         for (int i = 0; i < currentSkill.damage.Length; i++) { 
         yield return new WaitForSeconds(currentSkill.waitTimes[i]);
-            battlePresenter.PlayerSkillToEnemy(new Damage(currentSkill.damage[i], currentSkill.damageType[i]?new SlashDamage():new PierceDamage()));
+            battlePresenter.PlayerSkillToEnemy(new Damage(currentSkill.damage[i]*playerAttackStat, currentSkill.damageType[i]?new SlashDamage():new PierceDamage()));
         }
 
     }
