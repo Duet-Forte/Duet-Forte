@@ -14,7 +14,7 @@ public class PrepareTurn :ITurnHandler
     private Tutorial tutorial;
     public void InitSettings(StageManager stageManager)
     {
-        //this.prepareTurnUI = prepareTurnUI;
+       
         this.stageManager = stageManager;
         prepareTurnUI = stageManager.PrepareTurnUI;
         turnUI = stageManager.TurnUI;
@@ -22,15 +22,15 @@ public class PrepareTurn :ITurnHandler
         tutorial = stageManager.TutorialUI;
         
     }
-    //
+    
     public IEnumerator TurnStart()
     {
         Debug.Log("PrepareTurn");
-        //yield return new WaitUntil(() => prepareTurnUI.PopUpSkillUI()!=null);
+        
         turnUI.AppearanceTurnUI(stageManager.TurnCount);
         Debug.Log(prepareTurnUI.AppearSkillUI());
         prepareTurnUI.UISwitch(true);
-        //if(PlayerPrefs.)
+        //게임에서 한 번만 제공
         yield return Timer(3f);
         if (tutorial != null)
         {

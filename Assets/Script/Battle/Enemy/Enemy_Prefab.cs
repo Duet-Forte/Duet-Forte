@@ -130,6 +130,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         patternLength = patternArray.Length;
         uiSound.SignalSound(gameObject,true);
 
+
         Metronome.instance.OnBeating += StartDisplay;
 
         yield return new WaitUntil(()=> isSignalEnd);
