@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 4179695466896532397}
   - component: {fileID: 4179695466896532398}
   - component: {fileID: 6221655492839172682}
+  - component: {fileID: 6138570494123811542}
   m_Layer: 3
-  m_Name: CutscenePlayer
+  m_Name: Zio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,5 +118,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb3d9a0dd964302409203462f834322a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6138570494123811542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4179695466896532400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5a2d9662a12f94bbb314d7992a2022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

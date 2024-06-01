@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Util
 {
     public static class Const
@@ -72,6 +74,14 @@ namespace Util
 
         #region 메뉴 UI 변수
         public const int CONTENT_IN_ROW = 3;
+        #endregion
+
+        #region 애니메이터 해시
+        public static int dustHash = Animator.StringToHash("Dust");
+        public static int angryHash = Animator.StringToHash("Angry");
+        public static int surpriseHash = Animator.StringToHash("Surprise");
+        public static int dumbHash = Animator.StringToHash("Dumbfounded");
+        public static int questionHash = Animator.StringToHash("Question");
         #endregion
     }
 }

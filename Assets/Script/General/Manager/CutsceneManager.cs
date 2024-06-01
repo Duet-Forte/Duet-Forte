@@ -26,7 +26,7 @@ public class CutsceneManager : MonoBehaviour
             cutsceneDictionary.Add(cutscene.name, cutscene);
         }
         StartCutscene("TimmyHouse");
-        cutscenePlayer = SceneManager.Instance.FieldManager.Field.GetCutsceneObject("CutscenePlayer");
+        cutscenePlayer = SceneManager.Instance.FieldManager.Field.GetCutsceneObject("Zio");
         GameObject pitch = SceneManager.Instance.FieldManager.Field.GetCutsceneObject("Pitch");
         GameObject timmy = SceneManager.Instance.FieldManager.Field.GetCutsceneObject("Timmy");
         BindCutscene(director, "Player", cutscenePlayer);

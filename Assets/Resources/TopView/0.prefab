@@ -1688,9 +1688,13 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 153567263
       objectReference: {fileID: 0}
+    - target: {fileID: 4179695466896532398, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1e9307c6578596c43862cd870a7ca375, type: 2}
     - target: {fileID: 4179695466896532400, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_Name
-      value: CutscenePlayer
+      value: Zio
       objectReference: {fileID: 0}
     - target: {fileID: 4179695466896532400, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_IsActive
@@ -1981,7 +1985,7 @@ PrefabInstance:
     - target: {fileID: 9002746828571633424, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: 1e9307c6578596c43862cd870a7ca375, type: 2}
     - target: {fileID: 9002746828571633425, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_Name
       value: Timmy

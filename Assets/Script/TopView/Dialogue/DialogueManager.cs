@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using Febucci.UI;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Util.CustomEnum;
@@ -48,17 +49,41 @@ public class DialogueManager
 
         window.SetActive(true);
         Dialogue dialogue = DataBase.Instance.Dialogue.GetDialogue(speakerName, id);
-        await WaitKeyInput(dialogue);
+        
+        await WaitKeyInput(dialogue, speakerName == "Cutscene");
     }
 
-    private async UniTask WaitKeyInput(Dialogue dialogue)
+    private async UniTask WaitKeyInput(Dialogue dialogue, bool isCutscene)
     {
         for(int i = 0; i < dialogue.Lines.Length; i++) 
         {
+            dialogue.Speaker = dialogue.Speakers[i];
+            if (dialogue.Events[i].assignChecker == -1)
+            {
+                TopViewEventController controller = new TopViewEventController();
+                if(isCutscene)
+                    controller = SceneManager.Instance.FieldManager.Field.GetCutsceneObject(dialogue.Speaker).GetComponent<TopViewEventController>();
+                else if (dialogue.Speaker == "Zio")
+                    controller = SceneManager.Instance.FieldManager.Player.GetComponent<TopViewEventController>();
+                else
+                {
+                    InteractableObject eventTarget = SceneManager.Instance.FieldManager.Field.GetEntity(dialogue.Speaker) as InteractableObject;
+                    controller = eventTarget.Controller;
+                }
+                controller.InitSettings();
+                switch (dialogue.Events[i].type)
+                {
+                    case Util.CustomEnum.EventType.Emotion:
+                        controller.PlayEvent(dialogue.Events[i].trigger);
+                        break;
+                    default:
+                        break;
+                }
+                continue;
+            }
             characterSprite.enabled = true;
             typewriter.ShowText(dialogue.Lines[i]);
-            dialogue.Speaker = dialogue.Speakers[i];
-            if(dialogue.Speaker != null)
+            if (dialogue.Speaker != null)
             {
                 talkerName.text = dialogue.Speaker.Split('/')[0];
                 if (talkerName.text == "Empty")

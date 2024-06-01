@@ -50,5 +50,10 @@ namespace Util
             Interact
         }
 
+        public enum EventType
+        { 
+            None,
+            Emotion
+        }
     }
 }

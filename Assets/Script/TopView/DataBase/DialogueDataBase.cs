@@ -40,14 +40,13 @@ public class DialogueDataBase
 
             if (tempDic["ID"] != string.Empty && column != currentStart)
             {
-                dialogueList.Add(new Dialogue(id, lines.ToArray()));
+                dialogueList.Add(new Dialogue(lines.ToArray()));
                 recentSpeaker = "Empty";
                 recentState = string.Empty;
                 lines.Clear();
                 ++id;
             }
             sb.Append(tempDic["Lines"]);
-
             if (tempDic["Speaker"] != string.Empty)
             {
                 recentSpeaker = tempDic["Speaker"];
@@ -56,11 +55,26 @@ public class DialogueDataBase
             else if (tempDic["State"] != string.Empty)
                 recentState = tempDic["State"];
 
-            sb.Append(';' + recentSpeaker + '/' + recentState);
+            if (tempDic["Event"] == string.Empty)
+            {
+                sb.Append(';');
+                sb.Append(recentSpeaker);
+                sb.Append('/');
+                sb.Append(recentState);
+            }
+            else
+            {
+                sb.Append(';');
+                sb.Append(recentSpeaker);
+                sb.Append(';');
+                sb.Append(tempDic["Event"]);
+                sb.Append('/');
+                sb.Append(tempDic["EventName"]);
+            }
             lines.Add(sb.ToString());
             sb.Clear();
         }
-        dialogueList.Add(new Dialogue(id, lines.ToArray()));
+        dialogueList.Add(new Dialogue(lines.ToArray()));
         dialogues[currentFieldId].Add(data[currentStart]["Interactable"], dialogueList.ToArray());
     }
 
