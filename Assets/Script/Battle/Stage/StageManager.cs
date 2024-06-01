@@ -176,7 +176,7 @@ public class StageManager : MonoBehaviour
         enemySignalUI.InitSettings();
         EnemySignalUI = enemySignalUI;
 
-       
+        
 
     }
     public void OnEnemyDie()

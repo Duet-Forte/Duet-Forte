@@ -27,10 +27,17 @@ namespace Director
             target.transform.DOShakePosition(0.3f, 0.5f, 100, 30);
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="duration">진동 시간</param>
+        /// <param name="strength">진동 강도</param>
+        /// <param name="vibrato">얼마나 흔들릴지</param>
+        /// <param name="randomness">흔들리는 방향 0~180 90보다 크면 보기 안좋다나 뭐라나</param>
         public void CameraShake(float duration, float strength,int vibrato,float randomness) {
             ICinemachineCamera currentCam= CinemachineCore.Instance.GetActiveBrain(0).ActiveVirtualCamera;
             GameObject camera=currentCam.VirtualCameraGameObject;
-            camera.transform.DOShakePosition(duration, strength, vibrato, randomness);
+            camera.transform.DOShakePosition(duration, strength, vibrato, randomness,false,false,ShakeRandomnessMode.Harmonic);
         }
         public void SlowMotion(float duration) {
             int normalTimeSpeed = 1;

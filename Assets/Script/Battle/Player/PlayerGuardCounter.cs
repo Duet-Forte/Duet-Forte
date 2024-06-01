@@ -14,7 +14,7 @@ public class PlayerGuardCounter : MonoBehaviour
     float playerAttackStat;
     GuardCounterQTE guardCounterQTE;
     JudgeName guardCounterJudge;
-    float hitDelay = 0.45f;
+    float guardCounterDelay = 5f;
     private void Start()
     {
         guardCounterQTE = Instantiate(Resources.Load<GameObject>("UI/GuardCounterQTE"))
@@ -52,13 +52,13 @@ public class PlayerGuardCounter : MonoBehaviour
         guardCounterJudge = guardCounterQTE.GetQTEJudge;
         if (guardCounterJudge != JudgeName.Miss)
         {
+            guardCounterDelay = 5f;
             battlePresenter.GuardCounterToEnemy(new Damage(playerAttackStat, guardCounterJudge,new GuardCounterDamage()));
             playerSoundSet.PlayerGuardCounter(gameObject);
             GetComponent<PlayerAnimator>().guardCount();
         }
-        yield return new WaitForSeconds(hitDelay);
-
-        yield return new WaitForSeconds(4.5f);
+        if (guardCounterJudge == JudgeName.Miss) { guardCounterDelay = 0f; }
+        yield return new WaitForSeconds(guardCounterDelay);
         yield return null;
     }
 
