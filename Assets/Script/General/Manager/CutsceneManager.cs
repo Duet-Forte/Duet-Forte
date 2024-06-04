@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
+using Util;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -32,8 +33,8 @@ public class CutsceneManager : MonoBehaviour
         BindCutscene(director, "Player", cutscenePlayer);
         BindCutscene(director, "Pitch", pitch);
         BindCutscene(director, "Timmy", timmy);
-        BindCutscene(director, "Camera", Camera.main.gameObject);
-        SceneManager.Instance.FieldManager.Field.SetCameraPath(SceneManager.Instance.CameraManager.CutsceneCamera, "Tutorial");
+        BindCutscene(director, "Camera", SceneManager.Instance.FieldManager.Field.CutsceneCam.gameObject);
+        SceneManager.Instance.FieldManager.Field.SetCameraPath("Tutorial");
         isReachedLoopEndPoint = false;
         director.Play();
     }
@@ -56,6 +57,7 @@ public class CutsceneManager : MonoBehaviour
         DialogueManager.Instance.SkipDialogue();
         cutscenePlayer.SetActive(false);
         SceneManager.Instance.FieldManager.SpawnPlayer(cutscenePlayer.transform.position);
+        SceneManager.Instance.CameraManager.SetFollowCamera();
     }
     public void Loop()
     {
@@ -113,8 +115,6 @@ public class CutsceneManager : MonoBehaviour
 
     public void PlaySound(string name)
     {
-        AkSoundEngine.PostEvent("NonCombat_BGM_Stop", gameObject);
-        AkSoundEngine.SetSwitch("NonCombatBGM", name, gameObject);
-        AkSoundEngine.PostEvent("NonCombat_BGM", gameObject);
+        SceneManager.Instance.MusicChanger.SetMusic(name);
     }
 }

@@ -88,6 +88,7 @@ namespace Util
 
         #region ·¹ÀÌ¾î
         public static int PLAYER_LAYER = LayerMask.NameToLayer("Player");
+        public static int WARPED_PLAYER_LAYER = LayerMask.NameToLayer("WarpedPlayer");
         #endregion
     }
 

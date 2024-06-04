@@ -14,10 +14,11 @@ public class FieldManager
     public GameObject Player { get {return player;} }
     public event Action<int> onFieldIDChange;
 
-    public void InitSettings()
+    public FieldManager()
     {
         fieldPrefabs = new Dictionary<int, GameObject>();
         BindEvent();
+        ID = 0;
     }
     public void SpawnPlayer(Vector2 spawnPoint)
     {
