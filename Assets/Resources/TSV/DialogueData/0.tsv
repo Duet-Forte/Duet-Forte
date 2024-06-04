@@ -66,3 +66,5 @@ Cutscene	0	Zio			Emotion	Dust	현재 VFX 시간보다 더 길게 유지해 주�
 		Timmy	Happy	우선 작은 몬스터로 연습을 더 해보자.<br>아니면 마을 구경을 하는 건 어때?			
 		Zio	Default	제가 아직은 혼란스러워서요. 잠시 혼자 있어도 될까요?			
 		Timmy	Default	응. 날 만나려면 여기로 다시 찾아와!			
+Sample	0			테스트 스크립트 입니다! 확인하시면 문앞으로 가주세요~			
+	1			성공적으로 퀘스트 완료 처리가 되었습니다!			

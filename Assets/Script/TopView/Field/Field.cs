@@ -41,6 +41,7 @@ public class Field : MonoBehaviour
             for(int tempChildID = 0; tempChildID < temp.childCount; ++tempChildID)
             {
                 GameObject enemy = Instantiate(enemyPrefab);
+                enemy.name = enemyName;
                 tempEnemies[tempChildID] = enemy.GetComponent<TopViewEntity>();
                 Vector2 enemySpawnPoint = temp.GetChild(tempChildID).position;
 

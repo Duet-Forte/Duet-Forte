@@ -31,7 +31,6 @@ public class SceneManager : MonoBehaviour
     {
         InitSetting();
     }
-
     private void InitSetting()
     {
         if (instance != null)

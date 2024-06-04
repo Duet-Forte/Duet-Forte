@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Util
@@ -16,6 +17,7 @@ namespace Util
         public const float GREAT_JUDGE = 0.3f;
         public const float PERFECT_JUDGE = 0.2f;
         #endregion
+
         #region 스탯관련
         public const int GUARD_COUNTER_GAUGE = 20;
         public const int PERFECT_ICREASE_GAUAGE = 15;
@@ -83,5 +85,22 @@ namespace Util
         public static int dumbHash = Animator.StringToHash("Dumbfounded");
         public static int questionHash = Animator.StringToHash("Question");
         #endregion
+
+        #region 레이어
+        public static int PLAYER_LAYER = LayerMask.NameToLayer("Player");
+        #endregion
+    }
+
+    public static class Method
+    { 
+        public static T GetOrAddComponent<T>(Transform transform) where T : Component
+        {
+            T temp = transform.GetComponent<T>();
+            if (temp == null) 
+            { 
+                temp = transform.AddComponent<T>();
+            }
+            return temp;
+        }
     }
 }

@@ -44,13 +44,16 @@ public class CutsceneManager : MonoBehaviour
     public async void Talk()
     {
         isTalking = true;
-        await DialogueManager.Instance.Talk("Cutscene", currentCutsceneID);
-        ++currentCutsceneID;
+        await DialogueManager.Instance.Talk("Cutscene");
+        DataBase.Instance.Dialogue.SetID("Cutscene", ++currentCutsceneID);
         isTalking = false;
         director.Play();
     }
+    [ContextMenu("DEBUG/SpawnPlayer")]
     public void SpawnPlayer()
     {
+        director.Stop();
+        DialogueManager.Instance.SkipDialogue();
         cutscenePlayer.SetActive(false);
         SceneManager.Instance.FieldManager.SpawnPlayer(cutscenePlayer.transform.position);
     }
