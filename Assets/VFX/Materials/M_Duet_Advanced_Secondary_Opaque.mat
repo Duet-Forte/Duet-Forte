@@ -10,15 +10,16 @@ Material:
   m_Name: M_Duet_Advanced_Secondary_Opaque
   m_Shader: {fileID: -6465566751694194690, guid: 1de76cd93aa69b4409bdd1707da0b181, type: 3}
   m_ValidKeywords:
-  - _ALPHATEST_ON
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2450
+  m_CustomRenderQueue: 3000
   stringTagMap:
-    RenderType: TransparentCutout
-  disabledShaderPasses: []
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -44,21 +45,21 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClip: 1
+    - _AlphaClip: 0
     - _BackFaceRender: 0
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 0
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _Offset_Secondary_switch: 0
     - _Offset_switch: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Softparticlefactor_data: 0
-    - _SrcBlend: 1
-    - _Surface: 0
+    - _SrcBlend: 5
+    - _Surface: 1
     - _ZTest: 8
-    - _ZWrite: 1
+    - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
     - _Main_Offset: {r: 0, g: 0, b: 0, a: 0}
