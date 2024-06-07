@@ -55,6 +55,13 @@
 						<Property Name="GainBand1" Type="Real32" Value="2.5"/>
 					</PropertyList>
 				</Effect>
+				<Effect Name="EQ" ID="{6349E92A-7A82-41FC-8751-38B0E5DFE244}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FrequencyBand3" Type="Real32" Value="6348"/>
+						<Property Name="GainBand3" Type="Real32" Value="-6.5"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="New_Compressor" ID="{16BDC5B9-9802-41EA-924D-874D6527230C}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>

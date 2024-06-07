@@ -315,6 +315,32 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="UI" ID="{6F27945D-6A2C-471B-BCC4-2D7EF8157F6F}" ShortID="852693471">
+					<ChildrenList>
+						<Event Name="Transition_FadeIn" ID="{FE4ACF74-6374-4BE4-AAC3-B5E244B42F3A}">
+							<ChildrenList>
+								<Action Name="" ID="{D4136EFF-9FCD-4FBE-A9DC-C23B95EDF38D}" ShortID="340405597">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Transition_FadeIn" ID="{F2C3B003-6EB7-4881-913C-6693716D5A73}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Transition_FadeOut" ID="{1FB34ED6-95D1-4E79-9CD7-E7CA6BEA421C}">
+							<ChildrenList>
+								<Action Name="" ID="{48E11CBF-42DE-4DD3-B8E5-40722D976CE9}" ShortID="79388233">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Transition_FadeOut" ID="{775FBD8F-15A1-404D-B773-C0FDEC8C8FD7}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

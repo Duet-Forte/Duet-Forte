@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{A3478F69-A873-E94A-1222-CCF1E13086FB}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{9E6D75C3-2C38-FC65-20D8-36E1AADAE650}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -32,6 +32,10 @@
 				<File Id="225295536" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Typing01.wav</ShortName>
 					<CachePath>SFX/Typing01_818F3B66.wem</CachePath>
+				</File>
+				<File Id="270105021" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Transition_FadeOut.wav</ShortName>
+					<CachePath>SFX/Transition_FadeOut_818F3B66.wem</CachePath>
 				</File>
 				<File Id="327002089" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Typing02.wav</ShortName>
@@ -64,6 +68,10 @@
 				<File Id="527714309" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Grass03.wav</ShortName>
 					<CachePath>SFX/FootStep_Grass03_818F3B66.wem</CachePath>
+				</File>
+				<File Id="586961463" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Transition_FadeIn.wav</ShortName>
+					<CachePath>SFX/Transition_FadeIn_818F3B66.wem</CachePath>
 				</File>
 				<File Id="594152026" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>마을 0506.wav</ShortName>
@@ -118,6 +126,12 @@
 					<CachePath>SFX/FootStep_Dirt03_818F3B66.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="1819748223" Name="EQ" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="3160090811" Name="New_Compressor" LibName="Wwise Compressor" LibId="7077891"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
 				<Event Id="2299963368" Name="Gio_BodyFall_SFX" DurationType="OneShot" DurationMin="5.1996665" DurationMax="5.1996665">
 					<MediaRefs>
@@ -195,6 +209,16 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="544226120" Name="Transition_FadeIn" DurationType="OneShot" DurationMin="1.5126458" DurationMax="1.5126458">
+					<MediaRefs>
+						<MediaRef Id="586961463"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1873933263" Name="Transition_FadeOut" DurationType="OneShot" DurationMin="1.5126458" DurationMax="1.5126458">
+					<MediaRefs>
+						<MediaRef Id="270105021"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1024104135" Name="Ui_Typing_SFX" DurationType="OneShot" DurationMin="0.1329375" DurationMax="0.22704166">
 					<MediaRefs>
 						<MediaRef Id="225295536"/>
@@ -202,6 +226,12 @@
 						<MediaRef Id="377896432"/>
 						<MediaRef Id="504031559"/>
 					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="1819748223"/>
+							<PluginRef Id="3160090811"/>
+						</ShareSets>
+					</PluginRefs>
 				</Event>
 			</Events>
 			<SwitchGroups>
@@ -220,7 +250,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{24941A5F-233B-42DF-AC36-9FE933E94C2D}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{258EF8E1-0BC3-1BC9-F6F4-CE317DF7B170}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -305,7 +335,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{87A9D678-15E3-6844-8F4F-314E24CC6517}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{93B0ED36-2E55-F83C-0420-767680846B6B}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -466,5 +496,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D670B5E4-9747-40C9-B8CF-D0984E205C37}</FileHash>
+	<FileHash>{6E7108C9-BAC5-ED7C-BDE2-B9A78EEF525A}</FileHash>
 </SoundBanksInfo>

@@ -37,8 +37,11 @@
 						<ObjectRef Name="NonCombat_BGM" ID="{575C244A-0600-4857-8FB1-38C422D374DA}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ui_Typing_SFX" ID="{F3D82A3E-91A5-487D-A508-CCF578006146}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ob_Fire_SwitchOn_SFX" ID="{9E465848-C42E-4AC2-99D6-68BE1934963E}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Transition_FadeIn" ID="{FE4ACF74-6374-4BE4-AAC3-B5E244B42F3A}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="NonCombat_BGM_Stop" ID="{84301470-64BF-4C0B-9F16-1C6E537F6A82}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Step_SFX" ID="{2175E7C5-DBE4-4C7E-8B5F-D1285725AA69}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ob_Fire_Ignition_SFX" ID="{3BBD899A-CE29-4CB5-B91F-5F34CB3DA146}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Transition_FadeOut" ID="{1FB34ED6-95D1-4E79-9CD7-E7CA6BEA421C}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

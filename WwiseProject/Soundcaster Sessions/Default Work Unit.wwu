@@ -12,8 +12,9 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Wood" ID="{E7BEFA96-7BB0-4C03-A005-3665BF6C9B6C}"/>
+						<CurrentSwitchRef Name="Dirt" ID="{9529130D-6599-413E-8375-62BA0F2F9BEB}"/>
 						<CurrentSwitchRef Name="StageEnd" ID="{F303DAA7-5840-49CF-ABC5-817F363683C0}"/>
+						<CurrentSwitchRef Name="TimmyHouse" ID="{AF486976-B369-49A0-A087-CBEBE15D4E19}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
