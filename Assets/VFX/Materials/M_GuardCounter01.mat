@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_GuardCounter01
-  m_Shader: {fileID: -6465566751694194690, guid: 639e266fe4aa02c4d92046d65cd6896e,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 639e266fe4aa02c4d92046d65cd6896e, type: 3}
   m_ValidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
