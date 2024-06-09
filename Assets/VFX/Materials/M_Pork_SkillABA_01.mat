@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6509881817413425682
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Trail
+  m_Name: M_Pork_SkillABA_01
   m_Shader: {fileID: -6465566751694194690, guid: b32c21fdb0d721c4888ebded324f4627, type: 3}
   m_ValidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
@@ -15,16 +28,17 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
   - DepthOnly
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _Distortion_Guide:
-        m_Texture: {fileID: 2800000, guid: 9cb96b64b7ecdb143af080c1159ac361, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2850d31b75bda29448da8df44c9cd158, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Gradient_map:
@@ -32,19 +46,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _InsubTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 760d034daf5b4c54f87d58efbf60d876, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 75de5221160a7e140a9901b9e0471914, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3efc7cb7eb36a28489250116fdbda472, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
-        m_Texture: {fileID: 2800000, guid: 1630518295182254cae502e3183f5c06, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: b31095141790db6469ea9420ac1303d0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -62,21 +76,23 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _BackFaceRender: 1.5
+    - _BackFaceRender: 0
     - _Blend: 0
     - _BurnSize: 0
-    - _CastShadows: 1
+    - _CastShadows: 0
     - _Circle_Mask: 0
     - _Color_Blanding: 0
-    - _Contrast: 1
+    - _Contrast: -0.97
     - _Cull: 0
     - _CustomData_MaintexOffset_X_Y__Cutoff_Z__DistAmount_W__Onoff: 1
     - _Cutoff: 0
-    - _Cutoff_Softness: 0.324
+    - _Cutoff_Softness: 0
     - _Distortion_Amount: 0
     - _DstBlend: 10
-    - _Gradient_map_onoff: 1
-    - _Height: 0
+    - _Gradient_map_onof: 1
+    - _Gradient_map_onoff: 0
+    - _Height: 0.07
+    - _Height_1: 0.07
     - _Inner_Radius: 0
     - _Insubtex_Cutoff: 0
     - _Insubtex_Cutoffsoftness: 0
@@ -84,50 +100,37 @@ Material:
     - _Length_Scale: 0
     - _Outer_Radius: 0
     - _Polar_Coordinate: 0
-    - _Power: 2.98
+    - _Power: 1.79
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Ractangle_Mask: 1
+    - _Ractangle_Mask: 0
     - _Radial_Scale: 0
     - _Rotate: 0
     - _Smoothness: 0
-    - _Smoothness_1: 0.05
+    - _Smoothness_1: 0.4
     - _SrcBlend: 5
     - _Surface: 1
     - _UV_R_ON_OFF: 1
-    - _UV_R_power: 0.27
+    - _UV_R_power: 1.89
     - _Use_Insub: 0
-    - _Use_SecondTex: 0
-    - _Width: 0.04
+    - _Use_SecondTex: 1
+    - _Width: 0.08
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
     - _BurnColor: {r: 1, g: 1, b: 1, a: 0}
-    - _Distortion_Panning: {r: -1.18, g: -0.03, b: 0, a: 0}
+    - _Distortion_Panning: {r: 0, g: 0, b: 0, a: 0}
     - _Distortion_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _InsubColor: {r: 1, g: 0, b: 0, a: 1}
     - _Insub_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Insub_Panning: {r: 0, g: 0, b: 0, a: 0}
     - _Insub_Tiling: {r: 1, g: 1, b: 0, a: 0}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
+    - _MainColor: {r: 0.24313726, g: 0.24313726, b: 0.24313726, a: 0}
     - _MainTex_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _MainTex_Panning: {r: -0.51, g: 0, b: 0, a: 0}
+    - _MainTex_Panning: {r: 0, g: 0, b: 0, a: 0}
     - _MainTex_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Second_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Second_Panning: {r: 0, g: 0, b: 0, a: 0}
-    - _Second_Tiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Second_Panning: {r: 0.94, g: 0, b: 0, a: 0}
+    - _Second_Tiling: {r: -0.61, g: 7.23, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &382542833114200016
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
