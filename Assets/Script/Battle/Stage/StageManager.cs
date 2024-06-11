@@ -120,6 +120,7 @@ public class StageManager : MonoBehaviour
         InitObjectsSettings();
         UIManager = new UIManager();
         UIManager.StartStage(this);
+        LateBindingEvents();
         InitTurnSettings();
         BattleCamSetting();
         StartCoroutine(StageScheduler(startTurn));
@@ -277,6 +278,8 @@ public class StageManager : MonoBehaviour
         judgeManager.OnComboChange += playerInterface.PlayerGuardCounter.CheckCombo;
         playerInterface.PlayerGuardCounter.OnGuardCounterEnd -= judgeManager.ResetCombo;//플레이어 가드카운터의 end이벤트에 구독할 예정
         playerInterface.PlayerGuardCounter.OnGuardCounterEnd += judgeManager.ResetCombo;
+        
+
     }
 
     private void BindEnemyEvents()
@@ -285,6 +288,11 @@ public class StageManager : MonoBehaviour
         enemy.OnFramePass += judgeManager.CheckMissFrame;
         
         
+    }
+
+    private void LateBindingEvents() {
+        playerInterface.PlayerTurn.onBasicAttack -= UIManager.BasciAttackQTEControll;
+        playerInterface.PlayerTurn.onBasicAttack += UIManager.BasciAttackQTEControll;
     }
 
     public void IncreaseTurnCount() {

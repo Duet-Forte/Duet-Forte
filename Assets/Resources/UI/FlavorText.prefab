@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uD2F0\uBBF8"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39740ae2728a06349bc0e64e2f284fd9, type: 2}
-  m_sharedMaterial: {fileID: -3498256964133445719, guid: 39740ae2728a06349bc0e64e2f284fd9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3b604005099bf9447bbb5b1c0f18c1f9, type: 2}
+  m_sharedMaterial: {fileID: 7025719118717319889, guid: 3b604005099bf9447bbb5b1c0f18c1f9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
