@@ -46,16 +46,19 @@ public class UIManager
             damagePool = new DamagePool();
         damagePool.InitSettings(stageManager, canvas);
     }
+
     public void BasciAttackQTEControll(bool button) {
         if (button)
         {
             basicAttackQTE.StartQTE();
         }
-        else { 
+        else {
             basicAttackQTE.EndQTE();
         }
+    }
+
+    public void InitStageClear() { 
         
-    
     }
     private void SetCanvas()
     {

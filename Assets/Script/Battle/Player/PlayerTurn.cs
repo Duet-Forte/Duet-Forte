@@ -250,6 +250,11 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
         isTurnOver = true;
     }
 
+    public void StopActions() {
+        playerAnimator.Idle();
+        StopAllCoroutines();
+    
+    }
 
 
    

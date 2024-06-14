@@ -49,6 +49,14 @@ namespace Util
             Move,
             Interact
         }
-
+        public enum Rank { 
+            S,
+            APlus,
+            A,
+            BPlus,
+            B,
+            C,
+            Empty
+        }
     }
 }

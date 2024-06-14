@@ -78,6 +78,7 @@ public class StageManager : MonoBehaviour
     public ControlTurnUI TurnUI { set => turnUI = value; get => turnUI; }
     public EnemySignalUI EnemySignalUI { get => enemySignalUI; set => enemySignalUI = value; }
     public GameObject BlackBox { get => blackBox; }
+  
     #endregion
     #region 디버깅용
     [SerializeField] public Image[] attackIcon;
@@ -176,9 +177,7 @@ public class StageManager : MonoBehaviour
         enemySignalUI =enemySignalUIAsGameObject.GetComponentInChildren<EnemySignalUI>();
         enemySignalUI.InitSettings();
         EnemySignalUI = enemySignalUI;
-
-        
-
+ 
     }
     public void OnEnemyDie()
     {
@@ -242,6 +241,7 @@ public class StageManager : MonoBehaviour
 
     }
 
+    
 
 
     private void BattleCamSetting()
