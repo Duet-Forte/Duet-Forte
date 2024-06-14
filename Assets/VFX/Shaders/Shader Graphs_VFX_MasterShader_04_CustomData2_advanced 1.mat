@@ -75,7 +75,7 @@ Material:
     - _Cutoff_Softness: 0
     - _Distortion_Amount: -0.16
     - _DstBlend: 10
-    - _Gauge: -0.1
+    - _Gauge: 0.636
     - _Gradient_map_onoff: 0
     - _Height: 0.54
     - _Inner_Radius: 0
