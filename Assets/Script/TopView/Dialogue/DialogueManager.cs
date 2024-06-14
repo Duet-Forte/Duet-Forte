@@ -60,7 +60,11 @@ public class DialogueManager
         for (int i = 0; i < dialogue.Lines.Length; i++)
         {
             dialogue.Speaker = dialogue.Speakers[i];
-            if (dialogue.Events[i].assignChecker == -1)
+            if (dialogue.Events[i] == null)
+            {
+                // 이벤트가 없으면 그냥 넘어가~
+            }
+            else if (dialogue.Events[i].type == Util.CustomEnum.EventType.Emotion)
             {
                 TopViewEventController controller;
                 if (isCutscene)
@@ -73,14 +77,13 @@ public class DialogueManager
                     controller = eventTarget.Controller;
                 }
                 controller.InitSettings();
-                switch (dialogue.Events[i].type)
-                {
-                    case Util.CustomEnum.EventType.Emotion:
-                        controller.PlayEvent(dialogue.Events[i].trigger);
-                        break;
-                    default:
-                        break;
-                }
+                controller.PlayEvent(dialogue.Events[i].trigger);
+                continue;
+            }
+            else if(dialogue.Events[i].type == Util.CustomEnum.EventType.Quest)
+            {
+                if(!DataBase.Instance.Player.Quests.Contains(QuestManager.Instance.GetQuest(dialogue.Events[i].trigger)))
+                    QuestManager.Instance.SetQuest(dialogue.Events[i].trigger);
                 continue;
             }
             characterSprite.enabled = true;

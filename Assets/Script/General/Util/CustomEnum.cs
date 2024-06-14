@@ -53,7 +53,8 @@ namespace Util
         public enum EventType
         { 
             None,
-            Emotion
+            Emotion,
+            Quest
         }
     }
 }

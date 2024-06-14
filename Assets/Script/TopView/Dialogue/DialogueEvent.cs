@@ -1,49 +1,35 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Util;
 
-public struct DialogueEvent
+public class DialogueEvent
 {
-    public int assignChecker;
     public Util.CustomEnum.EventType type;
-    public GameObject eventTarget;
     public int trigger;
+
+    private Dictionary<string, Util.CustomEnum.EventType> typeMappings = new Dictionary<string, Util.CustomEnum.EventType>
+    {
+        { "Emotion", Util.CustomEnum.EventType.Emotion },
+        { "Quest", Util.CustomEnum.EventType.Quest}
+        // 필요한 경우 추가 타입 매핑
+    };
+
+    private Dictionary<string, int> triggerMappings = new Dictionary<string, int>
+    {
+        { "QuestionMark", Const.questionHash },
+        { "Surprise", Const.surpriseHash },
+        { "Dumbfounded", Const.dumbHash },
+        { "Angry", Const.angryHash },
+        { "Dust", Const.dustHash },
+        // 필요한 경우 추가 트리거 매핑
+    };
 
     public DialogueEvent(string eventData)
     {
         string[] parsedData = eventData.Split('/');
 
-        switch (parsedData[0])
-        {
-            case "Emotion":
-                type = Util.CustomEnum.EventType.Emotion;
-                break;
-            default:
-                type = Util.CustomEnum.EventType.None;
-                break;
-        }
-
-        eventTarget = null;
-        switch (parsedData[1])
-        {
-            case "QuestionMark":
-                trigger = Const.questionHash;
-                break;
-            case "Surprise":
-                trigger = Const.surpriseHash;
-                break;
-            case "Dumbfounded":
-                trigger = Const.dumbHash;
-                break;
-            case "Angry":
-                trigger = Const.angryHash;
-                break;
-            case "Dust":
-                trigger = Const.dustHash;
-                break;
-            default:
-                trigger = -1;
-                break;
-        }
-        assignChecker = -1;
+        type = typeMappings.TryGetValue(parsedData[0], out var mappedType) ? mappedType : Util.CustomEnum.EventType.None;
+        trigger = triggerMappings.TryGetValue(parsedData[1], out var mappedTrigger) ? mappedTrigger : int.Parse(parsedData[1]);
     }
 }
+
