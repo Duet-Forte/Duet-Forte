@@ -73,5 +73,8 @@ namespace Util
         #region 메뉴 UI 변수
         public const int CONTENT_IN_ROW = 3;
         #endregion
+
+        
+
     }
 }

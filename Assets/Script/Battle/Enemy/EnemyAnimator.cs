@@ -31,7 +31,7 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     #endregion
     #region VFX 파티클 변수
     [SerializeField] ParticleSystem[] AttackParticle;
-    [SerializeField] ParticleSystem parryParticle;
+    
     [SerializeField] ParticleSystem attackCountDownSignal;
     [SerializeField] ParticleSystem attackSignal;
     [SerializeField] ParticleSystem dashParticle;
@@ -108,7 +108,6 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
         dashParticle.Play();
         //Instantiate<ParticleSystem>(dashParticle).Play();
     }
-    #endregion
     void PlayAttackParticle(int attackCase)
     {
         if (AttackParticle[attackCase] != null)
@@ -119,6 +118,8 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
 
         }
     }
+    #endregion
+   
     #region 공격신호
     public void attackCountDown()
     {
@@ -140,17 +141,5 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
 
     }
 
-    public void skillAnimation(AnimationClip skillAnim)
-    {
-        //thePlayerAnimator
-
-
-
-    }
-
-    public void GenerateDashDust()
-    {
-
-    }
-    //public void Generate
+ 
 }

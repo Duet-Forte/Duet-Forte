@@ -13,6 +13,7 @@ public class UIManager
     private Canvas canvas;
     private GameObject prepareTurnUI;
     private EnemySignalUI enemySignalUI;
+    private BasicAttackQTE basicAttackQTE;
 
     public void StartStage(StageManager stageManager)
     {
@@ -38,11 +39,27 @@ public class UIManager
         stageManager.PrepareTurnUI = prepareTurnUI.GetComponent<PrepareTurnUI>();
         stageManager.PrepareTurnUI.InitSetting();
 
+        
+        basicAttackQTE= GameObject.Instantiate(Resources.Load<GameObject>("UI/BasicAttackQTE"), canvas.transform).GetComponent<BasicAttackQTE>();
+
         if (damagePool == null)
             damagePool = new DamagePool();
         damagePool.InitSettings(stageManager, canvas);
     }
 
+    public void BasciAttackQTEControll(bool button) {
+        if (button)
+        {
+            basicAttackQTE.StartQTE();
+        }
+        else {
+            basicAttackQTE.EndQTE();
+        }
+    }
+
+    public void InitStageClear() { 
+        
+    }
     private void SetCanvas()
     {
         GameObject canvasObject = new GameObject("Stage UI Canvas");

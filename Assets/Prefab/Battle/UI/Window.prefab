@@ -149,8 +149,8 @@ MonoBehaviour:
     \uCFE8\uD0C0\uC784\uC744 \uD655\uC778\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\n\n<size=70%>*\uC774\uBC88
     \uC804\uD22C\uC5D0\uC11C\uB294 \uC784\uC2DC \uC2A4\uD0AC\uC774 \uC801\uC6A9\uB429\uB2C8\uB2E4.</size>"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39740ae2728a06349bc0e64e2f284fd9, type: 2}
-  m_sharedMaterial: {fileID: -3498256964133445719, guid: 39740ae2728a06349bc0e64e2f284fd9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3b604005099bf9447bbb5b1c0f18c1f9, type: 2}
+  m_sharedMaterial: {fileID: 7025719118717319889, guid: 3b604005099bf9447bbb5b1c0f18c1f9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

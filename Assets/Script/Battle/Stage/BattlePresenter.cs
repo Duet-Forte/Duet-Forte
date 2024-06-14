@@ -83,7 +83,10 @@ public class BattlePresenter : MonoBehaviour
         Object.Instantiate<GameObject>(Resources.Load<GameObject>(enemyHitVFXPath),playerInterface.transform.position,Quaternion.identity);
         GetDefense();
         enemyAttack.CalculateDamageWithJudge((int)playerDefense);
+        
         CameraShake(1f,1f,100,50);
+
+        StageClear.Instance.AddJudge(enemyAttack.JudgeName);//클리어 점수계산
 
         playerInterface.GetDamage(enemyAttack);
     }

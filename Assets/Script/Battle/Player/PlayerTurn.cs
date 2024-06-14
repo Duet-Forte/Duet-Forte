@@ -5,6 +5,8 @@ using Util.CustomEnum;
 using Cinemachine;
 using Director;
 using SoundSet;
+using Unity.VisualScripting;
+using System;
 //using Cysharp.Threading.Tasks;
 
 public class PlayerTurn : MonoBehaviour ,ITurnHandler
@@ -19,12 +21,14 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
     private PlayerAnimator playerAnimator;
     private PlayerStatus playerStatus;  //플레이어 스탯
     private bool isTurnOver;
+
+    public event Action<bool> onBasicAttack;
     
     #region 대기 시간 변수
     private double halfBeat;
     private int waitForAttackDelay = 1;//접근 후 공격신호가 나올 때까지의 시간(박자)
-    private int noAttackDelay = 4;//접근후 공격을 안하고 최대로 대기하는 시간(박자)
-    private int delayBeatCount = 4;//대기할 박자 위 변수들로 초기화되는 변수
+    private int noAttackDelay = 8;//접근후 공격을 안하고 최대로 대기하는 시간(박자)
+    private int delayBeatCount = 8;//대기할 박자 위 변수들로 초기화되는 변수
     #endregion
     [SerializeField] GameObject playerAttackSignal;
   //[SerializeField] private bool canAttack = false; //공격 가능한지?
@@ -182,25 +186,28 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
 
     }
     IEnumerator ConsiderAttacking()
-    {//영어가 딸려서...변수명 추천받음  /  적에게 접근 후 공격할 지 안할 지 분기가 되는 코루틴
+    {
         AttackSignal();
         Debug.Log("ConsiderAttacking 진입");
         delayBeatCount = noAttackDelay;// 4박자 동안 플레이어 턴 유지
+        Debug.Log("delayBeatCount : "+delayBeatCount);
         Metronome.instance.OnBeating += DecreaseOnBeat;
+        onBasicAttack?.Invoke(true);
         while (true)//플레이어 턴 제한시간 4박자
         {
 
             //분기점 - 공격했을 시 제한시간 리셋 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                
+                onBasicAttack?.Invoke(false);
                 Metronome.instance.OnBeating -= DecreaseOnBeat;//공격 안하고 대기하는 동안의 제한시간은 사라짐
                 yield return StartCoroutine(playerAttack.StartAttack());
+                
                 break;
             }
             if (Input.GetKeyDown(KeyCode.J))
             {
-               
+                onBasicAttack?.Invoke(false);
                 Metronome.instance.OnBeating -= DecreaseOnBeat;//공격 안하고 대기하는 동안의 제한시간은 사라짐
                 yield return StartCoroutine(playerAttack.StartAttack());
                 break;
@@ -208,7 +215,7 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
             if (delayBeatCount == 0)//제한시간 오버
             {
                 Metronome.instance.OnBeating -= DecreaseOnBeat;//delayBeatCount가 0이 돼서 구독취소
-
+                Debug.Log("제한시간 오버");
                 //transform.DOMove(originPlayerPos, dashDuringTime).SetEase(Ease.OutQuart).OnComplete(PlayerTurnEnd);//ReturnToOriginPos로 통합됨
                 playerAnimator.Guard();
                 PlayerTurnEnd();
@@ -224,6 +231,8 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
         yield break;
 
     }
+
+
     IEnumerator AttackSignal()
     {
         Debug.Log("공격신호");   //플레이어가 공격하기 전 박자에 알려주는 신호 EnemyTurn의 공격신호와 같은 역할
@@ -237,7 +246,17 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
     }
     void PlayerTurnEnd()
     {
+        onBasicAttack?.Invoke(false);
         isTurnOver = true;
     }
+
+    public void StopActions() {
+        playerAnimator.Idle();
+        StopAllCoroutines();
+    
+    }
+
+
+   
     
 }

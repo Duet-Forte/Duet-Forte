@@ -195,6 +195,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
     #endregion
 
     #region 공격신호
+  
     public void attackCountDown() {
         attackCountDownSignal.Play();
     }
