@@ -13,6 +13,7 @@ public interface IEnemy
     public int HealthPoint { get; }
     public string EnemyName { get; }
     public Vector2 Defense { get; }
+    public int Exp { get; }
     public void InitSettings(StageManager stageManager, Transform playerTransform);
     public IEnumerator DisplayPattern(int[] pattern);
     public IEnumerator Attack();

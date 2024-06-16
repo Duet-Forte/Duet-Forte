@@ -14,9 +14,12 @@ public class UIManager
     private GameObject prepareTurnUI;
     private EnemySignalUI enemySignalUI;
     private BasicAttackQTE basicAttackQTE;
+    private StageClear stageClear;
+    private StageManager stageManager;
 
     public void StartStage(StageManager stageManager)
     {
+        this.stageManager = stageManager;
         SetCanvas();
         if (preFab == null)
         {
@@ -41,6 +44,9 @@ public class UIManager
 
         
         basicAttackQTE= GameObject.Instantiate(Resources.Load<GameObject>("UI/BasicAttackQTE"), canvas.transform).GetComponent<BasicAttackQTE>();
+        stageClear = GameObject.Instantiate(Resources.Load<GameObject>("UI/StageClear"), canvas.transform).GetComponent<StageClear>();
+        stageClear.InitSettings(stageManager);
+
 
         if (damagePool == null)
             damagePool = new DamagePool();
@@ -57,8 +63,13 @@ public class UIManager
         }
     }
 
-    public void InitStageClear() { 
+    public void InvokeGameClear() {
+        Debug.Log("UIManagerø°º≠ InvokeGameClear»£√‚µ ");
         
+        stageClear.Invoke(stageManager.TurnCount, true, stageManager.Enemy.Exp);
+    }
+    public void InvokeGameOver() {
+        stageClear.Invoke(stageManager.TurnCount, false, stageManager.Enemy.Exp);
     }
     private void SetCanvas()
     {

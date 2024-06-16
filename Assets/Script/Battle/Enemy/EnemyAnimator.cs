@@ -22,6 +22,7 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     string attackCase = "AttackCase";
     string patternSignal = "PatternSignal";
     string readyToPatternSignal = "ReadyToPatternSignal";
+    string die = "Die";
     #endregion
     #region 공격 모션 중복방지 변수
     int randomAttackCase;
@@ -63,6 +64,10 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     {
         theEnemyAnimator.SetTrigger(backDash);
         Debug.Log("Enemy BackDash");
+    }
+    public void Die() {
+        theEnemyAnimator.SetTrigger(die);
+        Debug.Log("Enemy Die");
     }
     
 

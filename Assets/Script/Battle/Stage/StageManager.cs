@@ -88,7 +88,7 @@ public class StageManager : MonoBehaviour
     [ContextMenu("DEBUG/SceneStart")]
     private void TestPlay()
     {
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,null);
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,null, new PlayerInfo(3,7));
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(false);
     }
@@ -100,14 +100,14 @@ public class StageManager : MonoBehaviour
             judgeManager?.UpdateInput();
         }
     }
-    public void StageStart(Stage stage, PlayerSkill[] skillSet) 
+    public void StageStart(Stage stage, PlayerSkill[] skillSet, PlayerInfo playerInfo)  //현재는 레벨이랑 경험치를 받고 있지만 확장성을 고려하면 캡슐화시켜서 전달해야 할 듯 합니다.
     {//don't destroy on load에서 주입받을
         this.stage = stage;
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,skillSet);
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,skillSet, playerInfo);
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(false);
     }
-    private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn,PlayerSkill[] skillSet)
+    private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn,PlayerSkill[] skillSet, PlayerInfo playerInfo)
     {
         metronome = GetComponent<Metronome>();
         metronome.InitSettins(stage);
@@ -117,7 +117,7 @@ public class StageManager : MonoBehaviour
         SpawnEnemy(enemyName);// 지정된 위치에 소환
         battlePresenter = new GameObject("BattlePresenter").AddComponent<BattlePresenter>();
         battlePresenter.InitSettings(this);
-        SpawnPlayer(skillSet);
+        SpawnPlayer(skillSet,playerInfo);
         InitObjectsSettings();
         UIManager = new UIManager();
         UIManager.StartStage(this);
@@ -149,11 +149,11 @@ public class StageManager : MonoBehaviour
         AkSoundEngine.SetSwitch("Stage01", "StageEnd", gameObject);
     }
 
-    private void SpawnPlayer(PlayerSkill[] skillSet)
+    private void SpawnPlayer(PlayerSkill[] skillSet,PlayerInfo playerInfo)
     {
         player = Instantiate(Resources.Load<GameObject>("Object/Player"));
         playerInterface = player.GetComponent<PlayerInterface>();
-        playerInterface.PlayerStatus.InitSetting();
+        playerInterface.PlayerStatus.InitSetting(playerInfo.PlayerLevel,playerInfo.PlayerCurrentEXP);
         playerInterface.PlayerSkillSet.InitSettings(skillSet);
         battlePresenter.InitSettings(this);
         playerInterface.PlayerAttack.InitSettins(this,GetComponent<PlayerAttackTimingCheck>());
@@ -259,10 +259,7 @@ public class StageManager : MonoBehaviour
         BindJudgeManagerEvents();
         BindEnemyEvents();
         BindPlayerEvents();
-        OnGameOver -= enemy.StopActions;
-        OnGameOver += enemy.StopActions;
-        OnStageClear -= enemy.StopActions;
-        OnStageClear += enemy.StopActions;
+        
     }
     private void BindJudgeManagerEvents()
     {
@@ -293,6 +290,19 @@ public class StageManager : MonoBehaviour
     private void LateBindingEvents() {
         playerInterface.PlayerTurn.onBasicAttack -= UIManager.BasciAttackQTEControll;
         playerInterface.PlayerTurn.onBasicAttack += UIManager.BasciAttackQTEControll;
+        OnGameOver -= enemy.StopActions;
+        OnGameOver += enemy.StopActions;
+        OnGameOver -= playerInterface.PlayerTurn.StopActions;
+        OnGameOver += playerInterface.PlayerTurn.StopActions;
+        OnGameOver -= UIManager.InvokeGameOver;
+        OnGameOver += UIManager.InvokeGameOver;
+
+        OnStageClear -= enemy.StopActions;
+        OnStageClear += enemy.StopActions;
+        OnStageClear -= playerInterface.PlayerTurn.StopActions;
+        OnStageClear += playerInterface.PlayerTurn.StopActions;
+        OnStageClear -= UIManager.InvokeGameClear;
+        OnStageClear += UIManager.InvokeGameClear;
     }
 
     public void IncreaseTurnCount() {
