@@ -24,9 +24,9 @@ public class SkillDataBase
                 skill = new List<PlayerSkill>();
             skill.Clear();
 
-            for (int i = 0; i < data.Length; ++i)
+            for (int i = 0; i < Data.Length; ++i)
             {
-                if (isActivated[i])
+                if (IsActivated[i])
                     skill.Add(data[i]);
             }
 

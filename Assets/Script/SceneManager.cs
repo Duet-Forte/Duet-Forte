@@ -11,7 +11,7 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private Stage testStage;
     [SerializeField] private GameObject sceneTransitionPrefab;
     [SerializeField] private GameObject loadingImagePrefab;
-
+    private GameObject sceneTransition;
     private static SceneManager instance;
     public static SceneManager Instance { get { return instance; } }
 
@@ -55,7 +55,9 @@ public class SceneManager : MonoBehaviour
 
     public void SetBattleScene(string name)
     {
-        WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
+        AkSoundEngine.PostEvent("NonCombat_BGM_Stop", gameObject);
+        sceneTransition = Instantiate(sceneTransitionPrefab);
+        WipeAnimation wipe = sceneTransition.transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(true, null, InitBattleScene);
     }
 
@@ -69,6 +71,7 @@ public class SceneManager : MonoBehaviour
         await LoadBattleScene();
         Camera.main.gameObject.SetActive(false);
         FieldManager.Field.gameObject.SetActive(false);
+        Destroy(sceneTransition);
         StageManager stageManager = FindAnyObjectByType<StageManager>();
 
         if (stageManager == null)
@@ -94,9 +97,7 @@ public class SceneManager : MonoBehaviour
             loadingImage.SetFillAmount(percentage);
             await UniTask.DelayFrame(1);
         }
-
+        loadingImage.SetFillAmount(1);
         Destroy(loadingImage.gameObject);
     }
 }
-
-

@@ -5,18 +5,25 @@ public class WarpPoint : EventTrigger
 {
     [SerializeField] private Transform destination;
     [SerializeField] private bool isChangeMusic;
+    [SerializeField] private string soundName;
+    private PlayerController controller;
     protected override void RunTask()
     {
-        if(SceneManager.Instance.FieldManager.Player.layer == Const.WARPED_PLAYER_LAYER)
-        {
-            SceneManager.Instance.FieldManager.Player.layer = Const.PLAYER_LAYER;
-            return;
+        if(controller == null)
+            controller = SceneManager.Instance.FieldManager.Player.GetComponent<PlayerController>();
+        controller.Stop();
+        if (soundName != null && soundName != string.Empty)
+            AkSoundEngine.PostEvent(soundName, gameObject);
+        SceneManager.Instance.CutsceneManager.FadeIn(0.5f, () => OnFinishFade());
+    }
 
-        }
-        SceneManager.Instance.FieldManager.Player.layer = Const.WARPED_PLAYER_LAYER;
+    private void OnFinishFade()
+    {
         SceneManager.Instance.FieldManager.Player.transform.position = destination.position;
+        SceneManager.Instance.CutsceneManager.FadeOut(0.5f);
         if (isChangeMusic)
             SceneManager.Instance.MusicChanger.SetMusic(name);
         SceneManager.Instance.CameraManager.ChangeCameraCollider(name);
+        controller.IsStopped = false;
     }
 }

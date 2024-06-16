@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Util.CustomEnum;
@@ -11,8 +12,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private Vector2 direction;
-    private Vector2 lastDirection;
-
+    public Vector2 lastDirection;
+    
     private int xDirectionAnimationHash;
     private int yDirectionAnimationHash;
     private int xIdleAnimationHash;
@@ -53,15 +54,16 @@ public class PlayerController : MonoBehaviour
         if (canInteract)
         {
             Stop();
-            canInteract = false;
             interactable?.InteractPlayer(this);
         }
     }
     private void OnMove(InputAction.CallbackContext context)
     {
-        lastDirection = context.ReadValue<Vector2>();
-        SetMinusOrPlus(lastDirection.x);
-        SetMinusOrPlus(lastDirection.y);
+        if(!isStopped)
+        {
+            lastDirection = context.ReadValue<Vector2>();
+            lastDirection = new Vector2(SetMinusOrPlus(lastDirection.x), SetMinusOrPlus(lastDirection.y));
+        }
     }
     // 애니메이터 파라미터 해싱
     private void SetAnimatorHash()
@@ -116,9 +118,10 @@ public class PlayerController : MonoBehaviour
     {
         isStopped = true;
         direction = Vector2.zero;
-        anim.SetBool(moveAnimationHash, false);
+        rb.velocity = Vector2.zero;
+        SetAnimatorFloat(direction);
+        canInteract = false;
     }
-  
     private int SetMinusOrPlus(float someNumber)
     {
         int answer;
