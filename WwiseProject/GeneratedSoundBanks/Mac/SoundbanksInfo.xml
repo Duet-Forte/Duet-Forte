@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{F0E5556E-5E4F-D3BE-11CA-D901944EDA4B}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{B39B8DC0-931A-154E-CC0A-BA50435FFFF2}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -23,7 +23,7 @@
 				</File>
 				<File Id="48994660" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Door.wav</ShortName>
-					<CachePath>SFX/Door_B0633567.wem</CachePath>
+					<CachePath>SFX/Door_AE50D5A0.wem</CachePath>
 				</File>
 				<File Id="57689545" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ob_Fire_Fire.wav</ShortName>
@@ -308,6 +308,7 @@
 			<StateGroups>
 				<StateGroup Id="1931646578" Name="CampFire">
 					<States>
+						<State Id="748895195" Name="None"/>
 						<State Id="2206092402" Name="Timmy_House"/>
 						<State Id="3091570009" Name="Town"/>
 					</States>
@@ -370,13 +371,17 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{38B76B45-D550-C00B-5FAE-668A0279B196}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{39439B41-E07D-6BD2-A5DC-D4D6365B69A9}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
 				<File Id="12610899" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Timmy_Attack04.wav</ShortName>
 					<CachePath>SFX/Timmy_Attack04_818F3B66.wem</CachePath>
+				</File>
+				<File Id="133336124" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tambourine_Attack_B_SFX.wav</ShortName>
+					<CachePath>SFX/Tambourine_Attack_B_SFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="139163244" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Clear_Loop.wav</ShortName>
@@ -397,6 +402,10 @@
 				<File Id="329739412" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skill_AAA02.wav</ShortName>
 					<CachePath>SFX/Skill_AAA02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="390818071" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tambourine_Attack_A_SFX.wav</ShortName>
+					<CachePath>SFX/Tambourine_Attack_A_SFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="481124707" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>0502_Loop.wav</ShortName>
@@ -478,6 +487,12 @@
 						<MediaRef Id="514950658"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2328612313" Name="Enemy_Tambourine_Attack_SFX" DurationType="OneShot" DurationMin="0.63783336" DurationMax="0.6706875">
+					<MediaRefs>
+						<MediaRef Id="133336124"/>
+						<MediaRef Id="390818071"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="837159709" Name="Enemy_Timmy_Attack_SFX" DurationType="OneShot" DurationMin="0.7638958" DurationMax="0.7638958">
 					<MediaRefs>
 						<MediaRef Id="12610899"/>
@@ -525,6 +540,11 @@
 						<MediaRef Id="329739412"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2846259367" Name="Player_Skill_ABA_SFX" DurationType="OneShot" DurationMin="2.4710834" DurationMax="2.4710834">
+					<MediaRefs>
+						<MediaRef Id="329739412"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3250415283" Name="Player_Skill_BBB_SFX" DurationType="OneShot" DurationMin="2.7852855" DurationMax="2.7852855">
 					<MediaRefs>
 						<MediaRef Id="167940839"/>
@@ -541,5 +561,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D610F43F-145B-B670-B776-8FBF4BA9FB6D}</FileHash>
+	<FileHash>{D505126A-9679-5704-F076-C63DFB472A7D}</FileHash>
 </SoundBanksInfo>

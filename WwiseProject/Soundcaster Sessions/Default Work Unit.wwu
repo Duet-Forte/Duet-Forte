@@ -11,7 +11,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Timmy_House" ID="{68390AAD-0981-4140-B817-4A04E8E6410F}"/>
+						<CurrentStateRef Name="Town" ID="{95BE0146-4FD3-4D96-964E-EE7FD569CF7F}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Dirt" ID="{9529130D-6599-413E-8375-62BA0F2F9BEB}"/>

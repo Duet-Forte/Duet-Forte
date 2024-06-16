@@ -99,12 +99,12 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Enemy_Timmy_Attack_SFX" ID="{8F4016CE-D1D0-4ECA-8309-4496680D6838}">
+								<Event Name="Player_Skill_ABA_SFX" ID="{7A1611C4-EEEE-4DD9-8396-2CDB7753853C}">
 									<ChildrenList>
-										<Action Name="" ID="{3B1CC7D2-2073-401A-B1BF-6C424F8A486B}" ShortID="618073063">
+										<Action Name="" ID="{5A2BDBBB-58E0-44F3-9146-031FC47FF728}" ShortID="412500421">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Timmy_Attack" ID="{BF7442DE-367C-4F1D-9525-3213BB73DAD1}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="Skill_AAA02" ID="{EF00A6DA-0184-4EBF-95F6-00AAC841C43F}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -399,6 +399,36 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Transition_FadeOut" ID="{775FBD8F-15A1-404D-B773-C0FDEC8C8FD7}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Enemy" ID="{67082994-DCCA-4C18-9275-9342D1E049EA}" ShortID="279577759">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="19"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="Enemy_Timmy_Attack_SFX" ID="{8F4016CE-D1D0-4ECA-8309-4496680D6838}">
+							<ChildrenList>
+								<Action Name="" ID="{3B1CC7D2-2073-401A-B1BF-6C424F8A486B}" ShortID="618073063">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Timmy_Attack" ID="{BF7442DE-367C-4F1D-9525-3213BB73DAD1}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Enemy_Tambourine_Attack_SFX" ID="{EA8DA686-54C3-4F76-AD64-6AF0FCBC3271}">
+							<ChildrenList>
+								<Action Name="" ID="{5D1CC736-A610-43F2-BA27-F33866678587}" ShortID="16892882">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Tambourine_Attack" ID="{4E214FBE-9593-4531-9F59-A0393F9578B2}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
