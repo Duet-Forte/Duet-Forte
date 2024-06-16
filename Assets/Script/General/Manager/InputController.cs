@@ -9,6 +9,7 @@ public class InputController : MonoBehaviour, InputActions.IPlayerActions
     private InputActionMap playerActionMap;
     private Action<InputAction.CallbackContext> onMove;
     private Action<InputAction.CallbackContext> onInteract;
+    private bool isInitialized = false;
 
     public void InitSettings()
     {
@@ -18,6 +19,7 @@ public class InputController : MonoBehaviour, InputActions.IPlayerActions
         inputActions.Player.Move.performed += OnMove;
         inputActions.Player.Interact.performed -= OnInteract;
         inputActions.Player.Interact.performed += OnInteract;
+        isInitialized = true;
     }
 
     public void BindPlayerInputAction(PlayerAction playerAction, Action<InputAction.CallbackContext> someEvent)
@@ -62,13 +64,19 @@ public class InputController : MonoBehaviour, InputActions.IPlayerActions
 
     public void OnEnable()
     {
-        inputActions.Player.Move.Enable();
-        inputActions.Player.Interact.Enable();
+        if (isInitialized)
+        {
+            inputActions.Player.Move.Enable();
+            inputActions.Player.Interact.Enable();
+        }
     }
 
     public void OnDisable()
     {
-        inputActions.Player.Move.Disable();
-        inputActions.Player.Interact.Disable();
+        if (isInitialized)
+        {
+            inputActions.Player.Move.Disable();
+            inputActions.Player.Interact.Disable();
+        }
     }
 }

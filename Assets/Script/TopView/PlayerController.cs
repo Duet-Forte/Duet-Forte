@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
         {
             direction = moveAction.ReadValue<Vector2>();
             rb.velocity = direction * velocity;
-            Debug.Log(rb.velocity);
             SetAnimatorFloat(direction);
             SetRay(lastDirection);
         }
