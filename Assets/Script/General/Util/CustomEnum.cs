@@ -49,7 +49,9 @@ namespace Util
             Move,
             Interact
         }
-        public enum Rank { 
+
+        public enum Rank
+        {
             S,
             APlus,
             A,
@@ -58,11 +60,20 @@ namespace Util
             C,
             Empty
         }
+
         public enum SignalInstrument
         {
             electricGuitar,
             tambourine
             
+
         }
+        public enum EventType
+        { 
+            None,
+            Emotion,
+            Quest
+        }
+    
     }
 }

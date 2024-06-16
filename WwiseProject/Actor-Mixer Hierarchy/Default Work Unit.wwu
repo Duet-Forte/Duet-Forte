@@ -119,7 +119,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-3</Value>
+														<Value>-2</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -480,6 +480,51 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="Skill_BBB02" ID="{372CDC6A-24F9-464E-B02B-9CB857320C66}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="Player_Skill_ABA" ID="{B82E47CB-EBF6-4914-8D53-131E64B5B1B2}" ShortID="140975009">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Gio_ABA_SFX" ID="{32BEA00A-010D-40A5-BC03-63CFA9FE1A46}" ShortID="169937363">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gio_ABA_SFX" ID="{C2E079DE-FC70-4C52-8E21-700DCE13CC11}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0460908239700375"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Gio_ABA_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="726328486"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Gio_ABA_SFX" ID="{C2E079DE-FC70-4C52-8E21-700DCE13CC11}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -1241,6 +1286,15 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Ob_Fire_Fire" ID="{6D1C0821-D28A-4C8B-96B0-0F4067C97920}" ShortID="973294645">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{D83F7703-A711-42AA-AACE-5AF7A4E436BF}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
@@ -1258,12 +1312,34 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="CampFire" ID="{1BD6E414-4ADE-4960-9F47-91B16CA36961}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Timmy_House" ID="{68390AAD-0981-4140-B817-4A04E8E6410F}"/>
+												<CustomState Name="" ID="{3DA8272D-D29A-4FA3-AEE3-C12266A5026A}" ShortID="677771136"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Town" ID="{95BE0146-4FD3-4D96-964E-EE7FD569CF7F}"/>
+												<CustomState Name="" ID="{961F89B9-6E93-435A-B871-63F08BD3E48B}" ShortID="169133277">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
 									<ActiveSourceList>
 										<ActiveSource Name="Ob_Fire_Fire" ID="{5104EDD7-853B-4BB4-97F3-999F8A316387}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Ob_Fire_Ignition" ID="{4B405262-2BB6-4C90-9C83-12040009EF99}" ShortID="135411134">
 									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
@@ -1335,6 +1411,11 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Door" ID="{A34DD201-6696-497C-86E5-8FAA08EA519B}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.179217152351738"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.994755879345602"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Door.wav</AudioFile>
 											<MediaIDList>
@@ -1357,7 +1438,7 @@
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>2</Value>
+										<Value>-6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1478,6 +1559,70 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="Timmy_Attack05" ID="{E2F2C25B-8DAA-4412-BE9A-C8E44418881E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Tambourine_Attack" ID="{4E214FBE-9593-4531-9F59-A0393F9578B2}" ShortID="970534306">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Tambourine_Attack_A_SFX" ID="{38203E91-0B5B-4904-BA2C-FF81E511D99A}" ShortID="51066672">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Tambourine_Attack_A_SFX" ID="{82BE3273-CF2D-48CD-B939-69C762351360}">
+											<Language>SFX</Language>
+											<AudioFile>Tambourine_Attack_A_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="390818071"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Tambourine_Attack_A_SFX" ID="{82BE3273-CF2D-48CD-B939-69C762351360}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Tambourine_Attack_B_SFX" ID="{561ED7FE-F512-4C6C-BDC8-76C58EA39189}" ShortID="229939242">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Tambourine_Attack_B_SFX" ID="{79389CC0-587D-462F-9207-BCEC35D1719E}">
+											<Language>SFX</Language>
+											<AudioFile>Tambourine_Attack_B_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="133336124"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Tambourine_Attack_B_SFX" ID="{79389CC0-587D-462F-9207-BCEC35D1719E}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

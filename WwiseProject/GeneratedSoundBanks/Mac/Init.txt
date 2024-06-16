@@ -1,3 +1,10 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1931646578	CampFire			\Default Work Unit\CampFire	
+
+State	ID	Name	State Group			Notes
+	2206092402	Timmy_House	CampFire			
+	3091570009	Town	CampFire			
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	2862064063	SFX_SideChain			\Default Work Unit\SFX_SideChain	
 

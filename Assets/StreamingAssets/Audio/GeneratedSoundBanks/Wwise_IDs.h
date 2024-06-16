@@ -13,8 +13,12 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CHARACTER_EMOTION_ANGRY_SFX = 179926370U;
+        static const AkUniqueID CHARACTER_EMOTION_DUMBFOUNDED_SFX = 1920166314U;
+        static const AkUniqueID CHARACTER_EMOTION_QUESTIONMARK_SFX = 3095903108U;
         static const AkUniqueID COMBAT_STAGE_01_BGM = 890880275U;
         static const AkUniqueID COMBAT_TEST01 = 207956517U;
+        static const AkUniqueID ENEMY_TAMBOURINE_ATTACK_SFX = 2328612313U;
         static const AkUniqueID ENEMY_TIMMY_ATTACK_SFX = 837159709U;
         static const AkUniqueID GIO_BODYFALL_SFX = 2299963368U;
         static const AkUniqueID MAINMENU_CLICK_GAMESTART_SFX = 162289589U;
@@ -32,6 +36,7 @@ namespace AK
         static const AkUniqueID PLAYER_ATTACK_WEAKSIGNAL_SFX = 324050508U;
         static const AkUniqueID PLAYER_PARRY_SFX = 3410875789U;
         static const AkUniqueID PLAYER_SKILL_AAA_SFX = 2518233790U;
+        static const AkUniqueID PLAYER_SKILL_ABA_SFX = 2846259367U;
         static const AkUniqueID PLAYER_SKILL_BBB_SFX = 3250415283U;
         static const AkUniqueID PLAYER_SKILL_CLIMAX_SFX = 127602315U;
         static const AkUniqueID PLAYER_STEP_SFX = 4038898239U;
@@ -39,6 +44,22 @@ namespace AK
         static const AkUniqueID TRANSITION_FADEOUT = 1873933263U;
         static const AkUniqueID UI_TYPING_SFX = 1024104135U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace CAMPFIRE
+        {
+            static const AkUniqueID GROUP = 1931646578U;
+
+            namespace STATE
+            {
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID TIMMY_HOUSE = 2206092402U;
+                static const AkUniqueID TOWN = 3091570009U;
+            } // namespace STATE
+        } // namespace CAMPFIRE
+
+    } // namespace STATES
 
     namespace SWITCHES
     {

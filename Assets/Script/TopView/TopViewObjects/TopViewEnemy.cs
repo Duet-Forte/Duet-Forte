@@ -1,15 +1,31 @@
+using Cysharp.Threading.Tasks;
 using System;
-using Unity.VisualScripting;
+using Util;
 using UnityEngine;
 
 public class TopViewEnemy : TopViewEntity
 {
-    private bool isAlive = true;
-    public event Action<string> OnFightPlayer; 
-
+    [SerializeField] private bool isAlive = true;
+    [SerializeField] private int level;
+    public event Action<string> OnFightPlayer;
+    private PlayerTracker tracker;
+    public bool isFleeing;
+    private void Update()
+    {
+        if (isAlive)
+        {
+            tracker.RequestPath(isFleeing);
+        }
+        else
+        {
+            
+        }
+    }
     public override void InitSettings(string name, Vector2 intialSpawnPoint, int id = 0)
     {
         base.InitSettings(name, intialSpawnPoint, id);
+        tracker = GetComponent<PlayerTracker>();
+        tracker.InitSettings(this);
         OnFightPlayer -= SceneManager.Instance.SetBattleScene;
         OnFightPlayer += SceneManager.Instance.SetBattleScene;
     }
@@ -26,4 +42,14 @@ public class TopViewEnemy : TopViewEntity
             OnFightPlayer?.Invoke(name);
         }
     }
+
+    private async UniTask RespawnTimer()
+    {
+        await UniTask.Delay(7000);
+
+        isAlive = true;
+    }
+
+    public void Question() => Animator.SetTrigger(Const.questionHash);
+    public void Surprised() => Animator.SetTrigger(Const.surpriseHash);
 }

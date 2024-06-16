@@ -99,12 +99,12 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Enemy_Timmy_Attack_SFX" ID="{8F4016CE-D1D0-4ECA-8309-4496680D6838}">
+								<Event Name="Player_Skill_ABA_SFX" ID="{7A1611C4-EEEE-4DD9-8396-2CDB7753853C}">
 									<ChildrenList>
-										<Action Name="" ID="{3B1CC7D2-2073-401A-B1BF-6C424F8A486B}" ShortID="618073063">
+										<Action Name="" ID="{5A2BDBBB-58E0-44F3-9146-031FC47FF728}" ShortID="412500421">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Timmy_Attack" ID="{BF7442DE-367C-4F1D-9525-3213BB73DAD1}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="Skill_AAA02" ID="{EF00A6DA-0184-4EBF-95F6-00AAC841C43F}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -165,6 +165,20 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Combat_test01" ID="{4127FDB7-C234-4016-A555-91CCB105AEC5}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Combat_BGM_Stop" ID="{242F5060-C112-4CE1-98E8-685817CB7CAE}">
+									<ChildrenList>
+										<Action Name="" ID="{0EFB41BE-4E8D-4162-9087-4A4B22311999}" ShortID="720573335">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="NewCombat" ID="{18CD9999-6E06-4772-9087-F30E4D32BE9E}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -313,6 +327,57 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Ob_Fire_Fire_Amb_Stop" ID="{10B505B5-59CD-4857-B843-7D7195B94C5F}">
+							<ChildrenList>
+								<Action Name="" ID="{6D1767A4-F59B-477B-8B4E-B529634BE711}" ShortID="321930147">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ob_Fire_Fire" ID="{6D1C0821-D28A-4C8B-96B0-0F4067C97920}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Folder Name="Emotion" ID="{37D93A72-8D05-494C-AA65-8EDD2196FE31}" ShortID="791326432">
+							<ChildrenList>
+								<Event Name="Character_Emotion_Angry_SFX" ID="{75330991-CEC6-495A-8C8A-4E6C84DD97EA}">
+									<ChildrenList>
+										<Action Name="" ID="{01226F46-5B48-4894-86B6-516CE0FDFB02}" ShortID="518560293">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Character_Emotion_Angry_SFX" ID="{5408626D-A2B2-4744-AEFE-F08417429049}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Character_Emotion_Dumbfounded_SFX" ID="{81906EBA-E4B8-47C5-908F-704009F6DC95}">
+									<ChildrenList>
+										<Action Name="" ID="{2A365870-D3ED-4582-AB58-F71DAD7460E3}" ShortID="215642406">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Character_Emotion_Dumbfounded_SFX" ID="{1F8AD3C9-7555-4C77-B497-CF1C5C95B7AE}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Character_Emotion_QuestionMark_SFX" ID="{C8550095-9C2E-4732-AEDD-D00BB79F6CCC}">
+									<ChildrenList>
+										<Action Name="" ID="{9B09A1EF-EEEB-4AA9-A88D-3F850B04387D}" ShortID="781752369">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Character_Emotion_QuestionMark_SFX" ID="{DBF03ED3-21B3-408F-8174-CDB4E553A74E}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{6F27945D-6A2C-471B-BCC4-2D7EF8157F6F}" ShortID="852693471">
@@ -334,6 +399,36 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Transition_FadeOut" ID="{775FBD8F-15A1-404D-B773-C0FDEC8C8FD7}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Enemy" ID="{67082994-DCCA-4C18-9275-9342D1E049EA}" ShortID="279577759">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="19"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="Enemy_Timmy_Attack_SFX" ID="{8F4016CE-D1D0-4ECA-8309-4496680D6838}">
+							<ChildrenList>
+								<Action Name="" ID="{3B1CC7D2-2073-401A-B1BF-6C424F8A486B}" ShortID="618073063">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Timmy_Attack" ID="{BF7442DE-367C-4F1D-9525-3213BB73DAD1}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Enemy_Tambourine_Attack_SFX" ID="{EA8DA686-54C3-4F76-AD64-6AF0FCBC3271}">
+							<ChildrenList>
+								<Action Name="" ID="{5D1CC736-A610-43F2-BA27-F33866678587}" ShortID="16892882">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Tambourine_Attack" ID="{4E214FBE-9593-4531-9F59-A0393F9578B2}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

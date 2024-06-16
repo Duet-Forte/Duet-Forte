@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
+using Util;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -26,14 +27,14 @@ public class CutsceneManager : MonoBehaviour
             cutsceneDictionary.Add(cutscene.name, cutscene);
         }
         StartCutscene("TimmyHouse");
-        cutscenePlayer = SceneManager.Instance.FieldManager.Field.GetCutsceneObject("CutscenePlayer");
+        cutscenePlayer = SceneManager.Instance.FieldManager.Field.GetCutsceneObject("Zio");
         GameObject pitch = SceneManager.Instance.FieldManager.Field.GetCutsceneObject("Pitch");
         GameObject timmy = SceneManager.Instance.FieldManager.Field.GetCutsceneObject("Timmy");
         BindCutscene(director, "Player", cutscenePlayer);
         BindCutscene(director, "Pitch", pitch);
         BindCutscene(director, "Timmy", timmy);
-        BindCutscene(director, "Camera", Camera.main.gameObject);
-        SceneManager.Instance.FieldManager.Field.SetCameraPath(SceneManager.Instance.CameraManager.CutsceneCamera, "Tutorial");
+        BindCutscene(director, "Camera", SceneManager.Instance.FieldManager.Field.CutsceneCam.gameObject);
+        SceneManager.Instance.FieldManager.Field.SetCameraPath("Tutorial");
         isReachedLoopEndPoint = false;
         director.Play();
     }
@@ -44,15 +45,19 @@ public class CutsceneManager : MonoBehaviour
     public async void Talk()
     {
         isTalking = true;
-        await DialogueManager.Instance.Talk("Cutscene", currentCutsceneID);
-        ++currentCutsceneID;
+        await DialogueManager.Instance.Talk("Cutscene");
+        DataBase.Instance.Dialogue.SetID("Cutscene", ++currentCutsceneID);
         isTalking = false;
         director.Play();
     }
+    [ContextMenu("DEBUG/SpawnPlayer")]
     public void SpawnPlayer()
     {
+        director.Stop();
+        DialogueManager.Instance.SkipDialogue();
         cutscenePlayer.SetActive(false);
         SceneManager.Instance.FieldManager.SpawnPlayer(cutscenePlayer.transform.position);
+        SceneManager.Instance.CameraManager.SetFollowCamera();
     }
     public void Loop()
     {
@@ -110,8 +115,6 @@ public class CutsceneManager : MonoBehaviour
 
     public void PlaySound(string name)
     {
-        AkSoundEngine.PostEvent("NonCombat_BGM_Stop", gameObject);
-        AkSoundEngine.SetSwitch("NonCombatBGM", name, gameObject);
-        AkSoundEngine.PostEvent("NonCombat_BGM", gameObject);
+        SceneManager.Instance.MusicChanger.SetMusic(name);
     }
 }

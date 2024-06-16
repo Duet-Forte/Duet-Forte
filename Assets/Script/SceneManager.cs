@@ -19,6 +19,8 @@ public class SceneManager : MonoBehaviour
     public FieldManager FieldManager { get { return fieldManager; } }
     private CameraManager cameraManager;
     public CameraManager CameraManager { get { return cameraManager; } }
+    private MusicChanger musicChanger;
+    public MusicChanger MusicChanger { get { return musicChanger; } }
     private DataStorage dataStorage;
     public DataStorage Storage { get => dataStorage; }
     private CutsceneManager cutsceneManager;
@@ -31,7 +33,6 @@ public class SceneManager : MonoBehaviour
     {
         InitSetting();
     }
-
     private void InitSetting()
     {
         if (instance != null)
@@ -42,12 +43,10 @@ public class SceneManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
 
+        cameraManager = new CameraManager();
         fieldManager = new FieldManager();
         dataStorage = new DataStorage();
-        cameraManager = new CameraManager();
-        fieldManager.InitSettings();
-        fieldManager.ID = 0;
-        cameraManager.InitSetting();
+        musicChanger = new MusicChanger(gameObject);
         cutsceneManager = GetComponent<CutsceneManager>();
         cutsceneManager.InitSettings();
         inputController = GetComponent<InputController>();

@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class FootStep : MonoBehaviour
 {
-    StringBuilder sb = new StringBuilder();
-
     public void PlaySound(string name)
     {
         CheckGround();

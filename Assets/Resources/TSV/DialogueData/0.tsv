@@ -1,15 +1,18 @@
 Interactable	ID	Speaker	State	Lines	Event	EventName	Note
-					Sound		지오 위치: 벽난로 앞,
-Cutscene	0	Zio	Panic	콜록콜록	(추후 추가 예정)		
+							지오: 벽난로 앞, 주저앉은 모습. 새: 지오 머리 위에서 날아다니는 중. 티미: 침대 앞에서 지오가 있는 방향을 바라보고 있음 (옆모습)
+Cutscene	0	Zio			Emotion	Dust	현재 VFX 시간보다 더 길게 유지해 주실 수 있나요? 지오의 2번째 대사가 시작할 때 사라졌으면 해서요.
+		Zio	Panic	콜록콜록			
 		Zio	Panic	(무슨 먼지가 이렇게…….)			
 		Zio	Panic	으윽….			
 		Zio	Panic	(의자가 부서진 건가…?)			
-							지오 뒷 모습 → 다시 앞 모습
-	1	Zio	Panic	(벽난로?)			
+							지오: 뒷 모습 (혹시 가능하다면, 일어선 정면 → 왼쪽 보는 옆모습 → 뒷모습으로 해주시면 감사합니다. 빠르게 돌리면 좀 뒤도는 모습처럼 보이지 않을까 싶어서요.)
+	1	Zio			Emotion	QuestionMark	
+		Zio	Panic	(벽난로?)			
 		Timmy	Happy	…드디어 왔구나!			
-							새가 티미 쪽으로 날아감
-	2	Zio	Panic	아! 내 타이…			
-							티미가 지오 쪽으로 이동 – 티미 위치: 침대와 의자 사이쪽 → 벽난로
+							새가 티미 쪽으로 날아감, 새가 날아가기 시작하면, 지오 티미 쪽 바라봄
+	2	Zio			Emotion	Surprise	
+		Zio	Panic	아! 내 타이…			
+							티미가 지오 쪽으로 이동 (이동 거리 직선으로 짧게)
 	3	Zio	Panic	(원래 사람이 있었나?<br>잠깐, 내가 들어온 창고가 이렇게 생겼던가?)			
 		Timmy	Happy	이거 네 거야?			
 		Zio	Default	네 맞아요. 감사합니다.			
@@ -23,7 +26,8 @@ Cutscene	0	Zio	Panic	콜록콜록	(추후 추가 예정)
 	4	Timmy	Default	너 맞는데, 잠깐만!			
 		Zio	Panic	마음대로 들어와서 죄송했어요. 근데 저 정말 급해서요!			
 							Fadeout 티미 방 → Fadein 마을 *카메라 연출 가능하면, 마을 풀샷 → 티미 집 앞에 있는 지오 줌인
-	5	Zio	Panic	…여기가 대체 어디야?			
+	5	Zio			Emotion	Dumbfounded	
+		Zio	Panic	…여기가 대체 어디야?			
 							티미 등장 후 지오 옆에 붙어 서기
 	6	Timmy	Happy	바로 마왕성으로 가려는 거야?			
 		Zio	Panic	네? 무슨 성이요?<br>저는 콩쿠르 대기실을 찾고 있어요.			
@@ -34,8 +38,9 @@ Cutscene	0	Zio	Panic	콜록콜록	(추후 추가 예정)
 		Zio	Angry	아까부터 무슨 소리 하시는 거예요.			
 		Timmy	Default	조력자는 신탁을 모르는 건가?			
 		Timmy	Default	너 내가 이번 용사인 건 알아?			
-		Zio	Panic	용…사요?			
+		Zio	Panic	용사요?			
 		Timmy	Default	응. 내가 용사, 너는 날 도와줄 조력자.			
+		Zio			Emotion	Angry	
 		Zio	Angry	저 이럴 시간 없어요.			
 		Timmy	Default	맞는데, 너 회색 연기와 함께 나타났잖아.<br>신탁에서 조력자가 아까 너처럼 나타날 거라 했어.			
 		Zio	Default	그건 회색 연기가 아니라 굴뚝의 먼지였어요.			
@@ -47,16 +52,20 @@ Cutscene	0	Zio	Panic	콜록콜록	(추후 추가 예정)
 		Timmy	Default	분명 조력자는 음악적 재능을 타고났을 거야.<br>한번 해볼래?			
 		Zio	Default	대신 제가 조력자가 아니면, 저와 같이 콩쿠르 대기실을 찾아주세요.			
 		Timmy	Happy	좋아! 네가 조력자가 맞으면, 나랑 마왕을 무찌르러 가는 거야.			
-		Zio	Default	네. 그러죠.			
+		Zio	Default	알겠으니까 빨리 시작하죠.			
 							튜토리얼 전투
-	7	Timmy	Happy	봐, 넌 선율을 타고났던 거야!<br>역시 조력자가 맞았어!			
-		Zio	Panic	그럼 지금부터 뭘 하면 되는 거죠?<br>아까부터 말했지만 저에겐 시간이 별로 없어요.			
-		Timmy	Happy	저 멀리 마왕성에 있는 마왕을 해치우면 돼.			
-		Zio	Default	아… 마왕이요.<br>얼마나 오래 걸리는데요?			
-		Timmy	Happy	글쎄? 얼마나 빨리 가느냐에 따라 다르겠지?			
-		Timmy	Happy	맞다. 내가 말했었나?<br>신탁에 완전한 평화가 오면 조력자도 원래의 자리로 돌아간대.			
-		Zio	Default	원래 자리….			
-		Timmy	Happy	응. 마왕을 무찌르면 너도 돌아갈 수 있을 거야.<br>신탁이 그렇게 내려왔으니까.			
-		Timmy	Happy	우선 작은 몬스터로 연습을 더 해보자.<br>아니면 마을 구경을 하는 건 어때?			
-		Zio	Default	제가 아직은 혼란스러워서요. 잠시 혼자 있어도 될까요?			
-		Timmy	Default	응. 날 만나려면 여기로 다시 찾아와!			
+	7	티미	Happy	봐, 넌 선율을 타고났던 거야!<br>역시 조력자가 맞았어!			
+		지오	Angry	(대충 장단 맞춰주다 가야 겠네.)			
+		지오	Panic	그럼 지금부터 뭘 하면 되는 거죠?<br>아까부터 말했지만 저에겐 시간이 별로 없어요.			
+		티미	Happy	저 멀리 마왕성에 있는 마왕을 해치우면 돼.			
+		지오	Default	아… 마왕이요.<br>얼마나 오래 걸리는데요?			
+		티미	Happy	글쎄? 얼마나 빨리 가느냐에 따라 다르겠지?			
+		티미	Happy	맞다. 내가 말했었나?<br>신탁에 완전한 평화가 오면 조력자도 원래의 자리로 돌아간대.			
+		지오	Default	원래 자리….			
+		티미	Happy	응. 마왕을 무찌르면 너도 돌아갈 수 있을 거야.<br>신탁이 그렇게 내려왔으니까.			
+		티미	Happy	우선 작은 몬스터로 연습을 더 해보자.<br>아니면 마을 구경을 하는 건 어때?			
+		지오	Default	제가 아직은 혼란스러워서요. 잠시 혼자 있어도 될까요?			
+		티미	Default	응. 날 만나려면 여기로 다시 찾아와!			
+Sample	0			테스트 스크립트 입니다! 확인하시면 문앞으로 가주세요~			
+					Quest	0	
+	1			성공적으로 퀘스트 완료 처리가 되었습니다!			
