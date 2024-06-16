@@ -5,16 +5,39 @@ using UnityEngine;
 public class SkillDataBase
 {
     private PlayerSkill[] data;
+    private List<PlayerSkill> skill;
     private bool[] isActivated;
-    public PlayerSkill[] Data { get 
+    public PlayerSkill[] Data
     {
+        get
+        {
             if (data == null)
                 data = Resources.LoadAll<PlayerSkill>("Scriptable/Skill");
             return data;
-    } 
+        }
+    }
+    public PlayerSkill[] Skill
+    {
+        get
+        {
+            if (skill == null)
+                skill = new List<PlayerSkill>();
+            skill.Clear();
+
+            for (int i = 0; i < data.Length; ++i)
+            {
+                if (isActivated[i])
+                    skill.Add(data[i]);
+            }
+
+            return skill.ToArray();
+        }
     }
 
-    public bool[] IsActivated { get 
+
+    public bool[] IsActivated
+    {
+        get
         {
             if (isActivated == null)
             {
@@ -23,8 +46,11 @@ public class SkillDataBase
                 isActivated[1] = true;
             }
             return isActivated;
-        } 
+        }
     }
-    public void ActivateSkill(int ID) => isActivated[ID] = true;
-
+    public void ActivateSkill(int ID)
+    {
+        Debug.Log(ID + "½ºÅ³ È¹µæ");
+        isActivated[ID] = true;
+    }
 }

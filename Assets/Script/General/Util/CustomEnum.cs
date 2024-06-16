@@ -65,7 +65,8 @@ namespace Util
         { 
             None,
             Emotion,
-            Quest
+            Quest,
+            Skill
         }
     }
 }

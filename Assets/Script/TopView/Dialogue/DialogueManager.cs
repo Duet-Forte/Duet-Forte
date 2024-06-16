@@ -85,6 +85,12 @@ public class DialogueManager
                     QuestManager.Instance.SetQuest(dialogue.Events[i].trigger);
                 continue;
             }
+            else if (dialogue.Events[i].type == Util.CustomEnum.EventType.Skill)
+            {
+                if (!DataBase.Instance.Player.Quests.Contains(QuestManager.Instance.GetQuest(dialogue.Events[i].trigger)))
+                    DataBase.Instance.Skill.ActivateSkill(dialogue.Events[i].trigger);
+                continue;
+            }
             characterSprite.enabled = true;
             typewriter.ShowText(dialogue.Lines[i]);
             if (dialogue.Speaker != null)
