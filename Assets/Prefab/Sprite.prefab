@@ -210,7 +210,8 @@ GameObject:
   - component: {fileID: 1734490849384377071}
   - component: {fileID: 1734490849384377068}
   - component: {fileID: 7306439993703093535}
-  m_Layer: 0
+  - component: {fileID: 8035685279041705370}
+  m_Layer: 8
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4722,6 +4723,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundType: Dirt
+--- !u!19719996 &8035685279041705370
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734490849384377042}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
 --- !u!1 &1734490849896765202
 GameObject:
   m_ObjectHideFlags: 0
@@ -6570,7 +6587,8 @@ GameObject:
   - component: {fileID: 76634762807865513}
   - component: {fileID: 5861611003380291597}
   - component: {fileID: 2357228214787754472}
-  m_Layer: 0
+  - component: {fileID: 4320513673167115055}
+  m_Layer: 8
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9995,7 +10013,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -18312,8 +18330,8 @@ Tilemap:
     m_Data: {fileID: 1484189600, guid: a86afebebd2098749a32347714fa2309, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 910099929, guid: a86afebebd2098749a32347714fa2309, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1098785455, guid: a86afebebd2098749a32347714fa2309, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -18332,8 +18350,8 @@ Tilemap:
     m_Data: {fileID: -1028490825, guid: a86afebebd2098749a32347714fa2309, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -22437015, guid: a86afebebd2098749a32347714fa2309, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1098785455, guid: a86afebebd2098749a32347714fa2309, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1167
     m_Data:
@@ -18442,6 +18460,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundType: Grass
+--- !u!19719996 &4320513673167115055
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9122350462608080508}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
 --- !u!1001 &1734490847791033684
 PrefabInstance:
   m_ObjectHideFlags: 0
