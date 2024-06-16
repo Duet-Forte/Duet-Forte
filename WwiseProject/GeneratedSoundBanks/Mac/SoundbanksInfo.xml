@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{9E6D75C3-2C38-FC65-20D8-36E1AADAE650}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{26ADDADF-8AAB-AF4C-9690-BBFF2CA0E44A}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -23,11 +23,15 @@
 				</File>
 				<File Id="48994660" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Door.wav</ShortName>
-					<CachePath>SFX/Door_818F3B66.wem</CachePath>
+					<CachePath>SFX/Door_B0633567.wem</CachePath>
 				</File>
 				<File Id="57689545" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ob_Fire_Fire.wav</ShortName>
 					<CachePath>SFX/Ob_Fire_Fire_818F3B66.wem</CachePath>
+				</File>
+				<File Id="98167887" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Character_Emotion_QuestionMark_SFX.wav</ShortName>
+					<CachePath>SFX/Character_Emotion_QuestionMark_SFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="225295536" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Typing01.wav</ShortName>
@@ -89,9 +93,17 @@
 					<ShortName>FootStep_Grass02.wav</ShortName>
 					<CachePath>SFX/FootStep_Grass02_818F3B66.wem</CachePath>
 				</File>
+				<File Id="624505842" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Character_Emotion_Dumbfounded_SFX.wav</ShortName>
+					<CachePath>SFX/Character_Emotion_Dumbfounded_SFX_818F3B66.wem</CachePath>
+				</File>
 				<File Id="654213218" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Dirt05.wav</ShortName>
 					<CachePath>SFX/FootStep_Dirt05_818F3B66.wem</CachePath>
+				</File>
+				<File Id="742910854" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Character_Emotion_Angry_SFX.wav</ShortName>
+					<CachePath>SFX/Character_Emotion_Angry_SFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="750448001" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Wood04.wav</ShortName>
@@ -119,7 +131,7 @@
 				</File>
 				<File Id="1014191835" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ob_Fire_Ignition.wav</ShortName>
-					<CachePath>SFX/Ob_Fire_Ignition_818F3B66.wem</CachePath>
+					<CachePath>SFX/Ob_Fire_Ignition_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="1039083357" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Dirt03.wav</ShortName>
@@ -133,6 +145,21 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
+				<Event Id="179926370" Name="Character_Emotion_Angry_SFX" DurationType="OneShot" DurationMin="1.2583333" DurationMax="1.2583333">
+					<MediaRefs>
+						<MediaRef Id="742910854"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1920166314" Name="Character_Emotion_Dumbfounded_SFX" DurationType="OneShot" DurationMin="1.3863542" DurationMax="1.3863542">
+					<MediaRefs>
+						<MediaRef Id="624505842"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3095903108" Name="Character_Emotion_QuestionMark_SFX" DurationType="OneShot" DurationMin="0.74139583" DurationMax="0.74139583">
+					<MediaRefs>
+						<MediaRef Id="98167887"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2299963368" Name="Gio_BodyFall_SFX" DurationType="OneShot" DurationMin="5.1996665" DurationMax="5.1996665">
 					<MediaRefs>
 						<MediaRef Id="43014063"/>
@@ -155,7 +182,7 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="2869548328" Name="NonCombat_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="4145632761" Name="Ob_Door_SFX" DurationType="OneShot" DurationMin="1.969375" DurationMax="1.969375">
+				<Event Id="4145632761" Name="Ob_Door_SFX" DurationType="OneShot" DurationMin="0.8155387" DurationMax="0.8155387">
 					<MediaRefs>
 						<MediaRef Id="48994660"/>
 					</MediaRefs>
@@ -165,7 +192,7 @@
 						<MediaRef Id="57689545"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="198066997" Name="Ob_Fire_Ignition_SFX" DurationType="OneShot" DurationMin="0.5395" DurationMax="0.5395">
+				<Event Id="198066997" Name="Ob_Fire_Ignition_SFX" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="1014191835"/>
 					</MediaRefs>
@@ -335,7 +362,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{7FD195DF-EB8C-5486-A922-286BDD212BCA}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{38B76B45-D550-C00B-5FAE-668A0279B196}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -506,5 +533,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{41094EC7-16CD-11CA-1FC8-B7297C153416}</FileHash>
+	<FileHash>{9FCE310B-817B-D832-DB3F-1BEDBDB041E1}</FileHash>
 </SoundBanksInfo>

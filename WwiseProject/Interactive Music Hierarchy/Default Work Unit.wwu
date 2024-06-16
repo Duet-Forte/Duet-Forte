@@ -861,6 +861,7 @@
 								<MusicSegment Name="Clear_Loop_SFX" ID="{586192D0-0313-4971-92A2-900C8FAB97C8}" ShortID="828470333">
 									<PropertyList>
 										<Property Name="EndPosition" Type="Real64" Value="14014.6041666667"/>
+										<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -936,7 +937,7 @@
 													<MusicCue Name="Exit Cue" ID="{79820EBB-E5FB-4F20-B994-9AB0A7E70CB6}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
-															<Property Name="TimeMs" Type="Real64" Value="1000"/>
+															<Property Name="TimeMs" Type="Real64" Value="14000"/>
 														</PropertyList>
 													</MusicCue>
 												</Local>

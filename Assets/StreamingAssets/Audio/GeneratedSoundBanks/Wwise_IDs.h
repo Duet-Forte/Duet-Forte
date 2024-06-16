@@ -13,6 +13,9 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CHARACTER_EMOTION_ANGRY_SFX = 179926370U;
+        static const AkUniqueID CHARACTER_EMOTION_DUMBFOUNDED_SFX = 1920166314U;
+        static const AkUniqueID CHARACTER_EMOTION_QUESTIONMARK_SFX = 3095903108U;
         static const AkUniqueID COMBAT_STAGE_01_BGM = 890880275U;
         static const AkUniqueID COMBAT_TEST01 = 207956517U;
         static const AkUniqueID ENEMY_TIMMY_ATTACK_SFX = 837159709U;
