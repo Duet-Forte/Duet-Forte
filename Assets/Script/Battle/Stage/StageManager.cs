@@ -88,7 +88,7 @@ public class StageManager : MonoBehaviour
     [ContextMenu("DEBUG/SceneStart")]
     private void TestPlay()
     {
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,null, new PlayerInfo(3,7));
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn, new PlayerInfo(3,7));
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(false);
     }
@@ -100,14 +100,14 @@ public class StageManager : MonoBehaviour
             judgeManager?.UpdateInput();
         }
     }
-    public void StageStart(Stage stage, PlayerSkill[] skillSet, PlayerInfo playerInfo)  //현재는 레벨이랑 경험치를 받고 있지만 확장성을 고려하면 캡슐화시켜서 전달해야 할 듯 합니다.
+    public void StageStart(Stage stage , PlayerInfo playerInfo)  //현재는 레벨이랑 경험치를 받고 있지만 확장성을 고려하면 캡슐화시켜서 전달해야 할 듯 합니다.
     {//don't destroy on load에서 주입받을
         this.stage = stage;
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn,skillSet, playerInfo);
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn , playerInfo);
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(false);
     }
-    private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn,PlayerSkill[] skillSet, PlayerInfo playerInfo)
+    private void InitSettings(int bitPerMinute, string enemyName, Turn startTurn,PlayerInfo playerInfo)
     {
         metronome = GetComponent<Metronome>();
         metronome.InitSettins(stage);
@@ -117,7 +117,7 @@ public class StageManager : MonoBehaviour
         SpawnEnemy(enemyName);// 지정된 위치에 소환
         battlePresenter = new GameObject("BattlePresenter").AddComponent<BattlePresenter>();
         battlePresenter.InitSettings(this);
-        SpawnPlayer(skillSet,playerInfo);
+        SpawnPlayer(playerInfo);
         InitObjectsSettings();
         UIManager = new UIManager();
         UIManager.StartStage(this);
@@ -149,12 +149,12 @@ public class StageManager : MonoBehaviour
         AkSoundEngine.SetSwitch("Stage01", "StageEnd", gameObject);
     }
 
-    private void SpawnPlayer(PlayerSkill[] skillSet,PlayerInfo playerInfo)
+    private void SpawnPlayer(PlayerInfo playerInfo)
     {
         player = Instantiate(Resources.Load<GameObject>("Object/Player"));
         playerInterface = player.GetComponent<PlayerInterface>();
         playerInterface.PlayerStatus.InitSetting(playerInfo.PlayerLevel,playerInfo.PlayerCurrentEXP);
-        playerInterface.PlayerSkillSet.InitSettings(skillSet);
+        playerInterface.PlayerSkillSet.InitSettings(playerInfo.PlayerSkills);
         battlePresenter.InitSettings(this);
         playerInterface.PlayerAttack.InitSettins(this,GetComponent<PlayerAttackTimingCheck>());
     }
