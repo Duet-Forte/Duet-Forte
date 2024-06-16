@@ -85,8 +85,8 @@ public class BattlePresenter : MonoBehaviour
         enemyAttack.CalculateDamageWithJudge((int)playerDefense);
         
         CameraShake(1f,1f,100,50);
-
-        StageClear.Instance.AddJudge(enemyAttack.JudgeName);//클리어 점수계산
+        Debug.Log($" 적 공격에 대한 패링 이름 : { enemyAttack.JudgeName}");
+        StageClear.instance.AddJudge(enemyAttack.JudgeName);//클리어 점수계산
 
         playerInterface.GetDamage(enemyAttack);
     }

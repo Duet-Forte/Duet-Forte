@@ -17,9 +17,8 @@ namespace Util
         public const float GREAT_JUDGE = 0.3f;
         public const float PERFECT_JUDGE = 0.2f;
         #endregion
-
         #region ���Ȱ���
-        public const int GUARD_COUNTER_GAUGE = 20;
+        public const int GUARD_COUNTER_GAUGE = 100;
         public const int PERFECT_ICREASE_GAUAGE = 15;
         public const int GREAT_ICREASE_GAUAGE = 8;
         public const int GOOD_ICREASE_GAUAGE = 4;
@@ -77,7 +76,9 @@ namespace Util
         #region �޴� UI ����
         public const int CONTENT_IN_ROW = 3;
         #endregion
-
+        #region PlayerPrefs�� Key��
+        public const string IS_TUTORIAL_END = "isTutorialEnd";
+        #endregion
         #region �ִϸ����� �ؽ�
         public static int dustHash = Animator.StringToHash("Dust");
         public static int angryHash = Animator.StringToHash("Angry");
@@ -85,6 +86,7 @@ namespace Util
         public static int dumbHash = Animator.StringToHash("Dumbfounded");
         public static int questionHash = Animator.StringToHash("Question");
         #endregion
+
 
         #region ���̾�
         public static int PLAYER_LAYER = LayerMask.NameToLayer("Player");

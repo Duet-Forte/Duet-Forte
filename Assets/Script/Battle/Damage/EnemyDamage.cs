@@ -5,13 +5,13 @@ using Util.CustomEnum;
 
 public class EnemyDamage : DamageType
 {
-    public override int GetDamage(float attack, int defense, JudgeName judgeName)
+    public override int GetDamage(float attack, int defense, JudgeName judgeName) //패링 판정
     {
-        if (judgeName == JudgeName.Miss)
-        { //Rest판정
+        if (judgeName == JudgeName.Miss) //패링 실패
+        { 
             return (int)(attack * 1f);
         }
-        if (judgeName == JudgeName.Perfect)
+        if (judgeName == JudgeName.Perfect) //퍼펙트 패링
         {
             return (int)(attack * 0f);
         }

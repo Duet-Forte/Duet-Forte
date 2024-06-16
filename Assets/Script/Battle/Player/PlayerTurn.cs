@@ -60,7 +60,7 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
         playerAttack = GetComponent<PlayerAttack>();
         playerStatus = GetComponent<PlayerStatus>();
         cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
-        playerStatus.InitSetting();
+        //playerStatus.InitSetting();
         
         this.stageManager = stageManager;
         battlePresenter = this.stageManager.BattlePresenter;

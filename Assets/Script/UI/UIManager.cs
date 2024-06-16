@@ -14,9 +14,13 @@ public class UIManager
     private GameObject prepareTurnUI;
     private EnemySignalUI enemySignalUI;
     private BasicAttackQTE basicAttackQTE;
+    private StageClear stageClear;
+    private StageManager stageManager;
+    private SkillPopUpUI skillPopUpUI;
 
     public void StartStage(StageManager stageManager)
     {
+        this.stageManager = stageManager;
         SetCanvas();
         if (preFab == null)
         {
@@ -25,7 +29,7 @@ public class UIManager
         }
         statusUIView = Object.Instantiate(preFab[0], canvas.transform).GetComponent<StatusUIView>();
         statusUIView.InitSettings(stageManager, canvas);
-        GameObject.Instantiate(Resources.Load<GameObject>("UI/Status/UI_GuardCounterGauge"),canvas.transform);
+        //GameObject.Instantiate(Resources.Load<GameObject>("UI/Status/UI_GuardCounterGauge"),canvas.transform);
         //statusUIView.GetOrAddComponent<ScreenSpaceCameraUI>().InitSettings(canvas);
 
         #region 현재 턴 표시하는 UI 세팅
@@ -39,8 +43,13 @@ public class UIManager
         stageManager.PrepareTurnUI = prepareTurnUI.GetComponent<PrepareTurnUI>();
         stageManager.PrepareTurnUI.InitSetting();
 
+        skillPopUpUI = GameObject.Instantiate(Resources.Load<GameObject>("UI/SkillPopUpUI"), canvas.transform).GetComponent<SkillPopUpUI>();
         
+
         basicAttackQTE= GameObject.Instantiate(Resources.Load<GameObject>("UI/BasicAttackQTE"), canvas.transform).GetComponent<BasicAttackQTE>();
+        stageClear = GameObject.Instantiate(Resources.Load<GameObject>("UI/StageClear"), canvas.transform).GetComponent<StageClear>();
+        stageClear.InitSettings(stageManager);
+
 
         if (damagePool == null)
             damagePool = new DamagePool();
@@ -56,9 +65,19 @@ public class UIManager
             basicAttackQTE.EndQTE();
         }
     }
-
-    public void InitStageClear() { 
+    public void AppearSkillPopUp(Sprite skillImage,string skillName) {
+        skillPopUpUI.Appear(skillImage, skillName);
+    }
+    public void DisAppearSkillPopUp() {
+        skillPopUpUI.Disappear();
+    }
+    public void InvokeGameClear() {
+        Debug.Log("UIManager에서 InvokeGameClear호출됨");
         
+        stageClear.Invoke(stageManager.TurnCount, true, stageManager.Enemy.Exp);
+    }
+    public void InvokeGameOver() {
+        stageClear.Invoke(stageManager.TurnCount, false, stageManager.Enemy.Exp);
     }
     private void SetCanvas()
     {

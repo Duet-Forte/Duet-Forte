@@ -61,11 +61,19 @@ namespace Util
             Empty
         }
 
+        public enum SignalInstrument
+        {
+            electricGuitar,
+            tambourine
+            
+
+        }
         public enum EventType
         { 
             None,
             Emotion,
             Quest
         }
+    
     }
 }

@@ -6,19 +6,21 @@ using TMPro;
 using DG.Tweening;
 public class FlavorTextUI : MonoBehaviour
 {
-    [SerializeField] Sprite enemyPortrait;
-    [SerializeField] TMP_Text name;
+    [SerializeField] Image enemyPortrait;
+    [SerializeField] TMP_Text enemyName;
     [SerializeField] TMP_Text enemyInfo;
     [SerializeField] private float defaultX;
     [SerializeField] private float popX;
     private RectTransform rectTransform;
     // Start is called before the first frame update
     
-    public void InitSetting(Sprite enemyPortrait, string name, string enemyInfo) 
+    public void InitSetting(Sprite enemyPortrait, string enemyName, string enemyInfo) 
     {
         GetComponent<ScreenSpaceCameraUI>().InitSettings();
-        this.enemyPortrait = enemyPortrait;
-        this.name.text = name;
+        this.enemyPortrait.sprite = enemyPortrait;
+        this.enemyName.text = enemyName;
+        Debug.Log(enemyInfo);
+        enemyInfo.Replace("\\n", "\n");
         this.enemyInfo.text = enemyInfo;
         rectTransform = GetComponent<RectTransform>();
         StartCoroutine( AppearAndDisappear());

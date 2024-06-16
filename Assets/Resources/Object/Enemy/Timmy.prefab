@@ -161,7 +161,7 @@ Animator:
   m_GameObject: {fileID: 5612330584740958209}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 81ffe2e20a79b6f45ac7928ea6edd212, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3b89b9e4b42319f47a4bc5e7bb0cf0b1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -192,6 +192,7 @@ MonoBehaviour:
   enemyImage: {fileID: 21300000, guid: 8bc02315aa9c37045943fe8b7994651f, type: 3}
   healthPoint: 120
   enemyAttack: 10
+  exp: 70
   slashDefense: 0
   pierceDefense: 0
   soundEventName: Enemy_Timmy_Attack_SFX
@@ -212,7 +213,6 @@ MonoBehaviour:
   - {fileID: 5531352612611189389, guid: 35531d311f374f648800a791bc28f4c6, type: 3}
   - {fileID: 2734133821201430730, guid: ee14ce440b78d7e4384160cd7227e08f, type: 3}
   - {fileID: 4214291812743566734, guid: bf2cb729db073fb4fa6a1ce11fb02c70, type: 3}
-  parryParticle: {fileID: 0}
   attackCountDownSignal: {fileID: 0}
   attackSignal: {fileID: 0}
   dashParticle: {fileID: 0}

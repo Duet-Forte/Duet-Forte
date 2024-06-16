@@ -7,7 +7,7 @@ using Util;
 using Util.CustomEnum;
 using UnityEngine.UI;
 using SoundSet;
-
+using Util.CustomEnum;
 using Director;
 using UnityEngine.Rendering;
 public class Enemy_Prefab : MonoBehaviour, IEnemy
@@ -30,6 +30,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     [Space(5f)]
     [SerializeField] private int healthPoint;
     [SerializeField] private float enemyAttack;
+    [SerializeField] private int exp;
     /// <summary>
     /// 방어력은 빼기공식을 사용
     /// slash 피해 순수 대미지= slashAttack - slashDefense (순수 대미지는 항상 0보다 크거나 같음)
@@ -39,6 +40,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     [Header("Sounds")]
     [Space(5f)]
     [SerializeField] private string soundEventName;
+    [SerializeField] private SignalInstrument signalInstrument; //시그널 사운드 고르기
     [Space(10f)]
     #endregion
     
@@ -108,6 +110,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public int HealthPoint { get => healthPoint; }
     public string EnemyName { get => enemyName; }
     public Vector2 Defense { get => new Vector2(slashDefense, pierceDefense); }
+    public int Exp { get => exp; }
     #endregion
 
     #region 디버깅용!
@@ -349,6 +352,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     
     public void GetDamage(Damage damage)// getdamage 메서드 자체를 이사시켜야될 듯
     {
+
+        if (healthPoint == 0) { return; }
         if (damage.GetCalculatedDamage() <= 0) {
             enemyAnimator.Guard();
             return;
@@ -356,11 +361,17 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
 
         battleDirector.Shake(gameObject);
         enemyAnimator.Hurt();
-
+        
         healthPoint -= damage.GetCalculatedDamage();
+        Mathf.Clamp(damage.GetCalculatedDamage(), -1, healthPoint);
         OnGetDamage?.Invoke(damage);
         if (healthPoint <= 0)
+        {
+            healthPoint = 0;
+            
+            enemyAnimator.Die();
             stageManager.OnEnemyDie();
+        }
     }
     
     #endregion
