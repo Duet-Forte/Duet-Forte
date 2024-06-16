@@ -163,10 +163,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -20, y: 20}
-      - {x: -20, y: -44}
-      - {x: 70, y: -44}
-      - {x: 70, y: 20}
+    - - {x: -13, y: 8}
+      - {x: -13, y: -21}
+      - {x: 43, y: -21}
+      - {x: 43, y: 8}
 --- !u!1 &824052827287401233
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3062844121048422009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.61, y: 13.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -718,20 +718,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 6405372186680152960}
     m_ColliderPaths:
-    - - X: 790000000
-        Y: 205000000
-      - X: -220000000
-        Y: 205000000
-      - X: -220000000
-        Y: -445000000
-      - X: 790000000
-        Y: -445000000
+    - - X: 430000000
+        Y: 80000000
+      - X: -130000000
+        Y: 80000000
+      - X: -130000000
+        Y: -210000000
+      - X: 430000000
+        Y: -210000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 78.99997, y: -44.5}
-      - {x: 78.99997, y: 20.5}
-      - {x: -22, y: 20.499971}
-      - {x: -21.999971, y: -44.5}
+    - - {x: 42.999973, y: -21}
+      - {x: 42.999973, y: 8}
+      - {x: -13, y: 7.9999704}
+      - {x: -12.99997, y: -21}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!61 &6405372186680152960
@@ -747,7 +747,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 28.5, y: -12}
+  m_Offset: {x: 15, y: -6.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -758,7 +758,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 101, y: 65}
+  m_Size: {x: 56, y: 29}
   m_EdgeRadius: 0
 --- !u!1 &6110154163089427359
 GameObject:
@@ -1196,7 +1196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1513375378457810593}
   m_Layer: 0
-  m_Name: The Silent Orchestra
+  m_Name: Tambourine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1304,7 +1304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7226428442166829059}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.40000153, y: -8.7, z: 0}
+  m_LocalPosition: {x: -2.45, y: -1.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

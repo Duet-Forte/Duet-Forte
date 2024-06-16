@@ -9713,8 +9713,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 153567263
+  m_SortingLayer: 3
   m_SortingOrder: 13
   m_Sprite: {fileID: 1595502820, guid: fa7d5fb3a1553fb419771358fe5f9630, type: 3}
   m_Color: {r: 1, g: 0.9822886, b: 0.8254717, a: 1}
@@ -14579,8 +14579,11 @@ GameObject:
   m_Component:
   - component: {fileID: 9121390550810946859}
   - component: {fileID: 9121390550810946858}
+  - component: {fileID: 3804039105266153144}
+  - component: {fileID: -1172377761156560349}
+  - component: {fileID: -5197303476784234239}
   m_Layer: 0
-  m_Name: CommonEnemy_NonBattleObject_Monster_VFX
+  m_Name: Tambourine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14643,8 +14646,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 153567263
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f2de8660654eac24e8c2e949550190c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14657,3 +14660,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3804039105266153144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121390550810946857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3694b2cb9111e4abecb86606e70b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAlive: 1
+  level: 0
+  isFleeing: 0
+--- !u!114 &-1172377761156560349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121390550810946857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e23155c1102a4c44d9641b9d20e2843e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  trackScale: {x: 20, y: 20}
+  nodeRadius: 1
+  colliderOffset: 0.5
+  timePerNode: 0.7
+--- !u!95 &-5197303476784234239
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121390550810946857}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e9307c6578596c43862cd870a7ca375, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
