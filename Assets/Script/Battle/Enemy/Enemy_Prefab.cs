@@ -7,7 +7,7 @@ using Util;
 using Util.CustomEnum;
 using UnityEngine.UI;
 using SoundSet;
-
+using Util.CustomEnum;
 using Director;
 using UnityEngine.Rendering;
 public class Enemy_Prefab : MonoBehaviour, IEnemy
@@ -40,6 +40,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     [Header("Sounds")]
     [Space(5f)]
     [SerializeField] private string soundEventName;
+    [SerializeField] private SignalInstrument signalInstrument; //시그널 사운드 고르기
     [Space(10f)]
     #endregion
     

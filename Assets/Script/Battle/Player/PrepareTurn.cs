@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Util;
 using Util.CustomEnum;
 
 
@@ -34,7 +35,12 @@ public class PrepareTurn :ITurnHandler
         yield return Timer(3f);
         if (tutorial != null)
         {
-            yield return tutorial.InitSettings();
+            
+            if (PlayerPrefs.GetInt(Const.IS_TUTORIAL_END) == 0)
+            {
+                yield return tutorial.InitSettings();
+                PlayerPrefs.SetInt(Const.IS_TUTORIAL_END, 1);
+            }
         }
         yield return null;
     }

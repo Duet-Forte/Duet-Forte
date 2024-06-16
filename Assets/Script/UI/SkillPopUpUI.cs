@@ -13,11 +13,12 @@ public class SkillPopUpUI : MonoBehaviour
 
         transform.GetChild(1).GetComponent<Image>().sprite=skillImage;
         transform.GetChild(0).GetComponent<TMP_Text>().text=skillName;
+        Debug.Log($"skillPopUpUIÀÇ x°ª : {transform.position.x}");
         transform.DOMove(new Vector2(transform.position.x + moveOffset, transform.position.y), 0.2f);
 
     }
     public void Disappear() {
 
-        transform.DOMove(new Vector2(transform.position.x - moveOffset, transform.position.y), 0.2f).OnComplete(()=>Destroy(transform.parent.gameObject));
+        transform.DOMove(new Vector2(transform.position.x - moveOffset, transform.position.y), 0.2f);
     }
 }

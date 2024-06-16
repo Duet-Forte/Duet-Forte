@@ -114,11 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4adc758dc3212d146abe70091e7d5e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLevel: 2
   playerHealthPoint: 100
-  playerCurrentExp: 0
-  playerMaxExp: 0
-  playerAttack: 30
+  playerAttack: 5
   playerDefence: 2
 --- !u!114 &5676225777311692114
 MonoBehaviour:

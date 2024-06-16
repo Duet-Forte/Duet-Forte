@@ -124,7 +124,8 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                     Debug.Log($"스킬 {playerSkillSet.ArrayOfSkillName[skillSetIndex]} 발동됨");
                     Debug.Log($"{skillSetIndex}번째 파티클");
                     currentSkill = playerSkillSet.ArrayOfSkill[skillSetIndex];
-                    SkillUI(playerSkillSet.ArrayOfSkillIcon[skillSetIndex], playerSkillSet.ArrayOfSkillName[skillSetIndex]);
+                    
+                    SkillUI(playerSkillSet.ArrayOfSkillIcon[skillSetIndex] , playerSkillSet.ArrayOfSkillName[skillSetIndex]);
                     castSkillParticle = playerSkillSet.ArrayOfSkillParticle[skillSetIndex];//파티클이지만 PlayerSkill.Skill에 포함됨 삭제 예정
                     StartCoroutine(SkillCast(currentSkill));
 
@@ -157,11 +158,16 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
 
     #region 스킬 팝업 UI
     void SkillUI(Sprite skillImage,string skillName) {
-        skillPopUpUI=Instantiate(Resources.Load<GameObject>("UI/SkillPopUpUICanvas")).GetComponentInChildren<SkillPopUpUI>();
-        skillPopUpUI.Appear(skillImage, skillName);
-        
+        //skillPopUpUI=Instantiate(Resources.Load<GameObject>("UI/SkillPopUpUICanvas")).GetComponentInChildren<SkillPopUpUI>();
+        //skillPopUpUI.Appear(skillImage, skillName);
+        theStageManager.UIMAnager.AppearSkillPopUp(skillImage, skillName);
+
+
     }
-    void SkillUI() { skillPopUpUI.Disappear(); }
+    void SkillUI() { 
+        //skillPopUpUI.Disappear(); 
+        theStageManager.UIMAnager.DisAppearSkillPopUp();
+    }
     #endregion
     // Update is called once per frame
     void BasicAttackCoolDown() {

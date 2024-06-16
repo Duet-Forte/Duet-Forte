@@ -16,6 +16,7 @@ public class UIManager
     private BasicAttackQTE basicAttackQTE;
     private StageClear stageClear;
     private StageManager stageManager;
+    private SkillPopUpUI skillPopUpUI;
 
     public void StartStage(StageManager stageManager)
     {
@@ -28,7 +29,7 @@ public class UIManager
         }
         statusUIView = Object.Instantiate(preFab[0], canvas.transform).GetComponent<StatusUIView>();
         statusUIView.InitSettings(stageManager, canvas);
-        GameObject.Instantiate(Resources.Load<GameObject>("UI/Status/UI_GuardCounterGauge"),canvas.transform);
+        //GameObject.Instantiate(Resources.Load<GameObject>("UI/Status/UI_GuardCounterGauge"),canvas.transform);
         //statusUIView.GetOrAddComponent<ScreenSpaceCameraUI>().InitSettings(canvas);
 
         #region 현재 턴 표시하는 UI 세팅
@@ -42,7 +43,9 @@ public class UIManager
         stageManager.PrepareTurnUI = prepareTurnUI.GetComponent<PrepareTurnUI>();
         stageManager.PrepareTurnUI.InitSetting();
 
+        skillPopUpUI = GameObject.Instantiate(Resources.Load<GameObject>("UI/SkillPopUpUI"), canvas.transform).GetComponent<SkillPopUpUI>();
         
+
         basicAttackQTE= GameObject.Instantiate(Resources.Load<GameObject>("UI/BasicAttackQTE"), canvas.transform).GetComponent<BasicAttackQTE>();
         stageClear = GameObject.Instantiate(Resources.Load<GameObject>("UI/StageClear"), canvas.transform).GetComponent<StageClear>();
         stageClear.InitSettings(stageManager);
@@ -62,7 +65,12 @@ public class UIManager
             basicAttackQTE.EndQTE();
         }
     }
-
+    public void AppearSkillPopUp(Sprite skillImage,string skillName) {
+        skillPopUpUI.Appear(skillImage, skillName);
+    }
+    public void DisAppearSkillPopUp() {
+        skillPopUpUI.Disappear();
+    }
     public void InvokeGameClear() {
         Debug.Log("UIManager에서 InvokeGameClear호출됨");
         

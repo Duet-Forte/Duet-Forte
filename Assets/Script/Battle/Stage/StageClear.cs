@@ -20,7 +20,7 @@ public class StageClear : MonoBehaviour
     private Rank rank;
     #endregion
 
-    private static StageClear instance=null;
+    public static StageClear instance=null;
     private List<JudgeName> judges;
     string rankStr = "";
 
@@ -29,6 +29,7 @@ public class StageClear : MonoBehaviour
     private int playerLevel;
     private PlayerStatus playerStatus;
     private float expGainSpeed=1.5f;
+    private float fadeOutSpeed=2.5f;
 
     StageManager stageManager;
     [SerializeField] private GameObject rankTitle;
@@ -51,29 +52,32 @@ public class StageClear : MonoBehaviour
     }*/
     #region public Interface
     public void InitSettings(StageManager stageManager) {
-        this.stageManager = stageManager;
-        judges = new List<JudgeName>();
 
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            
         }
         else {
-            Destroy(this.gameObject);
+            
         }
-
+        
+        stageManager = stageManager;
+        judges = new List<JudgeName>();
         playerStatus = stageManager.PlayerInterface.PlayerStatus;
     }
     public static StageClear Instance
     {
         get 
         {
-            if (Instance == null) 
+            if (instance == null) 
             {
+                Debug.Log($" instance.judges : {instance.judges}");
+                Debug.Log($" instance : {instance}");
                 return null;
             }
-            return Instance;
+            Debug.Log($" instance.judges : {instance.judges}");
+            return instance;
         }
     }
     public void AddJudge(JudgeName judge) { 
@@ -132,8 +136,8 @@ public class StageClear : MonoBehaviour
         SetEXPSlider();
         expChangeText.text = $"+EXP {enemyExp}";
         //Coroutine showEXP= StartCoroutine(ShowEXP());
-        backGround.DOFade(0.7f, 0.7f);
-        yield return new WaitForSeconds(0.7f);
+        backGround.DOFade(0.7f, fadeOutSpeed);
+        yield return new WaitForSeconds(fadeOutSpeed);
 
         
         titleText.gameObject.SetActive(true);

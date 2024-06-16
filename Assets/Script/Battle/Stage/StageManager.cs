@@ -78,6 +78,7 @@ public class StageManager : MonoBehaviour
     public ControlTurnUI TurnUI { set => turnUI = value; get => turnUI; }
     public EnemySignalUI EnemySignalUI { get => enemySignalUI; set => enemySignalUI = value; }
     public GameObject BlackBox { get => blackBox; }
+    public UIManager UIMAnager { get => UIManager; }
   
     #endregion
     #region 디버깅용
@@ -92,6 +93,11 @@ public class StageManager : MonoBehaviour
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(false);
     }
+    [ContextMenu("DEBUG/ResetPlayerPrefs")]
+    private void ResetPlayerPrefs() {
+        PlayerPrefs.DeleteAll();
+    }
+
 
     private void Update()
     {
@@ -121,6 +127,7 @@ public class StageManager : MonoBehaviour
         InitObjectsSettings();
         UIManager = new UIManager();
         UIManager.StartStage(this);
+        
         LateBindingEvents();
         InitTurnSettings();
         BattleCamSetting();

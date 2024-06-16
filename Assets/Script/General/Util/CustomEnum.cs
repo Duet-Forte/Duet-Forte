@@ -58,5 +58,11 @@ namespace Util
             C,
             Empty
         }
+        public enum SignalInstrument
+        {
+            electricGuitar,
+            tambourine
+            
+        }
     }
 }

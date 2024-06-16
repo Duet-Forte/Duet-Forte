@@ -15,7 +15,7 @@ namespace Util
         public const float PERFECT_JUDGE = 0.2f;
         #endregion
         #region 스탯관련
-        public const int GUARD_COUNTER_GAUGE = 20;
+        public const int GUARD_COUNTER_GAUGE = 100;
         public const int PERFECT_ICREASE_GAUAGE = 15;
         public const int GREAT_ICREASE_GAUAGE = 8;
         public const int GOOD_ICREASE_GAUAGE = 4;
@@ -74,7 +74,11 @@ namespace Util
         public const int CONTENT_IN_ROW = 3;
         #endregion
 
-        
+
+        #region PlayerPrefs의 Key값
+        public const string IS_TUTORIAL_END = "isTutorialEnd";
+        #endregion
+
 
     }
 }
