@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6279623868933161488}
   - component: {fileID: 6279623868933161490}
   - component: {fileID: 5666961586409161963}
+  - component: {fileID: -612065105246124536}
+  - component: {fileID: -5818859135637890797}
   m_Layer: 0
   m_Name: The Silent Orchestra
   m_TagString: Untagged
@@ -124,3 +126,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3694b2cb9111e4abecb86606e70b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 1
+  level: 0
+--- !u!114 &-612065105246124536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279623868933161489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e23155c1102a4c44d9641b9d20e2843e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  trackScale: {x: 20, y: 20}
+  nodeRadius: 1
+  colliderOffset: 0.5
+  timePerNode: 0.7
+--- !u!95 &-5818859135637890797
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279623868933161489}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e9307c6578596c43862cd870a7ca375, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

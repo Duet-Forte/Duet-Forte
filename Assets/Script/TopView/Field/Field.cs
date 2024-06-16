@@ -10,10 +10,15 @@ public class Field : MonoBehaviour
     [SerializeField] private Transform entitySpawnParent;
     [SerializeField] private Transform cutsceneObjectParent;
     [SerializeField] private Transform cameraPathsParent;
+    [SerializeField] private Transform cameraColliderParent;
+    [SerializeField] private CinemachineVirtualCamera cutsceneCamera;
     private Dictionary<string, TopViewEntity[]> entities;
     private Dictionary<string, GameObject> cutsceneObject;
     private Dictionary<string, CinemachinePath> cameraPaths;
-    
+    private Dictionary<string, PolygonCollider2D> cameraColliders;
+
+    public CinemachineVirtualCamera CutsceneCam { get => cutsceneCamera; }
+
     public void InitSettings(int id)
     {
         this.id = id;
@@ -21,7 +26,7 @@ public class Field : MonoBehaviour
         cutsceneObject = new Dictionary<string, GameObject>();
         SetEntity();
         SetCutsceneObject();
-        SetCameraPaths();
+        SetCameraSettings();
     }
     public void SetEntity()
     {
@@ -41,6 +46,7 @@ public class Field : MonoBehaviour
             for(int tempChildID = 0; tempChildID < temp.childCount; ++tempChildID)
             {
                 GameObject enemy = Instantiate(enemyPrefab);
+                enemy.name = enemyName;
                 tempEnemies[tempChildID] = enemy.GetComponent<TopViewEntity>();
                 Vector2 enemySpawnPoint = temp.GetChild(tempChildID).position;
 
@@ -54,13 +60,22 @@ public class Field : MonoBehaviour
         }
     }
 
-    private void SetCameraPaths()
+    private void SetCameraSettings()
     {
+        SceneManager.Instance.CameraManager.SetCutsceneCamera(cutsceneCamera);
         cameraPaths = new Dictionary<string, CinemachinePath>();
+        cameraColliders = new Dictionary<string, PolygonCollider2D>();
+
         for(int count = 0; count < cameraPathsParent.childCount; ++count)
         {
             CinemachinePath pathTransform = cameraPathsParent.GetChild(count).GetComponent<CinemachinePath>();
             cameraPaths.Add(pathTransform.name, pathTransform);
+        }
+
+        for (int count = 0; count < cameraColliderParent.childCount; ++count)
+        {
+            PolygonCollider2D colliderTransform = cameraColliderParent.GetChild(count).GetComponent<PolygonCollider2D>();
+            cameraColliders.Add(colliderTransform.name, colliderTransform);
         }
     }
     public void SetCutsceneObject()
@@ -84,10 +99,16 @@ public class Field : MonoBehaviour
         return entity;
     }
 
-    public CinemachinePath SetCameraPath(CinemachineVirtualCamera virtualCamera, string cutsceneName)
+    public CinemachinePath SetCameraPath(string cutsceneName)
     {
         cameraPaths.TryGetValue(cutsceneName, out CinemachinePath cutscenePath);
-        virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_Path = cutscenePath;
+        cutsceneCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_Path = cutscenePath;
         return cutscenePath;
+    }
+
+    public PolygonCollider2D GetCameraCollider(string regionName)
+    {
+        cameraColliders.TryGetValue(regionName, out PolygonCollider2D collider);
+        return collider;
     }
 }

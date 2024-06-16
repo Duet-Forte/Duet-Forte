@@ -19,7 +19,7 @@ public class TSVReader
         {
             // 한 줄씩 읽어오기
             string[] line = streamReader.ReadLine().Split("\t");
-            if (line[4] == string.Empty)
+            if (line[4] == string.Empty && line[5] == string.Empty)
                 continue;
             text.Add(new Dictionary<string, string>());
             for (int index = 0; index < header.Length; ++index)

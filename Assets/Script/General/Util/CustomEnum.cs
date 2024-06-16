@@ -49,7 +49,9 @@ namespace Util
             Move,
             Interact
         }
-        public enum Rank { 
+
+        public enum Rank
+        {
             S,
             APlus,
             A,
@@ -57,6 +59,13 @@ namespace Util
             B,
             C,
             Empty
+        }
+
+        public enum EventType
+        { 
+            None,
+            Emotion,
+            Quest
         }
     }
 }
