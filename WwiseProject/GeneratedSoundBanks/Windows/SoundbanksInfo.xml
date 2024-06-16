@@ -335,13 +335,17 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{93B0ED36-2E55-F83C-0420-767680846B6B}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{7FD195DF-EB8C-5486-A922-286BDD212BCA}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
 				<File Id="12610899" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Timmy_Attack04.wav</ShortName>
 					<CachePath>SFX/Timmy_Attack04_818F3B66.wem</CachePath>
+				</File>
+				<File Id="139163244" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear_Loop.wav</ShortName>
+					<CachePath>SFX/Clear_Loop_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="167940839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skill_BBB02.wav</ShortName>
@@ -378,6 +382,10 @@
 				<File Id="602281588" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>세로베기.wav</ShortName>
 					<CachePath>SFX/세로베기_9ECBE823.wem</CachePath>
+				</File>
+				<File Id="691916430" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear_SFX.wav</ShortName>
+					<CachePath>SFX/Clear_SFX_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
@@ -424,7 +432,9 @@
 			<Events>
 				<Event Id="890880275" Name="Combat_Stage_01_BGM" DurationType="Infinite">
 					<MediaRefs>
+						<MediaRef Id="139163244"/>
 						<MediaRef Id="481124707"/>
+						<MediaRef Id="691916430"/>
 						<MediaRef Id="755516841"/>
 					</MediaRefs>
 				</Event>
@@ -496,5 +506,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8AFBCE12-F28A-A549-5DA3-C2699D29A482}</FileHash>
+	<FileHash>{6C6B500E-BA0F-4622-10DE-D20F13082A07}</FileHash>
 </SoundBanksInfo>
