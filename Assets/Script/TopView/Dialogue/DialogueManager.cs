@@ -2,7 +2,6 @@ using Cysharp.Threading.Tasks;
 using Febucci.UI;
 using System.Threading;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Util.CustomEnum;
@@ -110,10 +109,11 @@ public class DialogueManager
             dialogueWindow.SetPosition(currentSpeaker);
             await UniTask.Delay(500, cancellationToken: cancel.Token);
             await UniTask.WaitUntil(IsKeyTriggered, cancellationToken: cancel.Token);
+            typewriter.SkipTypewriter();
+            await UniTask.WaitUntil(IsKeyTriggered, cancellationToken: cancel.Token);
         }
         window.SetActive(false);
     }
-
     private bool IsKeyTriggered()
     {
         if (SceneManager.Instance.InputController.GetAction(PlayerAction.Interact).triggered)
