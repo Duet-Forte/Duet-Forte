@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{26ADDADF-8AAB-AF4C-9690-BBFF2CA0E44A}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{F0E5556E-5E4F-D3BE-11CA-D901944EDA4B}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -277,7 +277,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{EBAC2D1C-8A81-ECA0-DA3C-755B6E9625F8}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F35AB43F-87AF-C419-7AB4-8073EEDE0C4D}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -305,6 +305,14 @@
 				<GameParameter Id="2415836739" Name="Volume"/>
 				<GameParameter Id="2862064063" Name="SFX_SideChain"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="1931646578" Name="CampFire">
+					<States>
+						<State Id="2206092402" Name="Timmy_House"/>
+						<State Id="3091570009" Name="Town"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 			<SwitchGroups>
 				<SwitchGroup Id="927944968" Name="NonCombatBGM">
 					<Switches>
@@ -533,5 +541,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F0284322-F8EE-C26F-3BF0-CF85FB0EF609}</FileHash>
+	<FileHash>{843C6135-06C1-0F28-EB66-1E226F15B055}</FileHash>
 </SoundBanksInfo>

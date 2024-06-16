@@ -43,6 +43,21 @@ namespace AK
         static const AkUniqueID UI_TYPING_SFX = 1024104135U;
     } // namespace EVENTS
 
+    namespace STATES
+    {
+        namespace CAMPFIRE
+        {
+            static const AkUniqueID GROUP = 1931646578U;
+
+            namespace STATE
+            {
+                static const AkUniqueID TIMMY_HOUSE = 2206092402U;
+                static const AkUniqueID TOWN = 3091570009U;
+            } // namespace STATE
+        } // namespace CAMPFIRE
+
+    } // namespace STATES
+
     namespace SWITCHES
     {
         namespace NONCOMBATBGM

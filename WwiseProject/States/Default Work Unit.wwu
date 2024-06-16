@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{8286F52A-5C55-4B0C-8DB3-6CE6DA087C95}" SchemaVersion="119">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{8286F52A-5C55-4B0C-8DB3-6CE6DA087C95}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{8286F52A-5C55-4B0C-8DB3-6CE6DA087C95}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="CampFire" ID="{1BD6E414-4ADE-4960-9F47-91B16CA36961}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="Timmy_House" ID="{68390AAD-0981-4140-B817-4A04E8E6410F}"/>
+						<State Name="Town" ID="{95BE0146-4FD3-4D96-964E-EE7FD569CF7F}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="Timmy_House" ID="{68390AAD-0981-4140-B817-4A04E8E6410F}"/>
+							<EndState Name="Town" ID="{95BE0146-4FD3-4D96-964E-EE7FD569CF7F}"/>
+							<Time>0</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="Town" ID="{95BE0146-4FD3-4D96-964E-EE7FD569CF7F}"/>
+							<EndState Name="Timmy_House" ID="{68390AAD-0981-4140-B817-4A04E8E6410F}"/>
+							<Time>0</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

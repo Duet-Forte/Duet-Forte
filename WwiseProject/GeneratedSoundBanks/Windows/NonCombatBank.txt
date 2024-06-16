@@ -25,6 +25,13 @@ Switch	ID	Name	Switch Group			Notes
 	2195636714	Dirt	State			
 	4248645337	Grass	State			
 
+State Group	ID	Name			Wwise Object Path	Notes
+	1931646578	CampFire			\Default Work Unit\CampFire	
+
+State	ID	Name	State Group			Notes
+	2206092402	Timmy_House	CampFire			
+	3091570009	Town	CampFire			
+
 Effect plug-ins	ID	Name	Type				Notes
 	1819748223	EQ	Wwise Parametric EQ			
 	3160090811	New_Compressor	Wwise Compressor			
