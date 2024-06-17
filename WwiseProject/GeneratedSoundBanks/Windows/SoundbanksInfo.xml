@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{C530B656-1CC3-584B-CEA9-135DEE1CD125}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{751067CE-34FC-3EE5-58ED-193D502E25E7}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -40,10 +40,6 @@
 				<File Id="225295536" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Typing01.wav</ShortName>
 					<CachePath>SFX/Typing01_818F3B66.wem</CachePath>
-				</File>
-				<File Id="270105021" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Transition_FadeOut.wav</ShortName>
-					<CachePath>SFX/Transition_FadeOut_818F3B66.wem</CachePath>
 				</File>
 				<File Id="327002089" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Typing02.wav</ShortName>
@@ -264,11 +260,6 @@
 						<MediaRef Id="586961463"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1873933263" Name="Transition_FadeOut" DurationType="OneShot" DurationMin="1.5126458" DurationMax="1.5126458">
-					<MediaRefs>
-						<MediaRef Id="270105021"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="1260125929" Name="UI_GetSkill_SFX" DurationType="OneShot" DurationMin="2.4756267" DurationMax="2.4756267">
 					<MediaRefs>
 						<MediaRef Id="225095606"/>
@@ -407,7 +398,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{38AA864B-FE23-8844-E057-64EBB6522AEA}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{66EE169A-2007-1301-3F9C-751EDF340EC5}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -434,6 +425,10 @@
 				<File Id="191541219" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Signal.wav</ShortName>
 					<CachePath>SFX/Tambourine_Signal_818F3B66.wem</CachePath>
+				</File>
+				<File Id="270105021" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Transition_FadeOut.wav</ShortName>
+					<CachePath>SFX/Transition_FadeOut_818F3B66.wem</CachePath>
 				</File>
 				<File Id="292868217" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>03.wav</ShortName>
@@ -615,6 +610,11 @@
 						<MediaRef Id="991299104"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1873933263" Name="Transition_FadeOut" DurationType="OneShot" DurationMin="1.5126458" DurationMax="1.5126458">
+					<MediaRefs>
+						<MediaRef Id="270105021"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="2415836739" Name="Volume"/>
@@ -629,5 +629,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E556602D-AAF3-4EDD-6B15-C2D2A2BB0A7B}</FileHash>
+	<FileHash>{EE100A0C-0E07-02A0-F654-7101384E59FF}</FileHash>
 </SoundBanksInfo>
