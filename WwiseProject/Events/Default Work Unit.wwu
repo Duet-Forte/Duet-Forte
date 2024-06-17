@@ -114,7 +114,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Gio_BodyFall_SFX" ID="{CA4BCAB6-D3C9-43A5-AAC9-1BECBB8FA693}">
+								<Event Name="Player_BodyFall_SFX" ID="{CA4BCAB6-D3C9-43A5-AAC9-1BECBB8FA693}">
 									<ChildrenList>
 										<Action Name="" ID="{72D0A5B7-FFD4-4485-89C0-1CE483C004E7}" ShortID="98079214">
 											<ReferenceList>
@@ -418,7 +418,7 @@
 					<ChildrenList>
 						<Folder Name="Tambourine" ID="{BB9B6F2D-1A78-4066-9B2A-471A89BCE6AC}" ShortID="309671653">
 							<ChildrenList>
-								<Event Name="Tambourine_Attack_Signal" ID="{6AD373EB-F79F-4EB9-B1CC-A2C4C6AAAB32}">
+								<Event Name="Enemy_Tambourine_Attack_Signal_SFX" ID="{6AD373EB-F79F-4EB9-B1CC-A2C4C6AAAB32}">
 									<ChildrenList>
 										<Action Name="" ID="{6CCFD73A-9CC7-429F-8A84-05432D745B50}" ShortID="502200395">
 											<ReferenceList>
@@ -444,7 +444,7 @@
 						</Folder>
 						<Folder Name="Timmy" ID="{B00C2E5A-106C-4953-A0C1-DF77B107115E}" ShortID="1064556675">
 							<ChildrenList>
-								<Event Name="ElecGuitar_Attack_Signal_SFX" ID="{E1E65314-CE0A-4A59-8CAE-68303D53B1EB}">
+								<Event Name="Enemy_ElecGuitar_Attack_Signal_SFX" ID="{E1E65314-CE0A-4A59-8CAE-68303D53B1EB}">
 									<ChildrenList>
 										<Action Name="" ID="{27468000-20B5-4638-8878-0E55DDA9CFE9}" ShortID="51668979">
 											<ReferenceList>

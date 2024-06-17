@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{167539D5-E790-95A6-960F-19AB36F259CD}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{236DE260-DC3E-13F1-2D8B-D7C23BA71A20}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -164,11 +164,6 @@
 						<MediaRef Id="98167887"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2299963368" Name="Gio_BodyFall_SFX" DurationType="OneShot" DurationMin="5.1996665" DurationMax="5.1996665">
-					<MediaRefs>
-						<MediaRef Id="43014063"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="918533349" Name="NonCombat_BGM" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -204,6 +199,11 @@
 				<Event Id="3661802867" Name="Ob_Fire_SwitchOn_SFX" DurationType="OneShot" DurationMin="0.48697916" DurationMax="0.48697916">
 					<MediaRefs>
 						<MediaRef Id="18628162"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="173655414" Name="Player_BodyFall_SFX" DurationType="OneShot" DurationMin="5.1996665" DurationMax="5.1996665">
+					<MediaRefs>
+						<MediaRef Id="43014063"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="4038898239" Name="Player_Step_SFX" DurationType="OneShot" DurationMin="0.17045833" DurationMax="0.35375">
@@ -380,7 +380,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{EFC6E7DE-9CEE-9CDE-5F64-8246AF2431B6}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{F82F2050-79E3-A52A-02E4-C36C6F3DAC58}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -494,7 +494,7 @@
 						<MediaRef Id="514950658"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="943321042" Name="ElecGuitar_Attack_Signal_SFX" DurationType="OneShot" DurationMin="1.7777916" DurationMax="1.7777916">
+				<Event Id="3211681449" Name="Enemy_ElecGuitar_Attack_Signal_SFX" DurationType="OneShot" DurationMin="1.7777916" DurationMax="1.7777916">
 					<MediaRefs>
 						<MediaRef Id="292868217"/>
 						<MediaRef Id="937501252"/>
@@ -511,6 +511,11 @@
 					<MediaRefs>
 						<MediaRef Id="133336124"/>
 						<MediaRef Id="390818071"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="909052356" Name="Enemy_Tambourine_Attack_Signal_SFX" DurationType="OneShot" DurationMin="1" DurationMax="1">
+					<MediaRefs>
+						<MediaRef Id="191541219"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="837159709" Name="Enemy_Timmy_Attack_SFX" DurationType="OneShot" DurationMin="0.7638958" DurationMax="0.7638958">
@@ -562,16 +567,11 @@
 						<MediaRef Id="991299104"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2914347299" Name="Tambourine_Attack_Signal" DurationType="OneShot" DurationMin="1" DurationMax="1">
-					<MediaRefs>
-						<MediaRef Id="191541219"/>
-					</MediaRefs>
-				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="2415836739" Name="Volume"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{2FA78D1C-7EB5-C89C-1BA9-135705D96577}</FileHash>
+	<FileHash>{6E30F464-58FF-5412-7228-3F8E3767F340}</FileHash>
 </SoundBanksInfo>

@@ -1,4 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
+	173655414	Player_BodyFall_SFX			\Default Work Unit\Player\NonCombat\Player_BodyFall_SFX	
 	179926370	Character_Emotion_Angry_SFX			\Default Work Unit\NonCombat_SFX\Emotion\Character_Emotion_Angry_SFX	
 	198066997	Ob_Fire_Ignition_SFX			\Default Work Unit\NonCombat_SFX\Ob_Fire_Ignition_SFX	
 	544226120	Transition_FadeIn			\Default Work Unit\UI\Transition_FadeIn	
@@ -7,7 +8,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	1260125929	UI_GetSkill_SFX			\Default Work Unit\NonCombat_SFX\UI\UI_GetSkill_SFX	
 	1873933263	Transition_FadeOut			\Default Work Unit\UI\Transition_FadeOut	
 	1920166314	Character_Emotion_Dumbfounded_SFX			\Default Work Unit\NonCombat_SFX\Emotion\Character_Emotion_Dumbfounded_SFX	
-	2299963368	Gio_BodyFall_SFX			\Default Work Unit\Player\NonCombat\Gio_BodyFall_SFX	
 	2869548328	NonCombat_BGM_Stop			\Default Work Unit\BGM\NonCombat\NonCombat_BGM_Stop	
 	3095903108	Character_Emotion_QuestionMark_SFX			\Default Work Unit\NonCombat_SFX\Emotion\Character_Emotion_QuestionMark_SFX	
 	3661802867	Ob_Fire_SwitchOn_SFX			\Default Work Unit\NonCombat_SFX\Ob_Fire_SwitchOn_SFX	

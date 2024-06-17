@@ -3,13 +3,13 @@ Event	ID	Name			Wwise Object Path	Notes
 	207956517	Combat_test01			\Default Work Unit\BGM\Combat\Combat_test01	
 	837159709	Enemy_Timmy_Attack_SFX			\Default Work Unit\Enemy\Timmy\Enemy_Timmy_Attack_SFX	
 	890880275	Combat_Stage_01_BGM			\Default Work Unit\BGM\Combat\Combat_Stage_01_BGM	
-	943321042	ElecGuitar_Attack_Signal_SFX			\Default Work Unit\Enemy\Timmy\ElecGuitar_Attack_Signal_SFX	
+	909052356	Enemy_Tambourine_Attack_Signal_SFX			\Default Work Unit\Enemy\Tambourine\Enemy_Tambourine_Attack_Signal_SFX	
 	1248207521	Player_Attack_StrongSignal_SFX			\Default Work Unit\Player\Combat\Player_Attack_StrongSignal_SFX	
 	1532296734	Player_Attack_B_SFX			\Default Work Unit\Player\Combat\Player_Attack_B_SFX	
 	2328612313	Enemy_Tambourine_Attack_SFX			\Default Work Unit\Enemy\Tambourine\Enemy_Tambourine_Attack_SFX	
 	2518233790	Player_Skill_AAA_SFX			\Default Work Unit\Player\Combat\Player_Skill_AAA_SFX	
 	2846259367	Player_Skill_ABA_SFX			\Default Work Unit\Player\Combat\Player_Skill_ABA_SFX	
-	2914347299	Tambourine_Attack_Signal			\Default Work Unit\Enemy\Tambourine\Tambourine_Attack_Signal	
+	3211681449	Enemy_ElecGuitar_Attack_Signal_SFX			\Default Work Unit\Enemy\Timmy\Enemy_ElecGuitar_Attack_Signal_SFX	
 	3250415283	Player_Skill_BBB_SFX			\Default Work Unit\Player\Combat\Player_Skill_BBB_SFX	
 	3410875789	Player_Parry_SFX			\Default Work Unit\Player\Combat\Player_Parry_SFX	
 	3452252061	Player_Attack_A_SFX			\Default Work Unit\Player\Combat\Player_Attack_A_SFX	

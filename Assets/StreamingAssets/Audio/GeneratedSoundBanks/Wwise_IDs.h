@@ -18,10 +18,10 @@ namespace AK
         static const AkUniqueID CHARACTER_EMOTION_QUESTIONMARK_SFX = 3095903108U;
         static const AkUniqueID COMBAT_STAGE_01_BGM = 890880275U;
         static const AkUniqueID COMBAT_TEST01 = 207956517U;
-        static const AkUniqueID ELECGUITAR_ATTACK_SIGNAL_SFX = 943321042U;
+        static const AkUniqueID ENEMY_ELECGUITAR_ATTACK_SIGNAL_SFX = 3211681449U;
         static const AkUniqueID ENEMY_TAMBOURINE_ATTACK_SFX = 2328612313U;
+        static const AkUniqueID ENEMY_TAMBOURINE_ATTACK_SIGNAL_SFX = 909052356U;
         static const AkUniqueID ENEMY_TIMMY_ATTACK_SFX = 837159709U;
-        static const AkUniqueID GIO_BODYFALL_SFX = 2299963368U;
         static const AkUniqueID MAINMENU_CLICK_GAMESTART_SFX = 162289589U;
         static const AkUniqueID MAINMENU_CLICK_SFX = 1154772126U;
         static const AkUniqueID MAINMENU_HOVER_SFX = 294506560U;
@@ -34,13 +34,13 @@ namespace AK
         static const AkUniqueID PLAYER_ATTACK_A_SFX = 3452252061U;
         static const AkUniqueID PLAYER_ATTACK_B_SFX = 1532296734U;
         static const AkUniqueID PLAYER_ATTACK_STRONGSIGNAL_SFX = 1248207521U;
+        static const AkUniqueID PLAYER_BODYFALL_SFX = 173655414U;
         static const AkUniqueID PLAYER_PARRY_SFX = 3410875789U;
         static const AkUniqueID PLAYER_SKILL_AAA_SFX = 2518233790U;
         static const AkUniqueID PLAYER_SKILL_ABA_SFX = 2846259367U;
         static const AkUniqueID PLAYER_SKILL_BBB_SFX = 3250415283U;
         static const AkUniqueID PLAYER_SKILL_CLIMAX_SFX = 127602315U;
         static const AkUniqueID PLAYER_STEP_SFX = 4038898239U;
-        static const AkUniqueID TAMBOURINE_ATTACK_SIGNAL = 2914347299U;
         static const AkUniqueID TRANSITION_FADEIN = 544226120U;
         static const AkUniqueID TRANSITION_FADEOUT = 1873933263U;
         static const AkUniqueID UI_GETSKILL_SFX = 1260125929U;
