@@ -39,7 +39,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     [SerializeField] private float pierceDefense;
     [Header("Sounds")]
     [Space(5f)]
-    [SerializeField] private string soundEventName;
+    [SerializeField] private string enemyAttackSoundEvent;
     [SerializeField] private SignalInstrument signalInstrument; //시그널 사운드 고르기
     [Space(10f)]
     #endregion
@@ -165,6 +165,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
 
     public IEnumerator Attack()//수리필요
     {
+
         playerInter.PlayerAnimator.Guard();//체인지 세트 72
 
         double patternStartTime = Time.time;
@@ -175,7 +176,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
             stageManager.JudgeManager.EarlyCount = 0;
             isNoteChecked[i] = false;
             sumOfTime += targetTimes[i];
-            judgeStartTime = patternStartTime + sumOfTime - targetTimes[i] * Const.BAD_JUDGE;
+            judgeStartTime = patternStartTime + sumOfTime - targetTimes[i] * Const.BAD_JUDGE;//박자의 중간지점
             judgeEndTime = judgeStartTime + targetTimes[i] * 2 * Const.BAD_JUDGE;
             
             while (judgeEndTime >= Time.time)
@@ -192,10 +193,11 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
             if (!isNoteChecked[i])//패링 못했을 때
             {
                 GiveDamage(new Judge(JudgeName.Miss));
+                AkSoundEngine.PostEvent(enemyAttackSoundEvent, gameObject);
                 enemyAnimator.Attack();
-                AkSoundEngine.PostEvent(soundEventName,gameObject);
                 Debug.Log($"{judgeEndTime}에 판정 종료");
             }
+            
         }
         while (judgeEndTime >= Time.time)
         {
@@ -224,7 +226,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     #region 이동관련 함수
     public void ReturnToOriginPos() {
         enemyAnimator.BackDash();
-        transform.DOMove(originalPosition, 3).SetEase(Ease.OutQuart).OnComplete(()=>enemyAnimator.Idle());
+        transform.DOMove(originalPosition, 3).SetEase(Ease.OutQuart).OnComplete(()=> { enemyAnimator.Idle(); });
+        
     }
     public void DashToBattlePos()
     {
@@ -363,7 +366,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         enemyAnimator.Hurt();
         
         healthPoint -= damage.GetCalculatedDamage();
-        Mathf.Clamp(damage.GetCalculatedDamage(), -1, healthPoint);
+
         OnGetDamage?.Invoke(damage);
         if (healthPoint <= 0)
         {

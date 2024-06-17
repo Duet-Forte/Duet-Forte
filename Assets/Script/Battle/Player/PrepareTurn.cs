@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using Util;
 using Util.CustomEnum;
@@ -32,21 +33,23 @@ public class PrepareTurn :ITurnHandler
         Debug.Log(prepareTurnUI.AppearSkillUI());
         prepareTurnUI.UISwitch(true);
         //게임에서 한 번만 제공
-        yield return Timer(3f);
+        yield return new WaitForSeconds(3f);
         if (tutorial != null)
         {
             
             if (PlayerPrefs.GetInt(Const.IS_TUTORIAL_END) == 0)
             {
+                yield return new WaitForSeconds(2.7f);
                 yield return tutorial.InitSettings();
                 PlayerPrefs.SetInt(Const.IS_TUTORIAL_END, 1);
             }
         }
-        yield return null;
+        
     }
 
     public IEnumerator TurnEnd()
     {
+        yield return new WaitForSeconds(0.3f);
         yield return Timer(7);
         //StartCoroutine(prepareTurnUI.PopDownSkillUI());
         //대체 왜 위에 코드는 안되고 아래 코드는 되는거지
@@ -63,7 +66,10 @@ public class PrepareTurn :ITurnHandler
         while (elapsedTime <= time)
         {
             elapsedTime += Time.deltaTime;
-            if (Input.GetKeyDown(KeyCode.Space)) elapsedTime = time;
+            if (Input.GetKeyDown(KeyCode.Space)) { 
+                elapsedTime = time;
+                break;
+            }
             yield return null;
         }
     }

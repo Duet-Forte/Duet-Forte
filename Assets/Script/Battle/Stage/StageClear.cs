@@ -29,7 +29,7 @@ public class StageClear : MonoBehaviour
     private int playerLevel;
     private PlayerStatus playerStatus;
     private float expGainSpeed=1.5f;
-    private float fadeOutSpeed=2.75f;
+    private float fadeOutSpeed=2.2f;
     private float appearDelay = 1.3f;
 
     StageManager stageManager;
@@ -170,9 +170,17 @@ public class StageClear : MonoBehaviour
         }
         yield return new WaitForSeconds(appearDelay);
 
-        expSlider.transform.DOLocalMove(new Vector2(expSlider.transform.localPosition.x, -360), 0.4f).OnComplete(() => {
-            ChangeEXP(enemyExp);
-        });
+        if (isWin)
+        {
+            expSlider.transform.DOLocalMove(new Vector2(expSlider.transform.localPosition.x, -360), 0.4f).OnComplete(() =>
+            {
+                ChangeEXP(enemyExp);
+            });
+        }
+        else {
+            expChangeText.text = "";
+            expSlider.transform.DOLocalMove(new Vector2(expSlider.transform.localPosition.x, -360), 0.4f);
+        }
 
     }
 
