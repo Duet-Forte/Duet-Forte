@@ -420,7 +420,7 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="UI" ID="{6F27945D-6A2C-471B-BCC4-2D7EF8157F6F}" ShortID="852693471">
+				<Folder Name="Transition_UI" ID="{6F27945D-6A2C-471B-BCC4-2D7EF8157F6F}" ShortID="852693471">
 					<ChildrenList>
 						<Event Name="Transition_FadeIn" ID="{FE4ACF74-6374-4BE4-AAC3-B5E244B42F3A}">
 							<ChildrenList>

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{CE36E7E2-2818-7E3B-5E8E-E459B1B1DC52}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{C530B656-1CC3-584B-CEA9-135DEE1CD125}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -35,7 +35,7 @@
 				</File>
 				<File Id="225095606" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GetSkill_SFX.wav</ShortName>
-					<CachePath>SFX/GetSkill_SFX_9D043C7B.wem</CachePath>
+					<CachePath>SFX/GetSkill_SFX_6754BF55.wem</CachePath>
 				</File>
 				<File Id="225295536" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Typing01.wav</ShortName>
@@ -305,12 +305,13 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F35AB43F-87AF-C419-7AB4-8073EEDE0C4D}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{27F411C9-F765-B275-81F2-AC146B8759AB}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
 				<Custom>
 					<Plugin Id="130867727" Name="Meter (SideChain)" LibName="Wwise Meter" LibId="8454147"/>
+					<Plugin Id="991801778" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
 				</Custom>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
@@ -318,7 +319,6 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
-				<Bus Id="193649807" Name="MainMenu_SFX"/>
 				<Bus Id="817096458" Name="Player_SFX">
 					<PluginRefs>
 						<Custom>
@@ -327,7 +327,15 @@
 					</PluginRefs>
 				</Bus>
 				<Bus Id="3004711510" Name="Combat_BGM"/>
+				<Bus Id="3563481019" Name="UI_SFX">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="991801778"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="4236911706" Name="Town_BGM"/>
 			</Busses>
 			<GameParameters>
 				<GameParameter Id="2415836739" Name="Volume"/>
@@ -364,7 +372,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{7C816719-8A50-F5B9-F124-320ED133AC34}">
+		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{F2CFAE3E-9466-013A-0DF0-147C93389AA6}">
 			<ShortName>MainMenu</ShortName>
 			<Path>MainMenu.bnk</Path>
 			<Media>
@@ -621,5 +629,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{80F22658-5DF1-2936-D2DE-6726D31E2412}</FileHash>
+	<FileHash>{E556602D-AAF3-4EDD-6B15-C2D2A2BB0A7B}</FileHash>
 </SoundBanksInfo>

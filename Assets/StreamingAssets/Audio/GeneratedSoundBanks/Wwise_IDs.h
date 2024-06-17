@@ -122,9 +122,10 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID COMBAT_BGM = 3004711510U;
-        static const AkUniqueID MAINMENU_SFX = 193649807U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID PLAYER_SFX = 817096458U;
+        static const AkUniqueID TOWN_BGM = 4236911706U;
+        static const AkUniqueID UI_SFX = 3563481019U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

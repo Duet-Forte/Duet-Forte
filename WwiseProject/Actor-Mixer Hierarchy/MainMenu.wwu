@@ -11,7 +11,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="MainMenu_SFX" ID="{321F4340-AB7D-4B19-BD96-07124C1C921C}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+									<ObjectRef Name="Town_BGM" ID="{321F4340-AB7D-4B19-BD96-07124C1C921C}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
