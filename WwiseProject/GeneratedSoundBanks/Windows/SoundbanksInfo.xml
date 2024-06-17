@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{B39B8DC0-931A-154E-CC0A-BA50435FFFF2}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{167539D5-E790-95A6-960F-19AB36F259CD}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -32,6 +32,10 @@
 				<File Id="98167887" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Character_Emotion_QuestionMark_SFX.wav</ShortName>
 					<CachePath>SFX/Character_Emotion_QuestionMark_SFX_818F3B66.wem</CachePath>
+				</File>
+				<File Id="225095606" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GetSkill_SFX.wav</ShortName>
+					<CachePath>SFX/GetSkill_SFX_9D043C7B.wem</CachePath>
 				</File>
 				<File Id="225295536" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Typing01.wav</ShortName>
@@ -246,6 +250,11 @@
 						<MediaRef Id="270105021"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1260125929" Name="UI_GetSkill_SFX" DurationType="OneShot" DurationMin="2.4756267" DurationMax="2.4756267">
+					<MediaRefs>
+						<MediaRef Id="225095606"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1024104135" Name="Ui_Typing_SFX" DurationType="OneShot" DurationMin="0.1329375" DurationMax="0.22704166">
 					<MediaRefs>
 						<MediaRef Id="225295536"/>
@@ -315,6 +324,12 @@
 				</StateGroup>
 			</StateGroups>
 			<SwitchGroups>
+				<SwitchGroup Id="344719509" Name="Stage_01">
+					<Switches>
+						<Switch Id="1119828183" Name="Stage_01_End"/>
+						<Switch Id="3995731396" Name="Stage_01_Start"/>
+					</Switches>
+				</SwitchGroup>
 				<SwitchGroup Id="927944968" Name="NonCombatBGM">
 					<Switches>
 						<Switch Id="268061649" Name="TimmyHouse"/>
@@ -326,12 +341,6 @@
 						<Switch Id="2058049674" Name="Wood"/>
 						<Switch Id="2195636714" Name="Dirt"/>
 						<Switch Id="4248645337" Name="Grass"/>
-					</Switches>
-				</SwitchGroup>
-				<SwitchGroup Id="1608553872" Name="Stage01">
-					<Switches>
-						<Switch Id="1795948371" Name="StageStart"/>
-						<Switch Id="3133938216" Name="StageEnd"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>
@@ -371,7 +380,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{998AD62D-51B1-0174-C8D0-996AC3A7C980}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{EFC6E7DE-9CEE-9CDE-5F64-8246AF2431B6}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -383,10 +392,6 @@
 					<ShortName>Tambourine_Attack_B_SFX.wav</ShortName>
 					<CachePath>SFX/Tambourine_Attack_B_SFX_818F3B66.wem</CachePath>
 				</File>
-				<File Id="139163244" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Clear_Loop.wav</ShortName>
-					<CachePath>SFX/Clear_Loop_FBC78EF0.wem</CachePath>
-				</File>
 				<File Id="167940839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skill_BBB02.wav</ShortName>
 					<CachePath>SFX/Skill_BBB02_E8BEDBF4.wem</CachePath>
@@ -394,6 +399,10 @@
 				<File Id="171558463" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Timmy_Attack05.wav</ShortName>
 					<CachePath>SFX/Timmy_Attack05_818F3B66.wem</CachePath>
+				</File>
+				<File Id="191541219" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tambourine_Signal.wav</ShortName>
+					<CachePath>SFX/Tambourine_Signal_818F3B66.wem</CachePath>
 				</File>
 				<File Id="292868217" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>03.wav</ShortName>
@@ -426,10 +435,6 @@
 				<File Id="602281588" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>세로베기.wav</ShortName>
 					<CachePath>SFX/세로베기_9ECBE823.wem</CachePath>
-				</File>
-				<File Id="691916430" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Clear_SFX.wav</ShortName>
-					<CachePath>SFX/Clear_SFX_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
@@ -480,9 +485,7 @@
 			<Events>
 				<Event Id="890880275" Name="Combat_Stage_01_BGM" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="139163244"/>
 						<MediaRef Id="481124707"/>
-						<MediaRef Id="691916430"/>
 						<MediaRef Id="755516841"/>
 					</MediaRefs>
 				</Event>
@@ -490,6 +493,19 @@
 					<MediaRefs>
 						<MediaRef Id="514950658"/>
 					</MediaRefs>
+				</Event>
+				<Event Id="943321042" Name="ElecGuitar_Attack_Signal_SFX" DurationType="OneShot" DurationMin="1.7777916" DurationMax="1.7777916">
+					<MediaRefs>
+						<MediaRef Id="292868217"/>
+						<MediaRef Id="937501252"/>
+						<MediaRef Id="987644166"/>
+						<MediaRef Id="1026749207"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3435419520"/>
+						</ShareSets>
+					</PluginRefs>
 				</Event>
 				<Event Id="2328612313" Name="Enemy_Tambourine_Attack_SFX" DurationType="OneShot" DurationMin="0.63783336" DurationMax="0.6706875">
 					<MediaRefs>
@@ -521,19 +537,6 @@
 						<MediaRef Id="519697605"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="324050508" Name="Player_Attack_WeakSignal_SFX" DurationType="OneShot" DurationMin="1.7777916" DurationMax="1.7777916">
-					<MediaRefs>
-						<MediaRef Id="292868217"/>
-						<MediaRef Id="937501252"/>
-						<MediaRef Id="987644166"/>
-						<MediaRef Id="1026749207"/>
-					</MediaRefs>
-					<PluginRefs>
-						<ShareSets>
-							<PluginRef Id="3435419520"/>
-						</ShareSets>
-					</PluginRefs>
-				</Event>
 				<Event Id="3410875789" Name="Player_Parry_SFX" DurationType="OneShot" DurationMin="1.0792426" DurationMax="1.0792426">
 					<MediaRefs>
 						<MediaRef Id="723090075"/>
@@ -559,11 +562,16 @@
 						<MediaRef Id="991299104"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2914347299" Name="Tambourine_Attack_Signal" DurationType="OneShot" DurationMin="1" DurationMax="1">
+					<MediaRefs>
+						<MediaRef Id="191541219"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="2415836739" Name="Volume"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4461B7D2-4267-CE5C-5176-7055B7C8364D}</FileHash>
+	<FileHash>{7E3475F4-0B23-62FA-AA7D-B96F103A52D8}</FileHash>
 </SoundBanksInfo>

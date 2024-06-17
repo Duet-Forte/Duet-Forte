@@ -44,17 +44,6 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Timmy_Attack_Signal_SFX" ID="{E1E65314-CE0A-4A59-8CAE-68303D53B1EB}">
-									<ChildrenList>
-										<Action Name="" ID="{27468000-20B5-4638-8878-0E55DDA9CFE9}" ShortID="51668979">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="TestSignal" ID="{68628F3F-4D7D-461A-8D07-705EC2D5FC4A}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
 								<Event Name="Player_Parry_SFX" ID="{A5DD6FC1-5DA3-42BD-905F-F1A31806B37C}">
 									<ChildrenList>
 										<Action Name="" ID="{DC5F011D-48EA-4093-A9F2-BCC8D27306FF}" ShortID="25023264">
@@ -378,6 +367,21 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="UI" ID="{B86272A3-ED0E-4FAD-AE64-744A15D8EDE0}" ShortID="228629339">
+							<ChildrenList>
+								<Event Name="UI_GetSkill_SFX" ID="{EB2C13B1-2A9C-49DF-9F0C-72EF772587B0}">
+									<ChildrenList>
+										<Action Name="" ID="{1E140F7F-FDBE-43B6-BE3D-FD34ADDBD22F}" ShortID="726252519">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="GetSkill_SFX" ID="{17649402-6D1A-4CCD-960D-E13467EA32A9}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{6F27945D-6A2C-471B-BCC4-2D7EF8157F6F}" ShortID="852693471">
@@ -412,28 +416,58 @@
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ChildrenList>
-						<Event Name="Enemy_Timmy_Attack_SFX" ID="{8F4016CE-D1D0-4ECA-8309-4496680D6838}">
+						<Folder Name="Tambourine" ID="{BB9B6F2D-1A78-4066-9B2A-471A89BCE6AC}" ShortID="309671653">
 							<ChildrenList>
-								<Action Name="" ID="{3B1CC7D2-2073-401A-B1BF-6C424F8A486B}" ShortID="618073063">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Timmy_Attack" ID="{BF7442DE-367C-4F1D-9525-3213BB73DAD1}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
+								<Event Name="Tambourine_Attack_Signal" ID="{6AD373EB-F79F-4EB9-B1CC-A2C4C6AAAB32}">
+									<ChildrenList>
+										<Action Name="" ID="{6CCFD73A-9CC7-429F-8A84-05432D745B50}" ShortID="502200395">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Tambourine_Signal" ID="{626E17FC-0CCD-4B68-8440-7BA473741EFF}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Enemy_Tambourine_Attack_SFX" ID="{EA8DA686-54C3-4F76-AD64-6AF0FCBC3271}">
+									<ChildrenList>
+										<Action Name="" ID="{5D1CC736-A610-43F2-BA27-F33866678587}" ShortID="16892882">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Tambourine_Attack" ID="{4E214FBE-9593-4531-9F59-A0393F9578B2}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
-						</Event>
-						<Event Name="Enemy_Tambourine_Attack_SFX" ID="{EA8DA686-54C3-4F76-AD64-6AF0FCBC3271}">
+						</Folder>
+						<Folder Name="Timmy" ID="{B00C2E5A-106C-4953-A0C1-DF77B107115E}" ShortID="1064556675">
 							<ChildrenList>
-								<Action Name="" ID="{5D1CC736-A610-43F2-BA27-F33866678587}" ShortID="16892882">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Tambourine_Attack" ID="{4E214FBE-9593-4531-9F59-A0393F9578B2}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
+								<Event Name="ElecGuitar_Attack_Signal_SFX" ID="{E1E65314-CE0A-4A59-8CAE-68303D53B1EB}">
+									<ChildrenList>
+										<Action Name="" ID="{27468000-20B5-4638-8878-0E55DDA9CFE9}" ShortID="51668979">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="TestSignal" ID="{68628F3F-4D7D-461A-8D07-705EC2D5FC4A}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Enemy_Timmy_Attack_SFX" ID="{8F4016CE-D1D0-4ECA-8309-4496680D6838}">
+									<ChildrenList>
+										<Action Name="" ID="{3B1CC7D2-2073-401A-B1BF-6C424F8A486B}" ShortID="618073063">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Timmy_Attack" ID="{BF7442DE-367C-4F1D-9525-3213BB73DAD1}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
-						</Event>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

@@ -4,6 +4,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	544226120	Transition_FadeIn			\Default Work Unit\UI\Transition_FadeIn	
 	918533349	NonCombat_BGM			\Default Work Unit\BGM\NonCombat\NonCombat_BGM	
 	1024104135	Ui_Typing_SFX			\Default Work Unit\NonCombat_SFX\Ui_Typing_SFX	
+	1260125929	UI_GetSkill_SFX			\Default Work Unit\NonCombat_SFX\UI\UI_GetSkill_SFX	
 	1873933263	Transition_FadeOut			\Default Work Unit\UI\Transition_FadeOut	
 	1920166314	Character_Emotion_Dumbfounded_SFX			\Default Work Unit\NonCombat_SFX\Emotion\Character_Emotion_Dumbfounded_SFX	
 	2299963368	Gio_BodyFall_SFX			\Default Work Unit\Player\NonCombat\Gio_BodyFall_SFX	
@@ -43,6 +44,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	48994660	Door	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Door_AE50D5A0.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Door\Door		156680
 	57689545	Ob_Fire_Fire	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Ob_Fire_Fire_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\FirePlace\Ob_Fire_Fire		15360100
 	98167887	Character_Emotion_QuestionMark_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Character_Emotion_QuestionMark_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotion\Character_Emotion_QuestionMark_SFX\Character_Emotion_QuestionMark_SFX		142444
+	225095606	GetSkill_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\GetSkill_SFX_9D043C7B.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\GetSkill\GetSkill_SFX		475416
 	225295536	Typing01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Typing01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Typing\Typing01		43688
 	270105021	Transition_FadeOut	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Transition_FadeOut_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Transition_FadeOut\Transition_FadeOut		290524
 	327002089	Typing02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Typing02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Typing\Typing02		40196
