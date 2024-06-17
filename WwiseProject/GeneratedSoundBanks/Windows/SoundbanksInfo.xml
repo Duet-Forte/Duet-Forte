@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{C530B656-1CC3-584B-CEA9-135DEE1CD125}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{4EC52DC2-D3C8-6A86-E54E-AC467ED908D5}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -80,10 +80,6 @@
 				<File Id="579694935" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>A440.wav</ShortName>
 					<CachePath>SFX/A440_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="586961463" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Transition_FadeIn.wav</ShortName>
-					<CachePath>SFX/Transition_FadeIn_818F3B66.wem</CachePath>
 				</File>
 				<File Id="594152026" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>마을 0506.wav</ShortName>
@@ -259,11 +255,6 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="544226120" Name="Transition_FadeIn" DurationType="OneShot" DurationMin="1.5126458" DurationMax="1.5126458">
-					<MediaRefs>
-						<MediaRef Id="586961463"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="1873933263" Name="Transition_FadeOut" DurationType="OneShot" DurationMin="1.5126458" DurationMax="1.5126458">
 					<MediaRefs>
 						<MediaRef Id="270105021"/>
@@ -407,7 +398,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{38AA864B-FE23-8844-E057-64EBB6522AEA}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{C2B382AD-CDC0-E16C-2209-7059289C392F}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -462,6 +453,10 @@
 				<File Id="519697605" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_공격신호_01.wav</ShortName>
 					<CachePath>SFX/SFX_공격신호_01_1246C0D0.wem</CachePath>
+				</File>
+				<File Id="586961463" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Transition_FadeIn.wav</ShortName>
+					<CachePath>SFX/Transition_FadeIn_818F3B66.wem</CachePath>
 				</File>
 				<File Id="602281588" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>세로베기.wav</ShortName>
@@ -615,6 +610,11 @@
 						<MediaRef Id="991299104"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="544226120" Name="Transition_FadeIn" DurationType="OneShot" DurationMin="1.5126458" DurationMax="1.5126458">
+					<MediaRefs>
+						<MediaRef Id="586961463"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="2415836739" Name="Volume"/>
@@ -629,5 +629,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E556602D-AAF3-4EDD-6B15-C2D2A2BB0A7B}</FileHash>
+	<FileHash>{7BC36DDF-CD0C-83A7-52C7-3B5B644E47A3}</FileHash>
 </SoundBanksInfo>
