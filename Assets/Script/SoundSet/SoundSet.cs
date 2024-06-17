@@ -1,4 +1,5 @@
 using UnityEngine;
+using Util.CustomEnum;
 namespace SoundSet
 {
 
@@ -49,6 +50,11 @@ namespace SoundSet
                 AkSoundEngine.PostEvent("Player_Attack_WeakSignal_SFX", parameterObject);
             }
 
+        }
+        public void AttackSignal(GameObject parameterObject, SignalInstrument signalInstrument) {
+
+            AkSoundEngine.PostEvent(signalInstrument.ToString() + "_Attack_Signal",parameterObject);
+        
         }
      
     }
