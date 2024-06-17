@@ -16,12 +16,14 @@ public class PlayerInterface : MonoBehaviour
     BattleDirector battleDirector=new BattleDirector();
     Cinemachine.CinemachineImpulseSource cinemachineImpulseSource;
     public event Action<Damage> OnGetDamage;
-
+    private StageManager stageManager;
 
     #region 위치 관련 변수
     Vector3 parryPos = new Vector3(2.61f, 1.54f, 0f);
     #endregion
-
+    public void InitSettings(StageManager stageManager) { 
+        this.stageManager = stageManager;
+    }
     #region 프로퍼티
     public PlayerAnimator PlayerAnimator { get {
             if (playerAnimator != null)
@@ -107,10 +109,11 @@ public class PlayerInterface : MonoBehaviour
             battleDirector.Shake(gameObject);
             playerAnimator.Hurt();
         }
+        //Mathf.Clamp(playerStatus.PlayerHealthPoint, 0f, 999999999f);
         playerStatus.PlayerHealthPoint=damage.GetCalculatedDamage();
         OnGetDamage.Invoke(damage);
         if (playerStatus.PlayerHealthPoint <= 0) { //플레이어 사망 이벤트
-                                                   
+            stageManager.OnPlayerDie();
         }
 
 

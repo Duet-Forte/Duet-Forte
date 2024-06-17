@@ -198,32 +198,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-5822325909649977885
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Trill
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7d136cb39e73db640b28c8480f36c9bc, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1101 &-5348887489223393320
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -591,32 +565,6 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &7100906287672374
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerOnBeat
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 30cd8649c510133439e14e219b84fe04, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1101 &548488206689780059
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -877,11 +825,8 @@ AnimatorStateMachine:
     m_State: {fileID: -946850835409402786}
     m_Position: {x: -300, y: 560, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 7100906287672374}
-    m_Position: {x: -375, y: 645, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 5342525830745425051}
-    m_Position: {x: -200, y: 340, z: 0}
+    m_Position: {x: 40, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4512519083335173336}
     m_Position: {x: 370, y: 470, z: 0}
@@ -891,9 +836,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -6241120419148313240}
     m_Position: {x: -70, y: 580, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -5822325909649977885}
-    m_Position: {x: -229.94427, y: 765.2207, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 3585689730183796097}
@@ -1071,7 +1013,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerAnimTest
+  m_Name: Player_Die
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -1084,7 +1026,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d6a90996f6c683c45a3c574f24c61b2b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4595bc8092e38db42a4083b0b3071ffc, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

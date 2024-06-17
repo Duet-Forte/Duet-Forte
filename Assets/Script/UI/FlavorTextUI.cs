@@ -29,10 +29,11 @@ public class FlavorTextUI : MonoBehaviour
     }
     IEnumerator AppearAndDisappear() 
     {
-        rectTransform.DOAnchorPosX(popX, 0.2f);
+        yield return new WaitForSeconds(1.5f);
+        rectTransform.DOAnchorPosX(700, 0.2f);//팝업
         yield return new WaitForSeconds(6.5f);
-        rectTransform.DOAnchorPosX(defaultX, 0.2f).OnComplete(()=>Destroy(transform.parent.gameObject));
+        rectTransform.DOAnchorPosX(defaultX, 0.2f).OnComplete(()=>Destroy(transform.parent.gameObject));//원래 자리
     }
-    // Update is called once per frame
+    
     
 }

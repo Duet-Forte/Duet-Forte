@@ -158,6 +158,7 @@ public class StageManager : MonoBehaviour
     {
         player = Instantiate(Resources.Load<GameObject>("Object/Player"));
         playerInterface = player.GetComponent<PlayerInterface>();
+        playerInterface.InitSettings(this);
         playerInterface.PlayerStatus.InitSetting(playerInfo.PlayerLevel,playerInfo.PlayerCurrentEXP);
         playerInterface.PlayerSkillSet.InitSettings(playerInfo.PlayerSkills);
         battlePresenter.InitSettings(this);
