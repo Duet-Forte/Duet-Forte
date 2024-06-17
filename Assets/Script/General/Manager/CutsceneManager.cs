@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
-using Util;
+using System;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -76,17 +76,33 @@ public class CutsceneManager : MonoBehaviour
     }
     public void FadeIn(float time)
     {
-        Tween fadeIn = fadeOutPanel.DOFade(1, time);
+        fadeOutPanel.DOFade(1, time);
     }
     public void FadeOut(float time)
     {
-        Tween fadeOut = fadeOutPanel.DOFade(0, time);
+        fadeOutPanel.DOFade(0, time);
+    }
+    public void FadeIn(float time, Action onFadeFinish = null)
+    {
+        Tween fadeIn = fadeOutPanel.DOFade(1, time).OnComplete(() =>
+        {
+            onFadeFinish?.Invoke();
+        });
+    }
+    public void FadeOut(float time, Action onFadeFinish = null)
+    {
+        Tween fadeOut = fadeOutPanel.DOFade(0, time).OnComplete(() =>
+        {
+            onFadeFinish?.Invoke();
+        });
     }
     [ContextMenu("DEBUG/StartBattle")]
     public void EnterBattle()
     {
-        AkSoundEngine.PostEvent("NonCombat_BGM_Stop", gameObject);
-        director.Pause();
+        double currentTime = director.time;
+        director.playableGraph.GetRootPlayable(0).SetSpeed(0);
+        director.time = currentTime;
+        director.Evaluate();
         SceneManager.Instance.SetBattleScene(null);
     }
     public virtual void BindCutscene(PlayableDirector director, string trackGroupName, GameObject bindObject)

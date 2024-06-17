@@ -35,10 +35,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: EndFade
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4930699768842557569}
   m_Solo: 0
@@ -91,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2b4fe1ffdc9974796b9b23c22c5c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFadeIn: 0
 --- !u!1102 &-3473221841890142990
 AnimatorState:
   serializedVersion: 6
@@ -125,13 +123,7 @@ AnimatorController:
   m_PrefabAsset: {fileID: 0}
   m_Name: SceneTransition
   serializedVersion: 5
-  m_AnimatorParameters:
-  - m_Name: EndFade
-    m_Type: 9
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+  m_AnimatorParameters: []
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -159,13 +151,13 @@ AnimatorStateMachine:
     m_Position: {x: 290, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7994451058742248593}
-    m_Position: {x: 50, y: 300, z: 0}
+    m_Position: {x: 50, y: 380, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4930699768842557569}
     m_Position: {x: 50, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3473221841890142990}
-    m_Position: {x: 290, y: 300, z: 0}
+    m_Position: {x: 290, y: 380, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -183,10 +175,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: EndFade
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3473221841890142990}
   m_Solo: 0
@@ -241,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2b4fe1ffdc9974796b9b23c22c5c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFadeIn: 1
 --- !u!114 &9174087023827330131
 MonoBehaviour:
   m_ObjectHideFlags: 1

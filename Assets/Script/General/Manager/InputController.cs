@@ -61,6 +61,13 @@ public class InputController : MonoBehaviour, InputActions.IPlayerActions
     {
         onInteract?.Invoke(context);
     }
+    public bool IsKeyTriggered(PlayerAction action)
+    {
+        if (GetAction(action).triggered)
+            return true;
+        else
+            return false;
+    }
 
     public void OnEnable()
     {

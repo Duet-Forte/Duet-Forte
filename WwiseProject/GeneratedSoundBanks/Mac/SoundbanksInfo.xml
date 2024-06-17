@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{236DE260-DC3E-13F1-2D8B-D7C23BA71A20}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{C530B656-1CC3-584B-CEA9-135DEE1CD125}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -35,7 +35,7 @@
 				</File>
 				<File Id="225095606" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GetSkill_SFX.wav</ShortName>
-					<CachePath>SFX/GetSkill_SFX_9D043C7B.wem</CachePath>
+					<CachePath>SFX/GetSkill_SFX_6754BF55.wem</CachePath>
 				</File>
 				<File Id="225295536" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Typing01.wav</ShortName>
@@ -77,6 +77,10 @@
 					<ShortName>FootStep_Grass03.wav</ShortName>
 					<CachePath>SFX/FootStep_Grass03_818F3B66.wem</CachePath>
 				</File>
+				<File Id="579694935" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>A440.wav</ShortName>
+					<CachePath>SFX/A440_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="586961463" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Transition_FadeIn.wav</ShortName>
 					<CachePath>SFX/Transition_FadeIn_818F3B66.wem</CachePath>
@@ -96,6 +100,10 @@
 				<File Id="604837605" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Grass02.wav</ShortName>
 					<CachePath>SFX/FootStep_Grass02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="618461013" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ludius_Drink.wav</ShortName>
+					<CachePath>SFX/Ludius_Drink_818F3B66.wem</CachePath>
 				</File>
 				<File Id="624505842" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Character_Emotion_Dumbfounded_SFX.wav</ShortName>
@@ -164,6 +172,12 @@
 						<MediaRef Id="98167887"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="631059699" Name="MainMenu_BGM_BGM" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="579694935"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="270981630" Name="MainMenu_BGM_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="918533349" Name="NonCombat_BGM" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -181,6 +195,11 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="2869548328" Name="NonCombat_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3693469630" Name="NPC_Ludius_Drink_SFX" DurationType="OneShot" DurationMin="4.673729" DurationMax="4.673729">
+					<MediaRefs>
+						<MediaRef Id="618461013"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4145632761" Name="Ob_Door_SFX" DurationType="OneShot" DurationMin="0.8155387" DurationMax="0.8155387">
 					<MediaRefs>
 						<MediaRef Id="48994660"/>
@@ -286,12 +305,13 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A6BA37F7-013D-5858-503E-66D58A92DD84}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{D8F5B59D-B9D0-01A0-DB31-577D194A3D7B}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
 				<Custom>
 					<Plugin Id="130867727" Name="Meter (SideChain)" LibName="Wwise Meter" LibId="8454147"/>
+					<Plugin Id="991801778" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
 				</Custom>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
@@ -299,7 +319,6 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
-				<Bus Id="193649807" Name="MainMenu_SFX"/>
 				<Bus Id="817096458" Name="Player_SFX">
 					<PluginRefs>
 						<Custom>
@@ -308,7 +327,15 @@
 					</PluginRefs>
 				</Bus>
 				<Bus Id="3004711510" Name="Combat_BGM"/>
+				<Bus Id="3563481019" Name="UI_SFX">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="991801778"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="4236911706" Name="Town_BGM"/>
 			</Busses>
 			<GameParameters>
 				<GameParameter Id="2415836739" Name="Volume"/>
@@ -345,7 +372,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{7C816719-8A50-F5B9-F124-320ED133AC34}">
+		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{F2CFAE3E-9466-013A-0DF0-147C93389AA6}">
 			<ShortName>MainMenu</ShortName>
 			<Path>MainMenu.bnk</Path>
 			<Media>
@@ -602,5 +629,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{18923965-6779-D26D-47F7-6F9F3B6B5B30}</FileHash>
+	<FileHash>{98A40A07-1554-9093-C87F-12DEA724FA4D}</FileHash>
 </SoundBanksInfo>

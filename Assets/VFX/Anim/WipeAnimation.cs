@@ -12,6 +12,7 @@ public class WipeAnimation : MonoBehaviour
     private Animator animator;
     [SerializeField] GameObject parentObject;
     public float cutoff;
+    Action onFade;
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -20,6 +21,7 @@ public class WipeAnimation : MonoBehaviour
     public void Fade(bool isFadeIn, Action beforeFade = null, Action onFade = null)
     {
         parentObject.GetComponent<Canvas>().worldCamera = Camera.main;
+        this.onFade = onFade;
         Sequence temp = DOTween.Sequence();
 
         temp.AppendCallback(() => { beforeFade?.Invoke(); });
@@ -29,8 +31,11 @@ public class WipeAnimation : MonoBehaviour
         else
             temp.AppendCallback(() => animator.Play("FadeOut"));
 
-        temp.AppendCallback(() => { onFade?.Invoke();});
-
         temp.Play();
+    }
+
+    public void OnFadeFinish()
+    {
+        onFade?.Invoke();
     }
 }

@@ -47,7 +47,7 @@ public class PrepareTurnUI : InGameUI
                 //transform.GetChild(Prepare_Skill_UI_Index).GetChild(1).GetComponent<TMP_Text>().text = skillSetName[Prepare_Skill_UI_Index];//스킬이름
                 transform.GetChild(Prepare_Skill_UI_Index).GetChild(1).GetComponent<TMP_Text>().text = arrayOfParsedCommand[Prepare_Skill_UI_Index];//스킬커맨드
             }
-            if (theSkillSet.getSkillSet[Prepare_Skill_UI_Index] == null)
+            if (theSkillSet.getSkillSet.Length - 1 < Prepare_Skill_UI_Index)
             {
                 Debug.Log("사용하지 않는 스킬ui 제거");
                 Destroy(transform.GetChild(Prepare_Skill_UI_Index).gameObject);

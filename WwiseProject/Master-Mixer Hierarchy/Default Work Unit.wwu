@@ -96,7 +96,85 @@
 								</ObjectList>
 							</ObjectLists>
 						</Bus>
-						<Bus Name="MainMenu_SFX" ID="{321F4340-AB7D-4B19-BD96-07124C1C921C}"/>
+						<Bus Name="Town_BGM" ID="{321F4340-AB7D-4B19-BD96-07124C1C921C}">
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{1A7DDDAD-4334-4AE1-B609-F86C0D1CF6F9}" ShortID="317728289">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Volume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="SFX_SideChain" ID="{9DBA2321-9B93-46FB-B2D6-705DA328989E}" WorkUnitID="{6FAF19EC-4221-40B0-97DE-370E4E7F756E}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{7CC8A5CC-1B80-4F05-942A-7D4F28260084}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>-48</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>-34.88799</XPos>
+																		<YPos>-1E-05</YPos>
+																		<Flags>0</Flags>
+																		<SegmentShape>Log3</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>-29.08622</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>0</Flags>
+																		<SegmentShape>Exp3</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</Bus>
+						<Bus Name="UI_SFX" ID="{94029572-280D-4C70-8B2F-0CCA3F7BDCCB}">
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{1684C57D-7E5D-457A-B1BD-F002EEEB853F}" ShortID="861670200">
+												<ReferenceList>
+													<Reference Name="Effect">
+														<Custom>
+															<Effect Name="Meter (Custom)" ID="{5BC0F7FA-15CC-4345-B46F-839808F0B5D7}" ShortID="991801778" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+																<PropertyList>
+																	<Property Name="Min" Type="Real32" Value="-96.3"/>
+																</PropertyList>
+																<PluginData>
+	<GameParameter Name="SFX_SideChain" ID="{9DBA2321-9B93-46FB-B2D6-705DA328989E}"/>
+</PluginData>
+															</Effect>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</Bus>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

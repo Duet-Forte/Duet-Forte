@@ -2,6 +2,7 @@ State Group	ID	Name			Wwise Object Path	Notes
 	1931646578	CampFire			\Default Work Unit\CampFire	
 
 State	ID	Name	State Group			Notes
+	748895195	None	CampFire			
 	2206092402	Timmy_House	CampFire			
 	3091570009	Town	CampFire			
 
@@ -9,13 +10,15 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	2862064063	SFX_SideChain			\Default Work Unit\SFX_SideChain	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
-	193649807	MainMenu_SFX			\Default Work Unit\Master Audio Bus\MainMenu_SFX	
 	817096458	Player_SFX			\Default Work Unit\Master Audio Bus\Player_SFX	
 	3004711510	Combat_BGM			\Default Work Unit\Master Audio Bus\Combat_BGM	
+	3563481019	UI_SFX			\Default Work Unit\Master Audio Bus\UI_SFX	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	4236911706	Town_BGM			\Default Work Unit\Master Audio Bus\Town_BGM	
 
 Effect plug-ins	ID	Name	Type				Notes
 	130867727	Meter (SideChain)	Wwise Meter			
+	991801778	Meter (Custom)	Wwise Meter			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

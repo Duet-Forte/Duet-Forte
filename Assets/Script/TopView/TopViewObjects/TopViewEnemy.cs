@@ -50,6 +50,6 @@ public class TopViewEnemy : TopViewEntity
         isAlive = true;
     }
 
-    public void Question() => Animator.SetTrigger(Const.questionHash);
-    public void Surprised() => Animator.SetTrigger(Const.surpriseHash);
+    public void Question() => Animator.Play(Const.questionHash);
+    public void Surprised() => Animator.Play(Const.surpriseHash);
 }
