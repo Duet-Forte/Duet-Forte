@@ -12,18 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a7f12d40a9bb14cac7a1bf72b1b909, type: 3}
   m_Name: Trill
   m_EditorClassIdentifier: 
-  skillName: 
+  skillName: "\uD2B8\uB9B4"
   skill_Information: "\uACF5\uACA9\uB825\uC758 <>130%<>\uC5D0 \uD574\uB2F9\uD558\uB294
     <>\uB808\uAC00\uD1A0\uD53C\uD574<>\uB97C \uB450 \uBC88 \uC785\uD78C \uB4A4, \uACF5\uACA9\uB825\uC758
     <>160%<>\uC5D0 \uD574\uB2F9\uD558\uB294 <>\uC2A4\uD0C0\uCE74\uD1A0 \uD53C\uD574<>\uB97C
     \uC785\uD78C\uB2E4."
-  skillCommand: []
-  skillIcon: {fileID: 0}
+  skillCommand:
+  - A
+  - B
+  - A
+  skillIcon: {fileID: -1679428970, guid: 901c6b0eb98292246ae96544fbdd4bb4, type: 3}
   isSpacialSkill: 0
   coolTimeTurn: 0
-  skillParticle: {fileID: 0}
-  damage: []
-  waitTimes: []
-  damageType: 
-  skillClip: {fileID: 0}
-  soundEventName: 
+  skillParticle: {fileID: 8561235970198580814, guid: b353e0982780e044eb2b3fdad2833866, type: 3}
+  damage:
+  - 1.3
+  - 1.3
+  - 1.6
+  waitTimes:
+  - 0.1
+  - 0.27
+  - 1.5
+  damageType: 010100
+  skillClip: {fileID: 7400000, guid: 7d136cb39e73db640b28c8480f36c9bc, type: 2}
+  soundEventName: Player_Skill_ABA_SFX

@@ -35,9 +35,8 @@ namespace SoundSet
 
     }
 
-    public class EnemySoundSet{ 
-    
-    
+    public class EnemySoundSet
+    { 
     }
     public class UISound {
 
@@ -52,6 +51,16 @@ namespace SoundSet
 
         }
      
+    }
+    public class BackGroundMusic {
+
+        public void Victory(GameObject parameterObject) {
+            AkSoundEngine.PostEvent("Combat_BGM_Stop",parameterObject);
+            AkSoundEngine.SetSwitch("Stage01", "StageEnd", parameterObject);
+            AkSoundEngine.PostEvent("Clear_SFX", parameterObject);
+
+        }
+    
     }
 
 }

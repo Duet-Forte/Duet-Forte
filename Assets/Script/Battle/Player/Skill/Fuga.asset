@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a7f12d40a9bb14cac7a1bf72b1b909, type: 3}
   m_Name: Fuga
   m_EditorClassIdentifier: 
-  skillName: Fuga
+  skillName: "\uD478\uAC00"
   skill_Information: 
   skillCommand:
   - A
