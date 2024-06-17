@@ -4,6 +4,7 @@ using System.Data;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Util.CustomEnum;
 
 public class SceneManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private Stage testStage;
     [SerializeField] private GameObject sceneTransitionPrefab;
     [SerializeField] private GameObject loadingImagePrefab;
+
     private GameObject sceneTransition;
     private static SceneManager instance;
     public static SceneManager Instance { get { return instance; } }

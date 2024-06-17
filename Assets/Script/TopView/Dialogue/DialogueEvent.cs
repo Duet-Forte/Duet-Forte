@@ -10,7 +10,8 @@ public class DialogueEvent
     private Dictionary<string, Util.CustomEnum.EventType> typeMappings = new Dictionary<string, Util.CustomEnum.EventType>
     {
         { "Emotion", Util.CustomEnum.EventType.Emotion },
-        { "Quest", Util.CustomEnum.EventType.Quest}
+        { "Quest", Util.CustomEnum.EventType.Quest},
+        { "Skill", Util.CustomEnum.EventType.Skill}
         // 필요한 경우 추가 타입 매핑
     };
 

@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class SkillDataBase
 {
     private PlayerSkill[] data;
+    private SkillGainWindow skillGainWindow;
     private List<PlayerSkill> skill;
     private bool[] isActivated;
     public PlayerSkill[] Data
@@ -41,7 +43,7 @@ public class SkillDataBase
         {
             if (isActivated == null)
             {
-                isActivated = new bool[data.Length];
+                isActivated = new bool[Data.Length];
                 isActivated[0] = true;
                 isActivated[1] = true;
             }
@@ -50,7 +52,13 @@ public class SkillDataBase
     }
     public void ActivateSkill(int ID)
     {
-        Debug.Log(ID + "½ºÅ³ È¹µæ");
+        if (IsActivated[ID] == true)
+            return;
+        if (skillGainWindow == null)
+        {
+            skillGainWindow = Object.Instantiate(Resources.Load<GameObject>("TopView/SkillGainWindow")).GetComponent<SkillGainWindow>();
+        }
+        skillGainWindow.InitSettings(data[ID]).Forget();
         isActivated[ID] = true;
     }
 }

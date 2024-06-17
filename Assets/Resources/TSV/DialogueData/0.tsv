@@ -7,6 +7,7 @@ Cutscene	0	Zio			Emotion	Dust	현재 VFX 시간보다 더 길게 유지해 주�
 		Zio	Panic	(의자가 부서진 건가…?)			
 							지오: 뒷 모습 (혹시 가능하다면, 일어선 정면 → 왼쪽 보는 옆모습 → 뒷모습으로 해주시면 감사합니다. 빠르게 돌리면 좀 뒤도는 모습처럼 보이지 않을까 싶어서요.)
 	1	Zio			Emotion	QuestionMark	
+					Skill	2	
 		Zio	Panic	(벽난로?)			
 		Timmy	Happy	…드디어 왔구나!			
 							"왔구나!"할 때 쯤, 지오가 티미 쪽 바라봄

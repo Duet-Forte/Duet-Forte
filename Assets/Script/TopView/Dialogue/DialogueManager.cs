@@ -87,8 +87,7 @@ public class DialogueManager
             }
             else if (dialogue.Events[i].type == Util.CustomEnum.EventType.Skill)
             {
-                if (!DataBase.Instance.Player.Quests.Contains(QuestManager.Instance.GetQuest(dialogue.Events[i].trigger)))
-                    DataBase.Instance.Skill.ActivateSkill(dialogue.Events[i].trigger);
+                DataBase.Instance.Skill.ActivateSkill(dialogue.Events[i].trigger);
                 continue;
             }
             characterSprite.enabled = true;
@@ -122,10 +121,7 @@ public class DialogueManager
     }
     private bool IsKeyTriggered()
     {
-        if (SceneManager.Instance.InputController.GetAction(PlayerAction.Interact).triggered)
-            return true;
-        else
-            return false;
+        return SceneManager.Instance.InputController.IsKeyTriggered(PlayerAction.Interact);
     }
 
     public void SkipDialogue()
