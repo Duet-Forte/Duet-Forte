@@ -7,7 +7,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	918533349	NonCombat_BGM			\Default Work Unit\BGM\NonCombat\NonCombat_BGM	
 	1024104135	Ui_Typing_SFX			\Default Work Unit\NonCombat_SFX\Ui_Typing_SFX	
 	1260125929	UI_GetSkill_SFX			\Default Work Unit\NonCombat_SFX\UI\UI_GetSkill_SFX	
-	1873933263	Transition_FadeOut			\Default Work Unit\Transition_UI\Transition_FadeOut	
 	1920166314	Character_Emotion_Dumbfounded_SFX			\Default Work Unit\NonCombat_SFX\Emotion\Character_Emotion_Dumbfounded_SFX	
 	2869548328	NonCombat_BGM_Stop			\Default Work Unit\BGM\NonCombat\NonCombat_BGM_Stop	
 	3095903108	Character_Emotion_QuestionMark_SFX			\Default Work Unit\NonCombat_SFX\Emotion\Character_Emotion_QuestionMark_SFX	
@@ -48,7 +47,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	98167887	Character_Emotion_QuestionMark_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Character_Emotion_QuestionMark_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotion\Character_Emotion_QuestionMark_SFX\Character_Emotion_QuestionMark_SFX		142444
 	225095606	GetSkill_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\GetSkill_SFX_6754BF55.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\GetSkill\GetSkill_SFX		475416
 	225295536	Typing01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Typing01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Typing\Typing01		43688
-	270105021	Transition_FadeOut	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Transition_FadeOut_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Transition_FadeOut\Transition_FadeOut		290524
 	327002089	Typing02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Typing02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Typing\Typing02		40196
 	335728943	용사의집 v0308_Loop	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\용사의집 v0308_Loop_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\NonCombat\TimmyHouse\TimmyHouse\용사의집 v0308_Loop		3141916
 	367550639	FootStep_Wood03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\FootStep_Wood03_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\FootStep_Wood03		49472

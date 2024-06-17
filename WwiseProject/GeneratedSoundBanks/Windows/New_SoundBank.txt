@@ -7,6 +7,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	909052356	Enemy_Tambourine_Attack_Signal_SFX			\Default Work Unit\Enemy\Tambourine\Enemy_Tambourine_Attack_Signal_SFX	
 	1248207521	Player_Attack_StrongSignal_SFX			\Default Work Unit\Player\Combat\Player_Attack_StrongSignal_SFX	
 	1532296734	Player_Attack_B_SFX			\Default Work Unit\Player\Combat\Player_Attack_B_SFX	
+	1873933263	Transition_FadeOut			\Default Work Unit\Transition_UI\Transition_FadeOut	
 	2307662469	Combat_BGM_Stop			\Default Work Unit\BGM\Combat\Combat_BGM_Stop	
 	2328612313	Enemy_Tambourine_Attack_SFX			\Default Work Unit\Enemy\Tambourine\Enemy_Tambourine_Attack_SFX	
 	2518233790	Player_Skill_AAA_SFX			\Default Work Unit\Player\Combat\Player_Skill_AAA_SFX	
@@ -36,6 +37,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	167940839	Skill_BBB02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Skill_BBB02_E8BEDBF4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Player_Skill_BBB\Skill_BBB02		534872
 	171558463	Timmy_Attack05	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Timmy_Attack05_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Timmy_Attack\Timmy_Attack05		146764
 	191541219	Tambourine_Signal	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Tambourine_Signal_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Tambourine\Tambourine_Attack_Signal\Tambourine_Signal		192096
+	270105021	Transition_FadeOut	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Transition_FadeOut_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Transition_FadeOut\Transition_FadeOut		290524
 	292868217	03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\03_2B6424CB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\03		341432
 	329739412	Skill_AAA02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Skill_AAA02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Player_Skill_AAA\Skill_AAA02		474544
 	390818071	Tambourine_Attack_A_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Tambourine_Attack_A_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Tambourine\Tambourine_Attack\Tambourine_Attack_A_SFX		122560
