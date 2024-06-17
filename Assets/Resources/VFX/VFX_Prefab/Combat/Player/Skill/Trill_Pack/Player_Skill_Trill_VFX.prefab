@@ -127301,7 +127301,7 @@ GameObject:
   - component: {fileID: 8561235970198580814}
   - component: {fileID: 8561235970198580815}
   m_Layer: 0
-  m_Name: Player_Skill_ABA_VFX
+  m_Name: Player_Skill_Trill_VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

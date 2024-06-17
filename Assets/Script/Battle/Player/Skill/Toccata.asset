@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a7f12d40a9bb14cac7a1bf72b1b909, type: 3}
   m_Name: Toccata
   m_EditorClassIdentifier: 
-  skillName: Toccata
+  skillName: "\uD1A0\uCE74\uD0C0"
   skill_Information: 
   skillCommand:
   - B

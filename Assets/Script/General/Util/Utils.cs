@@ -63,7 +63,7 @@ namespace Util
         public const string UI_FIRST_TUTORIAL_PATH = "UI/Tutorial";
         #endregion
 
-        #region UI ���� ����
+        #region UI 연출 스피드
         public const float STATUSUI_PROCESS_SPEED = 1f;
         public const float STATUSUI_WAIT_TIME = 2f;
         public const float STATUSUI_MAX_HP_RATIO = 1f;
@@ -76,10 +76,10 @@ namespace Util
         #region �޴� UI ����
         public const int CONTENT_IN_ROW = 3;
         #endregion
-        #region PlayerPrefs�� Key��
+        #region PlayerPrefs의 Key값
         public const string IS_TUTORIAL_END = "isTutorialEnd";
         #endregion
-        #region �ִϸ����� �ؽ�
+        #region 애니메이션 트리거
         public static int dustHash = Animator.StringToHash("Dust");
         public static int angryHash = Animator.StringToHash("Angry");
         public static int surpriseHash = Animator.StringToHash("Surprise");

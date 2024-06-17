@@ -72,11 +72,9 @@ public class StageClear : MonoBehaviour
         {
             if (instance == null) 
             {
-                Debug.Log($" instance.judges : {instance.judges}");
-                Debug.Log($" instance : {instance}");
                 return null;
             }
-            Debug.Log($" instance.judges : {instance.judges}");
+
             return instance;
         }
     }
@@ -144,6 +142,7 @@ public class StageClear : MonoBehaviour
         if (isWin)
         {
             titleText.text = "Victory";
+            //SoundSet.UISound
         }
         else {
             titleText.text = "Defeat";
