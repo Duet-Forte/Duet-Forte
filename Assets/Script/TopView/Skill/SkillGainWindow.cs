@@ -4,6 +4,7 @@ using TMPro;
 using DG.Tweening;
 using Cysharp.Threading.Tasks;
 using Util.CustomEnum;
+using UnityEditor.PackageManager.UI;
 
 public class SkillGainWindow : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class SkillGainWindow : MonoBehaviour
     private int standard;
     public async UniTask InitSettings(PlayerSkill skill)
     {
+        AkSoundEngine.PostEvent("UI_GetSkill_SFX", gameObject);
         skillIcon.sprite = skill.SkillIcon;
         skillName.text = skill.SkillName;
         skillDescription.text = skill.Information;

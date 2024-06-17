@@ -317,7 +317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032c9f4d8bf133c4d86a3e3d4d6ff9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testStage: {fileID: 11400000, guid: 7c9c5684a82346a4683582a51ef49193, type: 2}
   sceneTransitionPrefab: {fileID: 2935451109651248324, guid: 9b0af4abc5a153044a025fa11f50d8e7, type: 3}
   loadingImagePrefab: {fileID: 305782081042719569, guid: 0c96a38ad2ef0944dbeb4a219f71dbac, type: 3}
 --- !u!320 &362427651

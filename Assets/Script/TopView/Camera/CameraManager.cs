@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class CameraManager
 {
+    private Camera mainCamera;
     CinemachineVirtualCamera followCam, cutsceneCam;
     public CameraManager()
     {
         followCam = Object.Instantiate(Resources.Load<GameObject>("Camera/FollowCamera")).GetComponent<CinemachineVirtualCamera>();
         followCam.gameObject.SetActive(false);
+        mainCamera = Camera.main;
     }
 
     public void SetFollowCamera()
@@ -26,4 +28,5 @@ public class CameraManager
 
     public void SetCutsceneCamera(CinemachineVirtualCamera cutsceneCam) => this.cutsceneCam = cutsceneCam;
     public void DisableFollowCamera() => followCam.gameObject.SetActive(false);
+    public void EnableFieldCamera() => mainCamera.gameObject.SetActive(true);
 }

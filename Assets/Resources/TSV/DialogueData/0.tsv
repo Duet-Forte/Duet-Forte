@@ -47,7 +47,7 @@ Cutscene	0	Zio			Emotion	Dust	현재 VFX 시간보다 더 길게 유지해 주�
 		Zio	Default	알겠어요, 알겠어요.<br>대신 끝나면 저와 콩쿠르 대기실이나 찾아주세요.			
 		Timmy	Happy	좋아! 근데 네가 조력자가 맞으면, 나랑 마왕을 무찌르러 가는 거야.			
 		Zio	Default	알겠으니까 빨리 시작하죠.			
-							튜토리얼 전투 완료 + 스킬 획득창
+					Battle	Timmy	튜토리얼 전투 완료 + 스킬 획득창
 	7				Skill	2	
 		Zio	Default	트릴?			
 		Timmy	Happy	봐! 역시 조력자가 맞았어! 이렇게 바로 <wave>스킬</wave>을 얻다니!			
@@ -87,7 +87,8 @@ Ludius	0	Zio			Emotion	Dumbfounded
 		Ludius	Default	네가 진짜면 저 정돈 쉽겠지.			
 		Ludius	Default	근데 저런 거 잡으면 진짜 새로운 영감이 떠오르긴 하냐?			
 		Zio	Panic	글쎄요… 저도 아직 잘 몰라서요.			
-		Ludius	Default	잘 모르면 이번 기회에 배우면 되겠네.<br>가는 길에 저 시끄러운 <wave>탬버린</wave>부터 없애.			
+		Ludius	Default	잘 모르면 이번 기회에 배우면 되겠네.			
+		Ludius	Default	가는 길에 저 시끄러운 <wave>탬버린</wave>부터 없애.			
 		Zio	Panic	한 번 가볼게요.			
 					Plus	1	
 					Quest	0	
@@ -95,3 +96,4 @@ Ludius	0	Zio			Emotion	Dumbfounded
 		Zio	Default	(술에 취해 자는 듯하다...)			
 Zio	0	Zio			Emotion	QuestionMark	
 		Zio	Default	(저 아저씨는 뭐하는 사람이지..?)			
+Timmy	0	Timmy	Happy	나 다시 보고 싶었어?			

@@ -53,11 +53,14 @@ public class CutsceneManager : MonoBehaviour
     [ContextMenu("DEBUG/SpawnPlayer")]
     public void SpawnPlayer()
     {
+        SceneManager.Instance.Storage.isCutscenePlaying = false;
         director.Stop();
         DialogueManager.Instance.SkipDialogue();
         cutscenePlayer.SetActive(false);
         SceneManager.Instance.FieldManager.SpawnPlayer(cutscenePlayer.transform.position);
+        SceneManager.Instance.FieldManager.Field.GetEntity("Timmy").InitSettings("Timmy", SceneManager.Instance.FieldManager.Field.GetCutsceneObject("Timmy").transform.position);
         SceneManager.Instance.CameraManager.SetFollowCamera();
+        SceneManager.Instance.FieldManager.CheckPoint();
     }
     public void Loop()
     {
@@ -103,7 +106,23 @@ public class CutsceneManager : MonoBehaviour
         director.playableGraph.GetRootPlayable(0).SetSpeed(0);
         director.time = currentTime;
         director.Evaluate();
-        SceneManager.Instance.SetBattleScene(null);
+        SceneManager.Instance.SetBattleScene("Timmy");
+    }
+
+    public void PauseDirector()
+    {
+        SceneManager.Instance.Storage.isCutscenePlaying = true;
+        double currentTime = director.time;
+        director.playableGraph.GetRootPlayable(0).SetSpeed(0);
+        director.time = currentTime;
+        director.Evaluate();
+    }
+    public void ReplayCutscene()
+    {
+        double currentTime = director.time;
+        director.playableGraph.GetRootPlayable(0).SetSpeed(1);
+        director.time = currentTime;
+        director.Evaluate();
     }
     public virtual void BindCutscene(PlayableDirector director, string trackGroupName, GameObject bindObject)
     {

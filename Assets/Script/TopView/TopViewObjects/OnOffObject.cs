@@ -7,21 +7,24 @@ public class OnOffObject : MonoBehaviour, IInteractable
     [SerializeField] private GameObject onOffObject;
     [SerializeField] private bool isOn;
     [SerializeField] private string[] switchSoundName, onSoundName;
+    [SerializeField] private string pointRange;
     private List<uint> onSoundID;
 
     public void InteractPlayer(PlayerController controller)
     {
-        if(onSoundID == null)
+        if (onSoundID == null)
             onSoundID = new List<uint>();
         isOn ^= true;
         OnSwitchSound();
         onOffObject.SetActive(isOn);
         controller.IsStopped = false;
+        SceneManager.Instance.FieldManager.onPointChange -= SetSound;
+        SceneManager.Instance.FieldManager.onPointChange += SetSound;
     }
 
     public void OnSwitchSound()
     {
-        if(isOn)
+        if (isOn)
         {
             if (switchSoundName != null)
             {
@@ -34,8 +37,8 @@ public class OnOffObject : MonoBehaviour, IInteractable
             {
                 foreach (var onSound in onSoundName)
                 {
-                    uint temp = AkSoundEngine.PostEvent(onSound,gameObject);
-                    if(!onSoundID.Contains(temp))
+                    uint temp = AkSoundEngine.PostEvent(onSound, gameObject);
+                    if (!onSoundID.Contains(temp))
                         onSoundID.Add(temp);
                 }
             }
@@ -55,6 +58,26 @@ public class OnOffObject : MonoBehaviour, IInteractable
                 {
                     AkSoundEngine.StopPlayingID(onSound);
                 }
+            }
+        }
+    }
+
+    public void SetSound(string pointName)
+    {
+        if (pointRange == pointName && isOn)
+        {
+            foreach (var onSound in onSoundName)
+            {
+                uint temp = AkSoundEngine.PostEvent(onSound, gameObject);
+                if (!onSoundID.Contains(temp))
+                    onSoundID.Add(temp);
+            }
+        }
+        else
+        {
+            foreach (var onSound in onSoundID)
+            {
+                AkSoundEngine.StopPlayingID(onSound);
             }
         }
     }

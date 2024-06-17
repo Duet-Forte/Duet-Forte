@@ -4,7 +4,6 @@ using UnityEngine;
 public class WarpPoint : EventTrigger
 {
     [SerializeField] private Transform destination;
-    [SerializeField] private bool isChangeMusic;
     [SerializeField] private string soundName;
     private PlayerController controller;
     protected override void RunTask()
@@ -21,9 +20,7 @@ public class WarpPoint : EventTrigger
     {
         SceneManager.Instance.FieldManager.Player.transform.position = destination.position;
         SceneManager.Instance.CutsceneManager.FadeOut(0.5f);
-        if (isChangeMusic)
-            SceneManager.Instance.MusicChanger.SetMusic(name);
-        SceneManager.Instance.CameraManager.ChangeCameraCollider(name);
+        SceneManager.Instance.FieldManager.CheckPoint();
         controller.IsStopped = false;
     }
 }

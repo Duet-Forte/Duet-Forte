@@ -17,7 +17,7 @@ public class InteractableObject : TopViewEntity, IInteractable
     }
     public async void InteractPlayer(PlayerController player)
     {
-        await DialogueManager.Instance.Talk(name);
+        await DialogueManager.Instance.Talk(objectName);
         player.IsStopped = false;
     }
 }
