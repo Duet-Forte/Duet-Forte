@@ -90,6 +90,7 @@ public class DialogueManager
             typewriter.SkipTypewriter();
             await UniTask.WaitUntil(IsKeyTriggered, cancellationToken: cancel.Token);
         }
+        dialogueWindow.EraseContent();
         window.SetActive(false);
     }
     private bool IsKeyTriggered()

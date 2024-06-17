@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using Util.CustomEnum;
@@ -7,6 +8,7 @@ public class DialogueWindow : MonoBehaviour
     [SerializeField] private RectTransform dialogue;
     [SerializeField] private RectTransform nameWindow;
     [SerializeField] private RectTransform image;
+    private TextMeshProUGUI dialogueText;
 
     public void SetPosition(Speaker currentSpeaker)
     {
@@ -47,7 +49,16 @@ public class DialogueWindow : MonoBehaviour
                 break;
         }
     }
-
+    
+    /// <summary>
+    /// 텍스트 잔상이 남는 효과를 지우기 위한 함수
+    /// </summary>
+    public void EraseContent()
+    {
+        if (dialogueText == null)
+            dialogueText = dialogue.GetComponent<TextMeshProUGUI>();
+        dialogueText.text = string.Empty;
+    }
     private void ResetDialogueWindowPosition()
     {
         dialogue.anchorMin = Vector2.zero;

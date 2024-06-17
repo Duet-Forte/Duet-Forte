@@ -64,6 +64,7 @@ Cutscene	0	Zio			Emotion	Dust	현재 VFX 시간보다 더 길게 유지해 주�
 		Timmy	Default	응. 날 만나려면 여기로 다시 찾아와!			
 Ludius	0	Zio			Emotion	Dumbfounded	
 		Zio	Default	(이 시간에 술을…….)			추후, 루디우스 술잔 내리는 모션 생길 시, 술잔 내리는 모션
+		Ludius			Emotion	Drink	
 		Ludius	Default	어이! 가까이 와 봐.			
 		Zio			Emotion	Surprise	
 		Zio	Panic	…저요?			
@@ -92,3 +93,5 @@ Ludius	0	Zio			Emotion	Dumbfounded
 					Quest	0	
 	2	Zio			Emotion	Dumbfounded	
 		Zio	Default	(술에 취해 자는 듯하다...)			
+Zio	0	Zio			Emotion	QuestionMark	
+		Zio	Default	(저 아저씨는 뭐하는 사람이지..?)			

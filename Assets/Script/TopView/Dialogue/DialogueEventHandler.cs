@@ -25,7 +25,7 @@ public class DialogueEventHandler
         { "Dumbfounded", Const.dumbHash },
         { "Angry", Const.angryHash },
         { "Dust", Const.dustHash },
-        // 필요한 경우 추가 트리거 매핑
+        { "Drink", Const.drinkHash },
     };
 
     public DialogueEventHandler(string eventData)

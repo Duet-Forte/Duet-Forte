@@ -84,6 +84,7 @@ namespace Util
         public static int surpriseHash = Animator.StringToHash("Surprise");
         public static int dumbHash = Animator.StringToHash("Dumbfounded");
         public static int questionHash = Animator.StringToHash("Question");
+        public static int drinkHash = Animator.StringToHash("Drink");
         #endregion
 
         #region ���̾�
