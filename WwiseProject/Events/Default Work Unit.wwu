@@ -140,9 +140,6 @@
 								<Event Name="Combat_Stage_01_BGM" ID="{7BCDF135-933D-41D4-815F-F088C4C99554}">
 									<ChildrenList>
 										<Action Name="" ID="{D3D36FF8-4E6B-45E1-ADCB-FA52D16C488D}" ShortID="739922977">
-											<PropertyList>
-												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Stage01" ID="{EDFF6601-E49A-4567-B089-C681163EC14D}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
