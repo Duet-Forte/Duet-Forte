@@ -15,6 +15,7 @@
 						<ObjectRef Name="Enemy_ElecGuitar_Attack_Signal_SFX" ID="{E1E65314-CE0A-4A59-8CAE-68303D53B1EB}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Skill_Climax_SFX" ID="{B11E428B-2CF9-4B36-A476-054F9032B016}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Attack_A_SFX" ID="{FAAB1A55-AB92-4B88-B7FB-A86190CBF2FC}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Combat_BGM_Stop" ID="{242F5060-C112-4CE1-98E8-685817CB7CAE}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Skill_ABA_SFX" ID="{7A1611C4-EEEE-4DD9-8396-2CDB7753853C}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Enemy_Tambourine_Attack_Signal_SFX" ID="{6AD373EB-F79F-4EB9-B1CC-A2C4C6AAAB32}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Enemy_Timmy_Attack_SFX" ID="{8F4016CE-D1D0-4ECA-8309-4496680D6838}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>

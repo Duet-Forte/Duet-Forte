@@ -380,7 +380,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{F82F2050-79E3-A52A-02E4-C36C6F3DAC58}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{87EDEDF3-49FA-1F19-CE16-E274B83C0A60}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -483,6 +483,7 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
+				<Event Id="2307662469" Name="Combat_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="890880275" Name="Combat_Stage_01_BGM" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="481124707"/>
@@ -573,5 +574,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A151DF66-9BC3-ADD1-84BF-C5B6AB9175AD}</FileHash>
+	<FileHash>{46819497-F368-559D-E2F3-C83A41134291}</FileHash>
 </SoundBanksInfo>

@@ -6,6 +6,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	909052356	Enemy_Tambourine_Attack_Signal_SFX			\Default Work Unit\Enemy\Tambourine\Enemy_Tambourine_Attack_Signal_SFX	
 	1248207521	Player_Attack_StrongSignal_SFX			\Default Work Unit\Player\Combat\Player_Attack_StrongSignal_SFX	
 	1532296734	Player_Attack_B_SFX			\Default Work Unit\Player\Combat\Player_Attack_B_SFX	
+	2307662469	Combat_BGM_Stop			\Default Work Unit\BGM\Combat\Combat_BGM_Stop	
 	2328612313	Enemy_Tambourine_Attack_SFX			\Default Work Unit\Enemy\Tambourine\Enemy_Tambourine_Attack_SFX	
 	2518233790	Player_Skill_AAA_SFX			\Default Work Unit\Player\Combat\Player_Skill_AAA_SFX	
 	2846259367	Player_Skill_ABA_SFX			\Default Work Unit\Player\Combat\Player_Skill_ABA_SFX	
