@@ -142,7 +142,7 @@
 										<Action Name="" ID="{D3D36FF8-4E6B-45E1-ADCB-FA52D16C488D}" ShortID="739922977">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="NewCombat" ID="{18CD9999-6E06-4772-9087-F30E4D32BE9E}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
+													<ObjectRef Name="Stage01" ID="{EDFF6601-E49A-4567-B089-C681163EC14D}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -167,7 +167,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="NewCombat" ID="{18CD9999-6E06-4772-9087-F30E4D32BE9E}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
+													<ObjectRef Name="Stage01" ID="{EDFF6601-E49A-4567-B089-C681163EC14D}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

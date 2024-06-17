@@ -380,7 +380,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{87EDEDF3-49FA-1F19-CE16-E274B83C0A60}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{260424A0-142B-26FF-34FC-EB843B8D868A}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -391,6 +391,10 @@
 				<File Id="133336124" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Attack_B_SFX.wav</ShortName>
 					<CachePath>SFX/Tambourine_Attack_B_SFX_818F3B66.wem</CachePath>
+				</File>
+				<File Id="139163244" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear_Loop.wav</ShortName>
+					<CachePath>SFX/Clear_Loop_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="167940839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skill_BBB02.wav</ShortName>
@@ -435,6 +439,10 @@
 				<File Id="602281588" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>세로베기.wav</ShortName>
 					<CachePath>SFX/세로베기_9ECBE823.wem</CachePath>
+				</File>
+				<File Id="691916430" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear_SFX.wav</ShortName>
+					<CachePath>SFX/Clear_SFX_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
@@ -485,10 +493,22 @@
 			<Events>
 				<Event Id="2307662469" Name="Combat_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="890880275" Name="Combat_Stage_01_BGM" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="481124707"/>
-						<MediaRef Id="755516841"/>
-					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="344719509" Id="1119828183"/>
+							<MediaRefs>
+								<MediaRef Id="139163244"/>
+								<MediaRef Id="691916430"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="344719509" Id="3995731396"/>
+							<MediaRefs>
+								<MediaRef Id="481124707"/>
+								<MediaRef Id="755516841"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="207956517" Name="Combat_test01" DurationType="Infinite">
 					<MediaRefs>
@@ -572,7 +592,15 @@
 			<GameParameters>
 				<GameParameter Id="2415836739" Name="Volume"/>
 			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="344719509" Name="Stage_01">
+					<Switches>
+						<Switch Id="1119828183" Name="Stage_01_End"/>
+						<Switch Id="3995731396" Name="Stage_01_Start"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{46819497-F368-559D-E2F3-C83A41134291}</FileHash>
+	<FileHash>{40117A05-8A7B-2CCD-C688-150056C29FBB}</FileHash>
 </SoundBanksInfo>
