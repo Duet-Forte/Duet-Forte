@@ -195,7 +195,8 @@ MonoBehaviour:
   exp: 70
   slashDefense: 0
   pierceDefense: 0
-  soundEventName: Enemy_Timmy_Attack_SFX
+  soundEventName: Enemy_Tambourine_Attack_SFX
+  signalInstrument: 0
 --- !u!114 &42170436234032234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,8 +210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackParticle:
-  - {fileID: 8618785753547430662, guid: 19a04059b00ef6145ac1d8b3849e1211, type: 3}
-  - {fileID: 5531352612611189389, guid: 35531d311f374f648800a791bc28f4c6, type: 3}
+  - {fileID: 1162831315357672158, guid: 8c994869845a69746979d04f19ba9355, type: 3}
+  - {fileID: 2276891050217871009, guid: 8914fe1109e42454aa85bbb94ad23b82, type: 3}
   attackCountDownSignal: {fileID: 0}
   attackSignal: {fileID: 0}
   dashParticle: {fileID: 0}
