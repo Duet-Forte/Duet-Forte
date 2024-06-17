@@ -140,6 +140,9 @@
 								<Event Name="Combat_Stage_01_BGM" ID="{7BCDF135-933D-41D4-815F-F088C4C99554}">
 									<ChildrenList>
 										<Action Name="" ID="{D3D36FF8-4E6B-45E1-ADCB-FA52D16C488D}" ShortID="739922977">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Stage01" ID="{EDFF6601-E49A-4567-B089-C681163EC14D}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
@@ -164,6 +167,17 @@
 										<Action Name="" ID="{0EFB41BE-4E8D-4162-9087-4A4B22311999}" ShortID="720573335">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{F1661656-DD30-47AC-B9D2-FB0BB2C5FD6E}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
