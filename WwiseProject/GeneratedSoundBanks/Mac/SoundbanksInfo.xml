@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{236DE260-DC3E-13F1-2D8B-D7C23BA71A20}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{CE36E7E2-2818-7E3B-5E8E-E459B1B1DC52}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -77,6 +77,10 @@
 					<ShortName>FootStep_Grass03.wav</ShortName>
 					<CachePath>SFX/FootStep_Grass03_818F3B66.wem</CachePath>
 				</File>
+				<File Id="579694935" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>A440.wav</ShortName>
+					<CachePath>SFX/A440_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="586961463" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Transition_FadeIn.wav</ShortName>
 					<CachePath>SFX/Transition_FadeIn_818F3B66.wem</CachePath>
@@ -96,6 +100,10 @@
 				<File Id="604837605" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Grass02.wav</ShortName>
 					<CachePath>SFX/FootStep_Grass02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="618461013" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ludius_Drink.wav</ShortName>
+					<CachePath>SFX/Ludius_Drink_818F3B66.wem</CachePath>
 				</File>
 				<File Id="624505842" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Character_Emotion_Dumbfounded_SFX.wav</ShortName>
@@ -164,6 +172,12 @@
 						<MediaRef Id="98167887"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="631059699" Name="MainMenu_BGM_BGM" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="579694935"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="270981630" Name="MainMenu_BGM_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="918533349" Name="NonCombat_BGM" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -181,6 +195,11 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="2869548328" Name="NonCombat_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3693469630" Name="NPC_Ludius_Drink_SFX" DurationType="OneShot" DurationMin="4.673729" DurationMax="4.673729">
+					<MediaRefs>
+						<MediaRef Id="618461013"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4145632761" Name="Ob_Door_SFX" DurationType="OneShot" DurationMin="0.8155387" DurationMax="0.8155387">
 					<MediaRefs>
 						<MediaRef Id="48994660"/>
@@ -380,7 +399,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{56873F1A-E826-8864-2FB9-90E0F280CC6C}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{38AA864B-FE23-8844-E057-64EBB6522AEA}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -602,5 +621,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{80F7CC65-0B62-4950-594C-24C0C38087B1}</FileHash>
+	<FileHash>{48160E74-B32D-2164-120D-873267C85B7E}</FileHash>
 </SoundBanksInfo>

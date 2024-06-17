@@ -23,11 +23,14 @@ namespace AK
         static const AkUniqueID ENEMY_TAMBOURINE_ATTACK_SFX = 2328612313U;
         static const AkUniqueID ENEMY_TAMBOURINE_ATTACK_SIGNAL_SFX = 909052356U;
         static const AkUniqueID ENEMY_TIMMY_ATTACK_SFX = 837159709U;
+        static const AkUniqueID MAINMENU_BGM_BGM = 631059699U;
+        static const AkUniqueID MAINMENU_BGM_BGM_STOP = 270981630U;
         static const AkUniqueID MAINMENU_CLICK_GAMESTART_SFX = 162289589U;
         static const AkUniqueID MAINMENU_CLICK_SFX = 1154772126U;
         static const AkUniqueID MAINMENU_HOVER_SFX = 294506560U;
         static const AkUniqueID NONCOMBAT_BGM = 918533349U;
         static const AkUniqueID NONCOMBAT_BGM_STOP = 2869548328U;
+        static const AkUniqueID NPC_LUDIUS_DRINK_SFX = 3693469630U;
         static const AkUniqueID OB_DOOR_SFX = 4145632761U;
         static const AkUniqueID OB_FIRE_FIRE_AMB = 3989126589U;
         static const AkUniqueID OB_FIRE_IGNITION_SFX = 198066997U;

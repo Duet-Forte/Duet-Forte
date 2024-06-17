@@ -119,7 +119,7 @@
 										<Action Name="" ID="{72D0A5B7-FFD4-4485-89C0-1CE483C004E7}" ShortID="98079214">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Gio_BodyFall_SFX" ID="{1C8F9536-D52C-45D0-A623-83E5599EE09F}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+													<ObjectRef Name="Gio_BodyFall_SFX" ID="{1C8F9536-D52C-45D0-A623-83E5599EE09F}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -140,9 +140,6 @@
 								<Event Name="Combat_Stage_01_BGM" ID="{7BCDF135-933D-41D4-815F-F088C4C99554}">
 									<ChildrenList>
 										<Action Name="" ID="{D3D36FF8-4E6B-45E1-ADCB-FA52D16C488D}" ShortID="739922977">
-											<PropertyList>
-												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Stage01" ID="{EDFF6601-E49A-4567-B089-C681163EC14D}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
@@ -262,6 +259,31 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Ui_Click" ID="{0BC5BB9E-6FC2-4A6B-8939-1DD624AE0CC7}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MainMenu_BGM_BGM" ID="{D0264315-922C-45F6-9E50-590081C116FA}">
+							<ChildrenList>
+								<Action Name="" ID="{73181B6D-011A-4EA4-AF11-CB96B9550875}" ShortID="911349768">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MainMenu" ID="{9EFD992C-BD70-404A-AF30-D5CD2DDF6A97}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MainMenu_BGM_BGM_Stop" ID="{4BEC83CA-F5B2-4BE3-A552-36C149238E2F}">
+							<ChildrenList>
+								<Action Name="" ID="{24920690-2273-4D8F-9565-3C7D5ED20CB0}" ShortID="81345887">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MainMenu" ID="{9EFD992C-BD70-404A-AF30-D5CD2DDF6A97}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -437,7 +459,7 @@
 										<Action Name="" ID="{6CCFD73A-9CC7-429F-8A84-05432D745B50}" ShortID="502200395">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Tambourine_Signal" ID="{626E17FC-0CCD-4B68-8440-7BA473741EFF}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+													<ObjectRef Name="Tambourine_Signal" ID="{626E17FC-0CCD-4B68-8440-7BA473741EFF}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -448,7 +470,7 @@
 										<Action Name="" ID="{5D1CC736-A610-43F2-BA27-F33866678587}" ShortID="16892882">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Tambourine_Attack" ID="{4E214FBE-9593-4531-9F59-A0393F9578B2}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+													<ObjectRef Name="Tambourine_Attack" ID="{4E214FBE-9593-4531-9F59-A0393F9578B2}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -474,7 +496,7 @@
 										<Action Name="" ID="{3B1CC7D2-2073-401A-B1BF-6C424F8A486B}" ShortID="618073063">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Timmy_Attack" ID="{BF7442DE-367C-4F1D-9525-3213BB73DAD1}" WorkUnitID="{C262C51A-E229-41B9-8C9E-4629419BE7EF}"/>
+													<ObjectRef Name="Timmy_Attack" ID="{BF7442DE-367C-4F1D-9525-3213BB73DAD1}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -482,6 +504,21 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="NPC" ID="{FCD53B17-C0C9-428E-B5FD-F7E9E459080A}" ShortID="896864484">
+					<ChildrenList>
+						<Event Name="NPC_Ludius_Drink_SFX" ID="{51E99858-B80B-42C4-B70F-65E94306A2D3}">
+							<ChildrenList>
+								<Action Name="" ID="{F04B4F90-17A8-4800-A451-BEC22640B08C}" ShortID="916335419">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ludius_Drink" ID="{464AFED3-04E3-4AD4-92D6-F1CD95BACADE}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
