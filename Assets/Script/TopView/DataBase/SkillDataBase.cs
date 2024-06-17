@@ -31,7 +31,6 @@ public class SkillDataBase
                 if (IsActivated[i])
                     skill.Add(data[i]);
             }
-
             return skill.ToArray();
         }
     }

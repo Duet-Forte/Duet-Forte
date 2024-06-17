@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3861468408321123415}
   - component: {fileID: 7583154553548983721}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Town
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7520126733914849744}
   - component: {fileID: 1144432281604147298}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TimmyHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,8 +587,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4961dfa978186498290f4639cdf4db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceDialogue: 0
   targetPoint: {fileID: 7570681533459539206}
   requiredQuest: {fileID: 11400000, guid: ddfb629ebdbbe1246aec8b0bc0fa9820, type: 2}
+  dialogueTarget: 
 --- !u!1 &3062844121048422009
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,9 +696,10 @@ MonoBehaviour:
   onOffObject: {fileID: 5904591873316831889}
   isOn: 0
   switchSoundName:
-  - Ob_Fire_Ignition_SFX
+  - Ob_Fire_SwitchOn_SFX
   onSoundName:
   - Ob_Fire_Fire_Amb
+  pointRange: TimmyHouse
 --- !u!1 &4072195111030914965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,7 +1717,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 5389983994166762744}
-  isChangeMusic: 1
   soundName: Ob_Door_SFX
 --- !u!1 &7441546613690834613
 GameObject:
@@ -1757,7 +1759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4748491346024063923}
   m_Layer: 0
-  m_Name: CameraCollider
+  m_Name: PointCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1790,7 +1792,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8194677901310235508}
   - component: {fileID: 4311101520704089621}
-  - component: {fileID: 2284405977696533917}
   - component: {fileID: 4751152686511651077}
   m_Layer: 0
   m_Name: Town
@@ -1840,21 +1841,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.6}
   m_EdgeRadius: 0
---- !u!114 &2284405977696533917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8187953460144675641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4596be6aee8bad24fb6d87b2924bc32c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questTarget: Sample
-  targetID: 1
-  quest: {fileID: 11400000, guid: ddfb629ebdbbe1246aec8b0bc0fa9820, type: 2}
 --- !u!114 &4751152686511651077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,7 +1854,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 6798324735741632336}
-  isChangeMusic: 1
   soundName: Ob_Door_SFX
 --- !u!1 &8319690850758366927
 GameObject:
@@ -3239,7 +3224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2331121825907789160, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_SortingOrder
-      value: 998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4179695466896532396, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_RootOrder
@@ -3291,7 +3276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179695466896532397, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_SortingOrder
-      value: 999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4179695466896532397, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_SortingLayerID
@@ -3307,7 +3292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179695466896532400, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
@@ -3613,7 +3598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7779837691438535322, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_SortingOrder
-      value: 998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633424, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_Controller
@@ -3627,17 +3612,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 9002746828571633425, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633426, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633426, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.73
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633426, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05
+      value: -1.92
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633426, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3677,7 +3666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633427, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_SortingOrder
-      value: 999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633427, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_SortingLayerID

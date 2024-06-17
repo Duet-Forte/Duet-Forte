@@ -16,12 +16,12 @@ public class Field : MonoBehaviour
     private Dictionary<string, GameObject> cutsceneObject;
     private Dictionary<string, CinemachinePath> cameraPaths;
     private Dictionary<string, PolygonCollider2D> cameraColliders;
-
+    private StringBuilder sb;
     public CinemachineVirtualCamera CutsceneCam { get => cutsceneCamera; }
-
     public void InitSettings(int id)
     {
         this.id = id;
+        sb = new StringBuilder();
         entities = new Dictionary<string, TopViewEntity[]>();
         cutsceneObject = new Dictionary<string, GameObject>();
         SetEntity();
@@ -30,8 +30,6 @@ public class Field : MonoBehaviour
     }
     public void SetEntity()
     {
-        StringBuilder sb = new StringBuilder();
-
         for (int count = 0; count < entitySpawnParent.childCount; ++count)
         {
             // temp는 특정 에너미의 스폰포인트의 부모입니다.
@@ -89,8 +87,20 @@ public class Field : MonoBehaviour
 
     public TopViewEntity GetEntity(string name, int id = 0)
     {
-        entities.TryGetValue(name, out var entity);
-        return entity[id];
+        if (entities.TryGetValue(name, out var entity))
+        {
+            return entity[id];
+        }
+        else
+        {
+            sb.Clear();
+            sb.Append("TopView/Entity/");
+            sb.Append(name);
+            TopViewEntity[] temp = new TopViewEntity[1];
+            temp[0] = Instantiate(Resources.Load<GameObject>(sb.ToString())).GetComponent<TopViewEntity>();
+            entities.Add(name, temp);
+            return temp[0];
+        }
     }
 
     public GameObject GetCutsceneObject(string name)

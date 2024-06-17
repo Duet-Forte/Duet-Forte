@@ -7,6 +7,7 @@ public class TopViewEnemy : TopViewEntity
 {
     [SerializeField] private bool isAlive = true;
     [SerializeField] private int level;
+    [SerializeField] private Stage stage;
     public event Action<string> OnFightPlayer;
     private PlayerTracker tracker;
     public bool isFleeing;

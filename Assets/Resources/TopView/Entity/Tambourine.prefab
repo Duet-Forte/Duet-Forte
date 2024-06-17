@@ -14673,8 +14673,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3694b2cb9111e4abecb86606e70b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnAtFirst: 1
   isAlive: 1
   level: 0
+  stage: {fileID: 0}
   isFleeing: 0
 --- !u!114 &-1172377761156560349
 MonoBehaviour:

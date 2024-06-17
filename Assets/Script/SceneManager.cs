@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneManager : MonoBehaviour
 {
-    [Header ("Debug")]
-    [SerializeField] private Stage testStage;
     [SerializeField] private GameObject sceneTransitionPrefab;
     [SerializeField] private GameObject loadingImagePrefab;
 
@@ -44,21 +42,42 @@ public class SceneManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         cameraManager = new CameraManager();
-        fieldManager = new FieldManager();
-        dataStorage = new DataStorage();
         musicChanger = new MusicChanger(gameObject);
+        fieldManager = new FieldManager();
         cutsceneManager = GetComponent<CutsceneManager>();
         cutsceneManager.InitSettings();
         inputController = GetComponent<InputController>();
         inputController.InitSettings();
+        dataStorage = new DataStorage();
     }
 
     public void SetBattleScene(string name)
     {
+        dataStorage.currentEnemyName = name;
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(true, null, InitBattleScene);
     }
-
+    [ContextMenu("³¡")]
+    public void SetFieldScene()
+    {
+        AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Rebuilding SampleStage");
+        UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.SceneManager.GetSceneByName("Top View"));
+        FieldManager.Field.gameObject.SetActive(true);
+        MusicChanger.ReplayMusic();
+        cameraManager.EnableFieldCamera();
+        cutsceneManager.ReplayCutscene();
+    }
+    public void SetFieldScene(PlayerInfo playerInfo = null)
+    {
+        AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Rebuilding SampleStage");
+        UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.SceneManager.GetSceneByName("Top View"));
+        FieldManager.Field.gameObject.SetActive(true);
+        MusicChanger.ReplayMusic();
+        cameraManager.EnableFieldCamera();
+        cutsceneManager.ReplayCutscene();
+    }
     public void SetTopViewScene()
     {
         FieldManager.Field.gameObject.SetActive(true);
@@ -79,11 +98,12 @@ public class SceneManager : MonoBehaviour
         }
 
         UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.SceneManager.GetSceneByName("Rebuilding SampleStage"));
-        stageManager.StageStart(testStage , new PlayerInfo(null,3,7));
+        stageManager.StageStart(DataBase.Instance.Stage.GetStage(dataStorage.currentEnemyName) , DataBase.Instance.Player.CreatePlayerInfo());
     }
 
     private async UniTask LoadBattleScene()
     {
+        MusicChanger.StopMusic();
         AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Rebuilding SampleStage", LoadSceneMode.Additive);
         LoadingImage loadingImage = Instantiate(loadingImagePrefab).GetComponent<LoadingImage>();
         loadingImage.InitSettings();

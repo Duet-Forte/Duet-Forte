@@ -27,6 +27,5 @@ public class PlayerInfo
     }
     public PlayerSkill[] PlayerSkills{
         get { return playerSkills; }
-}
-
+    }
 }

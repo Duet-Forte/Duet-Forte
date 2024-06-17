@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emotionParticlePrefab: {fileID: 6827238385159913327, guid: 0cf2f12d5f8cab14f8672eac27f65b17, type: 3}
-  emotionSoundName: 
+  emotionSoundName: Character_Emotion_Angry_SFX
 --- !u!1102 &-4386611070882984021
 AnimatorState:
   serializedVersion: 6
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emotionParticlePrefab: {fileID: 4227525260242625306, guid: 6cd45a349de6dc245aabfab5d565188c, type: 3}
-  emotionSoundName: 
+  emotionSoundName: Character_Emotion_Dumbfounded_SFX
 --- !u!1101 &5179287651038585928
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -748,7 +748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emotionParticlePrefab: {fileID: 4368970318085188719, guid: 1cd8ac366a0614f46ab44ca162b6babd, type: 3}
-  emotionSoundName: 
+  emotionSoundName: Character_Emotion_QuestionMark_SFX
 --- !u!114 &8780250581628332126
 MonoBehaviour:
   m_ObjectHideFlags: 1
