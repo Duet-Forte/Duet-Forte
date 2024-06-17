@@ -1,4 +1,5 @@
 using UnityEngine;
+using Util.CustomEnum;
 namespace SoundSet
 {
 
@@ -50,14 +51,24 @@ namespace SoundSet
             }
 
         }
+        public void AttackSignal(GameObject parameterObject, SignalInstrument signalInstrument) {
+            AkSoundEngine.PostEvent($"Enemy_{signalInstrument.ToString()}_Attack_Signal_SFX", parameterObject);
+        }
      
     }
     public class BackGroundMusic {
 
-        public void Victory(GameObject parameterObject) {
-            AkSoundEngine.PostEvent("Combat_BGM_Stop",parameterObject);
-            AkSoundEngine.SetSwitch("Stage01", "StageEnd", parameterObject);
-            AkSoundEngine.PostEvent("Clear_SFX", parameterObject);
+        public void GameOver(GameObject parameterObject, bool isWin) {
+            if (isWin) //승리시 
+            {
+                AkSoundEngine.PostEvent("Combat_BGM_Stop", parameterObject);
+                AkSoundEngine.SetSwitch("Stage_01","Stage_01_End", parameterObject);
+                AkSoundEngine.PostEvent("Combat_Stage_01_BGM", parameterObject);
+            }
+            else {     //패배시
+                
+
+            }
 
         }
     

@@ -134,6 +134,7 @@ public class StageClear : MonoBehaviour
         SetEXPSlider();
         expChangeText.text = $"+EXP {enemyExp}";
         //Coroutine showEXP= StartCoroutine(ShowEXP());
+        //new SoundSet.BackGroundMusic().GameOver(gameObject, true);
         backGround.DOFade(0.7f, fadeOutSpeed);
         yield return new WaitForSeconds(fadeOutSpeed);
 
@@ -142,7 +143,7 @@ public class StageClear : MonoBehaviour
         if (isWin)
         {
             titleText.text = "Victory";
-            //SoundSet.UISound
+            
         }
         else {
             titleText.text = "Defeat";
