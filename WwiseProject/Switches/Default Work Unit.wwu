@@ -3,10 +3,10 @@
 	<Switches>
 		<WorkUnit Name="Default Work Unit" ID="{01BF2CBD-EC51-4A82-8103-BB00877670BB}" PersistMode="Standalone">
 			<ChildrenList>
-				<SwitchGroup Name="Stage01" ID="{F3BAAD89-F8D1-409D-B1CF-83F914CAB4AF}">
+				<SwitchGroup Name="Stage_01" ID="{F3BAAD89-F8D1-409D-B1CF-83F914CAB4AF}">
 					<ChildrenList>
-						<Switch Name="StageStart" ID="{7ADDEB83-5728-4F64-986E-C024474A5D23}"/>
-						<Switch Name="StageEnd" ID="{F303DAA7-5840-49CF-ABC5-817F363683C0}"/>
+						<Switch Name="Stage_01_Start" ID="{7ADDEB83-5728-4F64-986E-C024474A5D23}"/>
+						<Switch Name="Stage_01_End" ID="{F303DAA7-5840-49CF-ABC5-817F363683C0}"/>
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="State" ID="{BE4C57CF-4F82-403E-8C33-03AC77F61FA9}">

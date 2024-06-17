@@ -371,7 +371,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{39439B41-E07D-6BD2-A5DC-D4D6365B69A9}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{998AD62D-51B1-0174-C8D0-996AC3A7C980}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -434,6 +434,10 @@
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
 					<CachePath>SFX/패링-03_03D2EA21.wem</CachePath>
+				</File>
+				<File Id="726328486" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Gio_ABA_SFX.wav</ShortName>
+					<CachePath>SFX/Gio_ABA_SFX_4F341F0A.wem</CachePath>
 				</File>
 				<File Id="755516841" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>0502_1.wav</ShortName>
@@ -540,9 +544,9 @@
 						<MediaRef Id="329739412"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2846259367" Name="Player_Skill_ABA_SFX" DurationType="OneShot" DurationMin="2.4710834" DurationMax="2.4710834">
+				<Event Id="2846259367" Name="Player_Skill_ABA_SFX" DurationType="OneShot" DurationMin="3.2816668" DurationMax="3.2816668">
 					<MediaRefs>
-						<MediaRef Id="329739412"/>
+						<MediaRef Id="726328486"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3250415283" Name="Player_Skill_BBB_SFX" DurationType="OneShot" DurationMin="2.7852855" DurationMax="2.7852855">
@@ -561,5 +565,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{68863F49-60B5-820A-3791-BD3F9D27245C}</FileHash>
+	<FileHash>{4461B7D2-4267-CE5C-5176-7055B7C8364D}</FileHash>
 </SoundBanksInfo>

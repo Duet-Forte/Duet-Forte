@@ -44,7 +44,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Player_Attack_WeakSignal_SFX" ID="{E1E65314-CE0A-4A59-8CAE-68303D53B1EB}">
+								<Event Name="Timmy_Attack_Signal_SFX" ID="{E1E65314-CE0A-4A59-8CAE-68303D53B1EB}">
 									<ChildrenList>
 										<Action Name="" ID="{27468000-20B5-4638-8878-0E55DDA9CFE9}" ShortID="51668979">
 											<ReferenceList>
@@ -104,7 +104,7 @@
 										<Action Name="" ID="{5A2BDBBB-58E0-44F3-9146-031FC47FF728}" ShortID="412500421">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Skill_AAA02" ID="{EF00A6DA-0184-4EBF-95F6-00AAC841C43F}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="Gio_ABA_SFX" ID="{32BEA00A-010D-40A5-BC03-63CFA9FE1A46}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

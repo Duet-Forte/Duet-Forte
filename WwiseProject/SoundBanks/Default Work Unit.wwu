@@ -12,7 +12,7 @@
 						<ObjectRef Name="Player_Skill_BBB_SFX" ID="{5AC455B7-78C2-43D5-80A7-D8A2E4292CA9}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Attack_B_SFX" ID="{0AD51A88-F515-45F2-B618-6EF9E426611A}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Skill_AAA_SFX" ID="{317160BB-8B38-49C8-9F67-BF0E16F77A4F}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Player_Attack_WeakSignal_SFX" ID="{E1E65314-CE0A-4A59-8CAE-68303D53B1EB}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Timmy_Attack_Signal_SFX" ID="{E1E65314-CE0A-4A59-8CAE-68303D53B1EB}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Skill_Climax_SFX" ID="{B11E428B-2CF9-4B36-A476-054F9032B016}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Attack_A_SFX" ID="{FAAB1A55-AB92-4B88-B7FB-A86190CBF2FC}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Skill_ABA_SFX" ID="{7A1611C4-EEEE-4DD9-8396-2CDB7753853C}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
