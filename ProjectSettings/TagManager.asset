@@ -47,9 +47,6 @@ TagManager:
   - name: Object
     uniqueID: 3108457445
     locked: 0
-  - name: Entity
-    uniqueID: 153567263
-    locked: 0
   - name: Hue
     uniqueID: 4276085125
     locked: 0

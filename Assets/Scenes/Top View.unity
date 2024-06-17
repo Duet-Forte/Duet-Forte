@@ -361,8 +361,6 @@ PlayableDirector:
     value: {fileID: 362427653}
   - key: {fileID: -1531456290908865073, guid: 8a6980645c67d1346aa628fd1b1cf62c, type: 2}
     value: {fileID: 0}
-  - key: {fileID: 6901076172961247800, guid: 8a6980645c67d1346aa628fd1b1cf62c, type: 2}
-    value: {fileID: 0}
   - key: {fileID: -7285366976321303986, guid: 8a6980645c67d1346aa628fd1b1cf62c, type: 2}
     value: {fileID: 0}
   - key: {fileID: -3691627183341311791, guid: 8a6980645c67d1346aa628fd1b1cf62c, type: 2}
@@ -725,10 +723,10 @@ GameObject:
   - component: {fileID: 1257349480}
   - component: {fileID: 1257349479}
   - component: {fileID: 1257349482}
-  - component: {fileID: 1257349481}
   - component: {fileID: 1257349483}
   - component: {fileID: 1257349484}
   - component: {fileID: 1257349485}
+  - component: {fileID: 1257349486}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -795,20 +793,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1257349481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257349477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2490f8bbacc3724b8553c3e94659b9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDefaultListener: 1
-  listenerId: 0
 --- !u!114 &1257349482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,6 +907,20 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1257349486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257349477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2490f8bbacc3724b8553c3e94659b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
 --- !u!114 &1474624627 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 998282503024331775, guid: 17916459407213c49a9d6ba35c93cdd1, type: 3}

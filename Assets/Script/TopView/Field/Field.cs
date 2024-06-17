@@ -45,7 +45,7 @@ public class Field : MonoBehaviour
             TopViewEntity[] tempEnemies = new TopViewEntity[temp.childCount];
             for(int tempChildID = 0; tempChildID < temp.childCount; ++tempChildID)
             {
-                GameObject enemy = Instantiate(enemyPrefab);
+                GameObject enemy = Instantiate(enemyPrefab, transform);
                 enemy.name = enemyName;
                 tempEnemies[tempChildID] = enemy.GetComponent<TopViewEntity>();
                 Vector2 enemySpawnPoint = temp.GetChild(tempChildID).position;

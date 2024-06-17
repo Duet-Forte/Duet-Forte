@@ -45,6 +45,10 @@ public class DialogueDataBase
         return dialogues[currentFieldId][interactableName][id];
     }
 
+    public void PlusID(string speakerName, int plusAmount)
+    {
+        SetID(speakerName, GetID(speakerName) + plusAmount);
+    }
     public void SetID(string speakerName, int id)
     {
         sb.Clear();
