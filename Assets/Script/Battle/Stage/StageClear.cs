@@ -29,7 +29,8 @@ public class StageClear : MonoBehaviour
     private int playerLevel;
     private PlayerStatus playerStatus;
     private float expGainSpeed=1.5f;
-    private float fadeOutSpeed=2.5f;
+    private float fadeOutSpeed=2.75f;
+    private float appearDelay = 1.3f;
 
     StageManager stageManager;
     [SerializeField] private GameObject rankTitle;
@@ -134,18 +135,20 @@ public class StageClear : MonoBehaviour
         SetEXPSlider();
         expChangeText.text = $"+EXP {enemyExp}";
         //Coroutine showEXP= StartCoroutine(ShowEXP());
+       
+        backGround.DOFade(0.7f, fadeOutSpeed);
+        yield return new WaitForSeconds(fadeOutSpeed);
+
         if (isWin)
         {
             new SoundSet.BackGroundMusic().GameOver(isWin);
 
         }
-        else { 
+        else
+        {
             //ÆÐ¹è½Ã BGM
         }
-        backGround.DOFade(0.7f, fadeOutSpeed);
-        yield return new WaitForSeconds(fadeOutSpeed);
 
-        
         titleText.gameObject.SetActive(true);
         if (isWin)
         {
@@ -160,12 +163,12 @@ public class StageClear : MonoBehaviour
 
         if (isWin)
         {
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(appearDelay);
 
             rankTitle.gameObject.SetActive(true);
             rankTitle.transform.DOScale(new Vector2(1, 1), 0.2f);
         }
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(appearDelay);
 
         expSlider.transform.DOLocalMove(new Vector2(expSlider.transform.localPosition.x, -360), 0.4f).OnComplete(() => {
             ChangeEXP(enemyExp);
