@@ -8,27 +8,26 @@ public class StatusUIView : MonoBehaviour, IStageUI
     private GuardGaugeUI guardGaugeUI;
     private PlayerHealthPointUI playerHealthPointUI;
     private PlayerHealthPointUI enemyHealthPointUI;
-    private PrepareTurnUI prepareTurnUI;
+    
 
     public void InitSettings(StageManager stageManager, Canvas canvas) // judgeManager은 추후 플레이어 스탯을 가지고 있는 클래스로 대신할 예정.
     {
         GetComponent<ScreenSpaceCameraUI>().InitSettings();
         if (prefabs == null)
         {
-            prefabs = new GameObject[3];
-            prefabs[0] = Resources.Load<GameObject>(Const.UI_GUARDGAUGE_PATH);
-            prefabs[1] = Resources.Load<GameObject>(Const.UI_PLAYERHP_PATH);
-            prefabs[2] = Resources.Load<GameObject>(Const.UI_ENEMYHP_PATH);
+            prefabs = new GameObject[2];
+            prefabs[0] = Resources.Load<GameObject>(Const.UI_PLAYERHP_PATH);
+            prefabs[1] = Resources.Load<GameObject>(Const.UI_ENEMYHP_PATH);
         }
-        guardGaugeUI = Instantiate(prefabs[0], transform)
-            .AddComponent<GuardGaugeUI>();
-        guardGaugeUI.InitSettings();
+    
 
-        playerHealthPointUI = Instantiate(prefabs[1], transform)
+        playerHealthPointUI = Instantiate(prefabs[0], transform)
             .AddComponent<PlayerHealthPointUI>();
         playerHealthPointUI.InitSettings(stageManager.JudgeManager.HP);
+        guardGaugeUI = prefabs[0].GetComponent<GuardGaugeUI>();
+        guardGaugeUI.InitSettings();
 
-        enemyHealthPointUI = Instantiate(prefabs[2], transform)
+        enemyHealthPointUI = Instantiate(prefabs[1], transform)
             .AddComponent<PlayerHealthPointUI>();
         enemyHealthPointUI.InitSettings(stageManager.Enemy.HealthPoint);
 

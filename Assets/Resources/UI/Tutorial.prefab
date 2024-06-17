@@ -717,63 +717,88 @@ MonoBehaviour:
   windowPrefab: {fileID: 3305581778623057197, guid: 26ba5832401e9034caa04cb1973caf1b, type: 3}
   windowCount: 12
   describes:
-  - "<size=140%><b>\uC2A4\uD0AC\uD655\uC778</b></size>\\n\\n\uC67C\uCABD\uC5D0\uC11C
-    \uC7A5\uCC29\uD55C \uC2A4\uD0AC\uACFC\\n\\n\uC0AC\uC6A9\uD55C \uC2A4\uD0AC\uC758
-    \uCFE8\uD0C0\uC784\uC744 \uD655\uC778\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\\n\\n<size=70%>*\uC774\uBC88
+  - "<size=140%><b>\uC804\uD22C</b></size>\\n\\n\uD55C \uD134\uC5D0 <color=red>\uC804\uD22C
+    \uC2DC\uAC04</color>\uACFC <color=blue>\uC900\uBE44 \uC2DC\uAC04</color>\uC744
+    \uBC88\uAC08\uC544 \uAC00\uBA70 \uC9C4\uD589\uD569\uB2C8\uB2E4. \\n\\n<color=blue>\uC900\uBE44
+    \uC2DC\uAC04</color>\uC5D0\uB294 \uC0AC\uC6A9\uD560 \uC2A4\uD0AC\uC758 \uCEE4\uB9E8\uB4DC\uB97C
+    \uC219\uC9C0\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\\n<color=red>\uC804\uD22C
+    \uC2DC\uAC04</color>\uC5D0\uB294 \uC801\uACFC \uC9C0\uC624\uAC00 \uC11C\uB85C
+    \uACF5\uACA9\uC744 \uC8FC\uACE0 \uBC1B\uC2B5\uB2C8\uB2E4."
+  - "<size=140%><b>\uC2A4\uD0AC\uD655\uC778</b></size>\\n\\n<color=blue>\uC900\uBE44
+    \uC2DC\uAC04</color>\uC5D0\uB294 \uC67C\uCABD\uC5D0\uC11C \uC7A5\uCC29\uD55C
+    \uC2A4\uD0AC\uC744 \uD655\uC778\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\\n\\n\uC2A4\uD0AC\uC740
+    <color=red>\uC804\uD22C \uC2DC\uAC04</color>\uC5D0 \uAE30\uBCF8\uACF5\uACA9\uC744
+    \uCEE4\uB9E8\uB4DC\uC5D0 \uB9DE\uAC8C \uC785\uB825\uD558\uB294 \uAC83\uC73C\uB85C
+    \uBC1C\uB3D9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\\n\\n<size=70%>*\uC774\uBC88
     \uC804\uD22C\uC5D0\uC11C\uB294 \uC784\uC2DC \uC2A4\uD0AC\uC774 \uC801\uC6A9\uB429\uB2C8\uB2E4.</size>"
-  - "<size=140%><b>\uC2A4\uD0B5</b></size>\\n\\n\uBC14\uB85C \uACF5\uACA9\uC5D0 \uB3CC\uC785\uD558\uACE0
-    \uC2F6\uB2E4\uBA74,\\n\\n\uD574\uB2F9 \uC544\uC774\uCF58\uC744 \uD074\uB9AD\uD558\uAC70\uB098\\n\\n\uC2A4\uD398\uC774\uC2A4\uBC14\uB97C
-    \uB20C\uB7EC \uC2A4\uD0B5\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.  "
-  - "<size=140%><b>\uBE44\uD2B8</b></size>\\n\\n\uB178\uB798\uC758 \uBE44\uD2B8\uB97C
-    \uC54C\uB824\uC8FC\uB294 \uACF3\uC785\uB2C8\uB2E4.\\n\\n\uBE44\uD2B8\uC5D0 \uB9DE\uCDB0
-    \uACF5\uACA9\uACFC \uBC29\uC5B4\uB97C \uD574\uBCF4\uC138\uC694."
-  - "<size=140%><b>\uAE30\uBCF8\uACF5\uACA9 - \uB808\uAC00\uD1A0</b></size>\\n\\n\uAE30\uBCF8
-    \uACF5\uACA9\uC778 \uB808\uAC00\uD1A0 \uC2A4\uD0AC\uC740\\n\\nF\uD0A4\uB97C \uB20C\uB7EC
-    \uC0AC\uC6A9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
-  - "<size=140%><b>\uAE30\uBCF8\uACF5\uACA9 - \uC2A4\uD0C0\uCE74\uD1A0</b></size>\\n\\n\uAE30\uBCF8
-    \uACF5\uACA9\uC778 \uC2A4\uD0C0\uCE74\uD1A0 \uC2A4\uD0AC\uC740 \\n\\nJ\uD0A4\uB97C
-    \uB20C\uB7EC \uC0AC\uC6A9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. "
-  - "<size=140%><b>\uACF5\uACA9 \uB300\uBBF8\uC9C0</b></size>\\n\\n\uACF5\uACA9 \uC815\uD655\uB3C4\uC640
-    \uC2A4\uD0AC\uC5D0 \uB530\uB77C\\n\\n\uC801\uC5D0\uAC8C \uAC00\uD574\uC9C0\uB294
-    \uB300\uBBF8\uC9C0\uAC00 \uB2EC\uB77C\uC9D1\uB2C8\uB2E4.\\n\\n<size=70%>* \uACF5\uACA9
-    \uC815\uD655\uB3C4\uB294 \uBE44\uD2B8\uC758 \uC601\uD5A5\uC744 \uBC1B\uC2B5\uB2C8\uB2E4.</size>"
-  - "<size=140%><b>\uC801\uC758 \uACF5\uACA9 \uC2E0\uD638</b></size>\\n\\n\uD574\uB2F9
-    \uC544\uC774\uCF58\uACFC \uC18C\uB9AC\uB97C \uD1B5\uD574 \\n\\n\uC801\uC758 \uACF5\uACA9
-    \uD328\uD134\uC744 \uC54C\uB824\uC90D\uB2C8\uB2E4.\\n\\n\uBE44\uD2B8\uC5D0 \uB9DE\uCDB0
-    \uACF5\uACA9 \uC2E0\uD638\uB97C \uC678\uC6CC\uC8FC\uC138\uC5EC."
-  - "<size=140%><b>\uBC29\uC5B4</b></size>\\n\\n\uC2E0\uD638\uB97C \uD1B5\uD574 \uCCAB
-    \uBC15\uC790\uB97C \uC54C\uB824\uC90D\uB2C8\uB2E4.\\n\\n\uC2A4\uD398\uC774\uC2A4\uBC14\uB97C
-    \uB20C\uB7EC \uBC29\uC5B4\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
-  - "<size=140%><b>\uD310\uC815</b></size>\\n\\n<sprite=1>1\uBC88 \uC544\uC774\uCF58,\\n\\n<sprite=2>\uD574\uB2F9
-    \uC544\uC774\uCF58\uC744 \uD074\uB9AD\uD558\uAC70\uB098\\n\\n\uC2A4\uD398\uC774\uC2A4\uBC14\uB97C
-    \uB20C\uB7EC \uC2A4\uD0B5\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.  "
+  - "<size=140%><b>\uC2A4\uD0B5</b></size>\\n\\n<color=blue>\uC900\uBE44 \uC2DC\uAC04</color>\uC740
+    \uAE30\uBCF8\uC801\uC73C\uB85C 7\uCD08\uAC00 \uC8FC\uC5B4\uC9C0\uC9C0\uB9CC \\n\\n
+    \uC2A4\uD0AC \uC0AC\uC6A9\uC5D0 \uC775\uC219\uD574\uC9C0\uC168\uB2E4\uBA74 <color=#E33606>\uC2A4\uD398\uC774\uC2A4\uBC14</color>\uB97C
+    \uB20C\uB7EC \uC2A4\uD0B5\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+  - "<size=140%><b>\uC804\uD22C \uC2DC\uAC04</b></size>\\n\\n<color=red>\uC804\uD22C
+    \uC2DC\uAC04</color>\uC740 \uC9C0\uC624\uC758 \uACF5\uACA9\uC73C\uB85C \uC2DC\uC791\uB429\uB2C8\uB2E4.\\n\uC6D0\uC744
+    \uD1B5\uD574 \uC5B4\uB5A4 \uBC15\uC790\uC5D0 \uACF5\uACA9\uD574\uC57C\uD560 \uC9C0
+    \uC54C \uC218 \uC788\uC73C\uBA70\\n\uBC15\uC790\uC5D0 \uB9DE\uCDB0 <color=blue>\uC900\uBE44\uC2DC\uAC04</color>\uC5D0
+    \uBD10\uB454 \uC2A4\uD0AC\uC758 \uCEE4\uB9E8\uB4DC\uB97C \uC785\uB825\uD558\uC138\uC694!
+    \\n\\n<size=70%>* \uC74C\uC545\uC758 \uBC15\uC790\uB97C \uB290\uB07C\uACE0 \uACF5\uACA9\uD558\uC138\uC694!</size>"
+  - "<size=140%><b>\uAE30\uBCF8\uACF5\uACA9 - <color=#ff6347>\uB808\uAC00\uD1A0</color></b></size>\\n\\n<color=#ff6347>F</color>\uD0A4\uB97C
+    \uB20C\uB7EC <color=#ff6347>\uB808\uAC00\uD1A0 \uD53C\uD574</color>\uB97C \uC785\uD788\uB294\\n\\n\uAE30\uBCF8\uACF5\uACA9\uC744
+    \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\\n\\n\uBC15\uC790\uC5D0 \uB9DE\uAC8C
+    \uC815\uD655\uD788 \uB204\uB97C \uC218\uB85D \uAC15\uD55C \uACF5\uACA9\uC744
+    \uD569\uB2C8\uB2E4."
+  - "<size=140%><b>\uAE30\uBCF8\uACF5\uACA9 - <color=#00bfff>\uC2A4\uD0C0\uCE74\uD1A0</color></b></size>\\n\\n<color=#00bfff>J</color>\uD0A4\uB97C
+    \uB20C\uB7EC <color=#00bfff>\uC2A4\uD0C0\uCE74\uD1A0 \uD53C\uD574</color>\uB97C
+    \uC785\uD788\uB294 \\n\\n\uAE30\uBCF8\uACF5\uACA9\uC744 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\\n\\n\uBC15\uC790\uC5D0
+    \uB9DE\uAC8C \uC815\uD655\uD788 \uB204\uB97C \uC218\uB85D \uAC15\uD55C \uACF5\uACA9\uC744
+    \uD569\uB2C8\uB2E4."
+  - "<size=140%><b>\uC801\uC758 \uACF5\uACA9 \uC2E0\uD638</b></size>\\n\\n\uC9C0\uC624\uC758
+    \uACF5\uACA9\uC774 \uB05D\uB098\uBA74 \uC801\uC740  <sprite=0>\uACFC \uC801 \uACE0\uC720\uC758
+    \uC545\uAE30 \uC18C\uB9AC\uB97C \uD1B5\uD574 \\n\\n\uC801\uC758 \uACF5\uACA9
+    \uD328\uD134\uC744 \uC54C\uB824\uC90D\uB2C8\uB2E4.\\n\\n\uC801\uC758 \uC18C\uB9AC\uC5D0
+    \uADC0\uAE30\uC6B8\uC774\uACE0 \uBC29\uC5B4\uB97C \uC900\uBE44\uD558\uC138\uC694."
+  - "<size=140%><b>\uBC29\uC5B4</b></size>\\n\\n\uC801\uC740 \uB450 \uC6D0\uC774
+    \uACB9\uCE60 \uB54C \uCCAB \uACF5\uACA9\uC744 \uC2DC\uC791\uD569\uB2C8\uB2E4.
+    \\n\\n<color=#E33606>\uC2A4\uD398\uC774\uC2A4\uBC14</color>\uB97C \uB20C\uB7EC
+    \uC801\uC758 \uCCAB \uACF5\uACA9\uC744 \uBC29\uC5B4\uD558\uC138\uC694. \\n\uC774\uD6C4\uC758
+    \uACF5\uACA9\uC740 \uC678\uC6CC\uB454 \uBC15\uC790\uC5D0 \uB9DE\uCDB0 \uC9C4\uD589\uB418\uB2C8
+    \uBAA8\uB450 \uB9C9\uC73C\uC138\uC694!\n"
+  - "<size=140%><b>\uD310\uC815</b></size>\\n\\n\uC801\uC758 \uACF5\uACA9\uC744 \uC815\uD655\uD788
+    \uB9C9\uC744 \uC218\uB85D \uD53C\uD574\uAC00 \uC904\uC5B4\uB4ED\uB2C8\uB2E4.\\n\\n\uC55E\uC120
+    \uC801\uC758 \uC18C\uB9AC\uB97C \uC798 \uB4E3\uACE0 \uC815\uD655\uD558\uAC8C
+    \uB9C9\uC544\uBCF4\uC138\uC694."
   - "<size=140%><b>\uD074\uB77C\uC774\uB9E5\uC2A4 \uAC8C\uC774\uC9C0</b></size>\\n\\n\uC801\uC758
     \uACF5\uACA9\uC744 \uC131\uACF5\uC801\uC73C\uB85C \uBC29\uC5B4\uD558\uBA74,\\n\\n\uD074\uB77C\uC774\uB9E5\uC2A4
-    \uAC8C\uC774\uC9C0\uAC00 \uCC44\uC6CC\uC9D1\uB2C8\uB2E4."
+    \uAC8C\uC774\uC9C0\uAC00 \uCC44\uC6CC\uC9D1\uB2C8\uB2E4.\\n\uD074\uB77C\uC774\uB9E5\uC2A4
+    \uAC8C\uC774\uC9C0\uB294 \uC815\uD655\uD558\uAC8C \uBC29\uC5B4\uD560 \uC218\uB85D
+    \uB9CE\uC774 \uCC44\uC6CC\uC9D1\uB2C8\uB2E4."
   - "<size=140%><b>\uD074\uB77C\uC774\uB9E5\uC2A4</b></size>\\n\\n\uAC8C\uC774\uC9C0\uB97C
-    \uBAA8\uB450 \uCC44\uC6B0\uBA74, \\n\\n\uC2E0\uD638\uC5D0 \uB9DE\uCDB0, \uACF5\uACA9\uD0A4(F
-    \uD639\uC740 J)\uB97C \uC0AC\uC6A9\uD558\uC5EC\\n\\n\uC801\uC5D0\uAC8C \uAC15\uB825\uD55C
-    \uACF5\uACA9\uC744 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
-  - "<size=140%><b>HP</b></size>\\n\\n\uC801\uC758 \uACF5\uACA9\uC744 \uC81C\uB300\uB85C
-    \uB9C9\uC9C0 \uBABB\uD558\uBA74 \\n\\nHP\uAC00 \uC18C\uBAA8\uB429\uB2C8\uB2E4."
+    \uBAA8\uB450 \uCC44\uC6B0\uBA74, \\n\\n<color=red>\uC804\uD22C \uC2DC\uAC04</color>\uC774
+    \uB05D\uB098\uAE30 \uC804, \uC2E0\uD638\uC5D0 \uB9DE\uCDB0, \uACF5\uACA9\uD0A4(<color=#E33606>F</color>
+    \uD639\uC740 <color=#E33606>J</color>)\uB97C \uC0AC\uC6A9\uD558\uC5EC\\n\\n\uC801\uC5D0\uAC8C
+    \uAC15\uB825\uD55C \uACF5\uACA9\uC744 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+  - "<size=140%><b>\uD074\uB77C\uC774\uB9E5\uC2A4</b></size>\\n\\n\uD074\uB77C\uC774\uB9E5\uC2A4\uB294
+    \uC801\uC5D0\uAC8C \uAC15\uD55C \uD53C\uD574\uB97C \uC904 \uC218 \uC788\uC2B5\uB2C8\uB2E4.
+    \\n\\\uAE30\uBCF8 \uACF5\uACA9\uACFC \uC2A4\uD0AC\uB3C4 \uC911\uC694\uD558\uC9C0\uB9CC
+    \uC801\uC758 \uACF5\uACA9\uC744 \uC798 \uBC29\uC5B4\uD574\uC11C\\n\uD074\uB77C\uC774\uB9E5\uC2A4\uB97C
+    \uC0AC\uC6A9\uD558\uB294 \uAC83\uB3C4 \uC911\uC694\uD569\uB2C8\uB2E4!"
   screenshots:
-  - {fileID: 21300000, guid: b7354cbb2bfd5d447a69e51841f08517, type: 3}
-  - {fileID: 21300000, guid: f8e9e96ae66fea64d9d893dee86c1bc3, type: 3}
-  - {fileID: 21300000, guid: 7f8dc8fabedfbfe479a73c54bbeb3b52, type: 3}
+  - {fileID: 21300000, guid: 19c45ce54d0cce044978a69f6b0df9f8, type: 3}
+  - {fileID: 21300000, guid: 2f1f18100b772ed4e9c788552189eeab, type: 3}
+  - {fileID: 21300000, guid: ad3298e7f3b3c0942840b99567d21c6f, type: 3}
+  - {fileID: 21300000, guid: 8daedcdd8685c18468df8aa0b78de9c1, type: 3}
   - {fileID: 21300000, guid: 4e53fa2927900d342a75f7ee29437369, type: 3}
   - {fileID: 21300000, guid: 45e746f77dc96964798e79ea345bf3b6, type: 3}
-  - {fileID: 21300000, guid: 2e675de42a8661649b9e99cad6140f42, type: 3}
-  - {fileID: 21300000, guid: 77805c1094cb5c94ea2946fe059dee5e, type: 3}
-  - {fileID: 21300000, guid: fe676a997f869c54fa8f60d144cfeca8, type: 3}
-  - {fileID: 21300000, guid: 42ff208a2a2d90b42a8d621f4a33de71, type: 3}
-  - {fileID: 21300000, guid: 42ff208a2a2d90b42a8d621f4a33de71, type: 3}
-  - {fileID: 21300000, guid: 1ae1b4a5740403847a76df841ae11ec5, type: 3}
-  - {fileID: 21300000, guid: 451d191a18eb202428a44d5be2f0c542, type: 3}
+  - {fileID: 21300000, guid: a783b06e3edfa294da7d71fe6e433717, type: 3}
+  - {fileID: 21300000, guid: cf74b4e95de717743a93e17c6295afe3, type: 3}
+  - {fileID: 21300000, guid: d577ce529980aff48848a3c08693cc9a, type: 3}
+  - {fileID: 21300000, guid: 33a791f8d9af44443b578430ce5fb572, type: 3}
+  - {fileID: 21300000, guid: 5f120bf016ab3054cbae160e8f007348, type: 3}
+  - {fileID: 21300000, guid: 8dd82bcfc63a08a4a89a74ed1643b1c3, type: 3}
   titles:
-  - ' '
-  - "\uACF5\uACA9"
+  - "\uC804\uD22C \uC2DC\uAC04\uACFC \uC900\uBE44 \uC2DC\uAC04"
+  - "\uAE30\uBCF8 \uACF5\uACA9"
   - "\uBC29\uC5B4"
-  - "\uBC29\uC5B4"
+  - "\uD074\uB77C\uC774\uB9E5\uC2A4"
   pack: {fileID: 5021825137854930593}
 --- !u!1 &2515335429103653904
 GameObject:
@@ -843,8 +868,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Title
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39740ae2728a06349bc0e64e2f284fd9, type: 2}
-  m_sharedMaterial: {fileID: -3498256964133445719, guid: 39740ae2728a06349bc0e64e2f284fd9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85c61549c14c2984d9f6ae596440d3b5, type: 2}
+  m_sharedMaterial: {fileID: 8393765040418250269, guid: 85c61549c14c2984d9f6ae596440d3b5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -904,7 +929,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -601.5774, y: 0, z: -586.49585, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

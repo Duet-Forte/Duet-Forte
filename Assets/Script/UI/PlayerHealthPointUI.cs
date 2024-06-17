@@ -33,7 +33,7 @@ public class PlayerHealthPointUI : InGameUI
     public void GetDamage(Damage damage)
     {
         currentHealthPoint -= damage.GetCalculatedDamage();
-        healthPoint.text = currentHealthPoint.ToString() + "/" + enemyMaxHealthPoint.ToString();
+        healthPoint.text = Mathf.Clamp( currentHealthPoint,0,999999999999).ToString() + "/" + enemyMaxHealthPoint.ToString();
         float currentHealthPointRatio = Mathf.Clamp01(currentHealthPoint / enemyMaxHealthPoint);
         filling.DOFillAmount(currentHealthPointRatio, Const.STATUSUI_PROCESS_SPEED);
         // 기본적으로 filling이 현재체력에 맞춰 줄어들고, 해당 동작 후 일정 시간이 지나면 damagedFilling이 따라감.

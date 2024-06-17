@@ -18,7 +18,7 @@ MonoBehaviour:
   - A
   - A
   - A
-  skillIcon: {fileID: -1451286363, guid: 901c6b0eb98292246ae96544fbdd4bb4, type: 3}
+  skillIcon: {fileID: 21300000, guid: e1e938b7ce4b4d94a9ef51d8920d7024, type: 3}
   isSpacialSkill: 0
   coolTimeTurn: 2
   skillParticle: {fileID: 3941128118579984434, guid: a58309f6feafd76418f4a1f9570b5e53, type: 3}

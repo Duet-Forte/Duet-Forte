@@ -5,13 +5,14 @@ using Util;
 
 public class GuardGaugeUI : InGameUI
 {
-    private Image filling;
+    [SerializeField]private Image filling;
 
     public void InitSettings()
     {
-        filling = transform.Find("Filling").GetComponent<Image>();
+        //filling = transform.Find("GuageFilling").GetComponent<Image>();
+        Debug.Log(filling);
         filling.fillAmount = 0;
-        SubscribeBeatingUISequence();
+        //SubscribeBeatingUISequence();
     }
 
     public void ResetGauge()
@@ -21,7 +22,7 @@ public class GuardGaugeUI : InGameUI
 
     public void UpdateGauge(int currentCombo, int maxGauge)
     {
-        float targetGuageAmount = (float)currentCombo / maxGauge;
+        float targetGuageAmount = ((float)currentCombo / maxGauge);
         filling.DOFillAmount(targetGuageAmount, Const.STATUSUI_FADE_SPEED);
     }
 }
