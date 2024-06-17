@@ -196,7 +196,7 @@ MonoBehaviour:
   slashDefense: 0
   pierceDefense: 0
   soundEventName: Enemy_Tambourine_Attack_SFX
-  signalInstrument: 0
+  signalInstrument: 1
 --- !u!114 &42170436234032234
 MonoBehaviour:
   m_ObjectHideFlags: 0

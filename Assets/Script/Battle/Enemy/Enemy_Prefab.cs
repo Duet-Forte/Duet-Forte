@@ -154,7 +154,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
             targetTimes.Add(targetTime);                     //노트간 시간 모은 리스트
             isNoteChecked.Add(true);                         //리스트 공간 할당을 위한 더미 값                      
             yield return WaitForTargetedTime(targetTimes[i]);//패턴의 노트간 해당 시간만큼 대기
-            uiSound.SignalSound(gameObject, false);
+            uiSound.AttackSignal(gameObject, signalInstrument);
             enemySignalUI.AttackActive();
             enemyAnimator.PatternSignal();
         }
