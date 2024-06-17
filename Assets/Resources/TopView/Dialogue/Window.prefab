@@ -344,8 +344,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uD14C\uC2A4\uD2B8 \uAE00\uC790\uC785\uB2C8\uB2E4."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39740ae2728a06349bc0e64e2f284fd9, type: 2}
-  m_sharedMaterial: {fileID: -3498256964133445719, guid: 39740ae2728a06349bc0e64e2f284fd9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 41b01fc0683d7144393303e87133829a, type: 2}
+  m_sharedMaterial: {fileID: 6434593365614673690, guid: 41b01fc0683d7144393303e87133829a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -509,6 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4dbe1394ee7414daeba88828bf8457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  count: 0
 --- !u!1 &2827396929461209306
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,8 +654,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC774\uB984"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39740ae2728a06349bc0e64e2f284fd9, type: 2}
-  m_sharedMaterial: {fileID: -3498256964133445719, guid: 39740ae2728a06349bc0e64e2f284fd9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85c61549c14c2984d9f6ae596440d3b5, type: 2}
+  m_sharedMaterial: {fileID: 8393765040418250269, guid: 85c61549c14c2984d9f6ae596440d3b5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

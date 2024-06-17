@@ -12,6 +12,6 @@ public class TopViewEventController : MonoBehaviour
 
     public void PlayEvent(int eventHash)
     {
-        animator.SetTrigger(eventHash);
+        animator.Play(eventHash);
     }
 }

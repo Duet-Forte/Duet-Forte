@@ -2,7 +2,6 @@ using Cysharp.Threading.Tasks;
 using Febucci.UI;
 using System.Threading;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Util.CustomEnum;
@@ -51,39 +50,17 @@ public class DialogueManager
         cancel = new CancellationTokenSource();
         window.SetActive(true);
         Dialogue dialogue = DataBase.Instance.Dialogue.GetDialogue(speakerName);
-
-        await WaitKeyInput(dialogue, speakerName == "Cutscene");
+        await WaitKeyInput(dialogue, speakerName);
     }
 
-    private async UniTask WaitKeyInput(Dialogue dialogue, bool isCutscene)
+    private async UniTask WaitKeyInput(Dialogue dialogue, string interactorName)
     {
         for (int i = 0; i < dialogue.Lines.Length; i++)
         {
             dialogue.Speaker = dialogue.Speakers[i];
-            if (dialogue.Events[i] == null)
+            if (dialogue.Events[i] != null)
             {
-                // 이벤트가 없으면 그냥 넘어가~
-            }
-            else if (dialogue.Events[i].type == Util.CustomEnum.EventType.Emotion)
-            {
-                TopViewEventController controller;
-                if (isCutscene)
-                    controller = SceneManager.Instance.FieldManager.Field.GetCutsceneObject(dialogue.Speaker).GetComponent<TopViewEventController>();
-                else if (dialogue.Speaker == "Zio")
-                    controller = SceneManager.Instance.FieldManager.Player.GetComponent<TopViewEventController>();
-                else
-                {
-                    InteractableObject eventTarget = SceneManager.Instance.FieldManager.Field.GetEntity(dialogue.Speaker) as InteractableObject;
-                    controller = eventTarget.Controller;
-                }
-                controller.InitSettings();
-                controller.PlayEvent(dialogue.Events[i].trigger);
-                continue;
-            }
-            else if(dialogue.Events[i].type == Util.CustomEnum.EventType.Quest)
-            {
-                if(!DataBase.Instance.Player.Quests.Contains(QuestManager.Instance.GetQuest(dialogue.Events[i].trigger)))
-                    QuestManager.Instance.SetQuest(dialogue.Events[i].trigger);
+                dialogue.Events[i].PlayEvent(dialogue, interactorName);
                 continue;
             }
             characterSprite.enabled = true;
@@ -110,16 +87,15 @@ public class DialogueManager
             dialogueWindow.SetPosition(currentSpeaker);
             await UniTask.Delay(500, cancellationToken: cancel.Token);
             await UniTask.WaitUntil(IsKeyTriggered, cancellationToken: cancel.Token);
+            typewriter.SkipTypewriter();
+            await UniTask.WaitUntil(IsKeyTriggered, cancellationToken: cancel.Token);
         }
+        dialogueWindow.EraseContent();
         window.SetActive(false);
     }
-
     private bool IsKeyTriggered()
     {
-        if (SceneManager.Instance.InputController.GetAction(PlayerAction.Interact).triggered)
-            return true;
-        else
-            return false;
+        return SceneManager.Instance.InputController.IsKeyTriggered(PlayerAction.Interact);
     }
 
     public void SkipDialogue()

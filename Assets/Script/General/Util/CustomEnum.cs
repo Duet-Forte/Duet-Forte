@@ -65,8 +65,6 @@ namespace Util
         {
             ElecGuitar,
             Tambourine
-
-
         }
         public enum EventType
         { 

@@ -10,11 +10,10 @@ public class LoadingImage : MonoBehaviour
     {
         Canvas canvas = GetComponent<Canvas>();
         GetComponentInChildren<ScreenSpaceCameraUI>().InitSettings(canvas);
-        loadingFill.fillAmount = 0;
     }
 
     public void SetFillAmount(float percentage)
     {
-        loadingFill.fillAmount = percentage;
+        loadingFill.material.SetFloat("Gauge", 0.9f - percentage);
     }
 }
