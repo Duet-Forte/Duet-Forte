@@ -63,9 +63,9 @@ namespace Util
 
         public enum SignalInstrument
         {
-            electricGuitar,
-            tambourine
-            
+            ElecGuitar,
+            Tambourine
+
 
         }
         public enum EventType
