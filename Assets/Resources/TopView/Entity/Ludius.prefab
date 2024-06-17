@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7971959289906028963}
   - component: {fileID: 3357087000947956760}
   m_Layer: 0
-  m_Name: Sample
+  m_Name: Ludius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

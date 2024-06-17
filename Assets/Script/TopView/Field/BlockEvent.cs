@@ -7,8 +7,11 @@ public class BlockEvent : EventTrigger
 {
     private PlayerController controller;
     [SerializeField] private Transform targetPoint;
+    [SerializeField] private Quest requiredQuest;
     protected override void RunTask()
     {
+        if (DataBase.Instance.Player.Quests.Contains(requiredQuest))
+            return;
         if (controller == null) 
         {
             controller = SceneManager.Instance.FieldManager.Player.GetComponent<PlayerController>();

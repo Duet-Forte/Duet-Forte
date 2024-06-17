@@ -7,7 +7,6 @@ Cutscene	0	Zio			Emotion	Dust	현재 VFX 시간보다 더 길게 유지해 주�
 		Zio	Panic	(의자가 부서진 건가…?)			
 							지오: 뒷 모습 (혹시 가능하다면, 일어선 정면 → 왼쪽 보는 옆모습 → 뒷모습으로 해주시면 감사합니다. 빠르게 돌리면 좀 뒤도는 모습처럼 보이지 않을까 싶어서요.)
 	1	Zio			Emotion	QuestionMark	
-					Skill	2	
 		Zio	Panic	(벽난로?)			
 		Timmy	Happy	…드디어 왔구나!			
 							"왔구나!"할 때 쯤, 지오가 티미 쪽 바라봄
@@ -63,3 +62,33 @@ Cutscene	0	Zio			Emotion	Dust	현재 VFX 시간보다 더 길게 유지해 주�
 		Timmy	Happy	우선 작은 몬스터로 연습을 더 해보자.<br>아니면 마을 구경을 하는 건 어때?			
 		Zio	Default	제가 아직은 혼란스러워서요. 잠시 혼자 있어도 될까요?			
 		Timmy	Default	응. 날 만나려면 여기로 다시 찾아와!			
+Ludius	0	Zio			Emotion	Dumbfounded	
+		Zio	Default	(이 시간에 술을…….)			추후, 루디우스 술잔 내리는 모션 생길 시, 술잔 내리는 모션
+		Ludius	Default	어이! 가까이 와 봐.			
+		Zio			Emotion	Surprise	
+		Zio	Panic	…저요?			
+		Ludius	Default	여기 너 말고 누가 있어?			
+		Ludius	Default	너 어디 가는 중이야?			
+		Zio	Default	숲에 볼 일이 있어서요.			
+		Ludius	Default	숲에 볼 거 없어.			
+		Ludius	Default	어른들 걱정시키지 말고 마을에나 있어.			
+		Zio	Panic	그게 아니라… 마왕성에…			
+		Ludius	Default	뭐???			
+		Zio	Panic	…마왕성이요.			
+		Ludius	Default	그니까. 네가 무슨 재주로? 저기 잘못 들어가면 못 나와.			
+		Ludius	Default	용사도 들어갔다 하면 못 나오는데, 무슨 놀이터로 아나.			
+		Ludius	Default	하여튼 저 시끄러운 탬버린 하나 못 잡는 애들이 용사 놀이에 빠져가지고.			
+		Zio	Panic	하하... 저는 가야 하는 것 같더라고요.			
+		Ludius	Default	아! 아~ 네가 혹시 걔야?			
+		Ludius	Default	오늘 그 용사 꼬맹이가 유독 신났더라고?			
+		Zio	Panic	(언제 여기까지 와서 말한 거지?)			
+		Ludius	Default	마왕성 갈 거면, 저기 시끄러운 탬버린이나 처리하고 가라.			
+		Ludius	Default	네가 진짜면 저 정돈 쉽겠지.			
+		Ludius	Default	근데 저런 거 잡으면 진짜 새로운 영감이 떠오르긴 하냐?			
+		Zio	Panic	글쎄요… 저도 아직 잘 몰라서요.			
+		Ludius	Default	잘 모르면 이번 기회에 배우면 되겠네.<br>가는 길에 저 시끄러운 <wave>탬버린</wave>부터 없애.			
+		Zio	Panic	한 번 가볼게요.			
+					Plus	1	
+					Quest	0	
+	2	Zio			Emotion	Dumbfounded	
+		Zio	Default	(술에 취해 자는 듯하다...)			

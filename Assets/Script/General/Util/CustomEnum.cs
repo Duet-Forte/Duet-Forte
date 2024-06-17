@@ -60,13 +60,5 @@ namespace Util
             C,
             Empty
         }
-
-        public enum EventType
-        { 
-            None,
-            Emotion,
-            Quest,
-            Skill
-        }
     }
 }
