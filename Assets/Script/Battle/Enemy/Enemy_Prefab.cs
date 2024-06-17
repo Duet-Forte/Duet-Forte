@@ -366,7 +366,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         enemyAnimator.Hurt();
         
         healthPoint -= damage.GetCalculatedDamage();
-
+        
         OnGetDamage?.Invoke(damage);
         if (healthPoint <= 0)
         {

@@ -144,6 +144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5295744861051481094}
+  - component: {fileID: 7620611505505655656}
   m_Layer: 5
   m_Name: PlayerHP
   m_TagString: Untagged
@@ -160,7 +161,7 @@ RectTransform:
   m_GameObject: {fileID: 2905799570252644066}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 483731522869287308}
@@ -175,9 +176,22 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7, y: 0}
   m_AnchorMax: {x: 1, y: 0.1}
-  m_AnchoredPosition: {x: -590.9, y: -441}
+  m_AnchoredPosition: {x: -674, y: 446}
   m_SizeDelta: {x: 545.99994, y: 98}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7620611505505655656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905799570252644066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66d0e9964019c44cb050f59069e3802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filling: {fileID: 5350755003793852388}
 --- !u!1 &3051789753443997958
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +295,7 @@ RectTransform:
   m_GameObject: {fileID: 4088869250955394916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5295744861051481094}
@@ -289,7 +303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9, y: -18}
+  m_AnchoredPosition: {x: -1, y: -18}
   m_SizeDelta: {x: 1313, y: 444}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2278142747265320906
@@ -477,7 +491,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.563
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -553,7 +567,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

@@ -24,6 +24,7 @@ public class StageClear : MonoBehaviour
     private List<JudgeName> judges;
     string rankStr = "";
 
+    private bool isChangeExpEnd=false;
     private int maxExp;
     private int currentExp;
     private int playerLevel;
@@ -42,6 +43,7 @@ public class StageClear : MonoBehaviour
     [SerializeField] private GameObject pack;
     [SerializeField] private Image backGround;
     [SerializeField] private TMP_Text expChangeText;
+    [SerializeField] private GameObject inputAnyKey;
 
    /* private void Start() //테스트 코드
     {
@@ -179,15 +181,20 @@ public class StageClear : MonoBehaviour
         }
         else {
             expChangeText.text = "";
-            expSlider.transform.DOLocalMove(new Vector2(expSlider.transform.localPosition.x, -360), 0.4f);
+            expSlider.transform.DOLocalMove(new Vector2(expSlider.transform.localPosition.x, -360), 0.4f).OnComplete(() => { isChangeExpEnd = true; });
         }
-
+        yield return new WaitUntil(() =>isChangeExpEnd);
+        inputAnyKey.SetActive(true);
+        StartCoroutine(WaitForInput());
     }
 
     private IEnumerator WaitForInput() {
         while (true) {
             if (Input.anyKeyDown) {
                 Debug.Log("비전투씬으로 이동 건네줄 데이터 : 레벨, 현재 경험치");
+                PlayerInfo playerInfo = new PlayerInfo(playerLevel,currentExp);
+                //여기서 값 넘겨주기 playerInfo를 넣어주면 됩니다. 
+                break;
             }
             yield return null;
         }
@@ -221,7 +228,8 @@ public class StageClear : MonoBehaviour
             Tween changeExpText = DOTween.To(() => currentExp, value => expText.text = $"{value} / {maxExp}", currentExp+enemyExp, expGainSpeed);//숫자 text 표시
             changeExpText.Play().OnComplete(() => { 
                 currentExp += enemyExp;
-                
+                isChangeExpEnd = true;
+                Debug.Log("경험치 다 먹었슈? : "+isChangeExpEnd);
             });
             Tween changeExp = DOTween.To(() => expSlider.value, value => expSlider.value = value, ((float)tmpExp / maxExp), expGainSpeed); //게이지 오르는 연출
                 changeExp.Play();

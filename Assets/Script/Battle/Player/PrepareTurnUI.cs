@@ -8,7 +8,7 @@ public class PrepareTurnUI : InGameUI
 {
     SkillSet theSkillSet;
 
-    string[] skillSetName;//스킬셋에서 받아온 스킬 이름
+    //string[] skillSetName;//스킬셋에서 받아온 스킬 이름
     Sprite[] skillSetIcon;//스킬셋에서 받아온 스킬 아이콘
     List<string[]> skillSetCommand;//스킬셋에서 받아온 스킬 커맨드
     string[] arrayOfParsedCommand = new string[4];//받아온 스킬 커맨드를 UI에 표기할 스트링으로 작업한 후 담을 변수
@@ -32,7 +32,7 @@ public class PrepareTurnUI : InGameUI
         
         theSkillSet = FindObjectOfType<SkillSet>();
         skillSetIcon = theSkillSet.ArrayOfSkillIcon;
-        skillSetName = theSkillSet.ArrayOfSkillName;
+        //skillSetName = theSkillSet.ArrayOfSkillName;
         skillSetCommand = theSkillSet.SkillCommand;
 
         SkillCommandParse();
@@ -42,13 +42,14 @@ public class PrepareTurnUI : InGameUI
             
             if (theSkillSet.ArrayOfSkill != null)
             {
-                transform.GetChild(Prepare_Skill_UI_Index).GetChild(0).GetComponent<Image>().sprite = skillSetIcon[Prepare_Skill_UI_Index];//아이콘
-                transform.GetChild(Prepare_Skill_UI_Index).GetChild(1).GetComponent<TMP_Text>().text = skillSetName[Prepare_Skill_UI_Index];//스킬이름
-                transform.GetChild(Prepare_Skill_UI_Index).GetChild(2).GetComponent<TMP_Text>().text = arrayOfParsedCommand[Prepare_Skill_UI_Index];//스킬커맨드
+                Debug.Log(transform.GetChild(Prepare_Skill_UI_Index));
+                transform.GetChild(Prepare_Skill_UI_Index).Find("Masking").Find("skillIcon").GetComponent<Image>().sprite = skillSetIcon[Prepare_Skill_UI_Index];//아이콘
+                //transform.GetChild(Prepare_Skill_UI_Index).GetChild(1).GetComponent<TMP_Text>().text = skillSetName[Prepare_Skill_UI_Index];//스킬이름
+                transform.GetChild(Prepare_Skill_UI_Index).GetChild(1).GetComponent<TMP_Text>().text = arrayOfParsedCommand[Prepare_Skill_UI_Index];//스킬커맨드
             }
             if (theSkillSet.getSkillSet[Prepare_Skill_UI_Index] == null)
             {
-                Debug.Log("UI 파괴");
+                Debug.Log("사용하지 않는 스킬ui 제거");
                 Destroy(transform.GetChild(Prepare_Skill_UI_Index).gameObject);
             }
             arrayOfUITransform[Prepare_Skill_UI_Index] = transform.GetChild(Prepare_Skill_UI_Index)?.GetComponent<RectTransform>();

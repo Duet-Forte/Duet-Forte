@@ -10,6 +10,7 @@ public class Tutorial : MonoBehaviour
     
     [SerializeField] private GameObject windowPrefab;
     [SerializeField] private int windowCount;
+    [TextArea]
     [SerializeField] private List<string> describes;
     [SerializeField] private List<Sprite> screenshots;
     [SerializeField] private string[] titles;
