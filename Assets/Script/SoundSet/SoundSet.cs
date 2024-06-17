@@ -58,18 +58,8 @@ namespace SoundSet
     }
     public class BackGroundMusic {
 
-        public void GameOver(GameObject parameterObject, bool isWin) {
-            if (isWin) //승리시 
-            {
-                AkSoundEngine.PostEvent("Combat_BGM_Stop", parameterObject);
-                AkSoundEngine.SetSwitch("Stage_01","Stage_01_End", parameterObject);
-                AkSoundEngine.PostEvent("Combat_Stage_01_BGM", parameterObject);
-            }
-            else {     //패배시
-                
-
-            }
-
+        public void GameOver(bool isWin) {
+                Metronome.instance.GameOverMusic(isWin);
         }
     
     }

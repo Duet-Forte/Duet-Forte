@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealthPoint: 100
-  playerAttack: 5
+  playerAttack: 30
   playerDefence: 2
 --- !u!114 &5676225777311692114
 MonoBehaviour:

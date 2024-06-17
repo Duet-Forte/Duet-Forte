@@ -134,7 +134,14 @@ public class StageClear : MonoBehaviour
         SetEXPSlider();
         expChangeText.text = $"+EXP {enemyExp}";
         //Coroutine showEXP= StartCoroutine(ShowEXP());
-        //new SoundSet.BackGroundMusic().GameOver(gameObject, true);
+        if (isWin)
+        {
+            new SoundSet.BackGroundMusic().GameOver(isWin);
+
+        }
+        else { 
+            //ÆÐ¹è½Ã BGM
+        }
         backGround.DOFade(0.7f, fadeOutSpeed);
         yield return new WaitForSeconds(fadeOutSpeed);
 
