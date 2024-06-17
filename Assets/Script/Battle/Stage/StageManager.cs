@@ -152,8 +152,6 @@ public class StageManager : MonoBehaviour
             yield return turnHandler[(int)currentTurn].TurnEnd();
         }
         // 게임 종료 이후 연출은 아래 PlayerDie 혹은 EnemyDie에서..
-        AkSoundEngine.PostEvent("Combat_Stage_01_BGM", gameObject);
-        AkSoundEngine.SetSwitch("Stage01", "StageEnd", gameObject);
     }
 
     private void SpawnPlayer(PlayerInfo playerInfo)

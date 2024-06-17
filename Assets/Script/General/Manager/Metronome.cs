@@ -71,7 +71,19 @@ public class Metronome :MonoBehaviour
     private void MusicStart() { 
 
         AkSoundEngine.PostEvent("Combat_Stage_01_BGM", gameObject);
-        AkSoundEngine.SetSwitch("Stage01", "StageStart", gameObject);
+        
+    }
+    public void GameOverMusic(bool isWin) {
+        if (isWin)
+        {
+            AkSoundEngine.PostEvent("Combat_BGM_Stop", gameObject);
+            AkSoundEngine.SetSwitch("Stage_01", "Stage_01_End", gameObject);
+            AkSoundEngine.PostEvent("Combat_Stage_01_BGM", gameObject);
+        }
+        else { 
+            //ÆÐ¹è½Ã BGM
+        }
+        
     }
     void Update()
     {
