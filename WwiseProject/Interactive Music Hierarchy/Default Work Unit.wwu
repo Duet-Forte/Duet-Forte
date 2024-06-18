@@ -1708,9 +1708,6 @@
 						<Reference Name="PlaylistRoot">
 							<Custom>
 								<MusicPlaylistItem Name="" ID="{DA483081-54A1-40BC-89E4-1A365D7157A7}" ShortID="401152758">
-									<PropertyList>
-										<Property Name="LoopCount" Type="int16" Value="0"/>
-									</PropertyList>
 									<ChildrenList>
 										<MusicPlaylistItem Name="" ID="{FDC6497D-D614-4639-8EC7-CA452BD02504}" ShortID="89736252">
 											<PropertyList>
