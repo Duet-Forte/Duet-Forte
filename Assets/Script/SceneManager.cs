@@ -1,7 +1,5 @@
 using Cysharp.Threading.Tasks;
-using System;
-using System.Data;
-using System.Diagnostics;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

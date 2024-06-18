@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class FieldManager
 {
@@ -21,7 +20,8 @@ public class FieldManager
     {
         fieldPrefabs = new Dictionary<int, GameObject>();
         BindEvent();
-        ID = 0;
+        DataBase.Instance.Dialogue.ResetLine(0);
+        SetField(0);
     }
     public void SpawnPlayer(Vector2 spawnPoint)
     {

@@ -4,7 +4,6 @@ using TMPro;
 using DG.Tweening;
 using Cysharp.Threading.Tasks;
 using Util.CustomEnum;
-using UnityEditor.PackageManager.UI;
 
 public class SkillGainWindow : MonoBehaviour
 {

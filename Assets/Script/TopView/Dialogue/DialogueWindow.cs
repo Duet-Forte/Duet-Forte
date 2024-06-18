@@ -13,7 +13,7 @@ public class DialogueWindow : MonoBehaviour
     [SerializeField] private Image arrow;
     [SerializeField] private TMP_Text arraowText;
     private TextMeshProUGUI dialogueText;
-    
+    private Tween glowArrow, glowText;
    
     public void SetPosition(Speaker currentSpeaker)
     {
@@ -58,14 +58,12 @@ public class DialogueWindow : MonoBehaviour
     }
     private void OnEnable()
     {
-        
-        arrow.DOFade(0f, 1f).SetLoops(-1, LoopType.Yoyo);
-        arraowText.DOFade(0f,1f).SetLoops(-1, LoopType.Yoyo);
-    }
-    private void OnDisable()
-    {
-        arrow.DOFade(1f, 0.01f);
-        arraowText.DOFade(1f, 0.01f);
+        arrow.color = Color.white;
+        arraowText.color = Color.white;
+        if(glowArrow == null)
+            glowArrow = arrow.DOFade(0f, 1f).SetLoops(-1, LoopType.Yoyo);
+        if (glowText == null)
+            glowText = arraowText.DOFade(0f,1f).SetLoops(-1, LoopType.Yoyo);
     }
     /// <summary>
     /// 텍스트 잔상이 남는 효과를 지우기 위한 함수

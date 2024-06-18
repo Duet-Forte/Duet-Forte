@@ -9,28 +9,41 @@ public class TSVReader
     public static List<Dictionary<string, string>> Read(string file)
     {
         List<Dictionary<string, string>> text = new List<Dictionary<string, string>>();
-        StreamReader streamReader = new StreamReader(Application.dataPath + "/Resources/TSV/" + file);
-        string[] header = streamReader.ReadLine().Split("\t");
-        // 0번째 행은 헤더이기 때문에 null로 설정.
-        text.Add(null);
-        int column = 1;
 
-        while (!streamReader.EndOfStream)
+        // StreamingAssets 폴더에서 TSV 파일을 로드
+        string filePath = Path.Combine(Application.streamingAssetsPath, "TSV", file);
+        Debug.Log("Loading file from: " + filePath);
+
+        if (!File.Exists(filePath))
         {
-            // 한 줄씩 읽어오기
-            string[] line = streamReader.ReadLine().Split("\t");
-            if (line[4] == string.Empty && line[5] == string.Empty)
-                continue;
-            text.Add(new Dictionary<string, string>());
-            for (int index = 0; index < header.Length; ++index)
-            {
-                text[column][header[index]] = line[index];
-            }
-
-            column++;
+            Debug.LogError("TSV 파일을 찾을 수 없습니다: " + filePath);
+            return text;
         }
 
-        streamReader.Close();
+        using (StreamReader streamReader = new StreamReader(filePath))
+        {
+            string[] header = streamReader.ReadLine().Split('\t');
+            // 0번째 행은 헤더이기 때문에 null로 설정.
+            text.Add(null);
+            int column = 1;
+
+            while (!streamReader.EndOfStream)
+            {
+                // 한 줄씩 읽어오기
+                string[] line = streamReader.ReadLine().Split('\t');
+                if (line.Length > 4 && line[4] == string.Empty && line[5] == string.Empty)
+                    continue;
+
+                text.Add(new Dictionary<string, string>());
+                for (int index = 0; index < header.Length; ++index)
+                {
+                    text[column][header[index]] = line[index];
+                }
+
+                column++;
+            }
+        }
+
         return text;
     }
 

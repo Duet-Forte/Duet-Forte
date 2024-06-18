@@ -8,7 +8,10 @@ public class NewGame : Menu
 
     public override void OnSelected()
     {
-        AkSoundEngine.PostEvent("MainMenu_Hover_SFX", gameObject);
+        if (!(selector as MainMenu).isGameStarted)
+        {
+            AkSoundEngine.PostEvent("MainMenu_Hover_SFX", gameObject);
+        }
     }
     
     public override void OnPressed()

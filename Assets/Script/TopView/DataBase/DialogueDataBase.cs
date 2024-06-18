@@ -12,7 +12,6 @@ public class DialogueDataBase
     private StringBuilder sb = new StringBuilder(); 
     public void ResetLine(int fieldId)
     {
-        // 현재 필드에 해당하는 대사를 불러옴
         currentFieldId = fieldId;
 
         if (dialogues == null)
@@ -21,7 +20,7 @@ public class DialogueDataBase
         if(ids == null)
             ids = new Dictionary<string, int>();
 
-        while(dialogues.Count <= currentFieldId + 1)
+        while (dialogues.Count <= currentFieldId + 1)
         {
             dialogues.Add(new Dictionary<string, Dialogue[]>());
         }
