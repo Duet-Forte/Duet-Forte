@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{BDAC7DDC-AD30-F335-656A-487C81B94354}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{5C5CDC5E-D234-2733-B46F-720D7E4B9BF8}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -398,7 +398,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{21E84944-9F22-82F7-16BC-7AE863CC7A58}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{5687609E-4940-3A57-9E0A-BC1E642EF1B8}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -462,10 +462,6 @@
 					<ShortName>세로베기.wav</ShortName>
 					<CachePath>SFX/세로베기_9ECBE823.wem</CachePath>
 				</File>
-				<File Id="691916430" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Clear_SFX.wav</ShortName>
-					<CachePath>SFX/Clear_SFX_FBC78EF0.wem</CachePath>
-				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
 					<CachePath>SFX/패링-03_03D2EA21.wem</CachePath>
@@ -506,6 +502,10 @@
 					<ShortName>02.wav</ShortName>
 					<CachePath>SFX/02_A56704D4.wem</CachePath>
 				</File>
+				<File Id="1071832350" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear_SFX_02.wav</ShortName>
+					<CachePath>SFX/Clear_SFX_02_FBC78EF0.wem</CachePath>
+				</File>
 			</Media>
 			<Plugins>
 				<ShareSets>
@@ -520,7 +520,7 @@
 							<SwitchValue GroupType="Switch" GroupId="344719509" Id="1119828183"/>
 							<MediaRefs>
 								<MediaRef Id="257293744"/>
-								<MediaRef Id="691916430"/>
+								<MediaRef Id="1071832350"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -629,5 +629,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{27D515A6-314C-8AAD-1E09-E92EA2752146}</FileHash>
+	<FileHash>{FF0048F0-13A5-7F1C-4C81-1A37CF5B7092}</FileHash>
 </SoundBanksInfo>

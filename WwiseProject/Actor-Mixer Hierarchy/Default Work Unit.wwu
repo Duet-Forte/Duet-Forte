@@ -1593,13 +1593,6 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Transition_FadeIn" ID="{F2C3B003-6EB7-4881-913C-6693716D5A73}" ShortID="211027452">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-6</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
@@ -1634,13 +1627,6 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Transition_FadeOut" ID="{775FBD8F-15A1-404D-B773-C0FDEC8C8FD7}" ShortID="273161622">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-6</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
