@@ -932,6 +932,17 @@
 														</Reference>
 													</ReferenceList>
 												</MusicPlaylistItem>
+												<MusicPlaylistItem Name="" ID="{42D46D45-A783-4FAC-BA43-C8C86E573EDE}" ShortID="768627640">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16" Value="0"/>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Segment">
+															<ObjectRef Name="Clear_SFX_Loop" ID="{09E36ED0-BAE6-4913-B90E-E4CE2AD7B8B8}" WorkUnitID="{FC93DCA8-5DCC-4116-9704-759D707596AE}"/>
+														</Reference>
+													</ReferenceList>
+												</MusicPlaylistItem>
 											</ChildrenList>
 										</MusicPlaylistItem>
 									</Custom>
