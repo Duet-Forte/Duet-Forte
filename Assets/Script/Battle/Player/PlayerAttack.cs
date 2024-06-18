@@ -246,8 +246,6 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                 Debug.Log("스킬 발동됨");
                 
                 AttackEnd();
-                
-                Debug.Log(castSkillParticle.main.duration+"초 대기");
                 yield return new WaitForSeconds(3f);//스킬 애니메이션 클립의 길이만큼 대기 후 종료로 수정해야함. 04.01
                 SkillUI();
                 yield break;// 스킬이 발동되어 반복문 탈출 공격 종료

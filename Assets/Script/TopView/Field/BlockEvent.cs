@@ -17,16 +17,16 @@ public class BlockEvent : EventTrigger
             return;
         if (controller == null) 
         {
-            controller = SceneManager.Instance.FieldManager.Player.GetComponent<PlayerController>();
+            controller = BICSceneManager.Instance.FieldManager.Player.GetComponent<PlayerController>();
         }
         controller.Stop();
-        SceneManager.Instance.CutsceneManager.FadeIn(0.5f, () => OnFinishFade().Forget());
+        BICSceneManager.Instance.CutsceneManager.FadeIn(0.5f, () => OnFinishFade().Forget());
     }
 
     private async UniTask OnFinishFade()
     {
-        SceneManager.Instance.FieldManager.Player.transform.position = targetPoint.position;
-        SceneManager.Instance.CutsceneManager.FadeOut(0.5f);
+        BICSceneManager.Instance.FieldManager.Player.transform.position = targetPoint.position;
+        BICSceneManager.Instance.CutsceneManager.FadeOut(0.5f);
         if (forceDialogue)
             await DialogueManager.Instance.Talk(dialogueTarget);
         else

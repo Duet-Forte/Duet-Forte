@@ -33,9 +33,9 @@ public class PlayerController : MonoBehaviour
         SetAnimatorHash();
         lastDirection = new Vector2(0, -1);
         canInteract = false;
-        SceneManager.Instance.InputController.BindPlayerInputAction(PlayerAction.Move, OnMove);
-        SceneManager.Instance.InputController.BindPlayerInputAction(PlayerAction.Interact, OnInteract);
-        moveAction = SceneManager.Instance.InputController.GetAction(PlayerAction.Move);
+        BICSceneManager.Instance.InputController.BindPlayerInputAction(PlayerAction.Move, OnMove);
+        BICSceneManager.Instance.InputController.BindPlayerInputAction(PlayerAction.Interact, OnInteract);
+        moveAction = BICSceneManager.Instance.InputController.GetAction(PlayerAction.Move);
     }
 
     private void FixedUpdate()
