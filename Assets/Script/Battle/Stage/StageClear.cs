@@ -20,17 +20,17 @@ public class StageClear : MonoBehaviour
     private Rank rank;
     #endregion
 
-    public static StageClear instance=null;
+    public static StageClear instance = null;
     private List<JudgeName> judges;
     string rankStr = "";
 
-    private bool isChangeExpEnd=false;
+    private bool isChangeExpEnd = false;
     private int maxExp;
     private int currentExp;
     private int playerLevel;
     private PlayerStatus playerStatus;
-    private float expGainSpeed=1.5f;
-    private float fadeOutSpeed=2.2f;
+    private float expGainSpeed = 1.5f;
+    private float fadeOutSpeed = 2.2f;
     private float appearDelay = 1.3f;
 
     StageManager stageManager;
@@ -44,7 +44,7 @@ public class StageClear : MonoBehaviour
     [SerializeField] private Image backGround;
     [SerializeField] private TMP_Text expChangeText;
     [SerializeField] private GameObject inputAnyKey;
-
+    [SerializeField] private Image blackOut;
    /* private void Start() //테스트 코드
     {
         judges = new List<JudgeName>();
@@ -55,7 +55,7 @@ public class StageClear : MonoBehaviour
     }*/
     #region public Interface
     public void InitSettings(StageManager stageManager) {
-
+        this.stageManager = stageManager;
         if (instance == null)
         {
             instance = this;
@@ -191,6 +191,16 @@ public class StageClear : MonoBehaviour
     private IEnumerator WaitForInput() {
         while (true) {
             if (Input.anyKeyDown) {
+                Debug.Log($"에너미 네임 : {stageManager.Enemy.EnemyName}");
+                if (stageManager.Enemy.EnemyName.Equals("Tambourine"))
+                { //적이 탬버린이면 데모씬으로 보내기
+
+                    Debug.Log("DemoScene으로 이동");
+                    AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);
+                    yield return blackOut.DOFade(1f, 2f).OnComplete(() => { UnityEngine.SceneManagement.SceneManager.LoadScene("DemoScene"); });
+                    break;
+                }
+
                 Debug.Log("비전투씬으로 이동 건네줄 데이터 : 레벨, 현재 경험치");
                 PlayerInfo playerInfo = new PlayerInfo(playerLevel,currentExp);
                 SceneManager.Instance.SetFieldScene(playerInfo);
