@@ -11,7 +11,7 @@ public class GuardGaugeUI : InGameUI
     {
         filling = transform.Find("GuageFilling").GetComponent<Image>();
         Debug.Log(filling);
-        filling.fillAmount = 0.5f;
+        filling.fillAmount = 0f;
         //SubscribeBeatingUISequence();
     }
 
