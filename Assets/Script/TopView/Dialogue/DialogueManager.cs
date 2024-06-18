@@ -60,21 +60,34 @@ public class DialogueManager
             dialogue.Speaker = dialogue.Speakers[i];
             if (dialogue.Events[i] != null)
             {
-                dialogue.Events[i].PlayEvent(dialogue, interactorName);
-                continue;
+                if(dialogue.Events[i].PlayEvent(dialogue, interactorName))
+                    continue;
+                else
+                {
+                    window.SetActive(false);
+                    await UniTask.WaitUntil(IsKeyTriggered, cancellationToken: cancel.Token);
+                    window.SetActive(true);
+                    continue;
+                }
             }
             characterSprite.enabled = true;
             typewriter.ShowText(dialogue.Lines[i]);
             if (dialogue.Speaker != null)
             {
-                talkerName.text = dialogue.Speaker.Split('/')[0];
-                if (talkerName.text == "Empty")
+                if (dialogue.Speaker.Split('/')[0] == "Empty")
                 {
                     talkerName.text = string.Empty;
                     currentSpeaker = Speaker.Empty;
                 }
-                else if (talkerName.text == "Zio")
+                else
+                {
+                    talkerName.text = Util.Method.ChangeToKRName(dialogue.Speaker.Split('/')[0]);
+                }
+
+                if (dialogue.Speaker.Split('/')[0] == "Zio")
+                {
                     currentSpeaker = Speaker.player;
+                }
                 else
                     currentSpeaker = Speaker.NPC;
 

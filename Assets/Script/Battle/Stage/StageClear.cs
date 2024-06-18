@@ -193,7 +193,7 @@ public class StageClear : MonoBehaviour
             if (Input.anyKeyDown) {
                 Debug.Log("비전투씬으로 이동 건네줄 데이터 : 레벨, 현재 경험치");
                 PlayerInfo playerInfo = new PlayerInfo(playerLevel,currentExp);
-                //여기서 값 넘겨주기 playerInfo를 넣어주면 됩니다. 
+                SceneManager.Instance.SetFieldScene(playerInfo);
                 break;
             }
             yield return null;

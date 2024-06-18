@@ -31,11 +31,14 @@ public class FieldManager
             player = UnityEngine.Object.Instantiate(playerPrefab);
         }
         player.transform.position = spawnPoint;
+        player.transform.SetParent(currentField.transform);
     }
     public void SpawnEntity(string entityName, Vector2 spawnPoint)
     {
-        currentField.GetEntity(entityName).gameObject.SetActive(true);
-        currentField.GetEntity(entityName).transform.position = spawnPoint;
+        TopViewEntity temp = currentField.GetEntity(entityName);
+        temp.gameObject.SetActive(true);
+        temp.transform.position = spawnPoint;
+        temp.transform.SetParent(currentField.transform);
     }
     private void BindEvent()
     {
