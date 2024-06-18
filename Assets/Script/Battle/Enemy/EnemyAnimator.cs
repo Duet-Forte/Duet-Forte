@@ -23,6 +23,7 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
     string patternSignal = "PatternSignal";
     string readyToPatternSignal = "ReadyToPatternSignal";
     string die = "Die";
+    string readyDash = "ReadyDash";
     #endregion
     #region 공격 모션 중복방지 변수
     int randomAttackCase;
@@ -57,11 +58,13 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
 
     public void Dash()
     {
+        theEnemyAnimator.SetBool(readyDash, true);
         theEnemyAnimator.SetTrigger(dash);
         Debug.Log("Enemy Dash");
     }
     public void BackDash()
     {
+        theEnemyAnimator.SetBool(readyDash, false);
         theEnemyAnimator.SetTrigger(backDash);
         Debug.Log("Enemy BackDash");
     }
@@ -69,7 +72,7 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
         theEnemyAnimator.SetTrigger(die);
         Debug.Log("Enemy Die");
     }
-    
+   
 
     public void Guard()
     {

@@ -16,7 +16,7 @@ public class Fade : StateMachineBehaviour
             sizeID = Shader.PropertyToID("_cutoff");
             wipeAnimation = animator.GetComponent<WipeAnimation>();
         }
-
+        
         if (isFadeIn)
             AkSoundEngine.PostEvent("Transition_FadeIn", animator.gameObject);
         else

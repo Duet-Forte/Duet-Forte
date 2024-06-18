@@ -51,6 +51,7 @@ public class JudgeManager
     public void IncreaseGauge(int combo) // 이동 예정
     {
         this.combo += combo;
+        Debug.Log($"가드카운터 게이지 상승량 : {this.combo}");
         OnComboChange?.Invoke(this.combo, maxGauge);
     }
 

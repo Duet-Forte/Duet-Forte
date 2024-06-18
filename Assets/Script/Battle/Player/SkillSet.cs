@@ -17,7 +17,7 @@ public class SkillSet : MonoBehaviour
     #region 프로퍼티
     public List<string[]> SkillCommand { get=>skillCommand; private set { skillCommand = value; } }//스트링 배열의 스킬 커맨드
     public string[] ArrayOfSkillName { get => arrayOfSkillName; }
-    public PlayerSkill[] getSkillSet { get => skillSet; }
+    public PlayerSkill[] playerSkills { get => skillSet; }
     
     public Sprite[] ArrayOfSkillIcon { get => arrayOfSkillIcon; }
     public ParticleSystem[] ArrayOfSkillParticle { get => arrayOfSkillParticle; }

@@ -73,6 +73,10 @@
 					<ShortName>FootStep_Grass03.wav</ShortName>
 					<CachePath>SFX/FootStep_Grass03_818F3B66.wem</CachePath>
 				</File>
+				<File Id="579694935" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>A440.wav</ShortName>
+					<CachePath>SFX/A440_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="586961463" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Transition_FadeIn.wav</ShortName>
 					<CachePath>SFX/Transition_FadeIn_818F3B66.wem</CachePath>
@@ -457,6 +461,10 @@
 				<File Id="519697605" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_공격신호_01.wav</ShortName>
 					<CachePath>SFX/SFX_공격신호_01_1246C0D0.wem</CachePath>
+				</File>
+				<File Id="586961463" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Transition_FadeIn.wav</ShortName>
+					<CachePath>SFX/Transition_FadeIn_818F3B66.wem</CachePath>
 				</File>
 				<File Id="602281588" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>세로베기.wav</ShortName>

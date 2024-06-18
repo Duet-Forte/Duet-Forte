@@ -2,6 +2,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	173655414	Player_BodyFall_SFX			\Default Work Unit\Player\NonCombat\Player_BodyFall_SFX	
 	179926370	Character_Emotion_Angry_SFX			\Default Work Unit\NonCombat_SFX\Emotion\Character_Emotion_Angry_SFX	
 	198066997	Ob_Fire_Ignition_SFX			\Default Work Unit\NonCombat_SFX\Ob_Fire_Ignition_SFX	
+	270981630	MainMenu_BGM_BGM_Stop			\Default Work Unit\MainMenu\MainMenu_BGM_BGM_Stop	
+	631059699	MainMenu_BGM_BGM			\Default Work Unit\MainMenu\MainMenu_BGM_BGM	
 	544226120	Transition_FadeIn			\Default Work Unit\Transition_UI\Transition_FadeIn	
 	918533349	NonCombat_BGM			\Default Work Unit\BGM\NonCombat\NonCombat_BGM	
 	1024104135	Ui_Typing_SFX			\Default Work Unit\NonCombat_SFX\Ui_Typing_SFX	
@@ -54,6 +56,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	500923705	FootStep_Dirt01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\FootStep_Dirt01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Dirt\FootStep_Dirt01		68016
 	504031559	Typing04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Typing04_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Typing\Typing04		26992
 	527714309	FootStep_Grass03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\FootStep_Grass03_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Grass\FootStep_Grass03		61256
+	579694935	A440	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\A440_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\MainMenu\A440\A440		17723176
 	586961463	Transition_FadeIn	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Transition_FadeIn_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Transition_FadeIn\Transition_FadeIn		290524
 	594152026	마을 0506	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\마을 0506_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\NonCombat\Town\Town\마을 0506		13027864
 	594306566	FootStep_Dirt02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\FootStep_Dirt02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Dirt\FootStep_Dirt02		51320
