@@ -53,7 +53,10 @@ public class SceneManager : MonoBehaviour
 
     public void SetBattleScene(string name)
     {
+        if(fieldManager.Player != null)
+            fieldManager.Player.GetComponent<PlayerController>().Stop();
         dataStorage.currentEnemyName = name;
+        MusicChanger.StopMusic();        
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(true, null, InitBattleScene);
     }
@@ -63,17 +66,27 @@ public class SceneManager : MonoBehaviour
         AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);
         UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Rebuilding SampleStage");
         UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.SceneManager.GetSceneByName("Top View"));
+        fieldManager.Player.GetComponent<PlayerController>().IsStopped = false;
         FieldManager.Field.gameObject.SetActive(true);
-        MusicChanger.ReplayMusic();
+        Storage.currentBattleEnemy.Die();
         cameraManager.EnableFieldCamera();
         cutsceneManager.ReplayCutscene();
+        MusicChanger.ReplayMusic();
     }
     public void SetFieldScene(PlayerInfo playerInfo = null)
     {
+        DataBase.Instance.Player.SetPlayerInfo(playerInfo);
         AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);
         UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Rebuilding SampleStage");
         UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.SceneManager.GetSceneByName("Top View"));
         FieldManager.Field.gameObject.SetActive(true);
+        if(Storage.currentBattleEnemy != null)
+        {
+            Storage.currentBattleEnemy.Die();
+            Storage.currentBattleEnemy = null;
+        }
+        if(fieldManager.Player != null)
+            fieldManager.Player.GetComponent<PlayerController>().IsStopped = false;
         MusicChanger.ReplayMusic();
         cameraManager.EnableFieldCamera();
         cutsceneManager.ReplayCutscene();

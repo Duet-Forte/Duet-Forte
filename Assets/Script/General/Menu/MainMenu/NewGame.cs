@@ -14,7 +14,7 @@ public class NewGame : Menu
     public override void OnPressed()
     {
         AkSoundEngine.PostEvent("MainMenu_Click_GameStart_SFX", gameObject);
-        Debug.Log("»õ °ÔÀÓ");
+        AkSoundEngine.PostEvent("MainMenu_BGM_BGM_Stop", gameObject);
         fadeOut.DOFade(1, 2f).onComplete += () => UnityEngine.SceneManagement.SceneManager.LoadScene("Top View");
     }
 }

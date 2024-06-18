@@ -97,7 +97,7 @@ public class Field : MonoBehaviour
             sb.Append("TopView/Entity/");
             sb.Append(name);
             TopViewEntity[] temp = new TopViewEntity[1];
-            temp[0] = Instantiate(Resources.Load<GameObject>(sb.ToString())).GetComponent<TopViewEntity>();
+            temp[0] = Instantiate(Resources.Load<GameObject>(sb.ToString()), transform).GetComponent<TopViewEntity>();
             entities.Add(name, temp);
             return temp[0];
         }
@@ -120,5 +120,10 @@ public class Field : MonoBehaviour
     {
         cameraColliders.TryGetValue(regionName, out PolygonCollider2D collider);
         return collider;
+    }
+
+    public void DisableCutsceneObjects()
+    {
+        cutsceneObjectParent.gameObject.SetActive(false);
     }
 }

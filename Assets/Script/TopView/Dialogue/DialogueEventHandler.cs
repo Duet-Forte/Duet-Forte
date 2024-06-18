@@ -30,9 +30,13 @@ public class DialogueEventHandler
         }
     }
 
-    public void PlayEvent(Dialogue dialogue, string interactorName)
+    public bool PlayEvent(Dialogue dialogue, string interactorName)
     {
         dialogueEvent.PlayEvent(dialogue, interactorName);
+        if (dialogueEvent is SkillEvent)
+            return false;
+        else
+            return true;
     }
 }
 
@@ -46,6 +50,7 @@ public abstract class DialogueEvent
 
 public class EmotionEvent : DialogueEvent
 {
+
     private static Dictionary<string, int> triggerMappings = new Dictionary<string, int>
     {
         { "QuestionMark", Const.questionHash },

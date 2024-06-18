@@ -22,7 +22,11 @@ public class PlayerData
         gold += quest.gold;
         experiencePoint += quest.experiencePoint;
     }
-
+    public void SetPlayerInfo(PlayerInfo info)
+    {
+        experiencePoint =info.PlayerCurrentEXP;
+        level = info.PlayerLevel;
+    }
     public PlayerInfo CreatePlayerInfo()
     {
         return new PlayerInfo(DataBase.Instance.Skill.Skill, level, experiencePoint);

@@ -5,6 +5,7 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 using System;
+using Cysharp.Threading.Tasks;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CutsceneManager : MonoBehaviour
     private bool isReachedLoopEndPoint;
     private bool isTalking;
     private double loopStartTime;
+    private bool isCutscenePlaying;
     [SerializeField] private PlayableAsset[] cutscenes;
     [SerializeField] private Image fadeOutPanel;
     private Dictionary<string, PlayableAsset> cutsceneDictionary;
@@ -40,6 +42,7 @@ public class CutsceneManager : MonoBehaviour
     }
     public void StartCutscene(string cutsceneName)
     {
+        isCutscenePlaying = true;
         director.playableAsset = cutsceneDictionary[cutsceneName];
     }
     public async void Talk()
@@ -53,15 +56,20 @@ public class CutsceneManager : MonoBehaviour
     [ContextMenu("DEBUG/SpawnPlayer")]
     public void SpawnPlayer()
     {
-        SceneManager.Instance.Storage.isCutscenePlaying = false;
-        director.Stop();
-        DialogueManager.Instance.SkipDialogue();
-        cutscenePlayer.SetActive(false);
+        FadeIn(0.7f, () => {
+        FadeOut(0.5f);
         SceneManager.Instance.FieldManager.SpawnPlayer(cutscenePlayer.transform.position);
         SceneManager.Instance.FieldManager.Field.GetEntity("Timmy").InitSettings("Timmy", SceneManager.Instance.FieldManager.Field.GetCutsceneObject("Timmy").transform.position);
         SceneManager.Instance.CameraManager.SetFollowCamera();
         SceneManager.Instance.FieldManager.CheckPoint();
+        isCutscenePlaying = false;
+        SceneManager.Instance.Storage.isCutscenePlaying = false;
+        director.Stop();
+        DialogueManager.Instance.SkipDialogue();
+        SceneManager.Instance.FieldManager.Field.DisableCutsceneObjects();
+        });
     }
+
     public void Loop()
     {
         if (!isTalking)
@@ -119,6 +127,8 @@ public class CutsceneManager : MonoBehaviour
     }
     public void ReplayCutscene()
     {
+        if (!isCutscenePlaying)
+            return;
         double currentTime = director.time;
         director.playableGraph.GetRootPlayable(0).SetSpeed(1);
         director.time = currentTime;

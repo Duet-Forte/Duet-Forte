@@ -6,7 +6,6 @@ public class MusicChanger
 {
     private GameObject gameObject;
     private string beforeSong;
-    [SerializeField] private uint currentSongID;
     public MusicChanger(GameObject gameManagerObject)
     {
         gameObject = gameManagerObject;
@@ -17,9 +16,13 @@ public class MusicChanger
             return;
         AkSoundEngine.PostEvent("NonCombat_BGM_Stop", gameObject);
         AkSoundEngine.SetSwitch("NonCombatBGM", name, gameObject);
-        currentSongID = AkSoundEngine.PostEvent("NonCombat_BGM", gameObject);
+        AkSoundEngine.PostEvent("NonCombat_BGM", gameObject);
         beforeSong = name;
     }
     public void StopMusic() => AkSoundEngine.PostEvent("NonCombat_BGM_Stop", gameObject);
-    public void ReplayMusic() => AkSoundEngine.PostEvent("NonCombat_BGM", gameObject);
+    public void ReplayMusic()
+    {
+        AkSoundEngine.SetSwitch("NonCombatBGM", beforeSong, gameObject);
+        AkSoundEngine.PostEvent("NonCombat_BGM", gameObject);
+    }
 }

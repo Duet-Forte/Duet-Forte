@@ -88,7 +88,6 @@ namespace Util
         public static int drinkHash = Animator.StringToHash("Drink");
         #endregion
 
-
         #region ���̾�
         public static int PLAYER_LAYER = LayerMask.NameToLayer("Player");
         public static int WARPED_PLAYER_LAYER = LayerMask.NameToLayer("WarpedPlayer");
@@ -105,6 +104,21 @@ namespace Util
                 temp = transform.AddComponent<T>();
             }
             return temp;
+        }
+
+        public static string ChangeToKRName(string speakerName)
+        {
+            switch(speakerName) 
+            {
+                case "Zio":
+                    return "지오";
+                case "Timmy":
+                    return "티미";
+                case "Ludius":
+                    return "루디우스";
+                default:
+                    return speakerName;
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ public class DataBase
     public TopViewEntityDataBase Entity { get => topViewEntityDataBase; }
     public DialogueDataBase Dialogue { get => dialogueDataBase; }
     public SkillDataBase Skill { get => skillDataBase; }
-    public PlayerData Player { get => playerData; }
+    public PlayerData Player { get => playerData;}
     public StageDataBase Stage { get => stageDataBase; }
     private DataBase()
     {

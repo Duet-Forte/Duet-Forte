@@ -14677,6 +14677,7 @@ MonoBehaviour:
   isAlive: 1
   level: 0
   stage: {fileID: 0}
+  monsterEye: {fileID: 9121390549737076310}
   isFleeing: 0
 --- !u!114 &-1172377761156560349
 MonoBehaviour:
