@@ -6,8 +6,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	1154772126	MainMenu_Click_SFX			\Default Work Unit\MainMenu\MainMenu_Click_SFX	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	82007089	Ui_Click	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Click01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\MainMenu\메인메뉴 UI\Ui_Click		26468
-	435389909	SceneChainge	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\SceneChainge_855172F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\MainMenu\메인메뉴 UI\SceneChainge		1010992
-	452364886	Ui_Hover	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Hover01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\MainMenu\메인메뉴 UI\Ui_Hover		9676
-	579694935	A440	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\A440_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\MainMenu\A440\A440		17723176
+	82007089	Ui_Click	C:\Users\Administrator\Desktop\HONG\BRIDGE\Duet-Forte\WwiseProject\.cache\Mac\SFX\Click01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\MainMenu\메인메뉴 UI\Ui_Click		26468
+	435389909	SceneChainge	C:\Users\Administrator\Desktop\HONG\BRIDGE\Duet-Forte\WwiseProject\.cache\Mac\SFX\SceneChainge_855172F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\MainMenu\메인메뉴 UI\SceneChainge		1010992
+	452364886	Ui_Hover	C:\Users\Administrator\Desktop\HONG\BRIDGE\Duet-Forte\WwiseProject\.cache\Mac\SFX\Hover01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu\MainMenu\메인메뉴 UI\Ui_Hover		9676
+	579694935	A440	C:\Users\Administrator\Desktop\HONG\BRIDGE\Duet-Forte\WwiseProject\.cache\Mac\SFX\A440_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\MainMenu\A440\A440		17723176
 

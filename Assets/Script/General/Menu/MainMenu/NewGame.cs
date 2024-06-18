@@ -13,8 +13,12 @@ public class NewGame : Menu
     
     public override void OnPressed()
     {
-        AkSoundEngine.PostEvent("MainMenu_Click_GameStart_SFX", gameObject);
-        AkSoundEngine.PostEvent("MainMenu_BGM_BGM_Stop", gameObject.transform.parent.gameObject);
-        fadeOut.DOFade(1, 2f).onComplete += () => UnityEngine.SceneManagement.SceneManager.LoadScene("Top View");
+        if(!(selector as MainMenu).isGameStarted)
+        {
+            (selector as MainMenu).isGameStarted = true;
+            AkSoundEngine.PostEvent("MainMenu_Click_GameStart_SFX", gameObject);
+            AkSoundEngine.PostEvent("MainMenu_BGM_BGM_Stop", transform.parent.gameObject);
+            fadeOut.DOFade(1, 2f).onComplete += () => UnityEngine.SceneManagement.SceneManager.LoadScene("Top View");
+        }
     }
 }

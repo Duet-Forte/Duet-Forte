@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MainMenu : MenuSelector
 {
+    public bool isGameStarted;
     private void Awake()
     {
         AkSoundEngine.PostEvent("MainMenu_BGM_BGM", gameObject);
+        isGameStarted = false;
         InitSetting();
-
     }
     private void Update() //추후 input System 적용 예정.
     {
