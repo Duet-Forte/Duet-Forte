@@ -19,14 +19,15 @@ public class StatusUIView : MonoBehaviour, IStageUI
             prefabs = new GameObject[3];
             prefabs[0] = Resources.Load<GameObject>(Const.UI_PLAYERHP_PATH);
             prefabs[1] = Resources.Load<GameObject>(Const.UI_ENEMYHP_PATH);
-            prefabs[2] = Resources.Load<GameObject>(Const.UI_GUARDGAUGE_PATH);
+            
         }
     
 
         playerHealthPointUI = Instantiate(prefabs[0],transform)
             .AddComponent<PlayerHealthPointUI>();
         playerHealthPointUI.InitSettings(stageManager.JudgeManager.HP);
-        guardGaugeUI = prefabs[0].AddComponent<GuardGaugeUI>();
+        playerHealthPointUI.gameObject.AddComponent<GuardGaugeUI>();
+        guardGaugeUI = playerHealthPointUI.gameObject.GetComponent<GuardGaugeUI>();
         guardGaugeUI.InitSettings();
 
      
