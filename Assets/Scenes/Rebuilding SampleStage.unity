@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0352927842601ff419fc7df79a48a16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage: {fileID: 11400000, guid: 6b39af232b8e17a41a3bef40b159c02f, type: 2}
+  stage: {fileID: 11400000, guid: 7c9c5684a82346a4683582a51ef49193, type: 2}
   enemyTransform: {fileID: 645863507}
   blackBox: {fileID: 1994674332}
   sceneTransitionPrefab: {fileID: 2935451109651248324, guid: 9b0af4abc5a153044a025fa11f50d8e7, type: 3}

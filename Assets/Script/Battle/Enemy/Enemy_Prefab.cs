@@ -24,6 +24,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     [Tooltip("기능적 이름, hitparticle의 컨벤션과 이름이 같아야 한다.")]
     [SerializeField] string enemyName;
     [SerializeField] string flavorTextName;
+    [TextArea]
     [SerializeField] string enemyInfo;
     [SerializeField] Sprite enemyImage;
     [Header("Entity Stats")]
