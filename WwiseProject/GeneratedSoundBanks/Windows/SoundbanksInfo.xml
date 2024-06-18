@@ -398,7 +398,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{66EE169A-2007-1301-3F9C-751EDF340EC5}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{E41540C2-971B-EB5E-DB77-3B685DA2297B}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -409,10 +409,6 @@
 				<File Id="133336124" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Attack_B_SFX.wav</ShortName>
 					<CachePath>SFX/Tambourine_Attack_B_SFX_818F3B66.wem</CachePath>
-				</File>
-				<File Id="139163244" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Clear_Loop.wav</ShortName>
-					<CachePath>SFX/Clear_Loop_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="167940839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skill_BBB02.wav</ShortName>
@@ -425,6 +421,10 @@
 				<File Id="191541219" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Signal.wav</ShortName>
 					<CachePath>SFX/Tambourine_Signal_818F3B66.wem</CachePath>
+				</File>
+				<File Id="257293744" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear_SFX_Loop.wav</ShortName>
+					<CachePath>SFX/Clear_SFX_Loop_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="270105021" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Transition_FadeOut.wav</ShortName>
@@ -519,7 +519,7 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="344719509" Id="1119828183"/>
 							<MediaRefs>
-								<MediaRef Id="139163244"/>
+								<MediaRef Id="257293744"/>
 								<MediaRef Id="691916430"/>
 							</MediaRefs>
 						</SwitchContainer>
@@ -629,5 +629,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D7491B3B-B7A4-8F52-A1E5-467A5A5245F8}</FileHash>
+	<FileHash>{014DB2F7-F1A9-0CEE-A79C-2C24E8AAED11}</FileHash>
 </SoundBanksInfo>
