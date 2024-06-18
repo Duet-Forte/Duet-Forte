@@ -1,6 +1,8 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using Util.CustomEnum;
 
 public class DialogueWindow : MonoBehaviour
@@ -8,10 +10,14 @@ public class DialogueWindow : MonoBehaviour
     [SerializeField] private RectTransform dialogue;
     [SerializeField] private RectTransform nameWindow;
     [SerializeField] private RectTransform image;
+    [SerializeField] private Image arrow;
+    [SerializeField] private TMP_Text arraowText;
     private TextMeshProUGUI dialogueText;
-
+    
+   
     public void SetPosition(Speaker currentSpeaker)
     {
+        Debug.Log("대사 대사");
         switch (currentSpeaker)
         {
             case Speaker.player:
@@ -48,8 +54,19 @@ public class DialogueWindow : MonoBehaviour
                 dialogue.offsetMax = new Vector2(-70, -35);
                 break;
         }
+        
     }
-    
+    private void OnEnable()
+    {
+        
+        arrow.DOFade(0f, 1f).SetLoops(-1, LoopType.Yoyo);
+        arraowText.DOFade(0f,1f).SetLoops(-1, LoopType.Yoyo);
+    }
+    private void OnDisable()
+    {
+        arrow.DOFade(1f, 0.01f);
+        arraowText.DOFade(1f, 0.01f);
+    }
     /// <summary>
     /// 텍스트 잔상이 남는 효과를 지우기 위한 함수
     /// </summary>
