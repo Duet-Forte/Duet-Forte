@@ -696,7 +696,7 @@ MonoBehaviour:
   onOffObject: {fileID: 5904591873316831889}
   isOn: 0
   switchSoundName:
-  - Ob_Fire_Ignition_SFX
+  - Ob_Fire_SwitchOn_SFX
   onSoundName:
   - Ob_Fire_Fire_Amb
   pointRange: TimmyHouse

@@ -22,8 +22,8 @@ public class DemoManager : MonoBehaviour
             {
 
                 Debug.Log("press anyKey");
-                
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
+
+                Application.Quit();
             }
 
             yield return null;

@@ -99,7 +99,7 @@ public class DialogueManager
 
             dialogueWindow.SetPosition(currentSpeaker);
             await UniTask.Delay(500, cancellationToken: cancel.Token);
-            await UniTask.WaitUntil(IsKeyTriggered, cancellationToken: cancel.Token);
+            await UniTask.WhenAny(UniTask.WaitUntil(IsKeyTriggered, cancellationToken: cancel.Token), UniTask.WaitUntil(IsTypeEnded));
             typewriter.SkipTypewriter();
             await UniTask.WaitUntil(IsKeyTriggered, cancellationToken: cancel.Token);
         }
@@ -108,9 +108,13 @@ public class DialogueManager
     }
     private bool IsKeyTriggered()
     {
-        return SceneManager.Instance.InputController.IsKeyTriggered(PlayerAction.Interact);
+        return BICSceneManager.Instance.InputController.IsKeyTriggered(PlayerAction.Interact);
     }
 
+    private bool IsTypeEnded()
+    {
+        return !typewriter.isShowingText;
+    }
     public void SkipDialogue()
     {
         cancel.Cancel();

@@ -69,12 +69,12 @@ public class EmotionEvent : DialogueEvent
         }
         TopViewEventController controller;
         if (interactorName == "Cutscene")
-            controller = SceneManager.Instance.FieldManager.Field.GetCutsceneObject(dialogue.Speaker).GetComponent<TopViewEventController>();
+            controller = BICSceneManager.Instance.FieldManager.Field.GetCutsceneObject(dialogue.Speaker).GetComponent<TopViewEventController>();
         else if (dialogue.Speaker == "Zio")
-            controller = SceneManager.Instance.FieldManager.Player.GetComponent<TopViewEventController>();
+            controller = BICSceneManager.Instance.FieldManager.Player.GetComponent<TopViewEventController>();
         else
         {
-            InteractableObject eventTarget = SceneManager.Instance.FieldManager.Field.GetEntity(dialogue.Speaker) as InteractableObject;
+            InteractableObject eventTarget = BICSceneManager.Instance.FieldManager.Field.GetEntity(dialogue.Speaker) as InteractableObject;
             controller = eventTarget.Controller;
         }
         controller.InitSettings();
@@ -111,7 +111,7 @@ public class BattleEvent : DialogueEvent
 {
     public override void PlayEvent(Dialogue dialogue, string interactorName)
     {
-        SceneManager.Instance.CutsceneManager.PauseDirector();
-        SceneManager.Instance.SetBattleScene(eventTrigger);
+        BICSceneManager.Instance.CutsceneManager.PauseDirector();
+        BICSceneManager.Instance.SetBattleScene(eventTrigger);
     }
 }

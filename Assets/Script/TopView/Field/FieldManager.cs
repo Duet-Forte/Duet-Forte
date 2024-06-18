@@ -46,10 +46,10 @@ public class FieldManager
         onFieldIDChange += DataBase.Instance.Dialogue.ResetLine;
         onFieldIDChange -= SetField;
         onFieldIDChange += SetField;
-        onPointChange -= SceneManager.Instance.CameraManager.ChangeCameraCollider;
-        onPointChange += SceneManager.Instance.CameraManager.ChangeCameraCollider;
-        onPointChange -= SceneManager.Instance.MusicChanger.SetMusic;
-        onPointChange += SceneManager.Instance.MusicChanger.SetMusic;
+        onPointChange -= BICSceneManager.Instance.CameraManager.ChangeCameraCollider;
+        onPointChange += BICSceneManager.Instance.CameraManager.ChangeCameraCollider;
+        onPointChange -= BICSceneManager.Instance.MusicChanger.SetMusic;
+        onPointChange += BICSceneManager.Instance.MusicChanger.SetMusic;
     }
 
     private void SetField(int fieldIndex)

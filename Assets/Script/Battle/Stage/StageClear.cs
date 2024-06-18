@@ -203,7 +203,7 @@ public class StageClear : MonoBehaviour
 
                 Debug.Log("비전투씬으로 이동 건네줄 데이터 : 레벨, 현재 경험치");
                 PlayerInfo playerInfo = new PlayerInfo(playerLevel,currentExp);
-                SceneManager.Instance.SetFieldScene(playerInfo);
+                BICSceneManager.Instance.SetFieldScene(playerInfo);
                 break;
             }
             yield return null;

@@ -50,7 +50,7 @@ public class SkillGainWindow : MonoBehaviour
 
         rect.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         rect.DOScale(Vector3.one, 1f);
-        await UniTask.WaitUntil(() => SceneManager.Instance.InputController.IsKeyTriggered(PlayerAction.Interact));
+        await UniTask.WaitUntil(() => BICSceneManager.Instance.InputController.IsKeyTriggered(PlayerAction.Interact));
         Tween tween = DOTween.Sequence()
             .Append(rect.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0.2f))
             .AppendCallback(() => gameObject.SetActive(false));

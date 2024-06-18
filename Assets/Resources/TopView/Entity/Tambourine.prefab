@@ -14676,7 +14676,6 @@ MonoBehaviour:
   spawnAtFirst: 1
   isAlive: 1
   level: 0
-  stage: {fileID: 0}
   monsterEye: {fileID: 9121390549737076310}
   isFleeing: 0
 --- !u!114 &-1172377761156560349
@@ -14732,7 +14731,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.05062282, y: -0.2047965}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14743,5 +14742,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 3.1558325, y: 2.3596997}
   m_EdgeRadius: 0

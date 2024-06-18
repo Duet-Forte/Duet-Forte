@@ -3,13 +3,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class BICSceneManager : MonoBehaviour
 {
     [SerializeField] private GameObject sceneTransitionPrefab;
     [SerializeField] private GameObject loadingImagePrefab;
 
-    private static SceneManager instance;
-    public static SceneManager Instance { get { return instance; } }
+    private static BICSceneManager instance;
+    public static BICSceneManager Instance { get { return instance; } }
 
     private FieldManager fieldManager;
     public FieldManager FieldManager { get { return fieldManager; } }

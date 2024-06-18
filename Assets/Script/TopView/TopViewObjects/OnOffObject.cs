@@ -18,8 +18,8 @@ public class OnOffObject : MonoBehaviour, IInteractable
         OnSwitchSound();
         onOffObject.SetActive(isOn);
         controller.IsStopped = false;
-        SceneManager.Instance.FieldManager.onPointChange -= SetSound;
-        SceneManager.Instance.FieldManager.onPointChange += SetSound;
+        BICSceneManager.Instance.FieldManager.onPointChange -= SetSound;
+        BICSceneManager.Instance.FieldManager.onPointChange += SetSound;
     }
 
     public void OnSwitchSound()
