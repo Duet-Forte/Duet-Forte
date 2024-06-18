@@ -144,10 +144,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=140%><b>\uC2A4\uD0AC\uD655\uC778</b></size>\n\nF\uD0A4\uB97C \uB20C\uB7EC
-    \uB808\uAC00\uD1A0 \uD53C\uD574\uB97C \uC785\uD788\uB294\n\n\uAE30\uBCF8\uACF5\uACA9\uC744
-    \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\n\n\uC2A4\uD398\uC774\uC2A4 \uBC14\n\n<size=70%>*\uC774\uBC88
-    \uC804\uD22C\uC5D0\uC11C\uB294 \uC784\uC2DC \uC2A4\uD0AC\uC774 \uC801\uC6A9\uB429\uB2C8\uB2E4.</size>"
+  m_text: "<size=140%><b>\uC801\uC758 \uACF5\uACA9 \uC2E0\uD638</b></size>\\n\\n\uC9C0\uC624\uC758
+    \uACF5\uACA9\uC774 \uB05D\uB098\uBA74 \\n\uC801\uC740  <sprite=0>\uACFC \uC801
+    \uACE0\uC720\uC758 \uC545\uAE30 \uC18C\uB9AC\uB97C \uD1B5\uD574 \\n\\n\uC801\uC758
+    \uACF5\uACA9 \uD328\uD134\uC744 \uC54C\uB824\uC90D\uB2C8\uB2E4.\\n\\n\uC801\uC758
+    \uC18C\uB9AC\uC5D0 \uADC0\uAE30\uC6B8\uC774\uACE0 \uBC29\uC5B4\uB97C \uC900\uBE44\uD558\uC138\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b604005099bf9447bbb5b1c0f18c1f9, type: 2}
   m_sharedMaterial: {fileID: 7025719118717319889, guid: 3b604005099bf9447bbb5b1c0f18c1f9, type: 2}
