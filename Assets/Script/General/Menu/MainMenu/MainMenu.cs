@@ -6,6 +6,7 @@ public class MainMenu : MenuSelector
 {
     private void Awake()
     {
+        AkSoundEngine.PostEvent("MainMenu_BGM_BGM", gameObject);
         InitSetting();
     }
     private void Update() //추후 input System 적용 예정.

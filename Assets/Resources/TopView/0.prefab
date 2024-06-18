@@ -116,12 +116,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3861468408321123415}
   - component: {fileID: 7583154553548983721}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Town
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3861468408321123415
 Transform:
@@ -244,7 +244,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &75956819820913009
 Transform:
@@ -286,7 +286,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &485659428456261286
 Transform:
@@ -321,7 +321,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1173804191883858447
 Transform:
@@ -350,12 +350,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7520126733914849744}
   - component: {fileID: 1144432281604147298}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TimmyHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7520126733914849744
 Transform:
@@ -415,7 +415,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5389983994166762744
 Transform:
@@ -447,7 +447,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &466983951202948684
 Transform:
@@ -532,7 +532,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2833818292927772857
 Transform:
@@ -587,8 +587,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4961dfa978186498290f4639cdf4db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceDialogue: 0
   targetPoint: {fileID: 7570681533459539206}
   requiredQuest: {fileID: 11400000, guid: ddfb629ebdbbe1246aec8b0bc0fa9820, type: 2}
+  dialogueTarget: 
 --- !u!1 &3062844121048422009
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,7 +638,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3845789607091532467
 Transform:
@@ -694,9 +696,10 @@ MonoBehaviour:
   onOffObject: {fileID: 5904591873316831889}
   isOn: 0
   switchSoundName:
-  - Ob_Fire_Ignition_SFX
+  - Ob_Fire_SwitchOn_SFX
   onSoundName:
   - Ob_Fire_Fire_Amb
+  pointRange: TimmyHouse
 --- !u!1 &4072195111030914965
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +714,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3278167056786355673
 Transform:
@@ -745,7 +748,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4511413682326544677
 Transform:
@@ -778,7 +781,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3990387671255507410
 Transform:
@@ -907,7 +910,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4471920991501954344
 Transform:
@@ -1007,6 +1010,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 6.2}
   m_EdgeRadius: 0
+--- !u!1 &5097495137458828323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1949747812626260128}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1949747812626260128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5097495137458828323}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3061667316610120920}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6087753487592764470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,7 +1058,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2057463876630148759
 Transform:
@@ -1206,7 +1240,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6110154163178087053
 Transform:
@@ -1346,7 +1380,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6110154164390161442
 Transform:
@@ -1530,7 +1564,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &141854381421431447
 Transform:
@@ -1658,7 +1692,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5296591998192180410
 Transform:
@@ -1714,7 +1748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 5389983994166762744}
-  isChangeMusic: 1
   soundName: Ob_Door_SFX
 --- !u!1 &7441546613690834613
 GameObject:
@@ -1730,7 +1763,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6798324735741632336
 Transform:
@@ -1757,11 +1790,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4748491346024063923}
   m_Layer: 0
-  m_Name: CameraCollider
+  m_Name: PointCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4748491346024063923
 Transform:
@@ -1790,14 +1823,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8194677901310235508}
   - component: {fileID: 4311101520704089621}
-  - component: {fileID: 2284405977696533917}
   - component: {fileID: 4751152686511651077}
   m_Layer: 0
   m_Name: Town
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8194677901310235508
 Transform:
@@ -1840,21 +1872,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.6}
   m_EdgeRadius: 0
---- !u!114 &2284405977696533917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8187953460144675641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4596be6aee8bad24fb6d87b2924bc32c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questTarget: Sample
-  targetID: 1
-  quest: {fileID: 11400000, guid: ddfb629ebdbbe1246aec8b0bc0fa9820, type: 2}
 --- !u!114 &4751152686511651077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,7 +1885,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 6798324735741632336}
-  isChangeMusic: 1
   soundName: Ob_Door_SFX
 --- !u!1 &8319690850758366927
 GameObject:
@@ -1884,7 +1900,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4522776701865524767
 Transform:
@@ -1917,7 +1933,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7570681533459539206
 Transform:
@@ -2021,7 +2037,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1118849536103186593
 Transform:
@@ -2087,7 +2103,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3057919196098203235
 Transform:
@@ -2153,6 +2169,10 @@ PrefabInstance:
     - target: {fileID: 432308797918753924, guid: d8faf97efd6df584eb0373f1ace061a9, type: 3}
       propertyPath: m_Name
       value: Map_Timmys_room_Fireplace
+      objectReference: {fileID: 0}
+    - target: {fileID: 432308797918753924, guid: d8faf97efd6df584eb0373f1ace061a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8633613516152782388, guid: d8faf97efd6df584eb0373f1ace061a9, type: 3}
       propertyPath: m_RootOrder
@@ -2260,6 +2280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map_Timmys_room_Sofa 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4318064392286274211, guid: 92970c1c0a06cc143b002352ec3f924f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6192423198736337963, guid: 92970c1c0a06cc143b002352ec3f924f, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -2289,6 +2313,10 @@ PrefabInstance:
     - target: {fileID: 1489075131497121830, guid: 549d3baf47d2d61489a837e3d251ca32, type: 3}
       propertyPath: m_Name
       value: Map_Timmys_room_Closet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489075131497121830, guid: 549d3baf47d2d61489a837e3d251ca32, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5178803289231449212, guid: 549d3baf47d2d61489a837e3d251ca32, type: 3}
       propertyPath: m_RootOrder
@@ -2403,6 +2431,10 @@ PrefabInstance:
     - target: {fileID: 2090086629397782852, guid: 7a3fdb07e32f41c4f84c37148704875e, type: 3}
       propertyPath: m_Name
       value: Map_Timmys_room_Bed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090086629397782852, guid: 7a3fdb07e32f41c4f84c37148704875e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a3fdb07e32f41c4f84c37148704875e, type: 3}
@@ -2698,6 +2730,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 3958507961771809514, guid: 63bd7b1fc00b4a042a2566131d5cf856, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4397750046145782862, guid: 63bd7b1fc00b4a042a2566131d5cf856, type: 3}
       propertyPath: m_SortingOrder
       value: 5
@@ -2918,6 +2954,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 9153126565769670445, guid: 63bd7b1fc00b4a042a2566131d5cf856, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9153126566378214832, guid: 63bd7b1fc00b4a042a2566131d5cf856, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63bd7b1fc00b4a042a2566131d5cf856, type: 3}
 --- !u!1 &2979132934434358586 stripped
@@ -2946,6 +2990,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1734490848686240692, guid: 63bd7b1fc00b4a042a2566131d5cf856, type: 3}
   m_PrefabInstance: {fileID: 3551694834381328936}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &3061667316610120920 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1961068674087104240, guid: 63bd7b1fc00b4a042a2566131d5cf856, type: 3}
+  m_PrefabInstance: {fileID: 3551694834381328936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3941177073203986242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2956,6 +3005,10 @@ PrefabInstance:
     - target: {fileID: 687457994375394380, guid: 2e80f1d2f39616e419cf245d48b6b412, type: 3}
       propertyPath: m_Name
       value: Map_Timmys_room_Desk
+      objectReference: {fileID: 0}
+    - target: {fileID: 687457994375394380, guid: 2e80f1d2f39616e419cf245d48b6b412, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 765510405542028400, guid: 2e80f1d2f39616e419cf245d48b6b412, type: 3}
       propertyPath: m_SortingLayer
@@ -3030,6 +3083,10 @@ PrefabInstance:
     - target: {fileID: 4578749778718722033, guid: c51a5024bf5091f40a5ec1ee8e63056f, type: 3}
       propertyPath: m_Name
       value: Map_Timmys_room_Chair-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4578749778718722033, guid: c51a5024bf5091f40a5ec1ee8e63056f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8125971351054384085, guid: c51a5024bf5091f40a5ec1ee8e63056f, type: 3}
       propertyPath: m_RootOrder
@@ -3109,6 +3166,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2018386457331386728, guid: 9b6a09e78d2b04e4a95ab8651d30234c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2018386457331386729, guid: 9b6a09e78d2b04e4a95ab8651d30234c, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -3185,13 +3246,37 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2018386458206662840, guid: 9b6a09e78d2b04e4a95ab8651d30234c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018386458206662846, guid: 9b6a09e78d2b04e4a95ab8651d30234c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018386458206662846, guid: 9b6a09e78d2b04e4a95ab8651d30234c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1186509851
+      objectReference: {fileID: 0}
     - target: {fileID: 2018386458206662847, guid: 9b6a09e78d2b04e4a95ab8651d30234c, type: 3}
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2018386458716773440, guid: 9b6a09e78d2b04e4a95ab8651d30234c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018386458716773440, guid: 9b6a09e78d2b04e4a95ab8651d30234c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1186509851
+      objectReference: {fileID: 0}
     - target: {fileID: 2018386458716773441, guid: 9b6a09e78d2b04e4a95ab8651d30234c, type: 3}
       propertyPath: playOnAwake
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018386458716773442, guid: 9b6a09e78d2b04e4a95ab8651d30234c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b6a09e78d2b04e4a95ab8651d30234c, type: 3}
@@ -3238,8 +3323,16 @@ PrefabInstance:
       value: 0.29803923
       objectReference: {fileID: 0}
     - target: {fileID: 2331121825907789160, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331121825907789160, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_SortingOrder
-      value: 998
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331121825907789160, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 696251689
       objectReference: {fileID: 0}
     - target: {fileID: 4179695466896532396, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_RootOrder
@@ -3291,7 +3384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179695466896532397, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_SortingOrder
-      value: 999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4179695466896532397, guid: 2437af88c7ab9994b991349a868224c8, type: 3}
       propertyPath: m_SortingLayerID
@@ -3383,6 +3476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map_Timmys_room_Carpet_1
       objectReference: {fileID: 0}
+    - target: {fileID: 5019183199021127160, guid: 7baded5be4bf92947b1cbb5e91a7633e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7baded5be4bf92947b1cbb5e91a7633e, type: 3}
 --- !u!4 &4846969770332669735 stripped
@@ -3445,6 +3542,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map_Timmys_room_Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 3181546094424284994, guid: 4edf6d79bf7e25e4696947c90968935a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3770659079196393701, guid: 4edf6d79bf7e25e4696947c90968935a, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -3474,6 +3575,10 @@ PrefabInstance:
     - target: {fileID: 2943762187842473757, guid: 86489fbbada73cc4c8313b1e0f512149, type: 3}
       propertyPath: m_Name
       value: Map_Timmys_room_Window
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943762187842473757, guid: 86489fbbada73cc4c8313b1e0f512149, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6794148486248350192, guid: 86489fbbada73cc4c8313b1e0f512149, type: 3}
       propertyPath: m_RootOrder
@@ -3536,6 +3641,10 @@ PrefabInstance:
     - target: {fileID: 691972722377435212, guid: 0adbb9aa3fba20e4f97bb48c68f5f1e0, type: 3}
       propertyPath: m_Name
       value: Map_Timmys_room_Carpet_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 691972722377435212, guid: 0adbb9aa3fba20e4f97bb48c68f5f1e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2296760055942019372, guid: 0adbb9aa3fba20e4f97bb48c68f5f1e0, type: 3}
       propertyPath: m_SortingLayer
@@ -3612,8 +3721,16 @@ PrefabInstance:
       value: 0.29803923
       objectReference: {fileID: 0}
     - target: {fileID: 7779837691438535322, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779837691438535322, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_SortingOrder
-      value: 998
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779837691438535322, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 696251689
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633424, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_Controller
@@ -3627,17 +3744,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 9002746828571633425, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633426, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633426, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.73
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633426, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05
+      value: -1.92
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633426, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3677,7 +3798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633427, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_SortingOrder
-      value: 999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9002746828571633427, guid: f0acf24560e7e0449ac7d820a9af83f5, type: 3}
       propertyPath: m_SortingLayerID
@@ -3756,6 +3877,10 @@ PrefabInstance:
     - target: {fileID: 6649925887104470012, guid: a7c98d38342c64b43b425f7f9ac15bf2, type: 3}
       propertyPath: m_Name
       value: Map_Timmys_room_Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649925887104470012, guid: a7c98d38342c64b43b425f7f9ac15bf2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7c98d38342c64b43b425f7f9ac15bf2, type: 3}

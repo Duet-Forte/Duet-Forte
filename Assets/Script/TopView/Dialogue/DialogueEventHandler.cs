@@ -6,7 +6,6 @@ using Util;
 public class DialogueEventHandler
 {
     public Type type;
-    public int trigger;
     public DialogueEvent dialogueEvent;
 
     private static Dictionary<string, Type> typeMappings = new Dictionary<string, Type>
@@ -14,9 +13,43 @@ public class DialogueEventHandler
         { "Emotion", typeof(EmotionEvent)},
         { "Quest", typeof(QuestEvent)},
         { "Skill", typeof(SkillEvent)},
-        { "Plus", typeof(FlowEvent)}
+        { "Plus", typeof(FlowEvent)},
+        { "Battle", typeof(BattleEvent)}
         // 필요한 경우 추가 타입 매핑
     };
+
+    public DialogueEventHandler(string eventData)
+    {
+        string[] parsedData = eventData.Split('/');
+
+        type = typeMappings.TryGetValue(parsedData[0], out var mappedType) ? mappedType : null;
+        if(type != null)
+        {
+            dialogueEvent = Activator.CreateInstance(type) as DialogueEvent;
+            dialogueEvent.InitSettings(parsedData[1]);
+        }
+    }
+
+    public bool PlayEvent(Dialogue dialogue, string interactorName)
+    {
+        dialogueEvent.PlayEvent(dialogue, interactorName);
+        if (dialogueEvent is SkillEvent)
+            return false;
+        else
+            return true;
+    }
+}
+
+
+public abstract class DialogueEvent
+{
+    protected string eventTrigger;
+    public void InitSettings(string eventTrigger) => this.eventTrigger = eventTrigger;
+    public abstract void PlayEvent(Dialogue dialogue, string interactorName);
+}
+
+public class EmotionEvent : DialogueEvent
+{
 
     private static Dictionary<string, int> triggerMappings = new Dictionary<string, int>
     {
@@ -27,38 +60,13 @@ public class DialogueEventHandler
         { "Dust", Const.dustHash },
         { "Drink", Const.drinkHash },
     };
-
-    public DialogueEventHandler(string eventData)
-    {
-        string[] parsedData = eventData.Split('/');
-
-        type = typeMappings.TryGetValue(parsedData[0], out var mappedType) ? mappedType : null;
-        trigger = triggerMappings.TryGetValue(parsedData[1], out var mappedTrigger) ? mappedTrigger : int.Parse(parsedData[1]);
-        if(type != null)
-        {
-            dialogueEvent = Activator.CreateInstance(type) as DialogueEvent;
-            dialogueEvent.InitSettings(trigger);
-        }
-    }
-
-    public void PlayEvent(Dialogue dialogue, string interactorName)
-    {
-        dialogueEvent.PlayEvent(dialogue, interactorName);
-    }
-}
-
-
-public abstract class DialogueEvent
-{
-    protected int eventTrigger;
-    public void InitSettings(int eventTrigger) => this.eventTrigger = eventTrigger;
-    public abstract void PlayEvent(Dialogue dialogue, string interactorName);
-}
-
-public class EmotionEvent : DialogueEvent
-{
     public override void PlayEvent(Dialogue dialogue, string interactorName)
     {
+        if (!triggerMappings.TryGetValue(eventTrigger, out int emotionTrigger))
+        {
+            Debug.Log($"해당하는 애니메이션이 없습니다! : {eventTrigger}");
+            return;
+        }
         TopViewEventController controller;
         if (interactorName == "Cutscene")
             controller = SceneManager.Instance.FieldManager.Field.GetCutsceneObject(dialogue.Speaker).GetComponent<TopViewEventController>();
@@ -70,7 +78,7 @@ public class EmotionEvent : DialogueEvent
             controller = eventTarget.Controller;
         }
         controller.InitSettings();
-        controller.PlayEvent(eventTrigger);
+        controller.PlayEvent(emotionTrigger);
     }
 }
 
@@ -78,8 +86,8 @@ public class QuestEvent : DialogueEvent
 {
     public override void PlayEvent(Dialogue dialogue, string interactorName)
     {
-        if (!DataBase.Instance.Player.Quests.Contains(QuestManager.Instance.GetQuest(eventTrigger)))
-            QuestManager.Instance.SetQuest(eventTrigger);
+        if (!DataBase.Instance.Player.Quests.Contains(QuestManager.Instance.GetQuest(int.Parse(eventTrigger))))
+            QuestManager.Instance.SetQuest(int.Parse(eventTrigger));
     }
 }
 
@@ -87,7 +95,7 @@ public class SkillEvent : DialogueEvent
 {
     public override void PlayEvent(Dialogue dialogue, string interactorName)
     {
-        DataBase.Instance.Skill.ActivateSkill(eventTrigger);
+        DataBase.Instance.Skill.ActivateSkill(int.Parse(eventTrigger));
     }
 }
 
@@ -95,7 +103,15 @@ public class FlowEvent : DialogueEvent
 {
     public override void PlayEvent(Dialogue dialogue, string interactorName)
     {
-        DataBase.Instance.Dialogue.PlusID(interactorName, eventTrigger);
+        DataBase.Instance.Dialogue.PlusID(interactorName, int.Parse(eventTrigger));
     }
 }
 
+public class BattleEvent : DialogueEvent
+{
+    public override void PlayEvent(Dialogue dialogue, string interactorName)
+    {
+        SceneManager.Instance.CutsceneManager.PauseDirector();
+        SceneManager.Instance.SetBattleScene(eventTrigger);
+    }
+}

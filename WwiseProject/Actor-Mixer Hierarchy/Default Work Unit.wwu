@@ -1291,6 +1291,7 @@
 							<ChildrenList>
 								<Sound Name="Ob_Fire_Fire" ID="{6D1C0821-D28A-4C8B-96B0-0F4067C97920}" ShortID="973294645">
 									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ModifierList>
 												<ModifierInfo>
@@ -1343,7 +1344,6 @@
 								</Sound>
 								<Sound Name="Ob_Fire_Ignition" ID="{4B405262-2BB6-4C90-9C83-12040009EF99}" ShortID="135411134">
 									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
@@ -1416,9 +1416,10 @@
 									<ChildrenList>
 										<AudioFileSource Name="Door" ID="{A34DD201-6696-497C-86E5-8FAA08EA519B}">
 											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.247694587628866"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.179217152351738"/>
-												<Property Name="TrimEnd" Type="Real64" Value="0.994755879345602"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.771424693778592"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Door.wav</AudioFile>
@@ -1592,13 +1593,6 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Transition_FadeIn" ID="{F2C3B003-6EB7-4881-913C-6693716D5A73}" ShortID="211027452">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-6</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
@@ -1633,13 +1627,6 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Transition_FadeOut" ID="{775FBD8F-15A1-404D-B773-C0FDEC8C8FD7}" ShortID="273161622">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-6</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
@@ -1702,6 +1689,88 @@
 								</Sound>
 							</ChildrenList>
 						</ActorMixer>
+						<SwitchContainer Name="Combat_Transition_FadeOut" ID="{5E9A4807-A31C-47C2-AA66-EA050315DDE0}" ShortID="165288132">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Transition_FadeOut" ID="{9AAC12E8-D6AC-4121-8C6E-F884FA0424E4}" ShortID="575165016">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Transition_FadeOut" ID="{9E276305-F504-4B98-BEC8-7BF772FB9F21}">
+											<Language>SFX</Language>
+											<AudioFile>Transition_FadeOut.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="270105021"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Transition_FadeOut" ID="{9E276305-F504-4B98-BEC8-7BF772FB9F21}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Transition_FadeOut" ID="{9AAC12E8-D6AC-4121-8C6E-F884FA0424E4}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+							</GroupingInfo>
+						</SwitchContainer>
+						<SwitchContainer Name="Combat_Transition_FadeIn" ID="{BBC84AD1-B59B-4538-A218-B79F8969690B}" ShortID="804219653">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Transition_FadeIn" ID="{870E0708-CD69-4EB8-9813-C5867B79CE55}" ShortID="939771606">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Transition_FadeIn" ID="{F1A68FBB-D4DE-4E62-BA34-B2BBC61642DF}">
+											<Language>SFX</Language>
+											<AudioFile>Transition_FadeIn.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="586961463"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Transition_FadeIn" ID="{F1A68FBB-D4DE-4E62-BA34-B2BBC61642DF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Transition_FadeIn" ID="{870E0708-CD69-4EB8-9813-C5867B79CE55}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+							</GroupingInfo>
+						</SwitchContainer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Combat_SFX" ID="{598FFB48-959A-4469-A8C2-CC8720CB24E7}" ShortID="632203999">

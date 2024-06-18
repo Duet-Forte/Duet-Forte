@@ -8,31 +8,7 @@ using UnityEngine;
 /// </summary>
 public class DataStorage
 {
-    private Stage currentStage;
-    public Stage Stage { get => currentStage; }
-
-    private Vector2 playerPosition;
-    public Vector2 PlayerPosition { get => playerPosition; set => playerPosition = value; }
-
-    public Vector2[] entityPosition;
-    public Vector2[] EntityPosition { get => entityPosition; set => entityPosition = value; }
-    private Field currentField;
-    public Field Field { get => currentField; set => currentField = value; }
-    private Dictionary<string, Stage> stages;
-
-    public void InitSettings()
-    {
-        Stage[] stageFiles = Resources.LoadAll<Stage>(Util.Const.STAGE_PATH);
-        foreach (Stage stage in stageFiles)
-        {
-            stages.Add(stage.name, stage);
-        }
-    }
-    public void SetStage(string name)
-    {
-        if (stages[name] != null)
-            currentStage = stages[name];
-        else
-            Debug.Log("파일을 찾을 수 없습니다.");
-    }
+    public string currentEnemyName;
+    public bool isCutscenePlaying;
+    public TopViewEnemy currentBattleEnemy;
 }

@@ -161,6 +161,7 @@
 															<Effect Name="Meter (Custom)" ID="{5BC0F7FA-15CC-4345-B46F-839808F0B5D7}" ShortID="991801778" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
 																<PropertyList>
 																	<Property Name="Min" Type="Real32" Value="-96.3"/>
+																	<Property Name="ReleaseTime" Type="Real32" Value="0.5"/>
 																</PropertyList>
 																<PluginData>
 	<GameParameter Name="SFX_SideChain" ID="{9DBA2321-9B93-46FB-B2D6-705DA328989E}"/>

@@ -24,7 +24,7 @@ public class SkillSet : MonoBehaviour
     public PlayerSkill.Skill[] ArrayOfSkill { get => arrayOfSkill; }
     #endregion
 
-    void Awake()//테스트용으로 남겨둠.
+    /*void Awake()//테스트용으로 남겨둠.
     {
         //skillSet =~~//비전투 씬에서 세팅된 스킬을 받아올 예정
         for (int index = 0; index < skillSet.Length; index++) {//커맨드 리스트 할당
@@ -38,7 +38,7 @@ public class SkillSet : MonoBehaviour
             }
         }
         
-    }
+    }*/
     
   public void InitSettings(PlayerSkill[] skillSet) {
         if (skillSet == null) return;

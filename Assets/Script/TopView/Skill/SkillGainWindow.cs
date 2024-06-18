@@ -4,6 +4,7 @@ using TMPro;
 using DG.Tweening;
 using Cysharp.Threading.Tasks;
 using Util.CustomEnum;
+using UnityEditor.PackageManager.UI;
 
 public class SkillGainWindow : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class SkillGainWindow : MonoBehaviour
     private int standard;
     public async UniTask InitSettings(PlayerSkill skill)
     {
+        AkSoundEngine.PostEvent("UI_GetSkill_SFX", gameObject);
         skillIcon.sprite = skill.SkillIcon;
         skillName.text = skill.SkillName;
         skillDescription.text = skill.Information;
@@ -48,7 +50,7 @@ public class SkillGainWindow : MonoBehaviour
         .SetEase(Ease.InOutSine);
 
         rect.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        rect.DOScale(Vector3.one, 0.2f);
+        rect.DOScale(Vector3.one, 1f);
         await UniTask.WaitUntil(() => SceneManager.Instance.InputController.IsKeyTriggered(PlayerAction.Interact));
         Tween tween = DOTween.Sequence()
             .Append(rect.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0.2f))

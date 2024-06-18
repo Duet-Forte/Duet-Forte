@@ -29,8 +29,10 @@
 				<SoundBank Name="MainMenu" ID="{1E287310-F016-40AD-A8AF-8A249B946090}">
 					<ObjectInclusionList>
 						<ObjectRef Name="MainMenu_Hover_SFX" ID="{86244DD4-AF42-4524-91C7-610B0B9700DE}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MainMenu_BGM_BGM" ID="{D0264315-922C-45F6-9E50-590081C116FA}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MainMenu_Click_SFX" ID="{7E2CE3A4-76DC-462D-9E07-4AB3C177AD2E}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MainMenu_Click_GameStart_SFX" ID="{C32E89F9-9B02-46BB-BEE8-CF96B95100A1}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MainMenu_BGM_BGM_Stop" ID="{4BEC83CA-F5B2-4BE3-A552-36C149238E2F}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
@@ -40,7 +42,6 @@
 						<ObjectRef Name="NPC_Ludius_Drink_SFX" ID="{51E99858-B80B-42C4-B70F-65E94306A2D3}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ob_Door_SFX" ID="{EEA03CBB-FA8E-42F1-B383-AFD7970E215D}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_BodyFall_SFX" ID="{CA4BCAB6-D3C9-43A5-AAC9-1BECBB8FA693}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="MainMenu_BGM_BGM" ID="{D0264315-922C-45F6-9E50-590081C116FA}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ob_Fire_Fire_Amb" ID="{6C36585B-93F8-46C7-B717-FD2BED270011}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Character_Emotion_QuestionMark_SFX" ID="{C8550095-9C2E-4732-AEDD-D00BB79F6CCC}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Character_Emotion_Dumbfounded_SFX" ID="{81906EBA-E4B8-47C5-908F-704009F6DC95}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
@@ -50,6 +51,7 @@
 						<ObjectRef Name="UI_GetSkill_SFX" ID="{EB2C13B1-2A9C-49DF-9F0C-72EF772587B0}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ob_Fire_SwitchOn_SFX" ID="{9E465848-C42E-4AC2-99D6-68BE1934963E}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MainMenu_BGM_BGM_Stop" ID="{4BEC83CA-F5B2-4BE3-A552-36C149238E2F}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Transition_FadeIn" ID="{FE4ACF74-6374-4BE4-AAC3-B5E244B42F3A}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="NonCombat_BGM_Stop" ID="{84301470-64BF-4C0B-9F16-1C6E537F6A82}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Step_SFX" ID="{2175E7C5-DBE4-4C7E-8B5F-D1285725AA69}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ob_Fire_Ignition_SFX" ID="{3BBD899A-CE29-4CB5-B91F-5F34CB3DA146}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>

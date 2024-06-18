@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{B45C4C8D-433F-C7C1-00E2-CA2C274AF41B}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{0160A03C-8544-40F0-DE6F-2260ECBBBC3F}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -23,11 +23,11 @@
 				</File>
 				<File Id="48994660" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Door.wav</ShortName>
-					<CachePath>SFX/Door_AE50D5A0.wem</CachePath>
+					<CachePath>SFX/Door_BEBAF347.wem</CachePath>
 				</File>
 				<File Id="57689545" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ob_Fire_Fire.wav</ShortName>
-					<CachePath>SFX/Ob_Fire_Fire_818F3B66.wem</CachePath>
+					<CachePath>SFX/Ob_Fire_Fire_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="98167887" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Character_Emotion_QuestionMark_SFX.wav</ShortName>
@@ -76,6 +76,10 @@
 				<File Id="579694935" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>A440.wav</ShortName>
 					<CachePath>SFX/A440_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="586961463" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Transition_FadeIn.wav</ShortName>
+					<CachePath>SFX/Transition_FadeIn_818F3B66.wem</CachePath>
 				</File>
 				<File Id="594152026" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>마을 0506.wav</ShortName>
@@ -135,7 +139,7 @@
 				</File>
 				<File Id="1014191835" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ob_Fire_Ignition.wav</ShortName>
-					<CachePath>SFX/Ob_Fire_Ignition_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Ob_Fire_Ignition_818F3B66.wem</CachePath>
 				</File>
 				<File Id="1039083357" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Dirt03.wav</ShortName>
@@ -164,12 +168,6 @@
 						<MediaRef Id="98167887"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="631059699" Name="MainMenu_BGM_BGM" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="579694935"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="270981630" Name="MainMenu_BGM_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="918533349" Name="NonCombat_BGM" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -192,17 +190,17 @@
 						<MediaRef Id="618461013"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="4145632761" Name="Ob_Door_SFX" DurationType="OneShot" DurationMin="0.8155387" DurationMax="0.8155387">
+				<Event Id="4145632761" Name="Ob_Door_SFX" DurationType="OneShot" DurationMin="0.59220755" DurationMax="0.59220755">
 					<MediaRefs>
 						<MediaRef Id="48994660"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3989126589" Name="Ob_Fire_Fire_Amb" DurationType="OneShot" DurationMin="80.00002" DurationMax="80.00002">
+				<Event Id="3989126589" Name="Ob_Fire_Fire_Amb" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="57689545"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="198066997" Name="Ob_Fire_Ignition_SFX" DurationType="Infinite">
+				<Event Id="198066997" Name="Ob_Fire_Ignition_SFX" DurationType="OneShot" DurationMin="0.5395" DurationMax="0.5395">
 					<MediaRefs>
 						<MediaRef Id="1014191835"/>
 					</MediaRefs>
@@ -251,6 +249,11 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="544226120" Name="Transition_FadeIn" DurationType="OneShot" DurationMin="1.5126458" DurationMax="1.5126458">
+					<MediaRefs>
+						<MediaRef Id="586961463"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1260125929" Name="UI_GetSkill_SFX" DurationType="OneShot" DurationMin="2.4756267" DurationMax="2.4756267">
 					<MediaRefs>
 						<MediaRef Id="225095606"/>
@@ -287,7 +290,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{D8F5B59D-B9D0-01A0-DB31-577D194A3D7B}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{2F915FBC-9291-A096-047C-68AAF9C61C46}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -354,7 +357,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{F2CFAE3E-9466-013A-0DF0-147C93389AA6}">
+		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{66D3C398-9338-B973-366C-BDE1CDCD6B6A}">
 			<ShortName>MainMenu</ShortName>
 			<Path>MainMenu.bnk</Path>
 			<Media>
@@ -370,8 +373,18 @@
 					<ShortName>Hover01.wav</ShortName>
 					<CachePath>SFX/Hover01_818F3B66.wem</CachePath>
 				</File>
+				<File Id="579694935" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>A440.wav</ShortName>
+					<CachePath>SFX/A440_FBC78EF0.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="631059699" Name="MainMenu_BGM_BGM" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="579694935"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="270981630" Name="MainMenu_BGM_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="162289589" Name="MainMenu_Click_GameStart_SFX" DurationType="OneShot" DurationMin="5.2650824" DurationMax="5.2650824">
 					<MediaRefs>
 						<MediaRef Id="435389909"/>
@@ -389,7 +402,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{6DCA7A5F-ABF2-A22D-B39C-A4CC3301C7B4}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{3121EEA7-BF1B-429A-B9C4-805FCF9158D7}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -400,10 +413,6 @@
 				<File Id="133336124" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Attack_B_SFX.wav</ShortName>
 					<CachePath>SFX/Tambourine_Attack_B_SFX_818F3B66.wem</CachePath>
-				</File>
-				<File Id="139163244" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Clear_Loop.wav</ShortName>
-					<CachePath>SFX/Clear_Loop_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="167940839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skill_BBB02.wav</ShortName>
@@ -416,6 +425,10 @@
 				<File Id="191541219" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Signal.wav</ShortName>
 					<CachePath>SFX/Tambourine_Signal_818F3B66.wem</CachePath>
+				</File>
+				<File Id="257293744" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear_SFX_Loop.wav</ShortName>
+					<CachePath>SFX/Clear_SFX_Loop_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="270105021" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Transition_FadeOut.wav</ShortName>
@@ -457,10 +470,6 @@
 					<ShortName>세로베기.wav</ShortName>
 					<CachePath>SFX/세로베기_9ECBE823.wem</CachePath>
 				</File>
-				<File Id="691916430" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Clear_SFX.wav</ShortName>
-					<CachePath>SFX/Clear_SFX_FBC78EF0.wem</CachePath>
-				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
 					<CachePath>SFX/패링-03_03D2EA21.wem</CachePath>
@@ -501,6 +510,10 @@
 					<ShortName>02.wav</ShortName>
 					<CachePath>SFX/02_A56704D4.wem</CachePath>
 				</File>
+				<File Id="1071832350" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear_SFX_02.wav</ShortName>
+					<CachePath>SFX/Clear_SFX_02_FBC78EF0.wem</CachePath>
+				</File>
 			</Media>
 			<Plugins>
 				<ShareSets>
@@ -514,8 +527,8 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="344719509" Id="1119828183"/>
 							<MediaRefs>
-								<MediaRef Id="139163244"/>
-								<MediaRef Id="691916430"/>
+								<MediaRef Id="257293744"/>
+								<MediaRef Id="1071832350"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -605,11 +618,6 @@
 						<MediaRef Id="991299104"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="544226120" Name="Transition_FadeIn" DurationType="OneShot" DurationMin="1.5126458" DurationMax="1.5126458">
-					<MediaRefs>
-						<MediaRef Id="586961463"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="1873933263" Name="Transition_FadeOut" DurationType="OneShot" DurationMin="1.5126458" DurationMax="1.5126458">
 					<MediaRefs>
 						<MediaRef Id="270105021"/>
@@ -629,5 +637,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5FB5805F-813E-D16A-66B4-5C106A65E9E9}</FileHash>
+	<FileHash>{FA50E3B1-B184-A60C-7C25-57FB392B834A}</FileHash>
 </SoundBanksInfo>

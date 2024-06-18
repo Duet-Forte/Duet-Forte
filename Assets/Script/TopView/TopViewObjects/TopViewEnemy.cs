@@ -7,8 +7,10 @@ public class TopViewEnemy : TopViewEntity
 {
     [SerializeField] private bool isAlive = true;
     [SerializeField] private int level;
+    [SerializeField] private GameObject monsterEye;
     public event Action<string> OnFightPlayer;
     private PlayerTracker tracker;
+    private BoxCollider2D boxCollider;
     public bool isFleeing;
     private void Update()
     {
@@ -16,38 +18,40 @@ public class TopViewEnemy : TopViewEntity
         {
             tracker.RequestPath(isFleeing);
         }
-        else
-        {
-            
-        }
     }
     public override void InitSettings(string name, Vector2 intialSpawnPoint, int id = 0)
     {
         base.InitSettings(name, intialSpawnPoint, id);
         tracker = GetComponent<PlayerTracker>();
         tracker.InitSettings(this);
+        boxCollider = GetComponent<BoxCollider2D>();
         OnFightPlayer -= SceneManager.Instance.SetBattleScene;
         OnFightPlayer += SceneManager.Instance.SetBattleScene;
     }
 
     public void Die()
     {
-        isAlive = false;
+        RespawnTimer().Forget();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Player")))
         {
+            SceneManager.Instance.Storage.currentBattleEnemy = this;
             OnFightPlayer?.Invoke(name);
         }
     }
 
     private async UniTask RespawnTimer()
     {
+        isAlive = false;
+        monsterEye.SetActive(false);
+        boxCollider.enabled = false;
         await UniTask.Delay(7000);
-
         isAlive = true;
+        monsterEye.SetActive(true);
+        boxCollider.enabled = true;
     }
 
     public void Question() => Animator.Play(Const.questionHash);
