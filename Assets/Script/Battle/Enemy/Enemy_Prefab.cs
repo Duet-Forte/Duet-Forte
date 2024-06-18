@@ -269,7 +269,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     {
 
         #region 스테이지 매니저에서 참조
-        enemyName = gameObject.name;
+        
         stageManager = currentStageManager;
         enemySignalUI = currentStageManager.EnemySignalUI;
         attackIcon = currentStageManager.attackIcon;

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rebuilding SampleStage.unity
     guid: f85c05ec15311df4db563e8e880e4cea
+  - enabled: 1
+    path: Assets/Scenes/DemoScene.unity
+    guid: fc3b0ce084ec0f7448e6479815bf492e
   m_configObjects: {}
