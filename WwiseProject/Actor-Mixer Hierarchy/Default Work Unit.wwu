@@ -1291,6 +1291,7 @@
 							<ChildrenList>
 								<Sound Name="Ob_Fire_Fire" ID="{6D1C0821-D28A-4C8B-96B0-0F4067C97920}" ShortID="973294645">
 									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ModifierList>
 												<ModifierInfo>
@@ -1343,7 +1344,6 @@
 								</Sound>
 								<Sound Name="Ob_Fire_Ignition" ID="{4B405262-2BB6-4C90-9C83-12040009EF99}" ShortID="135411134">
 									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
@@ -1416,9 +1416,10 @@
 									<ChildrenList>
 										<AudioFileSource Name="Door" ID="{A34DD201-6696-497C-86E5-8FAA08EA519B}">
 											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.247694587628866"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.179217152351738"/>
-												<Property Name="TrimEnd" Type="Real64" Value="0.994755879345602"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.771424693778592"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Door.wav</AudioFile>
