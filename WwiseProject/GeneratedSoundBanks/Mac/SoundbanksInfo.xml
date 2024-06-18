@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{751067CE-34FC-3EE5-58ED-193D502E25E7}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{5ECEFB58-827E-C9C0-877E-C3FD33D3EDD0}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -72,10 +72,6 @@
 				<File Id="527714309" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Grass03.wav</ShortName>
 					<CachePath>SFX/FootStep_Grass03_818F3B66.wem</CachePath>
-				</File>
-				<File Id="579694935" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>A440.wav</ShortName>
-					<CachePath>SFX/A440_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="586961463" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Transition_FadeIn.wav</ShortName>
@@ -168,12 +164,6 @@
 						<MediaRef Id="98167887"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="631059699" Name="MainMenu_BGM_BGM" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="579694935"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="270981630" Name="MainMenu_BGM_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="918533349" Name="NonCombat_BGM" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -363,7 +353,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{F2CFAE3E-9466-013A-0DF0-147C93389AA6}">
+		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{2E42E7DD-956D-6B59-4FDB-A13F5A1485A6}">
 			<ShortName>MainMenu</ShortName>
 			<Path>MainMenu.bnk</Path>
 			<Media>
@@ -379,8 +369,18 @@
 					<ShortName>Hover01.wav</ShortName>
 					<CachePath>SFX/Hover01_818F3B66.wem</CachePath>
 				</File>
+				<File Id="579694935" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>A440.wav</ShortName>
+					<CachePath>SFX/A440_FBC78EF0.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="631059699" Name="MainMenu_BGM_BGM" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="579694935"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="270981630" Name="MainMenu_BGM_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="162289589" Name="MainMenu_Click_GameStart_SFX" DurationType="OneShot" DurationMin="5.2650824" DurationMax="5.2650824">
 					<MediaRefs>
 						<MediaRef Id="435389909"/>
@@ -629,5 +629,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{49A2203E-484A-11D2-3973-CA53D2F0E866}</FileHash>
+	<FileHash>{BC6F3D6D-F24C-E819-3F73-1013065D89A8}</FileHash>
 </SoundBanksInfo>
