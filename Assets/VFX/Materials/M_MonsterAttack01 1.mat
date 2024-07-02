@@ -75,7 +75,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 1
-    - _BackFaceRender: 0
+    - _BackFaceRender: 1.01
     - _Blend: 0
     - _BurnSize: 0
     - _CastShadows: 0
@@ -110,7 +110,7 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _UV_R_ON_OFF: 1
-    - _UV_R_power: 12.64
+    - _UV_R_power: 5.4
     - _Use_Insub: 0
     - _Use_SecondTex: 1
     - _Width: 0
@@ -130,6 +130,6 @@ Material:
     - _MainTex_Panning: {r: 0, g: 0, b: 0, a: 0}
     - _MainTex_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Second_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Second_Panning: {r: 0.33, g: 0, b: 0, a: 0}
+    - _Second_Panning: {r: 0.2, g: 0, b: 0, a: 0}
     - _Second_Tiling: {r: 0.46, g: -1.01, b: 0, a: 0}
   m_BuildTextureStacks: []
