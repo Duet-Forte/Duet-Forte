@@ -108,7 +108,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         
         for (int skillCommandEnteredIndex = 0; skillCommandEnteredIndex < skillCommandEntered.Length; skillCommandEnteredIndex++) { //
 
-            string comparisonCommands = skillCommandEntered.Substring(skillCommandEnteredIndex,skillCommandEntered.Length-1);
+            string comparisonCommands = skillCommandEntered.Substring(skillCommandEnteredIndex,skillCommandEntered.Length-skillCommandEnteredIndex);
 
             string[] comparisonCommand = new string[skillCommandEntered.Length-skillCommandEnteredIndex];//입력받은 커맨드를 분할해서 비교 
 

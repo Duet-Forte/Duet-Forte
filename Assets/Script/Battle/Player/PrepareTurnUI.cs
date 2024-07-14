@@ -64,10 +64,10 @@ public class PrepareTurnUI : InGameUI
         {
             for (int commandIndex = 0; commandIndex < skillSetCommand[skillSetIndex].Length; commandIndex++)
             {
-                if (skillSetCommand[skillSetIndex][commandIndex].Equals("A"))//나중에 키 바인딩이 완성되면 수정
+                if (skillSetCommand[skillSetIndex][commandIndex]=='A')//나중에 키 바인딩이 완성되면 수정
                 {
                     tmpCommand += "<color=#ff6347>F</color>";
-                } else if (skillSetCommand[skillSetIndex][commandIndex].Equals("B")) { 
+                } else if (skillSetCommand[skillSetIndex][commandIndex]=='B') { 
                     tmpCommand += "<color=#00bfff>J</color>";
                 }
                 else
