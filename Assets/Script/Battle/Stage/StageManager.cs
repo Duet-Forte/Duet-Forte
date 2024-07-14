@@ -14,6 +14,10 @@ public class StageManager : MonoBehaviour
     [SerializeField] private GameObject blackBox;
     [SerializeField] private GameObject sceneTransitionPrefab;
     [SerializeField] private CinemachineVirtualCamera mainCamera;
+    [Space(10f)]
+    [Header("Debug")]
+    [SerializeField] private PlayerSkill[] debugSkills;
+    [Space(10f)]
 
     Metronome metronome;
     private PatternParser parser;
@@ -89,7 +93,7 @@ public class StageManager : MonoBehaviour
     [ContextMenu("DEBUG/SceneStart")]
     private void TestPlay()
     {
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn, new PlayerInfo(3,7));
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn, new PlayerInfo(debugSkills,3,7));
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(false);
     }
