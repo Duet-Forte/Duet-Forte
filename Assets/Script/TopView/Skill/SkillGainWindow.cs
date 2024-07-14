@@ -26,12 +26,12 @@ public class SkillGainWindow : MonoBehaviour
         for (int i = 0; i < skill.SkillCommand.Length; ++i)
         {
             Image temp = Instantiate(commandLetterPrefab, command).GetComponent<Image>();
-            if (skill.SkillCommand[i] == "A")
+            if (skill.SkillCommand[i].Equals("A"))
             {
                 temp.sprite = fSprite;
                 standard++;
             }
-            else if (skill.SkillCommand[i] == "B")
+            else if (skill.SkillCommand[i].Equals("B"))
             {
                 temp.sprite = jSprite;
                 standard--;

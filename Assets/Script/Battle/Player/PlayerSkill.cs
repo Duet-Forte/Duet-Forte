@@ -20,7 +20,7 @@ public class PlayerSkill : ScriptableObject
     //이름, 설명, 대미지, 커맨드, 
     [SerializeField] private string skillName;
     [SerializeField] private string skill_Information;
-    [SerializeField] private string[] skillCommand;//"A" "B" "R"로 이루어짐 (일단은 커맨드는 엇박없이 정박으로만 이루어짐)
+    [SerializeField] private string skillCommand;//"A" "B" "R"로 이루어짐 (일단은 커맨드는 엇박없이 정박으로만 이루어짐)
     [SerializeField] private Sprite skillIcon;
     [SerializeField] private bool isSpacialSkill;
     [SerializeField] private int coolTimeTurn;
@@ -39,17 +39,12 @@ public class PlayerSkill : ScriptableObject
     [SerializeField] string soundEventName;
     public string SkillName { get => skillName; }
     public float[] Damage { get => damage; }
-    public string[] SkillCommand { get => skillCommand; } // 성재 : string을 사용해서 A,B,R 이렇게 사용하는 게 메모리 측면에서 이득을 볼 수 있을 듯 /재욱: 확인확인
+    public string SkillCommand { get => skillCommand; } // 성재 : string을 사용해서 A,B,R 이렇게 사용하는 게 메모리 측면에서 이득을 볼 수 있을 듯 /재욱: 확인확인
     public ParticleSystem SkillParticle { get => skillParticle;  }
     public Sprite SkillIcon { get => skillIcon; }
     public string Information { get => skill_Information; }
     public string SoundEventName { get => soundEventName; }
-
     public int CoolTimeTurn { get => coolTimeTurn; }
-
-    public void PlaySkillSound(GameObject player) {
-        AkSoundEngine.PostEvent(soundEventName,player);
-    }
 
     public Skill GetSkill
     {
