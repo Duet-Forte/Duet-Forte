@@ -22,9 +22,9 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     #endregion
 
     #region 커맨드 관련 자료형
-    List<string> skillCommandEntered=new List<string>();//입력받은 커맨드
-    [SerializeField] List<JudgeName> timingList;           //판정여부
-    [SerializeField] string[] skillCommandEnteredToArray = { "R" };           //skillCommandEntered를 배열로 바꿔 저장할 변수
+    string skillCommandEntered="";                                 //입력받은 커맨드
+    [SerializeField] List<JudgeName> timingList;                   //판정여부
+    [SerializeField] string[] skillCommandEnteredToArray = { "R" };//skillCommandEntered를 배열로 바꿔 저장할 변수
     [SerializeField] ParticleSystem castSkillParticle;
     Queue<string> inputBuffer;
     bool canInputBuffer;
@@ -63,7 +63,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     public void AddCommand(string attackKey) {
         if (attackKey != "R")//베기 혹은 찌르기이면 
         {
-            skillCommandEntered.Add(attackKey);
+            skillCommandEntered+=attackKey;
             Debug.Log("마지막 판정 디버깅 : "+timingList.Last());
             if (attackKey == "A") {
                 battlePresenter.PlayerBasicAttackToEnemy(new Damage(playerAttackStat,timingList.Last(),new SlashDamage())); //battlepresenter에게 대미지 전달
@@ -75,12 +75,12 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             }
             
         }
-        skillCommandEntered.Add(attackKey);
+        skillCommandEntered+=attackKey;
         timingList.Add(JudgeName.Rest);
 
     }
     void AttackEnd() {//공격기회가 끝나면 호출되는 함수
-        skillCommandEntered.Clear();//입력받았던 커맨드키 초기화
+        skillCommandEntered="";//입력받았던 커맨드키 초기화
         Array.Clear(skillCommandEnteredToArray, 0, skillCommandEnteredToArray.Length);//마찬가지로 커맨드 초기화
         timingList.Clear();//판정 초기화
         ClearBuffer();//인풋 버퍼 초기화
@@ -101,22 +101,18 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     }
     
    
-    void CheckSkillCommand() {
+    private void CheckSkillCommand() {
        
         
-        if (skillCommandEnteredToArray != skillCommandEntered.ToArray())
-        {
-            skillCommandEnteredToArray = skillCommandEntered.ToArray();
-        }
+       
         
-        for (int skillCommandEnteredIndex = 0; skillCommandEnteredIndex < skillCommandEnteredToArray.Length; skillCommandEnteredIndex++) {
-            string[] comparisonCommand = new string[skillCommandEnteredToArray.Length-skillCommandEnteredIndex];//입력받은 커맨드를 분할해서 비교
-            Array.Copy(skillCommandEnteredToArray,skillCommandEnteredIndex,comparisonCommand,0,skillCommandEnteredToArray.Length-skillCommandEnteredIndex);//입력받은 전체 커맨드를 오래된 입력부터 끊어가면서 커맨드 검사할 배열 만들기
+        for (int skillCommandEnteredIndex = 0; skillCommandEnteredIndex < skillCommandEntered.Length; skillCommandEnteredIndex++) { //
 
+            string comparisonCommands = skillCommandEntered.Substring(skillCommandEnteredIndex,skillCommandEntered.Length-skillCommandEnteredIndex);
 
             for (int skillSetIndex = 0; skillSetIndex < playerSkillSet.SkillCommand.ToArray().Length; skillSetIndex++)
             {
-                if (Enumerable.SequenceEqual(comparisonCommand, playerSkillSet.SkillCommand[skillSetIndex]))//입력한 커맨드가 스킬셋의 임의의 스킬 커맨드와 같음
+                if ( comparisonCommands==playerSkillSet.SkillCommand[skillSetIndex])//입력한 커맨드가 스킬셋의 임의의 스킬 커맨드와 같음
                 { 
                   //스킬 qte여부 확인 후 처리
                   //스킬이름을 스킬이름팝업에 넘겨주기
@@ -136,13 +132,15 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                 }
             }
         }
+
+        
     }
     IEnumerator SkillCast(PlayerSkill.Skill currentSkill) {
         yield return new WaitForSeconds(0.5f);
 
 
-        currentSkill.PlaySkillSound(currentSkill.soundEventName, gameObject);
-        ParticleSystem tmp = GameObject.Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity);
+        currentSkill.PlaySkillSound(currentSkill.soundEventName, gameObject); //스킬 사운드
+        ParticleSystem tmp =Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity);
         tmp.transform.parent = gameObject.transform;
         tmp.gameObject.transform.localScale = gameObject.transform.localScale;
         

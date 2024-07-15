@@ -7,15 +7,14 @@ public class SkillSet : MonoBehaviour
     
     [SerializeField] private PlayerSkill[] skillSet = new PlayerSkill[4]; //비전투씬에서 준비된 PlayerSkill(Scriptable Object로 만들어짐) 4개를 받아오면 작동됨\
     [SerializeField] private ParticleSystem[] arrayOfSkillParticle = new ParticleSystem[4];
-    [SerializeField] string[][] arrayOfCommand;
     [SerializeField]private string[] arrayOfSkillName= new string[4];
     private PlayerSkill.Skill[] arrayOfSkill=new PlayerSkill.Skill[4];
-    [SerializeField]private List<string[]> skillCommand = new List<string[]>();
+    [SerializeField]private List<string> skillCommand = new List<string>();
     private Sprite[] arrayOfSkillIcon=new Sprite[4];
 
 
     #region 프로퍼티
-    public List<string[]> SkillCommand { get=>skillCommand; private set { skillCommand = value; } }//스트링 배열의 스킬 커맨드
+    public List<string> SkillCommand { get=>skillCommand; private set { skillCommand = value; } }//스트링 배열의 스킬 커맨드
     public string[] ArrayOfSkillName { get => arrayOfSkillName; }
     public PlayerSkill[] playerSkills { get => skillSet; }
     
@@ -48,7 +47,6 @@ public class SkillSet : MonoBehaviour
             if (skillSet[index] != null)
             {
                 skillCommand.Add(skillSet[index].SkillCommand);
-                arrayOfCommand = skillCommand.ToArray();
                 arrayOfSkillName[index] = skillSet[index].SkillName;
                 arrayOfSkillIcon[index] = skillSet[index].SkillIcon;
                 arrayOfSkill[index] = skillSet[index].GetSkill;

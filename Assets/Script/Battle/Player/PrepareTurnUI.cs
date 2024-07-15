@@ -10,7 +10,7 @@ public class PrepareTurnUI : InGameUI
 
     //string[] skillSetName;//스킬셋에서 받아온 스킬 이름
     Sprite[] skillSetIcon;//스킬셋에서 받아온 스킬 아이콘
-    List<string[]> skillSetCommand;//스킬셋에서 받아온 스킬 커맨드
+    List<string> skillSetCommand;//스킬셋에서 받아온 스킬 커맨드
     string[] arrayOfParsedCommand = new string[4];//받아온 스킬 커맨드를 UI에 표기할 스트링으로 작업한 후 담을 변수
     [SerializeField] RectTransform[] arrayOfUITransform;//
     StageManager stageManager;
@@ -64,10 +64,10 @@ public class PrepareTurnUI : InGameUI
         {
             for (int commandIndex = 0; commandIndex < skillSetCommand[skillSetIndex].Length; commandIndex++)
             {
-                if (skillSetCommand[skillSetIndex][commandIndex] == "A")//나중에 키 바인딩이 완성되면 수정
+                if (skillSetCommand[skillSetIndex][commandIndex]=='A')//나중에 키 바인딩이 완성되면 수정
                 {
                     tmpCommand += "<color=#ff6347>F</color>";
-                } else if (skillSetCommand[skillSetIndex][commandIndex] == "B") { 
+                } else if (skillSetCommand[skillSetIndex][commandIndex]=='B') { 
                     tmpCommand += "<color=#00bfff>J</color>";
                 }
                 else

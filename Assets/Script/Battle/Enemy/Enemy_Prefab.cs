@@ -41,6 +41,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     [Header("Sounds")]
     [Space(5f)]
     [SerializeField] private string enemyAttackSoundEvent;
+    [SerializeField] private string enemyHitSoundEvent;
     [SerializeField] private SignalInstrument signalInstrument; //시그널 사운드 고르기
     [Space(10f)]
     #endregion
@@ -367,7 +368,9 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         enemyAnimator.Hurt();
         
         healthPoint -= damage.GetCalculatedDamage();
-        
+
+        //AkSoundEngine.PostEvent(enemyHitSoundEvent, gameObject); //사운드 제작되면 enemyHitSoundEvent 넣기
+
         OnGetDamage?.Invoke(damage);
         if (healthPoint <= 0)
         {

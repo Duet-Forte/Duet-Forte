@@ -349,6 +349,10 @@ MonoBehaviour:
   blackBox: {fileID: 1994674332}
   sceneTransitionPrefab: {fileID: 2935451109651248324, guid: 9b0af4abc5a153044a025fa11f50d8e7, type: 3}
   mainCamera: {fileID: 0}
+  debugSkills:
+  - {fileID: 11400000, guid: b6eb7aee860a77d4a9560991960797c0, type: 2}
+  - {fileID: 11400000, guid: 5b9f0189bbf56ec43a88567bb4972ee0, type: 2}
+  - {fileID: 11400000, guid: 107a4bf86599148468fa9ab75d9bdc72, type: 2}
   attackIcon:
   - {fileID: 0}
   - {fileID: 0}
