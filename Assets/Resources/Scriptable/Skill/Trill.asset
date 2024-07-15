@@ -17,10 +17,7 @@ MonoBehaviour:
     <color=#ff6347>\uB808\uAC00\uD1A0\uD53C\uD574</color>\uB97C \uB450 \uBC88 \uC785\uD78C
     \uB4A4,<br> \uACF5\uACA9\uB825\uC758 160%\uC5D0 \uD574\uB2F9\uD558\uB294<br>
     <color=#00bfff>\uC2A4\uD0C0\uCE74\uD1A0 \uD53C\uD574</color>\uB97C \uC785\uD78C\uB2E4."
-  skillCommand:
-  - A
-  - B
-  - A
+  skillCommand: ABA
   skillIcon: {fileID: 21300000, guid: 4e65967997cfc4c4183c2f328b7fafb1, type: 3}
   isSpacialSkill: 0
   coolTimeTurn: 0

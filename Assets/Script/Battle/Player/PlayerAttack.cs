@@ -110,12 +110,6 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
 
             string comparisonCommands = skillCommandEntered.Substring(skillCommandEnteredIndex,skillCommandEntered.Length-skillCommandEnteredIndex);
 
-            string[] comparisonCommand = new string[skillCommandEntered.Length-skillCommandEnteredIndex];//입력받은 커맨드를 분할해서 비교 
-
-
-            //Array.Copy(skillCommandEntered, skillCommandEnteredIndex,comparisonCommand,0, skillCommandEntered.Length-skillCommandEnteredIndex);//입력받은 전체 커맨드를 오래된 입력부터 끊어가면서 커맨드 검사할 배열 만들기
-
-
             for (int skillSetIndex = 0; skillSetIndex < playerSkillSet.SkillCommand.ToArray().Length; skillSetIndex++)
             {
                 if ( comparisonCommands==playerSkillSet.SkillCommand[skillSetIndex])//입력한 커맨드가 스킬셋의 임의의 스킬 커맨드와 같음
@@ -145,8 +139,8 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         yield return new WaitForSeconds(0.5f);
 
 
-        currentSkill.PlaySkillSound(currentSkill.soundEventName, gameObject);
-        ParticleSystem tmp = GameObject.Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity);
+        currentSkill.PlaySkillSound(currentSkill.soundEventName, gameObject); //스킬 사운드
+        ParticleSystem tmp =Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity);
         tmp.transform.parent = gameObject.transform;
         tmp.gameObject.transform.localScale = gameObject.transform.localScale;
         
