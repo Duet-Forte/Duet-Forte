@@ -46,7 +46,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _BackFaceRender: 0.64
+    - _BackFaceRender: 0
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 0
