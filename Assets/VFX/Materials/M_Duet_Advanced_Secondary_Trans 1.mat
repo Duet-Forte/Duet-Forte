@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Duet_Advanced_Secondary_Trans
+  m_Name: M_Duet_Advanced_Secondary_Trans 1
   m_Shader: {fileID: -6465566751694194690, guid: 1de76cd93aa69b4409bdd1707da0b181, type: 3}
   m_ValidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
