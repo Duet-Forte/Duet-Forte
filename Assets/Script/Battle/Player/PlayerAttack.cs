@@ -140,9 +140,9 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
 
 
         currentSkill.PlaySkillSound(currentSkill.soundEventName, gameObject); //스킬 사운드
-        ParticleSystem tmp =Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity);
-        tmp.transform.parent = gameObject.transform;
-        tmp.gameObject.transform.localScale = gameObject.transform.localScale;
+        ParticleSystem tmp =Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity); //파티클 생성
+        tmp.transform.parent = gameObject.transform;  //파티클 부모지정
+        tmp.gameObject.transform.localScale = gameObject.transform.localScale; //위치 조정
         
         //애니메이션 클립 동적할당
         playerAnimator.Skill(currentSkill.skillClip);
