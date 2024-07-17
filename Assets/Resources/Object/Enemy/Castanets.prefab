@@ -209,8 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackParticle:
-  - {fileID: 1162831315357672158, guid: 8c994869845a69746979d04f19ba9355, type: 3}
-  - {fileID: 2276891050217871009, guid: 8914fe1109e42454aa85bbb94ad23b82, type: 3}
+  - {fileID: 431099028761412644, guid: 1dc7a26616b88594f86cfedfdb3a4fdb, type: 3}
   attackCountDownSignal: {fileID: 0}
   attackSignal: {fileID: 0}
   dashParticle: {fileID: 0}

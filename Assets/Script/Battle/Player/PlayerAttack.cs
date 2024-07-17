@@ -122,7 +122,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                     currentSkill = playerSkillSet.ArrayOfSkill[skillSetIndex];
                     
                     SkillUI(playerSkillSet.ArrayOfSkillIcon[skillSetIndex] , playerSkillSet.ArrayOfSkillName[skillSetIndex]);
-                    castSkillParticle = playerSkillSet.ArrayOfSkillParticle[skillSetIndex];//파티클이지만 PlayerSkill.Skill에 포함됨 삭제 예정
+                    castSkillParticle = playerSkillSet.ArrayOfSkillParticle[skillSetIndex]; //파티클이지만 PlayerSkill.Skill에 포함됨 삭제 예정
                     StartCoroutine(SkillCast(currentSkill));
 
                     isCastSkill = true;
