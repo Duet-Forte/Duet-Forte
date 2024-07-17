@@ -47,7 +47,8 @@ namespace Util
         public enum PlayerAction
         {
             Move,
-            Interact
+            Interact,
+            Skip
         }
 
         public enum Rank

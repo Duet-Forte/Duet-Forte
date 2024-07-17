@@ -26,7 +26,7 @@ public class SkillSetter : ScrollPool
     public void InitSettings()
     {
         BindEvent();
-        InitSettings((DataBase.Instance.Skill.Data.Length / Const.CONTENT_IN_ROW) + 1);
+        InitSettings((DataBase.Skill.Data.Length / Const.CONTENT_IN_ROW) + 1);
         currentMinIndex = 0;
         currentMaxIndex = createStandard - 1;
         for (int i = 0; i < createStandard; ++i)
@@ -68,7 +68,7 @@ public class SkillSetter : ScrollPool
 
     private void IncreaseRowIndex()
     {
-        if (currentMaxIndex > DataBase.Instance.Skill.Data.Length / Const.CONTENT_IN_ROW)
+        if (currentMaxIndex > DataBase.Skill.Data.Length / Const.CONTENT_IN_ROW)
             return;
         currentMaxIndex++;
         currentMinIndex++;

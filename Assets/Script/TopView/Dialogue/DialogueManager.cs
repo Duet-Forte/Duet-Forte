@@ -18,6 +18,7 @@ public class DialogueManager
     private TypewriterByCharacter typewriter;
     private Speaker currentSpeaker;
     private CancellationTokenSource cancel;
+   
     public static DialogueManager Instance
     {
         get
@@ -27,7 +28,7 @@ public class DialogueManager
             return instance;
         }
     }
-    public async UniTask Talk(string speakerName)
+    public async UniTask Talk(string interactorName)
     {
         if (window == null)
         {
@@ -49,8 +50,9 @@ public class DialogueManager
         }
         cancel = new CancellationTokenSource();
         window.SetActive(true);
-        Dialogue dialogue = DataBase.Instance.Dialogue.GetDialogue(speakerName);
-        await WaitKeyInput(dialogue, speakerName);
+        Dialogue dialogue = DataBase.Dialogue.GetDialogue(interactorName);
+        SkipDialogueManually(dialogue, interactorName).Forget();
+        await WaitKeyInput(dialogue, interactorName);
     }
 
     private async UniTask WaitKeyInput(Dialogue dialogue, string interactorName)
@@ -108,9 +110,27 @@ public class DialogueManager
     }
     private bool IsKeyTriggered()
     {
-        return BICSceneManager.Instance.InputController.IsKeyTriggered(PlayerAction.Interact);
+        return GameManager.InputController.IsKeyTriggered(PlayerAction.Interact);
     }
-
+    private bool IsSkipTriggered()
+    {
+        return GameManager.InputController.IsKeyTriggered(PlayerAction.Skip);
+    }
+    private async UniTask SkipDialogueManually(Dialogue dialogue, string interactorName)
+    {
+        await UniTask.WaitUntil(IsSkipTriggered);
+        SkipDialogue();
+        for(int i = 0; i < dialogue.Lines.Length; i++)
+        {
+            DialogueEventHandler dialogueEvent = dialogue.Events[i];
+            if(dialogueEvent == null)
+                continue;
+            if (!(dialogueEvent.isDone || dialogueEvent.isSkippable))
+            {
+                dialogueEvent.PlayEvent(dialogue, interactorName);
+            }
+        }
+    }
     private bool IsTypeEnded()
     {
         return !typewriter.isShowingText;
@@ -118,6 +138,7 @@ public class DialogueManager
     public void SkipDialogue()
     {
         cancel.Cancel();
+        dialogueWindow.EraseContent();
         window.SetActive(false);
     }
 }

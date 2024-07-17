@@ -24,7 +24,7 @@ public class QuestManager
 
     public void CheckQuest(int id)
     {
-        foreach (Quest quest in DataBase.Instance.Player.Quests)
+        foreach (Quest quest in DataBase.Player.Quests)
         {
             if (quest.ID == id)
                 GrantReward(quest);
@@ -33,7 +33,7 @@ public class QuestManager
     public void SetQuest(int id)
     {
         Debug.Log("퀘스트 부여함!");
-        DataBase.Instance.Player.Quests.Add(quests[id]);
+        DataBase.Player.Quests.Add(quests[id]);
     }
     public void GrantReward(Quest quest)
     {
@@ -41,7 +41,7 @@ public class QuestManager
         Debug.Log(quest.gold);
         Debug.Log(quest.experiencePoint);
         Debug.Log(quest.skillId);
-        DataBase.Instance.Player.GetReward(quest);
+        DataBase.Player.GetReward(quest);
     }
 
     public Quest GetQuest(int id) 

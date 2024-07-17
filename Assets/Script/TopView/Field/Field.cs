@@ -60,7 +60,7 @@ public class Field : MonoBehaviour
 
     private void SetCameraSettings()
     {
-        BICSceneManager.Instance.CameraManager.SetCutsceneCamera(cutsceneCamera);
+        GameManager.CameraManager.SetCutsceneCamera(cutsceneCamera);
         cameraPaths = new Dictionary<string, CinemachinePath>();
         cameraColliders = new Dictionary<string, PolygonCollider2D>();
 

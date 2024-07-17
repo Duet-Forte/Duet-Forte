@@ -27,11 +27,11 @@ public class PlayerTracker : MonoBehaviour
     private Tween movement;
     public void RequestPath(bool isFleeing)
     {
-        if (BICSceneManager.Instance.FieldManager.Player == null)
+        if (GameManager.FieldManager.Player == null)
             return;
 
         if (player == null)
-            player = BICSceneManager.Instance.FieldManager.Player.transform;
+            player = GameManager.FieldManager.Player.transform;
 
         if (IsOnNode(player.position))
         {

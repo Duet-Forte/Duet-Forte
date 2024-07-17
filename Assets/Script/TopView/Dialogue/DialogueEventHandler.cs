@@ -5,8 +5,9 @@ using Util;
 
 public class DialogueEventHandler
 {
-    public Type type;
     public DialogueEvent dialogueEvent;
+    public bool isDone;
+    public bool isSkippable { get { if (dialogueEvent is EmotionEvent) return true; else return false;  } }
 
     private static Dictionary<string, Type> typeMappings = new Dictionary<string, Type>
     {
@@ -22,17 +23,25 @@ public class DialogueEventHandler
     {
         string[] parsedData = eventData.Split('/');
 
-        type = typeMappings.TryGetValue(parsedData[0], out var mappedType) ? mappedType : null;
+        Type type = typeMappings.TryGetValue(parsedData[0], out var mappedType) ? mappedType : null;
         if(type != null)
         {
+            isDone = false;
             dialogueEvent = Activator.CreateInstance(type) as DialogueEvent;
             dialogueEvent.InitSettings(parsedData[1]);
         }
     }
 
+    /// <summary>
+    /// 다음 대사창이 자동으로 나오는 여부를 결과값으로 반환.
+    /// </summary>
+    /// <param name="dialogue"></param>
+    /// <param name="interactorName"></param>
+    /// <returns></returns>
     public bool PlayEvent(Dialogue dialogue, string interactorName)
     {
         dialogueEvent.PlayEvent(dialogue, interactorName);
+        isDone = true;
         if (dialogueEvent is SkillEvent)
             return false;
         else
@@ -44,7 +53,7 @@ public class DialogueEventHandler
 public abstract class DialogueEvent
 {
     protected string eventTrigger;
-    public void InitSettings(string eventTrigger) => this.eventTrigger = eventTrigger;
+    public virtual void InitSettings(string eventTrigger) => this.eventTrigger = eventTrigger;
     public abstract void PlayEvent(Dialogue dialogue, string interactorName);
 }
 
@@ -69,12 +78,12 @@ public class EmotionEvent : DialogueEvent
         }
         TopViewEventController controller;
         if (interactorName == "Cutscene")
-            controller = BICSceneManager.Instance.FieldManager.Field.GetCutsceneObject(dialogue.Speaker).GetComponent<TopViewEventController>();
+            controller = GameManager.FieldManager.Field.GetCutsceneObject(dialogue.Speaker).GetComponent<TopViewEventController>();
         else if (dialogue.Speaker == "Zio")
-            controller = BICSceneManager.Instance.FieldManager.Player.GetComponent<TopViewEventController>();
+            controller = GameManager.FieldManager.Player.GetComponent<TopViewEventController>();
         else
         {
-            InteractableObject eventTarget = BICSceneManager.Instance.FieldManager.Field.GetEntity(dialogue.Speaker) as InteractableObject;
+            InteractableObject eventTarget = GameManager.FieldManager.Field.GetEntity(dialogue.Speaker) as InteractableObject;
             controller = eventTarget.Controller;
         }
         controller.InitSettings();
@@ -86,7 +95,7 @@ public class QuestEvent : DialogueEvent
 {
     public override void PlayEvent(Dialogue dialogue, string interactorName)
     {
-        if (!DataBase.Instance.Player.Quests.Contains(QuestManager.Instance.GetQuest(int.Parse(eventTrigger))))
+        if (!DataBase.Player.Quests.Contains(QuestManager.Instance.GetQuest(int.Parse(eventTrigger))))
             QuestManager.Instance.SetQuest(int.Parse(eventTrigger));
     }
 }
@@ -95,7 +104,7 @@ public class SkillEvent : DialogueEvent
 {
     public override void PlayEvent(Dialogue dialogue, string interactorName)
     {
-        DataBase.Instance.Skill.ActivateSkill(int.Parse(eventTrigger));
+        DataBase.Skill.ActivateSkill(int.Parse(eventTrigger));
     }
 }
 
@@ -103,7 +112,7 @@ public class FlowEvent : DialogueEvent
 {
     public override void PlayEvent(Dialogue dialogue, string interactorName)
     {
-        DataBase.Instance.Dialogue.PlusID(interactorName, int.Parse(eventTrigger));
+        DataBase.Dialogue.PlusID(interactorName, int.Parse(eventTrigger));
     }
 }
 
@@ -111,7 +120,7 @@ public class BattleEvent : DialogueEvent
 {
     public override void PlayEvent(Dialogue dialogue, string interactorName)
     {
-        BICSceneManager.Instance.CutsceneManager.PauseDirector();
-        BICSceneManager.Instance.SetBattleScene(eventTrigger);
+        GameManager.CutsceneManager.PauseDirector();
+        GameManager.Instance.SetBattleScene(eventTrigger);
     }
 }

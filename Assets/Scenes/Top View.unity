@@ -212,7 +212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 362427647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1230e3de4a4384e47bcaf966254d3134, type: 3}
+  m_Script: {fileID: 11500000, guid: 5141faa40ec22df47b16ea8446cb0af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneTransitionPrefab: {fileID: 2935451109651248324, guid: 9b0af4abc5a153044a025fa11f50d8e7, type: 3}

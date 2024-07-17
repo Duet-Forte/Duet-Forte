@@ -25,8 +25,8 @@ public class TopViewEnemy : TopViewEntity
         tracker = GetComponent<PlayerTracker>();
         tracker.InitSettings(this);
         boxCollider = GetComponent<BoxCollider2D>();
-        OnFightPlayer -= BICSceneManager.Instance.SetBattleScene;
-        OnFightPlayer += BICSceneManager.Instance.SetBattleScene;
+        OnFightPlayer -= GameManager.Instance.SetBattleScene;
+        OnFightPlayer += GameManager.Instance.SetBattleScene;
     }
 
     public void Die()
@@ -38,7 +38,7 @@ public class TopViewEnemy : TopViewEntity
     {
         if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Player")))
         {
-            BICSceneManager.Instance.Storage.currentBattleEnemy = this;
+            GameManager.Storage.currentBattleEnemy = this;
             OnFightPlayer?.Invoke(name);
         }
     }

@@ -18,11 +18,11 @@ public class DataBase
         }
     }
 
-    public TopViewEntityDataBase Entity { get => topViewEntityDataBase; }
-    public DialogueDataBase Dialogue { get => dialogueDataBase; }
-    public SkillDataBase Skill { get => skillDataBase; }
-    public PlayerData Player { get => playerData;}
-    public StageDataBase Stage { get => stageDataBase; }
+    public static TopViewEntityDataBase Entity { get => Instance.topViewEntityDataBase; }
+    public static DialogueDataBase Dialogue { get => Instance.dialogueDataBase; }
+    public static SkillDataBase Skill { get => Instance.skillDataBase; }
+    public static PlayerData Player { get => Instance.playerData;}
+    public static StageDataBase Stage { get => Instance.stageDataBase; }
     private DataBase()
     {
         topViewEntityDataBase = new TopViewEntityDataBase();

@@ -18,7 +18,7 @@ public class PlayerData
     public void GetReward(Quest quest)
     {
         quests.Remove(quest);
-        DataBase.Instance.Skill.ActivateSkill(quest.skillId);
+        DataBase.Skill.ActivateSkill(quest.skillId);
         gold += quest.gold;
         experiencePoint += quest.experiencePoint;
     }
@@ -29,6 +29,6 @@ public class PlayerData
     }
     public PlayerInfo CreatePlayerInfo()
     {
-        return new PlayerInfo(DataBase.Instance.Skill.Skill, level, experiencePoint);
+        return new PlayerInfo(DataBase.Skill.Skill, level, experiencePoint);
     }
 }

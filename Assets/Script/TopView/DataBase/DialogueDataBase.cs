@@ -41,6 +41,7 @@ public class DialogueDataBase
             return default;
         }
 
+        Debug.Log(id);
         return dialogues[currentFieldId][interactableName][id];
     }
 

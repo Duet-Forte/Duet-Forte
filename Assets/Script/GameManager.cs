@@ -3,27 +3,27 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BICSceneManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject sceneTransitionPrefab;
     [SerializeField] private GameObject loadingImagePrefab;
 
-    private static BICSceneManager instance;
-    public static BICSceneManager Instance { get { return instance; } }
+    private static GameManager instance;
+    public static GameManager Instance { get { return instance; } }
 
     private FieldManager fieldManager;
-    public FieldManager FieldManager { get { return fieldManager; } }
+    public static FieldManager FieldManager { get { return instance.fieldManager; } }
     private CameraManager cameraManager;
-    public CameraManager CameraManager { get { return cameraManager; } }
-    private MusicChanger musicChanger;
-    public MusicChanger MusicChanger { get { return musicChanger; } }
+    public static CameraManager CameraManager { get { return instance.cameraManager; } }
+    private  MusicChanger musicChanger;
+    public static MusicChanger MusicChanger { get { return instance.musicChanger; } }
     private DataStorage dataStorage;
-    public DataStorage Storage { get => dataStorage; }
+    public static DataStorage Storage { get => instance.dataStorage; }
     private CutsceneManager cutsceneManager;
-    public CutsceneManager CutsceneManager { get => cutsceneManager; }
+    public static CutsceneManager CutsceneManager { get => instance.cutsceneManager; }
 
     private InputController inputController;
-    public InputController InputController { get {  return inputController; } }
+    public static InputController InputController { get {  return instance.inputController; } }
 
     private void Awake()
     {
@@ -62,8 +62,8 @@ public class BICSceneManager : MonoBehaviour
     public void SetFieldScene()
     {
         AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);
-        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Rebuilding SampleStage");
-        UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.SceneManager.GetSceneByName("Top View"));
+        SceneManager.UnloadSceneAsync("Rebuilding SampleStage");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Top View"));
         fieldManager.Player.GetComponent<PlayerController>().IsStopped = false;
         FieldManager.Field.gameObject.SetActive(true);
         Storage.currentBattleEnemy.Die();
@@ -73,10 +73,10 @@ public class BICSceneManager : MonoBehaviour
     }
     public void SetFieldScene(PlayerInfo playerInfo = null)
     {
-        DataBase.Instance.Player.SetPlayerInfo(playerInfo);
+        DataBase.Player.SetPlayerInfo(playerInfo);
         AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);
-        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Rebuilding SampleStage");
-        UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.SceneManager.GetSceneByName("Top View"));
+        SceneManager.UnloadSceneAsync("Rebuilding SampleStage");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Top View"));
         FieldManager.Field.gameObject.SetActive(true);
         if(Storage.currentBattleEnemy != null)
         {
@@ -108,14 +108,14 @@ public class BICSceneManager : MonoBehaviour
             go.AddComponent<Metronome>();
         }
 
-        UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.SceneManager.GetSceneByName("Rebuilding SampleStage"));
-        stageManager.StageStart(DataBase.Instance.Stage.GetStage(dataStorage.currentEnemyName) , DataBase.Instance.Player.CreatePlayerInfo());
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Rebuilding SampleStage"));
+        stageManager.StageStart(DataBase.Stage.GetStage(dataStorage.currentEnemyName) , DataBase.Player.CreatePlayerInfo());
     }
 
     private async UniTask LoadBattleScene()
     {
         MusicChanger.StopMusic();
-        AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Rebuilding SampleStage", LoadSceneMode.Additive);
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Rebuilding SampleStage", LoadSceneMode.Additive);
         LoadingImage loadingImage = Instantiate(loadingImagePrefab).GetComponent<LoadingImage>();
         loadingImage.InitSettings();
 

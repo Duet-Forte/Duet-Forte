@@ -78,7 +78,7 @@ public class SkillSaver : MenuSelector
                 minWindowIndex = count;
             }
         }
-        skillIcons[minWindowIndex].sprite = DataBase.Instance.Skill.Data[playerSkillIndex].SkillIcon;
+        skillIcons[minWindowIndex].sprite = DataBase.Skill.Data[playerSkillIndex].SkillIcon;
         skillIcons[minWindowIndex].color = new Color(skillIcons[minWindowIndex].color.r, skillIcons[minWindowIndex].color.g, skillIcons[minWindowIndex].color.b, 1);
         skillsInSlot[minWindowIndex] = playerSkillIndex;
     }
@@ -91,7 +91,7 @@ public class SkillSaver : MenuSelector
             skillCommand.text = string.Empty;
             return;
         }
-        PlayerSkill selectedPlayerSkill = DataBase.Instance.Skill.Data[playerSkillIndex];
+        PlayerSkill selectedPlayerSkill = DataBase.Skill.Data[playerSkillIndex];
         skillDescription.text = selectedPlayerSkill.Information;
         skillCommand.text = selectedPlayerSkill.SkillCommand.ToString();
     }

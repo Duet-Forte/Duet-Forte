@@ -20,7 +20,7 @@ public class FieldManager
     {
         fieldPrefabs = new Dictionary<int, GameObject>();
         BindEvent();
-        DataBase.Instance.Dialogue.ResetLine(0);
+        DataBase.Dialogue.ResetLine(0);
         SetField(0);
     }
     public void SpawnPlayer(Vector2 spawnPoint)
@@ -42,14 +42,14 @@ public class FieldManager
     }
     private void BindEvent()
     {
-        onFieldIDChange -= DataBase.Instance.Dialogue.ResetLine;
-        onFieldIDChange += DataBase.Instance.Dialogue.ResetLine;
+        onFieldIDChange -= DataBase.Dialogue.ResetLine;
+        onFieldIDChange += DataBase.Dialogue.ResetLine;
         onFieldIDChange -= SetField;
         onFieldIDChange += SetField;
-        onPointChange -= BICSceneManager.Instance.CameraManager.ChangeCameraCollider;
-        onPointChange += BICSceneManager.Instance.CameraManager.ChangeCameraCollider;
-        onPointChange -= BICSceneManager.Instance.MusicChanger.SetMusic;
-        onPointChange += BICSceneManager.Instance.MusicChanger.SetMusic;
+        onPointChange -= GameManager.CameraManager.ChangeCameraCollider;
+        onPointChange += GameManager.CameraManager.ChangeCameraCollider;
+        onPointChange -= GameManager.MusicChanger.SetMusic;
+        onPointChange += GameManager.MusicChanger.SetMusic;
     }
 
     private void SetField(int fieldIndex)

@@ -92,7 +92,7 @@ Ludius	0	Zio			Emotion	Dumbfounded
 		Zio	Panic	한 번 가볼게요.			
 					Plus	1	
 					Quest	0	
-	2	Ludius			Emotion	QuestionMark	
+	1	Ludius			Emotion	QuestionMark	
 		Ludius	Default	뭐야, 볼 일 있어?<br>거봐, 숲 근처도 못갔지?			
 Zio	0	Zio			Emotion	QuestionMark	
 		Zio	Default	(저 아저씨는 뭐하는 사람이지..?)			
