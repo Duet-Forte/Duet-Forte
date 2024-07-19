@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEditor.ShaderGraph.Internal;
 public class DefenseQTE : MonoBehaviour
 {
     float secondPerBeat;
     GameObject outCircle;
     Vector3 outCircleScale = new Vector3(7, 7, 7);
     
-    public void InitSetting(float spb) {
-        this.secondPerBeat = spb;
+    public void InitSetting(double spb) {
+        this.secondPerBeat = (float)spb;
         outCircle = transform.GetChild(1).gameObject;
         
         

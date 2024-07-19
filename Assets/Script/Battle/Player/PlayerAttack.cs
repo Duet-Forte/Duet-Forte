@@ -229,12 +229,13 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             if (Input.GetKeyDown(KeyCode.F))
             {  //나중에 PlayerInput 클래스에서 가져온 변수로 쓸 예정
 
-                
+                Debug.Log("PlayerAttack클래스에서 공격 입력됨. ");
                 EnqueueAttackBuffer("A");
                 canAttack = false;
             }
             else if (Input.GetKeyDown(KeyCode.J))
             {
+                Debug.Log("PlayerAttack클래스에서 공격 입력됨. ");
                 EnqueueAttackBuffer("B");
                 canAttack = false;
             }
