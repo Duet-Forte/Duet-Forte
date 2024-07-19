@@ -488,7 +488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 209389086}
   - component: {fileID: 209389085}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background_Stage01_GrassField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
