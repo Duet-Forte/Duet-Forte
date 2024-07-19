@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_BurnShader_mat 1
+  m_Name: Shader Graphs_BurnShader_mat 5
   m_Shader: {fileID: -6465566751694194690, guid: 2f72f87139a9aee46a2c153cb9aaae0a, type: 3}
   m_ValidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
@@ -58,24 +58,24 @@ Material:
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
-    - _Dissolve: 0.346
-    - _DistortionStrength: 0
+    - _Dissolve: 0.186
+    - _DistortionStrength: 0.05
     - _DstBlend: 10
-    - _NoiseOffset_X: 0.45
-    - _NoiseScale: 2.9
-    - _NoiseScale_distortion: 17.6
+    - _NoiseOffset_X: 0.367
+    - _NoiseScale: 0.2
+    - _NoiseScale_distortion: 15.94
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ScrollSpeed: -0.5
+    - _ScrollSpeed: -0.66
     - _SrcBlend: 5
     - _Surface: 1
     - _Tiling_x: 1
     - _Tiling_y: 1
-    - _TwirlStrength: 3.3
+    - _TwirlStrength: 4.85
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 0.5, g: 0, b: 1, a: 0.5882353}
+    - _Color: {r: 0, g: 0.07262373, b: 0.3207547, a: 0.5254902}
     - _Tiling_x_y: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
