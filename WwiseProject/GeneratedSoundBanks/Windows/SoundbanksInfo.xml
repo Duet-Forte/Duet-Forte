@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{5ECEFB58-827E-C9C0-877E-C3FD33D3EDD0}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{0160A03C-8544-40F0-DE6F-2260ECBBBC3F}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -23,11 +23,11 @@
 				</File>
 				<File Id="48994660" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Door.wav</ShortName>
-					<CachePath>SFX/Door_AE50D5A0.wem</CachePath>
+					<CachePath>SFX/Door_BEBAF347.wem</CachePath>
 				</File>
 				<File Id="57689545" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ob_Fire_Fire.wav</ShortName>
-					<CachePath>SFX/Ob_Fire_Fire_818F3B66.wem</CachePath>
+					<CachePath>SFX/Ob_Fire_Fire_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="98167887" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Character_Emotion_QuestionMark_SFX.wav</ShortName>
@@ -135,7 +135,7 @@
 				</File>
 				<File Id="1014191835" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ob_Fire_Ignition.wav</ShortName>
-					<CachePath>SFX/Ob_Fire_Ignition_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Ob_Fire_Ignition_818F3B66.wem</CachePath>
 				</File>
 				<File Id="1039083357" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootStep_Dirt03.wav</ShortName>
@@ -186,17 +186,17 @@
 						<MediaRef Id="618461013"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="4145632761" Name="Ob_Door_SFX" DurationType="OneShot" DurationMin="0.8155387" DurationMax="0.8155387">
+				<Event Id="4145632761" Name="Ob_Door_SFX" DurationType="OneShot" DurationMin="0.59220755" DurationMax="0.59220755">
 					<MediaRefs>
 						<MediaRef Id="48994660"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3989126589" Name="Ob_Fire_Fire_Amb" DurationType="OneShot" DurationMin="80.00002" DurationMax="80.00002">
+				<Event Id="3989126589" Name="Ob_Fire_Fire_Amb" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="57689545"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="198066997" Name="Ob_Fire_Ignition_SFX" DurationType="Infinite">
+				<Event Id="198066997" Name="Ob_Fire_Ignition_SFX" DurationType="OneShot" DurationMin="0.5395" DurationMax="0.5395">
 					<MediaRefs>
 						<MediaRef Id="1014191835"/>
 					</MediaRefs>
@@ -286,7 +286,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{27F411C9-F765-B275-81F2-AC146B8759AB}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{D2663EB0-E1E5-C6DA-266A-F0DE59F202F6}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -353,7 +353,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{2E42E7DD-956D-6B59-4FDB-A13F5A1485A6}">
+		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{66D3C398-9338-B973-366C-BDE1CDCD6B6A}">
 			<ShortName>MainMenu</ShortName>
 			<Path>MainMenu.bnk</Path>
 			<Media>
@@ -398,7 +398,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{66EE169A-2007-1301-3F9C-751EDF340EC5}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{71F67E77-D2DD-67EF-F8AE-C51723847ED4}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -409,10 +409,6 @@
 				<File Id="133336124" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Attack_B_SFX.wav</ShortName>
 					<CachePath>SFX/Tambourine_Attack_B_SFX_818F3B66.wem</CachePath>
-				</File>
-				<File Id="139163244" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Clear_Loop.wav</ShortName>
-					<CachePath>SFX/Clear_Loop_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="167940839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Skill_BBB02.wav</ShortName>
@@ -426,6 +422,10 @@
 					<ShortName>Tambourine_Signal.wav</ShortName>
 					<CachePath>SFX/Tambourine_Signal_818F3B66.wem</CachePath>
 				</File>
+				<File Id="257293744" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear_SFX_Loop.wav</ShortName>
+					<CachePath>SFX/Clear_SFX_Loop_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="270105021" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Transition_FadeOut.wav</ShortName>
 					<CachePath>SFX/Transition_FadeOut_818F3B66.wem</CachePath>
@@ -438,9 +438,17 @@
 					<ShortName>Skill_AAA02.wav</ShortName>
 					<CachePath>SFX/Skill_AAA02_818F3B66.wem</CachePath>
 				</File>
+				<File Id="386007338" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tambourine_Hit.wav</ShortName>
+					<CachePath>SFX/Tambourine_Hit_818F3B66.wem</CachePath>
+				</File>
 				<File Id="390818071" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Attack_A_SFX.wav</ShortName>
 					<CachePath>SFX/Tambourine_Attack_A_SFX_818F3B66.wem</CachePath>
+				</File>
+				<File Id="406318544" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Gio_Attack_A_SFX.wav</ShortName>
+					<CachePath>SFX/Gio_Attack_A_SFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="481124707" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>0502_Loop.wav</ShortName>
@@ -457,14 +465,6 @@
 				<File Id="519697605" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_공격신호_01.wav</ShortName>
 					<CachePath>SFX/SFX_공격신호_01_1246C0D0.wem</CachePath>
-				</File>
-				<File Id="602281588" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>세로베기.wav</ShortName>
-					<CachePath>SFX/세로베기_9ECBE823.wem</CachePath>
-				</File>
-				<File Id="691916430" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Clear_SFX.wav</ShortName>
-					<CachePath>SFX/Clear_SFX_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
@@ -498,13 +498,17 @@
 					<ShortName>Climax.wav</ShortName>
 					<CachePath>SFX/Climax_123FF819.wem</CachePath>
 				</File>
-				<File Id="1010775400" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>찌르기.wav</ShortName>
-					<CachePath>SFX/찌르기_C769B134.wem</CachePath>
+				<File Id="1008217924" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Gio_Attack_B_SFX.wav</ShortName>
+					<CachePath>SFX/Gio_Attack_B_SFX_4A1FE31A.wem</CachePath>
 				</File>
 				<File Id="1026749207" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>02.wav</ShortName>
 					<CachePath>SFX/02_A56704D4.wem</CachePath>
+				</File>
+				<File Id="1071832350" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear_SFX_02.wav</ShortName>
+					<CachePath>SFX/Clear_SFX_02_FBC78EF0.wem</CachePath>
 				</File>
 			</Media>
 			<Plugins>
@@ -519,8 +523,8 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="344719509" Id="1119828183"/>
 							<MediaRefs>
-								<MediaRef Id="139163244"/>
-								<MediaRef Id="691916430"/>
+								<MediaRef Id="257293744"/>
+								<MediaRef Id="1071832350"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -561,6 +565,11 @@
 						<MediaRef Id="191541219"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2995577544" Name="Enemy_Tambourine_Hit_SFX" DurationType="OneShot" DurationMin="1.2351012" DurationMax="1.5561299">
+					<MediaRefs>
+						<MediaRef Id="386007338"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="837159709" Name="Enemy_Timmy_Attack_SFX" DurationType="OneShot" DurationMin="0.7638958" DurationMax="0.7638958">
 					<MediaRefs>
 						<MediaRef Id="12610899"/>
@@ -570,14 +579,14 @@
 						<MediaRef Id="961845890"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3452252061" Name="Player_Attack_A_SFX" DurationType="OneShot" DurationMin="0.40254888" DurationMax="0.47266912">
+				<Event Id="3452252061" Name="Player_Attack_A_SFX" DurationType="OneShot" DurationMin="0.56156313" DurationMax="0.6678149">
 					<MediaRefs>
-						<MediaRef Id="602281588"/>
+						<MediaRef Id="406318544"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1532296734" Name="Player_Attack_B_SFX" DurationType="OneShot" DurationMin="0.5168674" DurationMax="0.5892831">
+				<Event Id="1532296734" Name="Player_Attack_B_SFX" DurationType="OneShot" DurationMin="0.4193771" DurationMax="0.528382">
 					<MediaRefs>
-						<MediaRef Id="1010775400"/>
+						<MediaRef Id="1008217924"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1248207521" Name="Player_Attack_StrongSignal_SFX" DurationType="OneShot" DurationMin="0.55774015" DurationMax="0.55774015">
@@ -629,5 +638,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D32F17B5-E46A-86BD-812A-1AF7E418E0C0}</FileHash>
+	<FileHash>{51B1D0DF-C9CD-6B29-4700-A291F45A87A4}</FileHash>
 </SoundBanksInfo>

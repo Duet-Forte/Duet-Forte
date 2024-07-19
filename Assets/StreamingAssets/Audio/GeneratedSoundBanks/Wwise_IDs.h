@@ -22,6 +22,7 @@ namespace AK
         static const AkUniqueID ENEMY_ELECGUITAR_ATTACK_SIGNAL_SFX = 3211681449U;
         static const AkUniqueID ENEMY_TAMBOURINE_ATTACK_SFX = 2328612313U;
         static const AkUniqueID ENEMY_TAMBOURINE_ATTACK_SIGNAL_SFX = 909052356U;
+        static const AkUniqueID ENEMY_TAMBOURINE_HIT_SFX = 2995577544U;
         static const AkUniqueID ENEMY_TIMMY_ATTACK_SFX = 837159709U;
         static const AkUniqueID MAINMENU_BGM_BGM = 631059699U;
         static const AkUniqueID MAINMENU_BGM_BGM_STOP = 270981630U;
