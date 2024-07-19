@@ -312,6 +312,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 37801406cca15104ba88e66b9dbb9a02, type: 2}
     - {fileID: 11400000, guid: 762dea4dc3cbceb49aa70bdcb903fc41, type: 2}
     - {fileID: 11400000, guid: 10a222a0d4fe7bd47b6a71bd9bad3fa2, type: 2}
+    - {fileID: 11400000, guid: d9e16cfa46f41fe46909f2d880aa175e, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -359,7 +360,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 362427654}
           m_TargetAssemblyTypeName: CutsceneManager, Assembly-CSharp
-          m_MethodName: Loop
+          m_MethodName: LoopEndPoint
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -425,6 +426,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 362427654}
+          m_TargetAssemblyTypeName: CutsceneManager, Assembly-CSharp
+          m_MethodName: LoopStartPoint
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &362427654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +455,12 @@ MonoBehaviour:
   cutscenes:
   - {fileID: 11400000, guid: 8a6980645c67d1346aa628fd1b1cf62c, type: 2}
   fadeOutPanel: {fileID: 511660987}
+  dialogueSkipIndex: 06000000
+  cutsceneSkipTime:
+  - 26.7
+  - 28.5
+  cutsceneSkipSound:
+  - Town
 --- !u!114 &362427655
 MonoBehaviour:
   m_ObjectHideFlags: 0

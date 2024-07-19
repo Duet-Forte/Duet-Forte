@@ -51,10 +51,23 @@ public class DialogueManager
         cancel = new CancellationTokenSource();
         window.SetActive(true);
         Dialogue dialogue = DataBase.Dialogue.GetDialogue(interactorName);
-        SkipDialogueManually(dialogue, interactorName).Forget();
+        SkipDialogue(dialogue, interactorName).Forget();
         await WaitKeyInput(dialogue, interactorName);
     }
 
+    public void SkipEvent(Dialogue dialogue, string interactorName)
+    {
+        for (int i = 0; i < dialogue.Lines.Length; i++)
+        {
+            DialogueEventHandler dialogueEvent = dialogue.Events[i];
+            if (dialogueEvent == null)
+                continue;
+            if (!(dialogueEvent.isDone || dialogueEvent.isSkippable))
+            {
+                dialogueEvent.PlayEvent(dialogue, interactorName);
+            }
+        }
+    }
     private async UniTask WaitKeyInput(Dialogue dialogue, string interactorName)
     {
         for (int i = 0; i < dialogue.Lines.Length; i++)
@@ -116,26 +129,19 @@ public class DialogueManager
     {
         return GameManager.InputController.IsKeyTriggered(PlayerAction.Skip);
     }
-    private async UniTask SkipDialogueManually(Dialogue dialogue, string interactorName)
+    private async UniTask SkipDialogue(Dialogue dialogue, string interactorName)
     {
+        if (GameManager.CutsceneManager.isPlaying)
+            return;
         await UniTask.WaitUntil(IsSkipTriggered);
-        SkipDialogue();
-        for(int i = 0; i < dialogue.Lines.Length; i++)
-        {
-            DialogueEventHandler dialogueEvent = dialogue.Events[i];
-            if(dialogueEvent == null)
-                continue;
-            if (!(dialogueEvent.isDone || dialogueEvent.isSkippable))
-            {
-                dialogueEvent.PlayEvent(dialogue, interactorName);
-            }
-        }
+        EndDialogue();
+        SkipEvent(dialogue, interactorName);
     }
     private bool IsTypeEnded()
     {
         return !typewriter.isShowingText;
     }
-    public void SkipDialogue()
+    public void EndDialogue()
     {
         cancel.Cancel();
         dialogueWindow.EraseContent();

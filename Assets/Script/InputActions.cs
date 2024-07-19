@@ -46,7 +46,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Skip"",
+                    ""name"": ""SkipEvent"",
                     ""type"": ""Button"",
                     ""id"": ""c6dadc46-2ab2-4548-a84e-3e7bb0f248e0"",
                     ""expectedControlType"": ""Button"",
@@ -206,7 +206,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": ""Hold(duration=1)"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Skip"",
+                    ""action"": ""SkipEvent"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -796,7 +796,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_Skip = m_Player.FindAction("Skip", throwIfNotFound: true);
+        m_Player_Skip = m_Player.FindAction("SkipEvent", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);

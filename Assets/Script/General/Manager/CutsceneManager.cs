@@ -6,20 +6,25 @@ using UnityEngine.Timeline;
 using UnityEngine.UI;
 using System;
 using Cysharp.Threading.Tasks;
+using UnityEngine.InputSystem;
+using System.Collections;
 
 public class CutsceneManager : MonoBehaviour
 {
     private GameObject cutscenePlayer;
     private PlayableDirector director;
     private int currentCutsceneID;
-    private bool isReachedLoopEndPoint;
     private bool isTalking;
     private double loopStartTime;
     private bool isCutscenePlaying;
     [SerializeField] private PlayableAsset[] cutscenes;
     [SerializeField] private Image fadeOutPanel;
+    [SerializeField] private int[] dialogueSkipIndex;
+    [SerializeField] private double[] cutsceneSkipTime;
+    [SerializeField] private string[] cutsceneSkipSound;
+    private int skipIndex;
     private Dictionary<string, PlayableAsset> cutsceneDictionary;
-
+    public bool isPlaying { get => isCutscenePlaying; }
     public void InitSettings()
     {
         director = GetComponent<PlayableDirector>();
@@ -37,7 +42,7 @@ public class CutsceneManager : MonoBehaviour
         BindCutscene(director, "Timmy", timmy);
         BindCutscene(director, "Camera", GameManager.FieldManager.Field.CutsceneCam.gameObject);
         GameManager.FieldManager.Field.SetCameraPath("Tutorial");
-        isReachedLoopEndPoint = false;
+        GameManager.InputController.BindPlayerInputAction(Util.CustomEnum.PlayerAction.Skip, SkipCutscene);
         director.Play();
     }
     public void StartCutscene(string cutsceneName)
@@ -47,6 +52,8 @@ public class CutsceneManager : MonoBehaviour
     }
     public async void Talk()
     {
+        Debug.Log("¸» ½ÃÀÛ");
+        Debug.Log(director.time);
         isTalking = true;
         await DialogueManager.Instance.Talk("Cutscene");
         DataBase.Dialogue.SetID("Cutscene", ++currentCutsceneID);
@@ -65,25 +72,23 @@ public class CutsceneManager : MonoBehaviour
         isCutscenePlaying = false;
         GameManager.Storage.isCutscenePlaying = false;
         director.Stop();
-        DialogueManager.Instance.SkipDialogue();
+        DialogueManager.Instance.EndDialogue();
         GameManager.FieldManager.Field.DisableCutsceneObjects();
         });
     }
 
-    public void Loop()
+    public void LoopStartPoint()
     {
-        if (!isTalking)
+        if(isTalking)
+            loopStartTime = director.time;
+    }
+    public void LoopEndPoint()
+    {
+        if (isTalking)
         {
-            isReachedLoopEndPoint = false;
+            director.time = loopStartTime;
             return;
         }
-
-        if (isReachedLoopEndPoint && director.time != loopStartTime)
-            director.time = loopStartTime;
-        else
-            loopStartTime = director.time;
-
-        isReachedLoopEndPoint = true;
     }
     public void FadeIn(float time)
     {
@@ -137,7 +142,7 @@ public class CutsceneManager : MonoBehaviour
     public virtual void BindCutscene(PlayableDirector director, string trackGroupName, GameObject bindObject)
     {
         var timeline = director.playableAsset as TimelineAsset;
-        foreach (GroupTrack groupTrack in timeline.GetRootTracks())
+        foreach (var groupTrack in timeline.GetRootTracks())
         {
             if (groupTrack.name != trackGroupName)
                 continue;
@@ -161,5 +166,45 @@ public class CutsceneManager : MonoBehaviour
     public void PlaySound(string name)
     {
         GameManager.MusicChanger.SetMusic(name);
+    }
+
+    private void SkipCutscene(InputAction.CallbackContext context)
+    {
+        if (skipIndex >= cutsceneSkipTime.Length)
+            return;
+        isTalking = false;
+        director.Pause();
+        DialogueManager.Instance.EndDialogue();
+        if(cutsceneSkipTime.Length > skipIndex)
+            director.time = cutsceneSkipTime[skipIndex];
+        if (dialogueSkipIndex.Length > skipIndex)
+        {
+            DataBase.Dialogue.SetID("Cutscene", dialogueSkipIndex[skipIndex]);
+            currentCutsceneID = dialogueSkipIndex[skipIndex] + 1;
+        }
+        if (cutsceneSkipSound.Length > skipIndex)
+            PlaySound(cutsceneSkipSound[skipIndex]);
+        if(skipIndex == cutsceneSkipTime.Length - 1)
+        {
+            director.Evaluate();
+            director.Play();
+            DialogueManager.Instance.SkipEvent(DataBase.Dialogue.GetDialogue("Cutscene"), "Cutscene");
+            DataBase.Dialogue.SetID("Cutscene", currentCutsceneID);
+        }
+        else
+        {
+            FadeIn(0.5f, () => { AfterSkipFadeInFinish().Forget(); });
+        }
+        skipIndex++;
+    }
+
+    private async UniTask AfterSkipFadeInFinish()
+    {
+        director.Evaluate();
+        await UniTask.WaitForSeconds(1);
+        director.Play();
+        DialogueManager.Instance.SkipEvent(DataBase.Dialogue.GetDialogue("Cutscene"), "Cutscene");
+        DataBase.Dialogue.SetID("Cutscene", currentCutsceneID);
+        FadeOut(0.5f);
     }
 }
