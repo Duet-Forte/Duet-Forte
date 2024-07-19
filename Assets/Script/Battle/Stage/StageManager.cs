@@ -55,7 +55,7 @@ public class StageManager : MonoBehaviour
     private PlayerTurn playerTurn; //추후 플레이어 턴 완료되면 그 때 변경
     private GuardCounterTurn guardCounterTurn;
 
-    private float secondsPerBeat;
+    private double secondsPerBeat;
     private bool isStageOver;
     private ITurnHandler[] turnHandler;
     private Turn currentTurn;
@@ -66,7 +66,7 @@ public class StageManager : MonoBehaviour
     public event Action OnTurnStart;
 
     #region 프로퍼티
-    public float SecondsPerBeat { get { return secondsPerBeat; } }
+    public double SecondsPerBeat { get { return secondsPerBeat; } }
     public IEnemy Enemy { get { return enemy; } }
     public JudgeManager JudgeManager { get { return judgeManager; } }
     public Turn CurrentTurn { set { currentTurn = value; Debug.Log("여기서 " + currentTurn + " 으로 바뀜"); } }

@@ -9,6 +9,7 @@ using Util;
 
 public class DamageUI : MonoBehaviour
 {
+    [SerializeField] private Image[] effectAndJudges = new Image[2];
     private Image[] image=new Image[11];
     private Queue<Sprite> BlueDamagequeue;
     private Queue<Sprite> RedDamagequeue;
@@ -144,8 +145,41 @@ public class DamageUI : MonoBehaviour
 
     public void MoveUI()
     {
-        canvasRectTransform.DOMoveY(YMAX, Const.DAMAGEUI_FADE_SPEED)
-            .SetEase(Ease.InBounce)
+        FadeSwitch(true);
+        FadeSwitch(false);
+        
+        float randomX=Random.Range(0f, 1f);
+        float randomY=Random.Range(0f, 1f);
+
+        canvasRectTransform.DOMove(new Vector2(gameObject.transform.position.x+8f,gameObject.transform.position.y+4f), Const.DAMAGEUI_FADE_SPEED)
+            .SetEase(Ease.Linear)
             .OnComplete(() => pool.Release(this));
+    }
+
+
+    private void FadeSwitch(bool onOff) {
+        if (onOff) {
+            foreach (Image i in effectAndJudges)
+            {
+                i.color = new Color(1, 1, 1, 1);
+            }
+            foreach (Image i in image)
+            {
+                i.color = new Color(1, 1, 1, 1);
+            }
+
+        }
+        if (!onOff) {
+            foreach (Image i in effectAndJudges)
+            {
+                i.DOFade(0f, Const.DAMAGEUI_FADE_SPEED);
+            }
+            foreach (Image i in image)
+            {
+                i.DOFade(0f, Const.DAMAGEUI_FADE_SPEED);
+            }
+
+        }
+    
     }
 }

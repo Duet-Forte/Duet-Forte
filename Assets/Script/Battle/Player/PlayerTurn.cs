@@ -127,12 +127,12 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
     }
     void DashToHalf() {
         playerAnimator.Particle_DashDust();
-        transform.DOMove(middlePos, stageManager.SecondsPerBeat).SetEase(Ease.OutQuart).OnComplete(() => DashToDestination());
+        transform.DOMove(middlePos, (float)stageManager.SecondsPerBeat).SetEase(Ease.OutQuart).OnComplete(() => DashToDestination());
         Metronome.instance.OnBeating -= DashToHalf;
     }
     void DashToDestination() {
         playerAnimator.Particle_DashDust();
-        transform.DOMove(new Vector3(battlePos.x + positionOffset, battlePos.y), stageManager.SecondsPerBeat).SetEase(Ease.OutQuart); //ActionStartTurn에서 호출될 때는 actionCase증가시키는거 빼야함..OnComplete(() => ActionSwitch(++actionCase)
+        transform.DOMove(new Vector3(battlePos.x + positionOffset, battlePos.y), (float)stageManager.SecondsPerBeat).SetEase(Ease.OutQuart); //ActionStartTurn에서 호출될 때는 actionCase증가시키는거 빼야함..OnComplete(() => ActionSwitch(++actionCase)
         Debug.Log("이동하려는 battlePos : "+battlePos);
         isMoveDone = true;
     }

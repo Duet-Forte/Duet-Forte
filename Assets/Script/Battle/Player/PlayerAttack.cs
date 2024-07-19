@@ -122,7 +122,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                     currentSkill = playerSkillSet.ArrayOfSkill[skillSetIndex];
                     
                     SkillUI(playerSkillSet.ArrayOfSkillIcon[skillSetIndex] , playerSkillSet.ArrayOfSkillName[skillSetIndex]);
-                    castSkillParticle = playerSkillSet.ArrayOfSkillParticle[skillSetIndex];//파티클이지만 PlayerSkill.Skill에 포함됨 삭제 예정
+                    castSkillParticle = playerSkillSet.ArrayOfSkillParticle[skillSetIndex]; //파티클이지만 PlayerSkill.Skill에 포함됨 삭제 예정
                     StartCoroutine(SkillCast(currentSkill));
 
                     isCastSkill = true;
@@ -140,9 +140,9 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
 
 
         currentSkill.PlaySkillSound(currentSkill.soundEventName, gameObject); //스킬 사운드
-        ParticleSystem tmp =Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity);
-        tmp.transform.parent = gameObject.transform;
-        tmp.gameObject.transform.localScale = gameObject.transform.localScale;
+        ParticleSystem tmp =Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity); //파티클 생성
+        tmp.transform.parent = gameObject.transform;  //파티클 부모지정
+        tmp.gameObject.transform.localScale = gameObject.transform.localScale; //위치 조정
         
         //애니메이션 클립 동적할당
         playerAnimator.Skill(currentSkill.skillClip);
@@ -229,12 +229,13 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             if (Input.GetKeyDown(KeyCode.F))
             {  //나중에 PlayerInput 클래스에서 가져온 변수로 쓸 예정
 
-                
+                Debug.Log("PlayerAttack클래스에서 공격 입력됨. ");
                 EnqueueAttackBuffer("A");
                 canAttack = false;
             }
             else if (Input.GetKeyDown(KeyCode.J))
             {
+                Debug.Log("PlayerAttack클래스에서 공격 입력됨. ");
                 EnqueueAttackBuffer("B");
                 canAttack = false;
             }

@@ -47,7 +47,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     #endregion
     
     
-    private float attackDelay;
+    private double attackDelay;
     private double timeOffset;
     private int currentNoteIndex;
 
@@ -139,16 +139,16 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         Metronome.instance.OnBeating += StartDisplay;
 
         yield return new WaitUntil(()=> isSignalEnd);
-        Debug.Log($"{attackDelay}초 이후 시작");
         //yield return WaitForTargetedTime(attackDelay);
     }
 
-    private void StartDisplay() {
+    private void StartDisplay() { 
+        Metronome.instance.OnBeating -= StartDisplay;
         StartCoroutine(DisplayPatternSignal());
     }
 
     IEnumerator DisplayPatternSignal() {
-        Metronome.instance.OnBeating -= StartDisplay;
+       
         enemyAnimator.ReadyToPatternSignal();
         for (int i = 0; i < patternLength; ++i)
         {
@@ -167,7 +167,9 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
 
     public IEnumerator Attack()//수리필요
     {
-
+        //debug
+        double tmp=0;
+        double tmp2 = 0;
         playerInter.PlayerAnimator.Guard();//체인지 세트 72
 
         double patternStartTime = Time.time;
@@ -178,9 +180,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
             stageManager.JudgeManager.EarlyCount = 0;
             isNoteChecked[i] = false;
             sumOfTime += targetTimes[i];
-            judgeStartTime = patternStartTime + sumOfTime - targetTimes[i] * Const.BAD_JUDGE;//박자의 중간지점
-            judgeEndTime = judgeStartTime + targetTimes[i] * 2 * Const.BAD_JUDGE;
-            
+            judgeStartTime = patternStartTime + sumOfTime - (stageManager.SecondsPerBeat * 0.5d);//타겟타임의 절반전에 판단 시작
+            judgeEndTime = judgeStartTime + stageManager.SecondsPerBeat * 0.75d;//타겟타임의 25퍼센트 후에 판단 끝
             while (judgeEndTime >= Time.time)
             {
                 OnFramePass?.Invoke();
@@ -193,24 +194,18 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
                 yield return null;
             }
             if (!isNoteChecked[i])//패링 못했을 때
-            {
+            {    
                 GiveDamage(new Judge(JudgeName.Miss));
                 AkSoundEngine.PostEvent(enemyAttackSoundEvent, gameObject);
                 enemyAnimator.Attack();
-                Debug.Log($"{judgeEndTime}에 판정 종료");
             }
-            
+            tmp = judgeEndTime;
+            tmp2= targetTimes[i]*0.5d;
         }
         while (judgeEndTime >= Time.time)
         {
             yield return null; // 끝나는 시간을 항상 같게 하기 위해.
         }
-
-        if (isEnteringGuardCounterPhase) // 가드카운터 턴으로 이사
-        {
-            //yield return EnterGuardCounterPhase();
-        }
-        
         yield return WaitForTargetedTime(attackDelay);
 
         #region 
@@ -240,12 +235,12 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     }
     void DashToHalf()
     {
-        transform.DOMove(middlePos, stageManager.SecondsPerBeat).SetEase(Ease.OutQuart).OnComplete(() => DashToDestination());
+        transform.DOMove(middlePos, (float)stageManager.SecondsPerBeat).SetEase(Ease.OutQuart).OnComplete(() => DashToDestination());
         Metronome.instance.OnBeating -= DashToHalf;
     }
     void DashToDestination()
     {
-        transform.DOMove(new Vector3(battlePos.x + positionOffset, battlePos.y), stageManager.SecondsPerBeat).SetEase(Ease.OutQuart);
+        transform.DOMove(new Vector3(battlePos.x + positionOffset, battlePos.y), (float)stageManager.SecondsPerBeat).SetEase(Ease.OutQuart);
         isMoveDone = true;
 
     }
@@ -276,7 +271,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         attackIcon = currentStageManager.attackIcon;
         defenseIcon = currentStageManager.defenseIcon;
         battlePresenter = stageManager.BattlePresenter;
-        float sPB = stageManager.SecondsPerBeat;
+        double sPB = stageManager.SecondsPerBeat;
         defenseQTE = stageManager.DefenseQTE;
         defenseQTE.InitSetting(sPB);
         battlePos = stageManager.BattlePos;             //플레이어 위치
@@ -355,7 +350,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         
     }
     
-    public void GetDamage(Damage damage)// getdamage 메서드 자체를 이사시켜야될 듯
+    public void GetDamage(Damage damage)// 피격 전용 클래스를 만들어야 되나...
     {
 
         if (healthPoint == 0) { return; }

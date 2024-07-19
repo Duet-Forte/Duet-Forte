@@ -10,7 +10,7 @@ namespace Util
         #endregion
 
         #region ����
-        public const float MINUTE_TO_SECOND = 60f;
+        public const double MINUTE_TO_SECOND = 60d;
         public const int QUARTER_NOTE = 4;
         public const float BAD_JUDGE = 0.5f;
         public const float GOOD_JUDGE = 0.4f;
@@ -70,7 +70,7 @@ namespace Util
         public const float STATUSUI_FADE_SPEED = 1f;
         public const float DAMAGEUI_UI_WIDTH = 35f;
         public const float DAMAGEUI_UI_HEIGHT = 50f;
-        public const float DAMAGEUI_FADE_SPEED = 1f;
+        public const float DAMAGEUI_FADE_SPEED = 3.3f;
         #endregion
 
         #region �޴� UI ����
