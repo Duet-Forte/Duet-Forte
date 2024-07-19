@@ -53,7 +53,7 @@ public class PlayerGuardCounter : MonoBehaviour
         if (guardCounterJudge != JudgeName.Miss)
         {
             guardCounterDelay = 5f;
-            battlePresenter.GuardCounterToEnemy(new Damage(playerAttackStat, guardCounterJudge,new GuardCounterDamage()));
+            battlePresenter.GuardCounterToEnemy(new Damage(playerAttackStat, guardCounterJudge,new SlashDamage()));
             playerSoundSet.PlayerGuardCounter(gameObject);
             GetComponent<PlayerAnimator>().guardCount();
         }
