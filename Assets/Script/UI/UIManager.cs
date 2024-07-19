@@ -32,12 +32,7 @@ public class UIManager
         //GameObject.Instantiate(Resources.Load<GameObject>("UI/Status/UI_GuardCounterGauge"),canvas.transform);
         //statusUIView.GetOrAddComponent<ScreenSpaceCameraUI>().InitSettings(canvas);
 
-        #region 현재 턴 표시하는 UI 세팅
-        turnUIAsGameObject = Resources.Load<GameObject>(Const.UI_TURN);
-        turnUI = Object.Instantiate(turnUIAsGameObject, canvas.transform).GetComponent<ControlTurnUI>();
-        turnUI.InitSettings();
-        stageManager.TurnUI = turnUI;
-        #endregion
+        
 
         prepareTurnUI = GameObject.Instantiate(Resources.Load<GameObject>("UI/PrepareTurnUI"),canvas.transform);
         stageManager.PrepareTurnUI = prepareTurnUI.GetComponent<PrepareTurnUI>();
@@ -50,6 +45,12 @@ public class UIManager
         stageClear = GameObject.Instantiate(Resources.Load<GameObject>("UI/StageClear"), canvas.transform).GetComponent<StageClear>();
         stageClear.InitSettings(stageManager);
 
+        #region 현재 턴 표시하는 UI 세팅
+        turnUIAsGameObject = Resources.Load<GameObject>(Const.UI_TURN);
+        turnUI = Object.Instantiate(turnUIAsGameObject, canvas.transform).GetComponent<ControlTurnUI>();
+        turnUI.InitSettings();
+        stageManager.TurnUI = turnUI;
+        #endregion
 
         if (damagePool == null)
             damagePool = new DamagePool();

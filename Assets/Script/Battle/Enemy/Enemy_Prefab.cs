@@ -139,7 +139,6 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         Metronome.instance.OnBeating += StartDisplay;
 
         yield return new WaitUntil(()=> isSignalEnd);
-        Debug.Log($"{attackDelay}초 이후 시작");
         //yield return WaitForTargetedTime(attackDelay);
     }
 
@@ -154,7 +153,6 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         for (int i = 0; i < patternLength; ++i)
         {
             double targetTime = ((1f / patternArray[i]) * Const.QUARTER_NOTE) * stageManager.SecondsPerBeat;//패턴의 노트와 노트 사이의 시간
-            Debug.LogWarning($"박자 시간 : {targetTime}");
             targetTimes.Add(targetTime);                     //노트간 시간 모은 리스트
             isNoteChecked.Add(true);                         //리스트 공간 할당을 위한 더미 값                      
             yield return WaitForTargetedTime(targetTimes[i]);//패턴의 노트간 해당 시간만큼 대기
@@ -184,7 +182,6 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
             sumOfTime += targetTimes[i];
             judgeStartTime = patternStartTime + sumOfTime - (stageManager.SecondsPerBeat * 0.5d);//타겟타임의 절반전에 판단 시작
             judgeEndTime = judgeStartTime + stageManager.SecondsPerBeat * 0.75d;//타겟타임의 25퍼센트 후에 판단 끝
-            Debug.LogWarning($"------------------------JudgeEndTime : --------------{judgeEndTime}");
             while (judgeEndTime >= Time.time)
             {
                 OnFramePass?.Invoke();
@@ -198,12 +195,9 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
             }
             if (!isNoteChecked[i])//패링 못했을 때
             {    
-                Debug.LogWarning($"패링 실패  판정종료시간 {judgeEndTime-tmp}");
-                Debug.LogWarning($"패링 실패  targetime 차이 {(targetTimes[i]*0.5d) - tmp2}");
                 GiveDamage(new Judge(JudgeName.Miss));
                 AkSoundEngine.PostEvent(enemyAttackSoundEvent, gameObject);
                 enemyAnimator.Attack();
-                Debug.Log($"{judgeEndTime}에 판정 종료");
             }
             tmp = judgeEndTime;
             tmp2= targetTimes[i]*0.5d;

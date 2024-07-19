@@ -70,7 +70,7 @@ namespace Util
         public const float STATUSUI_FADE_SPEED = 1f;
         public const float DAMAGEUI_UI_WIDTH = 35f;
         public const float DAMAGEUI_UI_HEIGHT = 50f;
-        public const float DAMAGEUI_FADE_SPEED = 1f;
+        public const float DAMAGEUI_FADE_SPEED = 3.3f;
         #endregion
 
         #region �޴� UI ����
