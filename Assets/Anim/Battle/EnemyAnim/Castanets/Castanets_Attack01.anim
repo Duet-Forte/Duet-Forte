@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Tambourine_Attack01
+  m_Name: Castanets_Attack01
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -54,9 +54,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 093343d62318fdf4bace4a7059ebb013, type: 3}
+      value: {fileID: 21300000, guid: 23a0428228c961244bde5362c9c641aa, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 093343d62318fdf4bace4a7059ebb013, type: 3}
+      value: {fileID: 21300000, guid: fc748984bef21b747be91ecf357410cf, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -83,8 +83,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 093343d62318fdf4bace4a7059ebb013, type: 3}
-    - {fileID: 21300000, guid: 093343d62318fdf4bace4a7059ebb013, type: 3}
+    - {fileID: 21300000, guid: 23a0428228c961244bde5362c9c641aa, type: 3}
+    - {fileID: 21300000, guid: fc748984bef21b747be91ecf357410cf, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

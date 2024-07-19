@@ -21,9 +21,9 @@ public class JudgeManager
     #endregion
 
     #region 판정시간 관련 변수
-    private float goodJudgeTime;
-    private float greatJudgeTime;
-    private float perfectJudgeTime;
+    private double goodJudgeTime;
+    private double greatJudgeTime;
+    private double perfectJudgeTime;
     private bool isMissedInCurrentFrame; // 한 프레임에 missNote 이후에 checkscore가 호출될 경우, 무조건 perfect 판정이 나는 것을 방지. /다음 판정에 영향이 가는 버그를 예방하기 위한 변수
     private int earlyCount; // 연타 방지 한 판정에 연속적인 입력시에 판정을 miss로 할당하는 얼불춤 과부하 시스템의 사용자 입력 기준
     #endregion

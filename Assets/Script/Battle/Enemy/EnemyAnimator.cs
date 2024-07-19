@@ -116,7 +116,7 @@ public class EnemyAnimator : MonoBehaviour, IAnimator
         dashParticle.Play();
         //Instantiate<ParticleSystem>(dashParticle).Play();
     }
-    void PlayAttackParticle(int attackCase)
+    void EnemyAttackParticle(int attackCase)
     {
         if (AttackParticle[attackCase] != null)
         {
