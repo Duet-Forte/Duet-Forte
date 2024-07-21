@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4adc758dc3212d146abe70091e7d5e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthPoint: 100
+  playerHealthPoint: 50
   playerAttack: 6
   playerDefence: 2
 --- !u!114 &5676225777311692114

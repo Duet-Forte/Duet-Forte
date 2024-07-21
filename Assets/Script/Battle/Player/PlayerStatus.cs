@@ -59,6 +59,7 @@ public class PlayerStatus : MonoBehaviour
     public void InitSetting(int level,int currentExp) { //비전투 씬에서 받아온 레벨과 아이템을 기반으로 전투에 필요한 스탯을 재설정하는 함수
         playerGuardCounterGuage = Util.Const.GUARD_COUNTER_GAUGE;
         playerLevel = level;
+        CalcStatus(level);
         Debug.Log($"playerLevel in Status : {playerLevel}");
         playerCurrentExp= currentExp;
         SetMaxExp(playerLevel);
@@ -71,6 +72,14 @@ public class PlayerStatus : MonoBehaviour
         if (level == 1) {
             playerMaxExp = (level + 1) * (level + 1) * (level + 1); // 1레벨에서  2레벨 가는 필요 경험치 2^3 
             }
+    }
+
+    private void CalcStatus(int level) {
+        Debug.Log($"플레이어 레벨 : {level}");
+        playerHealthPoint = Const.PLAYER_BASE_HEALTH + (level * 4);
+        playerAttack = Const.PLAYER_BASE_ATTACK + (level * 3);
+        playerDefence=Const.PLAYER_BASE_DEFENSE + (level * 3);
+
     }
     
 }

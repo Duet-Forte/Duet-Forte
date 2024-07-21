@@ -9,23 +9,23 @@ public class EnemyDamage : DamageType
     {
         if (judgeName == JudgeName.Miss) //패링 실패
         { 
-            return (int)(attack * 1f);
+            return GetDamage((int)(attack * 1f), (int)(defense * 1f));
         }
         if (judgeName == JudgeName.Perfect) //퍼펙트 패링
         {
-            return (int)(attack * 0f);
+            return GetDamage((int)(attack * 0f),(int)(defense * 1f));
         }
         if (judgeName == JudgeName.Great)
         {
-            return (int)(attack * 0.2f);
+            return GetDamage((int)(attack * 0.2f), (int)(defense*0.8f));
         }
         if (judgeName == JudgeName.Good)
         {
-            return (int)(attack * 0.5f);
+            return GetDamage((int)(attack * 0.5f), (int)(defense*0.5f));
         }
         if (judgeName == JudgeName.Bad)
         {
-            return (int)(attack * 0.8f);
+            return GetDamage((int)(attack * 0.8f), (int)(defense*0.2f));
         }
         return 0;
     }
