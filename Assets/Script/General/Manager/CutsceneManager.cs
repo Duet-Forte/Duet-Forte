@@ -13,51 +13,54 @@ public class CutsceneManager : MonoBehaviour
 {
     private GameObject cutscenePlayer;
     private PlayableDirector director;
+    private Cutscene currentPlayingCutscene;
     private int currentCutsceneID;
-    private bool isTalking;
     private double loopStartTime;
     private bool isCutscenePlaying;
-    [SerializeField] private PlayableAsset[] cutscenes;
+    private Cutscene[] cutscenes;
     [SerializeField] private Image fadeOutPanel;
-    [SerializeField] private int[] dialogueSkipIndex;
-    [SerializeField] private double[] cutsceneSkipTime;
-    [SerializeField] private string[] cutsceneSkipSound;
     private int skipIndex;
-    private Dictionary<string, PlayableAsset> cutsceneDictionary;
     public bool isPlaying { get => isCutscenePlaying; }
-    public void InitSettings()
+    public void InitSettings(int saveInt)
     {
         director = GetComponent<PlayableDirector>();
-        cutsceneDictionary = new Dictionary<string, PlayableAsset>();
-        foreach (var cutscene in cutscenes)
+        cutscenes = Resources.LoadAll<Cutscene>(Util.Const.CUTSCENE_PATH);
+
+        if(saveInt == -1)
         {
-            cutsceneDictionary.Add(cutscene.name, cutscene);
+            currentCutsceneID = 0;
+            StartCutscene();
         }
-        StartCutscene("TimmyHouse");
-        cutscenePlayer = GameManager.FieldManager.Field.GetCutsceneObject("Zio");
-        GameObject pitch = GameManager.FieldManager.Field.GetCutsceneObject("Pitch");
-        GameObject timmy = GameManager.FieldManager.Field.GetCutsceneObject("Timmy");
-        BindCutscene(director, "Player", cutscenePlayer);
-        BindCutscene(director, "Pitch", pitch);
-        BindCutscene(director, "Timmy", timmy);
-        BindCutscene(director, "Camera", GameManager.FieldManager.Field.CutsceneCam.gameObject);
-        GameManager.FieldManager.Field.SetCameraPath("Tutorial");
+        else
+        {
+            FadeOut(0.5f);
+        }
+    }
+    public void StartCutscene()
+    {
+        string cutsceneName = cutscenes[currentCutsceneID].name;
+        currentPlayingCutscene = cutscenes[currentCutsceneID];
+        isCutscenePlaying = true;
+        director.playableAsset = cutscenes[currentCutsceneID].playableAsset;
+        foreach (var participant in currentPlayingCutscene.cutsceneParticipants)
+        {
+            var participantObject = GameManager.FieldManager.Field.GetCutsceneObject(participant);
+            BindCutscene(participant, participantObject);
+
+            if (participant == "Zio")
+                cutscenePlayer = participantObject;
+        }
+        BindCutscene("Camera", GameManager.FieldManager.Field.CutsceneCam.gameObject);
+        GameManager.FieldManager.Field.SetCameraPath(cutsceneName);
         GameManager.InputController.BindPlayerInputAction(Util.CustomEnum.PlayerAction.Skip, SkipCutscene);
         director.Play();
-    }
-    public void StartCutscene(string cutsceneName)
-    {
-        isCutscenePlaying = true;
-        director.playableAsset = cutsceneDictionary[cutsceneName];
     }
     public async void Talk()
     {
         Debug.Log("¸» ½ÃÀÛ");
         Debug.Log(director.time);
-        isTalking = true;
         await DialogueManager.Instance.Talk("Cutscene");
         DataBase.Dialogue.SetID("Cutscene", ++currentCutsceneID);
-        isTalking = false;
         director.Play();
     }
     [ContextMenu("DEBUG/SpawnPlayer")]
@@ -79,12 +82,12 @@ public class CutsceneManager : MonoBehaviour
 
     public void LoopStartPoint()
     {
-        if(isTalking)
+        if(DialogueManager.Instance.IsTalking)
             loopStartTime = director.time;
     }
     public void LoopEndPoint()
     {
-        if (isTalking)
+        if (DialogueManager.Instance.IsTalking)
         {
             director.time = loopStartTime;
             return;
@@ -139,7 +142,7 @@ public class CutsceneManager : MonoBehaviour
         director.time = currentTime;
         director.Evaluate();
     }
-    public virtual void BindCutscene(PlayableDirector director, string trackGroupName, GameObject bindObject)
+    public virtual void BindCutscene(string trackGroupName, GameObject bindObject)
     {
         var timeline = director.playableAsset as TimelineAsset;
         foreach (var groupTrack in timeline.GetRootTracks())
@@ -170,25 +173,24 @@ public class CutsceneManager : MonoBehaviour
 
     private void SkipCutscene(InputAction.CallbackContext context)
     {
-        if (skipIndex >= cutsceneSkipTime.Length)
+        if (skipIndex >= currentPlayingCutscene.cutsceneSkipTime.Length || !isPlaying)
             return;
-        isTalking = false;
         director.Pause();
         DialogueManager.Instance.EndDialogue();
-        if(cutsceneSkipTime.Length > skipIndex)
-            director.time = cutsceneSkipTime[skipIndex];
-        if (dialogueSkipIndex.Length > skipIndex)
+        if(currentPlayingCutscene.cutsceneSkipTime.Length > skipIndex)
+            director.time = currentPlayingCutscene.cutsceneSkipTime[skipIndex];
+        if (currentPlayingCutscene.dialogueSkipIndex.Length > skipIndex)
         {
-            DataBase.Dialogue.SetID("Cutscene", dialogueSkipIndex[skipIndex]);
-            currentCutsceneID = dialogueSkipIndex[skipIndex] + 1;
+            DataBase.Dialogue.SetID("Cutscene", currentPlayingCutscene.dialogueSkipIndex[skipIndex]);
+            currentCutsceneID = currentPlayingCutscene.dialogueSkipIndex[skipIndex] + 1;
         }
-        if (cutsceneSkipSound.Length > skipIndex)
-            PlaySound(cutsceneSkipSound[skipIndex]);
-        if(skipIndex == cutsceneSkipTime.Length - 1)
+        if (currentPlayingCutscene.cutsceneSkipSound.Length > skipIndex)
+            PlaySound(currentPlayingCutscene.cutsceneSkipSound[skipIndex]);
+        if(skipIndex == currentPlayingCutscene.cutsceneSkipTime.Length - 1)
         {
             director.Evaluate();
             director.Play();
-            DialogueManager.Instance.SkipEvent(DataBase.Dialogue.GetDialogue("Cutscene"), "Cutscene");
+            DialogueManager.Instance.SkipEvent(DataBase.Dialogue.GetDialogue("Cutscene"), "Cutscene", true);
             DataBase.Dialogue.SetID("Cutscene", currentCutsceneID);
         }
         else
@@ -203,8 +205,18 @@ public class CutsceneManager : MonoBehaviour
         director.Evaluate();
         await UniTask.WaitForSeconds(1);
         director.Play();
-        DialogueManager.Instance.SkipEvent(DataBase.Dialogue.GetDialogue("Cutscene"), "Cutscene");
+        DialogueManager.Instance.SkipEvent(DataBase.Dialogue.GetDialogue("Cutscene"), "Cutscene", true);
         DataBase.Dialogue.SetID("Cutscene", currentCutsceneID);
         FadeOut(0.5f);
     }
+}
+
+[CreateAssetMenu (menuName = "Scriptable Object/Cutscene", fileName = "Cutscene", order = int.MaxValue - 1)]
+public class Cutscene : ScriptableObject
+{
+    [SerializeField] public PlayableAsset playableAsset;
+    [SerializeField] public int[] dialogueSkipIndex;
+    [SerializeField] public double[] cutsceneSkipTime;
+    [SerializeField] public string[] cutsceneSkipSound;
+    [SerializeField] public string[] cutsceneParticipants;
 }

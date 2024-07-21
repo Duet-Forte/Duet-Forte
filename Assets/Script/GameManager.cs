@@ -41,11 +41,13 @@ public class GameManager : MonoBehaviour
 
         cameraManager = new CameraManager();
         musicChanger = new MusicChanger(gameObject);
+        int saveInt = DataBase.Instance.Load();
         fieldManager = new FieldManager();
+        fieldManager.InitSettings(saveInt);
         inputController = GetComponent<InputController>();
         inputController.InitSettings();
         cutsceneManager = GetComponent<CutsceneManager>();
-        cutsceneManager.InitSettings();
+        cutsceneManager.InitSettings(saveInt);
         dataStorage = new DataStorage();
     }
 

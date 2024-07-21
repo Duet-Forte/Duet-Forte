@@ -32,6 +32,7 @@ namespace Util
         #region ���� ��ġ
         public const string PATTERN_CSV_PATH = "CSV/PatternData";
         public const string STAGE_PATH = "Scriptable/Stage";
+        public const string CUTSCENE_PATH = "Scriptable/Cutscene";
         public const string TOPVIEW_PLAYER = "TopView/Player";
         public const string TOPVIEW_ENTITY = "TopView/Entity/";
 
@@ -61,6 +62,8 @@ namespace Util
 
         public const string UI_STATUS_CANVAS_PATH = "UI/Status/UI_ParryGauge_Gauge01_Canvas";
         public const string UI_FIRST_TUTORIAL_PATH = "UI/Tutorial";
+
+        public const string SAVE_FILE_NAME = "dfSave.json";
         #endregion
 
         #region UI 연출 스피드

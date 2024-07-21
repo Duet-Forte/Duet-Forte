@@ -16,12 +16,27 @@ public class FieldManager
     public GameObject Player { get {return player;} }
     public event Action<int> onFieldIDChange;
     public event Action<string> onPointChange;
-    public FieldManager()
+
+    //초기화와 동시에 FieldManager의 참조를 필요로 해서 함수로 변경
+    public void InitSettings(int saveID)
     {
+
         fieldPrefabs = new Dictionary<int, GameObject>();
         BindEvent();
-        DataBase.Dialogue.ResetLine(0);
-        SetField(0);
+        if (saveID == -1)
+        {
+            ID = 0;
+        }
+        else
+        {
+            ID = DataBase.Field.ID;
+            SpawnPlayer(saveID);
+            Point = currentField.GetSavePoint(ID).pointName;
+            GameManager.FieldManager.Field.GetEntity("Timmy").InitSettings("Timmy", GameManager.FieldManager.Field.GetCutsceneObject("Timmy").transform.position);
+            GameManager.CameraManager.SetFollowCamera();
+            currentField.DisableCutsceneObjects();
+            Debug.Log(Point);
+        }
     }
     public void SpawnPlayer(Vector2 spawnPoint)
     {
@@ -33,6 +48,13 @@ public class FieldManager
         player.transform.position = spawnPoint;
         player.transform.SetParent(currentField.transform);
     }
+
+    public void SpawnPlayer(int saveID)
+    {
+        SavePoint data = currentField.GetSavePoint(saveID);
+        Point = data.pointName;
+        SpawnPlayer(data.spawnPoint);
+    }
     public void SpawnEntity(string entityName, Vector2 spawnPoint)
     {
         TopViewEntity temp = currentField.GetEntity(entityName);
@@ -42,8 +64,8 @@ public class FieldManager
     }
     private void BindEvent()
     {
-        onFieldIDChange -= DataBase.Dialogue.ResetLine;
-        onFieldIDChange += DataBase.Dialogue.ResetLine;
+        onFieldIDChange -= DataBase.Field.ChangeField;
+        onFieldIDChange += DataBase.Field.ChangeField;
         onFieldIDChange -= SetField;
         onFieldIDChange += SetField;
         onPointChange -= GameManager.CameraManager.ChangeCameraCollider;

@@ -18,7 +18,8 @@ public class DialogueManager
     private TypewriterByCharacter typewriter;
     private Speaker currentSpeaker;
     private CancellationTokenSource cancel;
-   
+    private bool isTalking = false;
+    public bool IsTalking { get => isTalking; }
     public static DialogueManager Instance
     {
         get
@@ -30,6 +31,7 @@ public class DialogueManager
     }
     public async UniTask Talk(string interactorName)
     {
+        isTalking = true;
         if (window == null)
         {
             window = Object.Instantiate(Resources.Load<GameObject>("TopView/Dialogue/Window"));
@@ -53,19 +55,24 @@ public class DialogueManager
         Dialogue dialogue = DataBase.Dialogue.GetDialogue(interactorName);
         SkipDialogue(dialogue, interactorName).Forget();
         await WaitKeyInput(dialogue, interactorName);
+        isTalking = false;
     }
 
-    public void SkipEvent(Dialogue dialogue, string interactorName)
+    public void SkipEvent(Dialogue dialogue, string interactorName, bool isCutscenePlaying = false)
     {
-        for (int i = 0; i < dialogue.Lines.Length; i++)
+        if(isTalking || isCutscenePlaying)
         {
-            DialogueEventHandler dialogueEvent = dialogue.Events[i];
-            if (dialogueEvent == null)
-                continue;
-            if (!(dialogueEvent.isDone || dialogueEvent.isSkippable))
+            for (int i = 0; i < dialogue.Lines.Length; i++)
             {
-                dialogueEvent.PlayEvent(dialogue, interactorName);
+                DialogueEventHandler dialogueEvent = dialogue.Events[i];
+                if (dialogueEvent == null)
+                    continue;
+                if (!(dialogueEvent.isDone || dialogueEvent.isSkippable))
+                {
+                    dialogueEvent.PlayEvent(dialogue, interactorName);
+                }
             }
+            isTalking = false;
         }
     }
     private async UniTask WaitKeyInput(Dialogue dialogue, string interactorName)
@@ -146,5 +153,6 @@ public class DialogueManager
         cancel.Cancel();
         dialogueWindow.EraseContent();
         window.SetActive(false);
+
     }
 }

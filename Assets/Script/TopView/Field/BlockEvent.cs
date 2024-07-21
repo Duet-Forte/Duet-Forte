@@ -13,7 +13,7 @@ public class BlockEvent : EventTrigger
     [SerializeField] private string dialogueTarget;
     protected override void RunTask()
     {
-        if (DataBase.Player.Quests.Contains(requiredQuest))
+        if (DataBase.Quest.Quests.ContainsKey(requiredQuest))
             return;
         if (controller == null) 
         {

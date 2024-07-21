@@ -95,7 +95,7 @@ public class QuestEvent : DialogueEvent
 {
     public override void PlayEvent(Dialogue dialogue, string interactorName)
     {
-        if (!DataBase.Player.Quests.Contains(QuestManager.Instance.GetQuest(int.Parse(eventTrigger))))
+        if (!DataBase.Quest.Quests.ContainsKey(QuestManager.Instance.GetQuest(int.Parse(eventTrigger))))
             QuestManager.Instance.SetQuest(int.Parse(eventTrigger));
     }
 }

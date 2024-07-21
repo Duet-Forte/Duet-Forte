@@ -7,6 +7,7 @@ public class DialogueDataBase
 {
     private List<Dictionary<string, Dialogue[]>> dialogues;
     private Dictionary<string, int> ids;
+    public Dictionary<string, int> IDDic { get => ids; }
     private Dictionary<string, Sprite> sprites;
     private int currentFieldId;
     private StringBuilder sb = new StringBuilder(); 
@@ -141,5 +142,10 @@ public class DialogueDataBase
             sprites[fileName] = Resources.Load<Sprite>("Sprite/Dialogue/" + fileName);
         }
         return sprites[fileName];
+    }
+
+    public void LoadData(Dictionary<string, int> ids)
+    {
+        this.ids = ids;
     }
 }
