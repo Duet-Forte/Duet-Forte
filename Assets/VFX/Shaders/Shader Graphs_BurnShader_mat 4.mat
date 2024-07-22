@@ -71,7 +71,7 @@ Material:
     - _Surface: 1
     - _Tiling_x: 1
     - _Tiling_y: 1
-    - _TwirlStrength: 4.61
+    - _TwirlStrength: 11.42
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
