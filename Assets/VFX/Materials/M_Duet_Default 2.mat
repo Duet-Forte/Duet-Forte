@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Duet_Default
+  m_Name: M_Duet_Default 2
   m_Shader: {fileID: -6465566751694194690, guid: 75ece42988780fc4e9bdb1700e129c6e, type: 3}
   m_ValidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
@@ -37,7 +37,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3fab41b969128fe4e932363cbd26c53c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 124963341af16d14a987e76281344fae, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Sub_Tex:

@@ -58,24 +58,24 @@ Material:
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
-    - _Dissolve: 0.207
+    - _Dissolve: 0.346
     - _DistortionStrength: 0
     - _DstBlend: 10
-    - _NoiseOffset_X: 0
-    - _NoiseScale: 50
-    - _NoiseScale_distortion: 27.3
+    - _NoiseOffset_X: 0.45
+    - _NoiseScale: 2.9
+    - _NoiseScale_distortion: 17.6
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ScrollSpeed: 0.94
+    - _ScrollSpeed: -0.5
     - _SrcBlend: 5
     - _Surface: 1
     - _Tiling_x: 1
     - _Tiling_y: 1
-    - _TwirlStrength: 7.9
+    - _TwirlStrength: 3.3
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 0.0126816295, g: 0, b: 0.103773594, a: 0.6039216}
-    - _Tiling_x_y: {r: 3.27, g: 3.31, b: 0, a: 0}
+    - _Color: {r: 0.5, g: 0, b: 1, a: 0.5882353}
+    - _Tiling_x_y: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
