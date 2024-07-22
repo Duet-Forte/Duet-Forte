@@ -26,8 +26,13 @@ public class StageClear : MonoBehaviour
 
     private bool isChangeExpEnd = false;
     private int maxExp;
+
+    #region 플레이어 인포
     private int currentExp;
     private int playerLevel;
+    private int currentPlayerHP;
+    private PlayerSkill[] playerSkills;
+    #endregion
     private PlayerStatus playerStatus;
     private float expGainSpeed = 1.5f;
     private float fadeOutSpeed = 2.2f;
@@ -68,6 +73,7 @@ public class StageClear : MonoBehaviour
         stageManager = stageManager;
         judges = new List<JudgeName>();
         playerStatus = stageManager.PlayerInterface.PlayerStatus;
+        currentPlayerHP = playerStatus.PlayerHealthPoint;
     }
     public static StageClear Instance
     {
@@ -202,7 +208,7 @@ public class StageClear : MonoBehaviour
                 }
 
                 Debug.Log("비전투씬으로 이동 건네줄 데이터 : 레벨, 현재 경험치");
-                PlayerInfo playerInfo = new PlayerInfo(playerLevel,currentExp);
+                PlayerInfo playerInfo = new PlayerInfo(playerLevel,currentExp,currentPlayerHP);
                 BICSceneManager.Instance.SetFieldScene(playerInfo);
                 break;
             }

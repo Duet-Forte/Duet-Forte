@@ -27,9 +27,9 @@ public class DamagePool : IStageUI
     private void OnGetUI(DamageUI damageUI)
     {
         Vector2 spawnPoint = enemy.Transform.position;
-        float randomOffsetX = Random.RandomRange(-0.3f, 0.3f);
-        float randomOffsetY = Random.RandomRange(-0.3f, 0.3f);
-        damageUI.Position.position = new Vector2 (spawnPoint.x+randomOffsetX, spawnPoint.y+0.5f);
+        float randomOffsetX = Random.RandomRange(-3f, 3f);
+        float randomOffsetY = Random.RandomRange(-3f, 3f);
+        damageUI.Position.position = new Vector2 (spawnPoint.x+randomOffsetX, spawnPoint.y+randomOffsetY);
         damageUI.MoveUI();
     }
 

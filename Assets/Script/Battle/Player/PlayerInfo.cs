@@ -7,6 +7,7 @@ public class PlayerInfo
     int playerLevel;
     int playerCurrentEXP;
     PlayerSkill[] playerSkills;
+    int playerHP;
     public PlayerInfo(int playerLevel, int playerCurrentEXP) {
         this.playerLevel = playerLevel;
         this.playerCurrentEXP = playerCurrentEXP;
@@ -18,6 +19,14 @@ public class PlayerInfo
         this.playerLevel = playerLevel;
 
     }
+    public PlayerInfo(int playerLevel, int playerCurrentEXP,int playerHP)
+    {
+        this.playerSkills=playerSkills;
+        this.playerCurrentEXP = playerCurrentEXP;
+        this.playerLevel = playerLevel;
+        this.playerHP = playerHP;
+    }
+    
 
     public int PlayerLevel {
         get { return playerLevel; }
@@ -27,5 +36,8 @@ public class PlayerInfo
     }
     public PlayerSkill[] PlayerSkills{
         get { return playerSkills; }
+    }
+    public int PlayerHP { 
+    get { return playerHP; }
     }
 }

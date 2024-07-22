@@ -93,7 +93,7 @@ public class StageManager : MonoBehaviour
     [ContextMenu("DEBUG/SceneStart")]
     private void TestPlay()
     {
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn, new PlayerInfo(debugSkills,3,7));
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn, new PlayerInfo(debugSkills,Const.DEBUG_PLAYER_LEVEL,Const.DEBUG_PLAYER_CURRENT_EXP));
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(false);
     }
