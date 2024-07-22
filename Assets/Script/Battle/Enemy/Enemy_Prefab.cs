@@ -364,7 +364,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         
         healthPoint -= damage.GetCalculatedDamage();
 
-        //AkSoundEngine.PostEvent(enemyHitSoundEvent, gameObject); //사운드 제작되면 enemyHitSoundEvent 넣기
+        AkSoundEngine.PostEvent(enemyHitSoundEvent, gameObject); //사운드 제작되면 enemyHitSoundEvent 넣기
 
         OnGetDamage?.Invoke(damage);
         if (healthPoint <= 0)

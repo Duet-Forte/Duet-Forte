@@ -6,6 +6,7 @@
 				<SoundBank Name="New_SoundBank" ID="{E47454C0-8611-4460-8CD9-7A53DBB85D34}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Combat_test01" ID="{28F43BD0-07AA-4029-87FD-589C864D1681}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Enemy_Tambourine_Hit_SFX" ID="{44BE723D-8A21-409E-BFAA-A1FCC1CE0172}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Attack_StrongSignal_SFX" ID="{CEBB90E6-DF06-40C5-B9D3-CFA7BB20AD42}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Combat_Stage_01_BGM" ID="{7BCDF135-933D-41D4-815F-F088C4C99554}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Parry_SFX" ID="{A5DD6FC1-5DA3-42BD-905F-F1A31806B37C}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
@@ -15,7 +16,6 @@
 						<ObjectRef Name="Enemy_ElecGuitar_Attack_Signal_SFX" ID="{E1E65314-CE0A-4A59-8CAE-68303D53B1EB}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Skill_Climax_SFX" ID="{B11E428B-2CF9-4B36-A476-054F9032B016}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Attack_A_SFX" ID="{FAAB1A55-AB92-4B88-B7FB-A86190CBF2FC}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Transition_FadeIn" ID="{FE4ACF74-6374-4BE4-AAC3-B5E244B42F3A}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Combat_BGM_Stop" ID="{242F5060-C112-4CE1-98E8-685817CB7CAE}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Skill_ABA_SFX" ID="{7A1611C4-EEEE-4DD9-8396-2CDB7753853C}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Transition_FadeOut" ID="{1FB34ED6-95D1-4E79-9CD7-E7CA6BEA421C}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>

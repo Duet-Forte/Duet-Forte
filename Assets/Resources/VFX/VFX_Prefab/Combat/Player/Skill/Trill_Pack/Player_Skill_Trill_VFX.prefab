@@ -8741,11 +8741,6 @@ ParticleSystem:
       type: 0
       properties: 0
       emitProbability: 1
-    - serializedVersion: 3
-      emitter: {fileID: 0}
-      type: 0
-      properties: 0
-      emitProbability: 1
   LightsModule:
     enabled: 0
     ratio: 0
@@ -13609,18 +13604,8 @@ ParticleSystem:
     primitives: []
   SubModule:
     serializedVersion: 2
-    enabled: 1
-    subEmitters:
-    - serializedVersion: 3
-      emitter: {fileID: 0}
-      type: 0
-      properties: 0
-      emitProbability: 1
-    - serializedVersion: 3
-      emitter: {fileID: 0}
-      type: 0
-      properties: 0
-      emitProbability: 1
+    enabled: 0
+    subEmitters: []
   LightsModule:
     enabled: 0
     ratio: 0
@@ -18486,17 +18471,12 @@ ParticleSystem:
     - {fileID: 0}
   SubModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     subEmitters:
     - serializedVersion: 3
       emitter: {fileID: 8561235969923753248}
       type: 0
-      properties: 0
-      emitProbability: 1
-    - serializedVersion: 3
-      emitter: {fileID: 0}
-      type: 0
-      properties: 0
+      properties: -1
       emitProbability: 1
   LightsModule:
     enabled: 0
@@ -44179,7 +44159,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 0.61
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -44408,7 +44388,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 24.14
+      scalar: 18.9
       minScalar: 15
       maxCurve:
         serializedVersion: 2
@@ -44461,7 +44441,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10.2
+      scalar: 11.21
       minScalar: 40
       maxCurve:
         serializedVersion: 2
@@ -44790,7 +44770,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: 0}
+    m_Position: {x: -4.09, y: 0.25, z: 0}
     m_Rotation: {x: 0, y: 90, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -62552,11 +62532,6 @@ ParticleSystem:
     subEmitters:
     - serializedVersion: 3
       emitter: {fileID: 8561235969251793834}
-      type: 0
-      properties: 0
-      emitProbability: 1
-    - serializedVersion: 3
-      emitter: {fileID: 0}
       type: 0
       properties: 0
       emitProbability: 1
@@ -87047,15 +87022,10 @@ ParticleSystem:
     - {fileID: 0}
   SubModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     subEmitters:
     - serializedVersion: 3
       emitter: {fileID: 8561235969037371936}
-      type: 0
-      properties: 0
-      emitProbability: 1
-    - serializedVersion: 3
-      emitter: {fileID: 0}
       type: 0
       properties: 0
       emitProbability: 1
@@ -155640,18 +155610,8 @@ ParticleSystem:
     - {fileID: 0}
   SubModule:
     serializedVersion: 2
-    enabled: 1
-    subEmitters:
-    - serializedVersion: 3
-      emitter: {fileID: 0}
-      type: 0
-      properties: 0
-      emitProbability: 1
-    - serializedVersion: 3
-      emitter: {fileID: 0}
-      type: 0
-      properties: 0
-      emitProbability: 1
+    enabled: 0
+    subEmitters: []
   LightsModule:
     enabled: 0
     ratio: 0
