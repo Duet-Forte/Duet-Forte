@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: -3653232512615822324}
   - component: {fileID: 42170436234032234}
   m_Layer: 7
-  m_Name: Tambourine
+  m_Name: Tmpani Orc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: e7e64f627b9118449a12b0b57936e337, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd1df4f55037c9943a0912181a5033a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,7 +161,7 @@ Animator:
   m_GameObject: {fileID: 5612330584740958209}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6d37f95c793bda74e81f8e239cc3768f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 15bf18a77063ae64f8393d6ce9e5ea83, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -184,17 +184,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b728227346d154197bf6aad5cd3e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: Tambourine
-  flavorTextName: "\uD0EC\uBE14\uB9B0"
-  enemyInfo: "\uD0EC\uBC84\uB9B0 \uAC19\uC740 \uC0DD\uBA85\uCCB4.\n\uC790\uC2E0\uC744
-    \uB450\uB4DC\uB824 \uACF5\uACA9\uD558\uB294 \uB4EF \uD558\uB2E4.\n\uD45C\uC815\uC744
-    \uC77D\uC744 \uC218 \uC5C6\uB2E4."
-  enemyImage: {fileID: 21300000, guid: 9d5f9a3839961bb479cc263961b2a89b, type: 3}
-  healthPoint: 200
-  enemyAttack: 14
-  exp: 35
-  slashDefense: 0
-  pierceDefense: 0
+  enemyName: TimpaniOrc
+  flavorTextName: "\uD300\uD30C\uB2C8 \uC624\uD06C"
+  enemyInfo: "\uD300\uD30C\uB2C8 \uC624\uD06C"
+  enemyImage: {fileID: 21300000, guid: 51a35306f66e9ca42aad18d9567948d2, type: 3}
+  healthPoint: 1000
+  enemyAttack: 18
+  exp: 100
+  slashDefense: 30
+  pierceDefense: 30
   enemyAttackSoundEvent: Enemy_Tambourine_Attack_SFX
   enemyHitSoundEvent: Enemy_Tambourine_Hit_SFX
   signalInstrument: 1
@@ -211,8 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackParticle:
-  - {fileID: 1162831315357672158, guid: 8c994869845a69746979d04f19ba9355, type: 3}
-  - {fileID: 2276891050217871009, guid: 8914fe1109e42454aa85bbb94ad23b82, type: 3}
+  - {fileID: 431099028761412644, guid: 1dc7a26616b88594f86cfedfdb3a4fdb, type: 3}
   attackCountDownSignal: {fileID: 0}
   attackSignal: {fileID: 0}
   dashParticle: {fileID: 0}

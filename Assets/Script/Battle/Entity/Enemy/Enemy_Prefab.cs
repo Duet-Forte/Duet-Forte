@@ -290,16 +290,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         this.playerTransform = playerTransform;
         originalPosition = transform.position; //원래 위치
         #endregion
-        #region QTE 
-        /*qteEffect = Instantiate(Resources.Load<GameObject>("Effect/QTE_Effect"))
-            .GetComponent<QTE>();
-        qteEffect.InitSettings(sPB);*/
-        #endregion
-        #region 디버깅!!!
-        /*for (int i = 0; i < attackIcon.Length; ++i)
-        {
-            attackIcon[i].gameObject.SetActive(false);   //공격신호 비활성으로 초기화
-        }*/
+        #region 공격신호
         enemySignalUI.ResetIcon();
         #endregion
     }
