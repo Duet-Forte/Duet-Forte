@@ -27,10 +27,8 @@ public class PrepareTurn :ITurnHandler
     
     public IEnumerator TurnStart()
     {
-        Debug.Log("PrepareTurn");
         //stageManager.Enemy.ReturnToOriginPos();
         turnUI.AppearanceTurnUI(stageManager.TurnCount);
-        Debug.Log(prepareTurnUI.AppearSkillUI());
         prepareTurnUI.UISwitch(true);
         //게임에서 한 번만 제공
         yield return new WaitForSeconds(3f);
@@ -55,7 +53,6 @@ public class PrepareTurn :ITurnHandler
         //대체 왜 위에 코드는 안되고 아래 코드는 되는거지
         prepareTurnUI.UISwitch(false);
         yield return new WaitForSeconds(UIDesolveTime);
-        Debug.Log("PrepareTurn End");
         stageManager.CurrentTurn = Turn.ActionStartTurn;
         
     }

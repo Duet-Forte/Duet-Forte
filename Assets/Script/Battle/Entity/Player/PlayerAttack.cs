@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using Util.CustomEnum;
 using SoundSet;
+using UnityEngine.UIElements;
 
 public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드와 비교
 {
@@ -24,7 +25,6 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     #region 커맨드 관련 자료형
     string skillCommandEntered="";                                 //입력받은 커맨드
     [SerializeField] List<JudgeName> timingList;                   //판정여부
-    [SerializeField] string[] skillCommandEnteredToArray = { "R" };//skillCommandEntered를 배열로 바꿔 저장할 변수
     [SerializeField] ParticleSystem castSkillParticle;
     Queue<string> inputBuffer;
     bool canInputBuffer;
@@ -81,7 +81,6 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
     }
     void AttackEnd() {//공격기회가 끝나면 호출되는 함수
         skillCommandEntered="";//입력받았던 커맨드키 초기화
-        Array.Clear(skillCommandEnteredToArray, 0, skillCommandEnteredToArray.Length);//마찬가지로 커맨드 초기화
         timingList.Clear();//판정 초기화
         ClearBuffer();//인풋 버퍼 초기화
         Metronome.instance.OnBeating -= CountDownOnBeat;//제한시간 감소시키는 이벤트 구독취소
@@ -117,13 +116,13 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
                   //스킬 qte여부 확인 후 처리
                   //스킬이름을 스킬이름팝업에 넘겨주기
                   //파티클이 전부 재생될때 까지 대기
-                    Debug.Log($"스킬 {playerSkillSet.ArrayOfSkillName[skillSetIndex]} 발동됨");
-                    Debug.Log($"{skillSetIndex}번째 파티클");
                     currentSkill = playerSkillSet.ArrayOfSkill[skillSetIndex];
                     
                     SkillUI(playerSkillSet.ArrayOfSkillIcon[skillSetIndex] , playerSkillSet.ArrayOfSkillName[skillSetIndex]);
-                    castSkillParticle = playerSkillSet.ArrayOfSkillParticle[skillSetIndex]; //파티클이지만 PlayerSkill.Skill에 포함됨 삭제 예정
-                    StartCoroutine(SkillCast(currentSkill));
+
+                    JudgeName[] judgeArr= timingList.ToArray();
+
+                    StartCoroutine(SkillCast(currentSkill,comparisonCommands,judgeArr));
 
                     isCastSkill = true;
                     //스킬액션씬
@@ -135,8 +134,35 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
 
         
     }
-    IEnumerator SkillCast(PlayerSkill.Skill currentSkill) {
-        yield return new WaitForSeconds(0.5f);
+
+    private JudgeName CalcJudgeName(string comparisonCommands, JudgeName[] judgeArr)
+    {
+        if (judgeArr.Length > comparisonCommands.Length)
+        {
+            judgeArr = judgeArr.Skip(judgeArr.Length-comparisonCommands.Length).ToArray();
+        }
+        int sum=0;
+        int restCount = 0;
+        int judgeAverage;
+        for (int i = 0; i < comparisonCommands.Length; i++) {
+            if (comparisonCommands[i] == 'R') { restCount++; }
+            sum += (int)judgeArr[i];
+        }
+        judgeAverage = sum/(comparisonCommands.Length-restCount);
+        switch (judgeAverage) {
+            case 1:return JudgeName.Perfect;
+            case 2:return JudgeName.Great;
+            case 3:return JudgeName.Good;
+            case 4:return JudgeName.Bad;
+            default:return JudgeName.Bad;
+        
+        }
+
+
+
+    }
+    IEnumerator SkillCast(PlayerSkill.Skill currentSkill,string comparisonCommand, JudgeName[] judgeArr) {
+        yield return new WaitForSeconds(0.5f); // 자연스러운 딜레이
 
 
         currentSkill.PlaySkillSound(currentSkill.soundEventName, gameObject); //스킬 사운드
@@ -149,7 +175,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
         
         for (int i = 0; i < currentSkill.damage.Length; i++) { 
         yield return new WaitForSeconds(currentSkill.waitTimes[i]);
-            battlePresenter.PlayerSkillToEnemy(new Damage(currentSkill.damage[i]*playerAttackStat, currentSkill.damageType[i]?new SlashDamage():new PierceDamage()));
+            battlePresenter.PlayerSkillToEnemy(new Damage(currentSkill.damage[i]*playerAttackStat, CalcJudgeName(comparisonCommand,judgeArr), currentSkill.damageType[i]?new SlashDamage():new PierceDamage()));
         }
 
     }
@@ -243,10 +269,11 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             if (isCastSkill) {
                 
                 Debug.Log("스킬 발동됨");
-                
-                AttackEnd();
-                yield return new WaitForSeconds(3f);//스킬 애니메이션 클립의 길이만큼 대기 후 종료로 수정해야함. 04.01
                 SkillUI();
+                yield return new WaitForSeconds(3f);//스킬 애니메이션 클립의 길이만큼 대기 후 종료로 수정해야함. 04.01
+                AttackEnd();
+                
+               
                 yield break;// 스킬이 발동되어 반복문 탈출 공격 종료
             }
             if (currentLimitBeat == 0) {

@@ -29,7 +29,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     [SerializeField] Sprite enemyImage;
     [Header("Entity Stats")]
     [Space(5f)]
-    [SerializeField] private int healthPoint;
+    private int currentHP;
+    [SerializeField] private int maxHP;
     [SerializeField] private float enemyAttack;
     [SerializeField] private int exp;
     /// <summary>
@@ -66,6 +67,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public event Action OnGuardCounterEnd;
     public event Action<Damage> OnAttack;
     public event Action<Damage> OnGetDamage;
+    public event Action OnHit;
+    public event Action OnTurnEnd;
 
     #region 외부 클래스
     private PlayerInterface playerInter;//체인지 세트 72 - 플레이어에 접근해서 가드나 피격 애니메이션 재생시키기 위한 변수
@@ -76,6 +79,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     private QTE qteEffect;
     private DefenseQTE defenseQTE;
     private EnemySignalUI enemySignalUI;
+    private BuffManager buffManager;
     #endregion
     #region 위치관련 변수
     private Transform playerTransform;
@@ -109,7 +113,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public EnemyData Data { get { return data; } }
     public EnemyPattern[] EnemyPattern { get {return enemyPattern; } }
     public Transform Transform { get { return transform; } }
-    public int HealthPoint { get => healthPoint; }
+    public int CurrentHP { get => currentHP; }
+    public int MaxHP { get => maxHP; }
     public string EnemyName { get => enemyName; }
     public Vector2 Defense { get => new Vector2(slashDefense, pierceDefense); }
     public int Exp { get => exp; }
@@ -221,8 +226,12 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
 
     }
     #region 이동관련 함수
-    public void ReturnToOriginPos() {
+    public void ReturnToOriginPos() { 
         enemyAnimator.BackDash();
+
+        //턴 종료
+        OnTurnEnd?.Invoke();
+
         transform.DOMove(originalPosition, 3).SetEase(Ease.OutQuart).OnComplete(()=> { enemyAnimator.Idle(); });
         
     }
@@ -276,12 +285,19 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         defenseQTE.InitSetting(sPB);
         battlePos = stageManager.BattlePos;             //플레이어 위치
         playerInter = stageManager.PlayerInterface;
+
+        currentHP = maxHP;
         #endregion
         #region 생성자
         battleDirector = new BattleDirector();
         targetTimes = new List<double>();               //타겟타임?
         isNoteChecked = new List<bool>();               //노트체크?
         enemyAnimator = GetComponent<EnemyAnimator>();
+
+        ///디버깅용
+        buffManager=new BuffManager();
+        buffManager.AddBuff(new TimpaniDurabilityBuff(battlePresenter, this, 30));
+        ///
         #endregion
 
         attackDelay = Const.ATTACK_DELAY_BEATS * sPB;
@@ -344,7 +360,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public void GetDamage(Damage damage)// 피격 전용 클래스를 만들어야 되나...
     {
 
-        if (healthPoint == 0) { return; }
+        if (currentHP == 0) { return; }
         if (damage.GetCalculatedDamage() <= 0) {
             enemyAnimator.Guard();
             return;
@@ -353,14 +369,15 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         battleDirector.Shake(gameObject);
         enemyAnimator.Hurt();
         
-        healthPoint -= damage.GetCalculatedDamage();
+        currentHP -= damage.GetCalculatedDamage();
 
         AkSoundEngine.PostEvent(enemyHitSoundEvent, gameObject); //사운드 제작되면 enemyHitSoundEvent 넣기
 
         OnGetDamage?.Invoke(damage);
-        if (healthPoint <= 0)
+        OnHit?.Invoke();
+        if (currentHP <= 0)
         {
-            healthPoint = 0;
+            currentHP = 0;
             
             enemyAnimator.Die();
             stageManager.OnEnemyDie();
@@ -405,6 +422,10 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     {
         StopAllCoroutines();
     }
-
+    public void AddBuff(IBuff buff) { 
+    
+        buffManager.AddBuff(buff);
+    }
+    public void DeleteBuff(IBuff buff) { }
     public void StopActions() => StopAllCoroutines();
 }

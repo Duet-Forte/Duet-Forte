@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public interface IEnemy
+public interface IEnemy : IBuffState
 {
     public Transform Transform { get; }
     public bool IsNoteChecked { get;}
@@ -10,7 +10,8 @@ public interface IEnemy
     public double JudgeEndTime { get;}
     public EnemyData Data { get;}
     public EnemyPattern[] EnemyPattern { get; }
-    public int HealthPoint { get; }
+    public int CurrentHP { get; }
+    public int MaxHP { get; }
     public string EnemyName { get; }
     public Vector2 Defense { get; }
     public int Exp { get; }
@@ -21,6 +22,8 @@ public interface IEnemy
     public event Action OnGuardCounterEnd;
     public event Action<Damage> OnAttack;
     public event Action<Damage> OnGetDamage;
+    public event Action OnHit;
+    public event Action OnTurnEnd;
     
     public void BindPattern(EnemyPattern[] enemyPattern);
     public void CheckCombo(int currentCombo, int maxGauge);

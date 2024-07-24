@@ -60,7 +60,6 @@ public class PlayerStatus : MonoBehaviour
         playerGuardCounterGuage = Util.Const.GUARD_COUNTER_GAUGE;
         playerLevel = level;
         CalcStatus(level);
-        Debug.Log($"playerLevel in Status : {playerLevel}");
         playerCurrentExp= currentExp;
         SetMaxExp(playerLevel);
         
@@ -75,7 +74,6 @@ public class PlayerStatus : MonoBehaviour
     }
 
     private void CalcStatus(int level) {
-        Debug.Log($"플레이어 레벨 : {level}");
         playerHealthPoint = Const.PLAYER_BASE_HEALTH + (level * 4);
         playerAttack = Const.PLAYER_BASE_ATTACK + (level * 3);
         playerDefence=Const.PLAYER_BASE_DEFENSE + (level * 3);

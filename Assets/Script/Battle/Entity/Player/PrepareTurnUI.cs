@@ -42,14 +42,12 @@ public class PrepareTurnUI : InGameUI
             
             if (theSkillSet.ArrayOfSkill != null)
             {
-                Debug.Log(transform.GetChild(Prepare_Skill_UI_Index));
                 transform.GetChild(Prepare_Skill_UI_Index).Find("Masking").Find("skillIcon").GetComponent<Image>().sprite = skillSetIcon[Prepare_Skill_UI_Index];//아이콘
                 //transform.GetChild(Prepare_Skill_UI_Index).GetChild(1).GetComponent<TMP_Text>().text = skillSetName[Prepare_Skill_UI_Index];//스킬이름
                 transform.GetChild(Prepare_Skill_UI_Index).GetChild(1).GetComponent<TMP_Text>().text = arrayOfParsedCommand[Prepare_Skill_UI_Index];//스킬커맨드
             }
             if (theSkillSet.playerSkills.Length - 1 < Prepare_Skill_UI_Index)
             {
-                Debug.Log("사용하지 않는 스킬ui 제거");
                 Destroy(transform.GetChild(Prepare_Skill_UI_Index).gameObject);
             }
             arrayOfUITransform[Prepare_Skill_UI_Index] = transform.GetChild(Prepare_Skill_UI_Index)?.GetComponent<RectTransform>();
@@ -91,7 +89,6 @@ public class PrepareTurnUI : InGameUI
     }
     public IEnumerator AppearSkillUI()
     {
-        Debug.Log("PrepareTurn UI POPUP");
         for (int UIindex = 0; UIindex < arrayOfUITransform.Length; UIindex++)
         {
             if (arrayOfUITransform[UIindex] != null)
@@ -101,7 +98,6 @@ public class PrepareTurnUI : InGameUI
     }
     public IEnumerator DisappearSkillUI()
     {   
-        Debug.Log("PrepareTurn UI POPDOWN");
         for (int UIindex = 0; UIindex < arrayOfUITransform.Length; UIindex++)
         {
             if (arrayOfUITransform[UIindex] != null)

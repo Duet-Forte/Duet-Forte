@@ -144,8 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canAttack: 1
   timingList: 
-  skillCommandEnteredToArray:
-  - R
+  skillCommandEnteredToArray: []
   castSkillParticle: {fileID: 0}
 --- !u!114 &4015119172762999965
 MonoBehaviour:

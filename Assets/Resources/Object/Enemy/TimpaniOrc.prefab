@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: -3653232512615822324}
   - component: {fileID: 42170436234032234}
   m_Layer: 7
-  m_Name: Tmpani Orc
+  m_Name: TimpaniOrc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   flavorTextName: "\uD300\uD30C\uB2C8 \uC624\uD06C"
   enemyInfo: "\uD300\uD30C\uB2C8 \uC624\uD06C"
   enemyImage: {fileID: 21300000, guid: 51a35306f66e9ca42aad18d9567948d2, type: 3}
-  healthPoint: 1000
+  maxHP: 1500
   enemyAttack: 18
   exp: 100
   slashDefense: 30
