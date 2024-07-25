@@ -62,7 +62,9 @@ public class PlayerStatus : MonoBehaviour
         CalcStatus(level);
         playerCurrentExp= currentExp;
         SetMaxExp(playerLevel);
-        
+        Debug.LogWarning($"플레이어 레벨 : {playerLevel}");
+        Debug.LogWarning($"플레이어 공격력 : {playerAttack}");
+        Debug.LogWarning($"플레이어 방어력 : {playerDefence}");
     }
     private void SetMaxExp(int level) {
         playerMaxExp = new Calculator().CalcMaxExp(level); //누적경험치는 현재레벨^3 공식임 즉, 현재 레벨의 필요경험치는 (다음 레벨^3)-(현재 레벨^3)

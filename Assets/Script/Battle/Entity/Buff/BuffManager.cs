@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class BuffManager
 {
-
     List<IBuff> buffList=new List<IBuff>();
     
     #region »ý¼ºÀÚ
-    public BuffManager() { 
-    
-    
-    }
+   
     #endregion
 
     public void AddBuff(IBuff buff) {

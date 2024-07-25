@@ -12,10 +12,10 @@ using Director;
 using UnityEngine.Rendering;
 public class Enemy_Prefab : MonoBehaviour, IEnemy
 {
-    private StageManager stageManager;
-    private EnemyData data;
-    private EnemyPattern[] enemyPattern;
-    private EnemyAnimator enemyAnimator;
+    protected StageManager stageManager;
+    protected EnemyData data;
+    protected EnemyPattern[] enemyPattern;
+    protected EnemyAnimator enemyAnimator;
 
 
     #region 기본적인 스테이터스
@@ -29,38 +29,38 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     [SerializeField] Sprite enemyImage;
     [Header("Entity Stats")]
     [Space(5f)]
-    private int currentHP;
-    [SerializeField] private int maxHP;
-    [SerializeField] private float enemyAttack;
-    [SerializeField] private int exp;
+    protected int currentHP;
+    [SerializeField] protected int maxHP;
+    [SerializeField] protected float enemyAttack;
+    [SerializeField] protected int exp;
     /// <summary>
     /// 방어력은 빼기공식을 사용
     /// slash 피해 순수 대미지= slashAttack - slashDefense (순수 대미지는 항상 0보다 크거나 같음)
     /// </summary>
-    [SerializeField] private float slashDefense;
-    [SerializeField] private float pierceDefense;
+    [SerializeField] protected float slashDefense;
+    [SerializeField] protected float pierceDefense;
     [Header("Sounds")]
     [Space(5f)]
-    [SerializeField] private string enemyAttackSoundEvent;
-    [SerializeField] private string enemyHitSoundEvent;
-    [SerializeField] private SignalInstrument signalInstrument; //시그널 사운드 고르기
+    [SerializeField] protected string enemyAttackSoundEvent;
+    [SerializeField] protected string enemyHitSoundEvent;
+    [SerializeField] protected SignalInstrument signalInstrument; //시그널 사운드 고르기
     [Space(10f)]
     #endregion
-    
-    
-    private double attackDelay;
-    private double timeOffset;
-    private int currentNoteIndex;
 
-    private List<double> targetTimes;
-    private List<bool> isNoteChecked; //공격 하나당 판정 여부 리스트
 
-    private double judgeStartTime;
-    private double judgeEndTime;
-    private int patternLength;
-    private int[] patternArray;
-    private bool isEnteringGuardCounterPhase;
-    private bool isSignalEnd=false;
+    protected double attackDelay;
+    protected double timeOffset;
+    protected int currentNoteIndex;
+
+    protected List<double> targetTimes;
+    protected List<bool> isNoteChecked; //공격 하나당 판정 여부 리스트
+
+    protected double judgeStartTime;
+    protected double judgeEndTime;
+    protected int patternLength;
+    protected int[] patternArray;
+    protected bool isEnteringGuardCounterPhase;
+    protected bool isSignalEnd=false;
     
 
     public event Action OnFramePass;
@@ -71,23 +71,23 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public event Action OnTurnEnd;
 
     #region 외부 클래스
-    private PlayerInterface playerInter;//체인지 세트 72 - 플레이어에 접근해서 가드나 피격 애니메이션 재생시키기 위한 변수
-    private BattleDirector battleDirector;
-    private PlayerSoundSet playerSoundSet = new PlayerSoundSet();
-    private UISound uiSound = new UISound();
-    BattlePresenter battlePresenter;
-    private QTE qteEffect;
-    private DefenseQTE defenseQTE;
-    private EnemySignalUI enemySignalUI;
-    private BuffManager buffManager;
+    protected PlayerInterface playerInter;//체인지 세트 72 - 플레이어에 접근해서 가드나 피격 애니메이션 재생시키기 위한 변수
+    protected BattleDirector battleDirector;
+    protected PlayerSoundSet playerSoundSet = new PlayerSoundSet();
+    protected UISound uiSound = new UISound();
+    protected BattlePresenter battlePresenter;
+    protected QTE qteEffect;
+    protected DefenseQTE defenseQTE;
+    protected EnemySignalUI enemySignalUI;
+    protected BuffManager buffManager;
     #endregion
     #region 위치관련 변수
-    private Transform playerTransform;
-    private Vector2 battlePos;
-    private Vector2 originalPosition;
-    private float positionOffset = 4f;
-    private Vector2 middlePos;
-    private bool isMoveDone = false;
+    protected Transform playerTransform;
+    protected Vector2 battlePos;
+    protected Vector2 originalPosition;
+    protected float positionOffset = 4f;
+    protected Vector2 middlePos;
+    protected bool isMoveDone = false;
     // battlePos까지 이동을 마쳤는지?
     #endregion
 
@@ -125,7 +125,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     Image[] defenseIcon;
     #endregion
 
-    private void OnEnable()//플레이버 텍스트 띄우기
+    protected void OnEnable()//플레이버 텍스트 띄우기
     {
         GameObject flavorTextUI = GameObject.Instantiate(Resources.Load<GameObject>("UI/FlavorText"));
         flavorTextUI.GetComponentInChildren<FlavorTextUI>().InitSetting(enemyImage,flavorTextName,enemyInfo);
@@ -147,7 +147,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         //yield return WaitForTargetedTime(attackDelay);
     }
 
-    private void StartDisplay() { 
+    protected void StartDisplay() { 
         Metronome.instance.OnBeating -= StartDisplay;
         StartCoroutine(DisplayPatternSignal());
     }
@@ -255,7 +255,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     }
 
     #endregion
-    private IEnumerator WaitForTargetedTime(double targetTime)
+    protected IEnumerator WaitForTargetedTime(double targetTime)
     {
         double elapsedTime = timeOffset; //초기값은 0
 
@@ -270,7 +270,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public void BindPattern(EnemyPattern[] enemyPattern) {
         this.enemyPattern = enemyPattern;
     }
-    public void InitSettings(StageManager currentStageManager, Transform playerTransform) // StageManager에서 호출되는 초기세팅
+    public virtual void InitSettings(StageManager currentStageManager, Transform playerTransform) // StageManager에서 호출되는 초기세팅
     {
 
         #region 스테이지 매니저에서 참조
@@ -296,7 +296,6 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
 
         ///디버깅용
         buffManager=new BuffManager();
-        buffManager.AddBuff(new TimpaniDurabilityBuff(battlePresenter, this, 30));
         ///
         #endregion
 
@@ -311,7 +310,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         #endregion
     }
 
-    private void ResetSettings()
+    protected void ResetSettings()
     {
 
         targetTimes.Clear();
@@ -331,19 +330,6 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         {
             isEnteringGuardCounterPhase = true;
         }
-    }
-    public IEnumerator EnterGuardCounterPhase()
-    {
-        Debug.Log("가드 카운터!");
-        yield return ProgressGuardCounterPhase(); //가드 카운터 시 진행
-        isEnteringGuardCounterPhase = false;
-        OnGuardCounterEnd?.Invoke();//가드카운터 게이지 리셋
-    }
-    private IEnumerator ProgressGuardCounterPhase()
-    {
-        Vector2 targetPosition = (playerTransform.position + transform.position) / 2;
-        qteEffect.StartQTE(targetPosition);
-        yield return WaitForTargetedTime(qteEffect.Speed);
     }
     #endregion
 
@@ -418,7 +404,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public Vector2 GetDefense() {
         return new Vector2(slashDefense, pierceDefense);
     }
-    private void OnDestroy()
+    protected void OnDestroy()
     {
         StopAllCoroutines();
     }

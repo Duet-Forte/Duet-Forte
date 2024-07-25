@@ -61,13 +61,11 @@ public class DamageUI : MonoBehaviour
         int index = 0;
         List<int> damageByDigit= new List<int>();
 
-        Debug.Log(Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1));
         judgeEffect.sprite = judgeEffects[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
         judgeLetter.sprite = judgeLetters[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
 
         if (damage.GetDamageType() == Util.CustomEnum.DamageType.Slash)
         {
-            Debug.Log("RedDamage");
             while (calculatedDamage> 0)
             {
 
@@ -92,7 +90,6 @@ public class DamageUI : MonoBehaviour
         }
         else if(damage.GetDamageType()==Util.CustomEnum.DamageType.Pierce)
         {
-            Debug.Log("BlueDamage");
             while (calculatedDamage > 0)
             {
 

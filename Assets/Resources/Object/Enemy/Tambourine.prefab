@@ -190,7 +190,7 @@ MonoBehaviour:
     \uB450\uB4DC\uB824 \uACF5\uACA9\uD558\uB294 \uB4EF \uD558\uB2E4.\n\uD45C\uC815\uC744
     \uC77D\uC744 \uC218 \uC5C6\uB2E4."
   enemyImage: {fileID: 21300000, guid: 9d5f9a3839961bb479cc263961b2a89b, type: 3}
-  maxHP: 1500
+  maxHP: 130
   enemyAttack: 14
   exp: 35
   slashDefense: 0
