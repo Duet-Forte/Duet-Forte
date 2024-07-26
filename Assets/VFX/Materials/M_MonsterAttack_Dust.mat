@@ -126,7 +126,7 @@ Material:
     - _Insub_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Insub_Panning: {r: 0, g: 0, b: 0, a: 0}
     - _Insub_Tiling: {r: 1, g: 1, b: 0, a: 0}
-    - _MainColor: {r: 0.54843724, g: 0.54843724, b: 0.54843724, a: 0.7882353}
+    - _MainColor: {r: 0.23897466, g: 0.23897466, b: 0.23897466, a: 0.74509805}
     - _MainTex_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _MainTex_Panning: {r: 0, g: 0, b: 0, a: 0}
     - _MainTex_Tiling: {r: 1, g: 1, b: 0, a: 0}
