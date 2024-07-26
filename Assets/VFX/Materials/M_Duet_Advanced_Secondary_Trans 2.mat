@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Duet_Advanced_Offset
+  m_Name: M_Duet_Advanced_Secondary_Trans 2
   m_Shader: {fileID: -6465566751694194690, guid: 1de76cd93aa69b4409bdd1707da0b181, type: 3}
   m_ValidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
@@ -24,11 +24,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 124963341af16d14a987e76281344fae, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3fab41b969128fe4e932363cbd26c53c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask_Tex:
-        m_Texture: {fileID: 2800000, guid: 9f2ae09854d95e549a2d15e2d5fa491a, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -67,7 +67,7 @@ Material:
     - _Main_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Mask_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Mask_Panning: {r: 0, g: 0, b: 0, a: 0}
-    - _Mask_Tiling: {r: 2.04, g: 1, b: 0, a: 0}
+    - _Mask_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _dist_offset: {r: 0, g: 0, b: 0, a: 0}
     - _dist_panning: {r: 0, g: 0, b: 0, a: 0}
     - _dist_tiling: {r: 1, g: 1, b: 0, a: 0}
