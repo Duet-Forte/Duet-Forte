@@ -34,7 +34,7 @@ public class StatusUIView : MonoBehaviour, IStageUI
 
         enemyHealthPointUI = Instantiate(prefabs[1], transform)
             .AddComponent<PlayerHealthPointUI>();
-        enemyHealthPointUI.InitSettings(stageManager.Enemy.HealthPoint);
+        enemyHealthPointUI.InitSettings(stageManager.Enemy.CurrentHP);
 
         BindUIEvents(stageManager);
     }
