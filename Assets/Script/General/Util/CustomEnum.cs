@@ -5,11 +5,11 @@ namespace Util
         public enum JudgeName
         {
             Rest = 0,
-            Perfect,
-            Great,
-            Good,
-            Bad,
-            Miss
+            Perfect=1,
+            Great=2,
+            Good=3,
+            Bad=4,
+            Miss=5
             
         }
         public enum Turn

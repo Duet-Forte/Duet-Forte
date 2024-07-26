@@ -110,7 +110,7 @@ public class StageManager : MonoBehaviour
             judgeManager?.UpdateInput();
         }
     }
-    public void StageStart(Stage stage , PlayerInfo playerInfo)  //현재는 레벨이랑 경험치를 받고 있지만 확장성을 고려하면 캡슐화시켜서 전달해야 할 듯 합니다.
+    public void StageStart(Stage stage , PlayerInfo playerInfo)  
     {//don't destroy on load에서 주입받을
         this.stage = stage;
         InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn , playerInfo);
