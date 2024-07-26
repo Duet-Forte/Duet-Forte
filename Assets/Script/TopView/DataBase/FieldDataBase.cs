@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TopViewEntityDataBase
+public class FieldDataBase
 {
+    private int fieldID;
+    public int ID { get => fieldID; }
     private Dictionary<string, GameObject> prefabs;
     public Dictionary<string, GameObject> Prefabs
     {
@@ -19,5 +21,11 @@ public class TopViewEntityDataBase
             }
             return prefabs;
         }
+    }
+
+    public void ChangeField(int fieldID)
+    {
+        this.fieldID = fieldID;
+        DataBase.Dialogue.ResetLine(fieldID);
     }
 }

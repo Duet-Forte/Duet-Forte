@@ -11,9 +11,9 @@ public class QuestChecker : EventTrigger
     [SerializeField] private Quest quest;
     protected override void RunTask()
     {
-        if (DataBase.Instance.Player.Quests.Contains(quest))
+        if (DataBase.Quest.Quests.ContainsKey(quest))
         {
-            DataBase.Instance.Dialogue.SetID(questTarget, targetID);
+            DataBase.Dialogue.SetID(questTarget, targetID);
             QuestManager.Instance.GrantReward(quest);
         }
     }

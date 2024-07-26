@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 
+// 저장할 데이터들
 public class PlayerData
 {
     private int level;
     private int experiencePoint;
     private int gold;
-    private List<Quest> quests;
 
-    public List<Quest> Quests { get { if (quests == null) quests = new List<Quest>(); return quests; }}
-
+    public int Level { get => level; }
+    public int EXP { get => experiencePoint; }
+    public int Gold { get => gold; }
     public PlayerData()
     {
         level = 1;
@@ -17,18 +18,24 @@ public class PlayerData
     }
     public void GetReward(Quest quest)
     {
-        quests.Remove(quest);
-        DataBase.Instance.Skill.ActivateSkill(quest.skillId);
+        DataBase.Skill.ActivateSkill(quest.skillId);
         gold += quest.gold;
         experiencePoint += quest.experiencePoint;
     }
     public void SetPlayerInfo(PlayerInfo info)
     {
-        experiencePoint =info.PlayerCurrentEXP;
+        experiencePoint = info.PlayerCurrentEXP;
         level = info.PlayerLevel;
     }
     public PlayerInfo CreatePlayerInfo()
     {
-        return new PlayerInfo(DataBase.Instance.Skill.Skill, level, experiencePoint);
+        return new PlayerInfo(DataBase.Skill.Skill, level, experiencePoint);
+    }
+
+    public void LoadData(int level, int exp, int gold)
+    {
+        this.level = level;
+        this.experiencePoint = exp;
+        this.gold = gold;
     }
 }

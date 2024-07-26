@@ -16,14 +16,14 @@ public class CameraManager
     {
         cutsceneCam.gameObject.SetActive(false);
         followCam.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = 15f;
-        followCam.Follow = BICSceneManager.Instance.FieldManager.Player.transform;
+        followCam.Follow = GameManager.FieldManager.Player.transform;
         followCam.gameObject.SetActive(true);
     }
 
     public void ChangeCameraCollider(string regionName)
     {
         followCam.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = 
-            BICSceneManager.Instance.FieldManager.Field.GetCameraCollider(regionName);
+            GameManager.FieldManager.Field.GetCameraCollider(regionName);
     }
 
     public void SetCutsceneCamera(CinemachineVirtualCamera cutsceneCam) => this.cutsceneCam = cutsceneCam;

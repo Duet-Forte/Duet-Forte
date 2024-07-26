@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class QuestManager
 {
@@ -24,7 +21,7 @@ public class QuestManager
 
     public void CheckQuest(int id)
     {
-        foreach (Quest quest in DataBase.Instance.Player.Quests)
+        foreach (Quest quest in DataBase.Quest.Quests.Keys)
         {
             if (quest.ID == id)
                 GrantReward(quest);
@@ -33,7 +30,7 @@ public class QuestManager
     public void SetQuest(int id)
     {
         Debug.Log("퀘스트 부여함!");
-        DataBase.Instance.Player.Quests.Add(quests[id]);
+        DataBase.Quest.SetQuest(quests[id]);
     }
     public void GrantReward(Quest quest)
     {
@@ -41,9 +38,17 @@ public class QuestManager
         Debug.Log(quest.gold);
         Debug.Log(quest.experiencePoint);
         Debug.Log(quest.skillId);
-        DataBase.Instance.Player.GetReward(quest);
+        DataBase.Quest.CompleteQuest(quest);
+        DataBase.Player.GetReward(quest);
     }
-
+    public void CheckEliminationQuest(string name)
+    {
+        foreach (Quest quest in DataBase.Quest.Quests.Keys)
+        {
+            if (quest is EliminationQuest && (quest as EliminationQuest).monsterName == name)
+                GrantReward(quest);
+        }
+    }
     public Quest GetQuest(int id) 
     {
         return quests[id];

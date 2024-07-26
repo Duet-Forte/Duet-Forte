@@ -2,64 +2,73 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 using Util.CustomEnum;
+using System.Collections.Generic;
 
 public class InputController : MonoBehaviour, InputActions.IPlayerActions
 {
     private InputActions inputActions;
-    private InputActionMap playerActionMap;
-    private Action<InputAction.CallbackContext> onMove;
-    private Action<InputAction.CallbackContext> onInteract;
+    private Dictionary<PlayerAction, InputAction> actionPairs;
+    private Dictionary<PlayerAction, Action<InputAction.CallbackContext>> eventPairs;
+    private Dictionary<PlayerAction, Action<InputAction.CallbackContext>> delegatePairs;
     private bool isInitialized = false;
 
     public void InitSettings()
     {
         inputActions = new InputActions();
-        playerActionMap = inputActions.Player;
-        inputActions.Player.Move.performed -= OnMove;
-        inputActions.Player.Move.performed += OnMove;
-        inputActions.Player.Interact.performed -= OnInteract;
-        inputActions.Player.Interact.performed += OnInteract;
+        actionPairs = new Dictionary<PlayerAction, InputAction>()
+        { 
+            { PlayerAction.Move, inputActions.Player.Move },
+            { PlayerAction.Interact, inputActions.Player.Interact },
+            { PlayerAction.Skip, inputActions.Player.Skip }
+        };
+        eventPairs = new Dictionary<PlayerAction, Action<InputAction.CallbackContext>>()
+        {
+            { PlayerAction.Move, OnMove },
+            { PlayerAction.Interact, OnInteract },
+            { PlayerAction.Skip, OnSkip }
+        };
+        delegatePairs = new Dictionary<PlayerAction, Action<InputAction.CallbackContext>>()
+        { 
+            { PlayerAction.Move, null },
+            { PlayerAction.Interact, null },
+            { PlayerAction.Skip, null }
+        };
+
+        foreach(var actionPair in actionPairs)
+        {
+            actionPair.Value.performed -= eventPairs[actionPair.Key];
+            actionPair.Value.performed += eventPairs[actionPair.Key];
+        }
         isInitialized = true;
     }
 
     public void BindPlayerInputAction(PlayerAction playerAction, Action<InputAction.CallbackContext> someEvent)
     {
-        switch (playerAction)
-        {
-            case PlayerAction.Move:
-                onMove -= someEvent;
-                onMove += someEvent;
-                break;
-                case PlayerAction.Interact:
-                onInteract -= someEvent;
-                onInteract += someEvent;
-                break;
-            default:
-                break;
-        }
+        delegatePairs[playerAction] -= someEvent;
+        delegatePairs[playerAction] += someEvent;
     }
 
     public InputAction GetAction(PlayerAction playerAction)
     {
-        switch (playerAction)
-        {
-            case PlayerAction.Move:
-                return inputActions.Player.Move;
-            case PlayerAction.Interact:
-                return inputActions.Player.Interact;
-            default:
-                return null;
-        }
+        if (actionPairs.TryGetValue(playerAction, out InputAction action))
+            return action;
+        else
+            return null;
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        onMove?.Invoke(context);
+        delegatePairs[PlayerAction.Move]?.Invoke(context);
     }
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        onInteract?.Invoke(context);
+        delegatePairs[PlayerAction.Interact]?.Invoke(context);
+    }
+
+    public void OnSkip(InputAction.CallbackContext context)
+    {
+        delegatePairs[PlayerAction.Skip]?.Invoke(context);
     }
     public bool IsKeyTriggered(PlayerAction action)
     {
@@ -73,8 +82,10 @@ public class InputController : MonoBehaviour, InputActions.IPlayerActions
     {
         if (isInitialized)
         {
-            inputActions.Player.Move.Enable();
-            inputActions.Player.Interact.Enable();
+            foreach (var action in actionPairs.Values)
+            {
+                action.Enable();
+            }
         }
     }
 
@@ -82,8 +93,10 @@ public class InputController : MonoBehaviour, InputActions.IPlayerActions
     {
         if (isInitialized)
         {
-            inputActions.Player.Move.Disable();
-            inputActions.Player.Interact.Disable();
+            foreach (var action in actionPairs.Values)
+            {
+                action.Disable();
+            }
         }
     }
 }

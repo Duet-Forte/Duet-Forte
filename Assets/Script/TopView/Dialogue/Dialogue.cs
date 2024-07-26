@@ -31,5 +31,5 @@ public struct Dialogue
     public string[] Speakers { get => speakers; }
     public string Speaker { get => currentSpeaker; set => currentSpeaker = value; }
     public DialogueEventHandler[] Events { get => dialogueEvent; }
-    public Sprite Sprite { get => DataBase.Instance.Dialogue.GetSprite(currentSpeaker);}
+    public Sprite Sprite { get => DataBase.Dialogue.GetSprite(currentSpeaker);}
 }

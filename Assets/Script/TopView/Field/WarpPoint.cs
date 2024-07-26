@@ -9,18 +9,18 @@ public class WarpPoint : EventTrigger
     protected override void RunTask()
     {
         if(controller == null)
-            controller = BICSceneManager.Instance.FieldManager.Player.GetComponent<PlayerController>();
+            controller = GameManager.FieldManager.Player.GetComponent<PlayerController>();
         controller.Stop();
         if (soundName != null && soundName != string.Empty)
             AkSoundEngine.PostEvent(soundName, gameObject);
-        BICSceneManager.Instance.CutsceneManager.FadeIn(0.5f, () => OnFinishFade());
+        GameManager.CutsceneManager.FadeIn(0.5f, () => OnFinishFade());
     }
 
     private void OnFinishFade()
     {
-        BICSceneManager.Instance.FieldManager.Player.transform.position = destination.position;
-        BICSceneManager.Instance.CutsceneManager.FadeOut(0.5f);
-        BICSceneManager.Instance.FieldManager.CheckPoint();
+        GameManager.FieldManager.Player.transform.position = destination.position;
+        GameManager.CutsceneManager.FadeOut(0.5f);
+        GameManager.FieldManager.CheckPoint();
         controller.IsStopped = false;
     }
 }

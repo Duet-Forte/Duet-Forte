@@ -9,8 +9,8 @@ using Util;
 
 public class StageClear : MonoBehaviour
 {
-    // ÆÇÁ¤°ú ÃÑ °ø°İ Ãß°¡
-    // °è»ê ½Ã½ºÅÛ
+    // íŒì •ê³¼ ì´ ê³µê²© ì¶”ê°€
+    // ê³„ì‚° ì‹œìŠ¤í…œ
 
     #region judgePoint
     private int perfectPoint = 10;
@@ -27,7 +27,7 @@ public class StageClear : MonoBehaviour
     private bool isChangeExpEnd = false;
     private int maxExp;
 
-    #region ÇÃ·¹ÀÌ¾î ÀÎÆ÷
+    #region í”Œë ˆì´ì–´ ì¸í¬
     private int currentExp;
     private int playerLevel;
     private int currentPlayerHP;
@@ -50,7 +50,7 @@ public class StageClear : MonoBehaviour
     [SerializeField] private TMP_Text expChangeText;
     [SerializeField] private GameObject inputAnyKey;
     [SerializeField] private Image blackOut;
-   /* private void Start() //Å×½ºÆ® ÄÚµå
+   /* private void Start() //í…ŒìŠ¤íŠ¸ ì½”ë“œ
     {
         judges = new List<JudgeName>();
         AddJudge(JudgeName.Perfect);
@@ -99,9 +99,9 @@ public class StageClear : MonoBehaviour
  
     #endregion
 
-    #region ±¸ÇöºÎ
+    #region êµ¬í˜„ë¶€
    private void CalcRank(int turn) {
-        // ¸¶Áö¸·À¸·Î ÅÏ¼ö¸¦ ÀÔ·Â¹ŞÀ¸¸ç ÃÖÁ¾ ·©Å© Ã¥Á¤
+        // ë§ˆì§€ë§‰ìœ¼ë¡œ í„´ìˆ˜ë¥¼ ì…ë ¥ë°›ìœ¼ë©° ìµœì¢… ë­í¬ ì±…ì •
         rank =Rank.Empty;
         
         int resultPoint=judgeToPoint() + TurnToPoint(turn);
@@ -124,7 +124,7 @@ public class StageClear : MonoBehaviour
         if (resultPoint < 8) {
             rank = Rank.C;
         }
-        Debug.Log("·©Å© : "+rank);
+        Debug.Log("ë­í¬ : "+rank);
         switch (rank) { 
             case Rank.S: rankStr= "S"; break;
             case Rank.APlus: rankStr = "A+"; break;
@@ -154,7 +154,7 @@ public class StageClear : MonoBehaviour
         }
         else
         {
-            //ÆĞ¹è½Ã BGM
+            //íŒ¨ë°°ì‹œ BGM
         }
 
         titleText.gameObject.SetActive(true);
@@ -197,19 +197,19 @@ public class StageClear : MonoBehaviour
     private IEnumerator WaitForInput() {
         while (true) {
             if (Input.anyKeyDown) {
-                Debug.Log($"¿¡³Ê¹Ì ³×ÀÓ : {stageManager.Enemy.EnemyName}");
+                Debug.Log($"ì—ë„ˆë¯¸ ë„¤ì„ : {stageManager.Enemy.EnemyName}");
                 if (stageManager.Enemy.EnemyName.Equals("Tambourine"))
-                { //ÀûÀÌ ÅÆ¹ö¸°ÀÌ¸é µ¥¸ğ¾ÀÀ¸·Î º¸³»±â
+                { //ì ì´ íƒ¬ë²„ë¦°ì´ë©´ ë°ëª¨ì”¬ìœ¼ë¡œ ë³´ë‚´ê¸°
 
-                    Debug.Log("DemoSceneÀ¸·Î ÀÌµ¿");
+                    Debug.Log("DemoSceneìœ¼ë¡œ ì´ë™");
                     AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);
                     yield return blackOut.DOFade(1f, 2f).OnComplete(() => { UnityEngine.SceneManagement.SceneManager.LoadScene("DemoScene"); });
                     break;
                 }
 
-                Debug.Log("ºñÀüÅõ¾ÀÀ¸·Î ÀÌµ¿ °Ç³×ÁÙ µ¥ÀÌÅÍ : ·¹º§, ÇöÀç °æÇèÄ¡");
+                Debug.Log("ë¹„ì „íˆ¬ì”¬ìœ¼ë¡œ ì´ë™ ê±´ë„¤ì¤„ ë°ì´í„° : ë ˆë²¨, í˜„ì¬ ê²½í—˜ì¹˜");
                 PlayerInfo playerInfo = new PlayerInfo(playerLevel,currentExp,currentPlayerHP);
-                BICSceneManager.Instance.SetFieldScene(playerInfo);
+                GameManager.Instance.SetFieldScene(playerInfo);
                 break;
             }
             yield return null;
@@ -224,10 +224,10 @@ public class StageClear : MonoBehaviour
         Debug.Log($"restEXP : {restEXP}");
         Debug.Log($"maxEXP : {maxExp}");
         Debug.Log($"cerrentExp : {currentExp}");
-        Debug.Log($"·¹º§¾÷À» ÇÒ °æÇèÄ¡ÀÎ°¡? : {enemyExp >= restEXP}");
-        if (enemyExp >= restEXP) //·¹º§¾÷ÇÏ´Â »óÈ²
+        Debug.Log($"ë ˆë²¨ì—…ì„ í•  ê²½í—˜ì¹˜ì¸ê°€? : {enemyExp >= restEXP}");
+        if (enemyExp >= restEXP) //ë ˆë²¨ì—…í•˜ëŠ” ìƒí™©
         {
-            expGainSpeed = 0.7f + ((float)maxExp / enemyExp);//0.3ÃÊ´Â °æÇèÄ¡ ¿À¸£´Â ÃÖ¼Ò ½Ã°£
+            expGainSpeed = 0.7f + ((float)maxExp / enemyExp);//0.3ì´ˆëŠ” ê²½í—˜ì¹˜ ì˜¤ë¥´ëŠ” ìµœì†Œ ì‹œê°„
             Tween changeExpText = DOTween.To(() => currentExp, value => expText.text = $"{value} / {maxExp}", maxExp, expGainSpeed);
             changeExpText.Play();
             Tween changeExp = DOTween.To(() => expSlider.value, value => expSlider.value = value, 1, expGainSpeed);
@@ -238,16 +238,16 @@ public class StageClear : MonoBehaviour
             });
 
         }
-        else if(enemyExp<restEXP) { //·¹º§¾÷ ¸øÇÏ°í °æÇèÄ¡¸¸ Ã¤¿ì´Â »óÈ²
+        else if(enemyExp<restEXP) { //ë ˆë²¨ì—… ëª»í•˜ê³  ê²½í—˜ì¹˜ë§Œ ì±„ìš°ëŠ” ìƒí™©
             int tmpExp = currentExp + enemyExp;
             expGainSpeed = 0.7f;
-            Tween changeExpText = DOTween.To(() => currentExp, value => expText.text = $"{value} / {maxExp}", currentExp+enemyExp, expGainSpeed);//¼ıÀÚ text Ç¥½Ã
+            Tween changeExpText = DOTween.To(() => currentExp, value => expText.text = $"{value} / {maxExp}", currentExp+enemyExp, expGainSpeed);//ìˆ«ì text í‘œì‹œ
             changeExpText.Play().OnComplete(() => { 
                 currentExp += enemyExp;
                 isChangeExpEnd = true;
-                Debug.Log("°æÇèÄ¡ ´Ù ¸Ô¾ú½´? : "+isChangeExpEnd);
+                Debug.Log("ê²½í—˜ì¹˜ ë‹¤ ë¨¹ì—ˆìŠˆ? : "+isChangeExpEnd);
             });
-            Tween changeExp = DOTween.To(() => expSlider.value, value => expSlider.value = value, ((float)tmpExp / maxExp), expGainSpeed); //°ÔÀÌÁö ¿À¸£´Â ¿¬Ãâ
+            Tween changeExp = DOTween.To(() => expSlider.value, value => expSlider.value = value, ((float)tmpExp / maxExp), expGainSpeed); //ê²Œì´ì§€ ì˜¤ë¥´ëŠ” ì—°ì¶œ
                 changeExp.Play();
             
         
@@ -354,13 +354,13 @@ public class StageClear : MonoBehaviour
     
     }
     #endregion
-    // ÆÇÁ¤ Ãß°¡ÇÏ´Â ½Ã½ºÅÛ
-    // ÆÇÁ¤ º°·Î Á¡¼ö ³»±â
-    // ÆÇÁ¤ Á¡¼ö¸¦ Æò±Õ³»±â
-    // Æò±Õ³½ Á¡¼öÀÇ ºĞÀ§±¸°£ È®ÀÎ
-    // ÅÏ¼ö Ã¼Å© ºĞÀ§±¸°£ È®ÀÎ ÈÄ Á¡¼ö 
+    // íŒì • ì¶”ê°€í•˜ëŠ” ì‹œìŠ¤í…œ
+    // íŒì • ë³„ë¡œ ì ìˆ˜ ë‚´ê¸°
+    // íŒì • ì ìˆ˜ë¥¼ í‰ê· ë‚´ê¸°
+    // í‰ê· ë‚¸ ì ìˆ˜ì˜ ë¶„ìœ„êµ¬ê°„ í™•ì¸
+    // í„´ìˆ˜ ì²´í¬ ë¶„ìœ„êµ¬ê°„ í™•ì¸ í›„ ì ìˆ˜ 
 
-    // Á¡¼ö ºĞÀ§±¸°£ È®ÀÎ
+    // ì ìˆ˜ ë¶„ìœ„êµ¬ê°„ í™•ì¸
     // Update is called once per frame
   
 }

@@ -11,6 +11,7 @@ public class Field : MonoBehaviour
     [SerializeField] private Transform cutsceneObjectParent;
     [SerializeField] private Transform cameraPathsParent;
     [SerializeField] private Transform cameraColliderParent;
+    [SerializeField] private Transform savePointParent;
     [SerializeField] private CinemachineVirtualCamera cutsceneCamera;
     private Dictionary<string, TopViewEntity[]> entities;
     private Dictionary<string, GameObject> cutsceneObject;
@@ -60,7 +61,7 @@ public class Field : MonoBehaviour
 
     private void SetCameraSettings()
     {
-        BICSceneManager.Instance.CameraManager.SetCutsceneCamera(cutsceneCamera);
+        GameManager.CameraManager.SetCutsceneCamera(cutsceneCamera);
         cameraPaths = new Dictionary<string, CinemachinePath>();
         cameraColliders = new Dictionary<string, PolygonCollider2D>();
 
@@ -125,5 +126,10 @@ public class Field : MonoBehaviour
     public void DisableCutsceneObjects()
     {
         cutsceneObjectParent.gameObject.SetActive(false);
+    }
+
+    public SavePoint GetSavePoint(int saveInt)
+    {
+        return savePointParent.GetChild(saveInt).GetComponent<SavePoint>();
     }
 }
