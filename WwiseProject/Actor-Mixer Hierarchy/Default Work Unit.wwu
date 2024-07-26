@@ -247,6 +247,120 @@
 										</Sound>
 									</ChildrenList>
 								</ActorMixer>
+								<ActorMixer Name="Player_Attack_A_Test" ID="{6439C662-4777-4E4D-A3E1-D86DB0400CCF}" ShortID="538519553">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Gio_Attack_A_SFX" ID="{0749BB6C-8BAD-4EE7-8F8A-EEF7ACC4D012}" ShortID="505248940">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{6113F880-8164-4D85-85D0-5AC86563A054}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="200"/>
+																	<Property Name="Min" Type="Real64" Value="-100"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-7</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Gio_Attack_A_SFX" ID="{9E43B44C-0990-4966-B563-C4EDC0B11DB9}">
+													<Language>SFX</Language>
+													<AudioFile>Gio_Attack_A_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="406318544"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Gio_Attack_A_SFX" ID="{9E43B44C-0990-4966-B563-C4EDC0B11DB9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</ActorMixer>
+								<ActorMixer Name="Player_Attack_B_Test" ID="{DD55A295-BAF5-4D4F-AB9C-1A956005E742}" ShortID="539689971">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Gio_Attack_B_SFX" ID="{6276D987-91FD-40D3-8517-E7F2728469D1}" ShortID="819088138">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{B6050B5C-3A7E-4D39-948C-234DB491E341}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="200"/>
+																	<Property Name="Min" Type="Real64" Value="-200"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Gio_Attack_B_SFX" ID="{404B04CF-C7AE-4C8B-8C96-9059754C0F65}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.249876385336744"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0322421142369992"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.502976982097187"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Gio_Attack_B_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1008217924"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Gio_Attack_B_SFX" ID="{404B04CF-C7AE-4C8B-8C96-9059754C0F65}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</ActorMixer>
 							</ChildrenList>
 						</ActorMixer>
 						<RandomSequenceContainer Name="TestSignal" ID="{68628F3F-4D7D-461A-8D07-705EC2D5FC4A}" ShortID="826764282">
@@ -1998,6 +2112,55 @@
 													</ChildrenList>
 													<ActiveSourceList>
 														<ActiveSource Name="Tambourine_Signal" ID="{D4BDE1C6-F308-46B1-87C6-98FC088A1EF7}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</ActorMixer>
+										<ActorMixer Name="Tambourine_Hit" ID="{F4A11E67-FE7F-441B-8312-2586AF90623E}" ShortID="453272276">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Tambourine_Hit" ID="{A644CB12-951C-4657-870D-265463553A58}" ShortID="836576736">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{80436286-B98E-4530-8D9E-2CA1DFDECC01}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="200"/>
+																			<Property Name="Min" Type="Real64" Value="-200"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Tambourine_Hit" ID="{50FD3F5E-4E75-4182-88D2-35FDE248BDFA}">
+															<Language>SFX</Language>
+															<AudioFile>Tambourine_Hit.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="386007338"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Tambourine_Hit" ID="{50FD3F5E-4E75-4182-88D2-35FDE248BDFA}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>

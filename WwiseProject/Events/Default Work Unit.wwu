@@ -16,7 +16,7 @@
 										<Action Name="" ID="{2DB06A32-8E1E-490F-9C96-FBF718F50126}" ShortID="839988719">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="세로베기" ID="{E2307D4C-0048-4F23-AFC7-74A8C6732801}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="Gio_Attack_A_SFX" ID="{0749BB6C-8BAD-4EE7-8F8A-EEF7ACC4D012}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -27,7 +27,7 @@
 										<Action Name="" ID="{A9871F5D-03DB-4627-8AFB-4F093A85E360}" ShortID="75186915">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="찌르기" ID="{33C1E332-B061-4206-B899-5D48884BF647}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="Gio_Attack_B_SFX" ID="{6276D987-91FD-40D3-8517-E7F2728469D1}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -493,6 +493,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Tambourine_Attack" ID="{4E214FBE-9593-4531-9F59-A0393F9578B2}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Enemy_Tambourine_Hit_SFX" ID="{44BE723D-8A21-409E-BFAA-A1FCC1CE0172}">
+									<ChildrenList>
+										<Action Name="" ID="{843C2ACF-5DD4-47C2-82BA-BFBC774D04E2}" ShortID="497984814">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Tambourine_Hit" ID="{A644CB12-951C-4657-870D-265463553A58}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

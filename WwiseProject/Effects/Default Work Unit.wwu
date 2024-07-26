@@ -13,9 +13,11 @@
 				</Effect>
 				<Effect Name="Parametric_EQ" ID="{C29C10DA-5F07-4D07-AAB9-A68A9A6BEDAF}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
 					<PropertyList>
+						<Property Name="FrequencyBand1" Type="Real32" Value="286"/>
 						<Property Name="FrequencyBand3" Type="Real32" Value="4482"/>
+						<Property Name="GainBand1" Type="Real32" Value="-5.5"/>
 						<Property Name="GainBand2" Type="Real32" Value="-1.5"/>
-						<Property Name="GainBand3" Type="Real32" Value="-1"/>
+						<Property Name="GainBand3" Type="Real32" Value="1"/>
 					</PropertyList>
 				</Effect>
 				<Effect Name="Gain" ID="{FAC9A994-9A46-4391-AC5B-4334A8ACA8B0}" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
@@ -25,7 +27,7 @@
 				</Effect>
 				<Effect Name="New_Delay" ID="{A40E6054-F7DE-4082-A0A2-10129A73F6AB}" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
 					<PropertyList>
-						<Property Name="DelayTime" Type="Real32" Value="0.3"/>
+						<Property Name="DelayTime" Type="Real32" Value="0.05"/>
 						<Property Name="Feedback" Type="Real32" Value="4.5"/>
 						<Property Name="WetDryMix" Type="Real32" Value="20"/>
 					</PropertyList>
@@ -62,6 +64,23 @@
 					</PropertyList>
 				</Effect>
 				<Effect Name="New_Compressor" ID="{16BDC5B9-9802-41EA-924D-874D6527230C}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3"/>
+				<Effect Name="New_Parametric_EQ_01" ID="{E95E47C1-471C-4454-ACD8-1560D58A7821}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FrequencyBand1" Type="Real32" Value="244"/>
+						<Property Name="FrequencyBand2" Type="Real32" Value="684"/>
+						<Property Name="GainBand1" Type="Real32" Value="-5.5"/>
+						<Property Name="GainBand2" Type="Real32" Value="-2.5"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="New_Parametric_EQ_02" ID="{87EEEAB9-F5AF-43E9-BBFA-5CDB64B20D7E}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FrequencyBand1" Type="Real32" Value="344"/>
+						<Property Name="FrequencyBand3" Type="Real32" Value="8932"/>
+						<Property Name="GainBand1" Type="Real32" Value="-2.5"/>
+						<Property Name="GainBand2" Type="Real32" Value="0.5"/>
+						<Property Name="GainBand3" Type="Real32" Value="1.5"/>
+					</PropertyList>
+				</Effect>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>

@@ -55,7 +55,7 @@ public class StageManager : MonoBehaviour
     private PlayerTurn playerTurn; //추후 플레이어 턴 완료되면 그 때 변경
     private GuardCounterTurn guardCounterTurn;
 
-    private float secondsPerBeat;
+    private double secondsPerBeat;
     private bool isStageOver;
     private ITurnHandler[] turnHandler;
     private Turn currentTurn;
@@ -66,7 +66,7 @@ public class StageManager : MonoBehaviour
     public event Action OnTurnStart;
 
     #region 프로퍼티
-    public float SecondsPerBeat { get { return secondsPerBeat; } }
+    public double SecondsPerBeat { get { return secondsPerBeat; } }
     public IEnemy Enemy { get { return enemy; } }
     public JudgeManager JudgeManager { get { return judgeManager; } }
     public Turn CurrentTurn { set { currentTurn = value; Debug.Log("여기서 " + currentTurn + " 으로 바뀜"); } }
@@ -93,7 +93,7 @@ public class StageManager : MonoBehaviour
     [ContextMenu("DEBUG/SceneStart")]
     private void TestPlay()
     {
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn, new PlayerInfo(debugSkills,3,7));
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn, new PlayerInfo(debugSkills,Const.DEBUG_PLAYER_LEVEL,Const.DEBUG_PLAYER_CURRENT_EXP));
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(false);
     }
@@ -110,7 +110,7 @@ public class StageManager : MonoBehaviour
             judgeManager?.UpdateInput();
         }
     }
-    public void StageStart(Stage stage , PlayerInfo playerInfo)  //현재는 레벨이랑 경험치를 받고 있지만 확장성을 고려하면 캡슐화시켜서 전달해야 할 듯 합니다.
+    public void StageStart(Stage stage , PlayerInfo playerInfo)  
     {//don't destroy on load에서 주입받을
         this.stage = stage;
         InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn , playerInfo);

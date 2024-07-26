@@ -5,31 +5,39 @@ namespace Util
 {
     public static class Const
     {
-        #region �÷��̾�
-        public const int INITIAL_HEALTH_POINT = 6;
+        #region 레벨당 스탯 계산을 위한 기초 스탯
+        public const int PLAYER_BASE_HEALTH = 50;
+        public const int PLAYER_BASE_ATTACK = 6;
+        public const int PLAYER_BASE_DEFENSE = 2;
         #endregion
 
-        #region ����
-        public const float MINUTE_TO_SECOND = 60f;
+        #region 디버깅
+        public const int DEBUG_PLAYER_LEVEL = 1;
+        public const int DEBUG_PLAYER_CURRENT_EXP = 0;
+        #endregion
+
+
+        #region 판정 범위
+        public const double MINUTE_TO_SECOND = 60d;
         public const int QUARTER_NOTE = 4;
         public const float BAD_JUDGE = 0.5f;
         public const float GOOD_JUDGE = 0.4f;
         public const float GREAT_JUDGE = 0.3f;
         public const float PERFECT_JUDGE = 0.2f;
         #endregion
-        #region ���Ȱ���
+        #region 패링시 얻는 클라이맥스 게이지
         public const int GUARD_COUNTER_GAUGE = 100;
         public const int PERFECT_ICREASE_GAUAGE = 15;
         public const int GREAT_ICREASE_GAUAGE = 8;
         public const int GOOD_ICREASE_GAUAGE = 4;
         #endregion
 
-        #region �� ����
+        #region 
         public const float ATTACK_DELAY_BEATS = 2f; // �� ���� ���� ���� �������� �̾����� ��.
         public const int MAX_EARLY_COUNT = 3;
         #endregion
 
-        #region ���� ��ġ
+        #region 경로
         public const string PATTERN_CSV_PATH = "CSV/PatternData";
         public const string STAGE_PATH = "Scriptable/Stage";
         public const string CUTSCENE_PATH = "Scriptable/Cutscene";
@@ -73,7 +81,7 @@ namespace Util
         public const float STATUSUI_FADE_SPEED = 1f;
         public const float DAMAGEUI_UI_WIDTH = 35f;
         public const float DAMAGEUI_UI_HEIGHT = 50f;
-        public const float DAMAGEUI_FADE_SPEED = 1f;
+        public const float DAMAGEUI_FADE_SPEED = 3.3f;
         #endregion
 
         #region �޴� UI ����

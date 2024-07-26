@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -9,6 +10,7 @@ using Util;
 
 public class DamageUI : MonoBehaviour
 {
+    [SerializeField] private Image[] effectAndJudges = new Image[2];
     private Image[] image=new Image[11];
     private Queue<Sprite> BlueDamagequeue;
     private Queue<Sprite> RedDamagequeue;
@@ -59,13 +61,11 @@ public class DamageUI : MonoBehaviour
         int index = 0;
         List<int> damageByDigit= new List<int>();
 
-        Debug.Log(Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1));
         judgeEffect.sprite = judgeEffects[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
         judgeLetter.sprite = judgeLetters[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
 
         if (damage.GetDamageType() == Util.CustomEnum.DamageType.Slash)
         {
-            Debug.Log("RedDamage");
             while (calculatedDamage> 0)
             {
 
@@ -90,7 +90,6 @@ public class DamageUI : MonoBehaviour
         }
         else if(damage.GetDamageType()==Util.CustomEnum.DamageType.Pierce)
         {
-            Debug.Log("BlueDamage");
             while (calculatedDamage > 0)
             {
 
@@ -144,8 +143,45 @@ public class DamageUI : MonoBehaviour
 
     public void MoveUI()
     {
-        canvasRectTransform.DOMoveY(YMAX, Const.DAMAGEUI_FADE_SPEED)
-            .SetEase(Ease.InBounce)
+        StartCoroutine(FadeSwitch(true));
+       
+        
+        float randomX=Random.Range(0f, 1f);
+        float randomY=Random.Range(0f, 1f);
+
+        canvasRectTransform.DOMove(new Vector2(gameObject.transform.position.x+8f,gameObject.transform.position.y+4f), Const.DAMAGEUI_FADE_SPEED)
+            .SetEase(Ease.Linear)
             .OnComplete(() => pool.Release(this));
+
+        StartCoroutine(FadeSwitch(false));
+    }
+
+
+    private IEnumerator FadeSwitch(bool onOff) {
+        if (onOff) {
+            foreach (Image i in effectAndJudges)
+            {
+                i.color = new Color(1, 1, 1, 1);
+            }
+            foreach (Image i in image)
+            {
+                i.color = new Color(1, 1, 1, 1);
+            }
+
+        }
+        if (!onOff) {
+            float delay = 0.6f;
+            yield return new WaitForSeconds(delay);
+            foreach (Image i in effectAndJudges)
+            {
+                i.DOFade(0f, Const.DAMAGEUI_FADE_SPEED- delay);
+            }
+            foreach (Image i in image)
+            {
+                i.DOFade(0f, Const.DAMAGEUI_FADE_SPEED- delay);
+            }
+
+        }
+    
     }
 }
