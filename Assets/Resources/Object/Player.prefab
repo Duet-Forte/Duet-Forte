@@ -34,7 +34,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096212241409138036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40, y: -16.5, z: 6}
+  m_LocalPosition: {x: -35, y: -16, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -144,8 +144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canAttack: 1
   timingList: 
-  skillCommandEnteredToArray:
-  - R
   castSkillParticle: {fileID: 0}
 --- !u!114 &4015119172762999965
 MonoBehaviour:

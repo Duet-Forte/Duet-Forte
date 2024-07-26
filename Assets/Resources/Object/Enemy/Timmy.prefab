@@ -91,7 +91,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5612330584740958209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40, y: -16.5, z: 0}
+  m_LocalPosition: {x: 35, y: -16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -190,7 +190,7 @@ MonoBehaviour:
     \uC704\uD55C \uC758\uBB34\uB97C \uB2E4\uD558\uB294 \uC790.\\n\uC815\uC9C1\uD558\uACE0
     \uC62C\uACE7\uC740 \uC120\uC728\uC774 \uB4E4\uB824\uC628\uB2E4."
   enemyImage: {fileID: 21300000, guid: 8bc02315aa9c37045943fe8b7994651f, type: 3}
-  healthPoint: 160
+  maxHP: 120
   enemyAttack: 7
   exp: 20
   slashDefense: 0
@@ -215,6 +215,3 @@ MonoBehaviour:
   - {fileID: 5531352612611189389, guid: 35531d311f374f648800a791bc28f4c6, type: 3}
   - {fileID: 2734133821201430730, guid: ee14ce440b78d7e4384160cd7227e08f, type: 3}
   - {fileID: 4214291812743566734, guid: bf2cb729db073fb4fa6a1ce11fb02c70, type: 3}
-  attackCountDownSignal: {fileID: 0}
-  attackSignal: {fileID: 0}
-  dashParticle: {fileID: 0}
