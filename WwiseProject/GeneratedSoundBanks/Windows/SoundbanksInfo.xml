@@ -286,7 +286,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{D2663EB0-E1E5-C6DA-266A-F0DE59F202F6}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{571BE4F6-EB0F-CCAC-1FFD-6AE7ACCFA2E1}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -398,7 +398,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{71F67E77-D2DD-67EF-F8AE-C51723847ED4}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{B9CE8C4F-1612-F7AB-217A-E1C25A1B7C8C}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -409,10 +409,6 @@
 				<File Id="133336124" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Attack_B_SFX.wav</ShortName>
 					<CachePath>SFX/Tambourine_Attack_B_SFX_818F3B66.wem</CachePath>
-				</File>
-				<File Id="167940839" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Skill_BBB02.wav</ShortName>
-					<CachePath>SFX/Skill_BBB02_E8BEDBF4.wem</CachePath>
 				</File>
 				<File Id="171558463" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Timmy_Attack05.wav</ShortName>
@@ -434,10 +430,6 @@
 					<ShortName>03.wav</ShortName>
 					<CachePath>SFX/03_2B6424CB.wem</CachePath>
 				</File>
-				<File Id="329739412" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Skill_AAA02.wav</ShortName>
-					<CachePath>SFX/Skill_AAA02_818F3B66.wem</CachePath>
-				</File>
 				<File Id="386007338" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Hit.wav</ShortName>
 					<CachePath>SFX/Tambourine_Hit_818F3B66.wem</CachePath>
@@ -449,6 +441,10 @@
 				<File Id="406318544" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gio_Attack_A_SFX.wav</ShortName>
 					<CachePath>SFX/Gio_Attack_A_SFX_818F3B66.wem</CachePath>
+				</File>
+				<File Id="474736260" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Gio_BBB_Skill_SFX.wav</ShortName>
+					<CachePath>SFX/Gio_BBB_Skill_SFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="481124707" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>0502_Loop.wav</ShortName>
@@ -466,13 +462,13 @@
 					<ShortName>SFX_공격신호_01.wav</ShortName>
 					<CachePath>SFX/SFX_공격신호_01_1246C0D0.wem</CachePath>
 				</File>
+				<File Id="674496262" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Gio_AAA_Skill_SFX.wav</ShortName>
+					<CachePath>SFX/Gio_AAA_Skill_SFX_818F3B66.wem</CachePath>
+				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
 					<CachePath>SFX/패링-03_03D2EA21.wem</CachePath>
-				</File>
-				<File Id="726328486" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Gio_ABA_SFX.wav</ShortName>
-					<CachePath>SFX/Gio_ABA_SFX_4F341F0A.wem</CachePath>
 				</File>
 				<File Id="755516841" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>0502_1.wav</ShortName>
@@ -481,6 +477,10 @@
 				<File Id="775650042" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Timmy_Attack01.wav</ShortName>
 					<CachePath>SFX/Timmy_Attack01_818F3B66.wem</CachePath>
+				</File>
+				<File Id="867470794" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Gio_ABA_Skill_02_SFX.wav</ShortName>
+					<CachePath>SFX/Gio_ABA_Skill_02_SFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="937501252" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>04.wav</ShortName>
@@ -500,7 +500,7 @@
 				</File>
 				<File Id="1008217924" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gio_Attack_B_SFX.wav</ShortName>
-					<CachePath>SFX/Gio_Attack_B_SFX_4A1FE31A.wem</CachePath>
+					<CachePath>SFX/Gio_Attack_B_SFX_A202A845.wem</CachePath>
 				</File>
 				<File Id="1026749207" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>02.wav</ShortName>
@@ -599,19 +599,19 @@
 						<MediaRef Id="723090075"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2518233790" Name="Player_Skill_AAA_SFX" DurationType="OneShot" DurationMin="2.4710834" DurationMax="2.4710834">
+				<Event Id="2518233790" Name="Player_Skill_AAA_SFX" DurationType="OneShot" DurationMin="3.418146" DurationMax="3.418146">
 					<MediaRefs>
-						<MediaRef Id="329739412"/>
+						<MediaRef Id="674496262"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2846259367" Name="Player_Skill_ABA_SFX" DurationType="OneShot" DurationMin="3.2816668" DurationMax="3.2816668">
+				<Event Id="2846259367" Name="Player_Skill_ABA_SFX" DurationType="OneShot" DurationMin="4.440375" DurationMax="4.440375">
 					<MediaRefs>
-						<MediaRef Id="726328486"/>
+						<MediaRef Id="867470794"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3250415283" Name="Player_Skill_BBB_SFX" DurationType="OneShot" DurationMin="2.7852855" DurationMax="2.7852855">
+				<Event Id="3250415283" Name="Player_Skill_BBB_SFX" DurationType="OneShot" DurationMin="2.9371667" DurationMax="2.9371667">
 					<MediaRefs>
-						<MediaRef Id="167940839"/>
+						<MediaRef Id="474736260"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="127602315" Name="Player_Skill_Climax_SFX" DurationType="OneShot" DurationMin="4.375698" DurationMax="4.375698">
@@ -638,5 +638,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{51B1D0DF-C9CD-6B29-4700-A291F45A87A4}</FileHash>
+	<FileHash>{4591B31E-205B-A406-BCB7-16CC1F1B9344}</FileHash>
 </SoundBanksInfo>

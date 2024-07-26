@@ -60,7 +60,7 @@
 										<Action Name="" ID="{4AD1E0E8-F8AA-4F1C-93E7-84C24FC0F68B}" ShortID="961703978">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Skill_AAA02" ID="{EF00A6DA-0184-4EBF-95F6-00AAC841C43F}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="Gio_AAA_Skill_SFX" ID="{28FD1834-F99E-42D4-8B0D-95D56FDC4399}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -71,7 +71,7 @@
 										<Action Name="" ID="{536FB9AB-8815-4E08-84C7-FB1114A23717}" ShortID="53113347">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Skill_BBB02" ID="{4711DA37-A6E6-46EF-8DD6-7C54BD12903E}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="Gio_BBB_Skill_SFX" ID="{97103CB2-4C28-440D-AE8F-7FA985622A88}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -93,7 +93,7 @@
 										<Action Name="" ID="{5A2BDBBB-58E0-44F3-9146-031FC47FF728}" ShortID="412500421">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Gio_ABA_SFX" ID="{32BEA00A-010D-40A5-BC03-63CFA9FE1A46}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="Gio_ABA_Skill_02_SFX" ID="{EBB75747-7DF8-470B-BC3C-AC23996D3D8A}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
