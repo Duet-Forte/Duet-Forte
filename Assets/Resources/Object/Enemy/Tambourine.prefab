@@ -91,7 +91,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5612330584740958209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40, y: -16.5, z: 0}
+  m_LocalPosition: {x: 35, y: -16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -213,6 +213,3 @@ MonoBehaviour:
   AttackParticle:
   - {fileID: 1162831315357672158, guid: 8c994869845a69746979d04f19ba9355, type: 3}
   - {fileID: 2276891050217871009, guid: 8914fe1109e42454aa85bbb94ad23b82, type: 3}
-  attackCountDownSignal: {fileID: 0}
-  attackSignal: {fileID: 0}
-  dashParticle: {fileID: 0}

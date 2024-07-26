@@ -52,7 +52,7 @@ public class TimpaniDurabilityBuff : IBuff
         //보스 최대 체력 25% 피해
         battlePresenter.PlayerBasicAttackToEnemy(new Damage(quaterDamage,new SlashDamage()));
         //공격력 증가
-        enemy.SetAttackStat(1.25f);
+        enemy.SetAttackStat(1.5f);
         //stack initStack으로 초기화
         stack = initStack;
         stackText.text = stack.ToString();
