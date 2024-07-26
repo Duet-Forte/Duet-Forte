@@ -19,7 +19,6 @@ public class FlavorTextUI : MonoBehaviour
         GetComponent<ScreenSpaceCameraUI>().InitSettings();
         this.enemyPortrait.sprite = enemyPortrait;
         this.enemyName.text = enemyName;
-        Debug.Log(enemyInfo);
         enemyInfo.Replace("\\n", "\n");
         this.enemyInfo.text = enemyInfo;
         rectTransform = GetComponent<RectTransform>();

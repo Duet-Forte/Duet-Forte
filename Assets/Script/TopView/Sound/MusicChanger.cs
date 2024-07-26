@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,11 @@ public class MusicChanger
     {
         if (beforeSong == name)
             return;
+        WaitMusic(name).Forget();
+    }
+    public async UniTask WaitMusic(string name)
+    {
+        await UniTask.WaitWhile(() => !AkSoundEngine.IsInitialized());
         AkSoundEngine.PostEvent("NonCombat_BGM_Stop", gameObject);
         AkSoundEngine.SetSwitch("NonCombatBGM", name, gameObject);
         AkSoundEngine.PostEvent("NonCombat_BGM", gameObject);

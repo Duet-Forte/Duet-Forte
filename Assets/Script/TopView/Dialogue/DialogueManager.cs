@@ -18,6 +18,8 @@ public class DialogueManager
     private TypewriterByCharacter typewriter;
     private Speaker currentSpeaker;
     private CancellationTokenSource cancel;
+    private bool isTalking = false;
+    public bool IsTalking { get => isTalking; }
     public static DialogueManager Instance
     {
         get
@@ -27,8 +29,9 @@ public class DialogueManager
             return instance;
         }
     }
-    public async UniTask Talk(string speakerName)
+    public async UniTask Talk(string interactorName)
     {
+        isTalking = true;
         if (window == null)
         {
             window = Object.Instantiate(Resources.Load<GameObject>("TopView/Dialogue/Window"));
@@ -49,10 +52,29 @@ public class DialogueManager
         }
         cancel = new CancellationTokenSource();
         window.SetActive(true);
-        Dialogue dialogue = DataBase.Instance.Dialogue.GetDialogue(speakerName);
-        await WaitKeyInput(dialogue, speakerName);
+        Dialogue dialogue = DataBase.Dialogue.GetDialogue(interactorName);
+        SkipDialogue(dialogue, interactorName).Forget();
+        await WaitKeyInput(dialogue, interactorName);
+        isTalking = false;
     }
 
+    public void SkipEvent(Dialogue dialogue, string interactorName, bool isCutscenePlaying = false)
+    {
+        if(isTalking || isCutscenePlaying)
+        {
+            for (int i = 0; i < dialogue.Lines.Length; i++)
+            {
+                DialogueEventHandler dialogueEvent = dialogue.Events[i];
+                if (dialogueEvent == null)
+                    continue;
+                if (!(dialogueEvent.isDone || dialogueEvent.isSkippable))
+                {
+                    dialogueEvent.PlayEvent(dialogue, interactorName);
+                }
+            }
+            isTalking = false;
+        }
+    }
     private async UniTask WaitKeyInput(Dialogue dialogue, string interactorName)
     {
         for (int i = 0; i < dialogue.Lines.Length; i++)
@@ -108,16 +130,29 @@ public class DialogueManager
     }
     private bool IsKeyTriggered()
     {
-        return BICSceneManager.Instance.InputController.IsKeyTriggered(PlayerAction.Interact);
+        return GameManager.InputController.IsKeyTriggered(PlayerAction.Interact);
     }
-
+    private bool IsSkipTriggered()
+    {
+        return GameManager.InputController.IsKeyTriggered(PlayerAction.Skip);
+    }
+    private async UniTask SkipDialogue(Dialogue dialogue, string interactorName)
+    {
+        if (GameManager.CutsceneManager.isPlaying)
+            return;
+        await UniTask.WaitUntil(IsSkipTriggered);
+        EndDialogue();
+        SkipEvent(dialogue, interactorName);
+    }
     private bool IsTypeEnded()
     {
         return !typewriter.isShowingText;
     }
-    public void SkipDialogue()
+    public void EndDialogue()
     {
         cancel.Cancel();
+        dialogueWindow.EraseContent();
         window.SetActive(false);
+
     }
 }

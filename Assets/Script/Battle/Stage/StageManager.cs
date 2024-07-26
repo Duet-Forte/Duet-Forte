@@ -93,7 +93,7 @@ public class StageManager : MonoBehaviour
     [ContextMenu("DEBUG/SceneStart")]
     private void TestPlay()
     {
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn, new PlayerInfo(debugSkills,3,7));
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn, new PlayerInfo(debugSkills,Const.DEBUG_PLAYER_LEVEL,Const.DEBUG_PLAYER_CURRENT_EXP));
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(false);
     }
@@ -110,7 +110,7 @@ public class StageManager : MonoBehaviour
             judgeManager?.UpdateInput();
         }
     }
-    public void StageStart(Stage stage , PlayerInfo playerInfo)  //현재는 레벨이랑 경험치를 받고 있지만 확장성을 고려하면 캡슐화시켜서 전달해야 할 듯 합니다.
+    public void StageStart(Stage stage , PlayerInfo playerInfo)  
     {//don't destroy on load에서 주입받을
         this.stage = stage;
         InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn , playerInfo);

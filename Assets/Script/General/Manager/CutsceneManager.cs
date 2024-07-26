@@ -6,51 +6,61 @@ using UnityEngine.Timeline;
 using UnityEngine.UI;
 using System;
 using Cysharp.Threading.Tasks;
+using UnityEngine.InputSystem;
+using System.Collections;
 
 public class CutsceneManager : MonoBehaviour
 {
     private GameObject cutscenePlayer;
     private PlayableDirector director;
+    private Cutscene currentPlayingCutscene;
     private int currentCutsceneID;
-    private bool isReachedLoopEndPoint;
-    private bool isTalking;
     private double loopStartTime;
     private bool isCutscenePlaying;
-    [SerializeField] private PlayableAsset[] cutscenes;
+    private Cutscene[] cutscenes;
     [SerializeField] private Image fadeOutPanel;
-    private Dictionary<string, PlayableAsset> cutsceneDictionary;
-
-    public void InitSettings()
+    private int skipIndex;
+    public bool isPlaying { get => isCutscenePlaying; }
+    public void InitSettings(int saveInt)
     {
         director = GetComponent<PlayableDirector>();
-        cutsceneDictionary = new Dictionary<string, PlayableAsset>();
-        foreach (var cutscene in cutscenes)
+        cutscenes = Resources.LoadAll<Cutscene>(Util.Const.CUTSCENE_PATH);
+
+        if(saveInt == -1)
         {
-            cutsceneDictionary.Add(cutscene.name, cutscene);
+            currentCutsceneID = 0;
+            StartCutscene();
         }
-        StartCutscene("TimmyHouse");
-        cutscenePlayer = BICSceneManager.Instance.FieldManager.Field.GetCutsceneObject("Zio");
-        GameObject pitch = BICSceneManager.Instance.FieldManager.Field.GetCutsceneObject("Pitch");
-        GameObject timmy = BICSceneManager.Instance.FieldManager.Field.GetCutsceneObject("Timmy");
-        BindCutscene(director, "Player", cutscenePlayer);
-        BindCutscene(director, "Pitch", pitch);
-        BindCutscene(director, "Timmy", timmy);
-        BindCutscene(director, "Camera", BICSceneManager.Instance.FieldManager.Field.CutsceneCam.gameObject);
-        BICSceneManager.Instance.FieldManager.Field.SetCameraPath("Tutorial");
-        isReachedLoopEndPoint = false;
-        director.Play();
+        else
+        {
+            FadeOut(0.5f);
+        }
     }
-    public void StartCutscene(string cutsceneName)
+    public void StartCutscene()
     {
+        string cutsceneName = cutscenes[currentCutsceneID].name;
+        currentPlayingCutscene = cutscenes[currentCutsceneID];
         isCutscenePlaying = true;
-        director.playableAsset = cutsceneDictionary[cutsceneName];
+        director.playableAsset = cutscenes[currentCutsceneID].playableAsset;
+        foreach (var participant in currentPlayingCutscene.cutsceneParticipants)
+        {
+            var participantObject = GameManager.FieldManager.Field.GetCutsceneObject(participant);
+            BindCutscene(participant, participantObject);
+
+            if (participant == "Zio")
+                cutscenePlayer = participantObject;
+        }
+        BindCutscene("Camera", GameManager.FieldManager.Field.CutsceneCam.gameObject);
+        GameManager.FieldManager.Field.SetCameraPath(cutsceneName);
+        GameManager.InputController.BindPlayerInputAction(Util.CustomEnum.PlayerAction.Skip, SkipCutscene);
+        director.Play();
     }
     public async void Talk()
     {
-        isTalking = true;
+        Debug.Log("¸» ½ÃÀÛ");
+        Debug.Log(director.time);
         await DialogueManager.Instance.Talk("Cutscene");
-        DataBase.Instance.Dialogue.SetID("Cutscene", ++currentCutsceneID);
-        isTalking = false;
+        DataBase.Dialogue.SetID("Cutscene", ++currentCutsceneID);
         director.Play();
     }
     [ContextMenu("DEBUG/SpawnPlayer")]
@@ -58,32 +68,30 @@ public class CutsceneManager : MonoBehaviour
     {
         FadeIn(0.7f, () => {
         FadeOut(0.5f);
-        BICSceneManager.Instance.FieldManager.SpawnPlayer(cutscenePlayer.transform.position);
-        BICSceneManager.Instance.FieldManager.Field.GetEntity("Timmy").InitSettings("Timmy", BICSceneManager.Instance.FieldManager.Field.GetCutsceneObject("Timmy").transform.position);
-        BICSceneManager.Instance.CameraManager.SetFollowCamera();
-        BICSceneManager.Instance.FieldManager.CheckPoint();
+        GameManager.FieldManager.SpawnPlayer(cutscenePlayer.transform.position);
+        GameManager.FieldManager.Field.GetEntity("Timmy").InitSettings("Timmy", GameManager.FieldManager.Field.GetCutsceneObject("Timmy").transform.position);
+        GameManager.CameraManager.SetFollowCamera();
+        GameManager.FieldManager.CheckPoint();
         isCutscenePlaying = false;
-        BICSceneManager.Instance.Storage.isCutscenePlaying = false;
+        GameManager.Storage.isCutscenePlaying = false;
         director.Stop();
-        DialogueManager.Instance.SkipDialogue();
-        BICSceneManager.Instance.FieldManager.Field.DisableCutsceneObjects();
+        DialogueManager.Instance.EndDialogue();
+        GameManager.FieldManager.Field.DisableCutsceneObjects();
         });
     }
 
-    public void Loop()
+    public void LoopStartPoint()
     {
-        if (!isTalking)
+        if(DialogueManager.Instance.IsTalking)
+            loopStartTime = director.time;
+    }
+    public void LoopEndPoint()
+    {
+        if (DialogueManager.Instance.IsTalking)
         {
-            isReachedLoopEndPoint = false;
+            director.time = loopStartTime;
             return;
         }
-
-        if (isReachedLoopEndPoint && director.time != loopStartTime)
-            director.time = loopStartTime;
-        else
-            loopStartTime = director.time;
-
-        isReachedLoopEndPoint = true;
     }
     public void FadeIn(float time)
     {
@@ -114,12 +122,12 @@ public class CutsceneManager : MonoBehaviour
         director.playableGraph.GetRootPlayable(0).SetSpeed(0);
         director.time = currentTime;
         director.Evaluate();
-        BICSceneManager.Instance.SetBattleScene("Timmy");
+        GameManager.Instance.SetBattleScene("Timmy");
     }
 
     public void PauseDirector()
     {
-        BICSceneManager.Instance.Storage.isCutscenePlaying = true;
+        GameManager.Storage.isCutscenePlaying = true;
         double currentTime = director.time;
         director.playableGraph.GetRootPlayable(0).SetSpeed(0);
         director.time = currentTime;
@@ -134,10 +142,10 @@ public class CutsceneManager : MonoBehaviour
         director.time = currentTime;
         director.Evaluate();
     }
-    public virtual void BindCutscene(PlayableDirector director, string trackGroupName, GameObject bindObject)
+    public virtual void BindCutscene(string trackGroupName, GameObject bindObject)
     {
         var timeline = director.playableAsset as TimelineAsset;
-        foreach (GroupTrack groupTrack in timeline.GetRootTracks())
+        foreach (var groupTrack in timeline.GetRootTracks())
         {
             if (groupTrack.name != trackGroupName)
                 continue;
@@ -160,6 +168,55 @@ public class CutsceneManager : MonoBehaviour
 
     public void PlaySound(string name)
     {
-        BICSceneManager.Instance.MusicChanger.SetMusic(name);
+        GameManager.MusicChanger.SetMusic(name);
     }
+
+    private void SkipCutscene(InputAction.CallbackContext context)
+    {
+        if (skipIndex >= currentPlayingCutscene.cutsceneSkipTime.Length || !isPlaying)
+            return;
+        director.Pause();
+        DialogueManager.Instance.EndDialogue();
+        if(currentPlayingCutscene.cutsceneSkipTime.Length > skipIndex)
+            director.time = currentPlayingCutscene.cutsceneSkipTime[skipIndex];
+        if (currentPlayingCutscene.dialogueSkipIndex.Length > skipIndex)
+        {
+            DataBase.Dialogue.SetID("Cutscene", currentPlayingCutscene.dialogueSkipIndex[skipIndex]);
+            currentCutsceneID = currentPlayingCutscene.dialogueSkipIndex[skipIndex] + 1;
+        }
+        if (currentPlayingCutscene.cutsceneSkipSound.Length > skipIndex)
+            PlaySound(currentPlayingCutscene.cutsceneSkipSound[skipIndex]);
+        if(skipIndex == currentPlayingCutscene.cutsceneSkipTime.Length - 1)
+        {
+            director.Evaluate();
+            director.Play();
+            DialogueManager.Instance.SkipEvent(DataBase.Dialogue.GetDialogue("Cutscene"), "Cutscene", true);
+            DataBase.Dialogue.SetID("Cutscene", currentCutsceneID);
+        }
+        else
+        {
+            FadeIn(0.5f, () => { AfterSkipFadeInFinish().Forget(); });
+        }
+        skipIndex++;
+    }
+
+    private async UniTask AfterSkipFadeInFinish()
+    {
+        director.Evaluate();
+        await UniTask.WaitForSeconds(1);
+        director.Play();
+        DialogueManager.Instance.SkipEvent(DataBase.Dialogue.GetDialogue("Cutscene"), "Cutscene", true);
+        DataBase.Dialogue.SetID("Cutscene", currentCutsceneID);
+        FadeOut(0.5f);
+    }
+}
+
+[CreateAssetMenu (menuName = "Scriptable Object/Cutscene", fileName = "Cutscene", order = int.MaxValue - 1)]
+public class Cutscene : ScriptableObject
+{
+    [SerializeField] public PlayableAsset playableAsset;
+    [SerializeField] public int[] dialogueSkipIndex;
+    [SerializeField] public double[] cutsceneSkipTime;
+    [SerializeField] public string[] cutsceneSkipSound;
+    [SerializeField] public string[] cutsceneParticipants;
 }

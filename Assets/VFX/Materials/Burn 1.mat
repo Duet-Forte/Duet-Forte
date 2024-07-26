@@ -59,7 +59,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ScrollSpeed: -0.08
-    - _TwirlStrength: 1.07
+    - _TwirlStrength: 0.7
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

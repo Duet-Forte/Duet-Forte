@@ -43,7 +43,6 @@ public class JudgeManager
     {
         if(Input.GetKeyDown(KeyCode.Space) && !stageManager.Enemy.IsNoteChecked)
         {
-             Debug.Log($"패리 시도! {Time.time}초에 시도함");
              CheckScore(Time.time);//Space 눌렀을 때, StartTime EndTime 결정됨.
         }
     }
@@ -51,7 +50,6 @@ public class JudgeManager
     public void IncreaseGauge(int combo) // 이동 예정
     {
         this.combo += combo;
-        Debug.Log($"가드카운터 게이지 상승량 : {this.combo}");
         OnComboChange?.Invoke(this.combo, maxGauge);
     }
 
@@ -63,7 +61,6 @@ public class JudgeManager
 
         if (parryTime < judgeStartTime)
         {
-            Debug.Log("Early!");
             ++earlyCount;
             if (earlyCount >= Const.MAX_EARLY_COUNT)
             {
@@ -100,14 +97,10 @@ public class JudgeManager
         {
             judge.Name = JudgeName.Bad;
         }
-        
-        Debug.Log(judgeTime);
-        Debug.Log("판정 시작 : " + judgeStartTime + " 판정 끝 : " + judgeEndTime);
         EndParry(judge);
     }
     private void EndParry(Judge judge)
     {
-        Debug.Log($"Miss!");
         OnParryEnd?.Invoke(judge);
         
     }

@@ -44,10 +44,10 @@ public class SkillContent : ScrollContent
     {
         int currentIndex = currentRowIndex * Const.CONTENT_IN_ROW;
         int count = 0;
-        if (currentRowIndex < ((DataBase.Instance.Skill.Data.Length - 1) / 3))
+        if (currentRowIndex < ((DataBase.Skill.Data.Length - 1) / 3))
             count = Const.CONTENT_IN_ROW;
         else
-            count = DataBase.Instance.Skill.Data.Length % Const.CONTENT_IN_ROW;
+            count = DataBase.Skill.Data.Length % Const.CONTENT_IN_ROW;
 
         for(int i = 0; i < count; ++i)
             skillWindow[i].gameObject.SetActive(true);
@@ -61,8 +61,8 @@ public class SkillContent : ScrollContent
         for (int i = 0; i < count; ++i)
         {
             int index = currentIndex + i;
-            skillIcons[i].sprite = DataBase.Instance.Skill.Data[currentIndex + i].SkillIcon;
-            skillName[i].text = DataBase.Instance.Skill.Data[currentIndex + i].SkillName;
+            skillIcons[i].sprite = DataBase.Skill.Data[currentIndex + i].SkillIcon;
+            skillName[i].text = DataBase.Skill.Data[currentIndex + i].SkillName;
             currentSkills[i].InitSettings(skillSelector, index);
             currentSkills[i].BindSaverEvent(skillSaver);
         }
