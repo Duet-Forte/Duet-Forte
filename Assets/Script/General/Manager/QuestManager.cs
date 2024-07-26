@@ -39,8 +39,16 @@ public class QuestManager
         Debug.Log(quest.experiencePoint);
         Debug.Log(quest.skillId);
         DataBase.Quest.CompleteQuest(quest);
+        DataBase.Player.GetReward(quest);
     }
-
+    public void CheckEliminationQuest(string name)
+    {
+        foreach (Quest quest in DataBase.Quest.Quests.Keys)
+        {
+            if (quest is EliminationQuest && (quest as EliminationQuest).monsterName == name)
+                GrantReward(quest);
+        }
+    }
     public Quest GetQuest(int id) 
     {
         return quests[id];

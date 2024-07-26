@@ -12,16 +12,11 @@ public class QuestDataBase : MonoBehaviour
         if(!Quests.TryGetValue(quest, out bool isDone))
             Quests.Add(quest, false);
     }
-
     public void CompleteQuest(Quest quest)
     {
         if(Quests.TryGetValue(quest, out bool isDone) && isDone == false)
-        {
-            DataBase.Player.GetReward(quest);
             Quests[quest] = true;
-        }
     }
-
     public void LoadData(Dictionary<int, bool> questSaveData)
     {
         Dictionary<Quest, bool> quests = new Dictionary<Quest, bool>();

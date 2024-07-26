@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
         cameraManager.EnableFieldCamera();
         cutsceneManager.ReplayCutscene();
         MusicChanger.ReplayMusic();
+        QuestManager.Instance.CheckEliminationQuest(Storage.currentEnemyName);
     }
     public void SetFieldScene(PlayerInfo playerInfo = null)
     {

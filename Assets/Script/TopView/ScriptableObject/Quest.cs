@@ -12,3 +12,9 @@ public class Quest : ScriptableObject
     public int experiencePoint;
     public int skillId;
 }
+
+[CreateAssetMenu(fileName = "EliminationQuest", menuName = "Scriptable Object/Elimination Quest", order = int.MaxValue)]
+public class EliminationQuest : Quest
+{
+    public string monsterName;
+}

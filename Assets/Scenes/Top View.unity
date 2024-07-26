@@ -452,15 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ccb7a9591b0c5428ee6a02d8b8e25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutscenes:
-  - {fileID: 11400000, guid: 8a6980645c67d1346aa628fd1b1cf62c, type: 2}
   fadeOutPanel: {fileID: 511660987}
-  dialogueSkipIndex: 06000000
-  cutsceneSkipTime:
-  - 26.7
-  - 28.5
-  cutsceneSkipSound:
-  - Town
 --- !u!114 &362427655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,7 +482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &511660986
 RectTransform:
   m_ObjectHideFlags: 0
@@ -525,7 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -865,7 +857,7 @@ GameObject:
   - component: {fileID: 1969488101}
   - component: {fileID: 1969488100}
   m_Layer: 5
-  m_Name: FadeOut
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
