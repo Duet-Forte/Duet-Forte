@@ -19,11 +19,17 @@ namespace AK
         static const AkUniqueID COMBAT_BGM_STOP = 2307662469U;
         static const AkUniqueID COMBAT_STAGE_01_BGM = 890880275U;
         static const AkUniqueID COMBAT_TEST01 = 207956517U;
+        static const AkUniqueID ENEMY_CASTANETS_ATTACK_SFX = 99777767U;
+        static const AkUniqueID ENEMY_CASTANETS_ATTACK_SIGNAL_SFX = 882591782U;
+        static const AkUniqueID ENEMY_CASTANETS_HIT_HIT_SFX = 107053392U;
         static const AkUniqueID ENEMY_ELECGUITAR_ATTACK_SIGNAL_SFX = 3211681449U;
         static const AkUniqueID ENEMY_TAMBOURINE_ATTACK_SFX = 2328612313U;
         static const AkUniqueID ENEMY_TAMBOURINE_ATTACK_SIGNAL_SFX = 909052356U;
         static const AkUniqueID ENEMY_TAMBOURINE_HIT_SFX = 2995577544U;
         static const AkUniqueID ENEMY_TIMMY_ATTACK_SFX = 837159709U;
+        static const AkUniqueID ENEMY_TIMPANI_ATTACK_SFX = 595707885U;
+        static const AkUniqueID ENEMY_TIMPANI_ATTACK_SIGNAL_SFX = 2188664144U;
+        static const AkUniqueID ENEMY_TIMPANI_HIT_SFX = 2420160236U;
         static const AkUniqueID MAINMENU_BGM_BGM = 631059699U;
         static const AkUniqueID MAINMENU_BGM_BGM_STOP = 270981630U;
         static const AkUniqueID MAINMENU_CLICK_GAMESTART_SFX = 162289589U;

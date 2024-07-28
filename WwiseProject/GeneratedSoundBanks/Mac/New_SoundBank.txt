@@ -1,14 +1,20 @@
 Event	ID	Name			Wwise Object Path	Notes
+	99777767	Enemy_Castanets_Attack_SFX			\Default Work Unit\Enemy\Castanets\Enemy_Castanets_Attack_SFX	
+	107053392	Enemy_Castanets_Hit_Hit_SFX			\Default Work Unit\Enemy\Castanets\Enemy_Castanets_Hit_Hit_SFX	
 	127602315	Player_Skill_Climax_SFX			\Default Work Unit\Player\Combat\Player_Skill_Climax_SFX	
 	207956517	Combat_test01			\Default Work Unit\BGM\Combat\Combat_test01	
+	595707885	Enemy_Timpani_Attack_SFX			\Default Work Unit\Enemy\Timpani\Enemy_Timpani_Attack_SFX	
 	837159709	Enemy_Timmy_Attack_SFX			\Default Work Unit\Enemy\Timmy\Enemy_Timmy_Attack_SFX	
+	882591782	Enemy_Castanets_Attack_Signal_SFX			\Default Work Unit\Enemy\Castanets\Enemy_Castanets_Attack_Signal_SFX	
 	890880275	Combat_Stage_01_BGM			\Default Work Unit\BGM\Combat\Combat_Stage_01_BGM	
 	909052356	Enemy_Tambourine_Attack_Signal_SFX			\Default Work Unit\Enemy\Tambourine\Enemy_Tambourine_Attack_Signal_SFX	
 	1248207521	Player_Attack_StrongSignal_SFX			\Default Work Unit\Player\Combat\Player_Attack_StrongSignal_SFX	
 	1532296734	Player_Attack_B_SFX			\Default Work Unit\Player\Combat\Player_Attack_B_SFX	
 	1873933263	Transition_FadeOut			\Default Work Unit\Transition_UI\Transition_FadeOut	
+	2188664144	Enemy_Timpani_Attack_Signal_SFX			\Default Work Unit\Enemy\Timpani\Enemy_Timpani_Attack_Signal_SFX	
 	2307662469	Combat_BGM_Stop			\Default Work Unit\BGM\Combat\Combat_BGM_Stop	
 	2328612313	Enemy_Tambourine_Attack_SFX			\Default Work Unit\Enemy\Tambourine\Enemy_Tambourine_Attack_SFX	
+	2420160236	Enemy_Timpani_Hit_SFX			\Default Work Unit\Enemy\Timpani\Enemy_Timpani_Hit_SFX	
 	2518233790	Player_Skill_AAA_SFX			\Default Work Unit\Player\Combat\Player_Skill_AAA_SFX	
 	2846259367	Player_Skill_ABA_SFX			\Default Work Unit\Player\Combat\Player_Skill_ABA_SFX	
 	2995577544	Enemy_Tambourine_Hit_SFX			\Default Work Unit\Enemy\Tambourine\Enemy_Tambourine_Hit_SFX	
@@ -32,9 +38,11 @@ Effect plug-ins	ID	Name	Type				Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	12610899	Timmy_Attack04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Timmy_Attack04_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Timmy_Attack\Timmy_Attack04		146764
+	47558669	Castanets_Hit_Hit_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Castanets_Hit_Hit_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Castanets\Castanets_Hit_Hit_SFX\Castanets_Hit_Hit_SFX		161744
 	133336124	Tambourine_Attack_B_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Tambourine_Attack_B_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Tambourine\Tambourine_Attack\Tambourine_Attack_B_SFX		128868
 	171558463	Timmy_Attack05	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Timmy_Attack05_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Timmy_Attack\Timmy_Attack05		146764
 	191541219	Tambourine_Signal	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Tambourine_Signal_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Tambourine\Tambourine_Attack_Signal\Tambourine_Signal		192096
+	252584358	Castanets_Attack_Signal_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Castanets_Attack_Signal_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Castanets\Castanets_Attack_Signal_SFX\Castanets_Attack_Signal_SFX		80100
 	257293744	Clear_SFX_Loop	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Clear_SFX_Loop_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\Clear_SFX\Clear_SFX_Loop\Clear_SFX_Loop		2690900
 	270105021	Transition_FadeOut	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Transition_FadeOut_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Transition_FadeOut\Transition_FadeOut		290524
 	292868217	03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\03_2B6424CB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\03		341432
@@ -46,11 +54,17 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	484130538	Timmy_Attack03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Timmy_Attack03_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Timmy_Attack\Timmy_Attack03		146764
 	514950658	Combat_test01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Combat_test01_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Combat_test01\Combat_test01		1084332
 	519697605	SFX_공격신호_01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\SFX_공격신호_01_1246C0D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Signal\Player_Attack_StrongSignal_SFX\SFX_공격신호_01		107184
+	551219854	Enemy_Timpani_Attack_C_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Enemy_Timpani_Attack_C_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Timpani\Timpani_Attack\Enemy_Timpani_Attack_C_SFX		309128
 	674496262	Gio_AAA_Skill_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Gio_AAA_Skill_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Player_Skill_AAA\Gio_AAA_Skill_SFX		656380
+	684588756	Enemy_Timpani_Attack_A_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Enemy_Timpani_Attack_A_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Timpani\Timpani_Attack\Enemy_Timpani_Attack_A_SFX		335512
 	723090075	패링-03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\패링-03_03D2EA21.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Attack\Player_Parry\패링-03		207308
+	724596894	Castanets_Attack_Attack_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Castanets_BasicAttack_Attack01_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Castanets\Castanets_Attack_Attack_SFX\Castanets_Attack_Attack_SFX		161644
 	755516841	0502_1	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\0502_1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Stage01\NewCombat\NewCombat_Timmy\0502_1		12288100
 	775650042	Timmy_Attack01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Timmy_Attack01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Timmy_Attack\Timmy_Attack01		146764
+	813883887	Enemy_Timpani_Attack_B_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Enemy_Timpani_Attack_B_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Timpani\Timpani_Attack\Enemy_Timpani_Attack_B_SFX		309128
 	867470794	Gio_ABA_Skill_02_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Gio_ABA_Skill_02_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\Player_Skill_ABA\Gio_ABA_Skill_02_SFX		852648
+	889774299	Enemy_Timpani_Signal_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Enemy_Timpani_Signal_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Timpani\Timpani_Signal\Enemy_Timpani_Signal_SFX		325432
+	918019351	Enemy_Timpani_Hit_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Enemy_Timpani_Hit_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Timpani\Timpani_Hit\Enemy_Timpani_Hit_SFX		335136
 	937501252	04	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\04_10904949.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\04		341432
 	961845890	Timmy_Attack02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\Timmy_Attack02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat_SFX\Enemy\Timmy_Attack\Timmy_Attack02		146764
 	987644166	01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Mac\SFX\01_7C5E0745.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Attack\TestSignal\01		341432

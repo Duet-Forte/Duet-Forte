@@ -1953,6 +1953,10 @@
 				<Folder Name="Combat_SFX" ID="{598FFB48-959A-4469-A8C2-CC8720CB24E7}" ShortID="632203999">
 					<ChildrenList>
 						<Folder Name="Enemy" ID="{03460181-E599-47B2-8385-53C324FF24A9}" ShortID="323368549">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="19"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="Timmy_Attack" ID="{BF7442DE-367C-4F1D-9525-3213BB73DAD1}" ShortID="420516824">
 									<PropertyList>
@@ -2224,6 +2228,301 @@
 													</ChildrenList>
 													<ActiveSourceList>
 														<ActiveSource Name="Tambourine_Hit" ID="{50FD3F5E-4E75-4182-88D2-35FDE248BDFA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</ActorMixer>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Castanets" ID="{A1872F47-5B38-44A3-9C3E-E8429FEA3A88}" ShortID="189394282">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="7"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<ActorMixer Name="Castanets_Attack_Attack_SFX" ID="{6CA2C3DA-4F77-4202-A553-C5E4765E5176}" ShortID="347805268">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Castanets_Attack_Attack_SFX" ID="{EE384DE3-D07F-4C28-8FEB-DF30D18412BA}" ShortID="463778976">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>6</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Castanets_BasicAttack_Attack01_SFX" ID="{07964FBA-95D9-4442-AA5E-F08FFAF720C5}">
+															<Language>SFX</Language>
+															<AudioFile>Castanets_BasicAttack_Attack01_SFX.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="724596894"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Castanets_BasicAttack_Attack01_SFX" ID="{07964FBA-95D9-4442-AA5E-F08FFAF720C5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</ActorMixer>
+										<ActorMixer Name="Castanets_Attack_Signal_SFX" ID="{E83513F0-1DED-424A-9609-6B2BF485D43C}" ShortID="1011842423">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Castanets_Attack_Signal_SFX" ID="{8D24435F-26E7-45BD-AEF2-4E40CE2C6D1E}" ShortID="744459968">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Castanets_Attack_Signal_SFX" ID="{1B3EC866-F8CF-40E5-8E23-43E7EB7E47BC}">
+															<Language>SFX</Language>
+															<AudioFile>Castanets_Attack_Signal_SFX.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="252584358"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Castanets_Attack_Signal_SFX" ID="{1B3EC866-F8CF-40E5-8E23-43E7EB7E47BC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</ActorMixer>
+										<ActorMixer Name="Castanets_Hit_Hit_SFX" ID="{28AE8198-EB19-43FC-8B1C-0BB54E2724E9}" ShortID="95416084">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Castanets_Hit_Hit_SFX" ID="{EEAD4F3D-A857-4F0D-B8DB-236E1BE501E9}" ShortID="181502662">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Castanets_Hit_Hit_SFX" ID="{E2A2584F-2409-456F-B595-F3E94A4C1B21}">
+															<Language>SFX</Language>
+															<AudioFile>Castanets_Hit_Hit_SFX.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="47558669"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Castanets_Hit_Hit_SFX" ID="{E2A2584F-2409-456F-B595-F3E94A4C1B21}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</ActorMixer>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Timpani" ID="{C93C9E9E-EDA8-4930-9DB3-650DE94CD474}" ShortID="482120138">
+									<ChildrenList>
+										<RandomSequenceContainer Name="Timpani_Attack" ID="{FC466AEB-ACE2-455B-8706-9528277A69F1}" ShortID="606531833">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Enemy_Timpani_Attack_A_SFX" ID="{0AEE158E-AACA-4E80-8247-742A4F611584}" ShortID="358085536">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Enemy_Timpani_Attack_A_SFX" ID="{F5DDBF0B-45DA-4743-B552-748CC3AEBB75}">
+															<Language>SFX</Language>
+															<AudioFile>Enemy_Timpani_Attack_A_SFX.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="684588756"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Enemy_Timpani_Attack_A_SFX" ID="{F5DDBF0B-45DA-4743-B552-748CC3AEBB75}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Enemy_Timpani_Attack_B_SFX" ID="{3B5FFAF4-A140-453B-B2CF-E5C08935A8BF}" ShortID="303509011">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Enemy_Timpani_Attack_B_SFX" ID="{3E666DF5-0919-448B-BC3B-0449101A86D9}">
+															<Language>SFX</Language>
+															<AudioFile>Enemy_Timpani_Attack_B_SFX.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="813883887"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Enemy_Timpani_Attack_B_SFX" ID="{3E666DF5-0919-448B-BC3B-0449101A86D9}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Enemy_Timpani_Attack_C_SFX" ID="{027698A4-162F-4687-905E-394D3D9D0A69}" ShortID="237045031">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Enemy_Timpani_Attack_C_SFX" ID="{FC374126-FD1C-4922-90B2-F2396D52CDB0}">
+															<Language>SFX</Language>
+															<AudioFile>Enemy_Timpani_Attack_C_SFX.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="551219854"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Enemy_Timpani_Attack_C_SFX" ID="{FC374126-FD1C-4922-90B2-F2396D52CDB0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<ActorMixer Name="Timpani_Hit" ID="{60EEE669-4936-4C4F-ABD3-D7B7453C32B5}" ShortID="60277030">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Enemy_Timpani_Hit_SFX" ID="{13B71CBC-02EB-41E7-A296-BC0F3F5F186D}" ShortID="462317907">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{33B0B016-CC0A-4AF6-8C9C-D97E71DEFD95}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="300"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Enemy_Timpani_Hit_SFX" ID="{994C6277-3866-4A5E-B923-31EE8A3A4E3A}">
+															<Language>SFX</Language>
+															<AudioFile>Enemy_Timpani_Hit_SFX.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="918019351"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Enemy_Timpani_Hit_SFX" ID="{994C6277-3866-4A5E-B923-31EE8A3A4E3A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</ActorMixer>
+										<ActorMixer Name="Timpani_Signal" ID="{84077F90-2118-4A06-A322-FDD67798BFD3}" ShortID="344983957">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Enemy_Timpani_Signal_SFX" ID="{3C3285AD-2644-4B55-96FD-0B36010FBD58}" ShortID="211747732">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{876E3264-078F-4A50-B600-59D292AB2155}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="300"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{36B1B795-B3A6-4E93-BA89-F478435A8A9D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Enemy_Timpani_Signal_SFX" ID="{76584E25-7849-4AC5-A65E-79395628313C}">
+															<Language>SFX</Language>
+															<AudioFile>Enemy_Timpani_Signal_SFX.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="889774299"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Enemy_Timpani_Signal_SFX" ID="{76584E25-7849-4AC5-A65E-79395628313C}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
