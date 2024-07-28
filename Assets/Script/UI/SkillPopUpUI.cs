@@ -19,6 +19,6 @@ public class SkillPopUpUI : MonoBehaviour
     }
     public void Disappear() {
 
-        transform.DOMove(new Vector2(transform.position.x - moveOffset, transform.position.y), 0.2f);
+        transform.DOMove(new Vector2(transform.position.x - moveOffset-2, transform.position.y), 0.2f);
     }
 }

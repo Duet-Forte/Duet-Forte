@@ -269,8 +269,8 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 스킬 커맨드
             if (isCastSkill) {
                 
                 Debug.Log("스킬 발동됨");
-                SkillUI();
                 yield return new WaitForSeconds(3f);//스킬 애니메이션 클립의 길이만큼 대기 후 종료로 수정해야함. 04.01
+                SkillUI();
                 AttackEnd();
                 
                
