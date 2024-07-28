@@ -50,3 +50,6 @@ TagManager:
   - name: Hue
     uniqueID: 4276085125
     locked: 0
+  - name: New Layer
+    uniqueID: 2506214315
+    locked: 0

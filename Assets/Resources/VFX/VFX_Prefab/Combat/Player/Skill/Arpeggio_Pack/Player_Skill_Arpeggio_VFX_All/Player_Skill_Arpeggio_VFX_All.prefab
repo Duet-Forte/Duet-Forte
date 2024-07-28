@@ -5032,6 +5032,10 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2277893295113517102, guid: 8dd22b94270b2d548b4784f2fcc6398c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.46
+      objectReference: {fileID: 0}
     - target: {fileID: 5568455738749117357, guid: 8dd22b94270b2d548b4784f2fcc6398c, type: 3}
       propertyPath: stopAction
       value: 2
@@ -5066,6 +5070,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3701353524494954001}
     m_Modifications:
+    - target: {fileID: 1330522493, guid: 7cb796e9801169241951579a4bc9e656, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.46
+      objectReference: {fileID: 0}
     - target: {fileID: 1330522495, guid: 7cb796e9801169241951579a4bc9e656, type: 3}
       propertyPath: stopAction
       value: 2
