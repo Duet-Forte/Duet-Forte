@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AirDistortion2
+  m_Name: AirDistortion2 1
   m_Shader: {fileID: -6465566751694194690, guid: b1cc93567e186ee47b5f9c6df2251c3d, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -75,14 +75,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistortionAmount: 2.6
+    - _DistortionAmount: 0.26
     - _DistortionAmountCustom: 1
     - _Float: 0
     - _Length_Scale: 0
-    - _PolarCoordinateOnOff: 1
+    - _PolarCoordinateOnOff: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radial_Scale: 0
     m_Colors:
-    - _Panning: {r: 0, g: -1.57, b: 0, a: 0}
+    - _Panning: {r: -0.34, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
