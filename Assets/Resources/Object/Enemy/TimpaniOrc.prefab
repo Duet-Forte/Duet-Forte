@@ -209,6 +209,6 @@ MonoBehaviour:
   exp: 200
   slashDefense: 10
   pierceDefense: 10
-  enemyAttackSoundEvent: Enemy_Tambourine_Attack_SFX
-  enemyHitSoundEvent: Enemy_Tambourine_Hit_SFX
-  signalInstrument: 0
+  enemyAttackSoundEvent: Enemy_Timpani_Attack_SFX
+  enemyHitSoundEvent: Enemy_Timpani_Hit_SFX
+  signalInstrument: 3
