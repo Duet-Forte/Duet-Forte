@@ -57,7 +57,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NewTimmy_PatternSignal
+  m_Name: Timmy_PatternSignal
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -333,10 +333,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Dash
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -706247496772416701}
   m_Solo: 0
@@ -346,7 +343,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -358,7 +355,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
+  m_Name: Timmy_Blend Tree
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -435,7 +432,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestEnemy_Dash
+  m_Name: Timmy_Dash
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -464,7 +461,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestEnemy_Guard
+  m_Name: Timmy_Guard
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -580,7 +577,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestEnemy_BackDash
+  m_Name: Timmy_BackDash
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -956,7 +953,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestEnemy_Hurt
+  m_Name: Timmy_Hurt
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

@@ -398,13 +398,17 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{B9CE8C4F-1612-F7AB-217A-E1C25A1B7C8C}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{60A84B7D-3354-6D8D-ECE0-0D0B48EBBA16}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
 				<File Id="12610899" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Timmy_Attack04.wav</ShortName>
 					<CachePath>SFX/Timmy_Attack04_818F3B66.wem</CachePath>
+				</File>
+				<File Id="47558669" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Castanets_Hit_Hit_SFX.wav</ShortName>
+					<CachePath>SFX/Castanets_Hit_Hit_SFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="133336124" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Attack_B_SFX.wav</ShortName>
@@ -417,6 +421,10 @@
 				<File Id="191541219" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Signal.wav</ShortName>
 					<CachePath>SFX/Tambourine_Signal_818F3B66.wem</CachePath>
+				</File>
+				<File Id="252584358" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Castanets_Attack_Signal_SFX.wav</ShortName>
+					<CachePath>SFX/Castanets_Attack_Signal_SFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="257293744" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Clear_SFX_Loop.wav</ShortName>
@@ -462,13 +470,25 @@
 					<ShortName>SFX_공격신호_01.wav</ShortName>
 					<CachePath>SFX/SFX_공격신호_01_1246C0D0.wem</CachePath>
 				</File>
+				<File Id="551219854" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Enemy_Timpani_Attack_C_SFX.wav</ShortName>
+					<CachePath>SFX/Enemy_Timpani_Attack_C_SFX_818F3B66.wem</CachePath>
+				</File>
 				<File Id="674496262" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gio_AAA_Skill_SFX.wav</ShortName>
 					<CachePath>SFX/Gio_AAA_Skill_SFX_818F3B66.wem</CachePath>
 				</File>
+				<File Id="684588756" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Enemy_Timpani_Attack_A_SFX.wav</ShortName>
+					<CachePath>SFX/Enemy_Timpani_Attack_A_SFX_818F3B66.wem</CachePath>
+				</File>
 				<File Id="723090075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>패링-03.wav</ShortName>
 					<CachePath>SFX/패링-03_03D2EA21.wem</CachePath>
+				</File>
+				<File Id="724596894" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Castanets_BasicAttack_Attack01_SFX.wav</ShortName>
+					<CachePath>SFX/Castanets_BasicAttack_Attack01_SFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="755516841" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>0502_1.wav</ShortName>
@@ -478,9 +498,21 @@
 					<ShortName>Timmy_Attack01.wav</ShortName>
 					<CachePath>SFX/Timmy_Attack01_818F3B66.wem</CachePath>
 				</File>
+				<File Id="813883887" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Enemy_Timpani_Attack_B_SFX.wav</ShortName>
+					<CachePath>SFX/Enemy_Timpani_Attack_B_SFX_818F3B66.wem</CachePath>
+				</File>
 				<File Id="867470794" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gio_ABA_Skill_02_SFX.wav</ShortName>
 					<CachePath>SFX/Gio_ABA_Skill_02_SFX_818F3B66.wem</CachePath>
+				</File>
+				<File Id="889774299" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Enemy_Timpani_Signal_SFX.wav</ShortName>
+					<CachePath>SFX/Enemy_Timpani_Signal_SFX_818F3B66.wem</CachePath>
+				</File>
+				<File Id="918019351" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Enemy_Timpani_Hit_SFX.wav</ShortName>
+					<CachePath>SFX/Enemy_Timpani_Hit_SFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="937501252" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>04.wav</ShortName>
@@ -541,6 +573,21 @@
 						<MediaRef Id="514950658"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="99777767" Name="Enemy_Castanets_Attack_SFX" DurationType="OneShot" DurationMin="0.84139585" DurationMax="0.84139585">
+					<MediaRefs>
+						<MediaRef Id="724596894"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="882591782" Name="Enemy_Castanets_Attack_Signal_SFX" DurationType="OneShot" DurationMin="0.4166875" DurationMax="0.4166875">
+					<MediaRefs>
+						<MediaRef Id="252584358"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="107053392" Name="Enemy_Castanets_Hit_Hit_SFX" DurationType="OneShot" DurationMin="0.8419167" DurationMax="0.8419167">
+					<MediaRefs>
+						<MediaRef Id="47558669"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3211681449" Name="Enemy_ElecGuitar_Attack_Signal_SFX" DurationType="OneShot" DurationMin="1.7777916" DurationMax="1.7777916">
 					<MediaRefs>
 						<MediaRef Id="292868217"/>
@@ -577,6 +624,23 @@
 						<MediaRef Id="484130538"/>
 						<MediaRef Id="775650042"/>
 						<MediaRef Id="961845890"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="595707885" Name="Enemy_Timpani_Attack_SFX" DurationType="OneShot" DurationMin="1.6095417" DurationMax="1.7469584">
+					<MediaRefs>
+						<MediaRef Id="551219854"/>
+						<MediaRef Id="684588756"/>
+						<MediaRef Id="813883887"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2188664144" Name="Enemy_Timpani_Attack_Signal_SFX" DurationType="OneShot" DurationMin="1.4248639" DurationMax="1.6944584">
+					<MediaRefs>
+						<MediaRef Id="889774299"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2420160236" Name="Enemy_Timpani_Hit_SFX" DurationType="OneShot" DurationMin="1.4673643" DurationMax="1.745">
+					<MediaRefs>
+						<MediaRef Id="918019351"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3452252061" Name="Player_Attack_A_SFX" DurationType="OneShot" DurationMin="0.56156313" DurationMax="0.6678149">
@@ -638,5 +702,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4DA33936-90CC-A30F-5ADA-9E17B831E08E}</FileHash>
+	<FileHash>{DE83AEFA-BA03-19B2-FC34-375DE2C18EF5}</FileHash>
 </SoundBanksInfo>

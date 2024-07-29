@@ -41,7 +41,6 @@ public class PlayerGuardCounter : MonoBehaviour
             Debug.Log("가드 카운터!");
             yield return ProgressGuardCounterPhase(); //가드 카운터 시 진행
             isEnteringGuardCounterPhase = false;
-            OnGuardCounterEnd?.Invoke();//가드카운터 게이지 리셋
         }
     }
 
@@ -52,6 +51,7 @@ public class PlayerGuardCounter : MonoBehaviour
         guardCounterJudge = guardCounterQTE.GetQTEJudge;
         if (guardCounterJudge != JudgeName.Miss)
         {
+            OnGuardCounterEnd?.Invoke();//가드카운터 게이지 리셋
             guardCounterDelay = 5f;
             battlePresenter.GuardCounterToEnemy(new Damage(CalcGuardCounterDamage(), guardCounterJudge,new SlashDamage()));
             playerSoundSet.PlayerGuardCounter(gameObject);

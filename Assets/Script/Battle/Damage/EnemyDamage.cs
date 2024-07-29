@@ -9,7 +9,7 @@ public class EnemyDamage : DamageType
     {
         if (judgeName == JudgeName.Miss) //패링 실패
         { 
-            return GetDamage((int)(attack * 1f), (int)(defense * 1f));
+            return GetDamage((int)(attack * 1f), (int)(defense * 0f));
         }
         if (judgeName == JudgeName.Perfect) //퍼펙트 패링
         {
