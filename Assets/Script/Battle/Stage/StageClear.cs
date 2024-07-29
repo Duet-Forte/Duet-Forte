@@ -198,8 +198,8 @@ public class StageClear : MonoBehaviour
         while (true) {
             if (Input.anyKeyDown) {
                 Debug.Log($"에너미 네임 : {stageManager.Enemy.EnemyName}");
-                if (stageManager.Enemy.EnemyName.Equals("Tambourine"))
-                { //적이 탬버린이면 데모씬으로 보내기
+                if (false)
+                { //데모씬으로 이동하는 조건;; stageManager.Enemy.EnemyName.Equals("Tambourine")
 
                     Debug.Log("DemoScene으로 이동");
                     AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);
@@ -269,13 +269,7 @@ public class StageClear : MonoBehaviour
         );
 
     }
-    private void TestSetExpSlide() {
-        playerLevel = 3;
-        maxExp = new Calculator().CalcMaxExp(playerLevel);
-        currentExp = 10;
-        expSlider.value = ((float)currentExp / maxExp);
-        
-    }
+    
     private void LevelUP() {
         playerLevel++;
         levelText.text = $"Lv.{playerLevel}";

@@ -204,7 +204,7 @@ MonoBehaviour:
     \uAC10\uC18C\uD55C\uB2E4.\n\uB0B4\uAD6C\uB3C4\uAC00 0\uC774 \uB418\uBA74 \uD070
     \uD53C\uD574\uB97C \uC785\uB294\uB2E4."
   enemyImage: {fileID: 0}
-  maxHP: 1500
+  maxHP: 5000
   enemyAttack: 30
   exp: 200
   slashDefense: 10

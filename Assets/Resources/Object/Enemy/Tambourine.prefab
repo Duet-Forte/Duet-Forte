@@ -193,8 +193,8 @@ MonoBehaviour:
   maxHP: 130
   enemyAttack: 14
   exp: 35
-  slashDefense: 0
-  pierceDefense: 0
+  slashDefense: 5
+  pierceDefense: 5
   enemyAttackSoundEvent: Enemy_Tambourine_Attack_SFX
   enemyHitSoundEvent: Enemy_Tambourine_Hit_SFX
   signalInstrument: 1

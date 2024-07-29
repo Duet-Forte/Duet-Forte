@@ -36,11 +36,18 @@ public class TimpaniDurabilityBuff : IBuff
         return stack;
     }
     public void UpdateStack() {
-
+        if (stack <= 0) {
+            stack = initStack;
+            stackText.text = stack.ToString();
+            enemy.OnHit += DecreaseStack;
+        }
     }
 
-    private void DecreaseStack() { 
-        stack--;
+    private void DecreaseStack() {
+        if (stack > 0)
+        {
+            stack--;
+        }
         stackText.text = stack.ToString();
         if (stack <= 0) {
             enemy.OnHit -= DecreaseStack;
@@ -53,10 +60,9 @@ public class TimpaniDurabilityBuff : IBuff
         battlePresenter.PlayerBasicAttackToEnemy(new Damage(quaterDamage,new SlashDamage()));
         //공격력 증가
         enemy.SetAttackStat(1.5f);
-        //stack initStack으로 초기화
-        stack = initStack;
-        stackText.text = stack.ToString();
-        enemy.OnHit += DecreaseStack;
+        //stack 표시 X
+        stackText.text = " ";
+        
     }
     public bool CheckStack() {
         return false;

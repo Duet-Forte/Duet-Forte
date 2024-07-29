@@ -29438,7 +29438,7 @@ GameObject:
   - component: {fileID: 3941128118579984434}
   - component: {fileID: 7148703616807183470}
   m_Layer: 0
-  m_Name: Fuga
+  m_Name: Player_Skill_Fuga_VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

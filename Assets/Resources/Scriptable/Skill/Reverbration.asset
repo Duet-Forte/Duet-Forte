@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: "\uC794\uD5A5"
   skill_Information: "30%\uC758 <color=#ff6347>\uB808\uAC00\uD1A0\uD53C\uD574</color>\uB97C
-    10\uBC88 \uC900\uB2E4."
-  skillCommand: AAB
+    10\uBC88 \uC90C."
+  skillCommand: AABB
   skillIcon: {fileID: 21300000, guid: 6d87952b423a8b246862d3e9b1462a3d, type: 3}
   isSpacialSkill: 0
   coolTimeTurn: 0

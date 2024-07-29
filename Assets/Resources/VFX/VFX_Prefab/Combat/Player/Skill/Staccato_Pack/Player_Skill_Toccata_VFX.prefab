@@ -29512,7 +29512,7 @@ GameObject:
   - component: {fileID: 3494102379653789117}
   - component: {fileID: 3494102379653789116}
   m_Layer: 0
-  m_Name: Player_Skill_Staccato_VFX
+  m_Name: Player_Skill_Toccata_VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
