@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6298563316213440618}
   - component: {fileID: 6298563316213440617}
   m_Layer: 0
-  m_Name: CymbalsCatTambourine_BasicAttack_Attack01_VFX
+  m_Name: CymbalsCat_BasicAttack_Attack01_VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
