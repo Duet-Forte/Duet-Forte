@@ -30,6 +30,7 @@ public class PlayerStatus : MonoBehaviour
             playerHealthPoint -= value; 
             if (playerHealthPoint <= 0) {
                 playerHealthPoint = 0; 
+                
 
             } 
         }
