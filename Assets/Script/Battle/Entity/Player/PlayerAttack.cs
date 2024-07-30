@@ -7,30 +7,30 @@ using Util.CustomEnum;
 using SoundSet;
 using UnityEngine.UIElements;
 
-public class PlayerAttack : MonoBehaviour //ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·ÂÀ» ¹Ş¾Æ¼­ ½ºÅ³ Ä¿¸Çµå¿Í ºñ±³
+public class PlayerAttack : MonoBehaviour //í”Œë ˆì´ì–´ì˜ ì…ë ¥ì„ ë°›ì•„ì„œ ìŠ¤í‚¬ ì»¤ë§¨ë“œì™€ ë¹„êµ
 {
-    //A°ø°İÀÌ ¾à°ø B°ø°İÀÌ °­°ø / A°ø°İÀº Å°º¸µå FÅ° B°ø°İÀº Å°º¸µå JÅ°·Î ¼³Á¤(¹ÂÁî´ë½Ã ½ºÅ¸ÀÏ)
-    [SerializeField]bool canAttack = true;           //°ø°İ°¡´É¿©ºÎ (ÄğÅ¸ÀÓ¿¡ ÀÇÇÑ)
+    //Aê³µê²©ì´ ì•½ê³µ Bê³µê²©ì´ ê°•ê³µ / Aê³µê²©ì€ í‚¤ë³´ë“œ Fí‚¤ Bê³µê²©ì€ í‚¤ë³´ë“œ Jí‚¤ë¡œ ì„¤ì •(ë®¤ì¦ˆëŒ€ì‹œ ìŠ¤íƒ€ì¼)
+    [SerializeField]bool canAttack = true;           //ê³µê²©ê°€ëŠ¥ì—¬ë¶€ (ì¿¨íƒ€ì„ì— ì˜í•œ)
     private bool isCastSkill = false;
-    private int currentLimitBeat = 0;//³²Àº Á¦ÇÑ½Ã°£
-    private int limitBeat = 10;                      //ÃÖ´ë Á¦ÇÑ½Ã°£ ´ÜÀ§´Â ¹ÚÀÚ
+    private int currentLimitBeat = 0;//ë‚¨ì€ ì œí•œì‹œê°„
+    private int limitBeat = 10;                      //ìµœëŒ€ ì œí•œì‹œê°„ ë‹¨ìœ„ëŠ” ë°•ì
     private int bpm;
     private float playerAttackStat;
     
-    #region ÄğÅ¸ÀÓ °ü·Ã º¯¼ö
+    #region ì¿¨íƒ€ì„ ê´€ë ¨ ë³€ìˆ˜
     
     double elapsedRestTime = 0d;
     #endregion
 
-    #region Ä¿¸Çµå °ü·Ã ÀÚ·áÇü
-    string skillCommandEntered="";                                 //ÀÔ·Â¹ŞÀº Ä¿¸Çµå
-    [SerializeField] List<JudgeName> timingList;                   //ÆÇÁ¤¿©ºÎ
+    #region ì»¤ë§¨ë“œ ê´€ë ¨ ìë£Œí˜•
+    string skillCommandEntered="";                                 //ì…ë ¥ë°›ì€ ì»¤ë§¨ë“œ
+    [SerializeField] List<JudgeName> timingList;                   //íŒì •ì—¬ë¶€
     [SerializeField] ParticleSystem castSkillParticle;
     Queue<string> inputBuffer;
     bool canInputBuffer;
     #endregion
 
-    #region ¿ÜºÎ Å¬·¡½º
+    #region ì™¸ë¶€ í´ë˜ìŠ¤
     SkillSet playerSkillSet;
     PlayerSkill.Skill currentSkill;
     PlayerAnimator playerAnimator;
@@ -61,12 +61,12 @@ public class PlayerAttack : MonoBehaviour //ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·ÂÀ» ¹Ş¾Æ¼­ ½ºÅ³ Ä¿¸Çµå
     }
 
     public void AddCommand(string attackKey) {
-        if (attackKey != "R")//º£±â È¤Àº Âî¸£±âÀÌ¸é 
+        if (attackKey != "R")//ë² ê¸° í˜¹ì€ ì°Œë¥´ê¸°ì´ë©´ 
         {
             skillCommandEntered+=attackKey;
-            Debug.Log("¸¶Áö¸· ÆÇÁ¤ µğ¹ö±ë : "+timingList.Last());
+            Debug.Log("ë§ˆì§€ë§‰ íŒì • ë””ë²„ê¹… : "+timingList.Last());
             if (attackKey == "A") {
-                battlePresenter.PlayerBasicAttackToEnemy(new Damage(playerAttackStat,timingList.Last(),new SlashDamage())); //battlepresenter¿¡°Ô ´ë¹ÌÁö Àü´Ş
+                battlePresenter.PlayerBasicAttackToEnemy(new Damage(playerAttackStat,timingList.Last(),new SlashDamage())); //battlepresenterì—ê²Œ ëŒ€ë¯¸ì§€ ì „ë‹¬
                 return;
             }
             if (attackKey == "B") {
@@ -79,23 +79,23 @@ public class PlayerAttack : MonoBehaviour //ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·ÂÀ» ¹Ş¾Æ¼­ ½ºÅ³ Ä¿¸Çµå
         timingList.Add(JudgeName.Rest);
 
     }
-    void AttackEnd() {//°ø°İ±âÈ¸°¡ ³¡³ª¸é È£ÃâµÇ´Â ÇÔ¼ö
-        skillCommandEntered="";//ÀÔ·Â¹Ş¾Ò´ø Ä¿¸ÇµåÅ° ÃÊ±âÈ­
-        timingList.Clear();//ÆÇÁ¤ ÃÊ±âÈ­
-        ClearBuffer();//ÀÎÇ² ¹öÆÛ ÃÊ±âÈ­
-        Metronome.instance.OnBeating -= CountDownOnBeat;//Á¦ÇÑ½Ã°£ °¨¼Ò½ÃÅ°´Â ÀÌº¥Æ® ±¸µ¶Ãë¼Ò
+    void AttackEnd() {//ê³µê²©ê¸°íšŒê°€ ëë‚˜ë©´ í˜¸ì¶œë˜ëŠ” í•¨ìˆ˜
+        skillCommandEntered="";//ì…ë ¥ë°›ì•˜ë˜ ì»¤ë§¨ë“œí‚¤ ì´ˆê¸°í™”
+        timingList.Clear();//íŒì • ì´ˆê¸°í™”
+        ClearBuffer();//ì¸í’‹ ë²„í¼ ì´ˆê¸°í™”
+        Metronome.instance.OnBeating -= CountDownOnBeat;//ì œí•œì‹œê°„ ê°ì†Œì‹œí‚¤ëŠ” ì´ë²¤íŠ¸ êµ¬ë…ì·¨ì†Œ
         Metronome.instance.OffBeating -= AttackOnBeat;
-        canAttack = false;//°ø°İ ºÒ°¡´É
+        canAttack = false;//ê³µê²© ë¶ˆê°€ëŠ¥
     }
     
-    void AttackSetting() {//°ø°İ½ÃÀÛ½Ã ¼¼ÆÃ
+    void AttackSetting() {//ê³µê²©ì‹œì‘ì‹œ ì„¸íŒ…
 
         
-        isCastSkill = false;//½ºÅ³»ç¿ë¿©ºÎ
-        canAttack = true;   //°ø°İ°¡´É¿©ºÎ (¾ù¹Ú¸¶´Ù true·Î º¯ÇÔ)
-        currentLimitBeat = limitBeat;//Á¦ÇÑ½Ã°£ ÃÊ±âÈ­
+        isCastSkill = false;//ìŠ¤í‚¬ì‚¬ìš©ì—¬ë¶€
+        canAttack = true;   //ê³µê²©ê°€ëŠ¥ì—¬ë¶€ (ì—‡ë°•ë§ˆë‹¤ trueë¡œ ë³€í•¨)
+        currentLimitBeat = limitBeat;//ì œí•œì‹œê°„ ì´ˆê¸°í™”
     }
-    void CountDownOnBeat() {//°ø°İ Á¦ÇÑ½Ã°£
+    void CountDownOnBeat() {//ê³µê²© ì œí•œì‹œê°„
         currentLimitBeat--;
     }
     
@@ -111,11 +111,11 @@ public class PlayerAttack : MonoBehaviour //ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·ÂÀ» ¹Ş¾Æ¼­ ½ºÅ³ Ä¿¸Çµå
 
             for (int skillSetIndex = 0; skillSetIndex < playerSkillSet.SkillCommand.ToArray().Length; skillSetIndex++)
             {
-                if ( comparisonCommands==playerSkillSet.SkillCommand[skillSetIndex])//ÀÔ·ÂÇÑ Ä¿¸Çµå°¡ ½ºÅ³¼ÂÀÇ ÀÓÀÇÀÇ ½ºÅ³ Ä¿¸Çµå¿Í °°À½
+                if ( comparisonCommands==playerSkillSet.SkillCommand[skillSetIndex])//ì…ë ¥í•œ ì»¤ë§¨ë“œê°€ ìŠ¤í‚¬ì…‹ì˜ ì„ì˜ì˜ ìŠ¤í‚¬ ì»¤ë§¨ë“œì™€ ê°™ìŒ
                 { 
-                  //½ºÅ³ qte¿©ºÎ È®ÀÎ ÈÄ Ã³¸®
-                  //½ºÅ³ÀÌ¸§À» ½ºÅ³ÀÌ¸§ÆË¾÷¿¡ ³Ñ°ÜÁÖ±â
-                  //ÆÄÆ¼Å¬ÀÌ ÀüºÎ Àç»ıµÉ¶§ ±îÁö ´ë±â
+                  //ìŠ¤í‚¬ qteì—¬ë¶€ í™•ì¸ í›„ ì²˜ë¦¬
+                  //ìŠ¤í‚¬ì´ë¦„ì„ ìŠ¤í‚¬ì´ë¦„íŒì—…ì— ë„˜ê²¨ì£¼ê¸°
+                  //íŒŒí‹°í´ì´ ì „ë¶€ ì¬ìƒë ë•Œ ê¹Œì§€ ëŒ€ê¸°
                     currentSkill = playerSkillSet.ArrayOfSkill[skillSetIndex];
                     
                     SkillUI(playerSkillSet.ArrayOfSkillIcon[skillSetIndex] , playerSkillSet.ArrayOfSkillName[skillSetIndex]);
@@ -125,9 +125,9 @@ public class PlayerAttack : MonoBehaviour //ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·ÂÀ» ¹Ş¾Æ¼­ ½ºÅ³ Ä¿¸Çµå
                     StartCoroutine(SkillCast(currentSkill,comparisonCommands,judgeArr));
 
                     isCastSkill = true;
-                    //½ºÅ³¾×¼Ç¾À
-                    //´ë¹ÌÁö Ã³¸®
-                    //½ºÅ³ º¸³Ê½º È¿°ú Àû¿ë
+                    //ìŠ¤í‚¬ì•¡ì…˜ì”¬
+                    //ëŒ€ë¯¸ì§€ ì²˜ë¦¬
+                    //ìŠ¤í‚¬ ë³´ë„ˆìŠ¤ íš¨ê³¼ ì ìš©
                 }
             }
         }
@@ -162,15 +162,15 @@ public class PlayerAttack : MonoBehaviour //ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·ÂÀ» ¹Ş¾Æ¼­ ½ºÅ³ Ä¿¸Çµå
 
     }
     IEnumerator SkillCast(PlayerSkill.Skill currentSkill,string comparisonCommand, JudgeName[] judgeArr) {
-        yield return new WaitForSeconds(0.5f); // ÀÚ¿¬½º·¯¿î µô·¹ÀÌ
+        yield return new WaitForSeconds(0.5f); // ìì—°ìŠ¤ëŸ¬ìš´ ë”œë ˆì´
 
 
-        currentSkill.PlaySkillSound(currentSkill.soundEventName, gameObject); //½ºÅ³ »ç¿îµå
-        ParticleSystem tmp =Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity); //ÆÄÆ¼Å¬ »ı¼º
-        tmp.transform.parent = gameObject.transform;  //ÆÄÆ¼Å¬ ºÎ¸ğÁöÁ¤
-        tmp.gameObject.transform.localScale = gameObject.transform.localScale; //À§Ä¡ Á¶Á¤
+        currentSkill.PlaySkillSound(currentSkill.soundEventName, gameObject); //ìŠ¤í‚¬ ì‚¬ìš´ë“œ
+        ParticleSystem tmp =Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity); //íŒŒí‹°í´ ìƒì„±
+        tmp.transform.parent = gameObject.transform;  //íŒŒí‹°í´ ë¶€ëª¨ì§€ì •
+        tmp.gameObject.transform.localScale = gameObject.transform.localScale; //ìœ„ì¹˜ ì¡°ì •
         
-        //¾Ö´Ï¸ŞÀÌ¼Ç Å¬¸³ µ¿ÀûÇÒ´ç
+        //ì• ë‹ˆë©”ì´ì…˜ í´ë¦½ ë™ì í• ë‹¹
         playerAnimator.Skill(currentSkill.skillClip);
         
         for (int i = 0; i < currentSkill.damage.Length; i++) { 
@@ -180,7 +180,7 @@ public class PlayerAttack : MonoBehaviour //ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·ÂÀ» ¹Ş¾Æ¼­ ½ºÅ³ Ä¿¸Çµå
 
     }
 
-    #region ½ºÅ³ ÆË¾÷ UI
+    #region ìŠ¤í‚¬ íŒì—… UI
     void SkillUI(Sprite skillImage,string skillName) {
         //skillPopUpUI=Instantiate(Resources.Load<GameObject>("UI/SkillPopUpUICanvas")).GetComponentInChildren<SkillPopUpUI>();
         //skillPopUpUI.Appear(skillImage, skillName);
@@ -196,7 +196,7 @@ public class PlayerAttack : MonoBehaviour //ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·ÂÀ» ¹Ş¾Æ¼­ ½ºÅ³ Ä¿¸Çµå
     // Update is called once per frame
     void BasicAttackCoolDown() {
         
-        if (Metronome.instance.CurrentTime >= Metronome.instance.SecondsPerBeat * 0.5 && Metronome.instance.CurrentTime <= Metronome.instance.SecondsPerBeat * 0.5 + Time.deltaTime) {//Á¤¸» ´õ·¯¿î Á¶°Ç...ÀÌÁö¸¸ ÁÁÀº ¹æ¹ıÀ» ¸øÃ£À½
+        if (Metronome.instance.CurrentTime >= Metronome.instance.SecondsPerBeat * 0.5 && Metronome.instance.CurrentTime <= Metronome.instance.SecondsPerBeat * 0.5 + Time.deltaTime) {//ì •ë§ ë”ëŸ¬ìš´ ì¡°ê±´...ì´ì§€ë§Œ ì¢‹ì€ ë°©ë²•ì„ ëª»ì°¾ìŒ
             canAttack = true;
             return ;
         }
@@ -204,10 +204,10 @@ public class PlayerAttack : MonoBehaviour //ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·ÂÀ» ¹Ş¾Æ¼­ ½ºÅ³ Ä¿¸Çµå
     }
     
 
-    void AttackOnBeat() {  //Metronome.Onbeat¿¡ ±¸µ¶ÇÒ ¿¹Á¤
-                           //queueÄ«¿îÆ®°¡ ÃÖ¼Ò 1ÀÌ»ó ÀÖÀ» ¶§
-                           //MetronomeÀÇ OnBeat¿¡¼­ dequeueÇÏ±â
-        if (inputBuffer.Count == 0) { AddCommand("R"); return; }//¹öÆÛ°¡ ºñ¾îÀÖ´Ù¸é ½¬Ç¥ Ãß°¡
+    void AttackOnBeat() {  //Metronome.Onbeatì— êµ¬ë…í•  ì˜ˆì •
+                           //queueì¹´ìš´íŠ¸ê°€ ìµœì†Œ 1ì´ìƒ ìˆì„ ë•Œ
+                           //Metronomeì˜ OnBeatì—ì„œ dequeueí•˜ê¸°
+        if (inputBuffer.Count == 0) { AddCommand("R"); return; }//ë²„í¼ê°€ ë¹„ì–´ìˆë‹¤ë©´ ì‰¬í‘œ ì¶”ê°€
         if (inputBuffer.Count >= 1) {
             string attackKey = inputBuffer.Dequeue();
             if (attackKey == "A") {
@@ -224,13 +224,13 @@ public class PlayerAttack : MonoBehaviour //ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·ÂÀ» ¹Ş¾Æ¼­ ½ºÅ³ Ä¿¸Çµå
 
         }
         
-        //¾Ö´Ï¸ŞÀÌ¼Ç
-        //Ä¿¸Çµå ÀÔ·Â
+        //ì• ë‹ˆë©”ì´ì…˜
+        //ì»¤ë§¨ë“œ ì…ë ¥
     }
     private void EnqueueAttackBuffer(string attackKey) {
         if (inputBuffer.Count < 2)
         {
-            if (inputBuffer.Count == 1) Debug.Log("¹öÆÛ¿¡ Ãß°¡µÊ");
+            if (inputBuffer.Count == 1) Debug.Log("ë²„í¼ì— ì¶”ê°€ë¨");
           
                 inputBuffer.Enqueue(attackKey);
                 checkAttackTiming();
@@ -248,41 +248,31 @@ public class PlayerAttack : MonoBehaviour //ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·ÂÀ» ¹Ş¾Æ¼­ ½ºÅ³ Ä¿¸Çµå
         Metronome.instance.OnBeating += CountDownOnBeat;
         Metronome.instance.OffBeating += AttackOnBeat;
         
-        while (true)
+        while (!isCastSkill)
         {
             //RestCoolTime();
             BasicAttackCoolDown();
             if (Input.GetKeyDown(KeyCode.F))
-            {  //³ªÁß¿¡ PlayerInput Å¬·¡½º¿¡¼­ °¡Á®¿Â º¯¼ö·Î ¾µ ¿¹Á¤
-
-                Debug.Log("PlayerAttackÅ¬·¡½º¿¡¼­ °ø°İ ÀÔ·ÂµÊ. ");
+            {  //ë‚˜ì¤‘ì— PlayerInput í´ë˜ìŠ¤ì—ì„œ ê°€ì ¸ì˜¨ ë³€ìˆ˜ë¡œ ì“¸ ì˜ˆì •
                 EnqueueAttackBuffer("A");
                 canAttack = false;
             }
             else if (Input.GetKeyDown(KeyCode.J))
             {
-                Debug.Log("PlayerAttackÅ¬·¡½º¿¡¼­ °ø°İ ÀÔ·ÂµÊ. ");
                 EnqueueAttackBuffer("B");
                 canAttack = false;
             }
             CheckSkillCommand();
             if (isCastSkill) {
-                
-                Debug.Log("½ºÅ³ ¹ßµ¿µÊ");
-                yield return new WaitForSeconds(3f);//½ºÅ³ ¾Ö´Ï¸ŞÀÌ¼Ç Å¬¸³ÀÇ ±æÀÌ¸¸Å­ ´ë±â ÈÄ Á¾·á·Î ¼öÁ¤ÇØ¾ßÇÔ. 04.01
+                yield return new WaitForSeconds(3f);//ìŠ¤í‚¬ ì• ë‹ˆë©”ì´ì…˜ í´ë¦½ì˜ ê¸¸ì´ë§Œí¼ ëŒ€ê¸° í›„ ì¢…ë£Œë¡œ ìˆ˜ì •í•´ì•¼í•¨. 04.01
                 SkillUI();
                 AttackEnd();
-                
-               
-                yield break;// ½ºÅ³ÀÌ ¹ßµ¿µÇ¾î ¹İº¹¹® Å»Ãâ °ø°İ Á¾·á
+                yield break;// ìŠ¤í‚¬ì´ ë°œë™ë˜ì–´ ë°˜ë³µë¬¸ íƒˆì¶œ ê³µê²© ì¢…ë£Œ
             }
             if (currentLimitBeat == 0) {
-                
-                Debug.Log("°ø°İ ½Ãµµ ÈÄ ÃÖ´ëºñÆ® ÃÊ°ú");
-                
                 AttackEnd();
                 yield return new WaitForSeconds((float)Metronome.instance.SecondsPerBeat);
-                yield break;//Á¦ÇÑ½Ã°£ ¿À¹ö °ø°İÁ¾·á
+                yield break;//ì œí•œì‹œê°„ ì˜¤ë²„ ê³µê²©ì¢…ë£Œ
             }
             yield return null;
         }
