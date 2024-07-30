@@ -38,7 +38,6 @@ public class PlayerGuardCounter : MonoBehaviour
         guardCounterJudge = JudgeName.Miss; //null값대신 초기화
         if (isEnteringGuardCounterPhase)
         {
-            Debug.Log("가드 카운터!");
             yield return ProgressGuardCounterPhase(); //가드 카운터 시 진행
             isEnteringGuardCounterPhase = false;
         }
@@ -63,8 +62,7 @@ public class PlayerGuardCounter : MonoBehaviour
     }
 
     private int CalcGuardCounterDamage() {
-        return ((int)playerAttackStat * 3) / 10;
-    
+        return ((int)playerAttackStat * 3)/10;
     }
   
 
