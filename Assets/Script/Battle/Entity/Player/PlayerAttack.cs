@@ -248,7 +248,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 
         Metronome.instance.OnBeating += CountDownOnBeat;
         Metronome.instance.OffBeating += AttackOnBeat;
         
-        while (!isCastSkill)
+        while (!isCastSkill)//스킬 발동시 더 이상 입력받지 않음
         {
             //RestCoolTime();
             BasicAttackCoolDown();

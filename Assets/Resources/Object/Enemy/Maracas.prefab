@@ -185,11 +185,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Maracas
-  flavorTextName: "\uB9C8\uB77C\uCE74\uC2A4"
-  enemyInfo: "\uB9C8\uB77C\uCE74\uC2A4"
-  enemyImage: {fileID: 21300000, guid: 51a35306f66e9ca42aad18d9567948d2, type: 3}
+  flavorTextName: "\uB9C8\uB77C&\uCE74\uC2A4"
+  enemyInfo: "\uB450 \uAC1C\uCCB4\uAC00 \uD55C \uBAB8\uCC98\uB7FC \uC6C0\uC9C1\uC778\uB2E4. "
+  enemyImage: {fileID: 21300000, guid: be22dd799aac39847a724a6f8e029976, type: 3}
   maxHP: 160
-  enemyAttack: 13
+  enemyAttack: 18
   exp: 45
   slashDefense: 0
   pierceDefense: 0

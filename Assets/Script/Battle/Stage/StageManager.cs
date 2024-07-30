@@ -206,7 +206,6 @@ public class StageManager : MonoBehaviour
     {
         #region 디버깅용
         Enemy_Prefab debugEnemy = enemy as Enemy_Prefab;
-
         #endregion
         judgeManager = new JudgeManager();
         judgeManager.InitSettings(this);
