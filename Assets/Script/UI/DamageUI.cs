@@ -51,6 +51,7 @@ public class DamageUI : MonoBehaviour
         canvasRectTransform = GetComponentInParent<RectTransform>();
         RedDamagequeue = new Queue<Sprite>();
         BlueDamagequeue = new Queue<Sprite>();
+        TrueDamagequeue = new Queue<Sprite>();
         this.pool = pool;
         SetLayout();
         ResetSettings();
@@ -116,6 +117,7 @@ public class DamageUI : MonoBehaviour
         else if (damage.GetDamageType() == Util.CustomEnum.DamageType.GuardCounter) //트루대미지
         {
             judgeLetter.sprite = Resources.Load<Sprite>("UI/Damage/Letter/TrueLetter");
+            judgeEffect.sprite = Resources.Load<Sprite>("UI/Damage/Effect/TrueEffect");
             while (calculatedDamage> 0)
             {
 
@@ -128,7 +130,6 @@ public class DamageUI : MonoBehaviour
                 TrueDamagequeue.Enqueue(DamageUIContainer.TrueSkins[i]);
             }
             rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH*TrueDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
-
 
             while (TrueDamagequeue.Count > 0)
             {
