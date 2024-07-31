@@ -5,7 +5,7 @@ using UnityEngine;
 using Util;
 using Util.CustomEnum;
 
-public class GuardCounterDamage : DamageType
+public class TrueDamage : DamageType
 {
 
     public override int GetDamage(float attack, int defense, JudgeName judgeName)//Æ®·ç´ë¹ÌÁö

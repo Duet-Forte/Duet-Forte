@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2a9942030a802549995404172ac7f30, type: 3}
-  m_Name: TimpaniOrc
+  m_Name: Debug
   m_EditorClassIdentifier: 
   id: 0
   bpm: 135
-  enemyName: Maracas
+  enemyName: CymbalsCat
