@@ -109,11 +109,11 @@ public class PlayerInterface : MonoBehaviour
             battleDirector.Shake(gameObject);
             playerAnimator.Hurt();
         }
-        //Mathf.Clamp(playerStatus.PlayerHealthPoint, 0f, 999999999f);
         playerStatus.PlayerHealthPoint=damage.GetCalculatedDamage();
         OnGetDamage.Invoke(damage);
         if (playerStatus.PlayerHealthPoint <= 0) { //플레이어 사망 이벤트
             stageManager.OnPlayerDie();
+            playerAnimator.Die();
         }
 
 

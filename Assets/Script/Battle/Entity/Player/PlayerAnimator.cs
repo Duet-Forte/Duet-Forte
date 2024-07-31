@@ -22,6 +22,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
     string pierceCase = "PierceCase";
     string canAttack = "CanAttack";
     string skill = "Skill";
+    string die = "Die";
     #endregion
     #region 애니메이션 중복방지
     int randomAttackCase=0;
@@ -70,32 +71,26 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
 
     public void Dash() {
         thePlayerAnimator.SetTrigger(dash);
-        Debug.Log("Player Dash");
     }
     public void BackDash()
     {
         thePlayerAnimator.SetTrigger(backDash);
-        Debug.Log("Player BackDash");
     }
     public void Guard() {
         thePlayerAnimator.SetTrigger(readyToParry);
-        Debug.Log("Player ReadyToParry");
     }
 
     public void Parry(bool isPerfect) {
         thePlayerAnimator.SetTrigger(parry);
         Particle_Parry(isPerfect);
-        Debug.Log("Player Parry");
     }
     public void Hurt() {
         thePlayerAnimator.SetTrigger(hurt);
-        Debug.Log("Player Hurt");
     }
     public void guardCount() {
         thePlayerAnimator.SetTrigger(guardCounter);
         spacialAttack.GenerateGuardCounterSlash(gameObject);
         director.Rush(gameObject, new Vector2(gameObject.transform.localPosition.x+35, gameObject.transform.localPosition.y), 0.025f, DG.Tweening.Ease.OutExpo);
-        Debug.Log("Player GuardCounter");
     }
 
     public void Skill(AnimationClip skillClip) {
@@ -104,6 +99,9 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
         thePlayerAnimator.runtimeAnimatorController = animatorOverrideController;
         
         
+    }
+    public void Die() {
+        thePlayerAnimator.SetTrigger(die);
     }
 
     /// <summary>

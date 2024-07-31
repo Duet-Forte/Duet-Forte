@@ -231,7 +231,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
 
         //ео а╬╥А
         OnTurnEnd?.Invoke();
-
+        buffManager.UpdateBuff();
         transform.DOMove(originalPosition, 3).SetEase(Ease.OutQuart).OnComplete(()=> { enemyAnimator.Idle(); });
         
     }

@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dummySprite: {fileID: -1451286363, guid: 901c6b0eb98292246ae96544fbdd4bb4, type: 3}
   dummyText: Arpeggio
-  moveOffset: 13
+  moveOffset: 11.6
 --- !u!1 &706724386479010014
 GameObject:
   m_ObjectHideFlags: 0

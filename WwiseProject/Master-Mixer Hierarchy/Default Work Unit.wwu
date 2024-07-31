@@ -12,6 +12,7 @@
 					<ChildrenList>
 						<Bus Name="Player_SFX" ID="{9854CAB5-4487-4908-9DBC-710416C0C96B}">
 							<PropertyList>
+								<Property Name="MaxDuckVolume" Type="Real64" Value="0"/>
 								<Property Name="RecoveryTime" Type="Real64" Value="0.1"/>
 							</PropertyList>
 							<ObjectLists>
@@ -24,7 +25,7 @@
 														<Custom>
 															<Effect Name="Meter (SideChain)" ID="{54D332FE-DD61-4229-8D2F-6CAD865945F2}" ShortID="130867727" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
 																<PropertyList>
-																	<Property Name="Min" Type="Real32" Value="-46.6"/>
+																	<Property Name="Min" Type="Real32" Value="-96.3"/>
 																	<Property Name="ReleaseTime" Type="Real32" Value="0.3"/>
 																</PropertyList>
 																<PluginData>
@@ -75,14 +76,14 @@
 																		<SegmentShape>Exp3</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>-17.36128</XPos>
-																		<YPos>-7.62394</YPos>
+																		<XPos>-20.06877</XPos>
+																		<YPos>-16.56713</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Log3</SegmentShape>
 																	</Point>
 																	<Point>
 																		<XPos>0</XPos>
-																		<YPos>-7.9746</YPos>
+																		<YPos>-16.56713</YPos>
 																		<Flags>37</Flags>
 																	</Point>
 																</PointList>

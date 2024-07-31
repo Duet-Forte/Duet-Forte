@@ -60,7 +60,7 @@
 										<Action Name="" ID="{4AD1E0E8-F8AA-4F1C-93E7-84C24FC0F68B}" ShortID="961703978">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Skill_AAA02" ID="{EF00A6DA-0184-4EBF-95F6-00AAC841C43F}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="Gio_AAA_Skill_SFX" ID="{28FD1834-F99E-42D4-8B0D-95D56FDC4399}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -71,7 +71,7 @@
 										<Action Name="" ID="{536FB9AB-8815-4E08-84C7-FB1114A23717}" ShortID="53113347">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Skill_BBB02" ID="{4711DA37-A6E6-46EF-8DD6-7C54BD12903E}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="Gio_BBB_Skill_SFX" ID="{97103CB2-4C28-440D-AE8F-7FA985622A88}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -93,7 +93,7 @@
 										<Action Name="" ID="{5A2BDBBB-58E0-44F3-9146-031FC47FF728}" ShortID="412500421">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Gio_ABA_SFX" ID="{32BEA00A-010D-40A5-BC03-63CFA9FE1A46}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+													<ObjectRef Name="Gio_ABA_Skill_02_SFX" ID="{EBB75747-7DF8-470B-BC3C-AC23996D3D8A}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -530,6 +530,80 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Timmy_Attack" ID="{BF7442DE-367C-4F1D-9525-3213BB73DAD1}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Castanets" ID="{29298273-CF5B-4FBC-8392-DA575DE350AD}" ShortID="902173621">
+							<ChildrenList>
+								<Event Name="Enemy_Castanets_Attack_SFX" ID="{F9BFE7F9-484A-480A-9F44-22C993F0F1C0}">
+									<ChildrenList>
+										<Action Name="" ID="{EAD61C3A-8328-4518-A011-158586BD2F74}" ShortID="1005036228">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Castanets_Attack_Attack_SFX" ID="{EE384DE3-D07F-4C28-8FEB-DF30D18412BA}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Enemy_Castanets_Attack_Signal_SFX" ID="{91F62FFC-4B17-46C7-B41A-36F6B037F988}">
+									<ChildrenList>
+										<Action Name="" ID="{3D8DC406-5F9B-4250-A5A9-FEFB6A07116F}" ShortID="429263835">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Castanets_Attack_Signal_SFX" ID="{8D24435F-26E7-45BD-AEF2-4E40CE2C6D1E}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Enemy_Castanets_Hit_Hit_SFX" ID="{E6FA0C13-ADDA-45F2-B6D3-B2C359DCBFB0}">
+									<ChildrenList>
+										<Action Name="" ID="{8A47BE30-7F70-4834-AD8C-D6ED05428259}" ShortID="788539183">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Castanets_Hit_Hit_SFX" ID="{EEAD4F3D-A857-4F0D-B8DB-236E1BE501E9}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Timpani" ID="{0BB9B1B2-AA75-4BCB-85F9-B3DC15496E3A}" ShortID="548826748">
+							<ChildrenList>
+								<Event Name="Enemy_Timpani_Attack_SFX" ID="{2103538C-34CB-4955-819F-675C594B3214}">
+									<ChildrenList>
+										<Action Name="" ID="{729CC1FE-1EEF-4B47-BFDD-29A22CA092C1}" ShortID="405053586">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Timpani_Attack" ID="{FC466AEB-ACE2-455B-8706-9528277A69F1}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Enemy_Timpani_Hit_SFX" ID="{B1E5368D-90CC-4F70-BE0A-41FB3395BD35}">
+									<ChildrenList>
+										<Action Name="" ID="{86BFC961-8558-4DBB-AA88-A158C8C447AA}" ShortID="380310285">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Enemy_Timpani_Hit_SFX" ID="{13B71CBC-02EB-41E7-A296-BC0F3F5F186D}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Enemy_Timpani_Attack_Signal_SFX" ID="{9355EA50-49C2-4A21-988D-07096DA3D06D}">
+									<ChildrenList>
+										<Action Name="" ID="{6A25F405-238D-4776-B27D-E6EBFFDB161F}" ShortID="814967843">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Enemy_Timpani_Signal_SFX" ID="{3C3285AD-2644-4B55-96FD-0B36010FBD58}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
