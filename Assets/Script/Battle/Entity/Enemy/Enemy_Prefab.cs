@@ -18,10 +18,10 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     protected EnemyAnimator enemyAnimator;
 
 
-    #region ±âº»ÀûÀÎ ½ºÅ×ÀÌÅÍ½º
+    #region ê¸°ë³¸ì ì¸ ìŠ¤í…Œì´í„°ìŠ¤
     [Header("Enemy Info")]
     [Space(5f)]
-    [Tooltip("±â´ÉÀû ÀÌ¸§, hitparticleÀÇ ÄÁº¥¼Ç°ú ÀÌ¸§ÀÌ °°¾Æ¾ß ÇÑ´Ù.")]
+    [Tooltip("ê¸°ëŠ¥ì  ì´ë¦„, hitparticleì˜ ì»¨ë²¤ì…˜ê³¼ ì´ë¦„ì´ ê°™ì•„ì•¼ í•œë‹¤.")]
     [SerializeField] string enemyName;
     [SerializeField] string flavorTextName;
     [TextArea]
@@ -34,8 +34,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     [SerializeField] protected float enemyAttack;
     [SerializeField] protected int exp;
     /// <summary>
-    /// ¹æ¾î·ÂÀº »©±â°ø½ÄÀ» »ç¿ë
-    /// slash ÇÇÇØ ¼ø¼ö ´ë¹ÌÁö= slashAttack - slashDefense (¼ø¼ö ´ë¹ÌÁö´Â Ç×»ó 0º¸´Ù Å©°Å³ª °°À½)
+    /// ë°©ì–´ë ¥ì€ ë¹¼ê¸°ê³µì‹ì„ ì‚¬ìš©
+    /// slash í”¼í•´ ìˆœìˆ˜ ëŒ€ë¯¸ì§€= slashAttack - slashDefense (ìˆœìˆ˜ ëŒ€ë¯¸ì§€ëŠ” í•­ìƒ 0ë³´ë‹¤ í¬ê±°ë‚˜ ê°™ìŒ)
     /// </summary>
     [SerializeField] protected float slashDefense;
     [SerializeField] protected float pierceDefense;
@@ -43,7 +43,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     [Space(5f)]
     [SerializeField] protected string enemyAttackSoundEvent;
     [SerializeField] protected string enemyHitSoundEvent;
-    [SerializeField] protected SignalInstrument signalInstrument; //½Ã±×³Î »ç¿îµå °í¸£±â
+    [SerializeField] protected SignalInstrument signalInstrument; //ì‹œê·¸ë„ ì‚¬ìš´ë“œ ê³ ë¥´ê¸°
     [Space(10f)]
     #endregion
 
@@ -53,7 +53,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     protected int currentNoteIndex;
 
     protected List<double> targetTimes;
-    protected List<bool> isNoteChecked; //°ø°İ ÇÏ³ª´ç ÆÇÁ¤ ¿©ºÎ ¸®½ºÆ®
+    protected List<bool> isNoteChecked; //ê³µê²© í•˜ë‚˜ë‹¹ íŒì • ì—¬ë¶€ ë¦¬ìŠ¤íŠ¸
 
     protected double judgeStartTime;
     protected double judgeEndTime;
@@ -70,8 +70,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public event Action OnHit;
     public event Action OnTurnEnd;
 
-    #region ¿ÜºÎ Å¬·¡½º
-    protected PlayerInterface playerInter;//Ã¼ÀÎÁö ¼¼Æ® 72 - ÇÃ·¹ÀÌ¾î¿¡ Á¢±ÙÇØ¼­ °¡µå³ª ÇÇ°İ ¾Ö´Ï¸ŞÀÌ¼Ç Àç»ı½ÃÅ°±â À§ÇÑ º¯¼ö
+    #region ì™¸ë¶€ í´ë˜ìŠ¤
+    protected PlayerInterface playerInter;//ì²´ì¸ì§€ ì„¸íŠ¸ 72 - í”Œë ˆì´ì–´ì— ì ‘ê·¼í•´ì„œ ê°€ë“œë‚˜ í”¼ê²© ì• ë‹ˆë©”ì´ì…˜ ì¬ìƒì‹œí‚¤ê¸° ìœ„í•œ ë³€ìˆ˜
     protected BattleDirector battleDirector;
     protected PlayerSoundSet playerSoundSet = new PlayerSoundSet();
     protected UISound uiSound = new UISound();
@@ -81,19 +81,19 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     protected EnemySignalUI enemySignalUI;
     protected BuffManager buffManager;
     #endregion
-    #region À§Ä¡°ü·Ã º¯¼ö
+    #region ìœ„ì¹˜ê´€ë ¨ ë³€ìˆ˜
     protected Transform playerTransform;
     protected Vector2 battlePos;
     protected Vector2 originalPosition;
     protected float positionOffset = 4f;
     protected Vector2 middlePos;
     protected bool isMoveDone = false;
-    // battlePos±îÁö ÀÌµ¿À» ¸¶ÃÆ´ÂÁö?
+    // battlePosê¹Œì§€ ì´ë™ì„ ë§ˆì³¤ëŠ”ì§€?
     #endregion
 
     
 
-    #region ÇÁ·ÎÆÛÆ¼
+    #region í”„ë¡œí¼í‹°
     public bool IsNoteChecked
     {
         get
@@ -120,19 +120,19 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public int Exp { get => exp; }
     #endregion
 
-    #region µğ¹ö±ë¿ë!
+    #region ë””ë²„ê¹…ìš©!
     Image[] attackIcon;
     Image[] defenseIcon;
     #endregion
 
-    protected void OnEnable()//ÇÃ·¹ÀÌ¹ö ÅØ½ºÆ® ¶ç¿ì±â
+    protected void OnEnable()//í”Œë ˆì´ë²„ í…ìŠ¤íŠ¸ ë„ìš°ê¸°
     {
         GameObject flavorTextUI = GameObject.Instantiate(Resources.Load<GameObject>("UI/FlavorText"));
         flavorTextUI.GetComponentInChildren<FlavorTextUI>().InitSetting(enemyImage,flavorTextName,enemyInfo);
     }
 
-    #region µğ½ºÇÃ·¹ÀÌºÎÅÍ °ø°İÇÔ¼ö±îÁö~
-    public IEnumerator DisplayPattern(int[] patternArray)//ÆĞÅÏ½ÅÈ£ + °ø°İÀ§Ä¡·Î ÀÌµ¿//¼ö¸®ÇÊ¿ä..
+    #region ë””ìŠ¤í”Œë ˆì´ë¶€í„° ê³µê²©í•¨ìˆ˜ê¹Œì§€~
+    public IEnumerator DisplayPattern(int[] patternArray)//íŒ¨í„´ì‹ í˜¸ + ê³µê²©ìœ„ì¹˜ë¡œ ì´ë™//ìˆ˜ë¦¬í•„ìš”..
     {
         enemyAnimator.Dash();
         ResetSettings();
@@ -157,10 +157,10 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         enemyAnimator.ReadyToPatternSignal();
         for (int i = 0; i < patternLength; ++i)
         {
-            double targetTime = ((1f / patternArray[i]) * Const.QUARTER_NOTE) * stageManager.SecondsPerBeat;//ÆĞÅÏÀÇ ³ëÆ®¿Í ³ëÆ® »çÀÌÀÇ ½Ã°£
-            targetTimes.Add(targetTime);                     //³ëÆ®°£ ½Ã°£ ¸ğÀº ¸®½ºÆ®
-            isNoteChecked.Add(true);                         //¸®½ºÆ® °ø°£ ÇÒ´çÀ» À§ÇÑ ´õ¹Ì °ª                      
-            yield return WaitForTargetedTime(targetTimes[i]);//ÆĞÅÏÀÇ ³ëÆ®°£ ÇØ´ç ½Ã°£¸¸Å­ ´ë±â
+            double targetTime = ((1f / patternArray[i]) * Const.QUARTER_NOTE) * stageManager.SecondsPerBeat;//íŒ¨í„´ì˜ ë…¸íŠ¸ì™€ ë…¸íŠ¸ ì‚¬ì´ì˜ ì‹œê°„
+            targetTimes.Add(targetTime);                     //ë…¸íŠ¸ê°„ ì‹œê°„ ëª¨ì€ ë¦¬ìŠ¤íŠ¸
+            isNoteChecked.Add(true);                         //ë¦¬ìŠ¤íŠ¸ ê³µê°„ í• ë‹¹ì„ ìœ„í•œ ë”ë¯¸ ê°’                      
+            yield return WaitForTargetedTime(targetTimes[i]);//íŒ¨í„´ì˜ ë…¸íŠ¸ê°„ í•´ë‹¹ ì‹œê°„ë§Œí¼ ëŒ€ê¸°
             uiSound.AttackSignal(gameObject, signalInstrument);
             enemySignalUI.AttackActive();
             enemyAnimator.PatternSignal();
@@ -170,12 +170,12 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         isSignalEnd = true;
     }
 
-    public IEnumerator Attack()//¼ö¸®ÇÊ¿ä
+    public IEnumerator Attack()//ìˆ˜ë¦¬í•„ìš”
     {
         //debug
         double tmp=0;
         double tmp2 = 0;
-        playerInter.PlayerAnimator.Guard();//Ã¼ÀÎÁö ¼¼Æ® 72
+        playerInter.PlayerAnimator.Guard();//ì²´ì¸ì§€ ì„¸íŠ¸ 72
 
         double patternStartTime = Time.time;
         double sumOfTime = 0;
@@ -185,20 +185,20 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
             stageManager.JudgeManager.EarlyCount = 0;
             isNoteChecked[i] = false;
             sumOfTime += targetTimes[i];
-            judgeStartTime = patternStartTime + sumOfTime - (stageManager.SecondsPerBeat * 0.5d);//Å¸°ÙÅ¸ÀÓÀÇ Àı¹İÀü¿¡ ÆÇ´Ü ½ÃÀÛ
-            judgeEndTime = judgeStartTime + stageManager.SecondsPerBeat * 0.75d;//Å¸°ÙÅ¸ÀÓÀÇ 25ÆÛ¼¾Æ® ÈÄ¿¡ ÆÇ´Ü ³¡
+            judgeStartTime = patternStartTime + sumOfTime - (stageManager.SecondsPerBeat * 0.5d);//íƒ€ê²Ÿíƒ€ì„ì˜ ì ˆë°˜ì „ì— íŒë‹¨ ì‹œì‘
+            judgeEndTime = judgeStartTime + stageManager.SecondsPerBeat * 0.75d;//íƒ€ê²Ÿíƒ€ì„ì˜ 25í¼ì„¼íŠ¸ í›„ì— íŒë‹¨ ë
             while (judgeEndTime >= Time.time)
             {
                 OnFramePass?.Invoke();
 
-                if (isNoteChecked[i])//ÆĞ¸µÇßÀ» ¶§
+                if (isNoteChecked[i])//íŒ¨ë§í–ˆì„ ë•Œ
                 {
                     enemyAnimator.Attack();
                     break;
                 }
                 yield return null;
             }
-            if (!isNoteChecked[i])//ÆĞ¸µ ¸øÇßÀ» ¶§
+            if (!isNoteChecked[i])//íŒ¨ë§ ëª»í–ˆì„ ë•Œ
             {    
                 GiveDamage(new Judge(JudgeName.Miss));
                 AkSoundEngine.PostEvent(enemyAttackSoundEvent, gameObject);
@@ -209,7 +209,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         }
         while (judgeEndTime >= Time.time)
         {
-            yield return null; // ³¡³ª´Â ½Ã°£À» Ç×»ó °°°Ô ÇÏ±â À§ÇØ.
+            yield return null; // ëë‚˜ëŠ” ì‹œê°„ì„ í•­ìƒ ê°™ê²Œ í•˜ê¸° ìœ„í•´.
         }
         yield return WaitForTargetedTime(attackDelay);
 
@@ -225,11 +225,11 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         middlePos = (originalPosition + battlePos) / 2;
 
     }
-    #region ÀÌµ¿°ü·Ã ÇÔ¼ö
+    #region ì´ë™ê´€ë ¨ í•¨ìˆ˜
     public void ReturnToOriginPos() { 
         enemyAnimator.BackDash();
 
-        //ÅÏ Á¾·á
+        //í„´ ì¢…ë£Œ
         OnTurnEnd?.Invoke();
         buffManager.UpdateBuff();
         transform.DOMove(originalPosition, 3).SetEase(Ease.OutQuart).OnComplete(()=> { enemyAnimator.Idle(); });
@@ -238,7 +238,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public void DashToBattlePos()
     {
         SetBattlePos();
-        Debug.Log("DashToPlayer ÁøÀÔ");
+        Debug.Log("DashToPlayer ì§„ì…");
         enemyAnimator.Dash();
         Metronome.instance.OnBeating += DashToHalf;
     }
@@ -257,7 +257,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     #endregion
     protected IEnumerator WaitForTargetedTime(double targetTime)
     {
-        double elapsedTime = timeOffset; //ÃÊ±â°ªÀº 0
+        double elapsedTime = timeOffset; //ì´ˆê¸°ê°’ì€ 0
 
         while (targetTime >= elapsedTime)
         {
@@ -270,10 +270,10 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public void BindPattern(EnemyPattern[] enemyPattern) {
         this.enemyPattern = enemyPattern;
     }
-    public virtual void InitSettings(StageManager currentStageManager, Transform playerTransform) // StageManager¿¡¼­ È£ÃâµÇ´Â ÃÊ±â¼¼ÆÃ
+    public virtual void InitSettings(StageManager currentStageManager, Transform playerTransform) // StageManagerì—ì„œ í˜¸ì¶œë˜ëŠ” ì´ˆê¸°ì„¸íŒ…
     {
 
-        #region ½ºÅ×ÀÌÁö ¸Å´ÏÀú¿¡¼­ ÂüÁ¶
+        #region ìŠ¤í…Œì´ì§€ ë§¤ë‹ˆì €ì—ì„œ ì°¸ì¡°
         
         stageManager = currentStageManager;
         enemySignalUI = currentStageManager.EnemySignalUI;
@@ -283,29 +283,29 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         double sPB = stageManager.SecondsPerBeat;
         defenseQTE = stageManager.DefenseQTE;
         defenseQTE.InitSetting(sPB);
-        battlePos = stageManager.BattlePos;             //ÇÃ·¹ÀÌ¾î À§Ä¡
+        battlePos = stageManager.BattlePos;             //í”Œë ˆì´ì–´ ìœ„ì¹˜
         playerInter = stageManager.PlayerInterface;
 
         currentHP = maxHP;
         #endregion
-        #region »ı¼ºÀÚ
+        #region ìƒì„±ì
         battleDirector = new BattleDirector();
-        targetTimes = new List<double>();               //Å¸°ÙÅ¸ÀÓ?
-        isNoteChecked = new List<bool>();               //³ëÆ®Ã¼Å©?
+        targetTimes = new List<double>();               //íƒ€ê²Ÿíƒ€ì„?
+        isNoteChecked = new List<bool>();               //ë…¸íŠ¸ì²´í¬?
         enemyAnimator = GetComponent<EnemyAnimator>();
 
-        ///µğ¹ö±ë¿ë
+        ///ë””ë²„ê¹…ìš©
         buffManager=new BuffManager();
         ///
         #endregion
 
         attackDelay = Const.ATTACK_DELAY_BEATS * sPB;
 
-        #region ÇÃ·¹ÀÌ¾î
+        #region í”Œë ˆì´ì–´
         this.playerTransform = playerTransform;
-        originalPosition = transform.position; //¿ø·¡ À§Ä¡
+        originalPosition = transform.position; //ì›ë˜ ìœ„ì¹˜
         #endregion
-        #region °ø°İ½ÅÈ£
+        #region ê³µê²©ì‹ í˜¸
         enemySignalUI.ResetIcon();
         #endregion
     }
@@ -323,7 +323,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     }
 
     
-#region °¡µåÄ«¿îÅÍ °ü·Ã - º°µµÀÇ ÅÏÀ¸·Î ÀÌµ¿
+#region ê°€ë“œì¹´ìš´í„° ê´€ë ¨ - ë³„ë„ì˜ í„´ìœ¼ë¡œ ì´ë™
     public void CheckCombo(int currentCombo, int maxGauge)
     {
         if (currentCombo >= maxGauge)
@@ -333,8 +333,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     }
     #endregion
 
-    #region ´ë¹ÌÁö ÇÇ°İÇÔ¼ö Å¬·¡½º¸¦ µû·Î ÆÄ¼­ ÀÌ»çÇÒ ¿¹Á¤
-    public void GiveDamage(Judge judge)//³ªÁß¿¡ ÇÃ·¹ÀÌ¾î Å¬·¡½º¿¡¼­ GetDamage·Î ¹Ù²ã¼­ ÀÌ»ç¿¹Á¤
+    #region ëŒ€ë¯¸ì§€ í”¼ê²©í•¨ìˆ˜ í´ë˜ìŠ¤ë¥¼ ë”°ë¡œ íŒŒì„œ ì´ì‚¬í•  ì˜ˆì •
+    public void GiveDamage(Judge judge)//ë‚˜ì¤‘ì— í”Œë ˆì´ì–´ í´ë˜ìŠ¤ì—ì„œ GetDamageë¡œ ë°”ê¿”ì„œ ì´ì‚¬ì˜ˆì •
     {
         Damage damage = new Damage(enemyAttack, judge.Name, new EnemyDamage());
         enemyAnimator.Attack();
@@ -343,7 +343,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         
     }
     
-    public void GetDamage(Damage damage)// ÇÇ°İ Àü¿ë Å¬·¡½º¸¦ ¸¸µé¾î¾ß µÇ³ª...
+    public void GetDamage(Damage damage)// í”¼ê²© ì „ìš© í´ë˜ìŠ¤ë¥¼ ë§Œë“¤ì–´ì•¼ ë˜ë‚˜...
     {
 
         if (currentHP == 0) { return; }
@@ -357,7 +357,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         
         currentHP -= damage.GetCalculatedDamage();
 
-        AkSoundEngine.PostEvent(enemyHitSoundEvent, gameObject); //»ç¿îµå Á¦ÀÛµÇ¸é enemyHitSoundEvent ³Ö±â
+        AkSoundEngine.PostEvent(enemyHitSoundEvent, gameObject); //ì‚¬ìš´ë“œ ì œì‘ë˜ë©´ enemyHitSoundEvent ë„£ê¸°
 
         OnGetDamage?.Invoke(damage);
         OnHit?.Invoke();
@@ -371,7 +371,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     }
     
     #endregion
-    public void HandleParryJudge(Judge judge)//ÆĞ¸µ ÆÇÁ¤ ´Ù·ç´Â ÇÔ¼ö
+    public void HandleParryJudge(Judge judge)//íŒ¨ë§ íŒì • ë‹¤ë£¨ëŠ” í•¨ìˆ˜
     {
         
         if (judge.Name.Equals(JudgeName.Miss))
