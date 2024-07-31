@@ -54244,7 +54244,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 12.1
+      scalar: 11.89
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -54626,7 +54626,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: -5.03, y: 0, z: 0}
+    m_Position: {x: -4.7, y: 0, z: 0}
     m_Rotation: {x: 0, y: 90, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -58280,7 +58280,7 @@ ParticleSystem:
     vector0_0:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 0.3652094
+      scalar: 0.3
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -58304,22 +58304,22 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.16485105
         - serializedVersion: 3
-          time: 0.51936823
+          time: 0.5671893
           value: 1
           inSlope: -0.064198695
-          outSlope: -0.064198695
-          tangentMode: 0
+          outSlope: -2.252789
+          tangentMode: 1
           weightedMode: 0
           inWeight: 0.26535124
-          outWeight: 0.5376797
+          outWeight: 0.51151246
         - serializedVersion: 3
           time: 1
           value: 0
-          inSlope: -1.8447057
-          outSlope: -1.8447057
+          inSlope: -2.0696661
+          outSlope: -2.0696661
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.20294946
+          inWeight: 0.5324147
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -58814,7 +58814,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6774490a155a8124a8d655d836b5a4a2, type: 2}
+  - {fileID: 2100000, guid: 7e24fc60d1e088d48bfe650efe4bab63, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
