@@ -23,7 +23,7 @@ public class Damage
     {
         this.attack = attack;
         this.judgeName = JudgeName.Perfect;
-        this.damageType = new GuardCounterDamage();
+        this.damageType = new TrueDamage();
     }
     
 

@@ -140,7 +140,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: cd1df4f55037c9943a0912181a5033a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20454e76b04634942b00a0a099097066, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,7 +161,7 @@ Animator:
   m_GameObject: {fileID: 5612330584740958209}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 15bf18a77063ae64f8393d6ce9e5ea83, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2d2daad328324fe4f8dcbadc5df54e12, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -185,7 +185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackParticle:
-  - {fileID: 431099028761412644, guid: 1dc7a26616b88594f86cfedfdb3a4fdb, type: 3}
+  - {fileID: 7966107247385924355, guid: 6d7a20b2e1d7877429e3ccfa18547135, type: 3}
+  - {fileID: 6563284985896453243, guid: 761c55802e41e8e4b9a1b6815037c832, type: 3}
 --- !u!114 &7789598371158907545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,11 +204,11 @@ MonoBehaviour:
   enemyInfo: "\uD53C\uD574\uB97C \uC8FC\uBA74 \uD300\uD30C\uB2C8\uC758 \uB0B4\uAD6C\uB3C4\uAC00
     \uAC10\uC18C\uD55C\uB2E4.\n\uB0B4\uAD6C\uB3C4\uAC00 0\uC774 \uB418\uBA74 \uD070
     \uD53C\uD574\uB97C \uC785\uB294\uB2E4."
-  enemyImage: {fileID: 0}
+  enemyImage: {fileID: 21300000, guid: fef62a3b35db22e40bccf7984dd15b31, type: 3}
   maxHP: 5000
   enemyAttack: 30
   exp: 200
-  slashDefense: 10
+  slashDefense: 5
   pierceDefense: 10
   enemyAttackSoundEvent: Enemy_Timpani_Attack_SFX
   enemyHitSoundEvent: Enemy_Timpani_Hit_SFX
