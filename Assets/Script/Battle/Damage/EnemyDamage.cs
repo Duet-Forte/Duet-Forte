@@ -5,27 +5,27 @@ using Util.CustomEnum;
 
 public class EnemyDamage : DamageType
 {
-    public override int GetDamage(float attack, int defense, JudgeName judgeName) //ÆĞ¸µ ÆÇÁ¤
+    public override int GetDamage(float attack, int defense, JudgeName judgeName) //íŒ¨ë§ íŒì •
     {
-        if (judgeName == JudgeName.Miss) //ÆĞ¸µ ½ÇÆĞ
+        if (judgeName == JudgeName.Miss) //íŒ¨ë§ ì‹¤íŒ¨
         { 
-            return GetDamage((int)(attack * 1f), (int)(defense * 0f));
+            return GetDamage((int)(attack * 1f), (int)(defense * 1f));
         }
-        if (judgeName == JudgeName.Perfect) //ÆÛÆåÆ® ÆĞ¸µ
+        if (judgeName == JudgeName.Perfect) //í¼í™íŠ¸ íŒ¨ë§
         {
             return GetDamage((int)(attack * 0f),(int)(defense * 1f));
         }
         if (judgeName == JudgeName.Great)
         {
-            return GetDamage((int)(attack * 0.2f), (int)(defense*0.8f));
+            return GetDamage((int)(attack * 0.4f), (int)(defense*1f));
         }
         if (judgeName == JudgeName.Good)
         {
-            return GetDamage((int)(attack * 0.5f), (int)(defense*0.5f));
+            return GetDamage((int)(attack * 0.6f), (int)(defense*1f));
         }
         if (judgeName == JudgeName.Bad)
         {
-            return GetDamage((int)(attack * 0.8f), (int)(defense*0.2f));
+            return GetDamage((int)(attack * 0.8f), (int)(defense*1f));
         }
         return 0;
     }

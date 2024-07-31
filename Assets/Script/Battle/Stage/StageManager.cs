@@ -191,14 +191,12 @@ public class StageManager : MonoBehaviour
     }
     public void OnEnemyDie()
     {
-        Debug.Log("스테이지 클리어!");
         OnStageClear?.Invoke();
         isStageOver = true;
     }
 
     public void OnPlayerDie()
     {
-        Debug.Log("게임 오버!");
         OnGameOver?.Invoke();
         isStageOver = true;
     }
@@ -206,7 +204,6 @@ public class StageManager : MonoBehaviour
     {
         #region 디버깅용
         Enemy_Prefab debugEnemy = enemy as Enemy_Prefab;
-
         #endregion
         judgeManager = new JudgeManager();
         judgeManager.InitSettings(this);

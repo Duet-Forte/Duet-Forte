@@ -29,17 +29,16 @@ public class PlayerGuardCounter : MonoBehaviour
     {
         if (currentCombo >= maxGauge)
         {
-            isEnteringGuardCounterPhase = true;//°¡µåÄ«¿îÅÍ ½ÇÇà
+            isEnteringGuardCounterPhase = true;//ê°€ë“œì¹´ìš´í„° ì‹¤í–‰
         }
     }
     
     public IEnumerator EnterGuardCounterPhase()
     {
-        guardCounterJudge = JudgeName.Miss; //null°ª´ë½Å ÃÊ±âÈ­
+        guardCounterJudge = JudgeName.Miss; //nullê°’ëŒ€ì‹  ì´ˆê¸°í™”
         if (isEnteringGuardCounterPhase)
         {
-            Debug.Log("°¡µå Ä«¿îÅÍ!");
-            yield return ProgressGuardCounterPhase(); //°¡µå Ä«¿îÅÍ ½Ã ÁøÇà
+            yield return ProgressGuardCounterPhase(); //ê°€ë“œ ì¹´ìš´í„° ì‹œ ì§„í–‰
             isEnteringGuardCounterPhase = false;
         }
     }
@@ -47,13 +46,13 @@ public class PlayerGuardCounter : MonoBehaviour
     
     private IEnumerator ProgressGuardCounterPhase()
     {
-        yield return guardCounterQTE.StartQTE(GetComponent<PlayerTurn>().BattlePos); //QTE Àç»ı
+        yield return guardCounterQTE.StartQTE(GetComponent<PlayerTurn>().BattlePos); //QTE ì¬ìƒ
         guardCounterJudge = guardCounterQTE.GetQTEJudge;
         if (guardCounterJudge != JudgeName.Miss)
         {
-            OnGuardCounterEnd?.Invoke();//°¡µåÄ«¿îÅÍ °ÔÀÌÁö ¸®¼Â
+            OnGuardCounterEnd?.Invoke();//ê°€ë“œì¹´ìš´í„° ê²Œì´ì§€ ë¦¬ì…‹
             guardCounterDelay = 5f;
-            battlePresenter.GuardCounterToEnemy(new Damage(CalcGuardCounterDamage(), guardCounterJudge,new SlashDamage()));
+            battlePresenter.GuardCounterToEnemy(new Damage(CalcGuardCounterDamage(), guardCounterJudge,new TrueDamage()));
             playerSoundSet.PlayerGuardCounter(gameObject);
             GetComponent<PlayerAnimator>().guardCount();
         }
@@ -63,8 +62,7 @@ public class PlayerGuardCounter : MonoBehaviour
     }
 
     private int CalcGuardCounterDamage() {
-        return ((int)playerAttackStat * 3) / 10;
-    
+        return ((int)playerAttackStat * 3)/10;
     }
   
 
