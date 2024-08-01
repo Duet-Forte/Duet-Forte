@@ -64,8 +64,24 @@ public class DamageUI : MonoBehaviour
         int index = 0;
         List<int> damageByDigit= new List<int>();
 
-        judgeEffect.sprite = judgeEffects[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
-        judgeLetter.sprite = judgeLetters[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
+        switch ((int)damage.JudgeName)
+        {
+            case 1: judgeEffect.sprite = judgeEffects[0];
+                    judgeLetter.sprite = judgeLetters[0];
+                break;
+            case 2: judgeEffect.sprite = judgeEffects[1];
+                    judgeLetter.sprite = judgeLetters[1];
+                break;
+            case 3: judgeEffect.sprite = judgeEffects[2];
+                    judgeLetter.sprite = judgeLetters[2];
+                break;
+            case 4: judgeEffect.sprite = judgeEffects[2];
+                    judgeLetter.sprite = judgeLetters[2];
+                break;
+        }
+        
+        //judgeEffect.sprite = judgeEffects[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
+        //judgeLetter.sprite = judgeLetters[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
         
         if (damage.GetDamageType() == Util.CustomEnum.DamageType.Slash)
         {
@@ -114,7 +130,7 @@ public class DamageUI : MonoBehaviour
                 image[index++].sprite = BlueDamagequeue.Dequeue();
             }
         }
-        else if (damage.GetDamageType() == Util.CustomEnum.DamageType.GuardCounter) //트루대미지
+        else if (damage.GetDamageType() == Util.CustomEnum.DamageType.True) //트루대미지
         {
             judgeLetter.sprite = Resources.Load<Sprite>("UI/Damage/Letter/TrueLetter");
             judgeEffect.sprite = Resources.Load<Sprite>("UI/Damage/Effect/TrueEffect");
