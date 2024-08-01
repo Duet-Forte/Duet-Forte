@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="New_SoundBank" ID="{E47454C0-8611-4460-8CD9-7A53DBB85D34}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Player_Skill_AABB_SFX" ID="{E6599D17-3593-4010-A131-3ADEE0D7E6C6}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Combat_test01" ID="{28F43BD0-07AA-4029-87FD-589C864D1681}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Enemy_Tambourine_Hit_SFX" ID="{44BE723D-8A21-409E-BFAA-A1FCC1CE0172}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Attack_StrongSignal_SFX" ID="{CEBB90E6-DF06-40C5-B9D3-CFA7BB20AD42}" WorkUnitID="{85BEC279-3CEA-4BB8-825C-EC28A1D87977}" Origin="Manual" Filter="7"/>

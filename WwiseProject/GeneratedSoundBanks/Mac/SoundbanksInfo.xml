@@ -398,7 +398,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{1725A216-AF90-A779-2086-DAF08DAB2D11}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{B9E50466-180F-D366-D70A-7A19178BBDED}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -424,7 +424,7 @@
 				</File>
 				<File Id="153763117" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cymbal_Hit03_SFX.wav</ShortName>
-					<CachePath>SFX/Cymbal_Hit03_SFX_4DDF83FB.wem</CachePath>
+					<CachePath>SFX/Cymbal_Hit03_SFX_0762836C.wem</CachePath>
 				</File>
 				<File Id="171558463" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Timmy_Attack05.wav</ShortName>
@@ -453,6 +453,10 @@
 				<File Id="334093853" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cymbal_Attack_Signal_SFX.wav</ShortName>
 					<CachePath>SFX/Cymbal_Attack_Signal_SFX_818F3B66.wem</CachePath>
+				</File>
+				<File Id="348574874" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Player_Skill_AABB_SFX.wav</ShortName>
+					<CachePath>SFX/Player_Skill_AABB_SFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="386007338" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tambourine_Hit.wav</ShortName>
@@ -516,7 +520,7 @@
 				</File>
 				<File Id="753326257" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cymbal_Hit02_SFX.wav</ShortName>
-					<CachePath>SFX/Cymbal_Hit02_SFX_A5973789.wem</CachePath>
+					<CachePath>SFX/Cymbal_Hit02_SFX_85D5975B.wem</CachePath>
 				</File>
 				<File Id="755516841" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>0502_1.wav</ShortName>
@@ -572,7 +576,7 @@
 				</File>
 				<File Id="1062972854" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cymbal_Hit01_SFX.wav</ShortName>
-					<CachePath>SFX/Cymbal_Hit01_SFX_E1160623.wem</CachePath>
+					<CachePath>SFX/Cymbal_Hit01_SFX_61301848.wem</CachePath>
 				</File>
 				<File Id="1071832350" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Clear_SFX_02.wav</ShortName>
@@ -741,6 +745,11 @@
 						<MediaRef Id="674496262"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3240848997" Name="Player_Skill_AABB_SFX" DurationType="OneShot" DurationMin="4.2868958" DurationMax="4.2868958">
+					<MediaRefs>
+						<MediaRef Id="348574874"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2846259367" Name="Player_Skill_ABA_SFX" DurationType="OneShot" DurationMin="4.440375" DurationMax="4.440375">
 					<MediaRefs>
 						<MediaRef Id="867470794"/>
@@ -775,5 +784,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F27B5EED-12FD-6D1A-949F-196A6512703B}</FileHash>
+	<FileHash>{94BC29C1-8C6C-5D92-7804-10E7A3737A8F}</FileHash>
 </SoundBanksInfo>

@@ -55,6 +55,7 @@ namespace AK
         static const AkUniqueID PLAYER_BODYFALL_SFX = 173655414U;
         static const AkUniqueID PLAYER_PARRY_SFX = 3410875789U;
         static const AkUniqueID PLAYER_SKILL_AAA_SFX = 2518233790U;
+        static const AkUniqueID PLAYER_SKILL_AABB_SFX = 3240848997U;
         static const AkUniqueID PLAYER_SKILL_ABA_SFX = 2846259367U;
         static const AkUniqueID PLAYER_SKILL_BBB_SFX = 3250415283U;
         static const AkUniqueID PLAYER_SKILL_CLIMAX_SFX = 127602315U;
