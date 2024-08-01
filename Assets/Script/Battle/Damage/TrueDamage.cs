@@ -5,7 +5,7 @@ using UnityEngine;
 using Util;
 using Util.CustomEnum;
 
-public class GuardCounterDamage : DamageType
+public class TrueDamage : DamageType
 {
 
     public override int GetDamage(float attack, int defense, JudgeName judgeName)//Æ®·ç´ë¹ÌÁö
@@ -35,7 +35,7 @@ public class GuardCounterDamage : DamageType
     }
     public override Util.CustomEnum.DamageType GetDamageType()
     {
-        return Util.CustomEnum.DamageType.GuardCounter;
+        return Util.CustomEnum.DamageType.True;
     }
 
 }

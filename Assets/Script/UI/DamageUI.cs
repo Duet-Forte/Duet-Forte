@@ -14,6 +14,7 @@ public class DamageUI : MonoBehaviour
     private Image[] image=new Image[11];
     private Queue<Sprite> BlueDamagequeue;
     private Queue<Sprite> RedDamagequeue;
+    private Queue<Sprite> TrueDamagequeue;
     private RectTransform rectTransform;
     private RectTransform canvasRectTransform;
     private IObjectPool<DamageUI> pool;
@@ -43,12 +44,14 @@ public class DamageUI : MonoBehaviour
 
         judgeEffects = Resources.LoadAll<Sprite>("UI/Damage/Effect");
         judgeLetters = Resources.LoadAll<Sprite>("UI/Damage/Letter");
-
+        
+        
         rectTransform = transform.Find("Damage").gameObject.GetComponent<RectTransform>();
         GetComponentInParent<Canvas>().worldCamera = Camera.main;
         canvasRectTransform = GetComponentInParent<RectTransform>();
         RedDamagequeue = new Queue<Sprite>();
         BlueDamagequeue = new Queue<Sprite>();
+        TrueDamagequeue = new Queue<Sprite>();
         this.pool = pool;
         SetLayout();
         ResetSettings();
@@ -61,9 +64,25 @@ public class DamageUI : MonoBehaviour
         int index = 0;
         List<int> damageByDigit= new List<int>();
 
-        judgeEffect.sprite = judgeEffects[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
-        judgeLetter.sprite = judgeLetters[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
-
+        switch ((int)damage.JudgeName)
+        {
+            case 1: judgeEffect.sprite = judgeEffects[0];
+                    judgeLetter.sprite = judgeLetters[0];
+                break;
+            case 2: judgeEffect.sprite = judgeEffects[1];
+                    judgeLetter.sprite = judgeLetters[1];
+                break;
+            case 3: judgeEffect.sprite = judgeEffects[2];
+                    judgeLetter.sprite = judgeLetters[2];
+                break;
+            case 4: judgeEffect.sprite = judgeEffects[2];
+                    judgeLetter.sprite = judgeLetters[2];
+                break;
+        }
+        
+        //judgeEffect.sprite = judgeEffects[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
+        //judgeLetter.sprite = judgeLetters[Mathf.Min((int)(damage.JudgeName) - 1, judgeEffects.Length - 1)];
+        
         if (damage.GetDamageType() == Util.CustomEnum.DamageType.Slash)
         {
             while (calculatedDamage> 0)
@@ -110,6 +129,30 @@ public class DamageUI : MonoBehaviour
                 image[index].gameObject.SetActive(true);
                 image[index++].sprite = BlueDamagequeue.Dequeue();
             }
+        }
+        else if (damage.GetDamageType() == Util.CustomEnum.DamageType.True) //트루대미지
+        {
+            judgeLetter.sprite = Resources.Load<Sprite>("UI/Damage/Letter/TrueLetter");
+            judgeEffect.sprite = Resources.Load<Sprite>("UI/Damage/Effect/TrueEffect");
+            while (calculatedDamage> 0)
+            {
+
+                int tmp = calculatedDamage % 10;
+                damageByDigit.Add(tmp);
+                calculatedDamage /= 10;
+            }
+            damageByDigit=Enumerable.Reverse<int>(damageByDigit).ToList();
+            foreach (int i in damageByDigit) {
+                TrueDamagequeue.Enqueue(DamageUIContainer.TrueSkins[i]);
+            }
+            rectTransform.sizeDelta = new Vector2(Const.DAMAGEUI_UI_WIDTH*TrueDamagequeue.Count, Const.DAMAGEUI_UI_HEIGHT);
+
+            while (TrueDamagequeue.Count > 0)
+            {
+                image[index].gameObject.SetActive(true);
+                image[index++].sprite = TrueDamagequeue.Dequeue();
+            }
+
         }
 
         /*while (damage > 0)

@@ -33,7 +33,7 @@ namespace Util
         
             Slash,
             Pierce,
-            GuardCounter,
+            True,
             Enemy
         };
 
@@ -67,7 +67,9 @@ namespace Util
             ElecGuitar,
             Tambourine,
             Castanets,
-            Timpani
+            Timpani,
+            Maracas,
+            CymbalsCat
         }
         public enum EventType
         { 
