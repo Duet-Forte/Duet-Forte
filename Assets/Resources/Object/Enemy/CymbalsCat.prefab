@@ -190,7 +190,7 @@ MonoBehaviour:
     \uAC15\uD55C \uACF5\uACA9\uC5D0 \uC8FC\uC758\uD558\uC790."
   enemyImage: {fileID: 21300000, guid: 51c715dd42dca6c4794356c9af41bc40, type: 3}
   maxHP: 300
-  enemyAttack: 23
+  enemyAttack: 25
   exp: 100
   slashDefense: 5
   pierceDefense: 5

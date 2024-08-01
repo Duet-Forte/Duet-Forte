@@ -18,13 +18,13 @@ public class PlayerInterface : MonoBehaviour
     public event Action<Damage> OnGetDamage;
     private StageManager stageManager;
 
-    #region À§Ä¡ °ü·Ã º¯¼ö
+    #region ìœ„ì¹˜ ê´€ë ¨ ë³€ìˆ˜
     Vector3 parryPos = new Vector3(2.61f, 1.54f, 0f);
     #endregion
     public void InitSettings(StageManager stageManager) { 
         this.stageManager = stageManager;
     }
-    #region ÇÁ·ÎÆÛÆ¼
+    #region í”„ë¡œí¼í‹°
     public PlayerAnimator PlayerAnimator { get {
             if (playerAnimator != null)
             { 
@@ -94,7 +94,7 @@ public class PlayerInterface : MonoBehaviour
 
     }
 
-    #region ÆÄÆ¼Å¬ »ý¼º À§Ä¡
+    #region íŒŒí‹°í´ ìƒì„± ìœ„ì¹˜
     public Vector3 ParryPos { get => parryPos; }
 
     #endregion
@@ -111,7 +111,7 @@ public class PlayerInterface : MonoBehaviour
         }
         playerStatus.PlayerHealthPoint=damage.GetCalculatedDamage();
         OnGetDamage.Invoke(damage);
-        if (playerStatus.PlayerHealthPoint <= 0) { //ÇÃ·¹ÀÌ¾î »ç¸Á ÀÌº¥Æ®
+        if (playerStatus.PlayerHealthPoint <= 0) { //í”Œë ˆì´ì–´ ì‚¬ë§ ì´ë²¤íŠ¸
             stageManager.OnPlayerDie();
             playerAnimator.Die();
         }

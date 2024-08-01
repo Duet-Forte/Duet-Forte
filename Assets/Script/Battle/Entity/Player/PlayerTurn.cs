@@ -11,41 +11,41 @@ using System;
 
 public class PlayerTurn : MonoBehaviour ,ITurnHandler
 {
-    //°ø°İ½ÅÈ£
-    //ºñ°ø°İ Á¦ÇÑ½Ã°£
-    //ÇÃ·¹ÀÌ¾î °ø°İ½Ãµµ ¿©ºÎ
+    //ê³µê²©ì‹ í˜¸
+    //ë¹„ê³µê²© ì œí•œì‹œê°„
+    //í”Œë ˆì´ì–´ ê³µê²©ì‹œë„ ì—¬ë¶€
     //
     // Start is called before the first frame update
 
     private StageManager stageManager;
     private PlayerAnimator playerAnimator;
-    private PlayerStatus playerStatus;  //ÇÃ·¹ÀÌ¾î ½ºÅÈ
+    private PlayerStatus playerStatus;  //í”Œë ˆì´ì–´ ìŠ¤íƒ¯
     private bool isTurnOver;
 
     public event Action<bool> onBasicAttack;
     
-    #region ´ë±â ½Ã°£ º¯¼ö
+    #region ëŒ€ê¸° ì‹œê°„ ë³€ìˆ˜
     private double halfBeat;
-    private int waitForAttackDelay = 1;//Á¢±Ù ÈÄ °ø°İ½ÅÈ£°¡ ³ª¿Ã ¶§±îÁöÀÇ ½Ã°£(¹ÚÀÚ)
-    private int noAttackDelay = 8;//Á¢±ÙÈÄ °ø°İÀ» ¾ÈÇÏ°í ÃÖ´ë·Î ´ë±âÇÏ´Â ½Ã°£(¹ÚÀÚ)
-    private int delayBeatCount = 8;//´ë±âÇÒ ¹ÚÀÚ À§ º¯¼öµé·Î ÃÊ±âÈ­µÇ´Â º¯¼ö
+    private int waitForAttackDelay = 1;//ì ‘ê·¼ í›„ ê³µê²©ì‹ í˜¸ê°€ ë‚˜ì˜¬ ë•Œê¹Œì§€ì˜ ì‹œê°„(ë°•ì)
+    private int noAttackDelay = 8;//ì ‘ê·¼í›„ ê³µê²©ì„ ì•ˆí•˜ê³  ìµœëŒ€ë¡œ ëŒ€ê¸°í•˜ëŠ” ì‹œê°„(ë°•ì)
+    private int delayBeatCount = 8;//ëŒ€ê¸°í•  ë°•ì ìœ„ ë³€ìˆ˜ë“¤ë¡œ ì´ˆê¸°í™”ë˜ëŠ” ë³€ìˆ˜
     #endregion
     [SerializeField] GameObject playerAttackSignal;
-  //[SerializeField] private bool canAttack = false; //°ø°İ °¡´ÉÇÑÁö?
+  //[SerializeField] private bool canAttack = false; //ê³µê²© ê°€ëŠ¥í•œì§€?
     
-    int dashDuringTime = 3;//´ë½¬ÇØ¼­ ÀûÇÑÅ× Á¢±ÙÇÏ´Â ½Ã°£ ´ÜÀ§´Â ºñÆ®
-    #region À§Ä¡°ü·Ã º¯¼ö
+    int dashDuringTime = 1;//ëŒ€ì‰¬í•´ì„œ ì í•œí…Œ ì ‘ê·¼í•˜ëŠ” ì‹œê°„ ë‹¨ìœ„ëŠ” ì´ˆ
+    #region ìœ„ì¹˜ê´€ë ¨ ë³€ìˆ˜
     
-    Vector2 originPlayerPos;//ÇÃ·¹ÀÌ¾î ¿ø·¡ ÀÖ´Â À§Ä¡
+    Vector2 originPlayerPos;//í”Œë ˆì´ì–´ ì›ë˜ ìˆëŠ” ìœ„ì¹˜
     Vector2 battlePos;
     Vector2 middlePos;
     private float positionOffset=-7f;
-    private bool isMoveDone=false; // battlePos±îÁö ÀÌµ¿À» ¸¶ÃÆ´ÂÁö?
+    private bool isMoveDone=false; // battlePosê¹Œì§€ ì´ë™ì„ ë§ˆì³¤ëŠ”ì§€?
 
     public Vector2 BattlePos { get => battlePos; }
     #endregion
 
-    #region ¿ÜºÎÅ¬·¡½º
+    #region ì™¸ë¶€í´ë˜ìŠ¤
     private CinemachineImpulseSource cinemachineImpulseSource;
     private BattleDirector battleDirector = new BattleDirector();
     UISound uiSound = new UISound();
@@ -75,7 +75,7 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
     }
     public IEnumerator TurnStart()
     {
-        Debug.Log("ÇÃ·¹ÀÌ¾î ÅÏ ½ÃÀÛ");
+        Debug.Log("í”Œë ˆì´ì–´ í„´ ì‹œì‘");
         ResetSettings();
         ActionSwitch(0);
         while (!isTurnOver)
@@ -94,11 +94,11 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
         //playerAnimator.Idle();
         actionCase = 0;
         stageManager.CurrentTurn = Turn.EnemyTurn;
-        Debug.Log("ÇÃ·¹ÀÌ¾î ÅÏ ³¡");
+        Debug.Log("í”Œë ˆì´ì–´ í„´ ë");
         yield return null;
     }
     void ActionSwitch(int actionCase)
-    { //ÇÃ·¹ÀÌ¾î ÅÏ¿¡¼­ ÇÑ »çÀÌÅ¬ÀÇ Çàµ¿(Á÷°üÀûÀ¸·Î º¸±âÀ§ÇÔ°ú È¤½Ã³ª ÇÑ ÅÏ¿¡ Çàµ¿À» µÎ¹ø ÇÏ°Ô µÉ ¼öµµ ÀÖÀ» °Å °°¾Æ¼­ ½ºÀ§Ä¡¹® »ç¿ë)
+    { //í”Œë ˆì´ì–´ í„´ì—ì„œ í•œ ì‚¬ì´í´ì˜ í–‰ë™(ì§ê´€ì ìœ¼ë¡œ ë³´ê¸°ìœ„í•¨ê³¼ í˜¹ì‹œë‚˜ í•œ í„´ì— í–‰ë™ì„ ë‘ë²ˆ í•˜ê²Œ ë  ìˆ˜ë„ ìˆì„ ê±° ê°™ì•„ì„œ ìŠ¤ìœ„ì¹˜ë¬¸ ì‚¬ìš©)
 
         switch (actionCase)
         {
@@ -117,11 +117,11 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
 
     
 
-    #region ÀÌµ¿ ÇÔ¼ö
+    #region ì´ë™ í•¨ìˆ˜
     public void DashToBattlePos() {
         SetBattlePos();
         Debug.Log(battlePos);
-        Debug.Log("DashToEnemy ÁøÀÔ");
+        Debug.Log("DashToEnemy ì§„ì…");
         playerAnimator.Dash();
         Metronome.instance.OnBeating += DashToHalf;
     }
@@ -132,45 +132,45 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
     }
     void DashToDestination() {
         playerAnimator.Particle_DashDust();
-        transform.DOMove(new Vector3(battlePos.x + positionOffset, battlePos.y), (float)stageManager.SecondsPerBeat).SetEase(Ease.OutQuart); //ActionStartTurn¿¡¼­ È£ÃâµÉ ¶§´Â actionCaseÁõ°¡½ÃÅ°´Â°Å »©¾ßÇÔ..OnComplete(() => ActionSwitch(++actionCase)
-        Debug.Log("ÀÌµ¿ÇÏ·Á´Â battlePos : "+battlePos);
+        transform.DOMove(new Vector3(battlePos.x + positionOffset, battlePos.y), (float)stageManager.SecondsPerBeat).SetEase(Ease.OutQuart); //ActionStartTurnì—ì„œ í˜¸ì¶œë  ë•ŒëŠ” actionCaseì¦ê°€ì‹œí‚¤ëŠ”ê±° ë¹¼ì•¼í•¨..OnComplete(() => ActionSwitch(++actionCase)
+        Debug.Log("ì´ë™í•˜ë ¤ëŠ” battlePos : "+battlePos);
         isMoveDone = true;
     }
 
 
     public void ReturnToOriginPos() {
         playerAnimator.BackDash();
-        transform.DOMove(originPlayerPos, dashDuringTime).SetEase(Ease.OutQuart).OnComplete(()=>playerAnimator.Idle());
+        transform.DOMove(originPlayerPos, (float)Metronome.instance.SecondsPerBeat*3).SetEase(Ease.OutExpo).OnComplete(()=>playerAnimator.Idle());
                 
     }
     #endregion
 
     void DecreaseOnBeat()
-    {//OnBeating¿¡ ±¸µ¶ÇØ¼­ »ç¿ëÇÏ´Â Ä«¿îÆ® ´Ù¿î
+    {//OnBeatingì— êµ¬ë…í•´ì„œ ì‚¬ìš©í•˜ëŠ” ì¹´ìš´íŠ¸ ë‹¤ìš´
         delayBeatCount--;
     }
     void AttackCountDown() {
         playerAnimator.attackCountDown();
-        uiSound.SignalSound(gameObject, false); //°ø°İ ÀüÁ¶ ½ÅÈ£
+        uiSound.SignalSound(gameObject, false); //ê³µê²© ì „ì¡° ì‹ í˜¸
             }
 
     IEnumerator WaitForAnAttack()
-    { //ÀûÇÑÅ× Á¢±ÙÇÏ°í °ø°İÇÏ±â Àü±îÁö ±â´Ù¸®±â
-        Debug.Log("WaitForAnAttacking ÁøÀÔ");
+    { //ì í•œí…Œ ì ‘ê·¼í•˜ê³  ê³µê²©í•˜ê¸° ì „ê¹Œì§€ ê¸°ë‹¤ë¦¬ê¸°
+        Debug.Log("WaitForAnAttacking ì§„ì…");
         delayBeatCount = waitForAttackDelay;
-        Metronome.instance.OnBeating += DecreaseOnBeat; //ºñÆ®¸¶´Ù È£ÃâµÇ´Â OnBeating¿¡ ±¸µ¶½ÃÄÑ¼­ ºñÆ®¸¶´Ù delayBeatCount°¨¼Ò
+        Metronome.instance.OnBeating += DecreaseOnBeat; //ë¹„íŠ¸ë§ˆë‹¤ í˜¸ì¶œë˜ëŠ” OnBeatingì— êµ¬ë…ì‹œì¼œì„œ ë¹„íŠ¸ë§ˆë‹¤ delayBeatCountê°ì†Œ
         Metronome.instance.OnBeating += AttackCountDown;
         while (true)
         {
             if (delayBeatCount == 1) {
-                Metronome.instance.OnBeating -= AttackCountDown; //°ø°İ½ÅÈ£ÀÇ ½ÅÈ£ Á¾·á 
+                Metronome.instance.OnBeating -= AttackCountDown; //ê³µê²©ì‹ í˜¸ì˜ ì‹ í˜¸ ì¢…ë£Œ 
             }
             if (delayBeatCount == 0)
-            { // delayBeatCount¸¸Å­ÀÇ ¹ÚÀÚ µÚ¿¡ °ø°İ½ÅÈ£
-                Metronome.instance.OnBeating -= DecreaseOnBeat;// ±¸µ¶ÇØÁ¦
-                //StartCoroutine(AttackSignal());//°ø°İ½ÅÈ£ ÆÄÆ¼Å¬Àç»ı
+            { // delayBeatCountë§Œí¼ì˜ ë°•ì ë’¤ì— ê³µê²©ì‹ í˜¸
+                Metronome.instance.OnBeating -= DecreaseOnBeat;// êµ¬ë…í•´ì œ
+                //StartCoroutine(AttackSignal());//ê³µê²©ì‹ í˜¸ íŒŒí‹°í´ì¬ìƒ
                 playerAnimator.attackSignalPlay();
-                uiSound.SignalSound(gameObject, true); //°ø°İ ½ÃÀÛ ½ÅÈ£
+                uiSound.SignalSound(gameObject, true); //ê³µê²© ì‹œì‘ ì‹ í˜¸
                 break;
             }
             yield return null;
@@ -188,19 +188,19 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
     IEnumerator ConsiderAttacking()
     {
         AttackSignal();
-        Debug.Log("ConsiderAttacking ÁøÀÔ");
-        delayBeatCount = noAttackDelay;// 4¹ÚÀÚ µ¿¾È ÇÃ·¹ÀÌ¾î ÅÏ À¯Áö
+        Debug.Log("ConsiderAttacking ì§„ì…");
+        delayBeatCount = noAttackDelay;// 4ë°•ì ë™ì•ˆ í”Œë ˆì´ì–´ í„´ ìœ ì§€
         Debug.Log("delayBeatCount : "+delayBeatCount);
         Metronome.instance.OnBeating += DecreaseOnBeat;
         onBasicAttack?.Invoke(true);
-        while (true)//ÇÃ·¹ÀÌ¾î ÅÏ Á¦ÇÑ½Ã°£ 4¹ÚÀÚ
+        while (true)//í”Œë ˆì´ì–´ í„´ ì œí•œì‹œê°„ 4ë°•ì
         {
 
-            //ºĞ±âÁ¡ - °ø°İÇßÀ» ½Ã Á¦ÇÑ½Ã°£ ¸®¼Â 
+            //ë¶„ê¸°ì  - ê³µê²©í–ˆì„ ì‹œ ì œí•œì‹œê°„ ë¦¬ì…‹ 
             if (Input.GetKeyDown(KeyCode.F))
             {
                 onBasicAttack?.Invoke(false);
-                Metronome.instance.OnBeating -= DecreaseOnBeat;//°ø°İ ¾ÈÇÏ°í ´ë±âÇÏ´Â µ¿¾ÈÀÇ Á¦ÇÑ½Ã°£Àº »ç¶óÁü
+                Metronome.instance.OnBeating -= DecreaseOnBeat;//ê³µê²© ì•ˆí•˜ê³  ëŒ€ê¸°í•˜ëŠ” ë™ì•ˆì˜ ì œí•œì‹œê°„ì€ ì‚¬ë¼ì§
                 yield return StartCoroutine(playerAttack.StartAttack());
                 
                 break;
@@ -208,15 +208,15 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
             if (Input.GetKeyDown(KeyCode.J))
             {
                 onBasicAttack?.Invoke(false);
-                Metronome.instance.OnBeating -= DecreaseOnBeat;//°ø°İ ¾ÈÇÏ°í ´ë±âÇÏ´Â µ¿¾ÈÀÇ Á¦ÇÑ½Ã°£Àº »ç¶óÁü
+                Metronome.instance.OnBeating -= DecreaseOnBeat;//ê³µê²© ì•ˆí•˜ê³  ëŒ€ê¸°í•˜ëŠ” ë™ì•ˆì˜ ì œí•œì‹œê°„ì€ ì‚¬ë¼ì§
                 yield return StartCoroutine(playerAttack.StartAttack());
                 break;
             }
-            if (delayBeatCount == 0)//Á¦ÇÑ½Ã°£ ¿À¹ö
+            if (delayBeatCount == 0)//ì œí•œì‹œê°„ ì˜¤ë²„
             {
-                Metronome.instance.OnBeating -= DecreaseOnBeat;//delayBeatCount°¡ 0ÀÌ µÅ¼­ ±¸µ¶Ãë¼Ò
-                Debug.Log("Á¦ÇÑ½Ã°£ ¿À¹ö");
-                //transform.DOMove(originPlayerPos, dashDuringTime).SetEase(Ease.OutQuart).OnComplete(PlayerTurnEnd);//ReturnToOriginPos·Î ÅëÇÕµÊ
+                Metronome.instance.OnBeating -= DecreaseOnBeat;//delayBeatCountê°€ 0ì´ ë¼ì„œ êµ¬ë…ì·¨ì†Œ
+                Debug.Log("ì œí•œì‹œê°„ ì˜¤ë²„");
+                //transform.DOMove(originPlayerPos, dashDuringTime).SetEase(Ease.OutQuart).OnComplete(PlayerTurnEnd);//ReturnToOriginPosë¡œ í†µí•©ë¨
                 playerAnimator.Guard();
                 PlayerTurnEnd();
                 break;
@@ -224,7 +224,7 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
             }
             yield return null;
         }
-        //°ø°İ ÈÄ ÅÏ Á¾·á
+        //ê³µê²© í›„ í„´ ì¢…ë£Œ
 
         playerAnimator.Guard();
         PlayerTurnEnd();
@@ -235,7 +235,7 @@ public class PlayerTurn : MonoBehaviour ,ITurnHandler
 
     IEnumerator AttackSignal()
     {
-        Debug.Log("°ø°İ½ÅÈ£");   //ÇÃ·¹ÀÌ¾î°¡ °ø°İÇÏ±â Àü ¹ÚÀÚ¿¡ ¾Ë·ÁÁÖ´Â ½ÅÈ£ EnemyTurnÀÇ °ø°İ½ÅÈ£¿Í °°Àº ¿ªÇÒ
+        Debug.Log("ê³µê²©ì‹ í˜¸");   //í”Œë ˆì´ì–´ê°€ ê³µê²©í•˜ê¸° ì „ ë°•ìì— ì•Œë ¤ì£¼ëŠ” ì‹ í˜¸ EnemyTurnì˜ ê³µê²©ì‹ í˜¸ì™€ ê°™ì€ ì—­í• 
 
         playerAnimator.attackSignalPlay();
         yield return null;
