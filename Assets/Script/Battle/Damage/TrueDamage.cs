@@ -35,7 +35,7 @@ public class TrueDamage : DamageType
     }
     public override Util.CustomEnum.DamageType GetDamageType()
     {
-        return Util.CustomEnum.DamageType.GuardCounter;
+        return Util.CustomEnum.DamageType.True;
     }
 
 }

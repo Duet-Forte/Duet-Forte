@@ -12,7 +12,6 @@ public class GuardGaugeUI : InGameUI
         filling = transform.Find("GuageFilling").GetComponent<Image>();
         Debug.Log(filling);
         filling.fillAmount = 0f;
-        //SubscribeBeatingUISequence();
     }
 
     public void ResetGauge()
@@ -23,8 +22,6 @@ public class GuardGaugeUI : InGameUI
     public void UpdateGauge(int currentCombo, int maxGauge)
     {
         float targetGuageAmount = Mathf.Clamp01(((float)currentCombo / maxGauge));
-         Debug.Log("가드카운터 filling : "+targetGuageAmount);
         filling.DOFillAmount(targetGuageAmount, Const.STATUSUI_FADE_SPEED);
-        Debug.Log(filling.fillAmount);
     }
 }

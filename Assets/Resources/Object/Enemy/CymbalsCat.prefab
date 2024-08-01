@@ -190,7 +190,7 @@ MonoBehaviour:
     \uAC15\uD55C \uACF5\uACA9\uC5D0 \uC8FC\uC758\uD558\uC790."
   enemyImage: {fileID: 21300000, guid: 51c715dd42dca6c4794356c9af41bc40, type: 3}
   maxHP: 300
-  enemyAttack: 23
+  enemyAttack: 25
   exp: 100
   slashDefense: 5
   pierceDefense: 5
@@ -210,4 +210,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackParticle:
-  - {fileID: 431099028761412644, guid: 1dc7a26616b88594f86cfedfdb3a4fdb, type: 3}
+  - {fileID: 6298563316213440618, guid: 3e449b05fe751c4468b0445a162625a0, type: 3}

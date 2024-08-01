@@ -10,10 +10,10 @@ using AK.Wwise;
 public class Metronome :MonoBehaviour
 {
     public static Metronome instance = null;
-    private Stage stage; //bpmÀÌ³ª bgmÁ¤º¸ µî stage¿¡ °üÇÑ Á¤º¸
+    private Stage stage; //bpmì´ë‚˜ bgmì •ë³´ ë“± stageì— ê´€í•œ ì •ë³´
 
-    private double currentTime = 0d;//Á¤¹Ú¼¼´Â º¯¼ö
-    private double currentTimeOfOffBeat = 0d;//¾ù¹Ú¼¼´Â º¯¼ö
+    private double currentTime = 0d;//ì •ë°•ì„¸ëŠ” ë³€ìˆ˜
+    private double currentTimeOfOffBeat = 0d;//ì—‡ë°•ì„¸ëŠ” ë³€ìˆ˜
     
     int bPM;
     double secondsPerBeat = 0;
@@ -32,7 +32,7 @@ public class Metronome :MonoBehaviour
     public double CurrentTime { get => currentTime; }
     public double SecondsPerBeat { get => secondsPerBeat; }
     public Stage getStage { get => stage; }
-    public void InitSettins(Stage stage)//½Ì±ÛÅæ
+    public void InitSettins(Stage stage)//ì‹±ê¸€í†¤
     {
         if (instance == null)
         {
@@ -82,7 +82,7 @@ public class Metronome :MonoBehaviour
             AkSoundEngine.PostEvent("Combat_Stage_01_BGM", gameObject);
         }
         else { 
-            //ÆÐ¹è½Ã BGM
+            //íŒ¨ë°°ì‹œ BGM
         }
         
     }
