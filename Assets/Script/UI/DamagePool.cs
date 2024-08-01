@@ -50,5 +50,5 @@ public class DamagePool : IStageUI
         enemy.OnGetDamage += ShowDamage;
     }
 
-    public void ShowDamage(Damage damage) => pool.Get().ParseDamage(damage);//°ø°ÝÀ¯Çü Ãß°¡ÇÏ±â
+    public void ShowDamage(Damage damage) => pool.Get().ParseDamage(damage);//ê³µê²©ìœ í˜• ì¶”ê°€í•˜ê¸°
 }

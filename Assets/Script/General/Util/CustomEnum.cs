@@ -33,7 +33,7 @@ namespace Util
         
             Slash,
             Pierce,
-            GuardCounter,
+            True,
             Enemy
         };
 
