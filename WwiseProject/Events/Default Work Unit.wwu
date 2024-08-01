@@ -535,6 +535,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Enemy_Timmy_Hit_SFX" ID="{EFB1940B-22DB-44AF-8389-612D035C4474}">
+									<ChildrenList>
+										<Action Name="" ID="{373E311A-02D0-4958-858C-CFC1A2C6F096}" ShortID="1029523409">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Enemy_Hit_Base_SFX" ID="{A6D1C0AA-2D35-487C-ABE2-CBB910D9F577}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Castanets" ID="{29298273-CF5B-4FBC-8392-DA575DE350AD}" ShortID="902173621">
@@ -604,6 +615,80 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Enemy_Timpani_Signal_SFX" ID="{3C3285AD-2644-4B55-96FD-0B36010FBD58}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Maracas" ID="{1C55B76F-2A3D-4AC4-B015-6FA9A0E13167}" ShortID="172570575">
+							<ChildrenList>
+								<Event Name="Enemy_Maracas_Attack_Signal_SFX" ID="{6F7EF480-F14F-4164-B551-7F95B65D9A63}">
+									<ChildrenList>
+										<Action Name="" ID="{D1BD3FBE-1866-4CC7-9863-92E053EF655B}" ShortID="21971282">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Enemy_Maracas_Signal_SFX" ID="{E02FD6D1-4E49-45C2-A210-107EA9556D22}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Enemy_Maracas_Hit_SFX" ID="{9541DA7A-76B9-4B66-B405-903B09D4656E}">
+									<ChildrenList>
+										<Action Name="" ID="{06CCA4F2-50FF-4968-9D91-09818962F517}" ShortID="496722800">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Enemy_Maracas_Hit_SFX" ID="{07BC4B24-6CCC-4E51-A44C-252BD4FD36AD}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Enemy_Maracas_Attack_SFX" ID="{661B9D1C-7A60-4B03-8C6E-EEBC800612DD}">
+									<ChildrenList>
+										<Action Name="" ID="{D987170D-AE88-4E9D-BB34-144644E69DD7}" ShortID="219392705">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Enemy_Maracas_Attack_SFX" ID="{CBDFDF14-95DB-42C0-94ED-FD6B36F9F539}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Cymbal" ID="{FE1EAFC4-8BD0-4CD5-A721-686838C117B9}" ShortID="119271599">
+							<ChildrenList>
+								<Event Name="Enemy_CymbalsCat_Hit_SFX" ID="{4DB58B57-C425-4FC8-80AD-3A4F03D488CB}">
+									<ChildrenList>
+										<Action Name="" ID="{A6752732-B1CA-4102-B322-4BC62DEA88A4}" ShortID="681032210">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Enemy_Cymbal_Hit_SFX" ID="{2D0DF28C-5A6D-48C4-A178-AB73A3E2467A}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Enemy_CymbalsCat_Attack_SFX" ID="{88E9710E-C954-4446-811B-02D101B7E927}">
+									<ChildrenList>
+										<Action Name="" ID="{AA0E5736-5816-461C-8054-7EC885FB647A}" ShortID="466114132">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cymbal_Attack_SFX" ID="{8B59401A-FB23-45BF-9052-2FFFC1FC9E5E}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Enemy_CymbalsCat_Attack_Signal_SFX" ID="{C33A0793-E2F7-4358-9A7C-5ADE55044F64}">
+									<ChildrenList>
+										<Action Name="" ID="{38680B40-04A7-498E-92E4-E63BD5951960}" ShortID="835997338">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cymbal_Attack_Signal_SFX" ID="{5258BADF-270D-407B-B718-63FF7C7699C2}" WorkUnitID="{7805CEC9-6E09-4945-AC6A-E2730F316D35}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
