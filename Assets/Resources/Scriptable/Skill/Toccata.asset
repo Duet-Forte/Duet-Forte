@@ -16,7 +16,7 @@ MonoBehaviour:
   skill_Information: "130%\uC758 <color=#00bfff>\uC2A4\uD0C0\uCE74\uD1A0 \uD53C\uD574</color>\uB97C
     \uC138 \uBC88\uC90C."
   skillCommand: BBB
-  skillIcon: {fileID: 21300000, guid: 2b2e5559c5ed8ba489f64395992217cb, type: 3}
+  skillIcon: {fileID: 21300000, guid: 3b4417f401b23d84a835690acad5108a, type: 3}
   isSpacialSkill: 0
   coolTimeTurn: 2
   skillParticle: {fileID: 3494102379653789117, guid: 09c1a4d43c7ccc54887fe51cd1c6671d, type: 3}
