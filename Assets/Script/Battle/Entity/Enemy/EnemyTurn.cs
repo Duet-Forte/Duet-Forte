@@ -17,16 +17,16 @@ public class EnemyTurn : ITurnHandler
     }
     public IEnumerator TurnStart()
     {
-        Debug.Log("¿¡³Ê¹Ì ÅÏ ½ÃÀÛ");
+        Debug.Log("ì—ë„ˆë¯¸ í„´ ì‹œì‘");
         nextPattern = enemy.EnemyPattern[Random.Range(0, enemy.EnemyPattern.Length)].patternArray;
-        yield return enemy.DisplayPattern(nextPattern);                             // ÆĞÅÏ º¸¿©ÁÖ±â
-        yield return enemy.Attack();                                                // ½ÇÁ¦ °ø°İ
+        yield return enemy.DisplayPattern(nextPattern);                             // íŒ¨í„´ ë³´ì—¬ì£¼ê¸°
+        yield return enemy.Attack();                                                // ì‹¤ì œ ê³µê²©
     }
 
     public IEnumerator TurnEnd()
     {
         stageManager.CurrentTurn = Turn.GuardCounterTurn;                
-        Debug.Log("¿¡³Ê¹Ì ÅÏ Á¾·á");
+        Debug.Log("ì—ë„ˆë¯¸ í„´ ì¢…ë£Œ");
         yield return null;
     }
 }

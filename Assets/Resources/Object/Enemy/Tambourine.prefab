@@ -276,9 +276,9 @@ MonoBehaviour:
     \uC77D\uC744 \uC218 \uC5C6\uB2E4."
   enemyImage: {fileID: 21300000, guid: 9d5f9a3839961bb479cc263961b2a89b, type: 3}
   maxHP: 130
-  enemyAttack: 8
-  exp: 35
-  slashDefense: 5
+  enemyAttack: 7
+  exp: 9
+  slashDefense: 0
   pierceDefense: 5
   enemyAttackSoundEvent: Enemy_Tambourine_Attack_SFX
   enemyHitSoundEvent: Enemy_Tambourine_Hit_SFX

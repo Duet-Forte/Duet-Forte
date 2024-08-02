@@ -16,8 +16,9 @@ public class Field : MonoBehaviour
     private Dictionary<string, TopViewEntity[]> entities;
     private Dictionary<string, GameObject> cutsceneObject;
     private Dictionary<string, CinemachinePath> cameraPaths;
-    private Dictionary<string, PolygonCollider2D> cameraColliders;
+    public Dictionary<string, Point> points;
     private StringBuilder sb;
+
     public CinemachineVirtualCamera CutsceneCam { get => cutsceneCamera; }
     public void InitSettings(int id)
     {
@@ -33,7 +34,7 @@ public class Field : MonoBehaviour
     {
         for (int count = 0; count < entitySpawnParent.childCount; ++count)
         {
-            // temp´Â Æ¯Á¤ ¿¡³Ê¹ÌÀÇ ½ºÆùÆ÷ÀÎÆ®ÀÇ ºÎ¸ðÀÔ´Ï´Ù.
+            // tempï¿½ï¿½ Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Î¸ï¿½ï¿½Ô´Ï´ï¿½.
             Transform temp = entitySpawnParent.GetChild(count);
 
             string enemyName = temp.name;
@@ -49,8 +50,8 @@ public class Field : MonoBehaviour
                 tempEnemies[tempChildID] = enemy.GetComponent<TopViewEntity>();
                 Vector2 enemySpawnPoint = temp.GetChild(tempChildID).position;
 
-                // NPCÀÇ °æ¿ì, ¸ðµç ½ºÆù Æ÷ÀÎÆ®¿¡ »ý¼ºÇÑ ÈÄ, InitSettings¿¡¼­ ÇöÀç IDÀÇ °´Ã¼¸¦ Á¦¿ÜÇÏ°í´Â ÀüºÎ Destroy
-                // ¸ó½ºÅÍÀÇ °æ¿ì, »ýÁ¸ ¿©ºÎ¸¦ ÆÄ¾Ç ÈÄ, InitSettings¿¡¼­ »ý¼º ¿©ºÎ °áÁ¤
+                // NPCï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, InitSettingsï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ IDï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Destroy
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½Ä¾ï¿½ ï¿½ï¿½, InitSettingsï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 tempEnemies[tempChildID].InitSettings(enemyName, enemySpawnPoint, tempChildID);
             }
 
@@ -63,18 +64,17 @@ public class Field : MonoBehaviour
     {
         GameManager.CameraManager.SetCutsceneCamera(cutsceneCamera);
         cameraPaths = new Dictionary<string, CinemachinePath>();
-        cameraColliders = new Dictionary<string, PolygonCollider2D>();
+        points = new Dictionary<string, Point>();
 
         for(int count = 0; count < cameraPathsParent.childCount; ++count)
         {
             CinemachinePath pathTransform = cameraPathsParent.GetChild(count).GetComponent<CinemachinePath>();
             cameraPaths.Add(pathTransform.name, pathTransform);
         }
-
         for (int count = 0; count < cameraColliderParent.childCount; ++count)
         {
-            PolygonCollider2D colliderTransform = cameraColliderParent.GetChild(count).GetComponent<PolygonCollider2D>();
-            cameraColliders.Add(colliderTransform.name, colliderTransform);
+            Point point = cameraColliderParent.GetChild(count).GetComponent<Point>();
+            points.Add(point.name, point);
         }
     }
     public void SetCutsceneObject()
@@ -119,8 +119,8 @@ public class Field : MonoBehaviour
 
     public PolygonCollider2D GetCameraCollider(string regionName)
     {
-        cameraColliders.TryGetValue(regionName, out PolygonCollider2D collider);
-        return collider;
+        points.TryGetValue(regionName, out Point point);
+        return point.GetComponent<PolygonCollider2D>();
     }
 
     public void DisableCutsceneObjects()

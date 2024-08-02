@@ -13,7 +13,14 @@ public class EnemyPattern
     [Tooltip("Entity 패턴")]
     public int[] patternArray;
 
-    
+    public EnemyPattern()
+    {
+    }
+
+    public EnemyPattern(int[] patternArray)
+    {
+        this.patternArray = patternArray;
+    }
 }
 public class PatternSet {
 

@@ -59,7 +59,7 @@ public class TimpaniDurabilityBuff : IBuff
         //���� �ִ� ü�� 25% ����
         battlePresenter.PlayerBasicAttackToEnemy(new Damage(quaterDamage,new SlashDamage()));
         //���ݷ� ����
-        enemy.SetAttackStat(1.5f);
+        enemy.SetAttackStat(1.3f);
         //stack ǥ�� X
         stackText.text = " ";
         
