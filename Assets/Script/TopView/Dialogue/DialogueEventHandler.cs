@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,8 @@ public class DialogueEventHandler
         { "Quest", typeof(QuestEvent)},
         { "Skill", typeof(SkillEvent)},
         { "Plus", typeof(FlowEvent)},
-        { "Battle", typeof(BattleEvent)}
+        { "Battle", typeof(BattleEvent)},
+        { "Random", typeof(RandomEvent) }
         // 필요한 경우 추가 타입 매핑
     };
 
@@ -38,9 +40,9 @@ public class DialogueEventHandler
     /// <param name="dialogue"></param>
     /// <param name="interactorName"></param>
     /// <returns></returns>
-    public bool PlayEvent(Dialogue dialogue, string interactorName)
+    public bool PlayEvent(Dialogue dialogue, string interactorName, out int index)
     {
-        dialogueEvent.PlayEvent(dialogue, interactorName);
+        index = dialogueEvent.PlayEvent(dialogue, interactorName);
         isDone = true;
         if (dialogueEvent is SkillEvent)
             return false;
@@ -54,7 +56,7 @@ public abstract class DialogueEvent
 {
     protected string eventTrigger;
     public virtual void InitSettings(string eventTrigger) => this.eventTrigger = eventTrigger;
-    public abstract void PlayEvent(Dialogue dialogue, string interactorName);
+    public abstract int PlayEvent(Dialogue dialogue, string interactorName);
 }
 
 public class EmotionEvent : DialogueEvent
@@ -69,12 +71,12 @@ public class EmotionEvent : DialogueEvent
         { "Dust", Const.dustHash },
         { "Drink", Const.drinkHash },
     };
-    public override void PlayEvent(Dialogue dialogue, string interactorName)
+    public override int PlayEvent(Dialogue dialogue, string interactorName)
     {
         if (!triggerMappings.TryGetValue(eventTrigger, out int emotionTrigger))
         {
             Debug.Log($"해당하는 애니메이션이 없습니다! : {eventTrigger}");
-            return;
+            return -1;
         }
         TopViewEventController controller;
         if (interactorName == "Cutscene")
@@ -88,39 +90,55 @@ public class EmotionEvent : DialogueEvent
         }
         controller.InitSettings();
         controller.PlayEvent(emotionTrigger);
+        return -1;
     }
 }
 
 public class QuestEvent : DialogueEvent
 {
-    public override void PlayEvent(Dialogue dialogue, string interactorName)
+    public override int PlayEvent(Dialogue dialogue, string interactorName)
     {
         if (!DataBase.Quest.Quests.ContainsKey(QuestManager.Instance.GetQuest(int.Parse(eventTrigger))))
             QuestManager.Instance.SetQuest(int.Parse(eventTrigger));
+        return -1;
     }
 }
 
 public class SkillEvent : DialogueEvent
 {
-    public override void PlayEvent(Dialogue dialogue, string interactorName)
+    public override int PlayEvent(Dialogue dialogue, string interactorName)
     {
         DataBase.Skill.ActivateSkill(int.Parse(eventTrigger));
+        return -1;
     }
 }
 
 public class FlowEvent : DialogueEvent
 {
-    public override void PlayEvent(Dialogue dialogue, string interactorName)
+    public override int PlayEvent(Dialogue dialogue, string interactorName)
     {
         DataBase.Dialogue.PlusID(interactorName, int.Parse(eventTrigger));
+        return -1;
     }
 }
 
 public class BattleEvent : DialogueEvent
 {
-    public override void PlayEvent(Dialogue dialogue, string interactorName)
+    public override int PlayEvent(Dialogue dialogue, string interactorName)
     {
         GameManager.CutsceneManager.PauseDirector();
         GameManager.Instance.SetBattleScene(eventTrigger);
+        return -1;
+    }
+}
+
+public class RandomEvent : DialogueEvent
+{
+    public override int PlayEvent(Dialogue dialogue, string interactorName)
+    {
+        int randomMin = int.Parse(eventTrigger.Split(':')[0]);
+        int randomMax = int.Parse(eventTrigger.Split(':')[1]) + 1;
+
+        return UnityEngine.Random.Range(randomMin, randomMax);
     }
 }

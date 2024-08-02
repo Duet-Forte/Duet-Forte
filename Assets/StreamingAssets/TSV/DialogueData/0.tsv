@@ -8,63 +8,119 @@ Cutscene	0	Zio			Emotion	Dust	현재 VFX 시간보다 더 길게 유지해 주�
 							지오: 뒷 모습 (혹시 가능하다면, 일어선 정면 → 왼쪽 보는 옆모습 → 뒷모습으로 해주시면 감사합니다. 빠르게 돌리면 좀 뒤도는 모습처럼 보이지 않을까 싶어서요.)
 	1	Zio			Emotion	QuestionMark	
 		Zio	Panic	(벽난로?)			
-		Timmy	Happy	…드디어 왔구나!			
-							"왔구나!"할 때 쯤, 지오가 티미 쪽 바라봄
+		Timmy	Happy	…드디어 왔어…!			
+							"왔어...!"할 때 쯤, 지오가 티미 쪽 바라봄
 	2	Zio			Emotion	Surprise	
-		Zio	Panic	(원래 사람이 있었나?<br>잠깐, 내가 들어온 창고가 이렇게 생겼던가?)			
+		Zio	Panic	(누구…<br>잠깐, 내가 들어온 창고가 이렇게 생겼던가?)			
 							티미가 지오 쪽으로 이동 (이동 거리 직선으로 짧게)
 	3	Timmy	Happy	안녕?			
-		Zio	Default	…안녕하세요.			
+		Zio	Default	…안녕하세요?			
 		Zio	Panic	아, 죄송해요. 제가 분명 새를 따라 들어왔는데…….			
-		Timmy	Happy	괜찮아. 그보다 이제야 왔구나!			
-		Zio	Default	네? 저요?			
+		Timmy	Happy	아니야. 잘 왔어!			
+		Zio	Default	저요?			
 		Timmy	Happy	응! 널 기다리고 있었어!			
-		Zio	Panic	저… 다른 분과 착각한 것 같아요.<br>전 나가볼게요.			
+		Zio	Panic	다른 분과 착각한 것 같아요.<br>전 나가볼게요.			
 							지오 이동 – 지오 위치: 벽난로 → 문 앞
-	4	Timmy	Default	너 맞는데, 잠깐만!			
+	4	Timmy	Default	너 맞는데, 어디 가는 거야!			
 		Zio	Panic	마음대로 들어와서 죄송했어요. 근데 저 정말 급해서요!			
 							Fadeout 티미 방 → Fadein 마을 *카메라 연출 가능하면, 마을 풀샷 → 티미 집 앞에 있는 지오 줌인
 	5	Zio			Emotion	Dumbfounded	
 		Zio	Panic	…여기가 대체 어디야?			
 							티미 등장 후 지오 옆에 붙어 서기
 	6	Timmy	Happy	갑자기 나가서 놀랐잖아.<br>마왕성으로 바로 가려고?			
-		Zio	Panic	분명 여기 숲이었는데…<br>여기가 대체 어디죠? 저 원래 있던 곳으로 돌아가야 해요.			
+		Zio	Panic	마왕성이요?<br>전 그냥 원래 있던 대기실로 돌아가려고 나왔어요.			
 		Timmy	Default	원래 있던 곳?			
 		Timmy	Happy	역시 넌 내가 기다리던 사람이 맞아!			
 		Zio	Angry	아까부터 무슨 소리 하시는 거예요.			
 		Timmy	Default	조… 조력자는 신탁을 모르는 건가?<br>…내가 이번 용사인 건 알아?			
 		Zio	Panic	용사요?			
-		Timmy	Default	으응. 내가 용사, 너는 날 도와줄 조력자.			
+		Timmy	Default	으응. 난 이번 용사로 선정된 티미야.<br>너는 날 도와줄 조력자.			
 		Zio			Emotion	Angry	
 		Zio	Angry	하… 저 이럴 시간 없어요.			
 		Timmy	Default	마,맞는데, 너 회색 연기와 함께 나타났잖아!<br>신탁에서 조력자가 아까 너처럼 나타날 거라 했어.			
 		Zio	Default	그건 회색 연기가 아니라 굴뚝의 먼지였어요.			
 		Timmy	Default	하지만 그렇게라도 내 앞에 나타난 사람은 네가 처음이야.			
-		Zio	Default	벽난로에서 사람이 나오는 게 흔한 일은 아니잖아요.<br>저도 아까가 처음이었고요.			
-		Zio	Angry	전 용사 놀이에 맞춰줄 시간 없어요.			
-		Timmy	Default	이건 놀이가 아닌데…<br>믿기 힘들면, 네가 조력자임을 확인해 보는 거 어때?			
-		Timmy	Default	조력자는 음악적 재능을 타고났을 거야.<br>어렵지 않으니까 한번 해보자!			
-		Zio	Default	알겠어요, 알겠어요.<br>대신 끝나면 저와 콩쿠르 대기실이나 찾아주세요.			
+		Zio	Angry	벽난로에서 사람이 나오는 게 흔한 일은 아니잖아요.<br>저도 아까가 처음이었고요.			
+		Timmy	Default	믿기 힘들면, 네가 조력자임을 확인해 보자!			
+		Timmy	Default	조력자는 음악적 재능을 타고났을 거야.<br>진짜 잠깐이면 돼! 어렵지 않으니까 한 번만!			
+		Zio	Default	알겠어요.<br>대신 아니면, 제가 돌아갈 방법을 같이 찾아주세요.			
 		Timmy	Happy	좋아! 근데 네가 조력자가 맞으면, 나랑 마왕을 무찌르러 가는 거야.			
 		Zio	Default	알겠으니까 빨리 시작하죠.			
 					Battle	Timmy	튜토리얼 전투 완료 + 스킬 획득창
 	7				Skill	2	
 		Zio	Default	트릴?			
 		Timmy	Happy	봐! 역시 조력자가 맞았어! 이렇게 바로 <wave>스킬</wave>을 얻다니!			
-		Timmy	Happy	나와의 전투를 통해 영감을 얻었구나!<br>이렇게 멋진 조력자가 나타날 줄 알았어!			
+		Timmy	Happy	역시 신탁은 틀리지 않아!<br>난 이렇게 멋진 조력자가 나타날 줄 알고 있었어.			
+		Timmy	Happy	정식으로 인사할게.<br>난 티미야 너와 같은 12살.			
 		Zio	Angry	(대충 장단 맞춰주며 길을 찾아봐야겠어.)			
-		Zio	Panic	아… 그렇군요. 그럼 지금부터 뭘 하면 되는 거죠?<br>아까부터 말했지만 저에겐 시간이 별로 없어요.			
+		Zio	Default	지오예요. 제가 12살인 것도 신탁이 알려줬나요?			
+		Timmy	Default	응. 같은 날에 태어났다 했거든. 그러니까 말 놔도 돼.			
+		Zio	Panic	알아서 할게요. 일단 뭐하면 되는 거죠?<br>계속 말했지만 저에겐 시간이 별로 없어요.			
 		Timmy	Happy	저 멀리 마왕성에 있는 마왕을 해치우면 돼.			
 		Zio	Default	마왕…이요.<br>얼마나 오래 걸리는데요?			
 		Timmy	Happy	글쎄? 나도 안 해봐서 몰라.			
 		Zio	Default	빨리 돌아가야 하는데….			
 		Timmy	Happy	마왕을 무찌르면 너도 돌아갈 수 있을 거야.<br>신탁이 그렇게 내려왔으니까.			
-		Timmy	Happy	우선 작은 몬스터로 연습을 더 해보자.<br>아니면 마을 구경을 하는 건 어때?			
-		Zio	Default	제가 아직은 혼란스러워서요. 잠시 혼자 있어도 될까요?			
+		Timmy	Happy	우선 나랑 작은 몬스터로 연습을 더 해보자.<br>아니면 마을 구경을 하는 건 어때?			
+		Zio	Default	제가 아직은 혼란스러워서요. 혼자 마을 좀 둘러볼게요.			
 		Timmy	Default	응. 날 만나려면 여기로 다시 찾아와!			
-Ludius	0	Zio			Emotion	Dumbfounded	
-		Zio	Default	(이 시간에 술을…….)			추후, 루디우스 술잔 내리는 모션 생길 시, 술잔 내리는 모션
-		Ludius			Emotion	Drink	
+Timmy	0	Timmy			Random	1:2	
+		Timmy	Default	마을 구경은 좀 했어?			
+		Timmy	Default	난 아직도 네가 온 게 믿기지 않아.<br>난 아주 오랫동안 널 기다렸거든.			
+	1	Timmy	Default	왔어…?			
+		Zio	Default	용케 여기까지 와 있네?			
+		Zio	Default	다들 네가 소심하다고 하더라고?<br>하긴 그 잘난 용사면 이 정도는 와야지.			
+		Timmy	Happy	여기까진 괜찮아.<br>엄청 위험하진 않거든.			
+		Zio	Default	근데 더 안 가고 왜 여기있어?			
+		Timmy	Default	이제부터 조심해야 해.<br>저기엔 더 강력한 몬스터가 있어.			
+		Zio	Default	아까도 조심하라 했는데 별 거 없던데.			
+		Timmy	Default	아니야! 여기부터는 진짜 위험해!			
+		Zio	Default	뭔데?			
+		Timmy	Default	애초에 공격자체가 자, 잘 안 들어가.			
+		Zio	Angry	뭐?			
+		Timmy	Default	피부가 두꺼워서 그런 것 같아.			
+		Timmy	Default	그리고 공격하면 할수록 더 사나워져.			
+		Zio	Default	맞으니 아파서 그렇겠지.			
+		Timmy	Default	그거랑은 달라…!			
+		Zio	Default	제대로 싸워보지도 않아놓고 어떻게 알아?			
+		Timmy	Panic	응… 그렇긴 한데…….			
+		Timmy	Default	난 네가 오면 같이 가려고 했지!			
+		Zio	Default	하, 이런 것도 용사라고.			
+		Zio	Default	나 먼저 들어갈 테니까, 못 도울 거면 걸리적 거리지나 마.			
+		Timmy	Default	지,진짜 조심해야 해! 알았지?!			
+					Plus	1	전투 전 다시 말을 거는 경우
+	2	Timmy	Default	조심해야 해. 피부가 상상 이상으로 두꺼워!<br>처음엔 흠집도 안 날 거야.			
+Faber	0	Faber	Default	뭐 줄까?<br>심부름 왔어?			
+		Zio	Default	그냥 마을을 좀 둘러보고 있었어요.			
+		Faber	Angry	뭐 살 거 아니면 저리가.<br>여긴 애들이 오기 위험하니까.			
+		Zio	Panic	아, 죄송합니다.			
+		Faber	Default	그러고 보니, 처음 보는 얼굴이네?			
+		Zio	Default	어쩌다 오늘 여기 오게 돼서요.<br>마왕성에 가기 전에 마을을 둘러보고 있어요.			
+		Faber	Angry	그놈의 마왕성, 마왕성.			
+		Faber	Default	그 소심한 애가 용사여서 걱정이 많았는데, 너는 좀 잘 싸워?			
+		Zio	Default	아직 제대로 안 싸워봐서 모르겠어요.			
+		Faber	Default	하여간 애들을 거기에 밀어 넣는 건 우리도 불편해.			
+		Faber	Default	게다가 걘 용사를 하기 싫어하는 것 같아서 말이야.			
+		Faber	Angry	요 앞에 시끄러운 <wave>캐스터네츠</wave>하나 제대로 못 잡으면서 어떻게 마왕을 잡는다는 건지 원….			
+		Zio	Default	캐스터네츠요?			
+		Faber	Angry	그래, 그거 때문에 내가 잠을 못 자. 잠을.			
+		Faber	Default	잡아도 그때뿐이니, 매번 부탁할 수도 없고.			
+		Zio	Default	어차피 지금 둘러보고 있으니, 제가 한번 가 볼게요.			
+		Faber	Default	아서라, 그러라고 한 얘기 아니야.			
+					Quest	4	
+					Plus	1	
+	1	Faber	Angry	피곤해 죽겠구만..			
+	2	Faber	Default	그 답답한 녀석과 다르게 빠르네.			
+		Faber	Default	다음에 필요한 게 있으면 언제든 찾아 와.			
+		Zio	Happy	아, 감사합니다.			
+		Faber	Default	나도 오랜만에 조용히 잠을 좀 자겠군.			
+					Plus	1	
+	3	Faber			Random	1:3	
+		Faber	Default	여기서 놀면 다친다.			
+		Faber	Default	이젠 잠을 잘 자냐고?<br>매일 잡지 않으면 소용없어. 마왕을 빨리 잡아야지.			
+		Faber	Default	네 무기를 봐달라고?<br>이미 내가 잘 만들어서 용사한테 줬던 건데 무슨 소리야.			
+Ludius	0	Zio	Default	(이 시간에 술을…….)			
+					Emotion	Drink	추후, 루디우스 술잔 내리는 모션 생길 시, 술잔 내리는 모션
 		Ludius	Default	어이! 가까이 와 봐.			
 		Zio			Emotion	Surprise	
 		Zio	Panic	…저요?			
@@ -77,23 +133,115 @@ Ludius	0	Zio			Emotion	Dumbfounded
 		Ludius	Default	뭐???			
 		Zio	Panic	…마왕성이요.			
 		Ludius	Default	그니까. 네가 무슨 재주로? 저기 잘못 들어가면 못 나와.			
-		Ludius	Default	용사도 들어갔다 하면 못 나오는데, 무슨 놀이터로 아나.			
+		Ludius	Default	쬐깐한 몬스터만 있어서 만만해 보여지?<br>어른도 들어갔다 하면 못 나오는데, 무슨 놀이터로 아나.			
 		Ludius	Default	하여튼 저 시끄러운 탬버린 하나 못 잡는 애들이 용사 놀이에 빠져가지고.			
-		Zio	Panic	하하... 저는 가야 하는 것 같더라고요.			
+		Zio	Panic	하하... 저는 가야만 해서요.			
 		Ludius	Default	아! 아~ 네가 혹시 걔야?			
-		Ludius	Default	오늘 그 용사 꼬맹이가 유독 신났더라고?			
-		Zio	Panic	(언제 여기까지 와서 말한 거지?)			
+		Ludius	Default	오늘 그 소심한 용사 꼬맹이가 어쩐 일로 신났더라고?			
+		Zio	Default	(언제 여기까지 와서 말한 거지?)			
 		Ludius	Default	마왕성 갈 거면, 저기 시끄러운 탬버린이나 처리하고 가라.			
 		Ludius	Default	네가 진짜면 저 정돈 쉽겠지.			
 		Ludius	Default	근데 저런 거 잡으면 진짜 새로운 영감이 떠오르긴 하냐?			
 		Zio	Panic	글쎄요… 저도 아직 잘 몰라서요.			
 		Ludius	Default	잘 모르면 이번 기회에 배우면 되겠네.			
 		Ludius	Default	가는 길에 저 시끄러운 <wave>탬버린</wave>부터 없애.			
-		Zio	Panic	한 번 가볼게요.			
+		Zio	Panic	한번 가볼게요.			
 					Plus	1	
 					Quest	0	
 	1	Ludius			Emotion	QuestionMark	
-		Ludius	Default	뭐야, 볼 일 있어?<br>거봐, 숲 근처도 못갔지?			
-Zio	0	Zio			Emotion	QuestionMark	
-		Zio	Default	(저 아저씨는 뭐하는 사람이지..?)			
-Timmy	0	Timmy	Happy	나 다시 보고 싶었어?			
+	2	Ludius	Default	뭐야, 볼 일 있어?<br>거봐, 숲 근처도 못갔지?			
+		Ludius	Default	그래서 영감은 좀 얻었고?			
+		Zio	Default	네. 이번엔 <color=#1B69FF>잔향</color>이라는 걸 얻었어요.			
+		Ludius	Default	허, 용사보다 네가 낫네.<br>앞으로 잘해보라고.			
+	3	Ludius			Random	0:2	
+		Ludius	Default	뭐야, 밥 먹으러 왔어?			
+		Ludius	Default	오늘 운이 왜 이래? 내일 술 사먹을 돈이 없잖아!			
+		Ludius	Default	이 술잔? 나한테 돈을 다~ 잃은 귀족이 마지막으로 걸었던 거지.			
+Novérca	0	Novérca	Default	흐음~ 혼자 온 거니?			
+		Zio	Default	네?			
+		Novérca	Default	꼬마야, 네가 내 여관에서 나왔잖아.<br>부모님 없이 혼자 왔냐고. 낼 돈은 있고?			
+		Zio	Panic	아니요. 티미라는 애가…			
+		Novérca	Default	아~ 네가 걔구나?<br>근데 우린 합숙 안 돼.<br>여관에서 지내려면 값을 치러야지.			
+		Zio	Default	근데 전 금방 돌아갈 거여서 숙소는 괜찮아요.			
+		Novérca	Default	금방?<br>금방 돌아갈 수 없을 걸?			
+		Novérca	Default	표정을 보니, 몰랐나 보네?<br>소심해서 신전 너머를 가본 적도 없는 애랑 어떻게 빠르게 마왕성까지 가려고?			
+		Zio	Default	걔가 소심해요?			
+		Novérca	Default	그것도 몰랐던 거 보면, 네가 온게 어지간히 신났나 보네.			
+		Novérca	Default	티미를 나만큼 잘 아는 사람도 없지.			
+		Novérca	Default	걔도 참 불쌍해~<br>부모가 네 살 밖에 안 된 애를 여기로 보냈거든.			
+		Novérca	Default	주변에서 부담을 많이 줘서 그런가?<br>애가 자신감도 없고, 소심해. 그덕에 나야 대하기 편하지만.			
+		Zio	Default	그렇군요.			
+		Novérca	Default	빨리 갈 생각 말고, 티미부터 잘 달래. 어쨌든 용사는 걔잖아.<br>묵을 곳이 필요하면 여기로 오고			
+		Novérca	Default	아니지. 조력자니까 아마 지원금을 줄 거야.<br>그니까 여기 머물러. 주변에 네가 갈만한 다른 여관은 없어.			
+		Zio	Default	필요하면 갈게요.			
+		Novérca	Default	흥, 곧 보겠네.			
+		Novérca	Default	밥 안 먹었으면 오른쪽으로 쭉 내려가.			
+		Novérca	Default	거기도 내가 하는 주점인데, 밥은 거기서만 먹어.<br>여관비에 다 포함된 거니까 걱정은 말고.			
+		Novérca	Default	대신 여관 안에서 몰래 먹다가 벌레 생기면 책임져야 할 거야.			
+		Zio	Default	네. 알겠어요.			
+					Plus	1	
+	1	Novérca			Random	1:2	
+		Novérca	Default	네덕에 티미가 자주 웃더구나.			
+		Novérca	Default	진정한 평화가 오면 난 뭐 해 먹고 사나?			
+Hila	0	Hila	Default	안녕! 너 맞지? 조력자!			
+		Zio	Default	(여긴 소문이 참 빠르네.)			
+		Hila	Default	완전 반가워!!!<br>아참! 나도 12살이야!			
+		Zio	Default	그래.			
+		Hila	Default	잠깐, 잠깐!<br>너 아무데나 돌아다니고 있는 것 같은데, 여기에 대해 알고 싶지 않아?			
+		Zio	Default	딱히, 그냥 빨리 해치우고 돌아가고 싶어.			
+		Hila	Default	빨리 돌아가려면 여길 잘 알아야지.			
+		Hila	Default	티미가 신탁에 대해 말해줬어?			
+		Zio	Default	대충은?			
+		Hila	Default	흐음~ 내가 제대로 알려줄게.			
+		Zio	Panic	괜찮은…			
+		Hila	Default	아주 먼 옛날에 갑자기 마왕이 나타났어.			
+		Hila	Default	마왕은 몬스터를 만들어 숲을 점령했고,<br>갑작스러운 상황에 모두가 혼란에 빠졌지.			
+		Hila	Default	그때, 신탁이 내려온 거야!<br>평화를 가져올 수 있는 용사가 태어난다고 말이야.			
+		Hila	Default	하지만 우리에겐 항상 짧은 평화만 있었지.			
+		Zio	Panic	그래, 알았…			
+		Hila	Default	그런데! 이번 신탁은 좀 달랐어.<br>보통 용사만 점지해 줬거든?			
+		Hila	Default	이번엔 용사를 도와줄 조력자가 나타나고<br>소명을 다하면, 원래 자리로 돌아간다는 내용이 추가가 된 거야.			
+		Hila	Default	긴 세월동안 한 번도 없던 일이라 난리가 났지.			
+		Hila	Default	용사는 찾았는데 넌 한참을 나타나지 않아서 모두의 기억 속에서 잊힐 때쯤 네가 온 거야.<br>여기 오르투스로.			
+		Hila	Default	대부분 잊었지만 난 널 기다리고 있었어.<br>너의 활약도 기대하고 있어!			
+		Hila	Default	사실 나도 용사가 되고 싶었거든.<br>태어난 날도 딱 하루 차이인데, 너무 아쉬워.			
+		Hila	Default	게다가 이건 비밀인데, 사실 티미가 몬스터를 무찌르지 않은지 꽤 됐어.			
+		Hila	Default	용사 옆에서 구경이라도 하려고 여기까지 왔는데,<br>막상 하는 일은 이 상점을 보는 것밖에 없어. 그래서 말이지 내가~			
+		Zio	Panic	(말이 정말 많네….)			
+		Hila	Default	어때? 그래줄 수 있어?			
+		Zio	Default	어?			
+		Hila	Default	그래! 앞으로 내가 너의 공적을 기록할 테니까<br>몬스터 해치우기 전에 주변에 내가 있으면 꼭 불러주기로 한 거야!			
+		Zio	Panic	(어쩌다 이렇게 된 거지?)			
+		Hila	Default	그럼 다음에 보자!			
+					Plus	1	
+	1	Hila			Random	1:2	
+		Hila	Default	뭐 필요한 거 있어?<br>아니면! 지금 전투하러 나가는 거야!?			
+		Hila	Default	멀리 나가도 내가 다 따라갈 수 있으니, 걱정하지 마!			
+	2	Hila	Default	흐음~ 네가 원래 있던 곳 말이야.<br>거기도 몬스터가 있어?몬스터를 처음 본다고 했는데, 한 시간도 안돼서 저기를 가네?			
+		Zio	Default	없어.			
+		Hila	Default	그럼 더 신기한데? 몬스터를 처음 보는데, 벌써 저기를 간다고?			
+		Hila	Default	너 혹시 티미랑 싸워서 이겼어?			
+		Zio	Default	내가 그 소심한 애한테 졌을 것 같아? 나 바빠.			
+		Hila	Default	그럼 저기로 가기 전에 기억해 둬.			
+		Hila	Default	앞으로 나올 몬스터는 아래에 있던 단순한 것들과는 다를 거야.			
+		Hila	Default	들어가서 마주치는 고양이. 귀여워 보이지만, 스타카토 공격을 굉장히 잘 피해서 까다로울 거야.			
+		Hila	Default	알지? 원래 고양이 되게 빠른 거?			
+		Zio	Default	알지.<br>뭐, 알려줘서 고마워.			
+		Hila	Default	그럼 다음에 또 봐.			
+		Zio	Default	볼 일 없어.<br>빠르게 해치우고 돌아갈 거니까.			
+		Hila	Default	벌써 까먹은 거야?<br>너의 공적을 내가 기록한다 했잖아.			
+		Zio	Default	네가 오기 위험할 것 같은데?			
+		Hila	Default	무슨 소리! 나도 이 한 몸 지킬 정도로 강해.			
+		Hila	Default	그래, 나도 왜 내가 용사가 아닌지 모르겠단 말이야.			
+		Hila	Default	아무튼 나중에 또 보자.<br>저기 사냥터에서도 힘내고!			
+	3	Hila	Default	잠깐만!!!			
+		Zio	Default	뭐야?			
+		Hila	Default	너 아직 마을 다 안 봤잖아?			
+		Zio	Default	근데?			
+		Hila	Default	아저씨 두 분이랑 얘기는 해봤어?			
+		Zio	Default	아니?			
+		Hila	Default	그분들 너의 도움이 필요할 거야.			
+		Zio	Default	…그래서?			
+		Hila	Default	그리고 너한테도 좋을 걸?			
+		Hila	Default	저기 가기 전에 몸이라도 좀 풀어야 할 거 아니야!<br>아직은 안 돼! 돌아가서 아저씨들 먼저 보고 와.			
+	4	Hila	Default	어떡해! 나 오크 잡는 건 또 처음 보잖아!<br>내가 듣기로는 연속으로 공격해야 가능성이 높다더라고?			

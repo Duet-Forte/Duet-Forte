@@ -127,6 +127,12 @@ namespace Util
                     return "티미";
                 case "Ludius":
                     return "루디우스";
+                case "Hila":
+                    return "일라";
+                case "Faber":
+                    return "파베르";
+                case "Novérca":
+                    return "노베르카";
                 default:
                     return speakerName;
             }
