@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 
     [SerializeField]bool canAttack = true;           //공격가능여부 (쿨타임에 의한)
     private bool isCastSkill = false;
     private int currentLimitBeat = 0;//남은 제한시간
-    private int limitBeat = 10;                      //최대 제한시간 단위는 박자
+    private int limitBeat = 6;                      //최대 제한시간 단위는 박자
     private int bpm;
     private float playerAttackStat;
     
