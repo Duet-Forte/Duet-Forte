@@ -13,7 +13,7 @@ public class TimpaniOrc : Enemy_Prefab
         buffManager.AddBuff(new TimpaniDurabilityBuff(battlePresenter, this, 30));
         int[] aPattern = {4, 4, 16, 4, 4, 16};
         int[] bPattern = { 4, 16, 2, 16, 2, 16 };
-        int[] cPattern = { 4, 16, 4, 16, 4, 16,4,16 };
+        int[] cPattern = { 4, 16, 4, 16, 4, 16,4};
         EnemyPattern a = new EnemyPattern(aPattern);
         EnemyPattern b = new EnemyPattern(bPattern);
         EnemyPattern c = new EnemyPattern(cPattern);
