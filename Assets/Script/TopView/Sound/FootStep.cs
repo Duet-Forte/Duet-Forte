@@ -18,11 +18,15 @@ public class FootStep : MonoBehaviour
         foreach (RaycastHit2D hit in hits)
         {
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            {
                 ChangeGround(hit.collider.gameObject.GetComponent<Ground>().groundType);
+                return;
+            }
         }
     }
     public void ChangeGround(string name)
     {
+        Debug.Log(name);
         AkSoundEngine.SetSwitch("State", name, gameObject);
     }
 }

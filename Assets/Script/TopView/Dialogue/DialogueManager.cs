@@ -19,6 +19,7 @@ public class DialogueManager
     private Speaker currentSpeaker;
     private CancellationTokenSource cancel;
     private bool isTalking = false;
+    private bool isRandom = false;
     public bool IsTalking { get => isTalking; }
     public static DialogueManager Instance
     {
@@ -32,6 +33,7 @@ public class DialogueManager
     public async UniTask Talk(string interactorName)
     {
         isTalking = true;
+        isRandom = false;
         if (window == null)
         {
             window = Object.Instantiate(Resources.Load<GameObject>("TopView/Dialogue/Window"));
@@ -69,7 +71,7 @@ public class DialogueManager
                     continue;
                 if (!(dialogueEvent.isDone || dialogueEvent.isSkippable))
                 {
-                    dialogueEvent.PlayEvent(dialogue, interactorName);
+                    dialogueEvent.PlayEvent(dialogue, interactorName, out int index);
                 }
             }
             isTalking = false;
@@ -79,11 +81,19 @@ public class DialogueManager
     {
         for (int i = 0; i < dialogue.Lines.Length; i++)
         {
-            dialogue.Speaker = dialogue.Speakers[i];
+
             if (dialogue.Events[i] != null)
             {
-                if(dialogue.Events[i].PlayEvent(dialogue, interactorName))
-                    continue;
+                if(dialogue.Events[i].PlayEvent(dialogue, interactorName, out int index))
+                {
+                    if (dialogue.Events[i].dialogueEvent is RandomEvent)
+                    {
+                        i = index;
+                        isRandom = true;
+                    }
+                    else
+                        continue;
+                }
                 else
                 {
                     window.SetActive(false);
@@ -92,6 +102,7 @@ public class DialogueManager
                     continue;
                 }
             }
+            dialogue.Speaker = dialogue.Speakers[i];
             characterSprite.enabled = true;
             typewriter.ShowText(dialogue.Lines[i]);
             if (dialogue.Speaker != null)
@@ -124,6 +135,8 @@ public class DialogueManager
             await UniTask.WhenAny(UniTask.WaitUntil(IsKeyTriggered, cancellationToken: cancel.Token), UniTask.WaitUntil(IsTypeEnded));
             typewriter.SkipTypewriter();
             await UniTask.WaitUntil(IsKeyTriggered, cancellationToken: cancel.Token);
+            if (isRandom)
+                break;
         }
         dialogueWindow.EraseContent();
         window.SetActive(false);
@@ -153,6 +166,5 @@ public class DialogueManager
         cancel.Cancel();
         dialogueWindow.EraseContent();
         window.SetActive(false);
-
     }
 }
