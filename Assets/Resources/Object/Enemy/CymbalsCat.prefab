@@ -195,9 +195,9 @@ MonoBehaviour:
   exp: 100
   slashDefense: 5
   pierceDefense: 5
-  enemyAttackSoundEvent: Enemy_Tambourine_Attack_SFX
-  enemyHitSoundEvent: Enemy_Tambourine_Hit_SFX
-  signalInstrument: 2
+  enemyAttackSoundEvent: Enemy_CymbalsCat_Attack_SFX
+  enemyHitSoundEvent: Enemy_CymbalsCat_Hit_SFX
+  signalInstrument: 5
 --- !u!114 &42170436234032234
 MonoBehaviour:
   m_ObjectHideFlags: 0

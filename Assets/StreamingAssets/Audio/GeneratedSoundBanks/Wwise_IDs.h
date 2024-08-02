@@ -22,11 +22,18 @@ namespace AK
         static const AkUniqueID ENEMY_CASTANETS_ATTACK_SFX = 99777767U;
         static const AkUniqueID ENEMY_CASTANETS_ATTACK_SIGNAL_SFX = 882591782U;
         static const AkUniqueID ENEMY_CASTANETS_HIT_HIT_SFX = 107053392U;
+        static const AkUniqueID ENEMY_CYMBALSCAT_ATTACK_SFX = 3121374476U;
+        static const AkUniqueID ENEMY_CYMBALSCAT_ATTACK_SIGNAL_SFX = 1989390895U;
+        static const AkUniqueID ENEMY_CYMBALSCAT_HIT_SFX = 587591495U;
         static const AkUniqueID ENEMY_ELECGUITAR_ATTACK_SIGNAL_SFX = 3211681449U;
+        static const AkUniqueID ENEMY_MARACAS_ATTACK_SFX = 3736917161U;
+        static const AkUniqueID ENEMY_MARACAS_ATTACK_SIGNAL_SFX = 1711064628U;
+        static const AkUniqueID ENEMY_MARACAS_HIT_SFX = 2296610712U;
         static const AkUniqueID ENEMY_TAMBOURINE_ATTACK_SFX = 2328612313U;
         static const AkUniqueID ENEMY_TAMBOURINE_ATTACK_SIGNAL_SFX = 909052356U;
         static const AkUniqueID ENEMY_TAMBOURINE_HIT_SFX = 2995577544U;
         static const AkUniqueID ENEMY_TIMMY_ATTACK_SFX = 837159709U;
+        static const AkUniqueID ENEMY_TIMMY_HIT_SFX = 3861166556U;
         static const AkUniqueID ENEMY_TIMPANI_ATTACK_SFX = 595707885U;
         static const AkUniqueID ENEMY_TIMPANI_ATTACK_SIGNAL_SFX = 2188664144U;
         static const AkUniqueID ENEMY_TIMPANI_HIT_SFX = 2420160236U;
@@ -48,6 +55,7 @@ namespace AK
         static const AkUniqueID PLAYER_BODYFALL_SFX = 173655414U;
         static const AkUniqueID PLAYER_PARRY_SFX = 3410875789U;
         static const AkUniqueID PLAYER_SKILL_AAA_SFX = 2518233790U;
+        static const AkUniqueID PLAYER_SKILL_AABB_SFX = 3240848997U;
         static const AkUniqueID PLAYER_SKILL_ABA_SFX = 2846259367U;
         static const AkUniqueID PLAYER_SKILL_BBB_SFX = 3250415283U;
         static const AkUniqueID PLAYER_SKILL_CLIMAX_SFX = 127602315U;

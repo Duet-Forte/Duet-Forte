@@ -44,4 +44,4 @@ MonoBehaviour:
   - 0.04078
   damageType: 01010101010101010101
   skillClip: {fileID: 7400000, guid: d368d149623edc14483ae77737bf74cb, type: 2}
-  soundEventName: Player_Skill_AAA_SFX
+  soundEventName: Player_Skill_AABB_SFX
