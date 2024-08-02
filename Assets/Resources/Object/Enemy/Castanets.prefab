@@ -187,7 +187,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Castanets
   flavorTextName: "\uCEA0\uC2A4\uD130"
-  enemyInfo: "\uC5B4\uB5BB\uAC8C \uBD10\uB3C4 \uCE90\uC2A4\uD130\uB124\uCE20\uB2E4..."
+  enemyInfo: "\uC5B4\uB5BB\uAC8C \uBD10\uB3C4 \uCE90\uC2A4\uD130\uB124\uCE20\uB2E4...\n\uD0EC\uBC84\uB9B0\uAC19\uC740
+    \uB140\uC11D\uBCF4\uB2E4\uB294 \uC384\uC9C0\uB9CC\n\uB611\uAC19\uC774 \uBCC4\uBCFC\uC77C
+    \uC5C6\uC5B4 \uBCF4\uC778\uB2E4."
   enemyImage: {fileID: 21300000, guid: 80543664ce9bb8443aaabc77dd61995b, type: 3}
   maxHP: 150
   enemyAttack: 9
