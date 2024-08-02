@@ -348,13 +348,4 @@ public class StageClear : MonoBehaviour
     
     }
     #endregion
-    // 판정 추가하는 시스템
-    // 판정 별로 점수 내기
-    // 판정 점수를 평균내기
-    // 평균낸 점수의 분위구간 확인
-    // 턴수 체크 분위구간 확인 후 점수 
-
-    // 점수 분위구간 확인
-    // Update is called once per frame
-  
 }

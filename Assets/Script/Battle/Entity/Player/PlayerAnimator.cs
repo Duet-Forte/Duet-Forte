@@ -7,7 +7,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
     Animator thePlayerAnimator;
     AnimatorOverrideController animatorOverrideController;
     // Start is called before the first frame update
-    #region ¾Ö´Ï¸ŞÀÌÅÍ ÆÄ¶ó¹ÌÅÍ ÀÌ¸§
+    #region ì• ë‹ˆë©”ì´í„° íŒŒë¼ë¯¸í„° ì´ë¦„
     string dash = "Dash";
     string slash = "Slash";
     string backDash = "BackDash";
@@ -24,7 +24,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
     string skill = "Skill";
     string die = "Die";
     #endregion
-    #region ¾Ö´Ï¸ŞÀÌ¼Ç Áßº¹¹æÁö
+    #region ì• ë‹ˆë©”ì´ì…˜ ì¤‘ë³µë°©ì§€
     int randomAttackCase=0;
 
     int minDedupleAnim;
@@ -33,7 +33,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
 
     int endAttackAnim;
     #endregion
-    #region VFX ÆÄÆ¼Å¬ º¯¼ö
+    #region VFX íŒŒí‹°í´ ë³€ìˆ˜
     [SerializeField] ParticleSystem A_AttackParticle01;
     [SerializeField] ParticleSystem A_AttackParticle02;
     [SerializeField] ParticleSystem A_AttackParticle03;
@@ -67,7 +67,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
        
 
     }
-    #region ¾Ö´Ï¸ŞÀÌ¼Ç
+    #region ì• ë‹ˆë©”ì´ì…˜
 
     public void Dash() {
         thePlayerAnimator.SetTrigger(dash);
@@ -105,9 +105,9 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
     }
 
     /// <summary>
-    /// ºÒ °ª¿¡ µû¶ó A°ø°İ°ú B°ø°İÀÌ ³ª´¸
+    /// ë¶ˆ ê°’ì— ë”°ë¼ Aê³µê²©ê³¼ Bê³µê²©ì´ ë‚˜ë‰¨
     /// </summary>
-    /// <param name="isSlash">true´Â A¹öÆ°ÀÎ Slash, false´Â B¹öÆ°ÀÎ Pierce ¸ğ¼Ç</param>
+    /// <param name="isSlash">trueëŠ” Aë²„íŠ¼ì¸ Slash, falseëŠ” Bë²„íŠ¼ì¸ Pierce ëª¨ì…˜</param>
     public void Attack(bool isSlash) {
 
         if (isSlash) {
@@ -144,21 +144,21 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
         thePlayerAnimator.SetTrigger(idle);
     }
     #endregion
-    #region ÆÄÆ¼Å¬
-    #region ¾Ö´Ï¸ŞÀÌ¼Ç¿¡ ÂüÁ¶µÈ ÆÄÆ¼Å¬
-    void Particle_Slash_1() { //¾Ö´Ï¸ŞÀÌ¼Ç Å¬¸³¿¡ ÀÌº¥Æ®·Î Ãß°¡ÇÔ. °ø°İ ¾Ö´Ï¸ŞÀÌ¼ÇÀÇ Áß°£ºÎºĞ¿¡ Àç»ı½ÃÅ´
+    #region íŒŒí‹°í´
+    #region ì• ë‹ˆë©”ì´ì…˜ì— ì°¸ì¡°ëœ íŒŒí‹°í´
+    void Particle_Slash_1() { //ì• ë‹ˆë©”ì´ì…˜ í´ë¦½ì— ì´ë²¤íŠ¸ë¡œ ì¶”ê°€í•¨. ê³µê²© ì• ë‹ˆë©”ì´ì…˜ì˜ ì¤‘ê°„ë¶€ë¶„ì— ì¬ìƒì‹œí‚´
         A_AttackParticle01.Play();
     }
     void Particle_Slash_2()
-    { //¾Ö´Ï¸ŞÀÌ¼Ç Å¬¸³¿¡ ÀÌº¥Æ®·Î Ãß°¡ÇÔ. °ø°İ ¾Ö´Ï¸ŞÀÌ¼ÇÀÇ Áß°£ºÎºĞ¿¡ Àç»ı½ÃÅ´
+    { //ì• ë‹ˆë©”ì´ì…˜ í´ë¦½ì— ì´ë²¤íŠ¸ë¡œ ì¶”ê°€í•¨. ê³µê²© ì• ë‹ˆë©”ì´ì…˜ì˜ ì¤‘ê°„ë¶€ë¶„ì— ì¬ìƒì‹œí‚´
         A_AttackParticle02.Play();
     }
     void Particle_Slash_3()
-    { //¾Ö´Ï¸ŞÀÌ¼Ç Å¬¸³¿¡ ÀÌº¥Æ®·Î Ãß°¡ÇÔ. °ø°İ ¾Ö´Ï¸ŞÀÌ¼ÇÀÇ Áß°£ºÎºĞ¿¡ Àç»ı½ÃÅ´
+    { //ì• ë‹ˆë©”ì´ì…˜ í´ë¦½ì— ì´ë²¤íŠ¸ë¡œ ì¶”ê°€í•¨. ê³µê²© ì• ë‹ˆë©”ì´ì…˜ì˜ ì¤‘ê°„ë¶€ë¶„ì— ì¬ìƒì‹œí‚´
         A_AttackParticle03.Play();
     }
     void Particle_Slash_4()
-    { //¾Ö´Ï¸ŞÀÌ¼Ç Å¬¸³¿¡ ÀÌº¥Æ®·Î Ãß°¡ÇÔ. °ø°İ ¾Ö´Ï¸ŞÀÌ¼ÇÀÇ Áß°£ºÎºĞ¿¡ Àç»ı½ÃÅ´
+    { //ì• ë‹ˆë©”ì´ì…˜ í´ë¦½ì— ì´ë²¤íŠ¸ë¡œ ì¶”ê°€í•¨. ê³µê²© ì• ë‹ˆë©”ì´ì…˜ì˜ ì¤‘ê°„ë¶€ë¶„ì— ì¬ìƒì‹œí‚´
         A_AttackParticle04.Play();
     }
 
@@ -192,7 +192,7 @@ public class PlayerAnimator : MonoBehaviour, IAnimator
     }
     #endregion
 
-    #region °ø°İ½ÅÈ£
+    #region ê³µê²©ì‹ í˜¸
   
     public void attackCountDown() {
         attackCountDownSignal.Play();

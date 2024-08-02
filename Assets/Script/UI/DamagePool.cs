@@ -6,9 +6,10 @@ public class DamagePool : IStageUI
 {
     private IObjectPool<DamageUI> pool;
     private IEnemy enemy;
-
+    private PlayerInterface playerInterface;
     public void InitSettings(StageManager stageManager, Canvas canvas)
     {
+        playerInterface = stageManager.PlayerInterface;
         enemy = stageManager.Enemy;
         pool = new ObjectPool<DamageUI>(CreateDamageUI, OnGetUI, OnReleaseUI, OnDestroyUI, maxSize: 10);
         BindEvent();
@@ -32,7 +33,6 @@ public class DamagePool : IStageUI
         damageUI.Position.position = new Vector2 (spawnPoint.x+randomOffsetX, spawnPoint.y+randomOffsetY);
         damageUI.MoveUI();
     }
-
     private void OnReleaseUI(DamageUI damageUI)
     {
         damageUI.ResetSettings();

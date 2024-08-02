@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(true, null, InitBattleScene);
     }
-    [ContextMenu("≥°")]
+    [ContextMenu("ÎÅù")]
     public void SetFieldScene()
     {
         AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);

@@ -271,7 +271,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Maracas
   flavorTextName: "\uB9C8\uB77C&\uCE74\uC2A4"
-  enemyInfo: "\uB450 \uAC1C\uCCB4\uAC00 \uD55C \uBAB8\uCC98\uB7FC \uC6C0\uC9C1\uC778\uB2E4. "
+  enemyInfo: "\uB450 \uAC1C\uCCB4\uAC00 \uD55C \uBAB8\uCC98\uB7FC \uC6C0\uC9C1\uC778\uB2E4.
+    \n\uC5F0\uC18D\uC73C\uB85C \uC624\uB294 \uACF5\uACA9\uC744 \uC8FC\uC758\uD558\uC790"
   enemyImage: {fileID: 21300000, guid: be22dd799aac39847a724a6f8e029976, type: 3}
   maxHP: 160
   enemyAttack: 18
