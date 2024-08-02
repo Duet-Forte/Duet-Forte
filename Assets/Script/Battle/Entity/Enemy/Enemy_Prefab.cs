@@ -226,7 +226,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
 
     }
     #region 이동관련 함수
-    public void ReturnToOriginPos() { 
+    public virtual void ReturnToOriginPos() { 
         enemyAnimator.BackDash();
 
         //턴 종료

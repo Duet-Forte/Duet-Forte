@@ -64,6 +64,7 @@ public class PlayerStatus : MonoBehaviour
         playerCurrentExp= currentExp;
         SetMaxExp(playerLevel);
         Debug.LogWarning($"플레이어 레벨 : {playerLevel}");
+        Debug.LogWarning($"플레이어 체력 : {playerHealthPoint}");
         Debug.LogWarning($"플레이어 공격력 : {playerAttack}");
         Debug.LogWarning($"플레이어 방어력 : {playerDefence}");
     }
