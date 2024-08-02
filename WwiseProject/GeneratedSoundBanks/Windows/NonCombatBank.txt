@@ -21,6 +21,7 @@ Switch Group	ID	Name			Wwise Object Path	Notes
 
 Switch	ID	Name	Switch Group			Notes
 	268061649	TimmyHouse	NonCombatBGM			
+	514358619	Field	NonCombatBGM			
 	3091570009	Town	NonCombatBGM			
 	2058049674	Wood	State			
 	2195636714	Dirt	State			
@@ -41,11 +42,12 @@ Effect plug-ins	ID	Name	Type				Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	18628162	Ob_Fire_SwitchOn	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Ob_Fire_SwitchOn_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\FirePlace\Ob_Fire_SwitchOn		93596
 	43014063	Gio_BodyFall_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Gio_BodyFall_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Gio_BodyFall\Gio_BodyFall_SFX		998432
-	48994660	Door	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Door_BEBAF347.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Door\Door		113800
+	48994660	Door	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Door_47B07DEA.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Door\Door		113800
 	57689545	Ob_Fire_Fire	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Ob_Fire_Fire_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\FirePlace\Ob_Fire_Fire		15360100
 	98167887	Character_Emotion_QuestionMark_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Character_Emotion_QuestionMark_SFX_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotion\Character_Emotion_QuestionMark_SFX\Character_Emotion_QuestionMark_SFX		142444
 	225095606	GetSkill_SFX	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\GetSkill_SFX_6754BF55.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\GetSkill\GetSkill_SFX		475416
 	225295536	Typing01	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Typing01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Typing\Typing01		43688
+	266155743	Field	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Field_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\NonCombat\Field 1\Field\Field		9644748
 	327002089	Typing02	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\Typing02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonCombat\Typing\Typing02		40196
 	335728943	용사의집 v0308_Loop	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\용사의집 v0308_Loop_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\NonCombat\TimmyHouse\TimmyHouse\용사의집 v0308_Loop		3141916
 	367550639	FootStep_Wood03	C:\Users\xcwhy\Documents\GitHub\DuetForte\GITDuet-Forte\Duet-Forte\WwiseProject\.cache\Windows\SFX\FootStep_Wood03_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerFootStep\PlayerFootStep_Wood\FootStep_Wood03		49472

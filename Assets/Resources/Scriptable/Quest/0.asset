@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e80c8b9d92387004d9f8a964b18a250e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e21ea8e80dff3b429e3628b25713ccb, type: 3}
   m_Name: 0
   m_EditorClassIdentifier: 
   ID: 0
-  title: "\uADC0\uAC00 \uC608\uBBFC\uD55C \uC220\uC8FC\uC815\uBC45"
+  title: "\uADC0\uAC00 \uC608\uBBFC\uD55C \uC220\uC8FC\uC815\uBC45\uC774"
   description: "\uD0EC\uBC84\uB9B0 \uC18C\uB9AC\uAC00 \uC2DC\uB044\uB7FD\uB2E4\uBA70,
     \uD589\uD328\uB97C \uBD80\uB9AC\uB294 \uB8E8\uB514\uC6B0\uC2A4\uB97C \uC7A0\uC7AC\uC6B0\uC790."
   gold: 0
   experiencePoint: 0
-  skillId: 0
-  isCompleted: 0
+  skillId: 4
+  monsterName: Tambourine

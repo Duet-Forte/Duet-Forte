@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Febucci.UI.Core.Parsing;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,8 @@ public class MusicChanger
     {
         if (beforeSong == name)
             return;
-        WaitMusic(name).Forget();
+        GameManager.FieldManager.Field.points.TryGetValue(name, out Point point);
+        WaitMusic(point.pointName).Forget();
     }
     public async UniTask WaitMusic(string name)
     {

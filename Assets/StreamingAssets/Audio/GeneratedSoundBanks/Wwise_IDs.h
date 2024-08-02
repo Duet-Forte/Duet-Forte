@@ -90,6 +90,7 @@ namespace AK
 
             namespace SWITCH
             {
+                static const AkUniqueID FIELD = 514358619U;
                 static const AkUniqueID TIMMYHOUSE = 268061649U;
                 static const AkUniqueID TOWN = 3091570009U;
             } // namespace SWITCH

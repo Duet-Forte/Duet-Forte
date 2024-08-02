@@ -20,6 +20,7 @@
 					<ChildrenList>
 						<Switch Name="TimmyHouse" ID="{AF486976-B369-49A0-A087-CBEBE15D4E19}"/>
 						<Switch Name="Town" ID="{401E7736-0EC8-4F72-A31A-094448197EC8}"/>
+						<Switch Name="Field" ID="{B8E8F42F-F4BD-4B0D-8A0B-8C2EA9666AF7}"/>
 					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>

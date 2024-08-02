@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{0160A03C-8544-40F0-DE6F-2260ECBBBC3F}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{768278C5-3C57-C6FE-85BF-F16DAE8A4B1D}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -23,7 +23,7 @@
 				</File>
 				<File Id="48994660" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Door.wav</ShortName>
-					<CachePath>SFX/Door_BEBAF347.wem</CachePath>
+					<CachePath>SFX/Door_47B07DEA.wem</CachePath>
 				</File>
 				<File Id="57689545" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ob_Fire_Fire.wav</ShortName>
@@ -40,6 +40,10 @@
 				<File Id="225295536" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Typing01.wav</ShortName>
 					<CachePath>SFX/Typing01_818F3B66.wem</CachePath>
+				</File>
+				<File Id="266155743" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Field.wav</ShortName>
+					<CachePath>SFX/Field_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="327002089" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Typing02.wav</ShortName>
@@ -178,6 +182,12 @@
 								<MediaRef Id="594152026"/>
 							</MediaRefs>
 						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="927944968" Id="514358619"/>
+							<MediaRefs>
+								<MediaRef Id="266155743"/>
+							</MediaRefs>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 				<Event Id="2869548328" Name="NonCombat_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -274,6 +284,7 @@
 				<SwitchGroup Id="927944968" Name="NonCombatBGM">
 					<Switches>
 						<Switch Id="268061649" Name="TimmyHouse"/>
+						<Switch Id="514358619" Name="Field"/>
 						<Switch Id="3091570009" Name="Town"/>
 					</Switches>
 				</SwitchGroup>
@@ -341,6 +352,7 @@
 				<SwitchGroup Id="927944968" Name="NonCombatBGM">
 					<Switches>
 						<Switch Id="268061649" Name="TimmyHouse"/>
+						<Switch Id="514358619" Name="Field"/>
 						<Switch Id="3091570009" Name="Town"/>
 					</Switches>
 				</SwitchGroup>
@@ -353,7 +365,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{66D3C398-9338-B973-366C-BDE1CDCD6B6A}">
+		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{E9AC493A-0405-2282-F87A-A412A3B841CA}">
 			<ShortName>MainMenu</ShortName>
 			<Path>MainMenu.bnk</Path>
 			<Media>
@@ -398,7 +410,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{B9E50466-180F-D366-D70A-7A19178BBDED}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{A849EC70-FE76-4FBC-63EA-9B12270773AE}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -784,5 +796,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8B194566-D39E-5788-2506-4E58859D55D3}</FileHash>
+	<FileHash>{99EC72EA-431C-7F85-6990-96CB06355EF9}</FileHash>
 </SoundBanksInfo>
