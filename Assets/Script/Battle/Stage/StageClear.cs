@@ -191,14 +191,14 @@ public class StageClear : MonoBehaviour
         }
         yield return new WaitUntil(() =>isChangeExpEnd);
         inputAnyKey.SetActive(true);
-        StartCoroutine(WaitForInput());
+        StartCoroutine(WaitForInput(isWin));
     }
 
-    private IEnumerator WaitForInput() {
+    private IEnumerator WaitForInput(bool isWin) {
         while (true) {
             if (Input.anyKeyDown) {
                 Debug.Log($"에너미 네임 : {stageManager.Enemy.EnemyName}");
-                if (stageManager.Enemy.EnemyName.Equals("TimpaniOrc"))
+                if (stageManager.Enemy.EnemyName.Equals("TimpaniOrc")&&isWin)
                 {
                     Debug.Log("DemoScene으로 이동");
                     AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);

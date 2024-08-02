@@ -45,7 +45,7 @@ public class UIManager
         stageClear = GameObject.Instantiate(Resources.Load<GameObject>("UI/StageClear"), canvas.transform).GetComponent<StageClear>();
         stageClear.InitSettings(stageManager);
 
-        #region ÇöÀç ÅÏ Ç¥½ÃÇÏ´Â UI ¼¼ÆÃ
+        #region í˜„ì¬ í„´ í‘œì‹œí•˜ëŠ” UI ì„¸íŒ…
         turnUIAsGameObject = Resources.Load<GameObject>(Const.UI_TURN);
         turnUI = Object.Instantiate(turnUIAsGameObject, canvas.transform).GetComponent<ControlTurnUI>();
         turnUI.InitSettings();
@@ -73,7 +73,7 @@ public class UIManager
         skillPopUpUI.Disappear();
     }
     public void InvokeGameClear() {
-        Debug.Log("UIManager¿¡¼­ InvokeGameClearÈ£ÃâµÊ");
+        Debug.Log("UIManagerì—ì„œ InvokeGameClearí˜¸ì¶œë¨");
         
         stageClear.Invoke(stageManager.TurnCount, true, stageManager.Enemy.Exp);
     }
