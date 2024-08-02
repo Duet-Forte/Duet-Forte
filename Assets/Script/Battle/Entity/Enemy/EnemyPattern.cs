@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EnemyPattern
 {
-    [Tooltip("Entity ÀÌ¸§")]
+    [Tooltip("Entity ì´ë¦„")]
     public string enemyName;
 
-    [Tooltip("ÆĞÅÏ ±æÀÌ")]
+    [Tooltip("íŒ¨í„´ ê¸¸ì´")]
     public int patternLength;
 
-    [Tooltip("Entity ÆĞÅÏ")]
+    [Tooltip("Entity íŒ¨í„´")]
     public int[] patternArray;
 
     

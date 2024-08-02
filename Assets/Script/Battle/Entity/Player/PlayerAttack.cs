@@ -101,9 +101,6 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 
     
    
     private void CheckSkillCommand() {
-       
-        
-       
         
         for (int skillCommandEnteredIndex = 0; skillCommandEnteredIndex < skillCommandEntered.Length; skillCommandEnteredIndex++) { //
 
@@ -116,6 +113,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 
                   //스킬 qte여부 확인 후 처리
                   //스킬이름을 스킬이름팝업에 넘겨주기
                   //파티클이 전부 재생될때 까지 대기
+                    isCastSkill = true;
                     currentSkill = playerSkillSet.ArrayOfSkill[skillSetIndex];
                     
                     SkillUI(playerSkillSet.ArrayOfSkillIcon[skillSetIndex] , playerSkillSet.ArrayOfSkillName[skillSetIndex]);
@@ -124,7 +122,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 
 
                     StartCoroutine(SkillCast(currentSkill,comparisonCommands,judgeArr));
 
-                    isCastSkill = true;
+                    
                     //스킬액션씬
                     //대미지 처리
                     //스킬 보너스 효과 적용
@@ -252,12 +250,12 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 
         {
             //RestCoolTime();
             BasicAttackCoolDown();
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F)&&!isCastSkill)
             {  //나중에 PlayerInput 클래스에서 가져온 변수로 쓸 예정
                 EnqueueAttackBuffer("A");
                 canAttack = false;
             }
-            else if (Input.GetKeyDown(KeyCode.J))
+            else if (Input.GetKeyDown(KeyCode.J)&&!isCastSkill)
             {
                 EnqueueAttackBuffer("B");
                 canAttack = false;
@@ -267,7 +265,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 
                 yield return new WaitForSeconds(3f);//스킬 애니메이션 클립의 길이만큼 대기 후 종료로 수정해야함. 04.01
                 SkillUI();
                 AttackEnd();
-                yield break;// 스킬이 발동되어 반복문 탈출 공격 종료
+                yield break;//스킬이 발동되어 반복문 탈출 공격 종료
             }
             if (currentLimitBeat == 0) {
                 AttackEnd();
