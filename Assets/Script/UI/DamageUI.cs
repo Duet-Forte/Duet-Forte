@@ -132,8 +132,8 @@ public class DamageUI : MonoBehaviour
         }
         else if (damage.GetDamageType() == Util.CustomEnum.DamageType.True) //트루대미지
         {
-            judgeLetter.sprite = Resources.Load<Sprite>("UI/Damage/Letter/TrueLetter");
-            judgeEffect.sprite = Resources.Load<Sprite>("UI/Damage/Effect/TrueEffect");
+            judgeLetter.sprite = Resources.Load<Sprite>("UI/Damage/Letter/3. TrueLetter");
+            judgeEffect.sprite = Resources.Load<Sprite>("UI/Damage/Effect/3. TrueEffect");
             while (calculatedDamage> 0)
             {
 

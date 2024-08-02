@@ -17,11 +17,11 @@ public class EnemyDamage : DamageType
         }
         if (judgeName == JudgeName.Great)
         {
-            return GetDamage((int)(attack * 0.4f), (int)(defense*1f));
+            return GetDamage((int)(attack * 0.6f), (int)(defense*1f));
         }
         if (judgeName == JudgeName.Good)
         {
-            return GetDamage((int)(attack * 0.6f), (int)(defense*1f));
+            return GetDamage((int)(attack * 0.7f), (int)(defense*1f));
         }
         if (judgeName == JudgeName.Bad)
         {

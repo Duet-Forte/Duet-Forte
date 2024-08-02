@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,30 +14,18 @@ public class PatternParser
 
         for (int row = 1; row < data.Length;row++) {
             
-            string[] rowData= data[row].Split(new char[] { ',' });
-            
-            
+            string[] rowData= data[row].Split(",");
             if (rowData[1].ToString() == enemyName)
             {
                 
                 do
                 {
-                    
-                    //Debug.Log("Çà : "+data[row]);
-                    //Debug.Log("ÆÐÅÏ ±æÀÌ : " + (rowData[2].Length-1));
                     enemyPatternTMP = new EnemyPattern();
-                    enemyPatternTMP.enemyName = enemyName;                         //stringÅ¸ÀÔÀÇ Àû ÀÌ¸§
-
-                    //enemyPattern.patternLength = System.Int32.Parse(rowData[2]); //intÅ¸ÀÔÀÇ ÆÐÅÏ±æÀÌ 
-
-                    enemyPatternTMP.patternLength = rowData[2].Length-1;           //intÅ¸ÀÔÀÇ ÆÐÅÏ±æÀÌ 
-
-                    enemyPatternTMP.patternArray = StringToIntArray(rowData[2]);   //int¹è¿­ Å¸ÀÔÀÇ ÆÐÅÏ - EX) [4,8,8,4]
+                    enemyPatternTMP.enemyName = enemyName;                         //stringÅ¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¸ï¿½
+                    enemyPatternTMP.patternLength = rowData[2].Length-1;           //intÅ¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½ï¿½ï¿½ 
+                    string[] tmp=rowData[2].Split('.');
+                    enemyPatternTMP.patternArray = Array.ConvertAll(tmp, s => int.Parse(s));
                     enemyPattern.Add(enemyPatternTMP);
-
-                    //Debug.Log("////////////////");
-                    
-                    
                     row++;
                     
                     rowData = data[row].Split(new char[] { ',' });
@@ -48,7 +37,7 @@ public class PatternParser
             
         }
         if (enemyPattern == null) {
-            Debug.Log("enemyNameÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.Log("enemyNameï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         }
         return enemyPattern.ToArray();
     
