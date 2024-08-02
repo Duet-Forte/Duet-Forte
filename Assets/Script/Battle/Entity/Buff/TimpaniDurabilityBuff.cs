@@ -17,7 +17,7 @@ public class TimpaniDurabilityBuff : IBuff
     {
         this.battlePresenter = battlePresenter;
         this.enemy = enemy;
-        quaterDamage = enemy.MaxHP/4; //QA�� ���� �ʿ�
+        quaterDamage = enemy.MaxHP/4; 
         enemy.OnHit += DecreaseStack;
         this.initStack = initStack;
         stack = initStack;
@@ -56,11 +56,11 @@ public class TimpaniDurabilityBuff : IBuff
         }
     }
     private void Execute() {
-        //���� �ִ� ü�� 25% ����
+        //스택이 터지면 전체 체력의 25%감소
         battlePresenter.PlayerBasicAttackToEnemy(new Damage(quaterDamage,new SlashDamage()));
-        //���ݷ� ����
+        //공격력 30퍼 증가
         enemy.SetAttackStat(1.3f);
-        //stack ǥ�� X
+        //스택이 터진 턴에는 더 이상 스택 감소 X
         stackText.text = " ";
         
     }

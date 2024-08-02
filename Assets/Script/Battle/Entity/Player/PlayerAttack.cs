@@ -113,6 +113,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 
                   //스킬 qte여부 확인 후 처리
                   //스킬이름을 스킬이름팝업에 넘겨주기
                   //파티클이 전부 재생될때 까지 대기
+                    ClearBuffer();
                     isCastSkill = true;
                     currentSkill = playerSkillSet.ArrayOfSkill[skillSetIndex];
                     
