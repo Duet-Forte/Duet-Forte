@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{384F00D8-E85E-39BD-5264-BB7602AF5B0E}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{768278C5-3C57-C6FE-85BF-F16DAE8A4B1D}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -23,7 +23,7 @@
 				</File>
 				<File Id="48994660" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Door.wav</ShortName>
-					<CachePath>SFX/Door_BEBAF347.wem</CachePath>
+					<CachePath>SFX/Door_47B07DEA.wem</CachePath>
 				</File>
 				<File Id="57689545" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ob_Fire_Fire.wav</ShortName>
@@ -365,7 +365,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{66D3C398-9338-B973-366C-BDE1CDCD6B6A}">
+		<SoundBank Id="3604647259" Type="User" Language="SFX" Hash="{E9AC493A-0405-2282-F87A-A412A3B841CA}">
 			<ShortName>MainMenu</ShortName>
 			<Path>MainMenu.bnk</Path>
 			<Media>
@@ -410,7 +410,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{B9E50466-180F-D366-D70A-7A19178BBDED}">
+		<SoundBank Id="4072029455" Type="User" Language="SFX" Hash="{A849EC70-FE76-4FBC-63EA-9B12270773AE}">
 			<ShortName>New_SoundBank</ShortName>
 			<Path>New_SoundBank.bnk</Path>
 			<Media>
@@ -796,5 +796,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{82837BF8-6E22-0FD5-22B4-0524D5EFB484}</FileHash>
+	<FileHash>{99EC72EA-431C-7F85-6990-96CB06355EF9}</FileHash>
 </SoundBanksInfo>

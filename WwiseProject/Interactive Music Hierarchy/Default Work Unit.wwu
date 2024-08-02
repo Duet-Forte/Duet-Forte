@@ -509,7 +509,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-5</Value>
+										<Value>-7</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1372,7 +1372,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-5</Value>
+										<Value>-3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1515,6 +1515,11 @@
 						<MusicPlaylistContainer Name="Town" ID="{906930A5-D789-4047-B6E6-5B899AE0E0BA}" ShortID="828158636">
 							<PropertyList>
 								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1906,6 +1911,11 @@
 						<MusicSegment Name="A440" ID="{3F41BCE0-2E4E-4A10-B0E3-962226EDAD4F}" ShortID="915497684">
 							<PropertyList>
 								<Property Name="EndPosition" Type="Real64" Value="92307.7083333333"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">

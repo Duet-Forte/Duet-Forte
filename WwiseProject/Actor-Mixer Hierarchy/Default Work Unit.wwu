@@ -1588,6 +1588,11 @@
 								<Sound Name="Ob_Fire_SwitchOn" ID="{8E6B5B4B-C7F8-4574-B63A-EC7AC1EBD718}" ShortID="1010139809">
 									<PropertyList>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -1599,6 +1604,9 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Ob_Fire_SwitchOn" ID="{DC3B586D-2AA4-4BF3-9FC4-77153C66BEE2}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Ob_Fire_SwitchOn.wav</AudioFile>
 											<MediaIDList>
@@ -1623,6 +1631,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Door" ID="{94374C88-E5C9-49D4-BB22-EE07E44965C1}" ShortID="566960736">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-8</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
@@ -1634,6 +1649,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="Door" ID="{A34DD201-6696-497C-86E5-8FAA08EA519B}">
 											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0470298507462687"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.247694587628866"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.179217152351738"/>
@@ -1811,6 +1827,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Transition_FadeIn" ID="{F2C3B003-6EB7-4881-913C-6693716D5A73}" ShortID="211027452">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
@@ -1845,6 +1868,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Transition_FadeOut" ID="{775FBD8F-15A1-404D-B773-C0FDEC8C8FD7}" ShortID="273161622">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{864789CA-E131-48AD-A6E7-3D0D646F32F9}"/>
