@@ -12,12 +12,11 @@ public class TopViewEnemy : TopViewEntity
     private PlayerTracker tracker;
     private BoxCollider2D boxCollider;
     public bool isFleeing;
-    private bool isInitialized;
     private void Update()
     {
-        if (isInitialized && isAlive)
+        if (isAlive)
         {
-            tracker.RequestPath(isFleeing);
+            tracker.RequestPath(false);
         }
     }
     public override void InitSettings(string name, Vector2 intialSpawnPoint, int id = 0)

@@ -16,8 +16,9 @@ public class PlayerSkill : ScriptableObject
             AkSoundEngine.PostEvent(soundEventName, player);
         }
     }
-    
+
     //이름, 설명, 대미지, 커맨드, 
+    [SerializeField] public int id;
     [SerializeField] private string skillName;
     [SerializeField] private string skill_Information;
     [SerializeField] private string skillCommand;//"A" "B" "R"로 이루어짐 (일단은 커맨드는 엇박없이 정박으로만 이루어짐)

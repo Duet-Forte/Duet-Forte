@@ -81,7 +81,7 @@ public class DialogueManager
     {
         for (int i = 0; i < dialogue.Lines.Length; i++)
         {
-
+            dialogue.Speaker = dialogue.Speakers[i];
             if (dialogue.Events[i] != null)
             {
                 if(dialogue.Events[i].PlayEvent(dialogue, interactorName, out int index))
