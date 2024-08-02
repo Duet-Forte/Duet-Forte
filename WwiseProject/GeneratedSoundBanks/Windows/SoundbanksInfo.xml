@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{0160A03C-8544-40F0-DE6F-2260ECBBBC3F}">
+		<SoundBank Id="1020116044" Type="User" Language="SFX" Hash="{1F60BECB-0DD5-DD5F-9F4D-41CB33A6FE4A}">
 			<ShortName>NonCombatBank</ShortName>
 			<Path>NonCombatBank.bnk</Path>
 			<Media>
@@ -40,6 +40,10 @@
 				<File Id="225295536" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Typing01.wav</ShortName>
 					<CachePath>SFX/Typing01_818F3B66.wem</CachePath>
+				</File>
+				<File Id="266155743" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Field.wav</ShortName>
+					<CachePath>SFX/Field_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="327002089" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Typing02.wav</ShortName>
@@ -178,6 +182,12 @@
 								<MediaRef Id="594152026"/>
 							</MediaRefs>
 						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="927944968" Id="514358619"/>
+							<MediaRefs>
+								<MediaRef Id="266155743"/>
+							</MediaRefs>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 				<Event Id="2869548328" Name="NonCombat_BGM_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -274,6 +284,7 @@
 				<SwitchGroup Id="927944968" Name="NonCombatBGM">
 					<Switches>
 						<Switch Id="268061649" Name="TimmyHouse"/>
+						<Switch Id="514358619" Name="Field"/>
 						<Switch Id="3091570009" Name="Town"/>
 					</Switches>
 				</SwitchGroup>
@@ -341,6 +352,7 @@
 				<SwitchGroup Id="927944968" Name="NonCombatBGM">
 					<Switches>
 						<Switch Id="268061649" Name="TimmyHouse"/>
+						<Switch Id="514358619" Name="Field"/>
 						<Switch Id="3091570009" Name="Town"/>
 					</Switches>
 				</SwitchGroup>
@@ -784,5 +796,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8B194566-D39E-5788-2506-4E58859D55D3}</FileHash>
+	<FileHash>{995C97E4-C13D-41B5-5BE0-D1D9FFFE722F}</FileHash>
 </SoundBanksInfo>
