@@ -155,7 +155,7 @@ Ludius	0	Zio	Default	(이 시간에 술을…….)
 		Zio	Default	네. 이번엔 <color=#1B69FF>잔향</color>이라는 걸 얻었어요.			
 		Ludius	Default	허, 용사보다 네가 낫네.<br>앞으로 잘해보라고.			
 					Plus	1	
-	3	Ludius			Random	0:2	
+	3	Ludius			Random	1:3	
 		Ludius	Default	뭐야, 밥 먹으러 왔어?			
 		Ludius	Default	오늘 운이 왜 이래? 내일 술 사먹을 돈이 없잖아!			
 		Ludius	Default	이 술잔? 나한테 돈을 다~ 잃은 귀족이 마지막으로 걸었던 거지.			
@@ -204,7 +204,7 @@ Hila	0	Hila	Default	안녕! 너 맞지? 조력자!
 		Hila	Default	그런데! 이번 신탁은 좀 달랐어.<br>보통 용사만 점지해 줬거든?			
 		Hila	Default	이번엔 용사를 도와줄 조력자가 나타나고<br>소명을 다하면, 원래 자리로 돌아간다는 내용이 추가가 된 거야.			
 		Hila	Default	긴 세월동안 한 번도 없던 일이라 난리가 났지.			
-		Hila	Default	용사는 찾았는데 넌 한참을 나타나지 않아서 모두의 기억 속에서 잊힐 때쯤 네가 온 거야.<br>여기 오르투스로.			
+		Hila	Default	용사는 찾았는데 넌 한참을 나타나지 않아서 <br>모두의 기억 속에서 잊힐 때쯤 네가 온 거야.여기 오르투스로.			
 		Hila	Default	대부분 잊었지만 난 널 기다리고 있었어.<br>너의 활약도 기대하고 있어!			
 		Hila	Default	사실 나도 용사가 되고 싶었거든.<br>태어난 날도 딱 하루 차이인데, 너무 아쉬워.			
 		Hila	Default	게다가 이건 비밀인데, 사실 티미가 몬스터를 무찌르지 않은지 꽤 됐어.			

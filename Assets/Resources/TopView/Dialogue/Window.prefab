@@ -345,7 +345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD14C\uC2A4\uD2B8 \uAE00\uC790\uC785\uB2C8\uB2E4."
+  m_text: "\uD14C\uC2A4\uD2B8 \uAE00\uC790\uC785\uB2C8\uB2E4. asdsadasdsadsadsadsadsadsad"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41b01fc0683d7144393303e87133829a, type: 2}
   m_sharedMaterial: {fileID: 6434593365614673690, guid: 41b01fc0683d7144393303e87133829a, type: 2}
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
