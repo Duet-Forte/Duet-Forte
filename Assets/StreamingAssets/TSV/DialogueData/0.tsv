@@ -68,7 +68,7 @@ Cutscene	0	Zio			Emotion	Dust	현재 VFX 시간보다 더 길게 유지해 주�
 Timmy	0	Timmy			Random	1:2	
 		Timmy	Default	마을 구경은 좀 했어?			
 		Timmy	Default	난 아직도 네가 온 게 믿기지 않아.<br>난 아주 오랫동안 널 기다렸거든.			
-	1	Timmy	Default	왔어…?			
+Timmy2	0	Timmy	Default	왔어…?			
 		Zio	Default	용케 여기까지 와 있네?			
 		Zio	Default	다들 네가 소심하다고 하더라고?<br>하긴 그 잘난 용사면 이 정도는 와야지.			
 		Timmy	Happy	여기까진 괜찮아.<br>엄청 위험하진 않거든.			
@@ -90,7 +90,7 @@ Timmy	0	Timmy			Random	1:2
 		Zio	Default	나 먼저 들어갈 테니까, 못 도울 거면 걸리적 거리지나 마.			
 		Timmy	Default	지,진짜 조심해야 해! 알았지?!			
 					Plus	1	전투 전 다시 말을 거는 경우
-	2	Timmy	Default	조심해야 해. 피부가 상상 이상으로 두꺼워!<br>처음엔 흠집도 안 날 거야.			
+	1	Timmy	Default	조심해야 해. 피부가 상상 이상으로 두꺼워!<br>처음엔 흠집도 안 날 거야.			
 Faber	0	Faber	Default	뭐 줄까?<br>심부름 왔어?			
 		Zio	Default	그냥 마을을 좀 둘러보고 있었어요.			
 		Faber	Angry	뭐 살 거 아니면 저리가.<br>여긴 애들이 오기 위험하니까.			
@@ -246,7 +246,7 @@ Hila	0	Hila	Default	안녕! 너 맞지? 조력자!
 							
 							
 							
-	3	Hila	Default	어떡해! 나 오크 잡는 건 또 처음 보잖아!<br>내가 듣기로는 연속으로 공격해야 가능성이 높다더라고?			
+Hila2	0	Hila	Default	어떡해! 나 오크 잡는 건 또 처음 보잖아!<br>내가 듣기로는 연속으로 공격해야 가능성이 높다더라고?			
 Zio	0	Hila	Default	잠깐만!!!			
 		Zio	Default	뭐야?			
 		Hila	Default	너 아직 마을 다 안 봤잖아?			

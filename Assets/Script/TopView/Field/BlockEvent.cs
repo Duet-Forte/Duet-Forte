@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using Util;
 
@@ -35,10 +36,15 @@ public class BlockEvent : EventTrigger
     {
         GameManager.FieldManager.Player.transform.position = targetPoint.position;
         GameManager.CutsceneManager.FadeOut(0.5f);
-        if (forceDialogue)
+        if (!forceDialogue)
+            dialogueTarget = "Zio";
+        try
+        {
             await DialogueManager.Instance.Talk(dialogueTarget);
-        else
-            await DialogueManager.Instance.Talk("Zio");
-        controller.IsStopped = false;
+        }
+        finally
+        {
+            controller.IsStopped = false;
+        }
     }
 }
