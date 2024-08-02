@@ -242,10 +242,8 @@ public class PlayerTracker : MonoBehaviour
     }
     private bool IsOnNode(Vector2 position)
     {
-        float x = (position.x + trackScale.x * 0.5f - startX) / trackScale.x;
-        float y = (position.y + trackScale.y * 0.5f - startY) / trackScale.y;
-
-        return ((x > 0 && x < 1) && (y > 0 || y < 1));
+        return ((position.x >= startX - (trackSizeX / 2) && position.x <= startX + (trackSizeX / 2))
+            && ((position.y >= startY - (trackSizeY / 2) && position.y <= startY + (trackSizeY / 2))));
     }
 
     private void OnDrawGizmos()

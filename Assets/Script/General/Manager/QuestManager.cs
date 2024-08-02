@@ -42,6 +42,11 @@ public class QuestManager
         Debug.Log(quest.skillId);
         DataBase.Quest.CompleteQuest(quest);
         DataBase.Player.GetReward(quest);
+        if(quest.interactor != null)
+        {
+            DataBase.Dialogue.SetID(quest.interactor, quest.dialogueIndex);
+        }
+
     }
     public void CheckEliminationQuest(string name)
     {

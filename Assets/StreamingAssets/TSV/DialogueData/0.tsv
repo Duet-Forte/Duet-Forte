@@ -64,6 +64,7 @@ Cutscene	0	Zio			Emotion	Dust	현재 VFX 시간보다 더 길게 유지해 주�
 		Timmy	Happy	우선 나랑 작은 몬스터로 연습을 더 해보자.<br>아니면 마을 구경을 하는 건 어때?			
 		Zio	Default	제가 아직은 혼란스러워서요. 혼자 마을 좀 둘러볼게요.			
 		Timmy	Default	응. 날 만나려면 여기로 다시 찾아와!			
+					Quest	0	
 Timmy	0	Timmy			Random	1:2	
 		Timmy	Default	마을 구경은 좀 했어?			
 		Timmy	Default	난 아직도 네가 온 게 믿기지 않아.<br>난 아주 오랫동안 널 기다렸거든.			
@@ -107,7 +108,7 @@ Faber	0	Faber	Default	뭐 줄까?<br>심부름 왔어?
 		Faber	Default	잡아도 그때뿐이니, 매번 부탁할 수도 없고.			
 		Zio	Default	어차피 지금 둘러보고 있으니, 제가 한번 가 볼게요.			
 		Faber	Default	아서라, 그러라고 한 얘기 아니야.			
-					Quest	1	
+					Quest	2	
 					Plus	1	
 	1	Faber	Angry	피곤해 죽겠구만..			
 	2	Faber	Default	그 답답한 녀석과 다르게 빠르네.			
@@ -120,7 +121,7 @@ Faber	0	Faber	Default	뭐 줄까?<br>심부름 왔어?
 		Faber	Default	이젠 잠을 잘 자냐고?<br>매일 잡지 않으면 소용없어. 마왕을 빨리 잡아야지.			
 		Faber	Default	네 무기를 봐달라고?<br>이미 내가 잘 만들어서 용사한테 줬던 건데 무슨 소리야.			
 Ludius	0	Zio	Default	(이 시간에 술을…….)			
-					Emotion	Drink	추후, 루디우스 술잔 내리는 모션 생길 시, 술잔 내리는 모션
+		Ludius			Emotion	Drink	추후, 루디우스 술잔 내리는 모션 생길 시, 술잔 내리는 모션
 		Ludius	Default	어이! 가까이 와 봐.			
 		Zio			Emotion	Surprise	
 		Zio	Panic	…저요?			
@@ -147,12 +148,13 @@ Ludius	0	Zio	Default	(이 시간에 술을…….)
 		Ludius	Default	가는 길에 저 시끄러운 <wave>탬버린</wave>부터 없애.			
 		Zio	Panic	한번 가볼게요.			
 					Plus	1	
-					Quest	0	
+					Quest	1	
 	1	Ludius			Emotion	QuestionMark	
-	2	Ludius	Default	뭐야, 볼 일 있어?<br>거봐, 숲 근처도 못갔지?			
-		Ludius	Default	그래서 영감은 좀 얻었고?			
+		Ludius	Default	뭐야, 볼 일 있어?<br>거봐, 숲 근처도 못갔지?			
+	2	Ludius	Default	그래서 영감은 좀 얻었고?			
 		Zio	Default	네. 이번엔 <color=#1B69FF>잔향</color>이라는 걸 얻었어요.			
 		Ludius	Default	허, 용사보다 네가 낫네.<br>앞으로 잘해보라고.			
+					Plus	1	
 	3	Ludius			Random	0:2	
 		Ludius	Default	뭐야, 밥 먹으러 왔어?			
 		Ludius	Default	오늘 운이 왜 이래? 내일 술 사먹을 돈이 없잖아!			
@@ -234,7 +236,18 @@ Hila	0	Hila	Default	안녕! 너 맞지? 조력자!
 		Hila	Default	무슨 소리! 나도 이 한 몸 지킬 정도로 강해.			
 		Hila	Default	그래, 나도 왜 내가 용사가 아닌지 모르겠단 말이야.			
 		Hila	Default	아무튼 나중에 또 보자.<br>저기 사냥터에서도 힘내고!			
-	3	Hila	Default	잠깐만!!!			
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+	3	Hila	Default	어떡해! 나 오크 잡는 건 또 처음 보잖아!<br>내가 듣기로는 연속으로 공격해야 가능성이 높다더라고?			
+Zio	0	Hila	Default	잠깐만!!!			
 		Zio	Default	뭐야?			
 		Hila	Default	너 아직 마을 다 안 봤잖아?			
 		Zio	Default	근데?			
@@ -244,4 +257,3 @@ Hila	0	Hila	Default	안녕! 너 맞지? 조력자!
 		Zio	Default	…그래서?			
 		Hila	Default	그리고 너한테도 좋을 걸?			
 		Hila	Default	저기 가기 전에 몸이라도 좀 풀어야 할 거 아니야!<br>아직은 안 돼! 돌아가서 아저씨들 먼저 보고 와.			
-	4	Hila	Default	어떡해! 나 오크 잡는 건 또 처음 보잖아!<br>내가 듣기로는 연속으로 공격해야 가능성이 높다더라고?			

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4497663333674934548
+--- !u!1001 &4908049738008926125
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7477401683166129345, guid: d80731b5976bcd94dbc125006ac804ef, type: 3}
       propertyPath: m_Name
-      value: Tambourine
+      value: WeakEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 7477401683166129351, guid: d80731b5976bcd94dbc125006ac804ef, type: 3}
       propertyPath: m_RootOrder
@@ -54,14 +54,6 @@ PrefabInstance:
     - target: {fileID: 7477401683166129351, guid: d80731b5976bcd94dbc125006ac804ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987592370475766023, guid: d80731b5976bcd94dbc125006ac804ef, type: 3}
-      propertyPath: trackScale.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987592370475766023, guid: d80731b5976bcd94dbc125006ac804ef, type: 3}
-      propertyPath: trackScale.y
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d80731b5976bcd94dbc125006ac804ef, type: 3}

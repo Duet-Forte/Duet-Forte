@@ -54,7 +54,10 @@ public class GameManager : MonoBehaviour
     public void SetBattleScene(string name)
     {
         if(fieldManager.Player != null)
+        {
             fieldManager.Player.GetComponent<PlayerController>().Stop();
+            fieldManager.Player.GetComponent<BoxCollider2D>().enabled = false;
+        }
         dataStorage.currentEnemyName = name;
         MusicChanger.StopMusic();        
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
@@ -67,6 +70,7 @@ public class GameManager : MonoBehaviour
         SceneManager.UnloadSceneAsync("Rebuilding SampleStage");
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Top View"));
         fieldManager.Player.GetComponent<PlayerController>().IsStopped = false;
+        fieldManager.Player.GetComponent<BoxCollider2D>().enabled = true;
         FieldManager.Field.gameObject.SetActive(true);
         Storage.currentBattleEnemy.Die();
         cameraManager.EnableFieldCamera();
@@ -77,6 +81,7 @@ public class GameManager : MonoBehaviour
     public void SetFieldScene(PlayerInfo playerInfo = null)
     {
         DataBase.Player.SetPlayerInfo(playerInfo);
+
         AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);
         SceneManager.UnloadSceneAsync("Rebuilding SampleStage");
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Top View"));
@@ -87,16 +92,24 @@ public class GameManager : MonoBehaviour
             Storage.currentBattleEnemy = null;
         }
         if(fieldManager.Player != null)
+        {
             fieldManager.Player.GetComponent<PlayerController>().IsStopped = false;
+            EnableCollider().Forget();
+        }
         MusicChanger.ReplayMusic();
         cameraManager.EnableFieldCamera();
         cutsceneManager.ReplayCutscene();
+        QuestManager.Instance.CheckEliminationQuest(Storage.currentEnemyName);
     }
     public void SetTopViewScene()
     {
         FieldManager.Field.gameObject.SetActive(true);
     }
-
+    public async UniTask EnableCollider()
+    {
+        await UniTask.WaitForSeconds(3);
+        fieldManager.Player.GetComponent<BoxCollider2D>().enabled = true;
+    }
     private async void InitBattleScene()
     {
         await LoadBattleScene();

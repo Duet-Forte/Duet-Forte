@@ -14,7 +14,14 @@ public class SkillDataBase
         get
         {
             if (data == null)
-                data = Resources.LoadAll<PlayerSkill>("Scriptable/Skill");
+            {
+                PlayerSkill[] temp = Resources.LoadAll<PlayerSkill>("Scriptable/Skill");
+                data = new PlayerSkill[temp.Length];
+                for(int i =0; i < data.Length; ++i)
+                {
+                    data[temp[i].id] = temp[i];
+                }
+            }
             return data;
         }
     }
