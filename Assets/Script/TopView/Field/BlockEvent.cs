@@ -11,9 +11,17 @@ public class BlockEvent : EventTrigger
     [SerializeField] private Transform targetPoint;
     [SerializeField] private Quest requiredQuest;
     [SerializeField] private string dialogueTarget;
+    [SerializeField] private bool isForceClear;
     protected override void RunTask()
     {
-        if (DataBase.Quest.Quests.ContainsKey(requiredQuest))
+        if(isForceClear)
+        {
+            if (DataBase.Quest.Quests[requiredQuest])
+            {
+                return;
+            }
+        }
+        else if (DataBase.Quest.Quests.ContainsKey(requiredQuest))
             return;
         if (controller == null) 
         {

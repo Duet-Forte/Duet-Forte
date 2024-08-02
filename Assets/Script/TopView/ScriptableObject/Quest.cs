@@ -11,4 +11,6 @@ public class Quest : ScriptableObject
     public int gold;
     public int experiencePoint;
     public int skillId;
+    public string interactor;
+    public int dialogueIndex;
 }

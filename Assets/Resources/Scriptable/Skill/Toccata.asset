@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a7f12d40a9bb14cac7a1bf72b1b909, type: 3}
   m_Name: Toccata
   m_EditorClassIdentifier: 
+  id: 1
   skillName: "\uD1A0\uCE74\uD0C0"
   skill_Information: "130%\uC758 <color=#00bfff>\uC2A4\uD0C0\uCE74\uD1A0 \uD53C\uD574</color>\uB97C
     \uC138 \uBC88\uC90C."

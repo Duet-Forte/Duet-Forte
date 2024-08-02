@@ -14,9 +14,9 @@ public class MusicChanger
     }
     public void SetMusic(string name)
     {
-        if (beforeSong == name)
-            return;
         GameManager.FieldManager.Field.points.TryGetValue(name, out Point point);
+        if (beforeSong == point.pointName)
+            return;
         WaitMusic(point.pointName).Forget();
     }
     public async UniTask WaitMusic(string name)

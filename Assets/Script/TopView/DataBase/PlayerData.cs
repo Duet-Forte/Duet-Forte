@@ -3,6 +3,7 @@ using System.Collections.Generic;
 // 저장할 데이터들
 public class PlayerData
 {
+    private int hp;
     private int level;
     private int experiencePoint;
     private int gold;
@@ -10,8 +11,10 @@ public class PlayerData
     public int Level { get => level; }
     public int EXP { get => experiencePoint; }
     public int Gold { get => gold; }
+    
     public PlayerData()
     {
+        hp = 1;
         level = 1;
         experiencePoint = 0;
         gold = 0;
@@ -24,6 +27,7 @@ public class PlayerData
     }
     public void SetPlayerInfo(PlayerInfo info)
     {
+        hp = info.PlayerHP;
         experiencePoint = info.PlayerCurrentEXP;
         level = info.PlayerLevel;
     }

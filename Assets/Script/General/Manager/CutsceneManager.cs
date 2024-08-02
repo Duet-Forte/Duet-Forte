@@ -42,6 +42,7 @@ public class CutsceneManager : MonoBehaviour
         currentPlayingCutscene = cutscenes[currentCutsceneID];
         isCutscenePlaying = true;
         director.playableAsset = cutscenes[currentCutsceneID].playableAsset;
+        GameManager.FieldManager.Field.GetEntity("Timmy").gameObject.SetActive(false);
         foreach (var participant in currentPlayingCutscene.cutsceneParticipants)
         {
             var participantObject = GameManager.FieldManager.Field.GetCutsceneObject(participant);

@@ -5048,6 +5048,9 @@ GameObject:
   m_Component:
   - component: {fileID: 448273251357242964}
   - component: {fileID: 448273251357242961}
+  - component: {fileID: -90732672054132624}
+  - component: {fileID: -3804763692777167473}
+  - component: {fileID: 2645477598591437234}
   m_Layer: 0
   m_Name: EnemyObject02
   m_TagString: Untagged
@@ -5102,6 +5105,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.08, y: 1.92}
   m_EdgeRadius: 0
+--- !u!114 &-90732672054132624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448273251357242962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3694b2cb9111e4abecb86606e70b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnAtFirst: 1
+  isAlive: 1
+  level: 0
+  monsterEye: {fileID: 448273251207210060}
+  isFleeing: 0
+--- !u!114 &-3804763692777167473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448273251357242962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e23155c1102a4c44d9641b9d20e2843e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  trackScale: {x: 15, y: 15}
+  nodeRadius: 1
+  colliderOffset: 0.5
+  timePerNode: 0.7
+--- !u!95 &2645477598591437234
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448273251357242962}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e9307c6578596c43862cd870a7ca375, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &448273252236478145
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a7f12d40a9bb14cac7a1bf72b1b909, type: 3}
   m_Name: Reverbration
   m_EditorClassIdentifier: 
+  id: 3
   skillName: "\uC794\uD5A5"
   skill_Information: "30%\uC758 <color=#ff6347>\uB808\uAC00\uD1A0\uD53C\uD574</color>\uB97C
     10\uBC88 \uC90C."
