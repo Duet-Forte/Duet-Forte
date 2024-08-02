@@ -20,14 +20,26 @@ SpriteAtlas:
       readable: 0
       crunchedCompression: 0
       sRGB: 1
-    platformSettings: []
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
       serializedVersion: 2
       padding: 4
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 0
-      enableTightPacking: 0
+      enableTightPacking: 1
       enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
@@ -69,7 +81,6 @@ SpriteAtlas:
     - {fileID: 2800000, guid: c1ae0d8f83c90f64d893f7181e26bc4c, type: 3}
     - {fileID: 2800000, guid: 179bf056e0fa4fa44aac64ac551080f9, type: 3}
     - {fileID: 2800000, guid: e30c7f3632ced5245b21b885addf806c, type: 3}
-    - {fileID: 2800000, guid: cfb85c0e37792eb48877336da46917fd, type: 3}
     - {fileID: 2800000, guid: d12c152248b983c438f1b0e716a3720c, type: 3}
     - {fileID: 2800000, guid: a58445cff02f40645beb658228e13a72, type: 3}
     - {fileID: 2800000, guid: 3294c0730c22a74438527ce3fc34c46b, type: 3}
@@ -243,7 +254,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 4f0fc66d763b4df49b0bcfc605a13618, type: 3}
   - {fileID: 21300000, guid: 4bd960ade6b1f8349a8b87d078bcb2b6, type: 3}
   - {fileID: 21300000, guid: f6a58fdd3375e3346830a91ba592f6fc, type: 3}
-  - {fileID: 21300000, guid: cfb85c0e37792eb48877336da46917fd, type: 3}
   - {fileID: 21300000, guid: 4180b02ea7930d04a85171a8f9f623a7, type: 3}
   - {fileID: 21300000, guid: 75e1f12e2d9f938498276649d2bd8e8d, type: 3}
   - {fileID: 21300000, guid: 7a5ca54e5800ae04993e6ea39a0ec0ec, type: 3}
@@ -357,7 +367,6 @@ SpriteAtlas:
   - "\uD654\uB355\uADF8\uB9BC\uC790"
   - "\uC218\uD480m \uADF8\uB9BC\uC790"
   - "\uC6B8\uD0C0\uB9AC \uAC00\uB85C"
-  - "\uBC30\uACBD"
   - "\uD45C\uBA7426"
   - "\uD45C\uBA7429"
   - "\uD45C\uBA749"
