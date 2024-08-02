@@ -12,9 +12,10 @@ public class TopViewEnemy : TopViewEntity
     private PlayerTracker tracker;
     private BoxCollider2D boxCollider;
     public bool isFleeing;
+    private bool isInitialized;
     private void Update()
     {
-        if (isAlive)
+        if (isInitialized && isAlive)
         {
             tracker.RequestPath(isFleeing);
         }
@@ -49,6 +50,12 @@ public class TopViewEnemy : TopViewEntity
         monsterEye.SetActive(false);
         boxCollider.enabled = false;
         await UniTask.Delay(7000);
+        isAlive = true;
+        monsterEye.SetActive(true);
+        boxCollider.enabled = true;
+    }
+    public void Respawn()
+    {
         isAlive = true;
         monsterEye.SetActive(true);
         boxCollider.enabled = true;

@@ -26,6 +26,8 @@ public class QuestManager
             if (quest.ID == id)
                 GrantReward(quest);
         }
+        CheckPrecedingQuest();
+
     }
     public void SetQuest(int id)
     {
@@ -47,6 +49,24 @@ public class QuestManager
         {
             if (quest is EliminationQuest && (quest as EliminationQuest).monsterName == name)
                 GrantReward(quest);
+        }
+        CheckPrecedingQuest();
+    }
+    private void CheckPrecedingQuest()
+    {
+        foreach (Quest quest in DataBase.Quest.Quests.Keys)
+        {
+            if (!(quest is PrecedingQuest))
+                continue;
+            PrecedingQuest temp = quest as PrecedingQuest;
+            for (int i = 0; i < temp.questID.Length; ++i)
+            {
+                if (DataBase.Quest.Quests[quests[temp.questID[i]]] == false)
+                {
+                    return;
+                }
+            }
+            GrantReward(quest);
         }
     }
     public Quest GetQuest(int id) 

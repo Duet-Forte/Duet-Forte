@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e21ea8e80dff3b429e3628b25713ccb, type: 3}
-  m_Name: 0
+  m_Name: 1
   m_EditorClassIdentifier: 
-  ID: 0
-  title: "\uADC0\uAC00 \uC608\uBBFC\uD55C \uC220\uC8FC\uC815\uBC45\uC774"
-  description: "\uD0EC\uBC84\uB9B0 \uC18C\uB9AC\uAC00 \uC2DC\uB044\uB7FD\uB2E4\uBA70,
-    \uD589\uD328\uB97C \uBD80\uB9AC\uB294 \uB8E8\uB514\uC6B0\uC2A4\uB97C \uC7A0\uC7AC\uC6B0\uC790."
+  ID: 1
+  title: "\uC544\uC800\uC528\uB294 \uC7A0 \uBABB\uC774\uB8E8\uACE0"
+  description: "\uCE90\uC2A4\uD130\uB124\uCE20 \uC18C\uB9AC\uC5D0 \uC7A0\uC744 \uC790\uC9C0
+    \uBABB\uD574 \uC218\uCC99\uD574\uC9C4 \uC544\uC800\uC528\uB97C \uB3C4\uC640\uC8FC\uC790."
   gold: 0
   experiencePoint: 0
-  skillId: 4
-  monsterName: Tambourine
+  skillId: 0
+  monsterName: Castanets
