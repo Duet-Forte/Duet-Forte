@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         if(fieldManager.Player != null)
         {
             fieldManager.Player.GetComponent<PlayerController>().Stop();
-            fieldManager.Player.GetComponent<BoxCollider2D>().enabled = false;
+            fieldManager.Player.gameObject.layer = LayerMask.NameToLayer("Invincible");
         }
         dataStorage.currentEnemyName = name;
         MusicChanger.StopMusic();        
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
     public async UniTask EnableCollider()
     {
         await UniTask.WaitForSeconds(3);
-        fieldManager.Player.GetComponent<BoxCollider2D>().enabled = true;
+        fieldManager.Player.gameObject.layer = LayerMask.NameToLayer("Player");
     }
     private async void InitBattleScene()
     {
