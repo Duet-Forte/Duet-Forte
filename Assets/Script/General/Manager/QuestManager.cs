@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class QuestManager
@@ -50,23 +51,26 @@ public class QuestManager
     }
     public void CheckEliminationQuest(string name)
     {
-        foreach (Quest quest in DataBase.Quest.Quests.Keys)
+        var questsCopy = new List<Quest>(DataBase.Quest.Quests.Keys);
+        foreach (Quest quest in questsCopy)
         {
             if (quest is EliminationQuest && (quest as EliminationQuest).monsterName == name)
                 GrantReward(quest);
         }
         CheckPrecedingQuest();
     }
+
     private void CheckPrecedingQuest()
     {
-        foreach (Quest quest in DataBase.Quest.Quests.Keys)
+        var questsCopy = new List<Quest>(DataBase.Quest.Quests.Keys);
+        foreach (Quest quest in questsCopy)
         {
             if (!(quest is PrecedingQuest))
                 continue;
             PrecedingQuest temp = quest as PrecedingQuest;
             for (int i = 0; i < temp.questID.Length; ++i)
             {
-                if (DataBase.Quest.Quests[quests[temp.questID[i]]] == false)
+                if (!DataBase.Quest.Quests[quests[temp.questID[i]]])
                 {
                     return;
                 }

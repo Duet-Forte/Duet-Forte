@@ -1452,7 +1452,7 @@ GameObject:
   - component: {fileID: 1624707029138617073}
   - component: {fileID: 734023366465885039}
   - component: {fileID: 2954380630952692460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1632,7 +1632,7 @@ GameObject:
   - component: {fileID: 469117177255859814}
   - component: {fileID: 413361476225458648}
   - component: {fileID: 4428149838048856262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boss -> Rest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1705,7 +1705,7 @@ GameObject:
   - component: {fileID: 135216587505288668}
   - component: {fileID: 1584036080117331269}
   - component: {fileID: 7188657382388608381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rest -> Field 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2094,7 +2094,7 @@ GameObject:
   - component: {fileID: 6037682024986336507}
   - component: {fileID: 886144142713547991}
   - component: {fileID: 3486083253041859872}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field 2 -> Town
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3156,7 +3156,7 @@ GameObject:
   - component: {fileID: 715713731086685673}
   - component: {fileID: 1945706690625759664}
   - component: {fileID: 7792699286594862239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field 1 -> Town
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3229,7 +3229,7 @@ GameObject:
   - component: {fileID: 7163148815271334479}
   - component: {fileID: 3095519616457064805}
   - component: {fileID: 1805210008509619700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3362,7 +3362,7 @@ GameObject:
   - component: {fileID: 5296591998192180410}
   - component: {fileID: 8375107837212446327}
   - component: {fileID: 3969948161127154738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TimmyHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3466,7 +3466,7 @@ GameObject:
   - component: {fileID: 2468230702509185498}
   - component: {fileID: 2624373620297365520}
   - component: {fileID: 3745957396934936318}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field 2 -> Rest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3607,7 +3607,7 @@ GameObject:
   - component: {fileID: 8194677901310235508}
   - component: {fileID: 4311101520704089621}
   - component: {fileID: 4751152686511651077}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Town
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3744,7 +3744,7 @@ GameObject:
   - component: {fileID: 2745266126668167808}
   - component: {fileID: 2290249456303612214}
   - component: {fileID: 2050928287557124796}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rest -> Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4470,6 +4470,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 3856162321099265186, guid: 6108305a6a0a9204fba45b5aa8765295, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856162321099265186, guid: 6108305a6a0a9204fba45b5aa8765295, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.54
+      objectReference: {fileID: 0}
     - target: {fileID: 4206973455537370388, guid: 6108305a6a0a9204fba45b5aa8765295, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -4482,6 +4490,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4869162407924928419, guid: 6108305a6a0a9204fba45b5aa8765295, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869162407924928419, guid: 6108305a6a0a9204fba45b5aa8765295, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.27
+      objectReference: {fileID: 0}
     - target: {fileID: 5702797183986443048, guid: 6108305a6a0a9204fba45b5aa8765295, type: 3}
       propertyPath: m_SortingOrder
       value: -1
@@ -4493,6 +4509,22 @@ PrefabInstance:
     - target: {fileID: 7700194412386800010, guid: 6108305a6a0a9204fba45b5aa8765295, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288734413221246888, guid: 6108305a6a0a9204fba45b5aa8765295, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288734413221246888, guid: 6108305a6a0a9204fba45b5aa8765295, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550676778196650683, guid: 6108305a6a0a9204fba45b5aa8765295, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550676778196650683, guid: 6108305a6a0a9204fba45b5aa8765295, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.18
       objectReference: {fileID: 0}
     - target: {fileID: 9071246175637448234, guid: 6108305a6a0a9204fba45b5aa8765295, type: 3}
       propertyPath: m_SortingOrder

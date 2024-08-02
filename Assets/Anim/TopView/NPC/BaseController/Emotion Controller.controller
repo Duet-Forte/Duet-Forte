@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emotionParticlePrefab: {fileID: 4368970318085188719, guid: 1cd8ac366a0614f46ab44ca162b6babd, type: 3}
-  emotionSoundName: Character_Emotion_QuestionMark_SFX
+  emotionSoundName: 
 --- !u!1107 &4854245183071184396
 AnimatorStateMachine:
   serializedVersion: 6
