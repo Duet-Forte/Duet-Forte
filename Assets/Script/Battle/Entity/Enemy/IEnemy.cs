@@ -30,11 +30,11 @@ public interface IEnemy : IBuffState
     public void HandleParryJudge(Judge judge);
     public void GiveDamage(Judge judge);
     /// <summary>
-    /// bool °ªÀº trueÀÌ¸é º£±â(A°ø°İ), falseÀÌ¸é Âî¸£±â(B°ø°İ)
-    /// ¹æ¾îµµ¿¡ µû¶ó ½ÇÁ¦ ¹Ş´Â ´ë¹ÌÁö·Î °è»êµÇ´Â ÇÔ¼ö°¡ ÀÖÀ½.
+    /// bool ê°’ì€ trueì´ë©´ ë² ê¸°(Aê³µê²©), falseì´ë©´ ì°Œë¥´ê¸°(Bê³µê²©)
+    /// ë°©ì–´ë„ì— ë”°ë¼ ì‹¤ì œ ë°›ëŠ” ëŒ€ë¯¸ì§€ë¡œ ê³„ì‚°ë˜ëŠ” í•¨ìˆ˜ê°€ ìˆìŒ.
     /// </summary>
     /// <param name="playerAttack"></param>
-    /// <param name="isSlash">true´Â º£±â-A,false´Â Âî¸£±â-B</param>
+    /// <param name="isSlash">trueëŠ” ë² ê¸°-A,falseëŠ” ì°Œë¥´ê¸°-B</param>
 
     public void GetDamage(Damage damage);
     public void StopActions();

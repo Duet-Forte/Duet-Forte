@@ -186,14 +186,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Castanets
-  flavorTextName: "\uCE90\uC2A4\uD130"
+  flavorTextName: "\uCEA0\uC2A4\uD130"
   enemyInfo: "\uC5B4\uB5BB\uAC8C \uBD10\uB3C4 \uCE90\uC2A4\uD130\uB124\uCE20\uB2E4..."
   enemyImage: {fileID: 21300000, guid: 80543664ce9bb8443aaabc77dd61995b, type: 3}
-  maxHP: 160
-  enemyAttack: 13
-  exp: 45
-  slashDefense: 0
-  pierceDefense: 0
+  maxHP: 150
+  enemyAttack: 9
+  exp: 10
+  slashDefense: 6
+  pierceDefense: 3
   enemyAttackSoundEvent: Enemy_Castanets_Attack_SFX
   enemyHitSoundEvent: Enemy_Castanets_Hit_Hit_SFX
   signalInstrument: 2
