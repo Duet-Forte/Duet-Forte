@@ -62,7 +62,7 @@ public class PlayerGuardCounter : MonoBehaviour
     }
 
     private int CalcGuardCounterDamage() {
-        return ((int)playerAttackStat * 3)/10;
+        return ((int)playerAttackStat * 4)/10;
     }
   
 

@@ -194,7 +194,7 @@ MonoBehaviour:
   maxHP: 150
   enemyAttack: 9
   exp: 10
-  slashDefense: 6
+  slashDefense: 4
   pierceDefense: 3
   enemyAttackSoundEvent: Enemy_Castanets_Attack_SFX
   enemyHitSoundEvent: Enemy_Castanets_Hit_Hit_SFX
