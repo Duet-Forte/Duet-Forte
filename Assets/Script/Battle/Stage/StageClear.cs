@@ -198,9 +198,8 @@ public class StageClear : MonoBehaviour
         while (true) {
             if (Input.anyKeyDown) {
                 Debug.Log($"에너미 네임 : {stageManager.Enemy.EnemyName}");
-                if (false)
-                { //데모씬으로 이동하는 조건;; stageManager.Enemy.EnemyName.Equals("Tambourine")
-
+                if (stageManager.Enemy.EnemyName.Equals("TimpaniOrc"))
+                {
                     Debug.Log("DemoScene으로 이동");
                     AkSoundEngine.PostEvent("Combat_BGM_Stop", Metronome.instance.gameObject);
                     yield return blackOut.DOFade(1f, 2f).OnComplete(() => { UnityEngine.SceneManagement.SceneManager.LoadScene("DemoScene"); });
