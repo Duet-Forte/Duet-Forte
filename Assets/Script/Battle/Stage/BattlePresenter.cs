@@ -5,11 +5,11 @@ using Director;
 using Util;
 
 /// <summary>
-/// Enemy¿Í Player»çÀÌ¿¡¼­ ´ë¹ÌÁö ±³È¯ VFX Àü´Ş µîµî ÀüÅõÇÏ¸é¼­ ÀÏ¾î³ª´Â °¢Á¾ Ã³¸®µéÀ» ÀÌ¾îÁÖ´Â ÁøÇàÀÚ ¿ªÇÒÀ» ÇÑ´Ù. 
+/// Enemyì™€ Playerì‚¬ì´ì—ì„œ ëŒ€ë¯¸ì§€ êµí™˜ VFX ì „ë‹¬ ë“±ë“± ì „íˆ¬í•˜ë©´ì„œ ì¼ì–´ë‚˜ëŠ” ê°ì¢… ì²˜ë¦¬ë“¤ì„ ì´ì–´ì£¼ëŠ” ì§„í–‰ì ì—­í• ì„ í•œë‹¤. 
 /// </summary>
 public class BattlePresenter : MonoBehaviour
 {
-    #region ÁßÀç½Ã ÇÊ¿äÇÑ ¿ÜºÎ Å¬·¡½º ¹× º¯¼öµé
+    #region ì¤‘ì¬ì‹œ í•„ìš”í•œ ì™¸ë¶€ í´ë˜ìŠ¤ ë° ë³€ìˆ˜ë“¤
     StageManager stageManager;
     PlayerInterface playerInterface;
     IEnemy enemy;
@@ -17,13 +17,13 @@ public class BattlePresenter : MonoBehaviour
     BattleDirector battleDirector=new BattleDirector();
     #endregion
 
-    #region ÇÃ·¹ÀÌ¾î¿Í Àû ½ºÅÈ
+    #region í”Œë ˆì´ì–´ì™€ ì  ìŠ¤íƒ¯
     float playerDefense;
     float enemySlashDefense;
     float enemyPierceDefense;
     #endregion
 
-    #region ÆÄÆ¼Å¬
+    #region íŒŒí‹°í´
     HitParticle hitParticle;
     #endregion
     
@@ -79,19 +79,19 @@ public class BattlePresenter : MonoBehaviour
 
     public void EnemyToPlayer(Damage enemyAttack) {
         
-        string enemyHitVFXPath = Const.ENEMY_VFX_PATH + enemyName+"/"+enemyName+"_BasicHit_VFX"; //enemy°¡ »ç¿ëÇÏ´Â vfx  
+        string enemyHitVFXPath = Const.ENEMY_VFX_PATH + enemyName+"/"+enemyName+"_BasicHit_VFX"; //enemyê°€ ì‚¬ìš©í•˜ëŠ” vfx  
         Object.Instantiate<GameObject>(Resources.Load<GameObject>(enemyHitVFXPath),playerInterface.transform.position,Quaternion.identity);
         GetDefense();
         enemyAttack.CalculateDamageWithJudge((int)playerDefense);
         
         CameraShake(1f,1f,100,50);
-        StageClear.instance.AddJudge(enemyAttack.JudgeName);//Å¬¸®¾î Á¡¼ö°è»ê
+        StageClear.instance.AddJudge(enemyAttack.JudgeName);//í´ë¦¬ì–´ ì ìˆ˜ê³„ì‚°
 
         playerInterface.GetDamage(enemyAttack);
     }
 
     public void GuardCounterToEnemy(Damage damage) {
-        damage.CalculateDamageWithJudge(0);//Æ®·ç´ë¹ÌÁö
+        damage.CalculateDamageWithJudge(0);//íŠ¸ë£¨ëŒ€ë¯¸ì§€
         StartCoroutine(GuardCounter(damage));
         Object.Instantiate<GameObject>(Resources.Load<GameObject>("VFX/VFX_Prefab/Combat/Player/Hit/Player_CounterAttack_GuardCounter_Hit_VFX"),enemy.Transform.position, Quaternion.identity);
 
@@ -106,13 +106,12 @@ public class BattlePresenter : MonoBehaviour
         for (int guardCounterCount = 0; guardCounterCount < 10; guardCounterCount++) {
             enemy.GetDamage(damage);
             yield return new WaitForSeconds(0.1f);
-
         }
         yield return new WaitForSeconds(1.68f);
         enemy.GetDamage(damage);
     }
     /// <summary>
-    /// °ø°İ·Â°ú ¹æ¾î·ÂÀ» ³ÖÀ¸¸é °ø°İ·Â-¹æ¾î·ÂÀ» ¹İ¿Ã¸²½ÃÄÑ¼­ int·Î returnÇÏ´Â ÇÔ¼ö
+    /// ê³µê²©ë ¥ê³¼ ë°©ì–´ë ¥ì„ ë„£ìœ¼ë©´ ê³µê²©ë ¥-ë°©ì–´ë ¥ì„ ë°˜ì˜¬ë¦¼ì‹œì¼œì„œ intë¡œ returní•˜ëŠ” í•¨ìˆ˜
     /// </summary>
     /// <param name="attack"></param>
     /// <param name="defence"></param>
@@ -123,18 +122,18 @@ public class BattlePresenter : MonoBehaviour
         if (defence < 0) { return (int)attack; }
 
         int calculatedDamage = 0;
-        float tmpDamage = attack - defence;//¹İ¿Ã¸²À» ÇÏ±â À§ÇØ ÀúÀåÇÏ´Â ÀÓ½Ãº¯¼ö
+        float tmpDamage = attack - defence;//ë°˜ì˜¬ë¦¼ì„ í•˜ê¸° ìœ„í•´ ì €ì¥í•˜ëŠ” ì„ì‹œë³€ìˆ˜
 
         if (tmpDamage - (int)tmpDamage >= 0.5f)
-        {//½Ç¼öºÎ°¡ 0.5ÀÌ»óÀÌ¸é
-            calculatedDamage = (int)tmpDamage + 1;//¿Ã¸²
+        {//ì‹¤ìˆ˜ë¶€ê°€ 0.5ì´ìƒì´ë©´
+            calculatedDamage = (int)tmpDamage + 1;//ì˜¬ë¦¼
         }
         else
-        {//0.5¹Ì¸¸ÀÌ¸é
-            calculatedDamage = (int)tmpDamage;//¹ö¸²
+        {//0.5ë¯¸ë§Œì´ë©´
+            calculatedDamage = (int)tmpDamage;//ë²„ë¦¼
         }
 
-        if (tmpDamage >= 0) //ÀÏ¹İÀûÀÎ ´ë¹ÌÁö °è»ê 
+        if (tmpDamage >= 0) //ì¼ë°˜ì ì¸ ëŒ€ë¯¸ì§€ ê³„ì‚° 
         {
             return calculatedDamage;
         }

@@ -8,7 +8,7 @@ namespace Util
     using UnityEngine;
     public class Calculator
     {
-        public int CalcMaxExp(int currentLevel)
+        public int CalcMaxExp(int currentLevel) //요구 경험치량 
         {
 
             return ((currentLevel + 1) * (currentLevel + 1) * (currentLevel + 1)) - (currentLevel * currentLevel * currentLevel);

@@ -2,10 +2,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Util;
 
-public static class DamageUIContainer //ÃßÈÄ ÄÁÅ×ÀÌ³Ê ÇÊ¿äÇÏ¸é ±×°÷À¸·Î ÀÌµ¿
+public static class DamageUIContainer //ì¶”í›„ ì»¨í…Œì´ë„ˆ í•„ìš”í•˜ë©´ ê·¸ê³³ìœ¼ë¡œ ì´ë™
 {
     private static Sprite[] redDamageSkins;
     private static Sprite[] blueDamageSkins;
+    private static Sprite[] trueDamageSkins;
     public static Sprite[] RedSkins
     {
         get {
@@ -34,5 +35,24 @@ public static class DamageUIContainer //ÃßÈÄ ÄÁÅ×ÀÌ³Ê ÇÊ¿äÇÏ¸é ±×°÷À¸·Î ÀÌµ¿
             }
             return blueDamageSkins;
         }
+    }
+
+    public static Sprite[] TrueSkins
+    {
+        get
+        {
+            if (trueDamageSkins == null)
+            {
+                trueDamageSkins = new Sprite[10];
+                for (int i = 0; i < trueDamageSkins.Length; ++i)
+                {
+                    trueDamageSkins[i] = Resources.Load<Sprite>(Const.SPRITE_PATH + $"Damage/TRUE_{i}");
+                }
+            }
+
+            return trueDamageSkins;
+        }
+
+
     }
 }

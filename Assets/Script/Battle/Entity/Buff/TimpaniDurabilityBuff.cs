@@ -17,7 +17,7 @@ public class TimpaniDurabilityBuff : IBuff
     {
         this.battlePresenter = battlePresenter;
         this.enemy = enemy;
-        quaterDamage = enemy.MaxHP/6; //QA·Î Á¶Á¤ ÇÊ¿ä
+        quaterDamage = enemy.MaxHP/4; //QAï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½
         enemy.OnHit += DecreaseStack;
         this.initStack = initStack;
         stack = initStack;
@@ -56,11 +56,11 @@ public class TimpaniDurabilityBuff : IBuff
         }
     }
     private void Execute() {
-        //º¸½º ÃÖ´ë Ã¼·Â 25% ÇÇÇØ
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Ã¼ï¿½ï¿½ 25% ï¿½ï¿½ï¿½ï¿½
         battlePresenter.PlayerBasicAttackToEnemy(new Damage(quaterDamage,new SlashDamage()));
-        //°ø°Ý·Â Áõ°¡
+        //ï¿½ï¿½ï¿½Ý·ï¿½ ï¿½ï¿½ï¿½ï¿½
         enemy.SetAttackStat(1.5f);
-        //stack Ç¥½Ã X
+        //stack Ç¥ï¿½ï¿½ X
         stackText.text = " ";
         
     }

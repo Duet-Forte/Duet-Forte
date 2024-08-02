@@ -6,23 +6,23 @@ using Util;
 public class PlayerStatus : MonoBehaviour
 {
     /*
-     * ·¹º§
-     * Ã¼·Â
-     * °¡µåÄ«¿îÅÍ °ÔÀÌÁö
-     * °æÇèÄ¡
-     * °ø°İ·Â
-     * ¹æ¾î·Â
+     * ë ˆë²¨
+     * ì²´ë ¥
+     * ê°€ë“œì¹´ìš´í„° ê²Œì´ì§€
+     * ê²½í—˜ì¹˜
+     * ê³µê²©ë ¥
+     * ë°©ì–´ë ¥
      * 
     */
 
-    //ÀÏ´ÜÀº ÀÓ½Ã·Î Á÷·ÄÈ­
+    //ì¼ë‹¨ì€ ì„ì‹œë¡œ ì§ë ¬í™”
     private int playerLevel;
     [SerializeField] private int playerHealthPoint;
     private int playerGuardCounterGuage;
     private int playerCurrentExp;
     private int playerMaxExp;
-    [SerializeField] private float playerAttack;//°ø°İ·Â
-    [SerializeField] private float playerDefence;//¹æ¾î·Â
+    [SerializeField] private float playerAttack;//ê³µê²©ë ¥
+    [SerializeField] private float playerDefence;//ë°©ì–´ë ¥
 
 
     public int PlayerHealthPoint { get => playerHealthPoint; 
@@ -57,29 +57,29 @@ public class PlayerStatus : MonoBehaviour
     }
     
 
-    public void InitSetting(int level,int currentExp) { //ºñÀüÅõ ¾À¿¡¼­ ¹Ş¾Æ¿Â ·¹º§°ú ¾ÆÀÌÅÛÀ» ±â¹İÀ¸·Î ÀüÅõ¿¡ ÇÊ¿äÇÑ ½ºÅÈÀ» Àç¼³Á¤ÇÏ´Â ÇÔ¼ö
+    public void InitSetting(int level,int currentExp) { //ë¹„ì „íˆ¬ ì”¬ì—ì„œ ë°›ì•„ì˜¨ ë ˆë²¨ê³¼ ì•„ì´í…œì„ ê¸°ë°˜ìœ¼ë¡œ ì „íˆ¬ì— í•„ìš”í•œ ìŠ¤íƒ¯ì„ ì¬ì„¤ì •í•˜ëŠ” í•¨ìˆ˜
         playerGuardCounterGuage = Util.Const.GUARD_COUNTER_GAUGE;
         playerLevel = level;
         CalcStatus(level);
         playerCurrentExp= currentExp;
         SetMaxExp(playerLevel);
-        Debug.LogWarning($"ÇÃ·¹ÀÌ¾î ·¹º§ : {playerLevel}");
-        Debug.LogWarning($"ÇÃ·¹ÀÌ¾î °ø°İ·Â : {playerAttack}");
-        Debug.LogWarning($"ÇÃ·¹ÀÌ¾î ¹æ¾î·Â : {playerDefence}");
+        Debug.LogWarning($"í”Œë ˆì´ì–´ ë ˆë²¨ : {playerLevel}");
+        Debug.LogWarning($"í”Œë ˆì´ì–´ ê³µê²©ë ¥ : {playerAttack}");
+        Debug.LogWarning($"í”Œë ˆì´ì–´ ë°©ì–´ë ¥ : {playerDefence}");
     }
     private void SetMaxExp(int level) {
-        playerMaxExp = new Calculator().CalcMaxExp(level); //´©Àû°æÇèÄ¡´Â ÇöÀç·¹º§^3 °ø½ÄÀÓ Áï, ÇöÀç ·¹º§ÀÇ ÇÊ¿ä°æÇèÄ¡´Â (´ÙÀ½ ·¹º§^3)-(ÇöÀç ·¹º§^3)
+        playerMaxExp = new Calculator().CalcMaxExp(level); //ëˆ„ì ê²½í—˜ì¹˜ëŠ” í˜„ì¬ë ˆë²¨^3 ê³µì‹ì„ ì¦‰, í˜„ì¬ ë ˆë²¨ì˜ í•„ìš”ê²½í—˜ì¹˜ëŠ” (ë‹¤ìŒ ë ˆë²¨^3)-(í˜„ì¬ ë ˆë²¨^3)
 
 
         if (level == 1) {
-            playerMaxExp = (level + 1) * (level + 1) * (level + 1); // 1·¹º§¿¡¼­  2·¹º§ °¡´Â ÇÊ¿ä °æÇèÄ¡ 2^3 
+            playerMaxExp = (level + 1) * (level + 1) * (level + 1); // 1ë ˆë²¨ì—ì„œ  2ë ˆë²¨ ê°€ëŠ” í•„ìš” ê²½í—˜ì¹˜ 2^3 
             }
     }
 
     private void CalcStatus(int level) {
-        playerHealthPoint = Const.PLAYER_BASE_HEALTH + (level * 4);
+        playerHealthPoint = Const.PLAYER_BASE_HEALTH + (level * 3);
         playerAttack = Const.PLAYER_BASE_ATTACK + (level * 3);
-        playerDefence=Const.PLAYER_BASE_DEFENSE + (level * 3);
+        playerDefence=Const.PLAYER_BASE_DEFENSE + (level * 2);
 
     }
     
