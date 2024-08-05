@@ -5,6 +5,7 @@ using Util.CustomEnum;
 using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
+using Unity.VisualScripting;
 using Util;
 
 public class StageClear : MonoBehaviour
@@ -226,13 +227,20 @@ public class StageClear : MonoBehaviour
         Debug.Log($"레벨업을 할 경험치인가? : {enemyExp >= restEXP}");
         if (enemyExp >= restEXP) //레벨업하는 상황
         {
-            expGainSpeed = 0.7f + ((float)maxExp / enemyExp);//0.3초는 경험치 오르는 최소 시간
+            expGainSpeed = 0.7f;//0.3초는 경험치 오르는 최소 시간
+            //+ ((float)maxExp / enemyExp);
             Tween changeExpText = DOTween.To(() => currentExp, value => expText.text = $"{value} / {maxExp}", maxExp, expGainSpeed);
             changeExpText.Play();
             Tween changeExp = DOTween.To(() => expSlider.value, value => expSlider.value = value, 1, expGainSpeed);
             changeExp.Play().OnComplete(() =>
             {
                 LevelUP();
+                if (enemyExp == restEXP)
+                {
+                    isChangeExpEnd = true;
+                    return;
+                }
+
                 ChangeEXP(enemyExp - restEXP);
             });
 
@@ -244,12 +252,9 @@ public class StageClear : MonoBehaviour
             changeExpText.Play().OnComplete(() => { 
                 currentExp += enemyExp;
                 isChangeExpEnd = true;
-                Debug.Log("경험치 다 먹었슈? : "+isChangeExpEnd);
             });
             Tween changeExp = DOTween.To(() => expSlider.value, value => expSlider.value = value, ((float)tmpExp / maxExp), expGainSpeed); //게이지 오르는 연출
                 changeExp.Play();
-            
-        
         }
 
 

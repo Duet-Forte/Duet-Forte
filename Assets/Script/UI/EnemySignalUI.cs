@@ -35,7 +35,7 @@ public class EnemySignalUI : MonoBehaviour
     public void DefenseActive(Judge judge) {
 
         if (judge.Name == Util.CustomEnum.JudgeName.Miss)
-        {//miss»óÈ²ÀÏ¶§
+        {//missìƒí™©ì¼ë•Œ
             attackIcons[defenseIconCounter].AttackEffect();
             defenseIconCounter++;
         }

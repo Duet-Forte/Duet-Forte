@@ -61,7 +61,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     protected int[] patternArray;
     protected bool isEnteringGuardCounterPhase;
     protected bool isSignalEnd=false;
-    
+    protected bool isJudgeMiss = false;
 
     public event Action OnFramePass;
     public event Action OnGuardCounterEnd;
@@ -196,14 +196,16 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
                     enemyAnimator.Attack();
                     break;
                 }
+               
                 yield return null;
             }
             if (!isNoteChecked[i])//패링 못했을 때
-            {    
+            {
                 GiveDamage(new Judge(JudgeName.Miss));
                 AkSoundEngine.PostEvent(enemyAttackSoundEvent, gameObject);
                 enemyAnimator.Attack();
             }
+            
             tmp = judgeEndTime;
             tmp2= targetTimes[i]*0.5d;
         }
@@ -211,8 +213,10 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         {
             yield return null; // 끝나는 시간을 항상 같게 하기 위해.
         }
-        yield return WaitForTargetedTime(attackDelay);
 
+        isJudgeMiss = false;
+        yield return WaitForTargetedTime(attackDelay);
+        
         #region 
         enemySignalUI.ResetIcon();
         #endregion
@@ -364,7 +368,6 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         if (currentHP <= 0)
         {
             currentHP = 0;
-            
             enemyAnimator.Die();
             stageManager.OnEnemyDie();
         }
@@ -376,25 +379,29 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         
         if (judge.Name.Equals(JudgeName.Miss))
         {
+            Debug.LogWarning("miss 진입");
             playerInter.PlayerAnimator.Hurt();
-            enemySignalUI.DefenseActive(judge);
-            isNoteChecked[currentNoteIndex] = false;
-            ++currentNoteIndex;
+            
+            if (!isJudgeMiss)
+            {
+                enemySignalUI.DefenseActive(judge);
+                isNoteChecked[currentNoteIndex] = false;
+                ++currentNoteIndex;
+                isJudgeMiss = true;
+            }
             return;
         }
-        else if(judge.Name.Equals(JudgeName.Perfect))
+        if(judge.Name.Equals(JudgeName.Perfect))
         {
             playerSoundSet.PerfectParrySound(gameObject);
             battleDirector.CameraShake(0.3f, 1, 100, 30);
             playerInter.PlayerAnimator.Parry(true);
-            
         }
         else
         {
             playerSoundSet.PerfectParrySound(gameObject);
             battleDirector.CameraShake(0.3f, 0.5f, 100, 30);
             playerInter.PlayerAnimator.Parry(false);
-           
         }
         enemySignalUI.DefenseActive(judge);
         isNoteChecked[currentNoteIndex] = true;
@@ -409,7 +416,6 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
         StopAllCoroutines();
     }
     public void AddBuff(IBuff buff) { 
-    
         buffManager.AddBuff(buff);
     }
     public void DeleteBuff(IBuff buff) { }

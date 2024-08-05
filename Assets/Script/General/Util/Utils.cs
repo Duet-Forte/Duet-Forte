@@ -13,7 +13,7 @@ namespace Util
 
         #region 디버깅
         public const int DEBUG_PLAYER_LEVEL = 4;
-        public const int DEBUG_PLAYER_CURRENT_EXP = 0;
+        public const int DEBUG_PLAYER_CURRENT_EXP = 59;
         #endregion
 
 
