@@ -7,33 +7,33 @@ public class JudgeManager
 {
     private StageManager stageManager;
     private PlayerInterface playerInterface;
-    private int healthPoint; // ±¸Çö ÆíÀÇ»ó ÀÓ½Ã·Î ¿©±â ÀÖÁö¸¸, ÃßÈÄ Å¬·¡½º ¼³°è°¡ ¿Ï·áµÇ¸é playerÀÇ statÀ» ´Ù·ç´Â Å¬·¡½º¿¡¼­ ÂüÁ¶¸¦ °¡Á®¿Ã ¿¹Á¤.
-    private int maxGauge; // ¸¶Âù°¡Áö
+    private int healthPoint; // êµ¬í˜„ í¸ì˜ìƒ ì„ì‹œë¡œ ì—¬ê¸° ìˆì§€ë§Œ, ì¶”í›„ í´ë˜ìŠ¤ ì„¤ê³„ê°€ ì™„ë£Œë˜ë©´ playerì˜ statì„ ë‹¤ë£¨ëŠ” í´ë˜ìŠ¤ì—ì„œ ì°¸ì¡°ë¥¼ ê°€ì ¸ì˜¬ ì˜ˆì •.
+    private int maxGauge; // ë§ˆì°¬ê°€ì§€
     private int combo;
 
     public event Action<Judge> OnParryEnd;
     public event Action<Judge> OnParrySuccess;
-    public event Action<int, int> OnComboChange;//UI °ÔÀÌÁö¿¡ ¹İ¿µ
-    #region ÇÁ·ÎÆÛÆ¼
+    public event Action<int, int> OnComboChange;//UI ê²Œì´ì§€ì— ë°˜ì˜
+    #region í”„ë¡œí¼í‹°
     public int GuardGauge { get { return maxGauge; } set { maxGauge = value; } }
     public int EarlyCount { get { return earlyCount; } set { earlyCount = value; } }
     public int HP { get { return healthPoint; } }
     #endregion
 
-    #region ÆÇÁ¤½Ã°£ °ü·Ã º¯¼ö
+    #region íŒì •ì‹œê°„ ê´€ë ¨ ë³€ìˆ˜
     private double goodJudgeTime;
     private double greatJudgeTime;
     private double perfectJudgeTime;
-    private bool isMissedInCurrentFrame; // ÇÑ ÇÁ·¹ÀÓ¿¡ missNote ÀÌÈÄ¿¡ checkscore°¡ È£ÃâµÉ °æ¿ì, ¹«Á¶°Ç perfect ÆÇÁ¤ÀÌ ³ª´Â °ÍÀ» ¹æÁö. /´ÙÀ½ ÆÇÁ¤¿¡ ¿µÇâÀÌ °¡´Â ¹ö±×¸¦ ¿¹¹æÇÏ±â À§ÇÑ º¯¼ö
-    private int earlyCount; // ¿¬Å¸ ¹æÁö ÇÑ ÆÇÁ¤¿¡ ¿¬¼ÓÀûÀÎ ÀÔ·Â½Ã¿¡ ÆÇÁ¤À» miss·Î ÇÒ´çÇÏ´Â ¾óºÒÃã °úºÎÇÏ ½Ã½ºÅÛÀÇ »ç¿ëÀÚ ÀÔ·Â ±âÁØ
+    private bool isMissedInCurrentFrame; // í•œ í”„ë ˆì„ì— missNote ì´í›„ì— checkscoreê°€ í˜¸ì¶œë  ê²½ìš°, ë¬´ì¡°ê±´ perfect íŒì •ì´ ë‚˜ëŠ” ê²ƒì„ ë°©ì§€. /ë‹¤ìŒ íŒì •ì— ì˜í–¥ì´ ê°€ëŠ” ë²„ê·¸ë¥¼ ì˜ˆë°©í•˜ê¸° ìœ„í•œ ë³€ìˆ˜
+    private int earlyCount; // ì—°íƒ€ ë°©ì§€ í•œ íŒì •ì— ì—°ì†ì ì¸ ì…ë ¥ì‹œì— íŒì •ì„ missë¡œ í• ë‹¹í•˜ëŠ” ì–¼ë¶ˆì¶¤ ê³¼ë¶€í•˜ ì‹œìŠ¤í…œì˜ ì‚¬ìš©ì ì…ë ¥ ê¸°ì¤€
     #endregion
 
     public void InitSettings(StageManager currentStageManager)
     {
         stageManager = currentStageManager;
         playerInterface = currentStageManager.PlayerInterface;
-        healthPoint = playerInterface.PlayerStatus.PlayerHealthPoint;// ÀÌ»ç¿¹Á¤
-        maxGauge = currentStageManager.PlayerInterface.PlayerStatus.PlayerGuardCounterGuage; //¸¶Âù°¡Áö
+        healthPoint = playerInterface.PlayerStatus.PlayerHealthPoint;// ì´ì‚¬ì˜ˆì •
+        maxGauge = currentStageManager.PlayerInterface.PlayerStatus.PlayerGuardCounterGuage; //ë§ˆì°¬ê°€ì§€
         goodJudgeTime = Const.GOOD_JUDGE * stageManager.SecondsPerBeat;
         greatJudgeTime = Const.GREAT_JUDGE * stageManager.SecondsPerBeat;
         perfectJudgeTime = Const.PERFECT_JUDGE * stageManager.SecondsPerBeat;
@@ -43,11 +43,11 @@ public class JudgeManager
     {
         if(Input.GetKeyDown(KeyCode.Space) && !stageManager.Enemy.IsNoteChecked)
         {
-             CheckScore(Time.time);//Space ´­·¶À» ¶§, StartTime EndTime °áÁ¤µÊ.
+             CheckScore(Time.time);//Space ëˆŒë €ì„ ë•Œ, StartTime EndTime ê²°ì •ë¨.
         }
     }
 
-    public void IncreaseGauge(int combo) // ÀÌµ¿ ¿¹Á¤
+    public void IncreaseGauge(int combo) // ì´ë™ ì˜ˆì •
     {
         this.combo += combo;
         OnComboChange?.Invoke(this.combo, maxGauge);
@@ -64,6 +64,7 @@ public class JudgeManager
             ++earlyCount;
             if (earlyCount >= Const.MAX_EARLY_COUNT)
             {
+                Debug.LogWarning("ê³¼ë¶€í•˜!!");
                 EndParry(new Judge(JudgeName.Miss));
                 isMissedInCurrentFrame = true;
             }
@@ -74,7 +75,7 @@ public class JudgeManager
             isMissedInCurrentFrame = false;
             return;
         }
-        double judgeTime = Math.Abs(targetTime - parryTime);//ÇöÀç ÆÇÁ¤ Å¸ÀÌ¹Ö
+        double judgeTime = Math.Abs(targetTime - parryTime);//í˜„ì¬ íŒì • íƒ€ì´ë°
         Judge judge = new Judge();
         if (judgeTime <= perfectJudgeTime)
         {
