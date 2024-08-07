@@ -10,6 +10,8 @@ using SoundSet;
 using Util.CustomEnum;
 using Director;
 using UnityEngine.Rendering;
+using UnityEngine.Serialization;
+
 public class Enemy_Prefab : MonoBehaviour, IEnemy
 {
     protected StageManager stageManager;
@@ -37,8 +39,8 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     /// 방어력은 빼기공식을 사용
     /// slash 피해 순수 대미지= slashAttack - slashDefense (순수 대미지는 항상 0보다 크거나 같음)
     /// </summary>
-    [SerializeField] protected float slashDefense;
-    [SerializeField] protected float pierceDefense;
+    [FormerlySerializedAs("slashDefense")] [SerializeField] protected float legattoDefense;
+    [FormerlySerializedAs("pierceDefense")] [SerializeField] protected float staccatoDefense;
     [Header("Sounds")]
     [Space(5f)]
     [SerializeField] protected string enemyAttackSoundEvent;
@@ -116,7 +118,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     public int CurrentHP { get => currentHP; }
     public int MaxHP { get => maxHP; }
     public string EnemyName { get => enemyName; }
-    public Vector2 Defense { get => new Vector2(slashDefense, pierceDefense); }
+    public Vector2 Defense { get => new Vector2(legattoDefense, staccatoDefense); }
     public int Exp { get => exp; }
     #endregion
 
@@ -409,7 +411,7 @@ public class Enemy_Prefab : MonoBehaviour, IEnemy
     }
 
     public Vector2 GetDefense() {
-        return new Vector2(slashDefense, pierceDefense);
+        return new Vector2(legattoDefense, staccatoDefense);
     }
     protected void OnDestroy()
     {

@@ -69,7 +69,7 @@ namespace Util
             Castanets,
             Timpani,
             Maracas,
-            CymbalsCat
+            Cymbals
         }
         public enum EventType
         { 
