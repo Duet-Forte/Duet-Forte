@@ -162,8 +162,7 @@ public class PlayerAttack : MonoBehaviour //플레이어의 입력을 받아서 
     }
     IEnumerator SkillCast(PlayerSkill.Skill currentSkill,string comparisonCommand, JudgeName[] judgeArr) {
         yield return new WaitForSeconds(0.5f); // 자연스러운 딜레이
-
-
+        
         currentSkill.PlaySkillSound(currentSkill.soundEventName, gameObject); //스킬 사운드
         ParticleSystem tmp =Instantiate(currentSkill.skillParticle, transform.position, Quaternion.identity); //파티클 생성
         tmp.transform.parent = gameObject.transform;  //파티클 부모지정

@@ -21,6 +21,8 @@ public class PlayerStatus : MonoBehaviour
     private int playerGuardCounterGuage;
     private int playerCurrentExp;
     private int playerMaxExp;
+    private int[] equippedItem;
+    private List<IItem> itemList = new List<IItem>();
     [SerializeField] private float playerAttack;//공격력
     [SerializeField] private float playerDefence;//방어력
 
@@ -55,19 +57,39 @@ public class PlayerStatus : MonoBehaviour
             return playerCurrentExp;
         }
     }
-    
+    public List<IItem> ItemList
+    {
+        get => itemList;
+    }
 
-    public void InitSetting(int level,int currentExp) { //비전투 씬에서 받아온 레벨과 아이템을 기반으로 전투에 필요한 스탯을 재설정하는 함수
+
+    public void InitSetting(int level,int currentExp,int[] equippedItem) { //비전투 씬에서 받아온 레벨과 아이템을 기반으로 전투에 필요한 스탯을 재설정하는 함수
         playerGuardCounterGuage = Util.Const.GUARD_COUNTER_GAUGE;
         playerLevel = level;
         CalcStatus(level);
         playerCurrentExp= currentExp;
+        this.equippedItem = equippedItem;
         SetMaxExp(playerLevel);
         Debug.LogWarning($"플레이어 레벨 : {playerLevel}");
         Debug.LogWarning($"플레이어 체력 : {playerHealthPoint}");
         Debug.LogWarning($"플레이어 공격력 : {playerAttack}");
         Debug.LogWarning($"플레이어 방어력 : {playerDefence}");
+        SetItem(equippedItem);
     }
+
+    private void SetItem(int[] equippedItem)
+    {
+        ItemParser itemParser = new ItemParser();
+        itemParser.ItemParse();
+        
+        for (int i = 0; i < equippedItem.Length; i++)
+        {
+            itemList.Add(itemParser.GetItem(equippedItem[i]));
+            Debug.Log(itemList[i]);
+        }
+
+    }
+
     private void SetMaxExp(int level) {
         playerMaxExp = new Calculator().CalcMaxExp(level); //누적경험치는 현재레벨^3 공식임 즉, 현재 레벨의 필요경험치는 (다음 레벨^3)-(현재 레벨^3)
 

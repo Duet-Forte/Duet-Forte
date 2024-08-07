@@ -49,7 +49,6 @@ public class PatternParser
             for(int i =0;i<pattern.Length-1;i++) {
             
                 intList.Add(System.Int32.Parse(pattern[i].ToString()));
-                //Debug.Log(pattern[i].ToString());
         
         }
         

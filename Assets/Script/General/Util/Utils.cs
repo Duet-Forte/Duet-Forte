@@ -6,9 +6,11 @@ namespace Util
     public static class Const
     {
         #region 레벨당 스탯 계산을 위한 기초 스탯
+
         public const int PLAYER_BASE_HEALTH = 50;
         public const int PLAYER_BASE_ATTACK = 6;
         public const int PLAYER_BASE_DEFENSE = 2;
+
         #endregion
 
         #region 디버깅
@@ -44,7 +46,6 @@ namespace Util
         public const string TOPVIEW_PLAYER = "TopView/Player";
         public const string TOPVIEW_ENTITY = "TopView/Entity/";
 
-        public const string ZERO_TO_STRING = "0";
         public const string ENEMY_CSV_PATH = "CSV/EnemyData";
         public const string PATTERN_SIGNATURE_HEADER = "Signature";
         public const string NAME_HEADER = "Name";
@@ -74,6 +75,11 @@ namespace Util
         public const string SAVE_FILE_NAME = "dfSave.json";
         #endregion
 
+        #region noun
+        public const string ZERO_TO_STRING = "0";
+        public const float percentageHundred = 100.0f;
+
+        #endregion
         #region UI 연출 스피드
         public const float STATUSUI_PROCESS_SPEED = 1f;
         public const float STATUSUI_WAIT_TIME = 2f;

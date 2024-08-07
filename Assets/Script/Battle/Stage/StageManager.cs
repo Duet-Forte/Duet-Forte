@@ -88,12 +88,12 @@ public class StageManager : MonoBehaviour
     #region 디버깅용
     [SerializeField] public Image[] attackIcon;
     [SerializeField] public Image[] defenseIcon;
+    private int[] itemID={10101,10201};
     #endregion
-
     [ContextMenu("DEBUG/SceneStart")]
     private void TestPlay()
     {
-        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn, new PlayerInfo(debugSkills,Const.DEBUG_PLAYER_LEVEL,Const.DEBUG_PLAYER_CURRENT_EXP));
+        InitSettings(stage.BPM, stage.EnemyName, Turn.PrepareTurn, new PlayerInfo(debugSkills,Const.DEBUG_PLAYER_LEVEL,Const.DEBUG_PLAYER_CURRENT_EXP,itemID));
         WipeAnimation wipe = Instantiate(sceneTransitionPrefab).transform.GetComponentInChildren<WipeAnimation>();
         wipe.Fade(false);
     }
@@ -163,7 +163,7 @@ public class StageManager : MonoBehaviour
         player = Instantiate(Resources.Load<GameObject>("Object/Player"));
         playerInterface = player.GetComponent<PlayerInterface>();
         playerInterface.InitSettings(this);
-        playerInterface.PlayerStatus.InitSetting(playerInfo.PlayerLevel,playerInfo.PlayerCurrentEXP);
+        playerInterface.PlayerStatus.InitSetting(playerInfo.PlayerLevel,playerInfo.PlayerCurrentEXP,playerInfo.EquippedItem);
         playerInterface.PlayerSkillSet.InitSettings(playerInfo.PlayerSkills);
         battlePresenter.InitSettings(this);
         playerInterface.PlayerAttack.InitSettins(this,GetComponent<PlayerAttackTimingCheck>());
